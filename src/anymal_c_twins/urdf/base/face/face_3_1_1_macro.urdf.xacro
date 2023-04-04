@@ -2,7 +2,7 @@
 
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-  <xacro:macro name="face" params="suffix:='A' face simulate_depth_camera:=false simulate_wide_angle_camera:=false depth_camera_pitch:=30 depth_camera_roll:=0">
+  <xacro:macro name="face" params="suffix face simulate_depth_camera:=false simulate_wide_angle_camera:=false depth_camera_pitch:=30 depth_camera_roll:=0">
 
     <xacro:property name="B_r_BBf_x"        value="0.41450"/> <!--  [m] -->
     <xacro:property name="B_r_BBf_z"        value="0.00700"/> <!--  [m] -->

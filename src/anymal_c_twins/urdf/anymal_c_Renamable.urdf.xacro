@@ -1,0 +1,144 @@
+<?xml version="1.0"?>
+
+<!-- This file contains the description of the ANYmal robot. -->
+
+<robot name="anymal_c_B" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:macro name="anymal_c_macro" params="suffix">
+
+    <!-- Arguments -->
+    <xacro:arg name="suffix"                        default="${suffix}"/>
+    <xacro:arg name="simulation"                    default="true"/>
+    <xacro:arg name="perfect_sensors"               default="true"/>
+    <xacro:arg name="fix_base"                      default="false"/>
+    <xacro:arg name="simulate_depth_camera"         default="false"/>
+    <xacro:arg name="simulate_lidar"                default="false"/>
+    <xacro:arg name="simulate_wide_angle_camera"    default="false"/>
+    <xacro:arg name="enable_inspection_payload"     default="false"/>
+    <xacro:arg name="inspection_payload_version"    default="P-PTU-VTAL-A"/>
+    <xacro:arg name="simulate_zoom_camera"          default="false"/>
+    <xacro:arg name="simulate_thermal_camera"       default="false"/>
+    <xacro:arg name="enable_custom_payload"         default="false"/>
+    <xacro:arg name="custom_payload_description"    default=""/>
+    <xacro:arg name="depth_camera_front_pitch"      default="30.0"/>
+    <xacro:arg name="depth_camera_front_roll"       default="0.0"/>
+    <xacro:arg name="depth_camera_rear_pitch"       default="30.0"/>
+    <xacro:arg name="depth_camera_rear_roll"        default="0.0"/>
+    <xacro:arg name="depth_camera_left_pitch"       default="30.0"/>
+    <xacro:arg name="depth_camera_left_roll"        default="0.0"/>
+    <xacro:arg name="depth_camera_right_pitch"      default="30.0"/>
+    <xacro:arg name="depth_camera_right_roll"       default="0.0"/>
+    <xacro:arg name="imu_model"                     default="epson"/>
+    <xacro:arg name="imu_roll"                      default="0.0"/>
+    <xacro:arg name="imu_pitch"                     default="0.0"/>
+    <xacro:arg name="imu_yaw"                       default="90.0"/>
+    <xacro:arg name="battery_model"                 default="regular"/>
+    <xacro:arg name="docking_socket"                default="false"/>
+    <xacro:arg name="m_B"                           default="6.222"/>
+    <xacro:arg name="B_r_BBcom_x"                   default="-0.018"/>
+    <xacro:arg name="B_r_BBcom_y"                   default="-0.002"/>
+    <xacro:arg name="B_r_BBcom_z"                   default="0.024"/>
+    <xacro:arg name="version"                       default="c100"/>
+
+    <!-- Includes -->
+    <!-- describes mesh scale factor and contact model parameters-->
+    <xacro:include filename="$(find anymal_c_twins)/urdf/include/utils.urdf.xacro"/>
+    <!-- describes gazebo plugin if simulation argument is true-->
+    <xacro:include filename="$(find anymal_c_twins)/urdf/include/plugin.gazebo.xacro"/>
+
+    <xacro:property name="inspection_payload_version_" value="$(arg inspection_payload_version)"/>
+    <xacro:property name="version_" value="$(arg version)"/>
+
+    <!-- Base -->
+    <!-- describes base link (including base intertia dummy link) and integrated sensors-->
+    <xacro:if value="${version_ == 'c100'}">
+      <xacro:include filename="$(find anymal_c_twins)/urdf/base/base_3_1_1_macro.urdf.xacro"/>
+      <xacro:base suffix="$(arg suffix)"
+                  fix_base="$(arg fix_base)"
+                  simulate_depth_camera="$(arg simulate_depth_camera)"
+                  simulate_lidar="$(arg simulate_lidar)"
+                  simulate_wide_angle_camera="$(arg simulate_wide_angle_camera)"
+                  depth_camera_front_roll="$(arg depth_camera_front_roll)"
+                  depth_camera_front_pitch="$(arg depth_camera_front_pitch)"
+                  depth_camera_rear_roll="$(arg depth_camera_rear_roll)"
+                  depth_camera_rear_pitch="$(arg depth_camera_rear_pitch)"
+                  depth_camera_left_roll="$(arg depth_camera_left_roll)"
+                  depth_camera_left_pitch="$(arg depth_camera_left_pitch)"
+                  depth_camera_right_roll="$(arg depth_camera_right_roll)"
+                  depth_camera_right_pitch="$(arg depth_camera_right_pitch)"
+                  imu_roll="$(arg imu_roll)"
+                  imu_pitch="$(arg imu_pitch)"
+                  imu_yaw="$(arg imu_yaw)"
+                  battery_model="$(arg battery_model)"
+                  docking_socket="$(arg docking_socket)"
+                  m_B="$(arg m_B)"
+                  B_r_BBcom_x="$(arg B_r_BBcom_x)"
+                  B_r_BBcom_y="$(arg B_r_BBcom_y)"
+                  B_r_BBcom_z="$(arg B_r_BBcom_z)"/>
+    </xacro:if>
+
+    <!--xacro:if value="${version_ != 'c100'}">
+      <xacro:include filename="$(find anymal_c)/urdf/base/base_3_0_macro.urdf.xacro"/>
+      <xacro:base fix_base="$(arg fix_base)"
+                  simulate_depth_camera="$(arg simulate_depth_camera)"
+                  simulate_lidar="$(arg simulate_lidar)"
+                  simulate_wide_angle_camera="$(arg simulate_wide_angle_camera)"
+                  version="${version_}"
+                  depth_camera_front_roll="$(arg depth_camera_front_roll)"
+                  depth_camera_front_pitch="$(arg depth_camera_front_pitch)"
+                  depth_camera_rear_roll="$(arg depth_camera_rear_roll)"
+                  depth_camera_rear_pitch="$(arg depth_camera_rear_pitch)"
+                  depth_camera_left_roll="$(arg depth_camera_left_roll)"
+                  depth_camera_left_pitch="$(arg depth_camera_left_pitch)"
+                  depth_camera_right_roll="$(arg depth_camera_right_roll)"
+                  depth_camera_right_pitch="$(arg depth_camera_right_pitch)"
+                  imu_model="$(arg imu_model)"
+                  imu_roll="$(arg imu_roll)"
+                  imu_pitch="$(arg imu_pitch)"
+                  imu_yaw="$(arg imu_yaw)"
+                  battery_model="$(arg battery_model)"
+                  docking_socket="$(arg docking_socket)"
+                  m_B="$(arg m_B)"
+                  B_r_BBcom_x="$(arg B_r_BBcom_x)"
+                  B_r_BBcom_y="$(arg B_r_BBcom_y)"
+                  B_r_BBcom_z="$(arg B_r_BBcom_z)"/>
+    </xacro:if-->
+
+    <!-- Legs -->
+    <!--xacro:if value="${version_ == 'c010'}">
+      <xacro:include filename="$(find anymal_c)/urdf/leg/leg_3_0_macro.urdf.xacro"/>
+    </xacro:if>
+
+    <xacro:if value="${version_ == 'c020'}">
+      <xacro:include filename="$(find anymal_c)/urdf/leg/leg_3_0_1_macro.urdf.xacro"/>
+    </xacro:if-->
+
+    <xacro:if value="${version_ == 'c100'}">
+      <xacro:include filename="$(find anymal_c_twins)/urdf/leg/leg_3_1_1_macro.urdf.xacro"/>
+    </xacro:if>
+
+    <xacro:leg leg="LF" suffix="$(arg suffix)"/>
+    <xacro:leg leg="RF" suffix="$(arg suffix)"/>
+    <xacro:leg leg="LH" suffix="$(arg suffix)"/>
+    <xacro:leg leg="RH" suffix="$(arg suffix)"/>
+
+    <!-- Custom payload -->
+    <xacro:if value="$(arg enable_custom_payload)">
+      <xacro:include filename="$(arg custom_payload_description)"/>
+      <xacro:custom_payload parent="base_$(arg suffix)" />
+    </xacro:if>
+
+    <!-- Inspection payload -->
+    <!-- describes inspection payload (pantilt head version 3)--> 
+    <xacro:if value="$(arg enable_inspection_payload)">
+      <xacro:include filename="$(find inspection_payload_description)/urdf/inspection_payload_odrive.urdf.xacro"/>
+      <xacro:inspection_payload name="inspection_payload" parent="base_$(arg suffix)" version="${inspection_payload_version_}">
+        <origin xyz="0.116 0.0 0.090" rpy="0 0 0"/>
+      </xacro:inspection_payload>
+    </xacro:if>
+    <xacro:unless value="$(arg enable_inspection_payload)">
+      <!-- describes hatch-->
+      <xacro:include filename="$(find anymal_c_twins)/urdf/base/hatch/hatch_3_1_1_macro.urdf.xacro"/>
+      <xacro:hatch suffix="${suffix}"/>
+    </xacro:unless>
+  </xacro:macro>
+</robot>
