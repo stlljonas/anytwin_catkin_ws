@@ -2,9 +2,10 @@
 
 <!-- This file contains the description of the ANYmal robot. -->
 
-<robot name="anymal_B" xmlns:xacro="http://www.ros.org/wiki/xacro">
+<robot name="anymal_c_B" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
   <!-- Arguments -->
+  <xacro:arg name="suffix"                        default="B"/>
   <xacro:arg name="simulation"                    default="true"/>
   <xacro:arg name="perfect_sensors"               default="true"/>
   <xacro:arg name="fix_base"                      default="false"/>
@@ -50,7 +51,8 @@
   <!-- describes base link (including base intertia dummy link) and integrated sensors-->
   <xacro:if value="${version_ == 'c100'}">
     <xacro:include filename="$(find anymal_c)/urdf/base/base_3_1_1_macro.urdf.xacro"/>
-    <xacro:base fix_base="$(arg fix_base)"
+    <xacro:base suffix="$(arg suffix)"
+                fix_base="$(arg fix_base)"
                 simulate_depth_camera="$(arg simulate_depth_camera)"
                 simulate_lidar="$(arg simulate_lidar)"
                 simulate_wide_angle_camera="$(arg simulate_wide_angle_camera)"
@@ -73,7 +75,7 @@
                 B_r_BBcom_z="$(arg B_r_BBcom_z)"/>
   </xacro:if>
 
-  <xacro:if value="${version_ != 'c100'}">
+  <!--xacro:if value="${version_ != 'c100'}">
     <xacro:include filename="$(find anymal_c)/urdf/base/base_3_0_macro.urdf.xacro"/>
     <xacro:base fix_base="$(arg fix_base)"
                 simulate_depth_camera="$(arg simulate_depth_camera)"
@@ -98,16 +100,16 @@
                 B_r_BBcom_x="$(arg B_r_BBcom_x)"
                 B_r_BBcom_y="$(arg B_r_BBcom_y)"
                 B_r_BBcom_z="$(arg B_r_BBcom_z)"/>
-  </xacro:if>
+  </xacro:if-->
 
   <!-- Legs -->
-  <xacro:if value="${version_ == 'c010'}">
+  <!--xacro:if value="${version_ == 'c010'}">
     <xacro:include filename="$(find anymal_c)/urdf/leg/leg_3_0_macro.urdf.xacro"/>
   </xacro:if>
 
   <xacro:if value="${version_ == 'c020'}">
     <xacro:include filename="$(find anymal_c)/urdf/leg/leg_3_0_1_macro.urdf.xacro"/>
-  </xacro:if>
+  </xacro:if-->
 
   <xacro:if value="${version_ == 'c100'}">
     <xacro:include filename="$(find anymal_c)/urdf/leg/leg_3_1_1_macro.urdf.xacro"/>
