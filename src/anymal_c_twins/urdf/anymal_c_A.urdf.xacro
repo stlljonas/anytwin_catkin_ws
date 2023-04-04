@@ -2,7 +2,7 @@
 
 <!-- This file contains the description of the ANYmal robot. -->
 
-<robot name="anymal_A" xmlns:xacro="http://www.ros.org/wiki/xacro">
+<robot name="anymal_c_A" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
   <!-- Arguments -->
   <xacro:arg name="simulation"                    default="true"/>

@@ -1,18 +1,11 @@
 <?xml version="1.0"?>
 
 <robot name="anymal_c" xmlns:xacro="http://www.ros.org/wiki/xacro">
-    <xacro:arg name="model" default="$(find anymal_c_renamable)/urdf/anymal_c_renamable.urdf.xacro"/>
+<!--include macro to load anymal_c versions A and B-->
+    <xacro:include filename="$(find anytwin_urdf_development)/urdf/anymal_c.urdf.xacro"/>
     <xacro:arg name="suffix_one" default="A"/>
-    <cacro:arg name="suffix_two" default="B"/>
-    
-    <xacro:include filename="$(find anymal_c)/urdf/anymal_c.urdf.xacro"/>
+    <xacro:arg name="suffix_two" default="B"/>
 
-    <xacro:macro name="anymal_c_macro" params="suffix_one_parameter suffix_two_parameter">
-        <!-- one cannot pass arguments (here: suffix_one or suffix_two into included files. I need to make the entire content of anymal_c a macro. Maybe I can then include it and use it here. )-->
-    </xacro:macro>
-    <!--joint name="caster_${suffix}_joint">
-        <axis xyz="0 0 1" />
-    </joint-->
-    <xacro:anymal_c_macro/>
-    <xacro:anymal_c_macro/>
+    <xacro:anymal_c_macro suffix="$(arg suffix_one)"/>
+    <xacro:anymal_c_macro suffix="$(arg suffix_two)"/>
 </robot>
