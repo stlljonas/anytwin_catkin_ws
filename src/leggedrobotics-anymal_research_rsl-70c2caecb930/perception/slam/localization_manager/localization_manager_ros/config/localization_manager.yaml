@@ -1,0 +1,3 @@
+# parameters for the localization manager
+broadcasting_time_step:     0.01
+pose_in_odom_topic:         /state_estimator/pose_in_odom

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<package format="2">
+
+  <name>qt_signal_generation</name>
+  <version>0.0.1</version>
+  <description>Tool for visualizing a signal.</description>
+
+  <license>Proprietary</license>
+  <author email="rdiethelm@anybotics.com">Remo Diethelm</author>
+  <maintainer email="rdiethelm@anybotics.com">Remo Diethelm</maintainer>
+  <maintainer email="sbachmann@anybotics.com">Samuel Bachmann</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>qcustomplot</depend>
+  <depend>signal_generation</depend>
+
+</package>

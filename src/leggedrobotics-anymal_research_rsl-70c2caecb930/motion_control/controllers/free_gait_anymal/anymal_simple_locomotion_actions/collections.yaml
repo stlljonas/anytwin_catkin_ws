@@ -1,0 +1,38 @@
+collections:
+  - collection:
+     id: climbing
+     name: Climbing
+     actions:
+      - step_climb_up_here
+      - step_climb_down_here
+      - step_climb_down_reverse_here
+      - step_climb_up_here_oo_leg_config
+  - collection:
+     id: obstacle
+     name: Obstacle Avoidance
+     actions:
+      - gap_small_climb_over_here
+      - obstacle_small_climb_over_here
+      - obstacle_small_climb_over_here_reverse
+      - obstacle_big_climb_over_here
+      - obstacle_big_climb_over_here_reverse
+      - obstacle_climb_over_here_oo_leg_config
+      - obstacle_climb_over_reverse_here_oo_leg_config
+      - overhanging_obstacle_walk_underneath_here
+  - collection:
+     id: walk
+     name: Walk
+     actions:
+      - walk
+  - collection:
+     id: return_to_pose
+     name: Return to Pose
+     actions:
+      - return_to_pose_save
+      - return_to_pose
+  - collection:
+     id: search_and_rescue
+     name: Search&Rescue
+     actions:
+      - drop_payload_left
+      - drop_payload_right

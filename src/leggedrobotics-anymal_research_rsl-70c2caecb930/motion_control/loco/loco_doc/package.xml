@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>loco_doc</name>
+  <version>0.6.0</version>
+  <description>The locomotion controller library documentation package</description>
+  <maintainer email="fgiraldez@anybotics.com">Francisco Giráldez Gámez</maintainer>
+  <maintainer email="avijayan@anybotics.com">Aravind Vijayan</maintainer>
+  <license>Proprietary</license>
+  <author email="ghottiger@anybotics.com">Gabriel Hottiger</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>doxygen</depend>
+  <depend>loco</depend>
+  <depend>loco_anymal</depend>
+  <depend>loco_perf</depend>
+  <depend>loco_ros</depend>
+  <depend>loco_ros_anymal</depend>
+  <depend>loco_sea</depend>
+
+</package>

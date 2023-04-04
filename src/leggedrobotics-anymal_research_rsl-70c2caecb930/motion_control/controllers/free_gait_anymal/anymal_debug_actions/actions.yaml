@@ -1,0 +1,121 @@
+actions:
+  - action:
+      id: base_target_in_map
+      name: Base Target in Map
+      file: actions/base_target_in_map.yaml
+      type: yaml
+      description: Debug motion for base target in map frame.
+  - action:
+      id: base_target
+      name: Base Target
+      file: actions/base_target.yaml
+      type: yaml
+      description: Debug motion for base target.
+  - action:
+      id: base_trajectory_in_map
+      name: Base Trajectory in Map
+      file: actions/base_trajectory_in_map.yaml
+      type: yaml
+      description: Debug motion for base trajectory in map frame.
+  - action:
+      id: base_and_joint_trajectory
+      name: Base and Joint Trajectory
+      file: actions/base_and_joint_trajectory.yaml
+      type: yaml
+      description: Debug motion for base and joint trajectory.
+  - action:
+      id: base_trajectory
+      name: Base Trajectory
+      file: actions/base_trajectory.yaml
+      type: yaml
+      description: Debug motion for base trajectory.
+  - action:
+      id: custom_command_freeze_joints
+      name: Custom Command Freeze Joints
+      file: actions/custom_command_freeze_joints.yaml
+      type: yaml
+      description: Debug action for freezing joints.
+  - action:
+      id: end_effector_target
+      name: End Effector Target
+      file: actions/end_effector_target.yaml
+      type: yaml
+      description: Debug motion for end target with regain contact.
+  - action:
+      id: end_effector_force_target
+      name: End Effector Force Target
+      file: actions/end_effector_force_target.yaml
+      type: yaml
+      description: Debug motion for end target with force.
+  - action:
+      id: end_effector_trajectory_in_map
+      name: End Effector Trajectory in Map
+      file: actions/end_effector_trajectory_in_map.yaml
+      type: yaml
+      description: Debug motion for end effector trajectory in map frame.
+  - action:
+      id: end_effector_trajectory
+      name: End Effector Trajectory
+      file: actions/end_effector_trajectory.yaml
+      type: yaml
+      description: Debug motion for end effector trajectory.
+  - action:
+      id: end_effector_force_trajectory
+      name: End Effector Force Trajectory
+      file: actions/end_effector_force_trajectory.yaml
+      type: yaml
+      description: Debug motion for end effector trajectory force controlled.
+  - action:
+      id: fast_tilt_sensor_test
+      name: Fast Tilt Sensor Test
+      file: actions/fast_tilt_sensor_test.yaml
+      type: yaml
+      description: Check the effect of tilt motion on sensor data with increasing speed.
+  - action:
+      id: joint_trajectory
+      name: Joint Trajectory
+      file: actions/joint_trajectory.yaml
+      type: yaml
+      description: Debug motion for joint trajectory.
+  - action:
+      id: leg_mode
+      name: Leg Mode
+      file: actions/leg_mode.yaml
+      type: yaml
+      description: Debug motion for leg mode (support/non-support).
+  - action:
+      id: regain_contact
+      name: Regain Contact
+      file: actions/regain_contact.yaml
+      type: yaml
+      description: Debug motion for regain contact.
+  - action:
+      id: square_up_in_map
+      name: Square Up in Map
+      file: actions/square_up_in_map.yaml
+      type: yaml
+      description: Debug motion for square up in map frame.
+  - action:
+      id: square_up_with_freeze_mode
+      name: Square Up with Freeze Mode
+      file: actions/square_up_with_freeze_mode.yaml
+      type: yaml
+      description: Debug motion for square in with opposing joints in freeze mode.
+  - action:
+      id: walk_backward_4_steps
+      name: Walk Backward 4 Steps
+      file: actions/walk_backward_4_steps.yaml
+      type: yaml
+      description: Debug motion walking backwards four steps.
+  - action:
+      id: walk_forward_4_steps
+      name: Walk Forward 4 Steps
+      file: actions/walk_forward_4_steps.yaml
+      type: yaml
+      description: Debug motion walking forward four steps.
+  - action:
+      id: test_end_effector_motion_final_state
+      name: Test End Effector Motion Final State
+      file: actions/test_end_effector_motion_final_state.yaml
+      type: yaml
+      description: Check the behavior of a end-effector motion at the end of an action.

@@ -1,0 +1,12 @@
+<package format="2">
+  <name>quadprog_catkin</name>
+  <version>0.5.0</version>
+  <description>quadprog_catkin</description>
+  <maintainer email="avijayan@anybotics.com">Aravind Vijayan</maintainer>
+  <maintainer email="fgiraldez@anybotics.com">Francisco Giráldez Gámez</maintainer>
+  <license>BSD</license>
+  <author email="bellicoso@mavt.ethz.ch">Dario Bellicoso</author>
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_export_depend>eigen</build_export_depend>
+</package>
+

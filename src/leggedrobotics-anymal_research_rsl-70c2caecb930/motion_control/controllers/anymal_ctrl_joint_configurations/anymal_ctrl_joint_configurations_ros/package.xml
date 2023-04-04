@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+
+<package format="2">
+
+  <name>anymal_ctrl_joint_configurations_ros</name>
+  <version>0.1.0</version>
+  <description>Package with a controller with ROS interface for the controller from the package anymal_ctrl_joint_configurations.</description>
+
+  <license>Proprietary</license>
+  <author email="areske@anybotics.com">Alexander Reske</author>
+  <maintainer email="vyuryev@anybotics.com">Valentin Yuryev</maintainer>
+  <maintainer email="avijayan@anybotics.com">Aravind Vijayan</maintainer>
+
+  <!-- Building tool -->
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <!-- Catkin dependencies for building and executing -->
+  <depend>actionlib</depend>
+  <depend>anymal_ctrl_joint_configurations</depend>
+  <depend>anymal_ctrl_joint_configurations_msgs</depend>
+  <depend>pluginlib</depend>
+  <depend>robot_control</depend>
+  <depend>roscpp</depend>
+
+  <!-- Catkin dependencies for building -->
+  <build_depend>cmake_clang_tools</build_depend>
+
+  <export>
+    <robot_control plugin="${prefix}/robot_control_plugin.xml"/>
+  </export>
+
+</package>

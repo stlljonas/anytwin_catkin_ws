@@ -1,0 +1,121 @@
+SplineFontDB: 3.0
+FontName: Untitled1
+FullName: Untitled1
+FamilyName: Untitled1
+Weight: Medium
+Copyright: Created by sam,,, with FontForge 2.0 (http://fontforge.sf.net)
+UComments: "2017-2-21: Created." 
+Version: 001.000
+ItalicAngle: 0
+UnderlinePosition: -100
+UnderlineWidth: 50
+Ascent: 800
+Descent: 200
+LayerCount: 2
+Layer: 0 0 "Back"  1
+Layer: 1 0 "Fore"  0
+XUID: [1021 20 1533799861 10527630]
+FSType: 0
+OS2Version: 0
+OS2_WeightWidthSlopeOnly: 0
+OS2_UseTypoMetrics: 1
+CreationTime: 1487668113
+ModificationTime: 1487673630
+OS2TypoAscent: 0
+OS2TypoAOffset: 1
+OS2TypoDescent: 0
+OS2TypoDOffset: 1
+OS2TypoLinegap: 90
+OS2WinAscent: 0
+OS2WinAOffset: 1
+OS2WinDescent: 0
+OS2WinDOffset: 1
+HheadAscent: 0
+HheadAOffset: 1
+HheadDescent: 0
+HheadDOffset: 1
+DEI: 91125
+Encoding: ISO8859-1
+UnicodeInterp: none
+NameList: Adobe Glyph List
+DisplaySize: -24
+AntiAlias: 1
+FitToEm: 1
+WinInfo: 0 22 7
+Grid
+-1000 300 m 0
+ 2000 300 l 0
+-1000 501 m 0
+ 2000 501 l 0
+-1000 399 m 0
+ 2000 399 l 0
+698 1300 m 0
+ 698 -700 l 0
+299 1300 m 0
+ 299 -700 l 0
+560 1300 m 0
+ 560 -700 l 0
+440 1300 m 0
+ 440 -700 l 0
+500 1300 m 0
+ 500 -700 l 0
+EndSplineSet
+BeginChars: 256 2
+
+StartChar: C
+Encoding: 67 67 0
+Width: 1000
+VWidth: 0
+Flags: H
+LayerCount: 2
+Fore
+SplineSet
+302 300 m 1
+ 698 801 l 1
+ 560 501 l 1
+ 698 501 l 1
+ 299 0 l 1
+ 443 300 l 1
+ 302 300 l 1
+EndSplineSet
+Validated: 1
+EndChar
+
+StartChar: question
+Encoding: 63 63 1
+Width: 1251
+VWidth: 2048
+Flags: HW
+LayerCount: 2
+Fore
+SplineSet
+539.029 228.301 m 5
+ 456.775 228.301 l 5
+ 456.562 245.178 456.453 255.459 456.453 259.141 c 4
+ 456.453 297.19 460.862 328.491 469.678 353.039 c 132
+ 478.495 377.589 496.129 405.205 522.578 435.892 c 132
+ 549.028 466.578 564.834 486.678 569.995 496.188 c 4
+ 577.951 511.227 581.929 527.798 581.929 545.9 c 4
+ 581.929 571.062 574.887 592.619 560.803 610.571 c 132
+ 546.717 628.521 527.739 637.498 503.87 637.498 c 4
+ 480.86 637.498 461.614 628.139 446.132 609.421 c 132
+ 430.649 590.702 420.004 562.165 414.198 523.807 c 5
+ 330.979 538.536 l 5
+ 333.344 593.463 349.74 640.106 380.168 678.464 c 132
+ 410.596 716.82 450.54 736 500 736 c 4
+ 552.039 736 593.434 716.59 624.186 677.772 c 132
+ 654.936 638.956 670.311 593.771 670.311 542.218 c 4
+ 670.311 513.681 664.666 486.677 653.377 461.208 c 132
+ 642.087 435.738 617.948 401.062 580.962 357.183 c 4
+ 561.824 334.474 549.941 316.216 545.319 302.408 c 132
+ 540.696 288.6 538.6 263.897 539.029 228.301 c 5
+456.775 54.3125 m 5
+ 456.775 183.654 l 5
+ 547.416 183.654 l 5
+ 547.416 54.3125 l 5
+ 456.775 54.3125 l 5
+EndSplineSet
+Validated: 524321
+EndChar
+EndChars
+EndSplineFont

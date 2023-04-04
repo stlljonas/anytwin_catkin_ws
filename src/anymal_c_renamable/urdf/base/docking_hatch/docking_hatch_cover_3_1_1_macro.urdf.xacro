@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:macro name="docking_hatch_cover">
+
+    <xacro:property name="Dhc_r_Dhccom_x"  value= "-0.003"/> <!--  [m] -->
+    <xacro:property name="Dhc_r_Dhccom_y"  value= "0.0"/> <!--  [m] -->
+    <xacro:property name="Dhc_r_Dhccom_z"  value= "0.005"/> <!--  [m] -->
+    <xacro:property name="m_Dhc"           value= "0.065"/> <!-- [kg] -->
+    <xacro:property name="Dhc_Ixx_Dhc"     value= "0.00063283"/> <!-- [kg * m^2] -->
+    <xacro:property name="Dhc_Iyy_Dhc"     value= "0.00110971"/> <!-- [kg * m^2] -->
+    <xacro:property name="Dhc_Izz_Dhc"     value= "0.00171883"/> <!-- [kg * m^2] -->
+    <xacro:property name="Dhc_Ixy_Dhc"     value= "0.0"/> <!-- [kg * m^2] -->
+    <xacro:property name="Dhc_Ixz_Dhc"     value= "0.000000345"/> <!-- [kg * m^2] -->
+    <xacro:property name="Dhc_Iyz_Dhc"     value= "0.0"/> <!-- [kg * m^2] -->
+
+
+    <!-- Fixed joint to add docking  -->
+    <joint name="base_to_docking_hatch_cover" type="fixed">
+      <parent link="base"/>
+      <child link="docking_hatch_cover"/>
+      <origin xyz="0.343 0.0 -0.07" rpy="0 0 0"/>
+    </joint>
+
+    <!-- Hatch cover link -->
+    <link name="docking_hatch_cover">
+      <!--  TODO(fgiraldez): add visual    -->
+      <inertial>
+        <origin   xyz="${Dhc_r_Dhccom_x} ${Dhc_r_Dhccom_y} ${Dhc_r_Dhccom_z}"
+                  rpy="0 0 0"/>
+        <mass     value="${m_Dhc}"/>
+        <inertia  ixx="${Dhc_Ixx_Dhc}" ixy="${Dhc_Ixy_Dhc}" ixz="${Dhc_Ixz_Dhc}"
+                  iyy="${Dhc_Iyy_Dhc}" iyz="${Dhc_Iyz_Dhc}" izz="${Dhc_Izz_Dhc}"/>
+      </inertial>    
+    </link>
+
+  </xacro:macro>
+
+</robot>

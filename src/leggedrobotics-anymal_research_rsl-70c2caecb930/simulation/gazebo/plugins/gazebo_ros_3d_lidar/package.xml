@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+<package format="2">
+
+  <name>gazebo_ros_3d_lidar</name>
+  <version>0.6.0</version>
+  <description>Gazebo ROS 3D Laser Plugin</description>
+
+  <license>Proprietary</license>
+
+  <author email="jerome.maye@mavt.ethz.ch">Jerome Maye</author>
+  <maintainer email="rdiethelm@anybotics.com">Remo Diethelm</maintainer>
+  <maintainer email="pleemann@anybotics.com">Philipp Leemann</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>boost</depend>
+  <depend>diagnostic_updater</depend>
+  <depend>gazebo_ros</depend>
+
+  <export>
+    <gazebo plugin_path="${prefix}/lib" gazebo_media_path="${prefix}"/>
+  </export>
+
+</package>

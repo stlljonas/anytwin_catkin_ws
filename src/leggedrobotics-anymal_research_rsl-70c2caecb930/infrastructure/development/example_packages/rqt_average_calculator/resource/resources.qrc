@@ -1,0 +1,7 @@
+<!DOCTYPE RCC><RCC version="1.0">
+  <qresource>
+    <file>images/average.png</file>
+    <file>images/clear.png</file>
+    <file>images/surprise.png</file>
+  </qresource>
+</RCC>

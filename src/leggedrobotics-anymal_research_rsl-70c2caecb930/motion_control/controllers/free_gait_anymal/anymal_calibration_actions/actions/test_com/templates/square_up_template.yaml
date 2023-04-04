@@ -1,0 +1,58 @@
+adapt_coordinates:
+  - transform:
+      source_frame: footprint
+      target_frame: odom
+      transform_in_source_frame:
+        position: [0.0, 0.0, 0.0]
+        orientation: [0.0, 0.0, 0.0]
+
+steps:
+
+ - step:
+    - base_auto:
+       height: <base_height>
+       support_margin: <support_margin>
+       average_linear_velocity: <base_average_linear_velocity>
+ - step:
+    - footstep:
+       name: LH_LEG
+       average_velocity: <foot_average_velocity>
+       target:
+        frame: footprint
+        position: [<position_x_negative>, <position_y>, 0.0]
+
+ - step:
+    - base_auto:
+       support_margin: <support_margin>
+       average_linear_velocity: <base_average_linear_velocity>
+ - step:
+    - footstep:
+       name: LF_LEG
+       average_velocity: <foot_average_velocity>
+       target:
+        frame: footprint
+        position: [<position_x>, <position_y>, 0.0]
+
+ - step:
+    - base_auto:
+       support_margin: <support_margin>
+       average_linear_velocity: <base_average_linear_velocity>
+ - step:
+    - footstep:
+       name: RH_LEG
+       average_velocity: <foot_average_velocity>
+       target:
+        frame: footprint
+        position: [<position_x_negative>, <position_y_negative>, 0.0]
+
+ - step:
+    - base_auto:
+       support_margin: <support_margin>
+       average_linear_velocity: <base_average_linear_velocity>
+ - step:
+    - footstep:
+       name: RF_LEG
+       average_velocity: <foot_average_velocity>
+       target:
+        frame: footprint
+        position: [<position_x>, <position_y_negative>, 0.0]

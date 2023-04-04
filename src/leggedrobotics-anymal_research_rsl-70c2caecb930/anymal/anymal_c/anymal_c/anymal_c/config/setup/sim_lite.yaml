@@ -1,0 +1,51 @@
+anymal_highlevel_controller:
+  controller:
+    simulation: true
+controlmanager:
+  simulation: true
+load_anymal_description:
+  custom_parameters:
+    simulate_depth_camera: false
+    simulate_lidar: false
+    simulate_thermal_camera: false
+    simulate_wide_angle_camera: false
+    simulate_zoom_camera: false
+    simulation: true
+monitor_network_llpc:
+  simulation: true
+monitor_network_op:
+  simulation: true
+path_planning_and_following:
+  simulation: true
+rqt_motion_control:
+  simulation: true
+stack_launcher:
+  stacks:
+    navigation:
+      nodes:
+        elevation_mapping:
+          enabled: false
+        point_cloud_filter:
+          enabled: false
+    post_process_config:
+      nodes:
+        load_dodgeball_description:
+          enabled: true
+    waypoints_editor_standalone:
+      nodes:
+        gazebo:
+          enabled: true
+        gazebo2marker:
+          enabled: true
+        gazebo2tf:
+          enabled: true
+        gazebo2tf_world_to_gazebo_publisher:
+          enabled: true
+        rviz_world_loader:
+          enabled: false
+state_estimator:
+  simulation: true
+system_behavior_plugins:
+  start_up:
+    simulation: true
+use_sim_time: true

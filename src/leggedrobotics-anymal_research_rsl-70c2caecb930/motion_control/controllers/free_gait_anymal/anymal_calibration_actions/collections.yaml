@@ -1,0 +1,13 @@
+collections:
+  - collection:
+     id: calibration
+     name: Calibration
+     actions:
+      - test_com_with_square_up
+      - tilt_motion
+      - legs_out_front
+      - legs_out_side
+      - rotation
+      - translation_z
+      - translation_y
+      - translation_x

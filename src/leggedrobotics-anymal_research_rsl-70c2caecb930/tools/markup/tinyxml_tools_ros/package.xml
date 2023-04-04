@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+
+<package format="2">
+
+  <name>tinyxml_tools_ros</name>
+  <version>0.6.0</version>
+  <description>The tinyxml_tools_ros package</description>
+
+  <license>Proprietary</license>
+  <author email="fperry@ethz.ch">Perry Farnklin</author>
+  <author email="ghottiger@anybotics.com">Gabriel Hottiger</author>
+  <maintainer email="ghottiger@anybotics.com">Gabriel Hottiger</maintainer>
+  <maintainer email="rdiethelm@anybotics.com">Remo Diethelm</maintainer>
+
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>message_logger</depend>
+  <depend>roslib</depend>
+  <depend>tinyxml_tools</depend>
+
+  <build_depend>cmake_clang_tools</build_depend>
+
+  <test_depend>cmake_code_coverage</test_depend>
+
+</package>

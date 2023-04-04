@@ -1,0 +1,136 @@
+load_anymal_description:
+  custom_parameters:
+    depth_camera: true
+    lidar: true
+point_cloud_odometry_pose_logger:
+  coordinate_frames:
+    robot_frame: base
+    robot_name: anymal
+    world_frame: world
+  file_prefix: point_cloud_odometry
+  is_ground_truth_fetched_from_simulator: false
+  is_tracked_pose_transformed_to_world_frame: false
+  logging_formats:
+    - tum
+  output_directory: log/slam_loggers/
+  session_info: ''
+  topic_type: PoseStamped
+  tracked_frame: point_cloud_odom
+  wait_time_tf: 0.05
+slam:
+  localization:
+    enable_on_launch: false
+  mapping:
+    enable_on_launch: false
+  publish_pose:
+    enable_on_launch: false
+slam_pose_logger:
+  coordinate_frames:
+    robot_frame: base
+    robot_name: anymal
+    world_frame: world
+  file_prefix: slam
+  is_ground_truth_fetched_from_simulator: false
+  is_tracked_pose_transformed_to_world_frame: false
+  logging_formats:
+    - tum
+  output_directory: log/slam_loggers/
+  session_info: ''
+  topic_type: PoseStamped
+  tracked_frame: map
+  wait_time_tf: 0.05
+stack_launcher:
+  nodes:
+    point_cloud_odometry_pose_logger:
+      roslaunch:
+        name: point_cloud_odometry_pose_logger
+        node_type: pose_logger
+        output: screen
+        package: slam_loggers
+        remap_args:
+          robot_pose:
+            from: point_cloud_odometry_pose_logger/robot_pose
+            to: /point_cloud_odometry/pose_visualizable
+    slam_pose_logger:
+      roslaunch:
+        name: slam_pose_logger
+        node_type: pose_logger
+        output: screen
+        package: slam_loggers
+        remap_args:
+          robot_pose:
+            from: slam_pose_logger/robot_pose
+            to: /slam/pose_visualizable
+    state_estimator_pose_logger:
+      roslaunch:
+        name: state_estimator_pose_logger
+        node_type: pose_logger
+        output: screen
+        package: slam_loggers
+        remap_args:
+          robot_pose:
+            from: state_estimator_pose_logger/robot_pose
+            to: /state_estimator/pose_in_odom
+  stacks:
+    replay:
+      nodes:
+        anymal_tf_publisher:
+          enabled: true
+          name: anymal_tf_publisher
+        elevation_mapping:
+          enabled: true
+          name: elevation_mapping
+        environment_visualizer:
+          enabled: true
+          name: environment_visualizer
+        interaction_marker:
+          enabled: true
+          name: interaction_marker
+        localization_manager:
+          enabled: true
+          name: localization_manager
+        point_cloud_filter:
+          enabled: true
+          name: point_cloud_filter
+        point_cloud_odometry:
+          enabled: true
+          name: point_cloud_odometry
+        point_cloud_odometry_pose_logger:
+          enabled: true
+          name: point_cloud_odometry_pose_logger
+        rqt_gui:
+          enabled: true
+          name: rqt_gui
+        rviz:
+          enabled: true
+          name: rviz
+        slam:
+          enabled: true
+          name: slam
+        slam_pose_logger:
+          enabled: true
+          name: slam_pose_logger
+        state_estimator:
+          enabled: false
+          name: state_estimator
+        state_estimator_pose_logger:
+          enabled: true
+          name: state_estimator_pose_logger
+state_estimator:
+  standalone: true
+state_estimator_pose_logger:
+  coordinate_frames:
+    robot_frame: base
+    robot_name: anymal
+    world_frame: world
+  file_prefix: state_estimator
+  is_ground_truth_fetched_from_simulator: false
+  is_tracked_pose_transformed_to_world_frame: false
+  logging_formats:
+    - tum
+  output_directory: log/slam_loggers/
+  session_info: ''
+  topic_type: PoseWithCovarianceStamped
+  tracked_frame: odom
+  wait_time_tf: 0.05
+use_sim_time: true

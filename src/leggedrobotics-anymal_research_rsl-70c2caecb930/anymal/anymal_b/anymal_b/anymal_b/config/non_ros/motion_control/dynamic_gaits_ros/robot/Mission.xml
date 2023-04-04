@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+<Mission>
+  <Configuration>
+    <Position>
+      <Initial x="0.0" y="0.0" z="0.0"/>
+      <Minimal x="-0.3" y="-0.3" z="-0.05"/>
+      <Maximal x="0.3" y="0.3" z="0.05"/>
+    </Position>
+    <Orientation>      <!-- Euler Angle ZYX -->
+      <Initial x="0.0" y="0.0" z="0"/>
+      <Minimal x="-0.2" y="-0.2" z="-0.2"/>
+      <Maximal x="0.2" y="0.2" z="0.2"/>
+    </Orientation>
+  </Configuration>
+  <Speed>
+    <Initial headingSpeed="0.0" lateralSpeed="0.0" turningSpeed="0.0"/>
+    <Maximum headingSpeed="0.0" lateralSpeed="0.0" turningSpeed="0.0"/>
+    <FilterAlpha>
+      <Position x="0.01" y="0.01" z="0.01"/>
+      <Rotation x="0.01" y="0.01" z="0.01"/>
+      <Velocity x="0.004" y="0.004" z="0.004"/>
+    </FilterAlpha>
+    <Gait type="walk">
+      <Maximum headingSpeed="0.50" lateralSpeed="0.40" turningSpeed="0.40"/>
+    </Gait>
+    <Gait type="crawl">
+      <Maximum headingSpeed="0.4" lateralSpeed="0.10" turningSpeed="0.20"/>
+    </Gait>
+    <Gait type="run, balance">
+      <Maximum headingSpeed="0.65" lateralSpeed="0.40" turningSpeed="0.60"/>
+    </Gait>
+    <Gait type="crawling_no_stance, jump_diagonal, pace">
+      <Maximum headingSpeed="0.4" lateralSpeed="0.10" turningSpeed="0.20"/>
+    </Gait>
+    <Gait type="amble, dyn_lateral_walk">
+      <Maximum headingSpeed="0.50" lateralSpeed="0.20" turningSpeed="0.45"/>
+    </Gait>
+    <Gait type="flying_trot, flying_pace, pronking, bound, traverse_gallop, rotatory_gallop, canter">
+      <Maximum headingSpeed="1.0" lateralSpeed="0.30" turningSpeed="0.70"/>
+    </Gait>
+    <VelocityClipping type="box"/>    <!-- box/ellipsoid -->
+  </Speed>
+  <LocomotionStateSwitches>
+    <BaseVelocityFilter time_constant="0.3" velocity_scaling="1.0"/>
+    <SwitchToStand start_vel_threshold="0.07" end_vel_threshold="0.05" time_threshold="0.10"/>
+    <SwitchDirection start_vel_threshold="0.020" end_vel_threshold="0.050" time_threshold="0.05"/>
+    <Balancing start_vel_threshold="0.150" end_vel_threshold="0.250" time_threshold="0.80" shrink_polygon_factor="0.4"/>
+  </LocomotionStateSwitches>
+</Mission>

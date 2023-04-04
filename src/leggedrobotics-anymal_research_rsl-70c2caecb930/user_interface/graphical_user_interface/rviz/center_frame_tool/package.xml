@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+
+<package format="2">
+
+  <name>center_frame_tool</name>
+  <version>0.6.0</version>
+  <description>Plugin for centering the camera on a specified frame.</description>
+
+  <license>BSD</license>
+
+  <author email="fperry@student.ethz.ch">Perry Franklin</author>
+  <maintainer email="lisler@anybotics.com">Linus Isler</maintainer>
+  <maintainer email="rdiethelm@anybotics.com">Remo Diethelm</maintainer>
+
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>rviz</depend>
+  <depend>qtbase5-dev</depend>
+
+  <export>
+      <rviz plugin="${prefix}/plugin_description.xml"/>
+  </export>
+
+</package>

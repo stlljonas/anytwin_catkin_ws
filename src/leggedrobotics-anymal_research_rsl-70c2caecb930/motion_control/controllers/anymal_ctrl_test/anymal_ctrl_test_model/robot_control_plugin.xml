@@ -1,0 +1,3 @@
+<library path="lib/libanymal_ctrl_test_model_plugin">
+  <class type="anymal_ctrl_test_model::TestModel" base_class_type="robot_control::ControllerInterface" />
+</library>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+    
+  <!-- Name of the actuated lidar -->
+  <arg name="name" default="actuated_lidar"/>
+  <!-- ID of the dynamixel frame -->
+  <arg name="dynamixel_frame_id" default="$(arg name)_dynamixel"/>
+  <!-- Actuated lidar configuration file -->
+  <arg name="config_file" default="$(find actuated_lidar)/config/actuated_lidar.yaml" />
+
+  <!-- Load parameters -->
+  <rosparam command="load" ns="$(arg name)" file="$(find actuated_lidar)/config/single_device.yaml"/>
+  <rosparam command="load" ns="$(arg name)" file="$(arg config_file)"/>
+
+  <!-- Dynamixel driver -->
+  <node ns="$(arg name)" name="dynamixel" pkg="dynamixel_ros" type="dynamixel_ros_node" output="screen" respawn="true">
+    <param name="sensor/serial_port_baud_rate"   value="19200"/>
+    <param name="sensor/motor_id"                value="1"/>
+    <param name="joint_state_publisher/frame_id" value="$(arg dynamixel_frame_id)"/>
+  </node>
+
+</launch>

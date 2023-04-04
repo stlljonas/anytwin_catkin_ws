@@ -1,0 +1,10 @@
+.cproject
+.project
+.pydevproject
+build/
+bin/
+lib/
+msg_gen/
+srv_gen/
+_*
+*.*~

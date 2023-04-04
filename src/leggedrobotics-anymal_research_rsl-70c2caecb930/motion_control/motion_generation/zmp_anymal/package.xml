@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>zmp_anymal</name>
+  <version>0.4.0</version>
+  <description>The zmp_anymal package</description>
+  <maintainer email="avijayan@anybotics.com">Aravind Vijayan</maintainer>
+  <maintainer email="fgiraldez@anybotics.com">Francisco Giráldez Gámez</maintainer>
+  <license>Proprietary</license>
+  <author email="bellicoso@mavt.ethz.ch">Dario Bellicoso</author>
+  <author email="fabianje@student.ethz.ch">Fabian Jenelten</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>anymal_ctrl_dynamic_gaits</depend>
+  <depend>anymal_description</depend>
+  <depend>anymal_model</depend>
+  <depend>cosmo_ros</depend>
+  <depend>joy_motion_control</depend>
+  <depend>joy_anymal_lowlevel_controller</depend>
+  <depend>joy_state_estimation</depend>
+  <depend>loco_anymal</depend>
+  <depend>loco_ros_anymal</depend>
+  <depend>numopt_quadprog</depend>
+  <depend>numopt_common</depend>
+  <depend>motion_generation</depend>
+  <depend>motion_generation_loco</depend>
+  <depend>motion_generation_msgs</depend>
+  <depend>motion_generation_ros</depend>
+  <depend>motion_generation_utils</depend>
+  <depend>message_logger</depend>
+  <depend>robot_utils</depend>
+  <depend>tinyxml_tools</depend>
+  <depend>loco</depend>
+  <depend>kindr</depend>
+  <depend>kindr_ros</depend>
+  <depend>interactive_markers</depend>
+  <depend>rqt_highlevel_controlmanager</depend>
+  <depend>rqt_gait_switcher</depend>
+  <depend>rqt_loco_visualizer</depend>
+  <depend>zmp_optimizer</depend>
+  <depend>anymal_tf_publisher</depend>
+  <depend>param_io</depend>
+  <depend>parameter_handler</depend>
+  <depend>parameter_handler_ros</depend>
+  <depend>joy_manager</depend>
+  <build_export_depend>eigen</build_export_depend>
+  <test_depend>gtest</test_depend>
+  <test_depend>anymal_b</test_depend>
+</package>

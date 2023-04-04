@@ -1,0 +1,39 @@
+image: docker.anybotics.com/anybotics-infrastructure/general-infrastructure/anymal-research:bionic
+
+variables:
+  GIT_STRATEGY: none
+
+  WORKSPACE: ${CI_PROJECT_DIR}
+  PYTHONUNBUFFERED: 'true'
+
+stages:
+  - build
+
+build:
+  stage: build
+  only:
+    - merge_requests
+    - master
+
+  script:
+# Uncomment this once the docker images contain build artifacts
+#    - if [[ ! -d ${CI_PROJECT_DIR}/install ]]; then
+#        export CI_FLAGS="${CI_FLAGS} --build-unchanged";
+#      fi
+    - mkdir -p ${CI_PROJECT_DIR}/src &&
+      ln -s ${CI_PROJECT_DIR/builds/root}/src ${CI_PROJECT_DIR}/src/package &&
+      mkdir -p ${CI_PROJECT_DIR/builds/root}/install &&
+      ln -s ${CI_PROJECT_DIR/builds/root}/install ${CI_PROJECT_DIR}/install &&
+      cd ${CI_PROJECT_DIR}/src/package &&
+      git remote set-url origin ${CI_REPOSITORY_URL} &&
+      git fetch --all -q &&
+      git remote prune origin > /dev/null &&
+      git -c advice.detachedHead=false checkout -f ${CI_COMMIT_SHA}
+    - cd ${CI_PROJECT_DIR} &&
+      git clone -b master --depth 1 https://${CI_ACCESS_USER}:${CI_ACCESS_TOKEN}@code.anymal.com/anymal_research/continuous_integration.git
+    - python3 ./continuous_integration/continuous_integration/run_build.py --branch ${CI_COMMIT_REF_NAME} --target ${CI_MERGE_REQUEST_TARGET_BRANCH_NAME} --no-sync-check --skip-doxygen --no-test-coverage --no-package-metadata ${CI_FLAGS}
+
+  artifacts:
+    reports:
+      junit:
+        - cppcheck-result.xml

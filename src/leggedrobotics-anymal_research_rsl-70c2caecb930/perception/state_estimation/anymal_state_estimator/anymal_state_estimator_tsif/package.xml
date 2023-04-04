@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<package format="2" >
+
+  <name>anymal_state_estimator_tsif</name>
+  <version>0.6.0</version>
+  <description>The ANYmal state estimator.</description>
+
+  <license>Proprietary</license>
+
+  <author email="cgehring@anybotics.com">Christian Gehring</author>
+  <maintainer email="mwulf@anybotics.com">Maximilian Wulf</maintainer>
+  <maintainer email="vyuryev@anybotics.com">Valentin Yuryev</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>cmake_clang_tools</build_depend>
+
+  <depend>anymal_description</depend>
+  <depend>anymal_model</depend>
+  <depend>anymal_model_ros</depend>
+  <depend>anymal_state_estimator</depend>
+  <depend>two_state_information_filter</depend>
+
+  <test_depend>cmake_code_coverage</test_depend>
+
+</package>

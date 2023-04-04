@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package format="2">
+  <name>rqt_rpsm</name>
+  <version>0.3.0</version>
+  <description>rqt_rpsm provides a GUI plugin to display and interact with the RPSM</description>
+
+  <maintainer email="msuetterlin@anybotics.com">Marco Sütterlin</maintainer>
+  <maintainer email="pleemann@anybotics.com">Philipp Leemann</maintainer>
+  <license>Proprietary</license>
+  <author email="sbachmann@anybotics.com">Samuel Bachmann</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>actionlib</depend>
+  <depend>qtbase5-dev</depend>
+  <depend>roscpp</depend>
+  <depend>rpsm_msgs</depend>
+  <depend>rqt_gui</depend>
+  <depend>rqt_gui_cpp</depend>
+  <depend>sensor_msgs</depend>
+  <depend>std_srvs</depend>
+
+  <export>
+    <rqt_gui plugin="${prefix}/plugin.xml"/>
+  </export>
+</package>

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>rpsm_master</name>
+  <version>0.3.0</version>
+  <description>The rpsm_master package</description>
+  <maintainer email="msuetterlin@anybotics.com">Marco Sütterlin</maintainer>
+  <maintainer email="pleemann@anybotics.com">Philipp Leemann</maintainer>
+  <author email="cgehring@anybotics.com">Christian Gehring</author>
+  <author email="yuryev@student.ethz.ch">Valentin Yuryev</author>
+  <license>Proprietary</license>
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>actionlib</depend>
+  <depend>any_msgs</depend>
+  <depend>any_node</depend>
+  <depend>roscpp</depend>
+  <depend>rpsm_msgs</depend>
+  <depend>sensor_msgs</depend>
+  <depend>serial</depend>
+  <depend>std_msgs</depend>
+  <depend>std_srvs</depend>
+</package>

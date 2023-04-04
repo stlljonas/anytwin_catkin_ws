@@ -1,0 +1,18 @@
+<library path="lib/librqt_anymal_state_visualizer">
+  <class name="AnymalStateVisualizerPlugin" type="AnymalStateVisualizerPlugin"
+         base_class_type="rqt_gui_cpp::Plugin">
+    <description>
+      An rqt plugin that visualizes a anymal's state.
+    </description>
+    <qtgui>
+      <group>
+        <label>Any</label>
+        <icon type="theme">folder</icon>
+        <statustip>Plugins related to any</statustip>
+      </group>
+      <label>Anymal state visualizer</label>
+      <icon type="theme">applications-graphics</icon>
+      <statustip>Visualize the anymal state.</statustip>
+    </qtgui>
+  </class>
+</library>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+  <!-- Namespace -->
+  <arg name="ns" value="anymal_state_monitor"/>
+
+  <!-- Node -->
+  <node ns="$(arg ns)" pkg="anymal_state_monitor"
+        type="anymal_state_monitor" name="anymal_state_monitor_node" output="screen">
+    <rosparam file="$(find anymal_state_monitor)/config/components.yaml" command="load"/>
+    <rosparam file="$(find anymal_state_monitor)/config/config.yaml" command="load"/>
+    <rosparam file="$(find anymal_state_monitor)/config/notificationPublisher.yaml" command="load"/>
+    <rosparam file="$(find anymal_state_monitor)/config/notificationSubscriber.yaml" command="load"/>
+  </node>
+</launch>

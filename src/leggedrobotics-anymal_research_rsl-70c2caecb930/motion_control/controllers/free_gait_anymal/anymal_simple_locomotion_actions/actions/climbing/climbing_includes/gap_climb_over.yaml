@@ -1,0 +1,209 @@
+adapt_coordinates:
+  source_frame: map
+  target:
+    frame: <target_frame>
+    position: [<position_x>, <position_y>, <position_z>]
+    orientation: [0.0, 0.0, <orientation_yaw>]
+
+steps:
+
+ # Square up.
+ - step:
+    - base_auto:
+       height: 0.44
+ - step:
+    - base_auto:
+    - footstep:
+       name: LH_LEG
+       target:
+        frame: map
+        position: [-0.2, 0.22, 0.0]
+ - step:
+    - base_auto:
+ - step:
+    - base_auto:
+    - footstep:
+       name: LF_LEG
+       target:
+        frame: map
+        position: [0.4, 0.22, 0.0]
+ - step:
+    - base_auto:
+ - step:
+    - base_auto:
+    - footstep:
+       name: RH_LEG
+       target:
+        frame: map
+        position: [-0.2, -0.22, 0.0]
+ - step:
+    - base_auto:
+ - step:
+    - base_auto:
+    - footstep:
+       name: RF_LEG
+       target:
+        frame: map
+        position: [0.4, -0.22, 0.0]
+
+ # Prepare hind legs.
+ - step:
+   - base_auto:
+      height: 0.43
+ - step:
+    - base_auto:
+    - footstep:
+       name: LH_LEG
+       target:
+        frame: map
+        position: [0.05, 0.22, 0.0]
+ - step:
+   - base_auto:
+ - step:
+    - base_auto:
+    - footstep:
+       name: RH_LEG
+       target:
+        frame: map
+        position: [0.05, -0.22, 0.0]
+
+ # Step over with fore legs.
+ - step:
+   - base_auto:
+ - step:
+   - base_auto:
+   - footstep:
+      name: RF_LEG
+      target:
+       frame: map
+       position: [0.65, -0.22, 0.0]
+ - step:
+   - base_auto:
+ - step:
+   - base_auto:
+   - footstep:
+      name: LF_LEG
+      target:
+       frame: map
+       position: [0.7, 0.22, 0.0]
+
+ # Sneak half ways.
+ - step:
+    - base_auto:
+ - step:
+    - base_auto:
+    - footstep:
+       name: LH_LEG
+       target:
+        frame: map
+        position: [0.15, 0.27, 0.0]
+ - step:
+    - base_auto:
+ - step:
+    - base_auto:
+    - footstep:
+       name: RH_LEG
+       target:
+        frame: map
+        position: [0.15, -0.27, 0.0]
+ - step:
+    - base_auto:
+ - step:
+    - base_auto:
+    - footstep:
+       name: RF_LEG
+       target:
+        frame: map
+        position: [0.87, -0.27, <step_height>]
+ - step:
+    - base_auto:
+ - step:
+    - base_auto:
+    - footstep:
+       name: LF_LEG
+       target:
+        frame: map
+        position: [0.87, 0.27, <step_height>]
+ - step:
+    - base_auto:
+ - step:
+    - base_auto:
+    - footstep:
+       name: LH_LEG
+       target:
+        frame: map
+        position: [0.4, 0.27, 0.0]
+ - step:
+    - base_auto:
+ - step:
+    - base_auto:
+    - footstep:
+       name: RH_LEG
+       target:
+        frame: map
+        position: [0.4, -0.27, 0.0]
+ - step:
+    - base_auto:
+ - step:
+    - base_auto:
+    - footstep:
+       name: RF_LEG
+       target:
+        frame: map
+        position: [1.08, -0.27, <step_height>]
+ - step:
+    - base_auto:
+ - step:
+    - base_auto:
+    - footstep:
+       name: LF_LEG
+       target:
+        frame: map
+        position: [1.08, 0.27, <step_height>]
+
+ # Step up with hind legs.
+ - step:
+    - base_auto:
+ - step:
+    - base_auto:
+    - footstep:
+       name: LH_LEG
+       target:
+        frame: map
+        position: [0.60, 0.27, <step_height>]
+       profile_height: 0.1
+ - step:
+    - base_auto:
+       height: 0.37
+ - step:
+    - base_auto:
+       height: 0.4
+    - footstep:
+       name: RH_LEG
+       target:
+        frame: map
+        position: [0.61, -0.27, <step_height>]
+
+ # Stretch.
+ - step:
+    - base_auto:
+       height: 0.42
+ - step:
+    - base_auto:
+    - footstep:
+       name: RF_LEG
+       target:
+        frame: map
+        position: [1.15, -0.27, <step_height>]
+ - step:
+    - base_auto:
+ - step:
+    - base_auto:
+       height: 0.45
+    - footstep:
+       name: LF_LEG
+       target:
+        frame: map
+        position: [1.15, 0.27, <step_height>]
+ - step:
+    - base_auto:

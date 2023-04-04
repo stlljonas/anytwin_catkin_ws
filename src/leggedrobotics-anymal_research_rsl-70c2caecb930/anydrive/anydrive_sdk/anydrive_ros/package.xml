@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+
+<package format="2">
+
+  <name>anydrive_ros</name>
+  <version>0.6.0</version>
+  <description>C++ library adding a ROS interface to the classes in the anydrive library.</description>
+
+  <license>Proprietary</license>
+  <author email="rdiethelm@anybotics.com">Remo Diethelm</author>
+  <author email="cgehring@anybotics.com">Christian Gehring</author>
+  <maintainer email="rdiethelm@anybotics.com">Remo Diethelm</maintainer>
+  <maintainer email="pleemann@anybotics.com">Philipp Leemann</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>cmake_clang_tools</build_depend>
+
+  <depend>any_measurements_ros</depend>
+  <depend>any_node</depend>
+  <depend>anydrive</depend>
+  <depend>anydrive_msgs</depend>
+  <depend>param_io</depend>
+  <depend>roscpp</depend>
+  <depend>sensor_msgs</depend>
+  <depend>std_srvs</depend>
+
+</package>
+

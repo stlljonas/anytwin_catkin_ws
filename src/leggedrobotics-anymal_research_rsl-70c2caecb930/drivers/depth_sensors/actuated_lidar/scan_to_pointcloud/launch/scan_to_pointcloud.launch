@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+  
+  <!-- Namespace of the node -->
+  <arg name="namespace" default="scan_to_pointcloud"/>
+  <!-- Target frame id -->
+  <arg name="target_frame_id" default="map"/>
+  <!-- Input topic -->
+  <arg name="input" default="scan"/>
+  <!-- Output topic -->
+  <arg name="output" default="point_cloud"/>
+  
+  <!-- Scan to point cloud -->
+  <node ns="$(arg namespace)" name="scan_to_pointcloud" pkg="scan_to_pointcloud" type="scan_to_pointcloud_node">
+    <rosparam command="load"                   file="$(find scan_to_pointcloud)/config/ros.yaml"/>
+    <param name="target_frame_id"              value="$(arg target_frame_id)"/>
+    <param name="subscribers/scan/topic"       value="$(arg input)"/>
+    <param name="publishers/point_cloud/topic" value="$(arg output)"/>
+  </node>
+
+</launch>

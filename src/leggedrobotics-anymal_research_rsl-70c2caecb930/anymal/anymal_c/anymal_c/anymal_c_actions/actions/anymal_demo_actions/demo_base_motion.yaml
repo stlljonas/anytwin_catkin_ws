@@ -1,0 +1,65 @@
+adapt_coordinates:
+  - transform:
+      source_frame: footprint
+      target_frame: odom
+
+steps:
+ - step:
+    - base_trajectory:
+       trajectory:
+        frame: footprint
+        knots:
+         - time: 2.0
+           position: [0.0, 0.0, 0.2]
+           orientation: [0.0, 0.0, 0.0]
+         - time: 4.0
+           position: [0.0, 0.0, 0.54]
+           orientation: [0.0, 0.0, 0.0]
+         - time: 5.6
+           position: [0.0, 0.0, 0.4]
+           orientation: [0.0, 0.0, 0.0]
+
+ - step:
+    - base_trajectory:
+       trajectory:
+        frame: footprint
+        knots:
+         - time: 2.0
+           position: [0.0, 0.0, 0.39]
+           orientation: [0.0, deg(25), 0.0]
+         - time: 4.0
+           position: [0.0, 0.0, 0.39]
+           orientation: [0.0, deg(-25), 0.0]
+         - time: 5.6
+           position: [0.0, 0.0, 0.4]
+           orientation: [0.0, 0.0, 0.0]
+
+ - step:
+    - base_trajectory:
+       trajectory:
+        frame: footprint
+        knots:
+         - time: 2.0
+           position: [0.0, 0.0, 0.38]
+           orientation: [0.0, 0.0, deg(28)]
+         - time: 4.0
+           position: [0.0, 0.0, 0.38]
+           orientation: [0.0, 0.0, deg(-28)]
+         - time: 5.6
+           position: [0.0, 0.0, 0.4]
+           orientation: [0.0, 0.0, 0.0]
+
+ - step:
+    - base_trajectory:
+       trajectory:
+        frame: footprint
+        knots:
+         - time: 2.5
+           position: [0.0, 0.0, 0.38]
+           orientation: [deg(30), 0.0, 0.0]
+         - time: 5.0
+           position: [0.0, 0.0, 0.38]
+           orientation: [deg(-30), 0.0, 0.0]
+         - time: 6.7
+           position: [0.0, 0.0, 0.4]
+           orientation: [0.0, 0.0, 0.0]

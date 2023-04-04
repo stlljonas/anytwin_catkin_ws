@@ -1,0 +1,15 @@
+contact_forces:
+  linear_velocity_threshold: 0.6
+
+frame:
+  base:
+    name:                base
+  odometry:
+    name:                odom
+  world:
+    name:                map
+  footprint:
+    name:                footprint
+  feetcenter:
+    name:                feetcenter
+

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>inverse_kinematics_control</name>
+  <version>0.1.0</version>
+  <description>Inverse Kinematics Control Package</description>
+  <maintainer email="avijayan@anybotics.com">Aravind Vijayan</maintainer>
+  <maintainer email="scaron@anybotics.com">Stéphane Caron</maintainer>
+  <license>Proprietary</license>
+  <author email="fabian.jenelten@mavt.ethz.ch">Fabian Jenelten</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>anymal_model</depend>
+  <depend>basic_filters</depend>
+  <depend>loco</depend>
+  <depend>message_logger</depend>
+  <depend>std_utils</depend>
+  <depend>tinyxml_tools</depend>
+  <depend>kindr</depend>
+
+</package>

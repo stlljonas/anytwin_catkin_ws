@@ -1,0 +1,7 @@
+actions:
+  - action:
+      id: stair_climbing
+      name: Stair Climbing
+      file: launch/stair_climbing.launch
+      type: launch
+      description: Climbing stairs based on stair parameters.

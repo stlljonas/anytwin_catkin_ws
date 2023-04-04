@@ -1,0 +1,910 @@
+{
+  "keys": {}, 
+  "groups": {
+    "pluginmanager": {
+      "keys": {
+        "running-plugins": {
+          "type": "repr", 
+          "repr": "{u'ParameterHandlerPlugin': [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 12, 11]}"
+        }
+      }, 
+      "groups": {
+        "plugin__ParameterHandlerPlugin__8": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__ParameterHandler": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "True"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }, 
+                "hide_title_bar": {
+                  "type": "repr", 
+                  "repr": "False"
+                }
+              }, 
+              "groups": {}
+            }, 
+            "plugin": {
+              "keys": {
+                "value_min": {
+                  "type": "repr", 
+                  "repr": "0.0"
+                }, 
+                "parameter_index": {
+                  "type": "repr", 
+                  "repr": "8"
+                }, 
+                "value_max": {
+                  "type": "repr", 
+                  "repr": "100.0"
+                }, 
+                "value": {
+                  "type": "repr", 
+                  "repr": "20.0"
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }, 
+        "plugin__ParameterHandlerPlugin__9": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__ParameterHandler": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "True"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }, 
+                "hide_title_bar": {
+                  "type": "repr", 
+                  "repr": "False"
+                }
+              }, 
+              "groups": {}
+            }, 
+            "plugin": {
+              "keys": {
+                "value_min": {
+                  "type": "repr", 
+                  "repr": "0.0"
+                }, 
+                "parameter_index": {
+                  "type": "repr", 
+                  "repr": "16"
+                }, 
+                "value_max": {
+                  "type": "repr", 
+                  "repr": "100.0"
+                }, 
+                "value": {
+                  "type": "repr", 
+                  "repr": "20.0"
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }, 
+        "plugin__ParameterHandlerPlugin__1": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__ParameterHandler": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "True"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }, 
+                "hide_title_bar": {
+                  "type": "repr", 
+                  "repr": "False"
+                }
+              }, 
+              "groups": {}
+            }, 
+            "plugin": {
+              "keys": {
+                "value_min": {
+                  "type": "repr", 
+                  "repr": "0.0"
+                }, 
+                "parameter_index": {
+                  "type": "repr", 
+                  "repr": "18"
+                }, 
+                "value_max": {
+                  "type": "repr", 
+                  "repr": "1000.0"
+                }, 
+                "value": {
+                  "type": "repr", 
+                  "repr": "600.0"
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }, 
+        "plugin__ParameterHandlerPlugin__2": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__ParameterHandler": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "True"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }, 
+                "hide_title_bar": {
+                  "type": "repr", 
+                  "repr": "False"
+                }
+              }, 
+              "groups": {}
+            }, 
+            "plugin": {
+              "keys": {
+                "value_min": {
+                  "type": "repr", 
+                  "repr": "0.0"
+                }, 
+                "parameter_index": {
+                  "type": "repr", 
+                  "repr": "1"
+                }, 
+                "value_max": {
+                  "type": "repr", 
+                  "repr": "1000.0"
+                }, 
+                "value": {
+                  "type": "repr", 
+                  "repr": "700.0"
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }, 
+        "plugin__ParameterHandlerPlugin__3": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__ParameterHandler": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "True"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }, 
+                "hide_title_bar": {
+                  "type": "repr", 
+                  "repr": "False"
+                }
+              }, 
+              "groups": {}
+            }, 
+            "plugin": {
+              "keys": {
+                "value_min": {
+                  "type": "repr", 
+                  "repr": "0.0"
+                }, 
+                "parameter_index": {
+                  "type": "repr", 
+                  "repr": "2"
+                }, 
+                "value_max": {
+                  "type": "repr", 
+                  "repr": "1000.0"
+                }, 
+                "value": {
+                  "type": "repr", 
+                  "repr": "700.0"
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }, 
+        "plugin__ParameterHandlerPlugin__4": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__ParameterHandler": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "True"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }, 
+                "hide_title_bar": {
+                  "type": "repr", 
+                  "repr": "False"
+                }
+              }, 
+              "groups": {}
+            }, 
+            "plugin": {
+              "keys": {
+                "value_min": {
+                  "type": "repr", 
+                  "repr": "0.0"
+                }, 
+                "parameter_index": {
+                  "type": "repr", 
+                  "repr": "4"
+                }, 
+                "value_max": {
+                  "type": "repr", 
+                  "repr": "100.0"
+                }, 
+                "value": {
+                  "type": "repr", 
+                  "repr": "5.0"
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }, 
+        "plugin__ParameterHandlerPlugin__5": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__ParameterHandler": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "True"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }, 
+                "hide_title_bar": {
+                  "type": "repr", 
+                  "repr": "False"
+                }
+              }, 
+              "groups": {}
+            }, 
+            "plugin": {
+              "keys": {
+                "value_min": {
+                  "type": "repr", 
+                  "repr": "0.0"
+                }, 
+                "parameter_index": {
+                  "type": "repr", 
+                  "repr": "6"
+                }, 
+                "value_max": {
+                  "type": "repr", 
+                  "repr": "100.0"
+                }, 
+                "value": {
+                  "type": "repr", 
+                  "repr": "10.0"
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }, 
+        "plugin__ParameterHandlerPlugin__6": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__ParameterHandler": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "True"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }, 
+                "hide_title_bar": {
+                  "type": "repr", 
+                  "repr": "False"
+                }
+              }, 
+              "groups": {}
+            }, 
+            "plugin": {
+              "keys": {
+                "value_min": {
+                  "type": "repr", 
+                  "repr": "0.0"
+                }, 
+                "parameter_index": {
+                  "type": "repr", 
+                  "repr": "5"
+                }, 
+                "value_max": {
+                  "type": "repr", 
+                  "repr": "100.0"
+                }, 
+                "value": {
+                  "type": "repr", 
+                  "repr": "10.0"
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }, 
+        "plugin__ParameterHandlerPlugin__7": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__ParameterHandler": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "True"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }, 
+                "hide_title_bar": {
+                  "type": "repr", 
+                  "repr": "False"
+                }
+              }, 
+              "groups": {}
+            }, 
+            "plugin": {
+              "keys": {
+                "value_min": {
+                  "type": "repr", 
+                  "repr": "0.0"
+                }, 
+                "parameter_index": {
+                  "type": "repr", 
+                  "repr": "15"
+                }, 
+                "value_max": {
+                  "type": "repr", 
+                  "repr": "100.0"
+                }, 
+                "value": {
+                  "type": "repr", 
+                  "repr": "20.0"
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }, 
+        "plugin__ViscaCameraPlugin__1": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__my_plugin": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "u'true'"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }, 
+        "plugin__rqt_robot_monitor__RobotMonitor__1": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__Robot Monitor": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "u'true'"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }
+              }, 
+              "groups": {}
+            }, 
+            "plugin": {
+              "keys": {
+                "splitter": {
+                  "type": "repr(QByteArray.hex)", 
+                  "repr(QByteArray.hex)": "QtCore.QByteArray('000000ff00000000000000030000006400000064000000c801000000090100000002')", 
+                  "pretty-print": "       d d       "
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }, 
+        "plugin__RobotStateVisualizerPlugin__1": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__RobotStateVisualizer": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "u'true'"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }, 
+        "plugin__rqt_image_view__ImageView__1": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__ImageViewWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "u'true'"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }
+              }, 
+              "groups": {}
+            }, 
+            "plugin": {
+              "keys": {
+                "dynamic_range": {
+                  "type": "repr", 
+                  "repr": "u'false'"
+                }, 
+                "max_range": {
+                  "type": "repr", 
+                  "repr": "u'10'"
+                }, 
+                "topic": {
+                  "type": "repr", 
+                  "repr": "u''"
+                }, 
+                "zoom1": {
+                  "type": "repr", 
+                  "repr": "u'false'"
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }, 
+        "plugin__ArgosMissionPlugin__1": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__my_plugin": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "u'true'"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }, 
+        "plugin__rqt_plot__Plot__1": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__DataPlotWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "u'true'"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }
+              }, 
+              "groups": {}
+            }, 
+            "plugin": {
+              "keys": {
+                "autoscroll": {
+                  "type": "repr", 
+                  "repr": "u'true'"
+                }, 
+                "plot_type": {
+                  "type": "repr", 
+                  "repr": "u'1'"
+                }, 
+                "topics": {
+                  "type": "repr", 
+                  "repr": "[u'/state_estimator/robot_state/pose/position/y', u'/state_estimator/robot_state/pose/position/x', u'/state_estimator/robot_state/pose/position/z']"
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }, 
+        "plugin__rqt_plot__Plot__2": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__DataPlotWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "u'true'"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }
+              }, 
+              "groups": {}
+            }, 
+            "plugin": {
+              "keys": {
+                "autoscroll": {
+                  "type": "repr", 
+                  "repr": "u'true'"
+                }, 
+                "plot_type": {
+                  "type": "repr", 
+                  "repr": "u'1'"
+                }, 
+                "topics": {
+                  "type": "repr", 
+                  "repr": "u''"
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }, 
+        "plugin__rqt_plot__Plot__3": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__DataPlotWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "u'true'"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }
+              }, 
+              "groups": {}
+            }, 
+            "plugin": {
+              "keys": {
+                "autoscroll": {
+                  "type": "repr", 
+                  "repr": "u'true'"
+                }, 
+                "plot_type": {
+                  "type": "repr", 
+                  "repr": "u'1'"
+                }, 
+                "topics": {
+                  "type": "repr", 
+                  "repr": "u''"
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }, 
+        "plugin__LocoJoypadPlugin__1": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__LocoJoypad": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "u'true'"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }, 
+                "hide_title_bar": {
+                  "type": "repr", 
+                  "repr": "u'false'"
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }, 
+        "plugin__LocoControlManagerPlugin__1": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__LocoControlManager": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "u'false'"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }, 
+        "plugin__ParameterHandlerPlugin__12": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__ParameterHandler": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "True"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }, 
+                "hide_title_bar": {
+                  "type": "repr", 
+                  "repr": "False"
+                }
+              }, 
+              "groups": {}
+            }, 
+            "plugin": {
+              "keys": {
+                "value_min": {
+                  "type": "repr", 
+                  "repr": "0.0"
+                }, 
+                "parameter_index": {
+                  "type": "repr", 
+                  "repr": "12"
+                }, 
+                "value_max": {
+                  "type": "repr", 
+                  "repr": "100.0"
+                }, 
+                "value": {
+                  "type": "repr", 
+                  "repr": "10.0"
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }, 
+        "plugin__ParameterHandlerPlugin__10": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__ParameterHandler": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "True"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }, 
+                "hide_title_bar": {
+                  "type": "repr", 
+                  "repr": "False"
+                }
+              }, 
+              "groups": {}
+            }, 
+            "plugin": {
+              "keys": {
+                "value_min": {
+                  "type": "repr", 
+                  "repr": "0.0"
+                }, 
+                "parameter_index": {
+                  "type": "repr", 
+                  "repr": "8"
+                }, 
+                "value_max": {
+                  "type": "repr", 
+                  "repr": "100.0"
+                }, 
+                "value": {
+                  "type": "repr", 
+                  "repr": "10.0"
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }, 
+        "plugin__ParameterHandlerPlugin__11": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__ParameterHandler": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "True"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }, 
+                "hide_title_bar": {
+                  "type": "repr", 
+                  "repr": "False"
+                }
+              }, 
+              "groups": {}
+            }, 
+            "plugin": {
+              "keys": {
+                "value_min": {
+                  "type": "repr", 
+                  "repr": "0.0"
+                }, 
+                "parameter_index": {
+                  "type": "repr", 
+                  "repr": "10"
+                }, 
+                "value_max": {
+                  "type": "repr", 
+                  "repr": "100.0"
+                }, 
+                "value": {
+                  "type": "repr", 
+                  "repr": "10.0"
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }, 
+        "plugin__rqt_console__Console__1": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__ConsoleWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "u'true'"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }
+              }, 
+              "groups": {}
+            }, 
+            "plugin": {
+              "keys": {
+                "show_highlighted_only": {
+                  "type": "repr", 
+                  "repr": "u'false'"
+                }, 
+                "message_limit": {
+                  "type": "repr", 
+                  "repr": "u'20000'"
+                }, 
+                "exclude_filters": {
+                  "type": "repr", 
+                  "repr": "u''"
+                }, 
+                "table_splitter": {
+                  "type": "repr(QByteArray.hex)", 
+                  "repr(QByteArray.hex)": "QtCore.QByteArray('000000ff00000000000000020000004b000000e701000000090100000002')", 
+                  "pretty-print": "       K       "
+                }, 
+                "highlight_filters": {
+                  "type": "repr", 
+                  "repr": "u''"
+                }, 
+                "paused": {
+                  "type": "repr", 
+                  "repr": "u'false'"
+                }, 
+                "settings_exist": {
+                  "type": "repr", 
+                  "repr": "u'true'"
+                }, 
+                "filter_splitter": {
+                  "type": "repr(QByteArray.hex)", 
+                  "repr(QByteArray.hex)": "QtCore.QByteArray('000000ff00000000000000020000006f0000006f01000000090100000002')", 
+                  "pretty-print": "       o o     "
+                }
+              }, 
+              "groups": {
+                "exclude_filter_0": {
+                  "keys": {
+                    "enabled": {
+                      "type": "repr", 
+                      "repr": "u'true'"
+                    }, 
+                    "itemlist": {
+                      "type": "repr", 
+                      "repr": "u''"
+                    }
+                  }, 
+                  "groups": {}
+                }, 
+                "highlight_filter_0": {
+                  "keys": {
+                    "regex": {
+                      "type": "repr", 
+                      "repr": "u'false'"
+                    }, 
+                    "text": {
+                      "type": "repr", 
+                      "repr": "u''"
+                    }, 
+                    "enabled": {
+                      "type": "repr", 
+                      "repr": "u'true'"
+                    }
+                  }, 
+                  "groups": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    }, 
+    "mainwindow": {
+      "keys": {
+        "geometry": {
+          "type": "repr(QByteArray.hex)", 
+          "repr(QByteArray.hex)": "QtCore.QByteArray('01d9d0cb000100000000019b000000f1000008670000048b000001a5000001170000085d00000481000000000000')", 
+          "pretty-print": "         g       ]     "
+        }, 
+        "state": {
+          "type": "repr(QByteArray.hex)", 
+          "repr(QByteArray.hex)": "QtCore.QByteArray('000000ff00000000fd0000000100000003000006b90000033cfc0100000006fc000000000000039d0000000000fffffffc0200000002fb00000042007200710074005f0070006c006f0074005f005f0050006c006f0074005f005f0031005f005f00440061007400610050006c006f00740057006900640067006500740100000019000001ca0000000000000000fb00000042007200710074005f0070006c006f0074005f005f0050006c006f0074005f005f0032005f005f00440061007400610050006c006f007400570069006400670065007401000001e9000002210000000000000000fb00000042007200710074005f0070006c006f0074005f005f0050006c006f0074005f005f0033005f005f00440061007400610050006c006f007400570069006400670065007401000003a30000039c0000000000000000fb0000003e0056006900730063006100430061006d0065007200610050006c007500670069006e005f005f0031005f005f006d0079005f0070006c007500670069006e0100000000000007d40000000000000000fb0000003e004c006f0063006f004a006f00790070006100640050006c007500670069006e005f005f0031005f005f004c006f0063006f004a006f00790070006100640100000000000007d40000000000000000fc000000000000038c000000f800fffffffc0200000006fb000000560050006100720061006d006500740065007200480061006e0064006c006500720050006c007500670069006e005f005f0032005f005f0050006100720061006d006500740065007200480061006e0064006c006500720100000019000000850000008500fffffffb000000560050006100720061006d006500740065007200480061006e0064006c006500720050006c007500670069006e005f005f0033005f005f0050006100720061006d006500740065007200480061006e0064006c0065007201000000a4000000850000008500fffffffb000000560050006100720061006d006500740065007200480061006e0064006c006500720050006c007500670069006e005f005f0031005f005f0050006100720061006d006500740065007200480061006e0064006c00650072010000012f000000850000008500fffffffb000000560050006100720061006d006500740065007200480061006e0064006c006500720050006c007500670069006e005f005f0037005f005f0050006100720061006d006500740065007200480061006e0064006c0065007201000001ba000000850000008500fffffffb000000560050006100720061006d006500740065007200480061006e0064006c006500720050006c007500670069006e005f005f0038005f005f0050006100720061006d006500740065007200480061006e0064006c006500720100000245000000850000008500fffffffb000000560050006100720061006d006500740065007200480061006e0064006c006500720050006c007500670069006e005f005f0039005f005f0050006100720061006d006500740065007200480061006e0064006c0065007201000002d0000000850000008500fffffffc0000039200000327000000f800fffffffc0200000006fb000000560050006100720061006d006500740065007200480061006e0064006c006500720050006c007500670069006e005f005f0036005f005f0050006100720061006d006500740065007200480061006e0064006c006500720100000019000000850000008500fffffffb000000560050006100720061006d006500740065007200480061006e0064006c006500720050006c007500670069006e005f005f0035005f005f0050006100720061006d006500740065007200480061006e0064006c0065007201000000a4000000850000008500fffffffb000000560050006100720061006d006500740065007200480061006e0064006c006500720050006c007500670069006e005f005f0034005f005f0050006100720061006d006500740065007200480061006e0064006c00650072010000012f000000850000008500fffffffb000000580050006100720061006d006500740065007200480061006e0064006c006500720050006c007500670069006e005f005f00310030005f005f0050006100720061006d006500740065007200480061006e0064006c0065007201000001ba000000850000008500fffffffb000000580050006100720061006d006500740065007200480061006e0064006c006500720050006c007500670069006e005f005f00310031005f005f0050006100720061006d006500740065007200480061006e0064006c006500720100000245000000850000008500fffffffb000000580050006100720061006d006500740065007200480061006e0064006c006500720050006c007500670069006e005f005f00310032005f005f0050006100720061006d006500740065007200480061006e0064006c0065007201000002d0000000850000008500ffffff000006b90000000000000004000000040000000800000008fc00000001000000030000000100000036004d0069006e0069006d0069007a006500640044006f0063006b00570069006400670065007400730054006f006f006c0062006100720000000000ffffffff0000000000000000')", 
+          "pretty-print": "                                                                                                              !                                                                                                                                                 VParameterHandlerPlugin__2__ParameterHandler          VParameterHandlerPlugin__3__ParameterHandler          VParameterHandlerPlugin__1__ParameterHandler          VParameterHandlerPlugin__7__ParameterHandler          VParameterHandlerPlugin__8__ParameterHandler          VParameterHandlerPlugin__9__ParameterHandler            '                                                                                                                                                                  /                                                                                                             E                                                                                                                     "
+        }
+      }, 
+      "groups": {
+        "toolbar_areas": {
+          "keys": {
+            "MinimizedDockWidgetsToolbar": {
+              "type": "repr", 
+              "repr": "8"
+            }
+          }, 
+          "groups": {}
+        }
+      }
+    }
+  }
+}

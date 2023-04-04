@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+<package format="2">
+
+  <name>anymal_cerberus_opc</name>
+  <version>1.0.0</version>
+  <description>ANYmal Cerberus Operator PC Package</description>
+
+  <license>Proprietary</license>
+
+  <author email="rdiethelm@anybotics.com">Remo Diethelm</author>
+  <maintainer email="rdiethelm@anybotics.com">Remo Diethelm</maintainer>
+  <maintainer email="pleemann@anybotics.com">Philipp Leemann</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <exec_depend>anymal_cerberus_ui</exec_depend>
+
+  <export>
+    <metapackage />
+  </export>
+
+</package>

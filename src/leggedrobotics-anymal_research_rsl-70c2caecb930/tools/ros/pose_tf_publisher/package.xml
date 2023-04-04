@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+
+<package format="2">
+
+  <name>pose_tf_publisher</name>
+  <version>0.6.0</version>
+  <description>Publish tf messages using the data of an incoming pose topic.</description>
+
+  <license>Proprietary</license>
+
+  <author email="pfankhauser@anybotics.com">Peter Fankhauser</author>
+  <author email="bellicoso@mavt.ethz.ch">Dario Bellicoso</author>
+  <author email="cgehring@anybotics.com">Christian Gehring</author>
+  <maintainer email="rdiethelm@anybotics.com">Remo Diethelm</maintainer>
+  <maintainer email="pleemann@anybotics.com">Philipp Leemann</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>roscpp</depend>
+  <depend>geometry_msgs</depend>
+  <depend>nav_msgs</depend>
+  <depend>tf</depend>
+
+</package>

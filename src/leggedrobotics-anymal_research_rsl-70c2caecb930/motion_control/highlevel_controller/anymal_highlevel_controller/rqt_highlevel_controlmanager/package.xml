@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>rqt_highlevel_controlmanager</name>
+  <version>0.6.0</version>
+  <description>The rqt_highlevel_controlmanager package</description>
+  <maintainer email="vyuryev@anybotics.com">Valentin Yuryev</maintainer>
+  <maintainer email="avijayan@anybotics.com">Aravind Vijayan</maintainer>
+  <author email="bellicoso@mavt.ethz.ch">Dario Bellicoso</author>
+  <license>Proprietary</license>
+  
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>any_msgs</depend>
+  <depend>anymal_msgs</depend>
+  <depend>param_io</depend>
+  <depend>qtbase5-dev</depend>
+  <depend>rocoma_msgs</depend>
+  <depend>roscpp</depend>
+  <depend>rqt_gui</depend>
+  <depend>rqt_gui_cpp</depend>
+  <depend>std_msgs</depend>
+  <depend>std_srvs</depend>
+
+  <export>
+  <architecture_independent/>
+  <rqt_gui plugin="${prefix}/plugin.xml"/>
+  </export>
+
+</package>

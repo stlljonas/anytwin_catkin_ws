@@ -1,0 +1,550 @@
+anymal_highlevel_controller:
+  controller_manager:
+    controllers:
+      free_gait_soft:
+        emergency_controller: emergency_freeze
+        name: free_gait_soft
+        parameter_package: anymal_c
+        parameter_path: config/non_ros/motion_control/free_gait_soft
+        plugin_name: anymal_ctrl_free_gait::FreeGaitImpedanceRos
+  motion_transitioner:
+    motion_states:
+      _dock_lower_base:
+        direct_transit_state: ""
+      _dock_square_up:
+        direct_transit_state: ""
+      dock:
+        direct_transit_state: lie_down
+    transitions:
+      dock_connect:
+        connections:
+          _dock_lower_base: 2.0
+        motion:
+          motion_controller: free_gait_soft
+          operation_mode: dock_connect
+          reference_type: action
+        preempt_state: _preempted
+        target_state: dock
+      dock_lower_base:
+        connections:
+          _dock_square_up: 2.0
+        motion:
+          motion_controller: free_gait
+          operation_mode: dock_lower_base
+          reference_type: action
+        preempt_state: _preempted
+        target_state: _dock_lower_base
+      dock_square_up:
+        connections:
+          square_up: 3.0
+          locomotion_planner_blind: 3.0
+        motion:
+          motion_controller: free_gait
+          operation_mode: dock_square_up
+          reference_type: action
+        preempt_state: _preempted
+        target_state: _dock_square_up
+docking_behavior_plugins:
+  check_if_docked:
+    topic: /pdb/battery_state_ros
+  dock:
+    alternative_viewpoints:
+      frame_id: point_cloud_odom
+      poses:
+        - orientation:
+            w: 0.99144486137
+            x: 0.0
+            y: 0.0
+            z: 0.13052619222
+          position:
+            x: 0.0
+            y: 0.0
+            z: 0.0
+        - orientation:
+            w: 0.99144486137
+            x: 0.0
+            y: 0.0
+            z: 0.13052619222
+          position:
+            x: 0.0
+            y: 0.0
+            z: 0.0
+        - orientation:
+            w: 0.99144486137
+            x: 0.0
+            y: 0.0
+            z: 0.13052619222
+          position:
+            x: 0.0
+            y: 0.0
+            z: 0.0
+        - orientation:
+            w: 0.99144486137
+            x: 0.0
+            y: 0.0
+            z: 0.13052619222
+          position:
+            x: 0.0
+            y: 0.0
+            z: 0.0
+        - orientation:
+            w: 0.99144486137
+            x: 0.0
+            y: 0.0
+            z: 0.13052619222
+          position:
+            x: 0.0
+            y: 0.0
+            z: 0.0
+        - orientation:
+            w: 0.99144486137
+            x: 0.0
+            y: 0.0
+            z: 0.13052619222
+          position:
+            x: 0.0
+            y: 0.0
+            z: 0.0
+  undock:
+    pose:
+      frame_id: point_cloud_odom
+      orientation:
+        w: 1.0
+        x: 0.0
+        y: 0.0
+        z: 0.0
+      position:
+        x: -0.5
+        y: 0.0
+        z: 0.0      
+docking_port_localization_ros:
+  node:
+    arc_pairs_image:
+      compressed:
+        format: jpeg
+        jpeg_quality: 80
+        png_level: 9
+      compressedDepth:
+        depth_max: 10.0
+        depth_quantization: 100.0
+        png_level: 9
+      theora:
+        keyframe_frequency: 64
+        optimize_for: 1
+        quality: 31
+        target_bitrate: 800000
+    bounding_box_image:
+      compressed:
+        format: jpeg
+        jpeg_quality: 80
+        png_level: 9
+      compressedDepth:
+        depth_max: 10.0
+        depth_quantization: 100.0
+        png_level: 9
+      theora:
+        keyframe_frequency: 64
+        optimize_for: 1
+        quality: 31
+        target_bitrate: 800000
+    camera_color_topic_1: /depth_camera_front/color/image_raw
+    camera_color_topic_2: /depth_camera_left/color/image_raw
+    camera_color_topic_3: /depth_camera_rear/color/image_raw
+    camera_color_topic_4: /depth_camera_right/color/image_raw
+    camera_depth_topic_1: /depth_camera_front/aligned_depth_to_color/image_raw
+    camera_depth_topic_2: /depth_camera_left/aligned_depth_to_color/image_raw
+    camera_depth_topic_3: /depth_camera_rear/aligned_depth_to_color/image_raw
+    camera_depth_topic_4: /depth_camera_right/aligned_depth_to_color/image_raw
+    camera_frame: camera
+    camera_info_topic_1: /depth_camera_front/color/camera_info
+    camera_info_topic_2: /depth_camera_left/color/camera_info
+    camera_info_topic_3: /depth_camera_rear/color/camera_info
+    camera_info_topic_4: /depth_camera_right/color/camera_info
+    debug_Drawings:
+      arc_pairs_image:
+        enable: true
+        queue_size: 1
+        topic: arc_pairs_image
+      bounding_box_image:
+        enable: true
+        queue_size: 1
+        topic: bounding_box_image
+      depth_sampling_area_image:
+        enable: true
+        queue_size: 1
+        topic: depth_sampling_area_image
+      detected_arcs_image:
+        enable: true
+        queue_size: 1
+        topic: detected_arcs_image
+      edges_image:
+        enable: true
+        queue_size: 1
+        topic: edges_image
+      input_image:
+        enable: true
+        queue_size: 1
+        topic: input_image
+      lowest_ellipse_image:
+        enable: true
+        queue_size: 1
+        topic: lowest_ellipse_image
+      pre_processed_image:
+        enable: true
+        queue_size: 1
+        topic: preprocessed_image
+      quadruplet_neighbours_image:
+        enable: true
+        queue_size: 1
+        topic: quadruplet_neighbours_image
+      quadruplets_image:
+        enable: true
+        queue_size: 1
+        topic: quadruplets_image
+    depth_sampling_area_image:
+      compressed:
+        format: jpeg
+        jpeg_quality: 80
+        png_level: 9
+      compressedDepth:
+        depth_max: 10.0
+        depth_quantization: 100.0
+        png_level: 9
+      theora:
+        keyframe_frequency: 64
+        optimize_for: 1
+        quality: 31
+        target_bitrate: 800000
+    detected_arcs_image:
+      compressed:
+        format: jpeg
+        jpeg_quality: 80
+        png_level: 9
+      compressedDepth:
+        depth_max: 10.0
+        depth_quantization: 100.0
+        png_level: 9
+      theora:
+        keyframe_frequency: 64
+        optimize_for: 1
+        quality: 31
+        target_bitrate: 800000
+    detection:
+      adaptive_threshold:
+        max_value: 255
+        threshold: 0
+      arc_detection:
+        min_length_arc: 10
+        min_ratio_width_height: 0.05
+      arc_pairing:
+        max_distance: 30
+      bounding_box:
+        max_bounding_box_ratio: 2.9
+        min_area_size: 500
+        min_bounding_box_ratio: 1.3
+      ellipse_extraction:
+        min_ellipse_area: 800
+      orientation_calculation:
+        margin_around_sampling_area: 80
+        min_area_of_sampling: 10
+        number_of_sample_points: 200
+        use_top_rect_for_sampling: false
+      pre_processing:
+        resize_factor: 2.0
+      quadruplets:
+        min_number_of_quadruplets: 1
+      smoothing:
+        kernel_size: 5
+        sigma_x: 5
+        sigma_y: 5
+    edges_image:
+      compressed:
+        format: jpeg
+        jpeg_quality: 80
+        png_level: 9
+      compressedDepth:
+        depth_max: 10.0
+        depth_quantization: 100.0
+        png_level: 9
+      theora:
+        keyframe_frequency: 64
+        optimize_for: 1
+        quality: 31
+        target_bitrate: 800000
+    input_image:
+      compressed:
+        format: jpeg
+        jpeg_quality: 80
+        png_level: 9
+      compressedDepth:
+        depth_max: 10.0
+        depth_quantization: 100.0
+        png_level: 9
+      theora:
+        keyframe_frequency: 64
+        optimize_for: 1
+        quality: 31
+        target_bitrate: 800000
+    lowest_ellipse_image:
+      compressed:
+        format: jpeg
+        jpeg_quality: 80
+        png_level: 9
+      compressedDepth:
+        depth_max: 10.0
+        depth_quantization: 100.0
+        png_level: 9
+      theora:
+        keyframe_frequency: 64
+        optimize_for: 1
+        quality: 31
+        target_bitrate: 800000
+    node_configuration:
+      april_tag_detection: true
+      april_tag_master_id: 4
+      custom_detection: true
+      docking_port_frame_id: docking_port
+      floor_frame_id: footprint
+      max_timeout: 2.0
+      multiple_depth_camera_setup:
+        enable: true
+      number_of_images_to_analyze: 5
+      pose:
+        height_difference_threshold: 0.2
+        max_pose_difference: 0.05
+      publish_tag_image: true
+      static_frame_id: point_cloud_odom
+    preprocessed_image:
+      compressed:
+        format: jpeg
+        jpeg_quality: 80
+        png_level: 9
+      compressedDepth:
+        depth_max: 10.0
+        depth_quantization: 100.0
+        png_level: 9
+      theora:
+        keyframe_frequency: 64
+        optimize_for: 1
+        quality: 31
+        target_bitrate: 800000
+    publish_tf: true
+    quadruplet_neighbours_image:
+      compressed:
+        format: jpeg
+        jpeg_quality: 80
+        png_level: 9
+      compressedDepth:
+        depth_max: 10.0
+        depth_quantization: 100.0
+        png_level: 9
+      theora:
+        keyframe_frequency: 64
+        optimize_for: 1
+        quality: 31
+        target_bitrate: 800000
+    quadruplets_image:
+      compressed:
+        format: jpeg
+        jpeg_quality: 80
+        png_level: 9
+      compressedDepth:
+        depth_max: 10.0
+        depth_quantization: 100.0
+        png_level: 9
+      theora:
+        keyframe_frequency: 64
+        optimize_for: 1
+        quality: 31
+        target_bitrate: 800000
+    remove_duplicates: true
+    servers:
+      continuous_detection:
+        service: toggle_continuous_detection
+      get_docking_port:
+        service: detect_docking_port
+    standalone_tags:
+      []
+    subscribers:
+      camera_info:
+        queue_size: 1
+        topic: /docking_port_localization_ros/camera_info
+      depth_image:
+        queue_size: 10
+        topic: /docking_port_localization_ros/depth_image
+      image:
+        queue_size: 1
+        topic: /docking_port_localization_ros/color_image
+    tag_blur: 0.0
+    tag_bundles:
+      - layout:
+          - id: 4
+            qw: 1
+            qx: 0
+            qy: 0
+            qz: 0
+            size: 0.05
+            x: 0.0
+            y: 0
+            z: 0
+          - id: 0
+            qw: 1.0
+            qx: 0.0
+            qy: 0.0
+            qz: 0.0
+            size: 0.05
+            x: 0.0
+            y: -0.115
+            z: 0.0
+          - id: 1
+            qw: -0.7071068
+            qx: 0.0
+            qy: 0.0
+            qz: -0.7071068
+            size: 0.05
+            x: 0.115
+            y: 0.0
+            z: 0.0
+          - id: 2
+            qw: 0.0
+            qx: 0.0
+            qy: 0.0
+            qz: 1.0
+            size: 0.05
+            x: 0.0
+            y: 0.115
+            z: 0.0
+          - id: 3
+            qw: -0.7071068
+            qx: 0.0
+            qy: 0.0
+            qz: 0.7071068
+            size: 0.05
+            x: -0.115
+            y: 0.0
+            z: 0.0
+        name: docking_port_local_frame
+    tag_debug: 1.0
+    tag_decimate: 1.0
+    tag_family: tag36h11
+    tag_refine_decode: 1.0
+    tag_refine_edges: 1
+    tag_threads: 2
+environment:
+  object_types:
+    docking_station:
+      interactions:
+        - label: Dock
+          state_name:
+            postfix: ""
+            prefix: DockAt
+          state_settings:
+            parameter_name: ""
+            parameter_type: ""
+          state_type: docking_behavior_plugins::Dock
+        - label: Undock
+          state_name:
+            postfix: ""
+            prefix: UndockFrom
+          state_settings:
+            parameter_name: ""
+            parameter_type: ""
+          state_type: docking_behavior_plugins::Undock
+      name: docking_station
+      visualization:
+        color:
+          blue: 0.078125
+          green: 0.4296875
+          red: 0.078125
+        mesh: package://environment_visualizer/meshes/navigation_goals/docking_station.dae
+free_gait_action_loader:
+  free_gait_action_packages:
+    priority_40: anymal_c_docking_actions
+load_anymal_description:
+  custom_parameters:
+    docking_socket: true
+robot_behavior_plugins:
+  operate_reacting_on_low_battery:
+    enable_docking_if_available: true
+rqt_behavior_engine:
+  mission_folders:
+    {}
+  user_defined_states:
+    10_dock:
+      entry: Dock
+      state:
+        name:
+          postfix: ""
+          prefix: Dock
+        settings:
+          environment_object_type: ""
+          parameter_name: ""
+          parameter_type: ""
+        type: docking_behavior_plugins::Dock
+    11_undock:
+      entry: Undock
+      state:
+        name:
+          postfix: ""
+          prefix: Undock
+        settings:
+          environment_object_type: ""
+          parameter_name: ""
+          parameter_type: ""
+        type: docking_behavior_plugins::Undock
+rqt_environment_editor:
+  plugins:
+    docking_station:
+      label: Docking Station
+      name: docking_station_qt_plugin/DockingStationQtPlugin  
+rqt_motion_control:
+  show_controllers:
+    free_gait_soft: false
+stack_launcher:
+  nodes:
+    docking_port_camera_info_mux:
+      roslaunch:
+        args: /docking_port_localization_ros/camera_info /depth_camera_front/color/camera_info /depth_camera_left/color/camera_info /depth_camera_rear/color/camera_info /depth_camera_right/color/camera_info mux:=camera_info
+        name: docking_port_camera_info_mux
+        namespace: docking_port_localization_ros
+        node_type: mux
+        output: screen
+        package: topic_tools
+    docking_port_depth_image_mux:
+      roslaunch:
+        args: /docking_port_localization_ros/depth_image /depth_camera_front/aligned_depth_to_color/image_raw /depth_camera_left/aligned_depth_to_color/image_raw /depth_camera_rear/aligned_depth_to_color/image_raw /depth_camera_right/aligned_depth_to_color/image_raw mux:=depth_image
+        name: docking_port_depth_image_mux
+        namespace: docking_port_localization_ros
+        node_type: mux
+        output: screen
+        package: topic_tools
+    docking_port_localization:
+      roslaunch:
+        name: node
+        namespace: docking_port_localization_ros
+        node_type: docking_port_localization_ros_node
+        output: screen
+        package: docking_port_localization_ros
+    docking_port_rgb_image_mux:
+      roslaunch:
+        args: /docking_port_localization_ros/color_image /depth_camera_front/color/image_raw /depth_camera_left/color/image_raw /depth_camera_rear/color/image_raw /depth_camera_right/color/image_raw mux:=color_image
+        name: docking_port_rgb_image_mux
+        namespace: docking_port_localization_ros
+        node_type: mux
+        output: screen
+        package: topic_tools
+  stacks:
+    navigation:
+      nodes:
+        docking_port_camera_info_mux:
+          enabled: true
+          name: docking_port_camera_info_mux
+        docking_port_depth_image_mux:
+          enabled: true
+          name: docking_port_depth_image_mux
+        docking_port_localization:
+          enabled: true
+          name: docking_port_localization
+        docking_port_rgb_image_mux:
+          enabled: true
+          name: docking_port_rgb_image_mux

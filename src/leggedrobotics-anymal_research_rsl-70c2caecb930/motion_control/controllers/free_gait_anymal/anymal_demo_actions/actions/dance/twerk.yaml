@@ -1,0 +1,78 @@
+adapt_coordinates:
+  - transform:
+      source_frame: <source_frame>
+      target_frame: <target_frame>
+      transform_in_source_frame:
+        position: [<position_x>, <position_y>, <position_z>]
+        orientation: [0.0, 0.0, <orientation_yaw>]
+
+steps:
+
+ - step:
+    - base_auto:
+       height: 0.44
+
+# Twerk
+
+ - step:
+    - base_trajectory:
+       trajectory:
+        frame: <source_frame>
+        knots:
+         - time: <DeltaT24>
+           position: [0.0, 0.0, 0.40]
+           orientation: [0.0, 0.25, 0.0]
+ - step: &twerk
+    - base_trajectory:
+       trajectory:
+        frame: <source_frame>
+        knots:
+         - time: <DeltaT14>
+           position: [0.0, -0.03, 0.37]
+           orientation: [0.0, 0.15, 0.12]
+         - time: <DeltaT24>
+           position: [0.0, 0.0, 0.34]
+           orientation: [0.0, -0.10, 0.0]
+         - time: <DeltaT34>
+           position: [0.0, 0.03, 0.37]
+           orientation: [0.0, 0.15, -0.12]
+         - time: <DeltaT>
+           position: [0.0, 0.0, 0.40]
+           orientation: [0.0, 0.3, 0.0]
+
+ - step: *twerk
+
+ - step: &shake
+    - base_trajectory:
+       trajectory:
+        frame: <source_frame>
+        knots:
+         - time: <DeltaT14>
+           position: [0.0, 0.0, 0.37]
+           orientation: [0.3, 0.2, 0.0]
+         - time: <DeltaT24>
+           position: [0.0, 0.0, 0.37]
+           orientation: [-0.3, 0.2, 0.0]
+
+ - step: *shake
+ - step:
+    - base_trajectory:
+       trajectory:
+        frame: <source_frame>
+        knots:
+         - time: <DeltaT14>
+           position: [0.0, 0.0, 0.37]
+           orientation: [0.0, 0.2, 0.0]
+
+ - step:
+    - base_trajectory:
+       trajectory:
+        frame: <source_frame>
+        knots:
+         - time: <DeltaT24>
+           position: [0.0, 0.0, 0.44]
+           orientation: [0.0, 0.0, 0.0]
+
+ - step:
+    - base_auto:
+       height: 0.44

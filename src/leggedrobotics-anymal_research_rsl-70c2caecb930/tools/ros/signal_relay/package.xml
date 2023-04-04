@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>signal_relay</name>
+  <version>0.0.1</version>
+  <description>Relay for routing signals to nodes</description>
+
+  <license>Proprietary</license>
+
+  <author email="jburklund@anybotics.com">Jordan Burklund</author>
+  <maintainer email="ynava@anybotics.com">Yoshua Nava</maintainer>
+  <maintainer email="rdiethelm@anybotics.com">Remo Diethelm</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>cmake_clang_tools</build_depend>
+  
+  <depend>message_logger</depend>
+  <depend>roscpp</depend>
+  <depend>std_msgs</depend>
+  <depend>std_srvs</depend>
+
+  <test_depend>cmake_code_coverage</test_depend>
+  <test_depend>rostest</test_depend>
+
+</package>

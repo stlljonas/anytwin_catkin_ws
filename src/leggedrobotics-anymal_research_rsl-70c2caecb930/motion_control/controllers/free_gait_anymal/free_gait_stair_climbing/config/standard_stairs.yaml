@@ -1,0 +1,10 @@
+robot_parameters:
+  base_height: 0.42
+  foot_placement_width: 0.48
+  n_steps_between_front_and_hind_legs: 1
+stair_geometry:
+  frame_id: stairs
+  number_of_steps: 10
+  general_step:
+    rise: 0.18
+    run: 0.29

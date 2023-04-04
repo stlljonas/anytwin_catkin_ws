@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+
+<package format="2">
+
+  <name>rviz_gazebo_interaction</name>
+  <version>0.6.0</version>
+  <description>Tools to interact with Gazebo: Apply wrenches to objects. Spawn the robot at any position.</description>
+
+  <license>Proprietary</license>
+
+  <author email="lisler@anybotics.com">Linus Isler</author>
+  <maintainer email="rdiethelm@anybotics.com">Remo Diethelm</maintainer>
+  <maintainer email="pleemann@anybotics.com">Philipp Leemann</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>any_gazebo_msgs</depend>
+  <depend>gazebo_msgs</depend>
+  <depend>qtbase5-dev</depend>
+  <depend>roscpp</depend>
+  <depend>rqt_gui</depend>
+  <depend>rqt_gui_cpp</depend>
+  <depend>rviz</depend>
+  <depend>visualization_msgs</depend>
+
+  <export>
+	  <rviz plugin="${prefix}/plugin_description.xml"/>
+  </export>
+
+</package>

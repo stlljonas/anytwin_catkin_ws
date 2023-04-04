@@ -1,0 +1,6 @@
+# HRI safe remote control
+# This file should be installed to /etc/udev/rules.d so that you can access the Logic hardware without being root
+#
+# type this at the command prompt: sudo cp 80-hri.rules /etc/udev/rules.d
+
+KERNEL=="ttyACM[0-9]*", SUBSYSTEMS=="usb", ATTRS{idVendor}=="2a99", ATTRS{idProduct}=="c020",  GROUP="plugdev", MODE="0666", SYMLINK+="ttyHRI"

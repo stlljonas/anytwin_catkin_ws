@@ -1,0 +1,16 @@
+logger:
+  sampling_window: 180
+  config_file: "/home/integration/.ros/locomotion_controller_logging.script"
+  type: "ros"
+  enable: true
+  update_on_start: true
+  logfile_type: "binary"
+
+notification:
+  notifiers:
+    default:
+      topic: /notification
+      queue_size: 100
+      latch: false
+      output_devices:
+        - "operator_screen"

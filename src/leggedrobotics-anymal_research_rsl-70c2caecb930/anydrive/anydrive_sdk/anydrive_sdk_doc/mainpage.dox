@@ -1,0 +1,166 @@
+/*!
+
+\mainpage Overview
+
+\section anydrive_sdk ANYdrive SDK
+
+ANYdrive Software Development Kit.
+
+Contains software to interface one or multiple <a href="https://www.anybotics.com/anydrive/">ANYdrives</a>.
+The following packages are available:
+
+\subsection anydrive anydrive
+
+Core C++ library to interface one or multiple drives.
+Contains abstract base classes for the communication interface.
+
+\subsection anydrive_ethercat anydrive_ethercat
+
+C++ library deriving the abstract communication interface classes in the anydrive library for EtherCAT.
+
+\subsection anydrive_msgs anydrive_msgs
+
+ROS message and service definitions.
+
+\subsection anydrive_ros anydrive_ros
+
+C++ library adding a ROS interface to the classes in the anydrive library.
+
+\subsection anydrive_ethercat_ros anydrive_ethercat_ros
+
+C++ library combining anydrive_ethercat and anydrive_ros.
+Contains a ROS node.
+
+\subsection anydrive_monitor anydrive_monitor
+
+Graphical user interface library to supervise and command one or multiple drives.
+
+\subsection rqt_anydrive_monitor rqt_anydrive_monitor
+
+C++ rqt library adding a ROS interface to the classes in the anydrive_monitor library.
+
+\subsection anydrive_sdk_doc anydrive_sdk_doc
+
+Doxygen documentation of the ANYdrive SDK.
+
+\section license License
+
+Copyright (c) 2019, ANYbotics AG.
+
+All rights reserved. Redistribution in source and binary forms, with or without modification, is not permitted.
+
+\page getting_started Getting started
+
+\section prerequisites Prerequisites
+
+<ul>
+  <li><a href="http://www.releases.ubuntu.com/">Ubuntu 16.04 or 18.04</a></li>
+  <li><a href="http://catkin-tools.readthedocs.org">Catkin Command Line Tools</a> (optional)</li>
+  <li><a href="http://wiki.ros.org/kinetic">ROS Kinetic or Melodic</a> (optional, for *_ros or rqt_* packages)</li>
+</ul>
+
+\section installation Installation
+
+\subsection package_based_installation Package-based installation
+
+Install the latest release with
+\code
+sudo apt install ros-kinetic-anydrive-ethercat-ros ros-kinetic-rqt-anydrive-monitor
+\endcode
+
+\subsection build_from_source Build from source
+
+To build from source, clone the following repositories to your catkin workspace:
+
+<ul>
+  <li><a href="https://bitbucket.org/leggedrobotics/any_common">any_common</a></li>
+  <li><a href="https://bitbucket.org/leggedrobotics/anydrive_sdk">anydrive_sdk</a></li>
+  <li><a href="https://github.com/anybotics/kindr">kindr</a></li>
+  <li><a href="https://github.com/anybotics/kindr_ros">kindr_ros</a></li>
+  <li><a href="https://github.com/anybotics/message_logger">message_logger</a></li>
+  <li><a href="https://bitbucket.org/leggedrobotics/openethercat_soem">openethercat_soem</a></li>
+</ul>
+
+It is recommended to checkout the \a release branches. To build, run
+
+\code
+catkin build anydrive_ethercat_ros rqt_anydrive_monitor
+\endcode
+
+\section setup Setup
+
+\subsection priorities_and_niceness Allow your user to set priorities and niceness
+
+The provided executables perform best when they are given higher priority than other processes.
+By default, a linux user or group cannot set priorities higher than 0.
+To allow your linux user account to do so, you need to append the following entries to the \a /etc/security/limits.conf file (replacing \a <username>):
+
+\code
+<username>       -       rtprio          99
+<username>       -       nice            -20
+\endcode
+
+To allow your entire group to set higher priorities, append (replacing \a <groupname>):
+
+\code
+@<groupname>     -       rtprio          99
+@<groupname>     -       nice            -20
+\endcode
+
+\section usage Usage
+
+The easiest way to connect to one or multiple drives is to use the anydrive_ethercat_ros ROS node.
+It reads all required information from a setup folder containing the following files:
+
+<ul>
+  <li>A single \ref setup_file "ANYdrive setup file"</li>
+  <li>One or multiple \ref configuration_file "ANYdrive configuration file(s)"</li>
+</ul>
+
+Prior to running the ROS node, create your own setup folder following the examples in \a anydrive/example_setups.
+
+\subsection setup_file The ANYdrive setup file
+
+The ANYdrive setup file contains information about the number of drives, the interfaces where they are connected as well as the relative path to their respective \ref configuration_file "configuration files".
+
+This file needs to be placed at the top level of your setup folder and be called \a setup.yaml.
+
+\subsection configuration_file The ANYdrive configuration file
+
+Each ANYdrive within the ANYdrive setup needs a configuration file.
+These files store various drive configuration data, such as the rotation direction or the gains for the different controllers.
+
+The configuration files can be stored at the top level of your setup folder or in subfolders.
+The only thing you need to make sure is that their relative path is correctly represented in your setup file.
+
+\a Note: It is possible to use the same configuration file for multiple drives.
+
+\subsection ros_node Running the ROS node
+
+The anydrive_ethercat_ros ROS node can be started with
+\code
+roslaunch anydrive_ethercat_ros anydrive_ethercat_ros.launch setup_file:="/path/to/your/setup.yaml"
+\endcode
+
+In the case of EtherCAT, the application requires sudo rights to open the raw socket.
+With the following command, the executable can be given sudo rights:
+\code
+sudo setcap cap_net_raw+ep /path/to/anydrive_ethercat_ros_node
+\endcode
+
+Since these rights expire every time the executable is overwritten, there is an alternative launch file to automate the procedure:
+\code
+roslaunch anydrive_ethercat_ros anydrive_ethercat_ros_setcap.launch setup_file:="/path/to/your/setup.yaml" password:="abc123"
+\endcode
+
+\a Note: Your command line terminal might save the command history containing your password.
+
+\subsection rqt_gui Running the rqt GUI
+
+To supervise and control the ANYdrives within the ROS node, the rqt GUI can be launched with
+\code
+roslaunch rqt_anydrive_monitor rqt_anydrive_monitor.launch setup_file:="/path/to/your/setup.yaml"
+\endcode
+
+*/
+

@@ -1,0 +1,172 @@
+anymal_lowlevel_controller:
+  anydrive_setup:
+    anydrives:
+      LF_HAA:
+        configuration:
+          modes:
+            joint_torque:
+              gains:
+                d: 20.1
+                i: 0.165
+                p: 12.5
+      LF_HFE:
+        configuration:
+          modes:
+            joint_torque:
+              gains:
+                d: 20.1
+                i: 0.165
+                p: 12.5
+      LF_KFE:
+        configuration:
+          modes:
+            joint_position:
+              gains:
+                d: 0.2
+                i: 0.41
+                p: 70.0
+            joint_position_velocity:
+              gains:
+                d: 0.2
+                i: 0.41
+                p: 70.0
+            joint_position_velocity_torque:
+              gains:
+                d: 0.2
+                i: 0.41
+                p: 70.0
+            joint_torque:
+              gains:
+                d: 20.1
+                i: 0.165
+                p: 12.5
+      LH_HAA:
+        configuration:
+          modes:
+            joint_torque:
+              gains:
+                d: 20.1
+                i: 0.165
+                p: 12.5
+      LH_HFE:
+        configuration:
+          modes:
+            joint_torque:
+              gains:
+                d: 20.1
+                i: 0.165
+                p: 12.5
+      LH_KFE:
+        configuration:
+          modes:
+            joint_position:
+              gains:
+                d: 0.2
+                i: 0.41
+                p: 70.0
+            joint_position_velocity:
+              gains:
+                d: 0.2
+                i: 0.41
+                p: 70.0
+            joint_position_velocity_torque:
+              gains:
+                d: 0.2
+                i: 0.41
+                p: 70.0
+            joint_torque:
+              gains:
+                d: 20.1
+                i: 0.165
+                p: 12.5
+      RF_HAA:
+        configuration:
+          modes:
+            joint_torque:
+              gains:
+                d: 20.1
+                i: 0.165
+                p: 12.5
+      RF_HFE:
+        configuration:
+          modes:
+            joint_torque:
+              gains:
+                d: 20.1
+                i: 0.165
+                p: 12.5
+      RF_KFE:
+        configuration:
+          modes:
+            joint_position:
+              gains:
+                d: 0.2
+                i: 0.41
+                p: 70.0
+            joint_position_velocity:
+              gains:
+                d: 0.2
+                i: 0.41
+                p: 70.0
+            joint_position_velocity_torque:
+              gains:
+                d: 0.2
+                i: 0.41
+                p: 70.0
+            joint_torque:
+              gains:
+                d: 20.1
+                i: 0.165
+                p: 12.5
+      RH_HAA:
+        configuration:
+          modes:
+            joint_torque:
+              gains:
+                d: 20.1
+                i: 0.165
+                p: 12.5
+      RH_HFE:
+        configuration:
+          modes:
+            joint_torque:
+              gains:
+                d: 20.1
+                i: 0.165
+                p: 12.5
+      RH_KFE:
+        configuration:
+          modes:
+            joint_position:
+              gains:
+                d: 0.2
+                i: 0.41
+                p: 70.0
+            joint_position_velocity:
+              gains:
+                d: 0.2
+                i: 0.41
+                p: 70.0
+            joint_position_velocity_torque:
+              gains:
+                d: 0.2
+                i: 0.41
+                p: 70.0
+            joint_torque:
+              gains:
+                d: 20.1
+                i: 0.165
+                p: 12.5
+rpsm_apc:
+  password: bonnie
+rpsm_lpc:
+  password: bonnie
+  port: /dev/ttyS5
+rpsm_npc:
+  password: bonnie
+stack_launcher:
+  nodes:
+    load_anymal_description:
+      preprocessed_params:
+        xacro_file:
+          value: $(rospack find anymal_bonnie)/urdf/anymal.urdf.xacro

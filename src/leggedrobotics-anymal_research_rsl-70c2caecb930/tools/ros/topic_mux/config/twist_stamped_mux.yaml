@@ -1,0 +1,24 @@
+# Hints:
+# - doubles must have a decimal point for XmlRpc
+# - timeouts can be set to infinity with 0.0
+
+subscribers:
+  default_input:
+    topic:                     /joy_manager/twist
+    queue_size:                1
+  other_inputs:
+    - topic:                   /pose_controller/command_velocity
+      queue_size:              1
+      max_timeout:             10.0
+
+
+publishers:
+  output:
+    topic:                     twist
+    queue_size:                1
+    latch:                     false
+
+servers:
+  set_active_input:            set_active_velocity_source
+  reset_active_input:          reset_active_velocity_source
+

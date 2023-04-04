@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+
+<package format="2">
+
+  <name>anymal_c_navigation</name>
+  <version>1.0.0</version>
+  <description>ANYmal C Navigation Package</description>
+
+  <license>Proprietary</license>
+
+  <author email="rdiethelm@anybotics.com">Remo Diethelm</author>
+  <maintainer email="rdiethelm@anybotics.com">Remo Diethelm</maintainer>
+  <maintainer email="hkhambhaita@anybotics.com">Harmish Khambhaita</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <exec_depend>anymal_c</exec_depend>
+  <exec_depend>anymal_teb_local_planner</exec_depend>
+  <exec_depend>anymal_wide_angle_cameras</exec_depend>
+  <exec_depend>basic_behavior_plugins</exec_depend>
+  <exec_depend>behavior_plugin_runner</exec_depend>
+  <exec_depend>elevation_mapping</exec_depend>
+  <exec_depend>environment_loader</exec_depend>
+  <exec_depend>environment_visualizer</exec_depend>
+  <exec_depend>icp_tools_global_mapping</exec_depend>
+  <exec_depend>localization_manager_ros</exec_depend>
+  <exec_depend>logic_behavior_plugins</exec_depend>
+  <exec_depend>monitor_network</exec_depend>
+  <exec_depend>motion_control_behavior_plugins</exec_depend>
+  <exec_depend>navigation_behavior_plugins</exec_depend>
+  <exec_depend>navigation_manager_ros</exec_depend>
+  <exec_depend>nodelet</exec_depend>
+  <exec_depend>pcl_ros</exec_depend>
+  <exec_depend>perception_behavior_plugins</exec_depend>
+  <exec_depend>pharos</exec_depend>
+  <exec_depend>point_cloud_processor</exec_depend>
+  <exec_depend>pose_graph_global_planner_ros</exec_depend>
+  <exec_depend>report_writer</exec_depend>
+  <exec_depend>robot_behavior_plugins</exec_depend>
+  <exec_depend>rostopic</exec_depend>
+  <exec_depend>system_behavior_plugins</exec_depend>
+  <exec_depend>topic_tools</exec_depend>
+
+</package>

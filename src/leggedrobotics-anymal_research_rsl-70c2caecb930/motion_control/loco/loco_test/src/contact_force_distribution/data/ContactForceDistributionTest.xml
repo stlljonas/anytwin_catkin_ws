@@ -1,0 +1,9 @@
+<ContactForceDistribution>
+	<Weights>
+		<Force heading="1.0" lateral="1.0" vertical="1.0" />
+		<Torque roll="20" pitch="20" yaw="10" />
+		<Regularizer value="0.00001"/>
+	</Weights>
+	<Constraints frictionCoefficient="0.7" minimalNormalForce="2.0"  />
+	<LoadFactor loadFactor="1.0" />
+</ContactForceDistribution> 

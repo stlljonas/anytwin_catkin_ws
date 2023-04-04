@@ -1,0 +1,4 @@
+# Device to erase flash storage. Leave empty for all devices.
+string device_name
+
+---

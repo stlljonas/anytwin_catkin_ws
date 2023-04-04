@@ -1,0 +1,19 @@
+<library path="lib/librqt_anydrive_monitor">
+  <class name="rqt_anydrive_monitor/AnydriveMonitorPlugin"
+         type="rqt_anydrive_monitor::AnydriveMonitorPlugin"
+         base_class_type="rqt_gui_cpp::Plugin">
+    <description>
+      An rqt plugin for observing and commanding robots consisting of ANYdrives.
+    </description>
+    <qtgui>
+      <group>
+        <label>ANYdrive</label>
+        <icon type="theme">folder</icon>
+        <statustip>Plugins related to ANYdrive</statustip>
+      </group>
+      <label>ANYdrive Monitor</label>
+      <icon type="file">resource/icon.png</icon>
+      <statustip>ANYdrive Monitor</statustip>
+    </qtgui>
+  </class>
+</library>

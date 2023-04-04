@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+  <!-- Namespace -->
+  <arg name="ns" value="motion_generation"/>
+
+  <!-- Parameter (without namespace) -->
+  <rosparam file="$(find rqt_gait_switcher)/params/anymal_ctrl_dynamic_gaits.yaml" command="load"/>
+  
+  <!-- Node -->
+  <node ns="$(arg ns)" pkg="rqt_gait_switcher" type="rqt_gait_switcher" name="rqt_gait_switcher" output="screen"/>
+</launch>

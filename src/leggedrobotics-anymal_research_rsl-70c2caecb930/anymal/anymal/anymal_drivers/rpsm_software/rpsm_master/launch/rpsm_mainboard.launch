@@ -1,0 +1,12 @@
+<launch>
+  <env name="ROSCONSOLE_CONFIG_FILE" value="$(find rpsm_master)/config/rosconsole.config" />
+  <node name="rpsm_mainboard"
+        pkg="rpsm_master"
+        type="rpsm_mainboard_node"
+        output="screen"
+        launch-prefix="">
+    <param name="port" value="/dev/ttyS1"/>
+    <param name="baud" value="115200"/>
+    <param name="time_step" value="0.01"/>
+  </node>
+</launch>

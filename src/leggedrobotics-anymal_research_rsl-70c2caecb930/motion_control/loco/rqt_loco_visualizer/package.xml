@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>rqt_loco_visualizer</name>
+  <version>0.6.0</version>
+  <description>The rqt_loco_visualizer package</description>
+
+  <author email="bellicoso@mavt.ethz.ch">Dario Bellicoso</author>
+  <author email="sbachmann@anybotics.com">Samuel Bachmann</author>
+
+  <maintainer email="fgiraldez@anybotics.com">Francisco Giráldez Gámez</maintainer>
+  <maintainer email="avijayan@anybotics.com">Aravind Vijayan</maintainer>
+
+  <license>Proprietary</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>anymal_msgs</depend>
+  <depend>qtbase5-dev</depend>
+  <depend>roscpp</depend>
+  <depend>rqt_gui</depend>
+  <depend>rqt_gui_cpp</depend>
+
+  <export>
+    <architecture_independent/>
+    <rqt_gui plugin="${prefix}/plugin.xml"/>
+  </export>
+
+</package>

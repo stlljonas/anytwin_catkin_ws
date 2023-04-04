@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<package format="2">
+
+  <name>system_monitor</name>
+  <version>0.1.0</version>
+  <description>ROS nodes monitoring the system.</description>
+
+  <license>Proprietary</license>
+  <author email="rdiethelm@anybotics.com">Remo Diethelm</author>
+  <maintainer email="rdiethelm@anybotics.com">Remo Diethelm</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <!-- Note: No depency required for running 'df'. -->
+  <exec_depend>chrony</exec_depend>  <!-- Required for running 'chronyc'. -->
+  <exec_depend>diagnostic_msgs</exec_depend>
+  <exec_depend>ifstat</exec_depend>  <!-- Required for running 'ifstat'. -->
+  <exec_depend>lm-sensors</exec_depend>  <!-- Required for running 'sensors'. -->
+  <exec_depend>procps</exec_depend>  <!-- Required for running 'free' and 'uptime'. -->
+  <exec_depend>rospy</exec_depend>
+  <exec_depend>sysstat</exec_depend>  <!-- Required for running 'mpstat'. -->
+  <exec_depend>system_monitor_msgs</exec_depend>
+
+  <test_depend>roslaunch</test_depend>
+
+</package>

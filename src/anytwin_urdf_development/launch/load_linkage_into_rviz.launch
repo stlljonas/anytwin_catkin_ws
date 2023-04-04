@@ -1,0 +1,12 @@
+<launch>
+	<arg name="model" default="$(find anytwin_urdf_development)/urdf/linkage.urdf.xacro"/>
+	<arg name="gui" default="false"/>
+
+	<param name="robot_description" command="$(find xacro)/xacro $(arg model)"/>
+
+	<node if="$(arg gui)" name="joint_state_publisher" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui"/>
+	<node unless="$(arg gui)" name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"/>
+	<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
+	<!--node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true"/-->
+	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find anytwin_urdf_development)/linkage_config_file.rviz"/>
+</launch>

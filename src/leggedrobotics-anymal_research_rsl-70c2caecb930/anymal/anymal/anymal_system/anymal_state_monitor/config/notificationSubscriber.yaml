@@ -1,0 +1,5 @@
+notification:
+  output_devices:
+    operator_screen:
+      topic: /notification
+      queue_size: 200

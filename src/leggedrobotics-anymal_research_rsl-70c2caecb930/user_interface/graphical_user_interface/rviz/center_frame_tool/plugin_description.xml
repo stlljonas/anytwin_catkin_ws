@@ -1,0 +1,10 @@
+<library path="lib/libcenter_frame_tool">
+  <class name="center_frame_tool/CenterFrameTool"
+         type="center_frame_tool::CenterFrameTool"
+         base_class_type="rviz::Tool">
+    <description>
+      Tool for centering the camera on a particular frame
+    </description>
+  </class>
+
+</library>

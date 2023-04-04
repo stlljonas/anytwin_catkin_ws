@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+  <!-- Simulation -->
+  <arg name="simulation" default="true"/>
+  
+  <!-- Namespace -->
+  <arg name="ns" value="user_interface"/>
+
+  <!-- Parameter (without namespace) -->
+  <rosparam file="$(find rqt_highlevel_controlmanager)/params/example.yaml"
+            command="load"/>
+  <param name="/controlmanager/simulation" value="$(arg simulation)"/>
+
+  <!-- Node -->
+  <node ns="$(arg ns)" pkg="rqt_highlevel_controlmanager"
+        type="rqt_highlevel_controlmanager" name="rqt_highlevel_controlmanager"
+        output="screen"/>
+</launch>

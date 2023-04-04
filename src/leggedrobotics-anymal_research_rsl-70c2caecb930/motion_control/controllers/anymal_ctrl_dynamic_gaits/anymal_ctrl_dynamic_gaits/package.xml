@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>anymal_ctrl_dynamic_gaits</name>
+  <version>0.4.0</version>
+  <description>The anymal_ctrl_dynamic_gaits package</description>
+  <maintainer email="fgiraldez@anybotics.com">Francisco Giráldez Gámez</maintainer>
+  <maintainer email="avijayan@anybotics.com">Aravind Vijayan</maintainer>
+  <license>Proprietary</license>
+  <author email="bellicoso@mavt.ethz.ch">Dario Bellicoso</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>anymal_description</depend>
+  <depend>anymal_model</depend>
+  <depend>robot_utils</depend>
+  <depend>signal_logger</depend>
+  <depend>robot_control</depend>
+  <depend>loco</depend>
+  <depend>motion_generation_loco</depend>
+  <depend>loco_anymal</depend>
+  <depend>numopt_quadprog</depend>
+  <depend>pluginlib</depend>
+  <depend>anymal_motion_control</depend>
+  <depend>message_logger</depend>
+  <depend>motion_generation</depend>
+  <depend>swing_trajectory_generation</depend>
+  <depend>zmp_optimizer</depend>
+  <depend>tinyxml_tools</depend>
+  <depend>terrain_sensing</depend>
+  <depend>state_checker</depend>
+  <depend>inverse_kinematics_control</depend>
+  <depend>loco_perf</depend>
+
+  <export>
+    <robot_control plugin="${prefix}/robot_control_plugin.xml" />
+  </export>
+</package>

@@ -1,0 +1,21 @@
+servers:
+  switch_controller:
+    service: switch_controller
+    persistent: false
+  emergency_stop:
+    service: emergency_stop
+    persistent: false
+  clear_emergency_stop:
+    service: clear_emergency_stop
+    persistent: false
+  get_active_controller:
+    service: get_active_controller
+    persistent: false
+  get_available_controllers:
+    service: get_available_controllers
+    persistent: false
+
+clients:
+  reset_state_estimator:
+    service: /state_estimator/reset
+    persistent: false

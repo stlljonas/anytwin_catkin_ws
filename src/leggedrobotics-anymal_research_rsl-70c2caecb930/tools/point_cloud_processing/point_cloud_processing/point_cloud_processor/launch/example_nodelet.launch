@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<launch>
+
+  <arg name="launch-prefix"               default=""/>
+  <arg name="config_files_folder"         default="$(find point_cloud_processor)/config"/>
+
+  <node pkg="nodelet" type="nodelet" name="point_cloud_processor_nodelet" args="load point_cloud_processor/FilteringAndMergingNodelet nodelet_manager" output="screen" launch-prefix="$(arg launch-prefix)">
+    <param name="config_files_folder"       value="$(arg config_files_folder)"/>
+    <rosparam command="load" file="$(arg config_files_folder)/sensor_streams_example.yaml"/>
+  </node>
+
+  <!-- Nodelet manager -->
+  <node name="nodelet_manager" pkg="nodelet" type="nodelet" args="manager" output="screen"/>
+
+</launch>

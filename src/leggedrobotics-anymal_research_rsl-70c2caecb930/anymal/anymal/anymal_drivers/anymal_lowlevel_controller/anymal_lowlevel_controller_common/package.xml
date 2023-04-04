@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<package format="2">
+
+  <name>anymal_lowlevel_controller_common</name>
+  <version>0.6.0</version>
+  <description>The ANYmal lowlevel controller common package</description>
+
+  <license>Proprietary</license>
+  <author email="rdiethelm@anybotics.com">Remo Diethelm</author>
+  <maintainer email="pleemann@anybotics.com">Philipp Leemann</maintainer>
+  <maintainer email="rdiethelm@anybotics.com">Remo Diethelm</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>anymal_msgs</depend>
+
+</package>

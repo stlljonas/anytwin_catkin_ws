@@ -1,0 +1,15 @@
+adapt_coordinates:
+  - transform:
+      source_frame: footprint
+      target_frame: odom
+
+steps:
+
+ - step:
+    - base_target:
+       target:
+        frame: footprint
+        position: [0.1, 0.0, 0.4]
+        orientation: [deg(5), deg(-10), deg(15)]
+ - step:
+    - base_auto:

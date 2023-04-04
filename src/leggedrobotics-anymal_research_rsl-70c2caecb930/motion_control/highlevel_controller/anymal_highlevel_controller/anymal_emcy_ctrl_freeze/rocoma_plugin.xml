@@ -1,0 +1,10 @@
+<library path="lib/libanymal_emcy_ctrl_freeze">
+  <class type="Freeze" base_class_type="rocoma_plugin::FailproofControllerPluginInterface<anymal_roco::RocoState, anymal_roco::RocoCommand>">
+  </class>
+  <class type="Freeze" base_class_type="rocoma_plugin::EmergencyControllerPluginInterface<anymal_roco::RocoState, anymal_roco::RocoCommand>">
+  </class>
+  <class type="Freeze" base_class_type="rocoma_plugin::ControllerPluginInterface<anymal_roco::RocoState, anymal_roco::RocoCommand>">
+  </class>
+  <class type="HybridFreeze" base_class_type="rocoma_plugin::EmergencyControllerPluginInterface<anymal_roco::RocoState, anymal_roco::RocoCommand>">
+  </class>
+</library>

@@ -1,0 +1,31 @@
+actions:
+  - action:
+      id: demo_base_motion
+      name: Demo Base Motion
+      file: actions/anymal_demo_actions/demo_base_motion.yaml
+      type: yaml
+      description: Demo base motion for OO leg config (outwards).
+  - action:
+      id: demo_base_motion_with_inspection_head
+      name: Demo Base Motion With Inspection Head
+      file: actions/anymal_demo_actions/demo_base_motion_with_inspection_head.yaml
+      type: yaml
+      description: Demo base motion for OO leg config (outwards) with inspection head.
+  - action:
+      id: dance_here
+      name: Dance Here
+      file: actions/anymal_demo_actions/dance/dance_here.py
+      type: python
+      description: Dance at current position.
+  - action:
+      id: lie_down_unsafe
+      name: Lie Down With Square Up
+      file: actions/lie_down/lie_down_unsafe.py
+      type: python
+      description: Lie down on belly.
+  - action:
+      id: stand_up
+      name: Stand Up
+      file: actions/stand_up/stand_up.py
+      type: python
+      description: Stand up from rest.

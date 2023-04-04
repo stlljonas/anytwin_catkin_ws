@@ -1,0 +1,10 @@
+subscribers:
+  active_state:
+    topic:       /anymal_lowlevel_controller/active_state
+    queue_size:  1
+
+clients:
+  go_to_state:
+    service:     /anymal_lowlevel_controller/go_to_state
+    persistent:  false
+

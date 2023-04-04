@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+
+  <!-- Stairs configuration -->
+  <arg name="stairs_config" default="standard_stairs"/>
+
+  <node pkg="tf2_ros" type="static_transform_publisher" name="stairs_frame_broadcaster" args="0.5 0 0 0 0 0 /map /stairs 100"/>
+
+  <node pkg="free_gait_stair_climbing" type="free_gait_stair_climbing" name="free_gait_stair_climbing" output="screen">
+    <rosparam command="load" file="$(find free_gait_stair_climbing)/config/$(arg stairs_config).yaml" />
+  </node>
+
+</launch>

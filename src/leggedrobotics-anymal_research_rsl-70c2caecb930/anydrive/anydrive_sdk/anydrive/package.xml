@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+
+<package format="2">
+
+  <name>anydrive</name>
+  <version>0.6.0</version>
+  <description>Core C++ library to interface one or multiple drives. Contains abstract base classes for the communication interface.</description>
+
+  <license>Proprietary</license>
+  <author email="rdiethelm@anybotics.com">Remo Diethelm</author>
+  <author email="cgehring@anybotics.com">Christian Gehring</author>
+  <maintainer email="rdiethelm@anybotics.com">Remo Diethelm</maintainer>
+  <maintainer email="pleemann@anybotics.com">Philipp Leemann</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>cmake_clang_tools</build_depend>
+
+  <depend>any_worker</depend>
+  <depend>any_measurements</depend>
+  <depend>message_logger</depend>
+  <depend>signal_handler</depend>
+  <depend>yaml_tools</depend>
+
+  <test_depend>gtest</test_depend>
+  <test_depend>cmake_code_coverage</test_depend>
+
+</package>

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<package format="2">
+
+  <name>gazebo_worlds</name>
+  <version>0.6.0</version>
+  <description>Collection of Gazebo world files</description>
+
+  <license>Proprietary</license>
+
+  <author email="bellicoso@mavt.ethz.ch">Dario Bellicoso</author>
+  <author email="pfankhauser@anybotics.com">Peter Fankhauser</author>
+  <maintainer email="rdiethelm@anybotics.com">Remo Diethelm</maintainer>
+  <maintainer email="lisler@anybotics.com">Linus Isler</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+</package>

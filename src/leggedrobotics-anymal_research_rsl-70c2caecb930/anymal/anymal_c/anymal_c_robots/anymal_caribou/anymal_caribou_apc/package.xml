@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+
+<package format="2">
+
+  <name>anymal_caribou_apc</name>
+  <version>1.0.0</version>
+  <description>ANYmal Caribou Application PC Package</description>
+
+  <license>Proprietary</license>
+
+  <author email="rdiethelm@anybotics.com">Remo Diethelm</author>
+  <maintainer email="rdiethelm@anybotics.com">Remo Diethelm</maintainer>
+  <maintainer email="sbachmann@anybotics.com">Samuel Bachmann</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <exec_depend>anymal_c_apc_drivers</exec_depend>
+  <exec_depend>anymal_caribou_application</exec_depend>
+
+  <export>
+    <metapackage />
+  </export>
+
+</package>

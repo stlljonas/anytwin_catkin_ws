@@ -1,0 +1,7 @@
+# Device to get the info from.
+string device_name
+
+---
+
+# Device info.
+DriveInfo drive_info

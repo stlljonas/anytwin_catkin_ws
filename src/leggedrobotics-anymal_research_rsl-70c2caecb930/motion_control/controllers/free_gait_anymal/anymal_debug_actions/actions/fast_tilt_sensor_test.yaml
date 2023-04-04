@@ -1,0 +1,147 @@
+adapt_coordinates:
+  - transform:
+      source_frame: footprint
+      target_frame: odom
+
+steps:
+
+  # Cycle 1
+
+  - step:
+      - base_trajectory:
+          trajectory:
+            frame: footprint
+            knots:
+              - time: 0.5
+                position: [0.0, 0.0, 0.4]
+                orientation: [0.0, deg(15), 0.0]
+              - time: 1.0
+                position: [0.0, 0.0, 0.4]
+                orientation: [0.0, deg(-15), 0.0]
+              - time: 1.5
+                position: [0.0, 0.0, 0.4]
+                orientation: [0.0, 0.0, 0.0]
+
+  - step:
+      - base_trajectory:
+          trajectory:
+            frame: footprint
+            knots:
+              - time: 0.5
+                position: [0.0, 0.0, 0.4]
+                orientation: [0.0, 0.0, deg(15)]
+              - time: 1.0
+                position: [0.0, 0.0, 0.4]
+                orientation: [0.0, 0.0, deg(-15)]
+              - time: 1.5
+                position: [0.0, 0.0, 0.4]
+                orientation: [0.0, 0.0, 0.0]
+
+  - step:
+      - base_trajectory:
+          trajectory:
+            frame: footprint
+            knots:
+              - time: 0.5
+                position: [0.0, 0.0, 0.38]
+                orientation: [deg(15), 0.0, 0.0]
+              - time: 1.0
+                position: [0.0, 0.0, 0.38]
+                orientation: [deg(-15), 0.0, 0.0]
+              - time: 1.5
+                position: [0.0, 0.0, 0.4]
+                orientation: [0.0, 0.0, 0.0]
+
+  # Cycle 2
+
+  - step:
+      - base_trajectory:
+          trajectory:
+            frame: footprint
+            knots:
+              - time: 0.5
+                position: [0.0, 0.0, 0.4]
+                orientation: [0.0, deg(20), 0.0]
+              - time: 1.0
+                position: [0.0, 0.0, 0.4]
+                orientation: [0.0, deg(-20), 0.0]
+              - time: 1.5
+                position: [0.0, 0.0, 0.4]
+                orientation: [0.0, 0.0, 0.0]
+
+  - step:
+      - base_trajectory:
+          trajectory:
+            frame: footprint
+            knots:
+              - time: 0.5
+                position: [0.0, 0.0, 0.4]
+                orientation: [0.0, 0.0, deg(20)]
+              - time: 1.0
+                position: [0.0, 0.0, 0.4]
+                orientation: [0.0, 0.0, deg(-20)]
+              - time: 1.5
+                position: [0.0, 0.0, 0.4]
+                orientation: [0.0, 0.0, 0.0]
+
+  - step:
+      - base_trajectory:
+          trajectory:
+            frame: footprint
+            knots:
+              - time: 0.5
+                position: [0.0, 0.0, 0.38]
+                orientation: [deg(20), 0.0, 0.0]
+              - time: 1.0
+                position: [0.0, 0.0, 0.38]
+                orientation: [deg(-20), 0.0, 0.0]
+              - time: 1.5
+                position: [0.0, 0.0, 0.4]
+                orientation: [0.0, 0.0, 0.0]
+
+  # Cycle 3
+
+  - step:
+      - base_trajectory:
+          trajectory:
+            frame: footprint
+            knots:
+              - time: 0.5
+                position: [0.0, 0.0, 0.4]
+                orientation: [0.0, deg(25), 0.0]
+              - time: 1.0
+                position: [0.0, 0.0, 0.4]
+                orientation: [0.0, deg(-25), 0.0]
+              - time: 1.5
+                position: [0.0, 0.0, 0.4]
+                orientation: [0.0, 0.0, 0.0]
+
+  - step:
+      - base_trajectory:
+          trajectory:
+            frame: footprint
+            knots:
+              - time: 0.5
+                position: [0.0, 0.0, 0.4]
+                orientation: [0.0, 0.0, deg(25)]
+              - time: 1.0
+                position: [0.0, 0.0, 0.4]
+                orientation: [0.0, 0.0, deg(-25)]
+              - time: 1.5
+                position: [0.0, 0.0, 0.4]
+                orientation: [0.0, 0.0, 0.0]
+
+  - step:
+      - base_trajectory:
+          trajectory:
+            frame: footprint
+            knots:
+              - time: 0.5
+                position: [0.0, 0.0, 0.38]
+                orientation: [deg(25), 0.0, 0.0]
+              - time: 1.0
+                position: [0.0, 0.0, 0.38]
+                orientation: [deg(-25), 0.0, 0.0]
+              - time: 1.5
+                position: [0.0, 0.0, 0.4]
+                orientation: [0.0, 0.0, 0.0]

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+
+<package format="2">
+
+  <name>localization_manager</name>
+  <version>0.3.0</version>
+  <description>Localization manager.</description>
+
+  <license>Proprietary</license>
+  
+  <author email="rdiethelm@anybotics.com">Remo Diethelm</author>
+  <maintainer email="rdiethelm@anybotics.com">Remo Diethelm</maintainer>
+  <maintainer email="ynava@anybotics.com">Yoshua Nava</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  
+  <build_depend>cmake_clang_tools</build_depend>
+
+  <depend>any_measurements</depend>
+
+  <test_depend>cmake_code_coverage</test_depend>
+
+</package>
+

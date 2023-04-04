@@ -1,0 +1,128 @@
+subscribers:
+  input_point_cloud:
+    topic:                                      input_point_cloud
+    queue_size:                                 1
+  initial_guess:
+    topic:                                      /interaction_marker/localization_initial_guess
+    queue_size:                                 1
+
+publishers:
+  node_state:                                                       # State of the node.
+    topic:                                      node_state
+    queue_size:                                 1
+    latch:                                      false
+    frequency:                                  10.0                # [Hz].
+  initial_guess:                                                    # Initial guess for the robot pose in map frame.
+    topic:                                      initial_guess
+    queue_size:                                 1
+    latch:                                      false
+  robot_pose_visualizable:                                          # Pose of the robot in map without covariances.
+    topic:                                      pose_visualizable
+    queue_size:                                 1
+    latch:                                      true
+  robot_pose_in_map:                                                # Pose of the robot in map with covariances.
+    topic:                                      pose
+    queue_size:                                 1
+    latch:                                      false
+  map_pose:                                                         # Pose of the map in odometry.
+    topic:                                      map_pose
+    queue_size:                                 1
+    latch:                                      false
+  input_point_cloud_matched:                                        # Input point cloud matched with the map.
+    topic:                                      input_point_cloud_matched
+    queue_size:                                 1
+    latch:                                      false
+  map_static:                                                       # Static points in the map.
+    topic:                                      map_static
+    queue_size:                                 1
+    latch:                                      true
+  map_dynamic:                                                      # Dynamic points in the map.
+    topic:                                      map_dynamic
+    queue_size:                                 1
+    latch:                                      true
+  reset_notification:                                               # Reset notification message.
+    topic:                                      reset_notification
+    queue_size:                                 1
+    latch:                                      false
+  toggle_localization_notification:                                 # Toggle registration message.
+    topic:                                      toggle_localization_notification
+    queue_size:                                 1
+    latch:                                      false
+  toggle_loop_detection_notification:                               # Toggle loop detection message.
+    topic:                                      toggle_loop_detection_notification
+    queue_size:                                 1
+    latch:                                      false
+  toggle_mapping_notification:                                      # Toggle mapping message.
+    topic:                                      toggle_mapping_notification
+    queue_size:                                 1
+    latch:                                      false
+  toggle_publish_pose_notification:                                 # Toggle localization message.
+    topic:                                      toggle_publish_pose_notification
+    queue_size:                                 1
+    latch:                                      false
+
+servers:
+  toggle_localization:
+    service:                                    toggle_localization
+  toggle_publish_pose:
+    service:                                    toggle_publish_pose
+  toggle_mapping:
+    service:                                    toggle_mapping
+  reset:
+    service:                                    reset
+  clear_initial_guess:
+    service:                                    clear_initial_guess
+  save_map_to_file:
+    service:                                    save_map_to_file
+  load_map_from_file:
+    service:                                    load_map_from_file
+  clear_map:
+    service:                                    clear_map
+  publish_map:
+    service:                                    publish_map
+  read_config_files:
+    service:                                    read_config_files
+
+frames:
+  robot:                                        base
+  odometry:                                     odom
+  map:                                          map
+
+common:
+  max_sensor_range:                             30.0                # Max. radius of the input point cloud [m]. Defined by the sensor with the biggest range.
+  max_sensor_range_scaling_to_cut_map:          1.2                 # Before running the localization step, the map is cut around the initial guess. The radius is determined by the max sensor range multiplied by this factor [-].
+
+localization:
+  initial_guess:
+    use_tf:                                     true                # Query the tf tree to find recent pose of the robot in every iteration.
+    update_tf_duration:                         2.0                 # Duration to wait after enabling publish pose to use tfs as initial guess [s].
+    wait_for_tf_duration:                       0.1                 # Duration to wait for the tf [s].
+  icp:
+    min_map_size:                               500                 # Minimum map size to run ICP (after applying the filters).
+    min_input_point_cloud_size:                 500                 # Minimum input point cloud size to run ICP (after applying the filters).
+    min_overlap:                                0.20                # Minimal overlap to use ICP results [0,1].
+    config_file_name:                           icp.yaml            # Name of the file containing the ICP configuration.
+  result:
+    enforce_map_gravity_alignment:              true                # Correct the ICP result such that the map frame is aligned with gravity.
+    update_time_using_odometry:                 false               # Update the resulting pose with the relative motion of the robot during the localization procedure.
+
+mapping:
+  max_overlap:                                  1.0                 # Maximal overlap to add the input point cloud to the map [0,1].
+  filters_file_name:                            "map_filters.yaml"  # Filters applied to the map after loading or extending it.
+  max_distance_overlapping_points:              0.04                # Maximal distance between two points to consider them overlapping [m]. Determines map density.
+  remove_dynamic_points_after_extending_map:    true                # Whether dynamic points will be removed after extending the map.
+  dynamic_points_detection:
+    prior_static:                               0.8                 # Prior of new points to be static [0,1].
+    max_angle_between_spherical_neighbors:      0.01                # Angle around which all input points are associated to a map point [rad].
+    eps_a:                                      0.1                 # Ratio of noise based on depth measurement of an input point [-].
+    eps_d:                                      0.1                 # Fixed noise on depth measurement of an input point [m].
+    alpha:                                      0.95                # Probability of staying static given that the point was static [0,1].
+    beta:                                       0.75                # Probability of staying dynamic given that the point was dynamic [0,1].
+    eps:                                        0.0001              # Probability weights are in the range [eps, 1.0]. eps is a small number > 0.0, preventing eventual division by 0.0 (0,1].
+    max_dynamic_probability:                    0.9                 # Probability at which a point is considered permanently dynamic [0,1].
+    add_debug_descriptors:                      false               # Whether debug descriptors should be appended to the processed point clouds.
+
+robustness:
+  consecutive_localization_fails_before_reset:  0                   # Number of times that matching can fail consecutively before icp clears the map and resets itself. 0 means never reset.
+  localization_correction_position_threshold:   0.2                 # Threshold used to determine if a localization correction is reasonable, based on its change in position.
+  localization_correction_rotation_threshold:   0.1                 # Threshold used to determine if a localization correction is reasonable, based on its change in rotation.

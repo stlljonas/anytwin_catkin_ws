@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+
+<package format="2">
+
+  <name>interaction_marker</name>
+  <version>0.6.0</version>
+  <description>Interactive marker using plugins for interactions.</description>
+
+  <license>Proprietary</license>
+
+  <author email="rdiethelm@anybotics.com">Remo Diethelm</author>
+  <maintainer email="rdiethelm@anybotics.com">Remo Diethelm</maintainer>
+  <maintainer email="sbachmann@anybotics.com">Samuel Bachmann</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>interactive_markers</depend>
+  <depend>param_io</depend>
+  <depend>pluginlib</depend>
+  <depend>roscpp</depend>
+  <depend>std_srvs</depend>
+  <depend>visualization_msgs</depend>
+
+</package>

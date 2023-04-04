@@ -1,0 +1,329 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- Parameters -->
+  <xacro:arg name="simulation" default="false"/>
+  <xacro:arg name="simulate_zoom_camera" default="true"/>
+  <xacro:arg name="simulate_thermal_camera" default="true"/>
+
+  <!-- Inspection payload description -->
+  <xacro:macro name="inspection_payload_description" params="name parent version:='P-PTU-VTAL-A' *origin">
+
+    <joint name="${parent}_to_${name}_mount" type="fixed">
+      <parent link="${parent}"/>
+      <child link="${name}_mount"/>
+      <xacro:insert_block name="origin"/>
+    </joint>
+
+    <link name="${name}_mount">
+      <visual>
+        <origin xyz="0 0 -0.0165" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://inspection_payload_description/mesh/hatch.dae" scale="1 1 1"/>
+        </geometry>
+        <material name="gray_hatch">
+          <color rgba="0.5 0.5 0.5 1"/>
+        </material>
+      </visual>
+      <inertial>
+        <!-- These inertial parameters are adapted and based on the estimate that the bigger portion of the weight
+         is in the pan link (1/2), the intertial matrix is derived from a cube with 0.4 m length on each dimension
+         (diagonal elements) and the others are not meaningful. -->
+        <origin xyz="-0.002 0.00 0.001" rpy="0 0 0"/>
+        <mass value="0.469"/>
+        <inertia ixx="0.000620738" ixy= "0.000009253" ixz="0.000000848"
+                 iyy="0.000860056" iyz="0.000000268" izz="0.001239176"/>
+        <!-- These inertial parameters consider the whole pantilt head unit as a single rigid body.
+        <origin xyz="-0.0046 0.0046 0.0686" rpy="0 0 0"/>
+        <mass value="2.26"/>
+        <inertia ixx="0.01246" ixy= "-0.000227" ixz="0.00053"
+                 iyy="0.007706" iyz="-0.000527" izz="0.008967"/>
+         -->
+      </inertial>
+    </link>
+
+    <joint name="${name}_mount_to_pan" type="revolute">
+      <physics>
+        <provide_feedback>true</provide_feedback>
+      </physics>
+      <parent link="${name}_mount"/>
+      <child link="${name}_pan"/>
+      <limit lower="-2.35619" upper="2.35619" effort="20" velocity="2"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <axis xyz="0 0 1"/>
+      <!-- random/empirically chosen values (i.e. not physically meaningful), the model crashes if only non-zero damping was defined but no friction -->
+      <dynamics damping="0.05" friction="0.01"/>
+    </joint>
+
+    <link name="${name}_pan">
+      <visual>
+        <origin xyz="0 0 -0.0165" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://inspection_payload_description/mesh/pan.dae" scale="1 1 1"/>
+        </geometry>
+        <material name="gray_pan">
+          <color rgba="0.3 0.3 0.3 1"/>
+        </material>
+      </visual>
+      <inertial>
+        <origin xyz="0.006 -0.001 0.054" rpy="0 0 0"/>
+        <!-- The inertial values are just some placeholders, I assumed the link is a cube with 0.4 m side length
+        and that the pan unit accounts for half of the total mass. The inertial parameters are needed that the
+        controller does not go crazy, as with no mass the parts start to oscillate fast -->
+        <mass value="1.408"/>
+        <inertia ixx="0.007770372" ixy="0.000018673" ixz="0.000498393" iyy="0.008361515" iyz="0.000135184" izz="0.003593977"/>
+      </inertial>
+      
+      <!-- Inspection Payload self filtering -->
+  	  <self_filter>
+        <origin xyz="0 0 0.1" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.3 0.3 0.3"/>
+        </geometry>
+      </self_filter>
+    </link>
+
+    <joint name="${name}_pan_to_tilt" type="revolute">
+      <physics>
+        <provide_feedback>true</provide_feedback>
+      </physics>
+      <parent link="${name}_pan"/>
+      <child link="${name}_tilt"/>
+      <limit lower="-1.570796" upper="1.570796" effort="20" velocity="2"/>
+      <origin xyz="0 0 0.126" rpy="0 0 0"/>
+      <axis xyz="0 1 0"/>
+      <!-- random/empirically chosen values (i.e. not physically meaningful), the model crashes if only non-zero damping was defined but no friction -->
+      <dynamics damping="0.1" friction="0.05"/>
+    </joint>
+
+    <xacro:property name="tilt_mass" value="${1.67 if version == 'P-PTU-VTAL-B' else 1.35}" />
+    <link name="${name}_tilt">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://inspection_payload_description/mesh/tilt.dae" scale="1 1 1"/>
+        </geometry>
+        <material name="gray_tilt">
+          <color rgba="0.7 0.7 0.7 1"/>
+        </material>
+      </visual>
+      <inertial>
+        <origin xyz="0.00065 0.02454 0.01174" rpy="0 0 0"/>
+        <!-- The inertial values are just some placeholders, I assumed the link is a cube with 0.4 m side length
+        and that the pan unit accounts for a quarter of the total mass. The inertial parameters are needed that the
+        controller does not go crazy, as with no mass the parts start to oscillate fast -->
+        <mass value="${tilt_mass}"/>
+        <inertia ixx="0.01200407652" ixy="0.00003340690" ixz="0.00003333671" iyy="0.00165129659" iyz="0.00048462414" izz="0.01158824347"/>
+        <!--
+        <mass value="0.001"/>
+        <inertia ixx="0.00001" ixy="0.0" ixz="0.0" iyy="0.00001" iyz="0.0" izz="0.00001"/>
+        -->
+      </inertial>
+    </link>
+
+    <joint name="${name}_tilt_to_head" type="fixed">
+      <parent link="${name}_tilt"/>
+      <child link="${name}_head"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+    </joint>
+
+    <link name="${name}_head"/>
+
+    <xacro:property name="camera_x" value="${0.069 if version == 'P-PTU-VTAL-B' else 0.035}" />
+    <xacro:property name="camera_y" value="${-0.096 if version == 'P-PTU-VTAL-B' else 0.099}" />
+    <xacro:property name="camera_z" value="${-0.0002 if version == 'P-PTU-VTAL-B' else -0.008}" />
+    <joint name="${name}_head_to_camera" type="fixed">
+      <parent link="${name}_head"/>
+      <child link="${name}_camera"/>
+      <origin xyz="${camera_x} ${camera_y} ${camera_z}" rpy="-1.57079633 0 -1.57079633"/>
+    </joint>
+
+    <link name="${name}_camera"/>
+
+    <xacro:property name="thermal_camera_x" value="${0.026 if version == 'P-PTU-VTAL-B' else 0.028}" />
+    <xacro:property name="thermal_camera_y" value="${0.0875 if version == 'P-PTU-VTAL-B' else 0.108}" />
+    <xacro:property name="thermal_camera_z" value="${0.057 if version == 'P-PTU-VTAL-B' else 0.066}" />
+    <joint name="${name}_head_to_thermal_camera" type="fixed">
+      <parent link="${name}_head"/>
+      <child link="${name}_thermal_camera"/>
+      <origin xyz="${thermal_camera_x} ${thermal_camera_y} ${thermal_camera_z}" rpy="-1.57079633 0 -1.57079633"/>
+    </joint>
+
+    <link name="${name}_thermal_camera"/>
+
+    <xacro:property name="light_x" value="${0.035 if version == 'P-PTU-VTAL-B' else 0.031}" />
+    <xacro:property name="light_y" value="${0.091 if version == 'P-PTU-VTAL-B' else -0.096}" />
+    <xacro:property name="light_z" value="${0.0 if version == 'P-PTU-VTAL-B' else 0.0}" />
+    <joint name="${name}_head_to_light" type="fixed">
+      <parent link="${name}_head"/>
+      <child link="${name}_light"/>
+      <origin xyz="${light_x} ${light_y} ${light_z}" rpy="-1.57079633 0 -1.57079633"/>
+    </joint>
+
+    <link name="${name}_light"/>
+
+    <xacro:property name="microphone_x" value="${0.0411 if version == 'P-PTU-VTAL-B' else 0.035}" />
+    <xacro:property name="microphone_y" value="${0.086 if version == 'P-PTU-VTAL-B' else -0.096}" />
+    <xacro:property name="microphone_z" value="${-0.039 if version == 'P-PTU-VTAL-B' else 0.05}" />
+    <joint name="${name}_head_to_microphone" type="fixed">
+      <parent link="${name}_head"/>
+      <child link="${name}_microphone"/>
+      <origin xyz="${microphone_x} ${microphone_y} ${microphone_z}" rpy="-1.57079633 0 -1.57079633"/>
+    </joint>
+
+    <link name="${name}_microphone"/>
+
+    <!-- Static default camera frame required for computations (e.g. point to position) -->
+    <joint name="${name}_mount_to_camera_default" type="fixed">
+      <parent link="${name}_mount"/>
+      <child link="${name}_camera_default"/>
+      <origin xyz="0.0 0.0 0.126" rpy="0 0 0"/>
+    </joint>
+
+    <link name="${name}_camera_default"/>
+
+  </xacro:macro>
+
+
+  <!-- Inspection payload Gazebo -->
+  <xacro:macro name="inspection_payload" params="name parent version:='P-PTU-VTAL-A' *origin">
+
+    <!-- Pantilt head description -->
+    <xacro:inspection_payload_description name="${name}" parent="${parent}" version="${version}">
+      <xacro:insert_block name="origin"/>
+    </xacro:inspection_payload_description>
+
+    <xacro:if value="$(arg simulation)">
+
+      <!-- Camera simulation and driver -->
+      <xacro:if value="$(arg simulate_zoom_camera)">
+        <gazebo reference="${name}_camera">
+          <sensor type="camera" name="${name}_camera">
+            <update_rate>30.0</update_rate>
+            <camera name="${name}_camera">
+              <pose>0 0 0 1.57079633 -1.57079633 0</pose>
+              <horizontal_fov>1.3962634</horizontal_fov>
+              <image>
+                <width>1920</width>
+                <height>1080</height>
+                <format>R8G8B8</format>
+              </image>
+              <clip>
+                <near>0.02</near>
+                <far>300</far>
+              </clip>
+              <noise>
+                <type>gaussian</type>
+                <!-- Noise is sampled independently per pixel on each frame.
+                     That pixel's noise value is added to each of its color
+                     channels, which at that point lie in the range [0,1]. -->
+                <mean>0.0</mean>
+                <stddev>0.007</stddev>
+              </noise>
+            </camera>
+            <plugin name="${name}_camera_controller" filename="libzoom_camera_gazebo_plugin.so">
+              <alwaysOn>true</alwaysOn>
+              <updateRate>15.0</updateRate>
+              <cameraName>${name}_camera</cameraName>
+              <imageTopicName>/zoom_camera/image_raw</imageTopicName>
+              <cameraInfoTopicName>/zoom_camera/camera_info</cameraInfoTopicName>
+              <frameName>${name}_camera</frameName>
+              <hackBaseline>0.07</hackBaseline>
+              <distortionK1>0.0</distortionK1>
+              <distortionK2>0.0</distortionK2>
+              <distortionK3>0.0</distortionK3>
+              <distortionT1>0.0</distortionT1>
+              <distortionT2>0.0</distortionT2>
+              <sensorWidth>4.8</sensorWidth>
+              <initialHorizontalFieldOfView>1.31</initialHorizontalFieldOfView>
+            </plugin>
+          </sensor>
+        </gazebo>
+      </xacro:if>
+
+      <!-- Thermal camera simulation and driver -->
+      <xacro:if value="$(arg simulate_thermal_camera)">
+        <gazebo reference="${name}_thermal_camera">
+          <sensor type="camera" name="${name}_thermal_camera">
+            <update_rate>7.0</update_rate>
+            <camera name="${name}_thermal_camera">
+              <pose>0 0 0 1.57079633 -1.57079633 0</pose>
+              <horizontal_fov>0.63</horizontal_fov>
+              <image>
+                <width>160</width>
+                <height>120</height>
+                <format>R8G8B8</format>
+              </image>
+              <clip>
+                <near>0.02</near>
+                <far>300</far>
+              </clip>
+            </camera>
+            <plugin name="${name}_thermal_camera_controller" filename="libthermal_camera_gazebo_plugin.so">
+              <alwaysOn>true</alwaysOn>
+              <updateRate>7.0</updateRate>
+              <cameraName>${name}_thermal_camera</cameraName>
+              <imageTopicName>/thermal_camera/raw/thermal_image</imageTopicName>
+              <cameraInfoTopicName>/thermal_camera/raw/camera_info</cameraInfoTopicName>
+              <frameName>thermal_camera</frameName>
+              <hackBaseline>0.07</hackBaseline>
+              <distortionK1>0.0</distortionK1>
+              <distortionK2>0.0</distortionK2>
+              <distortionK3>0.0</distortionK3>
+              <distortionT1>0.0</distortionT1>
+              <distortionT2>0.0</distortionT2>
+              <max_temperature_on_scale>700</max_temperature_on_scale>
+              <min_temperature_on_scale>-10</min_temperature_on_scale>
+            </plugin>
+          </sensor>
+        </gazebo>
+      </xacro:if>
+
+      <!-- Pantilt head version 3 simulation driver-->
+      <gazebo>
+
+        <plugin filename="libinspection_payload_gazebo.so" name="${name}_gazebo_plugin">
+          <joint_name_pan>${name}_mount_to_pan</joint_name_pan>
+          <joint_name_tilt>${name}_pan_to_tilt</joint_name_tilt>
+          <command_topic_name>/inspection_payload/command</command_topic_name>
+          <joint_state_topic_name>/inspection_payload/joint_states</joint_state_topic_name>
+          <inspection_payload_state_topic_name>/inspection_payload/state</inspection_payload_state_topic_name>
+          <set_to_rest_service_name>/inspection_payload/set_to_rest</set_to_rest_service_name>
+          <set_to_zero_service_name>/inspection_payload/set_to_zero</set_to_zero_service_name>
+          <!-- Update time step -->
+          <controller_update_time_step>0.01</controller_update_time_step>
+          <communication_update_time_step>0.01</communication_update_time_step>
+          <!-- Pan position controller parameters -->
+          <position_gain_p_pan>50.0</position_gain_p_pan>
+          <position_gain_i_pan>5.0</position_gain_i_pan>
+          <position_gain_d_pan>4.5</position_gain_d_pan>
+          <position_integrator_error_bound_pan>0.1</position_integrator_error_bound_pan>
+          <position_integrator_saturation_pan>0.01</position_integrator_saturation_pan>
+          <!-- Pan velocity controller parameters -->
+          <velocity_gain_p_pan>10.0</velocity_gain_p_pan>
+          <velocity_gain_i_pan>0.5</velocity_gain_i_pan>
+          <velocity_gain_d_pan>0.001</velocity_gain_d_pan>
+          <velocity_integrator_error_bound_pan>0.1</velocity_integrator_error_bound_pan>
+          <velocity_integrator_saturation_pan>0.01</velocity_integrator_saturation_pan>
+          <!-- Tilt position controller parameters -->
+          <position_gain_p_tilt>400.0</position_gain_p_tilt>
+          <position_gain_i_tilt>0.5</position_gain_i_tilt>
+          <position_gain_d_tilt>0.001</position_gain_d_tilt>
+          <position_integrator_error_bound_tilt>0.1</position_integrator_error_bound_tilt>
+          <position_integrator_saturation_tilt>1.0</position_integrator_saturation_tilt>
+          <!-- Tilt velocity controller parameters -->
+          <velocity_gain_p_tilt>1.0</velocity_gain_p_tilt>
+          <velocity_gain_i_tilt>0.000</velocity_gain_i_tilt>
+          <velocity_gain_d_tilt>0.000</velocity_gain_d_tilt>
+          <velocity_integrator_error_bound_tilt>0.1</velocity_integrator_error_bound_tilt>
+          <velocity_integrator_saturation_tilt>1.0</velocity_integrator_saturation_tilt>
+        </plugin>
+
+      </gazebo>
+
+    </xacro:if>
+
+  </xacro:macro>
+
+</robot>

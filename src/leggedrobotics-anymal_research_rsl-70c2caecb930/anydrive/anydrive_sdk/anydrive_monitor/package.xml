@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<package format="2">
+
+  <name>anydrive_monitor</name>
+  <version>0.6.0</version>
+  <description>Graphical user interface library to supervise and command one or multiple drives.</description>
+
+  <license>Proprietary</license>
+  <author email="rdiethelm@anybotics.com">Remo Diethelm</author>
+  <author email="sbachmann@anybotics.com">Samuel Bachmann</author>
+  <maintainer email="sbachmann@anybotics.com">Samuel Bachmann</maintainer>
+  <maintainer email="rdiethelm@anybotics.com">Remo Diethelm</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>cmake_clang_tools</build_depend>
+
+  <depend>anydrive</depend>
+  <depend>libqt5-core</depend>
+  <depend>libqt5-gui</depend>
+  <depend>libqt5-widgets</depend>
+  <depend>qtbase5-dev</depend>
+
+</package>

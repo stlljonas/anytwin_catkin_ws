@@ -1,0 +1,61 @@
+steps:
+
+ - step:
+    - base_auto:
+       height: 0.48
+
+ - step:
+    - base_auto:
+    - footstep:
+       name: LH_LEG
+       average_velocity: 0.07
+       profile_type: square
+       target:
+        frame: map
+        position: [<lh_x>, <lh_y>, <lh_z>]
+
+ - step:
+    - base_auto:
+
+ - step:
+    - base_auto:
+    - footstep:
+       name: LF_LEG
+       average_velocity: 0.07
+       profile_type: square
+       target:
+        frame: map
+        position: [<lf_x>, <lf_y>, <lf_z>]
+
+ - step:
+    - base_auto:
+
+ - step:
+    - base_auto:
+    - footstep:
+       name: RH_LEG
+       average_velocity: 0.07
+       profile_type: square
+       target:
+        frame: map
+        position: [<rh_x>, <rh_y>, <rh_z>]
+
+ - step:
+    - base_auto:
+
+ - step:
+    - base_auto:
+    - footstep:
+       name: RF_LEG
+       average_velocity: 0.07
+       profile_type: square
+       target:
+        frame: map
+        position: [<rf_x>, <rf_y>, <rf_z>]
+
+ - step:
+    - base_target:
+       target:
+        frame: map
+        position: [<base_pos_x>, <base_pos_y>, <base_pos_z>]
+        orientation: [<base_rot_x>, <base_rot_y>, <base_rot_z>, <base_rot_w>]

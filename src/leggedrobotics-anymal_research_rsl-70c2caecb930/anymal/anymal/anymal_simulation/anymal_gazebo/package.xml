@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+
+<package format="2">
+
+  <name>anymal_gazebo</name>
+  <version>0.6.0</version>
+  <description>ANYmal Gazebo Plugin</description>
+
+  <author email="jerome.maye@mavt.ethz.ch">Jerome Maye</author>
+  <author email="bellicoso@mavt.ethz.ch">Dario Bellicoso</author>
+  <author email="cgehring@anybotics.com">Christian Gehring</author>
+  <maintainer email="rdiethelm@anybotics.com">Remo Diethelm</maintainer>
+  <maintainer email="lisler@anybotics.com">Linus Isler</maintainer>
+  <license>Proprietary</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>cmake_clang_tools</build_depend>
+
+  <depend>anydrive</depend>
+  <depend>anydrive_msgs</depend>
+  <depend>anydrive_ros</depend>
+  <depend>anymal_description</depend>
+  <depend>anymal_model</depend>
+  <depend>anymal_model_ros</depend>
+  <depend>anymal_msgs</depend>
+  <depend>boost</depend>
+  <depend>dodgeball_gazebo</depend>
+  <depend>gazebo</depend>
+  <depend>gazebo_ros</depend>
+  <depend>param_io</depend>
+  <depend>romo_std</depend>
+  <depend>seabot_gazebo_plugin</depend>
+  <depend>series_elastic_actuator_anydrive</depend>
+  <depend>slam_simulation</depend>
+
+  <exec_depend>pose_tf_publisher</exec_depend>
+  <exec_depend>topic_tools</exec_depend>
+  <exec_depend>urdfdom_py</exec_depend>
+
+  <export>
+    <gazebo plugin_path="${prefix}/lib" gazebo_media_path="${prefix}"/>
+  </export>
+
+</package>

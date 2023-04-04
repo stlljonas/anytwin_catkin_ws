@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+
+<package format="2">
+
+  <name>anymal_b_ui</name>
+  <version>1.0.0</version>
+  <description>ANYmal B User Interface Package</description>
+
+  <license>Proprietary</license>
+
+  <author email="rdiethelm@anybotics.com">Remo Diethelm</author>
+  <maintainer email="rdiethelm@anybotics.com">Remo Diethelm</maintainer>
+  <maintainer email="pleemann@anybotics.com">Philipp Leemann</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <exec_depend>actuated_lidar_description</exec_depend>
+  <exec_depend>any_description</exec_depend>
+  <exec_depend>any_navigation_rviz_plugins</exec_depend>
+  <exec_depend>anymal_b</exec_depend>
+  <exec_depend>anymal_description</exec_depend>
+  <exec_depend>anymal_rviz_plugin</exec_depend>
+  <exec_depend>anymal_tf_publisher</exec_depend>
+  <exec_depend>anymal_waypoints_editor</exec_depend>
+  <exec_depend>basic_behavior_plugins</exec_depend>
+  <exec_depend>basic_missions</exec_depend>
+  <exec_depend>center_frame_tool</exec_depend>
+  <exec_depend>environment_item_qt_plugins</exec_depend>
+  <exec_depend>environment_visualizer</exec_depend>
+  <exec_depend>free_gait_anymal_common</exec_depend>
+  <exec_depend>free_gait_rviz_plugin</exec_depend>
+  <exec_depend>gazebo_play_tool</exec_depend>
+  <exec_depend>gazebo2rviz</exec_depend>
+  <exec_depend>gazebo_worlds</exec_depend>
+  <exec_depend>grid_map_rviz_plugin</exec_depend>
+  <exec_depend>grid_map_visualization</exec_depend>
+  <exec_depend>interaction_marker</exec_depend>
+  <exec_depend>interaction_marker_plugin_locomotion_planner</exec_depend>
+  <exec_depend>interaction_marker_plugin_mission</exec_depend>
+  <exec_depend>interaction_marker_plugin_navigation_manager</exec_depend>
+  <exec_depend>interaction_marker_plugin_publish_pose</exec_depend>
+  <exec_depend>kindr_rviz_plugins</exec_depend>
+  <exec_depend>logic_behavior_plugins</exec_depend>
+  <exec_depend>monitor_network</exec_depend>
+  <exec_depend>motion_control_behavior_plugins</exec_depend>
+  <exec_depend>multi_dof_joint_trajectory_rviz_plugins</exec_depend>
+  <exec_depend>navigation_behavior_plugins</exec_depend>
+  <exec_depend>navigation_pose_graph_rviz_plugins</exec_depend>
+  <exec_depend>pose_tf_publisher</exec_depend>
+  <exec_depend>rqt_anydrive_monitor</exec_depend>
+  <exec_depend>rqt_anymal_lowlevel_controller</exec_depend>
+  <exec_depend>rqt_anymal_state_visualizer</exec_depend>
+  <exec_depend>rqt_behavior_engine</exec_depend>
+  <exec_depend>rqt_environment_editor</exec_depend>
+  <exec_depend>rqt_free_gait_action</exec_depend>
+  <exec_depend>rqt_free_gait_monitor</exec_depend>
+  <exec_depend>rqt_gazebo_interface</exec_depend>
+  <exec_depend>rqt_gui</exec_depend>
+  <exec_depend>rqt_highlevel_controlmanager</exec_depend>
+  <exec_depend>rqt_icp</exec_depend>
+  <exec_depend>rqt_inspection_monitor</exec_depend>
+  <exec_depend>rqt_joypad</exec_depend>
+  <exec_depend>rqt_loco_visualizer</exec_depend>
+  <exec_depend>rqt_logo</exec_depend>
+  <exec_depend>rqt_motion_control</exec_depend>
+  <exec_depend>rqt_navigation</exec_depend>
+  <exec_depend>rqt_parameters</exec_depend>
+  <exec_depend>rqt_pharos</exec_depend>
+  <exec_depend>rqt_point_cloud_odometry</exec_depend>
+  <exec_depend>rqt_rpsm</exec_depend>
+  <exec_depend>rqt_runtime_monitor</exec_depend>
+  <exec_depend>rqt_rviz_wrapper</exec_depend>
+  <exec_depend>rqt_signal_logger</exec_depend>
+  <exec_depend>rqt_state_machine_editor</exec_depend>
+  <exec_depend>rqt_state_machine_monitor</exec_depend>
+  <exec_depend>rviz</exec_depend>
+  <exec_depend>rviz_gazebo_interaction</exec_depend>
+  <exec_depend>rviz_plugin_tutorials</exec_depend>
+  <exec_depend>slam_point_cloud_maps_editor</exec_depend>
+  <exec_depend>system_behavior_plugins</exec_depend>
+  <exec_depend>system_monitor</exec_depend>
+  <exec_depend>velodyne_description</exec_depend>
+
+</package>

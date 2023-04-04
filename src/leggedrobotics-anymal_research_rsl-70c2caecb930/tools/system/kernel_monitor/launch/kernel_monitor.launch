@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+
+  <arg name="node_name" default="kernel_monitor" doc="Name of the node."/>
+  <arg name="name_suffix" default="" doc="Name of the node is appended with the given argument."/>
+  <arg name="log_level" default="info" doc="Log level the ROS node: debug, info, warn, error, fatal."/>
+
+  <node pkg="kernel_monitor" type="kernel_monitor.py" name="$(arg node_name)$(arg name_suffix)" output="screen" args="--log-level $(arg log_level)"/>
+
+</launch>

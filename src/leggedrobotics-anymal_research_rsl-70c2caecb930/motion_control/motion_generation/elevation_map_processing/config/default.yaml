@@ -1,0 +1,69 @@
+sub_map:
+  #elevation map
+  service_name: /elevation_mapping/get_raw_submap
+  update_rate: 6.0
+  sub_map_length_x: 1.8
+  sub_map_length_y: 1.8
+
+elevation_map_filters:
+  # Delete unused original layers (others are elevation, variance).
+  - name: delete_original_layers
+    type: gridMapFilters/DeletionFilter
+    params:
+      layers: [color, horizontal_variance_x, horizontal_variance_y, variance, horizontal_variance_xy, lowest_scan_point, time, sensor_x_at_lowest_scan, sensor_y_at_lowest_scan, sensor_z_at_lowest_scan]
+
+  # Fill holes in the map
+  - name: inpaint
+    type: gridMapCv/InpaintFilter
+    params:
+      input_layer: elevation
+      output_layer: elevation_filled
+      radius: 0.05 # in m
+
+  # Compute surface normals.
+  - name: surface_normals
+    type: gridMapFilters/NormalVectorsFilter
+    params:
+      input_layer: elevation_filled
+      output_layers_prefix: normal_vectors_
+      radius: 0.05
+      normal_vector_positive_axis: z
+
+  # Compute slope from surface normal (normalized with 90°).
+  - name: slope
+    type: gridMapFilters/MathExpressionFilter
+    params:
+      output_layer: slope
+      expression: abs(acos(normal_vectors_z)*0.636619772)
+      
+  # Mean of slope.
+  - name: slope_mean
+    type: gridMapFilters/SlidingWindowMathExpressionFilter
+    params:
+      input_layer: slope
+      output_layer: slope_mean
+      expression: meanOfFinites(slope)
+      compute_empty_cells: false
+      edge_handling: mean # options: inside, crop, empty, mean
+      window_length: 0.15
+      
+  # Reduce noise with a radial blurring filter.
+  - name: elevation_smooth
+    type: gridMapFilters/MeanInRadiusFilter
+    params:
+      input_layer: elevation_filled
+      output_layer: elevation_smooth
+      radius: 0.24
+      
+  # Compute foothold score
+  - name: foothold_score
+    type: gridMapFilters/MathExpressionFilter
+    params:
+      output_layer: foothold_score
+      expression: cwiseMin(0.6*(slope_mean.*slope_mean) + 0.1*(slope.*slope) + 0.3*abs(elevation_smooth-elevation_filled)/0.3, 1.0) 
+           
+   # Delete unused layers
+  - name: delete_unused_layers
+    type: gridMapFilters/DeletionFilter
+    params:
+      layers: [elevation, slope, slope_mean]

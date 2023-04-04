@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>whole_body_control_romo</name>
+  <version>0.4.0</version>
+  <description>The Whole Body Control Romo package</description>
+  <maintainer email="fgiraldez@anybotics.com">Francisco Giráldez Gámez</maintainer>
+  <maintainer email="avijayan@anybotics.com">Aravind Vijayan</maintainer>
+  <license>Proprietary</license>
+  <author email="bellicoso@mavt.ethz.ch">Dario Bellicoso</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>loco</depend>
+  <depend>numopt_quadprog</depend>
+  <depend>hierarchical_optimization</depend>
+  <depend>whole_body_control</depend>
+  <depend>kindr</depend>
+  <depend>romo</depend>
+  <depend>tinyxml_tools</depend>
+  <depend>basic_controllers</depend>
+  <depend>parameter_handler</depend>
+
+</package>

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+
+<package format="2">
+
+  <name>basic_filters</name>
+  <version>0.6.0</version>
+  <description>Classes implementing basic filters.</description>
+
+  <license>Proprietary</license>
+  <author email="cgehring@anybotics.com">Christian Gehring</author>
+  <author email="pfankhauser@anybotics.com">Peter Fankhauser</author>
+  <author email="bellicoso@mavt.ethz.ch">Dario Bellicoso</author>
+  <author email="avijayan@anybotics.com">Aravind Vijayan</author>
+  <author email="scaron@anybotics.com">Stephane Caron</author>
+  <maintainer email="avijayan@anybotics.com">Aravind Vijayan</maintainer>
+  <maintainer email="scaron@anybotics.com">Stephane Caron</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>cmake_clang_tools</build_depend>
+
+  <depend>kindr</depend>
+  <depend>message_logger</depend>
+
+  <build_export_depend>eigen</build_export_depend>
+
+  <test_depend>gtest</test_depend>
+  <test_depend>cmake_code_coverage</test_depend>
+
+</package>

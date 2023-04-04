@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+
+  <!-- Publish robot pose in map frame as TF from robot to map -->
+  <node name="robot_to_map_tf_publisher" pkg="pose_tf_publisher" type="pose_tf_publisher" output="screen">
+    <param name="pose_topic"           value="/robot_pose_in_map"/>
+    <param name="child_frame_id"       value="robot"/>
+    <param name="max_rate"             value="100"/>
+    <param name="publish_continuously" value="false"/>
+  </node>
+  
+</launch>

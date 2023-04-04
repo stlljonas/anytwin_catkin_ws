@@ -1,0 +1,267 @@
+steps:
+
+ # Start position.
+ - step:
+    - joint_trajectory:
+       name: LF_LEG
+       ignore_contact: true
+       trajectory:
+        joint_names: [HAA, HFE, KFE]
+        knots:
+         - time: 2.0
+           positions: [deg(35), deg(75), deg(-180)]
+    - joint_trajectory:
+       name: RF_LEG
+       ignore_contact: true
+       trajectory:
+        joint_names: [HAA, HFE, KFE]
+        knots:
+         - time: 2.0
+           positions: [deg(-35), deg(75), deg(-180)]
+    - joint_trajectory:
+       name: LH_LEG
+       ignore_contact: true
+       trajectory:
+        joint_names: [HAA, HFE, KFE]
+        knots:
+         - time: 2.0
+           positions: [deg(35), deg(-75), deg(180)]
+    - joint_trajectory:
+       name: RH_LEG
+       ignore_contact: true
+       trajectory:
+        joint_names: [HAA, HFE, KFE]
+        knots:
+         - time: 2.0
+           positions: [deg(-35), deg(-75), deg(180)]
+
+ # Stretch.
+ - step:
+    - joint_trajectory:
+       name: LF_LEG
+       ignore_contact: true
+       trajectory:
+        joint_names: [HAA, HFE, KFE]
+        knots:
+         - time: 2.0
+           positions: [deg(70), deg(50), deg(-180)]
+         - time: 3.5
+           positions: [deg(75), deg(0), deg(-150)]
+         - time: 7.0
+           positions: [deg(90), deg(-90), deg(0)]
+    - joint_trajectory:
+       name: RF_LEG
+       ignore_contact: true
+       trajectory:
+        joint_names: [HAA, HFE, KFE]
+        knots:
+         - time: 2.0
+           positions: [deg(-70), deg(50), deg(-180)]
+         - time: 3.5
+           positions: [deg(-75), deg(0), deg(-150)]
+         - time: 7.0
+           positions: [deg(-90), deg(-90), deg(0)]
+    - joint_trajectory:
+       name: LH_LEG
+       ignore_contact: true
+       trajectory:
+        joint_names: [HAA, HFE, KFE]
+        knots:
+         - time: 2.0
+           positions: [deg(70), deg(-50), deg(180)]
+         - time: 3.5
+           positions: [deg(75), deg(0), deg(150)]
+         - time: 7.0
+           positions: [deg(90), deg(90), deg(0)]
+    - joint_trajectory:
+       name: RH_LEG
+       ignore_contact: true
+       trajectory:
+        joint_names: [HAA, HFE, KFE]
+        knots:
+         - time: 2.0
+           positions: [deg(-70), deg(-50), deg(180)]
+         - time: 3.5
+           positions: [deg(-75), deg(0), deg(150)]
+         - time: 7.0
+           positions: [deg(-90), deg(90), deg(0)]
+
+ # Star.
+ - step:
+    - joint_trajectory:
+       name: LF_LEG
+       ignore_contact: true
+       trajectory:
+        joint_names: [HAA, HFE, KFE]
+        knots:
+         - time: 3.0
+           positions: [deg(90), deg(-75), deg(60)]
+         - time: 6.0
+           positions: [deg(90), deg(-35), deg(-110)]
+         - time: 10.0
+           positions: [deg(90), deg(-45), deg(0)]
+    - joint_trajectory:
+       name: RF_LEG
+       ignore_contact: true
+       trajectory:
+        joint_names: [HAA, HFE, KFE]
+        knots:
+         - time: 3.0
+           positions: [deg(-90), deg(-10), deg(80)]
+         - time: 6.0
+           positions: [deg(-90), deg(-35), deg(-110)]
+         - time: 10.0
+           positions: [deg(-90), deg(-45), deg(0)]
+    - joint_trajectory:
+       name: LH_LEG
+       ignore_contact: true
+       trajectory:
+        joint_names: [HAA, HFE, KFE]
+        knots:
+         - time: 3.0
+           positions: [deg(90), deg(75), deg(-60)]
+         - time: 6.0
+           positions: [deg(90), deg(35), deg(110)]
+         - time: 10.0
+           positions: [deg(90), deg(45), deg(0)]
+    - joint_trajectory:
+       name: RH_LEG
+       ignore_contact: true
+       trajectory:
+        joint_names: [HAA, HFE, KFE]
+        knots:
+         - time: 3.0
+           positions: [deg(-90), deg(10), deg(-80)]
+         - time: 6.0
+           positions: [deg(-90), deg(35), deg(110)]
+         - time: 10.0
+           positions: [deg(-90), deg(45), deg(0)]
+
+ # Upwards
+ - step:
+    - joint_trajectory:
+       name: LF_LEG
+       ignore_contact: true
+       trajectory:
+        joint_names: [HAA, HFE, KFE]
+        knots:
+         - time: 3.0
+           positions: [deg(0), deg(-120), deg(-30)]
+         - time: 6.0
+           positions: [deg(-5), deg(-130), deg(80)]
+         - time: 9.0
+           positions: [deg(-5), deg(-170), deg(300)]
+    - joint_trajectory:
+       name: RF_LEG
+       ignore_contact: true
+       trajectory:
+        joint_names: [HAA, HFE, KFE]
+        knots:
+         - time: 3.0
+           positions: [deg(0), deg(-120), deg(-30)]
+         - time: 6.0
+           positions: [deg(5), deg(-130), deg(80)]
+         - time: 9.0
+           positions: [deg(5), deg(-170), deg(300)]
+    - joint_trajectory:
+       name: LH_LEG
+       ignore_contact: true
+       trajectory:
+        joint_names: [HAA, HFE, KFE]
+        knots:
+         - time: 3.0
+           positions: [deg(0), deg(120), deg(30)]
+         - time: 6.0
+           positions: [deg(-5), deg(130), deg(-80)]
+         - time: 9.0
+           positions: [deg(-5), deg(170), deg(60)]
+    - joint_trajectory:
+       name: RH_LEG
+       ignore_contact: true
+       trajectory:
+        joint_names: [HAA, HFE, KFE]
+        knots:
+         - time: 3.0
+           positions: [deg(0), deg(120), deg(30)]
+         - time: 6.0
+           positions: [deg(5), deg(130), deg(-80)]
+         - time: 9.0
+           positions: [deg(5), deg(170), deg(60)]
+
+ # Knee rotation
+ - step:
+    - joint_trajectory:
+       name: LF_LEG
+       ignore_contact: true
+       trajectory:
+        joint_names: [HAA, HFE, KFE]
+        knots:
+         - time: 4.0
+           positions: [deg(-5), deg(-170), deg(-180)]
+    - joint_trajectory:
+       name: RF_LEG
+       ignore_contact: true
+       trajectory:
+        joint_names: [HAA, HFE, KFE]
+        knots:
+         - time: 4.0
+           positions: [deg(5), deg(-170), deg(-180)]
+    - joint_trajectory:
+       name: LH_LEG
+       ignore_contact: true
+       trajectory:
+        joint_names: [HAA, HFE, KFE]
+        knots:
+         - time: 4.0
+           positions: [deg(-5), deg(170), deg(180)]
+    - joint_trajectory:
+       name: RH_LEG
+       ignore_contact: true
+       trajectory:
+        joint_names: [HAA, HFE, KFE]
+        knots:
+         - time: 4.0
+           positions: [deg(5), deg(170), deg(180)]
+
+ # Home.
+ - step:
+    - joint_trajectory:
+       name: LF_LEG
+       ignore_contact: true
+       trajectory:
+        joint_names: [HAA, HFE, KFE]
+        knots:
+         - time: 6.0
+           positions: [deg(100), deg(45), deg(-160)]
+         - time: 10.0
+           positions: [deg(3), deg(90), deg(-160)]
+    - joint_trajectory:
+       name: RF_LEG
+       ignore_contact: true
+       trajectory:
+        joint_names: [HAA, HFE, KFE]
+        knots:
+         - time: 6.0
+           positions: [deg(-100), deg(45), deg(-160)]
+         - time: 10.0
+           positions: [deg(-3), deg(90), deg(-160)]
+    - joint_trajectory:
+       name: LH_LEG
+       ignore_contact: true
+       trajectory:
+        joint_names: [HAA, HFE, KFE]
+        knots:
+         - time: 6.0
+           positions: [deg(100), deg(-45), deg(160)]
+         - time: 10.0
+           positions: [deg(3), deg(-90), deg(160)]
+    - joint_trajectory:
+       name: RH_LEG
+       ignore_contact: true
+       trajectory:
+        joint_names: [HAA, HFE, KFE]
+        knots:
+         - time: 6.0
+           positions: [deg(-100), deg(-45), deg(160)]
+         - time: 10.0
+           positions: [deg(-3), deg(-90), deg(160)]

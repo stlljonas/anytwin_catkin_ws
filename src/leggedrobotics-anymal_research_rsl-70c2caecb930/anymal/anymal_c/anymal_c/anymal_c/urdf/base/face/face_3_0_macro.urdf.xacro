@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:macro name="face" params="face simulate_depth_camera:=false simulate_wide_angle_camera:=false depth_camera_pitch:=30 depth_camera_roll:=0">
+
+    <xacro:property name="B_r_BBf_x"        value= "0.42"/> <!--  [m] -->
+    <xacro:property name="B_r_BBfcom_x"     value= "0.058640885474"/> <!--  [m] -->
+    <xacro:property name="B_r_BBfcom_y"     value= "0.000057767683"/> <!--  [m] -->
+    <xacro:property name="B_r_BBfcom_z"     value= "0.006500935099"/> <!--  [m] -->
+    <xacro:property name="m_Bf"             value= "0.3"/> <!-- [kg] -->
+    <xacro:property name="B_Ixx_Bf"         value= "0.003539424663063"/> <!-- [kg * m^2] -->
+    <xacro:property name="B_Iyy_Bf"         value= "0.000912856093445"/> <!-- [kg * m^2] -->
+    <xacro:property name="B_Izz_Bf"         value= "0.003058244585276"/> <!-- [kg * m^2] -->
+    <xacro:property name="B_Ixy_Bf"         value= "0.000000695089820"/> <!-- [kg * m^2] -->
+    <xacro:property name="B_Ixz_Bf"         value= "0.000085674409639"/> <!-- [kg * m^2] -->
+    <xacro:property name="B_Iyz_Bf"         value= "0.000000344298293"/> <!-- [kg * m^2] -->
+    <xacro:property name="collision_box_l"  value="0.11"/>           <!-- [m] --> <!-- measured -->
+    <xacro:property name="collision_box_w"  value="0.28"/>           <!-- [m] --> <!-- measured -->
+    <xacro:property name="collision_box_d"  value="0.18"/>           <!-- [m] --> <!-- measured -->
+
+    <!-- Generated properties -->
+    <xacro:property name="direction"    value="${1 if face == 'front' else -1}"/>
+
+    <!-- Fixed joint base face -->
+    <joint name="base_face_${face}" type="fixed">
+      <parent link="base"/>
+      <child link="face_${face}"/>
+      <origin xyz="${direction * B_r_BBf_x} 0 0" rpy="0 0 ${-0.5*(direction-1) * pi}"/>
+    </joint>
+
+    <!-- Shell link -->
+    <link name="face_${face}">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+       <geometry>
+          <mesh
+            filename="package://anymal_c/urdf/base/face/face_3_1_1_mesh.dae"
+            scale="1.0 1.0 1.0"/>
+       </geometry>
+      </visual>
+      <collision>
+        <origin xyz="${collision_box_l / 2} 0 0" rpy="0 0 0"/>
+        <geometry>
+          <box size="${collision_box_l} ${0.5 * collision_box_w} ${collision_box_d}"/>
+        </geometry>
+      </collision>
+      <collision>
+        <origin xyz="${collision_box_l / 2} ${0.25 * collision_box_w} 0" rpy="0 ${0.5*pi} 0"/>
+        <geometry>
+          <cylinder radius="${0.5 * collision_box_d}" length="${collision_box_l}"/>
+        </geometry>
+      </collision>
+      <collision>
+        <origin xyz="${collision_box_l / 2} ${-0.25 * collision_box_w} 0" rpy="0 ${0.5*pi} 0"/>
+        <geometry>
+          <cylinder radius="${0.5 * collision_box_d}" length="${collision_box_l}"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <origin   xyz="${B_r_BBfcom_x} ${B_r_BBfcom_y} ${B_r_BBfcom_z}"
+                  rpy="0 0 0"/>
+        <mass     value="${m_Bf}"/>
+        <inertia  ixx="${B_Ixx_Bf}" ixy="${B_Ixy_Bf}" ixz="${B_Ixz_Bf}"
+                  iyy="${B_Iyy_Bf}" iyz="${B_Iyz_Bf}" izz="${B_Izz_Bf}"/>
+      </inertial>    
+    </link>
+
+    <!-- Depth Camera -->
+    <xacro:include filename="$(find anymal_c)/urdf/base/sensors/depth_camera/realsense_d435_3_1_1.urdf.xacro"/>
+    <xacro:anymal_realsense name="depth_camera_${face}" parent="face_${face}" simulation="${simulate_depth_camera}">
+      <origin xyz="0.041 0.0 -0.022" rpy="${depth_camera_roll/180*pi} ${depth_camera_pitch/180*pi} 0"/>
+    </xacro:anymal_realsense>
+
+    <!-- Wide Angle Camera -->
+    <xacro:include filename="$(find anymal_c)/urdf/base/sensors/wide_angle_camera/blackfly_s_3_1_1.urdf.xacro"/>
+    <xacro:blackfly name="wide_angle_camera_${face}" parent="face_${face}" simulation="${simulate_wide_angle_camera}" fps="30.0">
+      <origin xyz="0.071 0.0 0.022" rpy="0 0 0"/>
+    </xacro:blackfly>
+
+
+  </xacro:macro>
+
+</robot>

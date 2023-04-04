@@ -1,0 +1,19 @@
+coordinate_frames:
+  robot_name:                 "anymal"                                            # The name of the robot that will be tracked.
+  robot_frame:                "base"                                              # Main link that will be tracked from the robot.
+  world_frame:                "world"                                             # Fixed world frame. Corresponds to the ground truth.
+
+file_prefix:                                      "slam"                          # Prefix that will be appended to all the output files, representing the module that outputs the "tracked pose".
+is_ground_truth_fetched_from_simulator:           false                           # Whether ground truth should be sampled from the simulator at the rate of the tracked pose.
+is_tracked_pose_transformed_to_world_frame:       false                           # Whether the tracked pose should be transformed to the world (ground truth) frame, if hand-eye calibration between both is available.
+
+logging_formats:                                                                  # Logging format of .csv output files.
+  - kitti                                                                         # Legacy format, contains poses; slam_loggers also outputs timestamps to facilitate pose synch.
+  - tum                                                                           # Recommended format, contains poses and timestamps.
+output_directory:                                 slam_loggers                # Path where logging will happen, default to '$(HOME)/.ros/slam_loggers' but can also be set to an absolute value (e.g. /home/<user>/path/to/my/folder/)
+
+session_info:                                     ''                              # Info about the logging session (e.g. mission X), will be appended as a suffix to the filename.
+tracked_frame:                                    "map"                           # The frame of the pose that will be tracked.
+topic_type:                                       "PoseWithCovarianceStamped"     # The input type of slam_loggers. Possible values: 'PoseStamped', 'PoseWithCovarianceStamped'
+
+wait_time_tf:                                     0.05                            # Wait time (in seconds) to query the ground truth from the Tf tree.

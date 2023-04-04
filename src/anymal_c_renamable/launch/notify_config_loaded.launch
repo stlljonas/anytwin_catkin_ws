@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+
+  <!-- Launch file notifying that the configuration is loaded and the software stacks can be started. -->
+  <!-- Not intended for explicit invocation.  -->
+  <param name="/config_loaded" value=""/>
+
+</launch>

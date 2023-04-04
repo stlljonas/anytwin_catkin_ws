@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<package>
+  <name>anymal_logging</name>
+  <version>0.6.0</version>
+  <description>Tools for logging data.</description>
+  <maintainer email="msuetterlin@anybotics.com">Marco Sütterlin</maintainer>
+  <maintainer email="pleemann@anybotics.com">Philipp Leemann</maintainer>
+  <license>Proprietary</license>
+  <author email="pfankhauser@anybotics.com">Peter Fankhauser</author>
+  <author email="cgehring@anybotics.com">Christian Gehring</author>
+  <buildtool_depend>catkin</buildtool_depend>
+</package>

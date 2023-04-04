@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<launch>
+  <arg name="log_output" default="logging_anydrive_readings"/>
+  <node name="rosbag" pkg="rosbag" type="record"
+    args="/anydrive/LF_HAA/reading_extended_throttled
+          /anydrive/LF_HFE/reading_extended_throttled
+          /anydrive/LF_KFE/reading_extended_throttled
+    
+          /anydrive/RF_HAA/reading_extended_throttled
+          /anydrive/RF_HFE/reading_extended_throttled
+          /anydrive/RF_KFE/reading_extended_throttled
+
+          /anydrive/LH_HAA/reading_extended_throttled
+          /anydrive/LH_HFE/reading_extended_throttled
+          /anydrive/LH_KFE/reading_extended_throttled
+
+          /anydrive/RH_HAA/reading_extended_throttled
+          /anydrive/RH_HFE/reading_extended_throttled
+          /anydrive/RH_KFE/reading_extended_throttled
+
+    -o $(arg log_output)" output="screen">
+  </node>
+</launch>
+

@@ -1,0 +1,7 @@
+<library path="lib/libjoy_anymal_lowlevel_controller">
+  <class type="joy_manager::JoyAnymalLowlevelController" base_class_type="joy_manager::ModuleBase">
+  <description>
+    This is a lowlevel controller plugin for the joy_manager.
+  </description>
+  </class>
+</library>

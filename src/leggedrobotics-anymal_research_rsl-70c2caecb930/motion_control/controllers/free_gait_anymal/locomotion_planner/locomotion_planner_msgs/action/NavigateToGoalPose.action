@@ -1,0 +1,20 @@
+# goal definition
+geometry_msgs/PoseStamped goal_pose
+bool is_relative_pose  # False: Goal pose is interpreted absolutely.
+                       # True:  Goal pose is interpreted relatively to current pose. The frame id determines in which frame the navigation is executed.
+
+---
+# result definition
+int8 status
+int8 PROGRAMMATIC_ERROR = -5        # C++ failure
+int8 PREEMPTED = -4                 # Action canceled or new goal given
+int8 INVALID_TRANSFORM = -3         # Transform provided in goal frame is inconsistent
+int8 INVALID_GOAL_FRAME = -2        # Transform to goal frame cannot be found / is outdated
+int8 EXECUTION_ERROR = -1           # Locomotion Planner failed
+int8 GOAL_REACHED = 0               # Success
+
+---
+# feedback definition
+int8 feedback_status
+int8 EXECUTING_STEPS = 0
+int8 PLANNING = 1

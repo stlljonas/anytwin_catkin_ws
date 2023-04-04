@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>slam_loggers</name>
+  <version>0.0.1</version>
+  <description>The slam_loggers package</description>
+
+  <author email="ynava@anybotics.com">Yoshua Nava</author>
+  <maintainer email="ynava@anybotics.com">Yoshua Nava</maintainer>
+  <maintainer email="mwulf@anybotics.com">Maximilian Wulf</maintainer>
+
+  <license>Proprietary</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <buildtool_depend>cmake_clang_tools</buildtool_depend>
+
+  <depend>boost</depend>
+  <depend>eigen</depend>
+  <depend>gazebo_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>message_logger</depend>
+  <depend>nav_msgs</depend>
+  <depend>roscpp</depend>
+  <depend>slam_common</depend>
+  <depend>slam_common_ros</depend>
+  <depend>std_srvs</depend>
+  <depend>tf2</depend>
+  <depend>tf2_geometry_msgs</depend>
+  <depend>tf2_ros</depend>
+
+  <test_depend>cmake_code_coverage</test_depend>
+  
+</package>

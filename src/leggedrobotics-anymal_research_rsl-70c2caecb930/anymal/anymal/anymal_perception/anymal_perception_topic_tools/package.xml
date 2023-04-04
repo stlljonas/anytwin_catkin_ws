@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+<package format="2">
+
+  <name>anymal_perception_topic_tools</name>
+  <version>0.1.0</version>
+  <description>Files for remapping topics and frames of ANYmal Perception sensors.</description>
+
+  <license>Proprietary</license>
+
+  <author email="ynava@anybotics.com">Yoshua Nava</author>
+  <maintainer email="ynava@anybotics.com">Yoshua Nava</maintainer>
+  <maintainer email="mwulf@anybotics.com">Maximilian Wulf</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <exec_depend>image_transport</exec_depend>
+  <exec_depend>nodelet</exec_depend>
+  <exec_depend>roslaunch</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+
+</package>

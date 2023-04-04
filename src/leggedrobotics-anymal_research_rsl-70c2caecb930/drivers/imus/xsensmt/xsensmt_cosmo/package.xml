@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>xsensmt_cosmo</name>
+  <version>0.5.0</version>
+  <description>ROS interface to Xsens motion tracking (MT) devices.</description>
+  <maintainer email="mwulf@anybotics.com">Maximilian Wulf</maintainer>
+  <maintainer email="pleemann@anybotics.com">Philipp Leemann</maintainer>
+  <license>Proprietary</license>
+  <author email="jiangyi@student.ethz.ch">Yifan Jiang</author>
+  <author email="cgehring@anybotics.com">Christian Gehring</author>
+  <author email="jerome.maye@mavt.ethz.ch">Jerome Maye</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>any_measurements_ros</depend>
+  <depend>any_node</depend>
+  <depend>cosmo_ros</depend>
+  <depend>diagnostic_updater</depend>
+  <depend>roscpp</depend>
+  <depend>sensor_msgs</depend>
+  <depend>std_msgs</depend>
+  <depend>xsensmt_interface</depend>
+</package>

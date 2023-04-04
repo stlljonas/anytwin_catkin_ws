@@ -1,0 +1,17 @@
+<library path="lib/librqt_loco_visualizer">
+    <class name="LocoVisualizerPlugin" type="LocoVisualizerPlugin" base_class_type="rqt_gui_cpp::Plugin">
+        <description>
+            An rqt plugin that visualizes the Locomotion Controller state.
+        </description>
+        <qtgui>
+            <group>
+                <label>Any</label>
+                <icon type="theme">folder</icon>
+                <statustip>Plugins related to any</statustip>
+            </group>
+            <label>Loco visualizer</label>
+            <icon type="theme">applications-graphics</icon>
+            <statustip>Visualize the Locomotion Controller state.</statustip>
+        </qtgui>
+    </class>
+</library>

@@ -1,0 +1,38 @@
+anymal_highlevel_controller:
+  controller_manager:
+    controllers:
+      dynamic_gaits:
+        emergency_controller: emergency_freeze
+        name: dynamic_gaits
+        parameter_package: anymal_b
+        parameter_path: config/non_ros/motion_control/dynamic_gaits_ros
+        plugin_name: anymal_ctrl_dynamic_gaits_ros::DynamicGaitsControllerRos
+      free_gait:
+        emergency_controller: emergency_freeze
+        name: free_gait
+        parameter_package: anymal_b
+        parameter_path: config/non_ros/motion_control
+        plugin_name: anymal_ctrl_free_gait::FreeGaitImpedanceRos
+      freeze:
+        emergency_controller: emergency_freeze
+        name: freeze
+        parameter_package: anymal_b
+        parameter_path: config/non_ros/motion_control
+        plugin_name: anymal_ctrl_freeze::AnymalCtrlFreeze
+      joint_configurations:
+        emergency_controller: emergency_freeze
+        name: joint_configurations
+        parameter_package: anymal_b
+        parameter_path: config/non_ros/motion_control
+        plugin_name: anymal_ctrl_joint_configurations_ros::JointConfigurationsControllerRos
+    emergency_controllers:
+      freeze_controller:
+        name: emergency_freeze
+        parameter_package: anymal_b
+        parameter_path: config/non_ros/motion_control
+        plugin_name: anymal_ctrl_freeze::AnymalEmergencyCtrlFreeze
+    failproof_controller:
+      name: failproof_freeze
+      parameter_package: anymal_b
+      parameter_path: config/non_ros/motion_control
+      plugin_name: anymal_ctrl_freeze::AnymalFailproofCtrlFreeze

@@ -1,0 +1,79 @@
+<?xml version="1.0" ?>
+<WholeBodyControl>
+  <TaskSetup name="ee_and_base_taskspace">
+    <Task name="equation_of_motion" priority="0"/>
+    <Task name="friction_pyramid" priority="0"/>
+    <Task name="contact" priority="0"/>
+    <Task name="joint_torque_limits" priority="0"/>
+    <Task name="base_translation" priority="2"/>
+    <Task name="base_rotation" priority="2"/>
+    <Task name="endeffector_translation" priority="2"/>
+  </TaskSetup>
+  <Task type="eom" name="equation_of_motion"/>
+  <Task type="friction_pyramid" name="friction_pyramid">
+    <NormalForceOnly value="false"/>
+    <ForceLimit limbs="legs" min="5" max="1400"/>
+  </Task>
+  <Task type="contact" name="contact">
+    <Contact adapt_singular_values="yes" singular_value_threshold="0.1">
+       <Gains>
+        <Derivative x="40" y="40" z="40"/>
+      </Gains>
+    </Contact>
+  </Task>
+  <Task type="joint_torque_limits" name="joint_torque_limits" override_model="false">
+    <MaxTorqueActuatorNode HAA="40.0" HFE="55.0" KFE="55.0"/>
+  </Task>
+  <Task type="base_translation" name="base_translation">
+    <Motion frame="CONTROL">
+      <Gains>
+        <Proportional x="150" y="150" z="150"/>
+        <Integral x="0" y="0" z="0"/>
+        <Derivative x="12" y="12" z="15"/>
+        <MaxIntegral x="0" y="0" z="0"/>
+      </Gains>
+      <Weights x="1" y="1" z="1"/>
+    </Motion>
+  </Task>
+  <Task type="base_rotation" name="base_rotation">
+    <Motion frame="CONTROL">
+      <Gains>
+        <Proportional x="120" y="120" z="80"/>
+        <Integral x="0" y="0" z="0"/>
+        <Derivative x="30" y="30" z="30"/>
+        <MaxIntegral x="0" y="0" z="0"/>
+      </Gains>
+      <Weights x="1" y="1" z="1"/>
+    </Motion>
+  </Task>
+  <Task type="endeffector_translation" name="endeffector_translation">
+    <Motion limbs="legs" point="origin" frame="WORLD">
+      <Gains>
+        <Proportional x="150.0" y="150.0" z="150.0"/>
+        <Integral x="0" y="0" z="0"/>
+        <Derivative x="15.0" y="15.0" z="15.0"/>
+        <MaxIntegral x="0" y="0" z="0"/>
+      </Gains>
+      <Weights x="1" y="1" z="1"/>
+    </Motion>
+  </Task>
+  <Configuration optimizationMethod="qp" qpSolver="quadprog++" cascadeAlgorithm="ns_cascade" adaptLegLoad="yes" useThreads="yes" zeroThreshold="0.0" computeJointVelocities="no" regularizer="1e-10">
+  </Configuration>
+  <PIDGains>
+    <SupportLegCommands>
+      <HAA pGain="35.0" iGain="0.0" dGain="0.3"/>
+      <HFE pGain="30.0" iGain="0.0" dGain="0.2"/>
+      <KFE pGain="20.0" iGain="0.0" dGain="0.1"/>
+    </SupportLegCommands>
+    <SwingLegCommands>
+      <HAA pGain="35.0" iGain="0.0" dGain="0.3"/>
+      <HFE pGain="30.0" iGain="0.0" dGain="0.2"/>
+      <KFE pGain="20.0" iGain="0.0" dGain="0.1"/>
+    </SwingLegCommands>
+    <ContactInvariantCommands>
+      <HAA pGain="150.0" iGain="0.0" dGain="0.3"/>
+      <HFE pGain="120.0" iGain="0.0" dGain="0.2"/>
+      <KFE pGain="100.0" iGain="0.0" dGain="0.1"/>
+    </ContactInvariantCommands>
+  </PIDGains>
+</WholeBodyControl>

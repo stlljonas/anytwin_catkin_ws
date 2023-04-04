@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>numopt_osqp</name>
+  <version>0.5.0</version>
+  <description>The numopt_osqp package</description>
+  <maintainer email="avijayan@anybotics.com">Aravind Vijayan</maintainer>
+  <maintainer email="fgiraldez@anybotics.com">Francisco Giráldez Gámez</maintainer>
+  <license>BSD</license>
+  <author email="yvaind@ethz.ch">Yvain de Viragh</author>
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>numopt_common</depend>
+  <depend>numopt_problems</depend>
+  <depend>osqp</depend>
+</package>

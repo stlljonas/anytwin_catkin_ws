@@ -1,0 +1,613 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<root version="2.3.8">
+ <tabbed_widget name="Main Window" parent="main_window">
+  <plotmatrix columns="3" rows="1" tab_name="Torso Tracking">
+   <plot row="0" col="0">
+    <range left="0.002552" top="0.721763" right="49.477534" bottom="-0.589472"/>
+    <limitY/>
+    <curve name="/log/loco/torso/desiredLinearVelocityBaseInControlFrame/vector/x" R="255" custom_transform="noTransform" G="0" B="0"/>
+    <curve name="/log/loco/torso/measLinearVelocityBaseInControlFrame/vector/x" R="0" custom_transform="noTransform" G="0" B="255"/>
+    <curve name="/twist_mux/twist/twist/linear/x" R="0" custom_transform="noTransform" G="255" B="0"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot row="0" col="1">
+    <range left="0.002552" top="0.305806" right="49.477534" bottom="-0.349113"/>
+    <limitY/>
+    <curve name="/log/loco/torso/desiredLinearVelocityBaseInControlFrame/vector/y" R="255" custom_transform="noTransform" G="0" B="0"/>
+    <curve name="/log/loco/torso/measLinearVelocityBaseInControlFrame/vector/y" R="0" custom_transform="noTransform" G="0" B="255"/>
+    <curve name="/twist_mux/twist/twist/linear/y" R="0" custom_transform="noTransform" G="255" B="0"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot row="0" col="2">
+    <range left="0.012570" top="0.353137" right="49.477534" bottom="-0.478627"/>
+    <limitY/>
+    <curve name="/log/loco/torso/desiredAngularVelocityBaseInControlFrame/vector/z" R="255" custom_transform="noTransform" G="0" B="0"/>
+    <curve name="/log/loco/torso/measAngularVelocityBaseInControlFrame/vector/z" R="0" custom_transform="noTransform" G="0" B="255"/>
+    <curve name="/twist_mux/twist/twist/angular/z" R="0" custom_transform="noTransform" G="255" B="0"/>
+    <transform value="noTransform"/>
+   </plot>
+  </plotmatrix>
+  <plotmatrix columns="2" rows="3" tab_name="EE tracking">
+   <plot row="0" col="0">
+    <range left="0.017558" top="1.792298" right="49.477534" bottom="-0.283732"/>
+    <limitY/>
+    <curve name="/log/loco/leftFore/positionWorldToDesiredEEOriginInWorldFrame/vector/x" R="255" custom_transform="noTransform" G="0" B="0"/>
+    <curve name="/log/loco/leftFore/positionWorldToEEOriginInWorldFrame/vector/x" R="0" custom_transform="noTransform" G="0" B="255"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot row="1" col="0">
+    <range left="0.017558" top="0.086560" right="49.477534" bottom="-0.999984"/>
+    <limitY/>
+    <curve name="/log/loco/leftFore/positionWorldToDesiredEEOriginInWorldFrame/vector/y" R="255" custom_transform="noTransform" G="0" B="0"/>
+    <curve name="/log/loco/leftFore/positionWorldToEEOriginInWorldFrame/vector/y" R="0" custom_transform="noTransform" G="0" B="255"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot row="2" col="0">
+    <range left="0.017558" top="0.327903" right="49.477534" bottom="0.103239"/>
+    <limitY/>
+    <curve name="/log/loco/leftFore/positionWorldToDesiredEEOriginInWorldFrame/vector/z" R="255" custom_transform="noTransform" G="0" B="0"/>
+    <curve name="/log/loco/leftFore/positionWorldToEEOriginInWorldFrame/vector/z" R="0" custom_transform="noTransform" G="0" B="255"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot row="0" col="1">
+    <range left="0.012570" top="2.819478" right="49.477534" bottom="-3.070833"/>
+    <limitY/>
+    <curve name="/log/loco/leftFore/linearVelocityDesiredEEOriginInWorldFrame/vector/x" R="255" custom_transform="noTransform" G="0" B="0"/>
+    <curve name="/log/loco/leftFore/linearVelocityEEOriginInWorldFrame/vector/x" R="0" custom_transform="noTransform" G="0" B="255"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot row="1" col="1">
+    <range left="0.012570" top="1.292044" right="49.477534" bottom="-1.037951"/>
+    <limitY/>
+    <curve name="/log/loco/leftFore/linearVelocityDesiredEEOriginInWorldFrame/vector/y" R="255" custom_transform="noTransform" G="0" B="0"/>
+    <curve name="/log/loco/leftFore/linearVelocityEEOriginInWorldFrame/vector/y" R="0" custom_transform="noTransform" G="0" B="255"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot row="2" col="1">
+    <range left="0.012570" top="1.004321" right="49.477534" bottom="-1.537640"/>
+    <limitY/>
+    <curve name="/log/loco/leftFore/linearVelocityDesiredEEOriginInWorldFrame/vector/z" R="255" custom_transform="noTransform" G="0" B="0"/>
+    <curve name="/log/loco/leftFore/linearVelocityEEOriginInWorldFrame/vector/z" R="0" custom_transform="noTransform" G="0" B="255"/>
+    <transform value="noTransform"/>
+   </plot>
+  </plotmatrix>
+  <plotmatrix columns="2" rows="2" tab_name="Limb Strategy">
+   <plot row="0" col="0">
+    <range left="0.000000" top="5.175000" right="49.477534" bottom="-2.175000"/>
+    <limitY/>
+    <curve name="/log/loco/leftFore/limbState/value" R="0" custom_transform="noTransform" G="0" B="255"/>
+    <curve name="/log/loco/leftFore/limbStrategy/value" R="255" custom_transform="noTransform" G="0" B="0"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot row="1" col="0">
+    <range left="0.015088" top="4.075000" right="49.477534" bottom="0.925000"/>
+    <limitY/>
+    <curve name="/log/loco/rightFore/limbState/value" R="0" custom_transform="noTransform" G="0" B="255"/>
+    <curve name="/log/loco/rightFore/limbStrategy/value" R="255" custom_transform="noTransform" G="0" B="0"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot row="0" col="1">
+    <range left="0.004761" top="4.150000" right="49.477534" bottom="-2.150000"/>
+    <limitY/>
+    <curve name="/log/loco/leftHind/limbState/value" R="0" custom_transform="noTransform" G="0" B="255"/>
+    <curve name="/log/loco/leftHind/limbStrategy/value" R="255" custom_transform="noTransform" G="0" B="0"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot row="1" col="1">
+    <range left="0.200041" top="5.200000" right="49.477534" bottom="-3.200000"/>
+    <limitY/>
+    <curve name="/log/loco/rightHind/limbState/value" R="0" custom_transform="noTransform" G="0" B="255"/>
+    <curve name="/log/loco/rightHind/limbStrategy/value" R="255" custom_transform="noTransform" G="0" B="0"/>
+    <transform value="noTransform"/>
+   </plot>
+  </plotmatrix>
+  <plotmatrix columns="2" rows="4" tab_name="Base Velocity">
+   <plot row="0" col="0">
+    <range left="0.096577" top="0.525000" right="49.396579" bottom="-0.525000"/>
+    <limitY/>
+    <curve name="/twist_mux/twist/twist/angular/z" R="255" custom_transform="noTransform" G="0" B="0"/>
+    <curve name="/twist_mux/twist/twist/linear/x" R="0" custom_transform="noTransform" G="255" B="0"/>
+    <curve name="/twist_mux/twist/twist/linear/y" R="0" custom_transform="noTransform" G="0" B="255"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot row="1" col="0">
+    <range left="0.002552" top="0.305806" right="49.477534" bottom="-0.349113"/>
+    <limitY/>
+    <curve name="/log/loco/torso/desiredLinearVelocityBaseInControlFrame/vector/y" R="255" custom_transform="noTransform" G="0" B="0"/>
+    <curve name="/log/loco/torso/measLinearVelocityBaseInControlFrame/vector/y" R="0" custom_transform="noTransform" G="0" B="255"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot row="2" col="0">
+    <range left="0.096577" top="0.525000" right="49.396579" bottom="-0.525000"/>
+    <limitY/>
+    <curve name="/twist_mux/twist/twist/angular/z" R="255" custom_transform="noTransform" G="0" B="0"/>
+    <curve name="/twist_mux/twist/twist/linear/x" R="0" custom_transform="noTransform" G="255" B="0"/>
+    <curve name="/twist_mux/twist/twist/linear/y" R="0" custom_transform="noTransform" G="0" B="255"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot row="3" col="0">
+    <range left="0.012570" top="0.395259" right="49.477534" bottom="-0.220172"/>
+    <limitY/>
+    <curve name="/log/loco/torso/desiredAngularVelocityBaseInControlFrame/vector/y" R="255" custom_transform="noTransform" G="0" B="0"/>
+    <curve name="/log/loco/torso/measAngularVelocityBaseInControlFrame/vector/y" R="0" custom_transform="noTransform" G="0" B="255"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot row="0" col="1">
+    <range left="0.002552" top="0.721763" right="49.477534" bottom="-0.589472"/>
+    <limitY/>
+    <curve name="/log/loco/torso/desiredLinearVelocityBaseInControlFrame/vector/x" R="255" custom_transform="noTransform" G="0" B="0"/>
+    <curve name="/log/loco/torso/measLinearVelocityBaseInControlFrame/vector/x" R="0" custom_transform="noTransform" G="0" B="255"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot row="1" col="1">
+    <range left="0.002552" top="0.158672" right="49.477534" bottom="-0.120595"/>
+    <limitY/>
+    <curve name="/log/loco/torso/desiredLinearVelocityBaseInControlFrame/vector/z" R="255" custom_transform="noTransform" G="0" B="0"/>
+    <curve name="/log/loco/torso/measLinearVelocityBaseInControlFrame/vector/z" R="0" custom_transform="noTransform" G="0" B="255"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot row="2" col="1">
+    <range left="0.012570" top="0.812093" right="49.477534" bottom="-0.671032"/>
+    <limitY/>
+    <curve name="/log/loco/torso/desiredAngularVelocityBaseInControlFrame/vector/x" R="255" custom_transform="noTransform" G="0" B="0"/>
+    <curve name="/log/loco/torso/measAngularVelocityBaseInControlFrame/vector/x" R="0" custom_transform="noTransform" G="0" B="255"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot row="3" col="1">
+    <range left="0.012570" top="0.350717" right="49.477534" bottom="-0.473028"/>
+    <limitY/>
+    <curve name="/log/loco/torso/desiredAngularVelocityBaseInControlFrame/vector/z" R="255" custom_transform="noTransform" G="0" B="0"/>
+    <curve name="/log/loco/torso/measAngularVelocityBaseInControlFrame/vector/z" R="0" custom_transform="noTransform" G="0" B="255"/>
+    <transform value="noTransform"/>
+   </plot>
+  </plotmatrix>
+  <plotmatrix columns="2" rows="4" tab_name="Base Position">
+   <plot row="0" col="0">
+    <range left="0.096577" top="0.525000" right="49.396579" bottom="-0.525000"/>
+    <limitY/>
+    <curve name="/twist_mux/twist/twist/angular/z" R="255" custom_transform="noTransform" G="0" B="0"/>
+    <curve name="/twist_mux/twist/twist/linear/x" R="0" custom_transform="noTransform" G="255" B="0"/>
+    <curve name="/twist_mux/twist/twist/linear/y" R="0" custom_transform="noTransform" G="0" B="255"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot row="1" col="0">
+    <range left="0.210078" top="0.087346" right="49.477534" bottom="-0.892790"/>
+    <limitY/>
+    <curve name="/log/loco/torso/desPositionWorldToBaseInWorldFrame/vector/y" R="255" custom_transform="noTransform" G="0" B="0"/>
+    <curve name="/log/loco/torso/measPositionWorldToBaseInWorldFrame/vector/y" R="0" custom_transform="noTransform" G="0" B="255"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot row="2" col="0">
+    <range left="0.096577" top="0.525000" right="49.396579" bottom="-0.525000"/>
+    <limitY/>
+    <curve name="/twist_mux/twist/twist/angular/z" R="255" custom_transform="noTransform" G="0" B="0"/>
+    <curve name="/twist_mux/twist/twist/linear/x" R="0" custom_transform="noTransform" G="255" B="0"/>
+    <curve name="/twist_mux/twist/twist/linear/y" R="0" custom_transform="noTransform" G="0" B="255"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot row="3" col="0">
+    <range left="0.067529" top="0.043722" right="49.477534" bottom="-0.017215"/>
+    <limitY/>
+    <curve name="/log/loco/torso/desEulerAnglesZyxBaseToWorld/vector/y" R="255" custom_transform="noTransform" G="0" B="0"/>
+    <curve name="/log/loco/torso/measEulerAnglesZyxBaseToWorld/vector/y" R="0" custom_transform="noTransform" G="0" B="255"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot row="0" col="1">
+    <range left="0.210078" top="1.347941" right="49.477534" bottom="-0.643569"/>
+    <limitY/>
+    <curve name="/log/loco/torso/desPositionWorldToBaseInWorldFrame/vector/x" R="255" custom_transform="noTransform" G="0" B="0"/>
+    <curve name="/log/loco/torso/measPositionWorldToBaseInWorldFrame/vector/x" R="0" custom_transform="noTransform" G="0" B="255"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot row="1" col="1">
+    <range left="0.210078" top="0.755090" right="49.477534" bottom="0.616933"/>
+    <limitY/>
+    <curve name="/log/loco/torso/desPositionWorldToBaseInWorldFrame/vector/z" R="255" custom_transform="noTransform" G="0" B="0"/>
+    <curve name="/log/loco/torso/measPositionWorldToBaseInWorldFrame/vector/z" R="0" custom_transform="noTransform" G="0" B="255"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot row="2" col="1">
+    <range left="0.067529" top="-0.068329" right="49.477534" bottom="-0.595845"/>
+    <limitY/>
+    <curve name="/log/loco/torso/desEulerAnglesZyxBaseToWorld/vector/x" R="255" custom_transform="noTransform" G="0" B="0"/>
+    <curve name="/log/loco/torso/measEulerAnglesZyxBaseToWorld/vector/x" R="0" custom_transform="noTransform" G="0" B="255"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot row="3" col="1">
+    <range left="0.067529" top="0.050755" right="49.477534" bottom="-0.102984"/>
+    <limitY/>
+    <curve name="/log/loco/torso/desEulerAnglesZyxBaseToWorld/vector/z" R="255" custom_transform="noTransform" G="0" B="0"/>
+    <curve name="/log/loco/torso/measEulerAnglesZyxBaseToWorld/vector/z" R="0" custom_transform="noTransform" G="0" B="255"/>
+    <transform value="noTransform"/>
+   </plot>
+  </plotmatrix>
+  <plotmatrix columns="2" rows="2" tab_name="LF_HAA">
+   <plot row="0" col="0">
+    <range left="0.204165" top="20.170680" right="49.451641" bottom="-20.525828"/>
+    <limitY/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.0/commanded/current" R="255" custom_transform="noTransform" G="0" B="0"/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.0/state/current" R="0" custom_transform="noTransform" G="0" B="255"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot row="1" col="0">
+    <range left="0.204165" top="1.965898" right="49.451641" bottom="-1.946330"/>
+    <limitY/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.0/commanded/joint_velocity" R="255" custom_transform="noTransform" G="0" B="0"/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.0/state/joint_velocity" R="0" custom_transform="noTransform" G="0" B="255"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot row="0" col="1">
+    <range left="0.204165" top="42.575726" right="49.451641" bottom="-28.211656"/>
+    <limitY/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.0/commanded/joint_torque" R="255" custom_transform="noTransform" G="0" B="0"/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.0/state/joint_torque" R="0" custom_transform="noTransform" G="0" B="255"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot row="1" col="1">
+    <range left="0.204165" top="-0.194276" right="49.451641" bottom="-0.571301"/>
+    <limitY/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.0/commanded/joint_position" R="255" custom_transform="noTransform" G="0" B="0"/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.0/state/joint_position" R="0" custom_transform="noTransform" G="0" B="255"/>
+    <transform value="noTransform"/>
+   </plot>
+  </plotmatrix>
+  <plotmatrix columns="2" rows="2" tab_name="LF_HFE">
+   <plot row="0" col="0">
+    <range left="0.204165" top="32.744909" right="49.451641" bottom="-33.001303"/>
+    <limitY/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.1/commanded/current" R="255" custom_transform="noTransform" G="0" B="0"/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.1/state/current" R="0" custom_transform="noTransform" G="0" B="255"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot row="1" col="0">
+    <range left="0.204165" top="7.255443" right="49.451641" bottom="-7.822697"/>
+    <limitY/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.1/commanded/joint_velocity" R="255" custom_transform="noTransform" G="0" B="0"/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.1/state/joint_velocity" R="0" custom_transform="noTransform" G="0" B="255"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot row="0" col="1">
+    <range left="0.204165" top="50.986680" right="49.451641" bottom="-44.406360"/>
+    <limitY/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.1/commanded/joint_torque" R="255" custom_transform="noTransform" G="0" B="0"/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.1/state/joint_torque" R="0" custom_transform="noTransform" G="0" B="255"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot row="1" col="1">
+    <range left="0.204165" top="1.339860" right="49.451641" bottom="0.174131"/>
+    <limitY/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.1/commanded/joint_position" R="255" custom_transform="noTransform" G="0" B="0"/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.1/state/joint_position" R="0" custom_transform="noTransform" G="0" B="255"/>
+    <transform value="noTransform"/>
+   </plot>
+  </plotmatrix>
+  <plotmatrix columns="2" rows="2" tab_name="LF_KFE">
+   <plot row="0" col="0">
+    <range left="0.204165" top="25.216994" right="49.451641" bottom="-18.151538"/>
+    <limitY/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.2/commanded/current" R="255" custom_transform="noTransform" G="0" B="0"/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.2/state/current" R="0" custom_transform="noTransform" G="0" B="255"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot row="1" col="0">
+    <range left="0.204165" top="6.814605" right="49.451641" bottom="-5.525525"/>
+    <limitY/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.2/commanded/joint_velocity" R="255" custom_transform="noTransform" G="0" B="0"/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.2/state/joint_velocity" R="0" custom_transform="noTransform" G="0" B="255"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot row="0" col="1">
+    <range left="0.204165" top="63.127778" right="49.451641" bottom="-3.208159"/>
+    <limitY/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.2/commanded/joint_torque" R="255" custom_transform="noTransform" G="0" B="0"/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.2/state/joint_torque" R="0" custom_transform="noTransform" G="0" B="255"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot row="1" col="1">
+    <range left="0.204165" top="-0.953778" right="49.451641" bottom="-1.728843"/>
+    <limitY/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.2/commanded/joint_position" R="255" custom_transform="noTransform" G="0" B="0"/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.2/state/joint_position" R="0" custom_transform="noTransform" G="0" B="255"/>
+    <transform value="noTransform"/>
+   </plot>
+  </plotmatrix>
+  <plotmatrix columns="2" rows="2" tab_name="RF_HAA">
+   <plot row="0" col="0">
+    <range left="0.204165" top="17.553412" right="49.451641" bottom="-21.697985"/>
+    <limitY/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.3/commanded/current" R="255" custom_transform="noTransform" G="0" B="0"/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.3/state/current" R="0" custom_transform="noTransform" G="0" B="255"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot row="1" col="0">
+    <range left="0.204165" top="2.177349" right="49.451641" bottom="-1.740446"/>
+    <limitY/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.3/commanded/joint_velocity" R="255" custom_transform="noTransform" G="0" B="0"/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.3/state/joint_velocity" R="0" custom_transform="noTransform" G="0" B="255"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot row="0" col="1">
+    <range left="0.204165" top="37.375260" right="49.451641" bottom="-65.197124"/>
+    <limitY/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.3/commanded/joint_torque" R="255" custom_transform="noTransform" G="0" B="0"/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.3/state/joint_torque" R="0" custom_transform="noTransform" G="0" B="255"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot row="1" col="1">
+    <range left="0.204165" top="0.555378" right="49.451641" bottom="0.198789"/>
+    <limitY/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.3/commanded/joint_position" R="255" custom_transform="noTransform" G="0" B="0"/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.3/state/joint_position" R="0" custom_transform="noTransform" G="0" B="255"/>
+    <transform value="noTransform"/>
+   </plot>
+  </plotmatrix>
+  <plotmatrix columns="2" rows="2" tab_name="RF_HFE">
+   <plot row="0" col="0">
+    <range left="0.204165" top="24.262736" right="49.451641" bottom="-26.090300"/>
+    <limitY/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.4/commanded/current" R="255" custom_transform="noTransform" G="0" B="0"/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.4/state/current" R="0" custom_transform="noTransform" G="0" B="255"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot row="1" col="0">
+    <range left="0.204165" top="5.752533" right="49.451641" bottom="-6.635069"/>
+    <limitY/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.4/commanded/joint_velocity" R="255" custom_transform="noTransform" G="0" B="0"/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.4/state/joint_velocity" R="0" custom_transform="noTransform" G="0" B="255"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot row="0" col="1">
+    <range left="0.204165" top="48.686633" right="49.451641" bottom="-71.174465"/>
+    <limitY/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.4/commanded/joint_torque" R="255" custom_transform="noTransform" G="0" B="0"/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.4/state/joint_torque" R="0" custom_transform="noTransform" G="0" B="255"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot row="1" col="1">
+    <range left="0.204165" top="1.373628" right="49.451641" bottom="0.460725"/>
+    <limitY/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.4/commanded/joint_position" R="255" custom_transform="noTransform" G="0" B="0"/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.4/state/joint_position" R="0" custom_transform="noTransform" G="0" B="255"/>
+    <transform value="noTransform"/>
+   </plot>
+  </plotmatrix>
+  <plotmatrix columns="2" rows="2" tab_name="RF_KFE">
+   <plot row="0" col="0">
+    <range left="0.204165" top="25.654756" right="49.451641" bottom="-17.107292"/>
+    <limitY/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.5/commanded/current" R="255" custom_transform="noTransform" G="0" B="0"/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.5/state/current" R="0" custom_transform="noTransform" G="0" B="255"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot row="1" col="0">
+    <range left="0.204165" top="4.513456" right="49.451641" bottom="-4.804047"/>
+    <limitY/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.5/commanded/joint_velocity" R="255" custom_transform="noTransform" G="0" B="0"/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.5/state/joint_velocity" R="0" custom_transform="noTransform" G="0" B="255"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot row="0" col="1">
+    <range left="0.204165" top="56.527762" right="49.451641" bottom="-3.286911"/>
+    <limitY/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.5/commanded/joint_torque" R="255" custom_transform="noTransform" G="0" B="0"/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.5/state/joint_torque" R="0" custom_transform="noTransform" G="0" B="255"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot row="1" col="1">
+    <range left="0.204165" top="-1.023346" right="49.451641" bottom="-1.658029"/>
+    <limitY/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.5/commanded/joint_position" R="255" custom_transform="noTransform" G="0" B="0"/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.5/state/joint_position" R="0" custom_transform="noTransform" G="0" B="255"/>
+    <transform value="noTransform"/>
+   </plot>
+  </plotmatrix>
+  <plotmatrix columns="2" rows="2" tab_name="LH_HAA">
+   <plot row="0" col="0">
+    <range left="0.204165" top="15.226125" right="49.451641" bottom="-21.131488"/>
+    <limitY/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.6/commanded/current" R="255" custom_transform="noTransform" G="0" B="0"/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.6/state/current" R="0" custom_transform="noTransform" G="0" B="255"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot row="1" col="0">
+    <range left="0.204165" top="1.955659" right="49.451641" bottom="-2.419273"/>
+    <limitY/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.6/commanded/joint_velocity" R="255" custom_transform="noTransform" G="0" B="0"/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.6/state/joint_velocity" R="0" custom_transform="noTransform" G="0" B="255"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot row="0" col="1">
+    <range left="0.204165" top="41.500052" right="49.451641" bottom="-54.062295"/>
+    <limitY/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.6/commanded/joint_torque" R="255" custom_transform="noTransform" G="0" B="0"/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.6/state/joint_torque" R="0" custom_transform="noTransform" G="0" B="255"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot row="1" col="1">
+    <range left="0.204165" top="-0.180263" right="49.451641" bottom="-0.522684"/>
+    <limitY/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.6/commanded/joint_position" R="255" custom_transform="noTransform" G="0" B="0"/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.6/state/joint_position" R="0" custom_transform="noTransform" G="0" B="255"/>
+    <transform value="noTransform"/>
+   </plot>
+  </plotmatrix>
+  <plotmatrix columns="2" rows="2" tab_name="LH_HFE">
+   <plot row="0" col="0">
+    <range left="0.204165" top="26.313299" right="49.451641" bottom="-29.344160"/>
+    <limitY/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.7/commanded/current" R="255" custom_transform="noTransform" G="0" B="0"/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.7/state/current" R="0" custom_transform="noTransform" G="0" B="255"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot row="1" col="0">
+    <range left="0.204165" top="4.931650" right="49.451641" bottom="-7.400257"/>
+    <limitY/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.7/commanded/joint_velocity" R="255" custom_transform="noTransform" G="0" B="0"/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.7/state/joint_velocity" R="0" custom_transform="noTransform" G="0" B="255"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot row="0" col="1">
+    <range left="0.204165" top="83.283454" right="49.451641" bottom="-54.621597"/>
+    <limitY/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.7/commanded/joint_torque" R="255" custom_transform="noTransform" G="0" B="0"/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.7/state/joint_torque" R="0" custom_transform="noTransform" G="0" B="255"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot row="1" col="1">
+    <range left="0.204165" top="-0.213607" right="49.451641" bottom="-1.297771"/>
+    <limitY/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.7/commanded/joint_position" R="255" custom_transform="noTransform" G="0" B="0"/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.7/state/joint_position" R="0" custom_transform="noTransform" G="0" B="255"/>
+    <transform value="noTransform"/>
+   </plot>
+  </plotmatrix>
+  <plotmatrix columns="2" rows="2" tab_name="LH_KFE">
+   <plot row="0" col="0">
+    <range left="0.204165" top="17.196053" right="49.451641" bottom="-25.861067"/>
+    <limitY/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.8/commanded/current" R="255" custom_transform="noTransform" G="0" B="0"/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.8/state/current" R="0" custom_transform="noTransform" G="0" B="255"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot row="1" col="0">
+    <range left="0.204165" top="5.498643" right="49.451641" bottom="-5.117473"/>
+    <limitY/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.8/commanded/joint_velocity" R="255" custom_transform="noTransform" G="0" B="0"/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.8/state/joint_velocity" R="0" custom_transform="noTransform" G="0" B="255"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot row="0" col="1">
+    <range left="0.204165" top="3.717544" right="49.451641" bottom="-61.802443"/>
+    <limitY/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.8/commanded/joint_torque" R="255" custom_transform="noTransform" G="0" B="0"/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.8/state/joint_torque" R="0" custom_transform="noTransform" G="0" B="255"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot row="1" col="1">
+    <range left="0.204165" top="1.615676" right="49.451641" bottom="0.956858"/>
+    <limitY/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.8/commanded/joint_position" R="255" custom_transform="noTransform" G="0" B="0"/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.8/state/joint_position" R="0" custom_transform="noTransform" G="0" B="255"/>
+    <transform value="noTransform"/>
+   </plot>
+  </plotmatrix>
+  <plotmatrix columns="2" rows="2" tab_name="RH_HAA">
+   <plot row="0" col="0">
+    <range left="0.204165" top="19.411084" right="49.451641" bottom="-19.942973"/>
+    <limitY/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.9/commanded/current" R="255" custom_transform="noTransform" G="0" B="0"/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.9/state/current" R="0" custom_transform="noTransform" G="0" B="255"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot row="1" col="0">
+    <range left="0.204165" top="2.028158" right="49.451641" bottom="-2.208823"/>
+    <limitY/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.9/commanded/joint_velocity" R="255" custom_transform="noTransform" G="0" B="0"/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.9/state/joint_velocity" R="0" custom_transform="noTransform" G="0" B="255"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot row="0" col="1">
+    <range left="0.204165" top="44.690346" right="49.451641" bottom="-38.328018"/>
+    <limitY/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.9/commanded/joint_torque" R="255" custom_transform="noTransform" G="0" B="0"/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.9/state/joint_torque" R="0" custom_transform="noTransform" G="0" B="255"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot row="1" col="1">
+    <range left="0.204165" top="0.571055" right="49.451641" bottom="0.197302"/>
+    <limitY/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.9/commanded/joint_position" R="255" custom_transform="noTransform" G="0" B="0"/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.9/state/joint_position" R="0" custom_transform="noTransform" G="0" B="255"/>
+    <transform value="noTransform"/>
+   </plot>
+  </plotmatrix>
+  <plotmatrix columns="2" rows="2" tab_name="RH_HFE">
+   <plot row="0" col="0">
+    <range left="0.204165" top="28.326538" right="49.451641" bottom="-33.159715"/>
+    <limitY/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.10/commanded/current" R="255" custom_transform="noTransform" G="0" B="0"/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.10/state/current" R="0" custom_transform="noTransform" G="0" B="255"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot row="1" col="0">
+    <range left="0.204165" top="7.770609" right="49.451641" bottom="-7.610140"/>
+    <limitY/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.10/commanded/joint_velocity" R="255" custom_transform="noTransform" G="0" B="0"/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.10/state/joint_velocity" R="0" custom_transform="noTransform" G="0" B="255"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot row="0" col="1">
+    <range left="0.204165" top="62.281140" right="49.451641" bottom="-46.342296"/>
+    <limitY/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.10/commanded/joint_torque" R="255" custom_transform="noTransform" G="0" B="0"/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.10/state/joint_torque" R="0" custom_transform="noTransform" G="0" B="255"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot row="1" col="1">
+    <range left="0.204165" top="-0.037849" right="49.451641" bottom="-1.326292"/>
+    <limitY/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.10/commanded/joint_position" R="255" custom_transform="noTransform" G="0" B="0"/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.10/state/joint_position" R="0" custom_transform="noTransform" G="0" B="255"/>
+    <transform value="noTransform"/>
+   </plot>
+  </plotmatrix>
+  <plotmatrix columns="2" rows="2" tab_name="RH_KFE">
+   <plot row="0" col="0">
+    <range left="0.204165" top="31.011139" right="49.451641" bottom="-26.654587"/>
+    <limitY/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.11/commanded/current" R="255" custom_transform="noTransform" G="0" B="0"/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.11/state/current" R="0" custom_transform="noTransform" G="0" B="255"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot row="1" col="0">
+    <range left="0.204165" top="7.151951" right="49.451641" bottom="-7.947098"/>
+    <limitY/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.11/commanded/joint_velocity" R="255" custom_transform="noTransform" G="0" B="0"/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.11/state/joint_velocity" R="0" custom_transform="noTransform" G="0" B="255"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot row="0" col="1">
+    <range left="0.204165" top="10.484738" right="49.451641" bottom="-62.087943"/>
+    <limitY/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.11/commanded/joint_torque" R="255" custom_transform="noTransform" G="0" B="0"/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.11/state/joint_torque" R="0" custom_transform="noTransform" G="0" B="255"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot row="1" col="1">
+    <range left="0.204165" top="1.693415" right="49.451641" bottom="0.824806"/>
+    <limitY/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.11/commanded/joint_position" R="255" custom_transform="noTransform" G="0" B="0"/>
+    <curve name="/anymal_lowlevel_controller/actuator_readings/readings.11/state/joint_position" R="0" custom_transform="noTransform" G="0" B="255"/>
+    <transform value="noTransform"/>
+   </plot>
+  </plotmatrix>
+  <currentPlotMatrix index="0"/>
+ </tabbed_widget>
+ <use_relative_time_offset enabled="1"/>
+ <!-- - - - - - - - - - - - - - - -->
+ <!-- - - - - - - - - - - - - - - -->
+ <Plugins>
+  <plugin ID="DataLoad CSV">
+   <default time_axis=""/>
+  </plugin>
+  <plugin ID="DataLoad ROS bags">
+   <use_header_stamp value="true"/>
+   <use_renaming_rules value="true"/>
+   <discard_large_arrays value="true"/>
+   <max_array_size value="100"/>
+  </plugin>
+  <plugin ID="DataLoad ULog"/>
+  <plugin ID="ROS Topic Subscriber">
+   <use_header_stamp value="true"/>
+   <use_renaming_rules value="true"/>
+   <discard_large_arrays value="true"/>
+   <max_array_size value="100"/>
+  </plugin>
+  <plugin ID="ROS /rosout Visualization" status="idle"/>
+  <plugin ID="ROS Topic Re-Publisher" status="idle"/>
+ </Plugins>
+ <!-- - - - - - - - - - - - - - - -->
+ <!-- - - - - - - - - - - - - - - -->
+ <!-- - - - - - - - - - - - - - - -->
+</root>
+

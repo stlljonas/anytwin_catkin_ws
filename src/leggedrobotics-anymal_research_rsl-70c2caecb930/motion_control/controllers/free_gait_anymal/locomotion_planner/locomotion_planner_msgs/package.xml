@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package format="2">
+  <name>locomotion_planner_msgs</name>
+  <version>0.4.0</version>
+  <description>Locomotion planner message package to interface with external modules.</description>
+  <maintainer email="vyuryev@anybotics.com">Valentin Yuryev</maintainer>
+  <maintainer email="fgiraldez@anybotics.com">Francisco Giráldez Gámez</maintainer>
+  <author email="vyuryev@anybotics.com">Valentin Yuryev</author>
+  <license>Proprietary</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>message_generation</build_depend>
+  <exec_depend>message_runtime</exec_depend>
+  <depend>actionlib_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>std_msgs</depend>
+
+</package>

@@ -1,0 +1,40 @@
+subscribers:
+  soft_emergency_stop:
+    topic:              /soft_emcy_stop
+    queue_size:         10
+  hard_emergency_stop:
+    topic:              /hard_emcy_stop
+    queue_size:         10
+  actuator_commands:
+    topic:              /anymal_highlevel_controller/actuator_commands
+    queue_size:         10
+    latch:              false
+
+publishers:
+  soft_emergency_stop:
+    topic:              /soft_emcy_stop
+    queue_size:         1
+    latch:              false
+  active_state:
+    topic:              active_state
+    queue_size:         1
+    latch:              true
+  battery_voltage:
+    topic:              /sensors/battery_voltage
+    queue_size:         1
+    latch:              true
+  dysfunction:
+    topic:              /dysfunction/state
+    queue_size:         1
+    latch:              true
+  actuator_readings:
+    topic:              /anymal_lowlevel_controller/actuator_readings
+    queue_size:         1
+    latch:              false
+
+servers:
+  go_to_state:
+    service:            go_to_state
+  toggle_actuator_communication:
+    service:            toggle_actuator_communication
+

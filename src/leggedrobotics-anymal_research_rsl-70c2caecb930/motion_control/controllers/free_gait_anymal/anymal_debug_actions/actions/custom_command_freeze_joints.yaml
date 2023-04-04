@@ -1,0 +1,9 @@
+steps:
+ - step:
+    - custom_command:
+       type: freeze_joints
+       duration: 1.0
+       command: |
+         - RF_HAA
+         - RF_HFE
+         - RF_KFE

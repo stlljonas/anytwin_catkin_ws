@@ -1,0 +1,17 @@
+<library path="lib/librqt_average_calculator">
+  <class name="rqt_average_calculator/AverageCalculatorPlugin" type="rqt_average_calculator::AverageCalculatorPlugin" base_class_type="rqt_gui_cpp::Plugin">
+    <description>
+      A GUI plugin to calculate the average of numbers.
+    </description>
+    <qtgui>
+      <group>
+        <label>Math Tools</label>
+        <icon type="theme">folder</icon>
+        <statustip>Plugins related to math.</statustip>
+      </group>
+      <label>Average Calculator</label>
+      <icon type="theme">image-x-generic</icon>
+      <statustip>A GUI plugin to calculate the average of numbers.</statustip>
+    </qtgui>
+  </class>
+</library>

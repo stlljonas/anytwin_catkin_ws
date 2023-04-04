@@ -1,0 +1,11 @@
+plugins:
+- type:                'interaction_marker_plugin_publish_pose::InteractionMarkerPluginPublishPose'
+  parameters:
+    pose_frame_id:     map
+    entry_text:        'Publish pose'
+    publishers:
+      pose:
+        topic:         pose
+        queue_size:    1
+        latch:         false
+

@@ -1,0 +1,9 @@
+<library path="lib/libinspection_example_qt_plugin">
+    <class name="inspection_example_qt_plugin/InspectionExampleQtPlugin"
+           type="inspection_example_qt_plugin::InspectionExampleQtPlugin"
+           base_class_type="environment_item_qt_ros::EnvironmentItemQtPluginInterfaceRos">
+        <description>
+            The inspection example QT plugin.
+        </description>
+    </class>
+</library>

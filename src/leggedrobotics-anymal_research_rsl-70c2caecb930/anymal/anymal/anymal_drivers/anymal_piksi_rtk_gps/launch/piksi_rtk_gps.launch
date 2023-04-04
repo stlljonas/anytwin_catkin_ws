@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<launch>
+  <!-- Node name -->
+  <arg name="node_name"                   value="piksi"/>
+
+  <!-- Arguments -->
+  <arg name="load_enu_origin_from_file"   default="true"/>
+  <arg name="enu_origin_file"             default="$(find anymal_piksi_rtk_gps)/config/enu_origin.yaml"/>
+
+  <node pkg="piksi_multi_rtk_ros" type="piksi_multi" name="$(arg node_name)" output="screen" respawn="true">
+    <!-- Load settings -->
+    <rosparam file="$(find anymal_piksi_rtk_gps)/config/piksi_rtk_gps.yaml"/>
+
+    <!-- Load ENU origin from file -->
+    <rosparam file="$(arg enu_origin_file)"   if="$(arg load_enu_origin_from_file)"/>
+  </node>
+
+</launch>

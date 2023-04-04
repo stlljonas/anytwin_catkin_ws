@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package format="2">
+
+  <name>anymal_actions_common</name>
+  <version>0.1.0</version>
+  <description>Helper functions for basic actions.</description>
+
+  <license>Proprietary</license>
+  <author email="vyuryev@anybotics.com">Valentin Yuryev</author>
+  <maintainer email="vyuryev@anybotics.com">Valentin Yuryev</maintainer>
+  <maintainer email="avijayan@anybotics.com">Aravind Vijayan</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <exec_depend>actionlib_msgs</exec_depend>
+  <exec_depend>any_msgs</exec_depend>
+  <exec_depend>anymal_msgs</exec_depend>
+  <exec_depend>control_unit_msgs</exec_depend>
+  <exec_depend>free_gait_python</exec_depend>
+  <exec_depend>rospy</exec_depend>
+  <exec_depend>std_srvs</exec_depend>
+
+</package>

@@ -1,0 +1,7 @@
+# Device to set the FSM goal state. Leave empty for all devices.
+string device_name
+
+# The FSM goal state.
+FsmState fsm_state
+
+---

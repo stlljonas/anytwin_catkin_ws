@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:macro name="top_shell">
+
+    <xacro:property name="B_r_BBscom_x"        value="-0.00777"/> <!--  [m] -->
+    <xacro:property name="B_r_BBscom_y"        value="-0.00013"/> <!--  [m] -->
+    <xacro:property name="B_r_BBscom_z"        value= "0.06523"/> <!--  [m] -->
+    <xacro:property name="m_Bs"                value= "0.534"/> <!-- [kg] -->
+    <xacro:property name="B_Ixx_Bs"            value= "0.00664789486"/> <!-- [kg * m^2] -->
+    <xacro:property name="B_Iyy_Bs"            value= "0.02587392411"/> <!-- [kg * m^2] -->
+    <xacro:property name="B_Izz_Bs"            value= "0.03152303792"/> <!-- [kg * m^2] -->
+    <xacro:property name="B_Ixy_Bs"            value= "0.00001247923"/> <!-- [kg * m^2] -->
+    <xacro:property name="B_Ixz_Bs"            value= "0.00053990097"/> <!-- [kg * m^2] -->
+    <xacro:property name="B_Iyz_Bs"            value= "0.00000037614"/> <!-- [kg * m^2] -->
+
+    <!-- Fixed joint base topshell -->
+    <joint name="base_top_shell" type="fixed">
+      <parent link="base"/>
+      <child link="top_shell"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+    </joint>
+
+    <!-- Top shell link -->
+    <link name="top_shell">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh
+            filename="package://anymal_c/urdf/base/shell/top_shell_3_1_1_mesh.dae"
+            scale="1.0 1.0 1.0"/>
+        </geometry>
+      </visual>
+      <inertial>
+        <origin   xyz="${B_r_BBscom_x} ${B_r_BBscom_y} ${B_r_BBscom_z}"
+                  rpy="0 0 0"/>
+        <mass     value="${m_Bs}"/>
+        <inertia  ixx="${B_Ixx_Bs}" ixy="${B_Ixy_Bs}" ixz="${B_Ixz_Bs}"
+                  iyy="${B_Iyy_Bs}" iyz="${B_Iyz_Bs}" izz="${B_Izz_Bs}"/>
+      </inertial>
+    </link>
+  </xacro:macro>
+
+</robot>

@@ -1,0 +1,9 @@
+collections:
+  - collection:
+     id: robot_test
+     name: Robot Test
+     actions:
+      - box_step_ups
+      - foot_sensor_trigger_test
+      - foot_tracking_test
+      - swing_test_in_air

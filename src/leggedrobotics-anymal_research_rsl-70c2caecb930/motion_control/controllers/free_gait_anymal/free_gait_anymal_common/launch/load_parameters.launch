@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+
+  <!-- Configuration -->
+  <arg name="free_gait_configuration" default="anymal"/>
+
+  <!-- Load Free Gait global parameters -->
+  <rosparam command="load" file="$(find free_gait_anymal_common)/config/$(arg free_gait_configuration).yaml" />
+
+</launch>

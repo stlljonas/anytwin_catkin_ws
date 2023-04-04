@@ -1,0 +1,92 @@
+<launch>
+
+  <arg name="all"                  default="false"/>
+  <arg name="icp_and_gps"          default="false"/>
+  <arg name="gps"                  default="false"/>
+  <arg name="navigation"           default="false"/>
+  <arg name="erl"                  default="false"/>
+  <arg name="depth_camera"         default="false"/>
+  <arg name="intel_zr300"          default="false"/>
+  <arg name="intel_d435"           default="false"/>
+
+  <arg name="file_path"             default="/home/integration/bagfiles"/>
+  <arg name="file_name"            default="data" />
+
+  <group if="$(arg all)">
+    <node name="record_rosbag" pkg="rosbag" type="record" output="screen"
+        args="record -o '$(arg file_path)/all'">
+    </node>
+  </group>
+
+  <group if="$(arg intel_zr300)">
+    <node name="record_intel_rosbag" pkg="rosbag" type="record" output="screen"
+        args="record -o '$(arg file_path)/$(arg file_name)' 
+              /depth_camera/ir/image_raw 
+              /depth_camera/ir/camera_info 
+              /depth_camera/ir2/image_raw 
+              /depth_camera/ir2/camera_info 
+              /depth_camera/fisheye/image_raw 
+              /depth_camera/fisheye/camera_info 
+              /depth_camera/rgb/image_raw 
+              /depth_camera/rgb/camera_info 
+              /state_estimator/anymal_state 
+              /tf_static 
+              /loco_ros/desired_torso_linear_velocity 
+              /loco_ros/desired_torso_angular_velocity 
+              /state_estimator/pose_in_odom 
+              /elevation_mapping/elevation_map 
+              ">
+    </node>
+  </group>
+
+  <group if="$(arg intel_d435)">
+    <node name="record_intel_rosbag" pkg="rosbag" type="record" output="screen"
+        args="record -o '$(arg file_path)/$(arg file_name)' 
+              /depth_camera/infra1/image_rect_raw
+              /depth_camera/infra1/camera_info
+              /depth_camera/infra2/image_rect_raw 
+              /depth_camera/infra2/camera_info
+              /depth_camera/depth/image_rect_raw
+              /depth_camera/depth/camera_info
+              /depth_camera/color/camera_info
+              /depth_camera/color/image_raw 
+              /state_estimator/anymal_state 
+              /tf_static 
+              /loco_ros/desired_torso_linear_velocity 
+              /loco_ros/desired_torso_angular_velocity 
+              /state_estimator/pose_in_odom 
+              /elevation_mapping/elevation_map 
+              ">
+    </node>
+  </group>
+
+  <group if="$(arg icp_and_gps)">
+    <node name="record_rosbag" pkg="rosbag" type="record" output="screen"
+        args="-o '$(arg file_path)/icp_and_gps' -e '/piksi/(.*)' /slam/pose_visualizable /state_estimator/anymal_state ">
+    </node>
+  </group>
+
+  <group if="$(arg erl)">
+    <node name="record_rosbag" pkg="rosbag" type="record" output="screen"
+        args="-o '$(arg file_path)/erl' -e '/piksi/(.*)' /slam/pose_visualizable /state_estimator/anymal_state_throttle /actuated_lidar_master/point_cloud_filtered /slam/map ">
+    </node>
+  </group>
+  
+  <group if="$(arg depth_camera)">
+    <node name="record_depth_camera_rosbag" pkg="rosbag" type="record" output="screen"
+        args="-o '$(arg file_path)/depth_camera' /depth_camera/ir/image_raw/compressed /depth_camera/ir2/image_raw/compressed /depth_camera/fisheye/image_raw/compressed /depth_camera/rgb/image_raw/compressed /depth_camera/points2 ">
+    </node>
+  </group>
+
+  <group if="$(arg gps)">
+    <node name="record_rosbag" pkg="rosbag" type="record" output="screen" args="-o '$(arg file_path)/gps' -e '/piksi/(.*)'">
+    </node>
+  </group>
+
+  <group if="$(arg navigation)">
+    <node name="record_rosbag" pkg="rosbag" type="record" output="screen"
+        args="-o '$(arg file_path)/navigation' /piksi/enu_point_fix /state_estimator/anymal_state /slam/pose_visualizable /tf_static">
+    </node>
+  </group>
+
+</launch>

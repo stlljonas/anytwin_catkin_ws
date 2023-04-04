@@ -1,0 +1,10 @@
+plugins:
+- type:                'interaction_marker_plugin_example::InteractionMarkerPluginExample'
+  parameters:
+    example_person:    Sam
+    publishers:
+      chatter:
+        topic:         chatter
+        queue_size:    1
+        latch:         false
+

@@ -1,0 +1,7 @@
+<library path="lib/libdynamixel_ros">
+  <class name="dynamixel_ros/DynamixelNode" type="nodewrap::Nodelet<dynamixel_ros::DynamixelNode>" base_class_type="nodelet::Nodelet">
+    <description>
+      Dynamixel ROS Node
+    </description>
+  </class>
+</library>

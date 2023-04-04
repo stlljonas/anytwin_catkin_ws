@@ -1,0 +1,76 @@
+max_command_age:                   .inf
+auto_stage_last_command:           true
+set_reading_to_nan_on_disconnect:  true
+error_state_behavior:              0
+max_current:                       28.0
+max_motor_velocity:                680.7
+direction:                         1
+
+joint_position_limits:
+  interface:
+    min:                           0.0
+    max:                           0.0
+  soft:
+    min:                           0.0
+    max:                           0.0
+  hard:
+    min:                           0.0
+    max:                           0.0
+
+joint_position_configurations:
+  zero:                            0.0
+  default:                         0.0
+
+imu:
+  enable:                          true
+  accelerometer_range:             1
+  gyroscope_range:                 1
+
+controllers:
+
+- name:                            Current
+  gains:                           
+    p:                             0.6
+    i:                             0.16
+    d:                             0.0
+
+- name:                            JointPosition
+  gains:                           
+    p:                             104.0
+    i:                             0.078
+    d:                             0.163
+
+- name:                            JointVelocity
+  gains:                           
+    p:                             0.15
+    i:                             0.00005
+    d:                             0.4
+                                   
+- name:                            JointTorque
+  gains:                           
+    p:                             19.0
+    i:                             0.01
+    d:                             24.0
+
+goal_states:                       
+  startup:                         NA
+  shutdown:                        NA
+
+gear_joint_velocity_filter:
+  type:                            2
+  kf_noise_variance:               0.005
+  kf_lambda_2:                     1000.0
+  kf_gamma:                        0.1
+  ema_alpha:                       0.1
+joint_velocity_filter_for_acceleration:
+  type:                            1
+  kf_noise_variance:               0.005
+  kf_lambda_2:                     1000.0
+  kf_gamma:                        0.1
+  ema_alpha:                       0.005
+joint_acceleration_filter:
+  type:                            1
+  kf_noise_variance:               20.0
+  kf_lambda_2:                     1000.0
+  kf_gamma:                        0.1
+  ema_alpha:                       0.01

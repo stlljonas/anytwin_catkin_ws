@@ -1,0 +1,7 @@
+<library path="lib/libjoy_rpsm">
+  <class type="joy_manager::JoyRpsm" base_class_type="joy_manager::ModuleBase">
+  <description>
+    This is a RPSM plugin for the joy_manager.
+  </description>
+  </class>
+</library>

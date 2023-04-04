@@ -1,0 +1,4 @@
+# Device to write configuration to flash. Leave empty for all devices.
+string device_name
+
+---

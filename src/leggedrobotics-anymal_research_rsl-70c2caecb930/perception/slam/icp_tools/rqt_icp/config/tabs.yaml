@@ -1,0 +1,26 @@
+rqt_icp:
+  tabs:
+    slam:
+      tab_name: "SLAM"
+      toggle_localization_service: "/slam/toggle_localization"
+      toggle_publish_pose_service: "/slam/toggle_publish_pose"
+      toggle_mapping_service:      "/slam/toggle_mapping"
+      save_map_to_file_service:    "/slam/save_map_to_file"
+      load_map_from_file_service:  "/slam/load_map_from_file"
+      clear_map_service:           "/slam/clear_map"
+      publish_map_service:         "/slam/publish_map"
+      read_config_files_service:   "/slam/read_config_files"
+      node_state_topic:            "/slam/node_state"
+      load_map_on_launch_param:    "/slam/mapping/load_map_on_launch_file"
+    point_cloud_odometry:
+      tab_name: "Point Cloud Odometry"
+      toggle_localization_service: "/point_cloud_odometry/toggle_localization"
+      toggle_publish_pose_service: "/point_cloud_odometry/toggle_publish_pose"
+      toggle_mapping_service:      "/point_cloud_odometry/toggle_mapping"
+      save_map_to_file_service:    "/point_cloud_odometry/save_map_to_file"
+      load_map_from_file_service:  "/point_cloud_odometry/load_map_from_file"
+      clear_map_service:           "/point_cloud_odometry/clear_map"
+      publish_map_service:         "/point_cloud_odometry/publish_map"
+      read_config_files_service:   "/point_cloud_odometry/read_config_files"
+      node_state_topic:            "/point_cloud_odometry/node_state"
+      load_map_on_launch_param:    "/point_cloud_odometry/mapping/load_map_on_launch_file"

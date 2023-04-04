@@ -1,0 +1,4 @@
+reset_routes:
+  state_estimator:
+    input: /test1/reset_out
+    output_topics: hello_world

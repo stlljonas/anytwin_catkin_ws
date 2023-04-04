@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+
+  <!-- Initial pose -->
+  <arg name="x"     default="-3000.0"/>
+  <arg name="y"     default="-3000.0"/>
+  <arg name="z"     default="0.2"/>
+  <arg name="roll"  default="0.0"/>
+  <arg name="pitch" default="0.0"/>
+  <arg name="yaw"   default="0.0"/>
+
+  <!-- Physical properties -->
+  <arg name="mass"   default="1.0"/>
+  <arg name="radius" default="0.1"/>
+
+  <!-- Target -->
+  <arg name="target_robot_name" default="anymal"/>
+  <arg name="target_link_name"  default="base"/>
+
+  <!-- Output -->
+  <arg name="output" default="log"/>
+
+  <!-- Name of the description -->
+  <arg name="description_name" default="dodgeball_description"/>
+
+  <!-- Run xacro script to generate dodgeball description -->
+  <param name="dodgeball_description" command="$(find xacro)/xacro
+    '$(find dodgeball_gazebo)/urdf/dodgeball.urdf.xacro' mass:=$(arg mass) radius:=$(arg radius)"/>
+
+  <!-- Spawn the dodgeball -->
+  <node name="spawn_dodgeball" pkg="gazebo_ros" type="spawn_model"
+      args="-param dodgeball_description -urdf -model dodgeball -x $(arg x)
+        -y $(arg y) -z $(arg z) -R $(arg roll) -P $(arg pitch) -Y $(arg yaw)" output="$(arg output)"/>
+
+  <!-- Launch the ROS interface -->
+  <node name="dodgeball" pkg="dodgeball_gazebo" type="dodgeball_node" output="$(arg output)">
+  	<param name="target_robot" value="$(arg target_robot_name)"/>
+  	<param name="target_link"  value="$(arg target_link_name)"/>
+  	<param name="radius"       value="$(arg radius)"/>
+  </node>
+
+</launch>

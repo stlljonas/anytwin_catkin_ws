@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+
+  <include file="$(find hri_user_interface)/launch/hri_user_interface.launch"/>
+  <test pkg="hri_user_interface" test-name="hri_user_interface_test" type="hri_user_interface-test" time-limit="30.0"/>
+  
+</launch>

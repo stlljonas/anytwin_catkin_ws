@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+
+<package format="2">
+
+  <name>basic_filters_doc</name>
+  <version>0.1.0</version>
+  <description>Documentation for the basic filters package.</description>
+
+  <license>Proprietary</license>
+  <author email="avijayan@anybotics.com">Aravind Vijayan</author>
+  <maintainer email="avijayan@anybotics.com">Aravind Vijayan</maintainer>
+  <maintainer email="scaron@anybotics.com">Stephane Caron</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>doxygen</build_depend>
+
+  <depend>basic_filters</depend>
+
+</package>

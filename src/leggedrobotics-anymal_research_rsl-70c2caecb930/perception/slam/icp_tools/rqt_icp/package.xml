@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+
+<package format="2">
+
+  <name>rqt_icp</name>
+  <version>0.5.0</version>
+  <description>The rqt_icp package</description>
+
+  <license>Proprietary</license>
+
+  <author email="rdiethelm@anybotics.com">Remo Diethelm</author>
+  <maintainer email="rdiethelm@anybotics.com">Remo Diethelm</maintainer>
+  <maintainer email="ynava@anybotics.com">Yoshua Nava</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>any_msgs</depend>
+  <depend>slam_common_msgs</depend>
+  <depend>message_logger</depend>
+  <depend>qtbase5-dev</depend>
+  <depend>roscpp</depend>
+  <depend>rqt_gui</depend>
+  <depend>rqt_gui_cpp</depend>
+  <depend>std_srvs</depend>
+
+  <export>
+    <architecture_independent/>
+    <rqt_gui plugin="${prefix}/plugin.xml"/>
+  </export>
+
+</package>

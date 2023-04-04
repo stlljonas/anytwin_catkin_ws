@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>kindr_rbdl</name>
+  <version>0.6.0</version>
+  <description>Kindr RBDL</description>
+  <maintainer email="pleemann@anybotics.com">Philipp Leemann</maintainer>
+  <maintainer email="rdiethelm@anybotics.com">Remo Diethelm</maintainer>
+  <author email="cgehring@anybotics.com">Christian Gehring</author>
+
+  <license>Proprietary</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>kindr</depend>
+  <depend>any_rbdl</depend>
+
+</package>

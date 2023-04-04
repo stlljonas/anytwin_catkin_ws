@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+
+  <!-- GAZEBO ARGUMENTS -->
+  <!-- Run Gazebo headless -->
+  <arg name="headless"                              default="true"/>
+  <!-- Model path -->
+  <arg name="model_path"                            default="$(find gazebo_worlds)/.."/>
+  <!-- Name of the world -->
+  <arg name="world"                                 default="empty"/>
+  <!-- Path to the world file -->
+  <arg name="world_file"                            default="$(find gazebo_worlds)/worlds/$(arg world).world"/>
+  <!-- Specifies in Hz the number of physics updates that will be attempted per second. If this number is set to zero, it will run as fast as it can -->
+  <arg name="real_time_update_rate"                 default="800"/>
+  <!-- Specifies the time duration in seconds of each physics update step -->
+  <arg name="max_step_size"                         default="0.00125"/>
+  <!-- Time step for publishing simulation state -->
+  <arg name="publishing_time_step"                  default="0.0025"/>
+  <!-- Enable/disable publishing of groundtruth anymal state if estimator is not simulated -->
+  <arg name="publish_groundtruth"                   default="false"/>
+  <!-- Start paused -->
+  <arg name="paused"                                default="false"/>
+  <!-- Use simulation clock -->
+  <arg name="use_sim_time"                          default="true"/>
+  <!-- Debug mode -->
+  <arg name="debug"                                 default="false"/>
+  <!-- Verbose mode -->
+  <arg name="verbose"                               default="false"/>
+
+  <!-- GUI ARGUMENTS -->
+  <!-- Enable/disable Gazebo GUI -->
+  <arg name="run_gui"                               default="false"/>
+
+  <!-- ROBOT ARGUMENTS -->
+  <!-- Name of the robot description parameter -->
+  <arg name="description_name"                      default="anymal_description"/>
+
+  <!-- Load parameters -->
+  <param name="gazebo/real_time_update_rate"    value="$(arg real_time_update_rate)"/>
+  <param name="gazebo/max_step_size"            value="$(arg max_step_size)"/>
+  <param name="gazebo/publishing_time_step"     value="$(arg publishing_time_step)"/>
+  <param name="gazebo/publish_groundtruth"      value="$(arg publish_groundtruth)"/>
+
+  <!-- Load Gazebo world -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <env name="GAZEBO_MODEL_PATH" value="$(arg model_path)"/>
+    <arg name="world_name"        value="$(arg world_file)"/>
+    <arg name="paused"            value="$(arg paused)"/>
+    <arg name="use_sim_time"      value="$(arg use_sim_time)"/>
+    <arg name="gui"               value="$(arg run_gui)"/>
+    <arg name="headless"          value="$(arg headless)"/>
+    <arg name="debug"             value="$(arg debug)"/>
+    <arg name="verbose"           value="$(arg verbose)"/>
+    <arg name="respawn_gazebo"    value="true"/>
+  </include>
+
+  <!-- Spawn robot in Gazebo -->
+  <node name="spawn_anymal" pkg="gazebo_ros" type="spawn_model"
+        args="-param $(arg description_name) -urdf -model anymal"
+        output="screen"/>
+
+</launch>

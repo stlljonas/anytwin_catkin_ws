@@ -1,0 +1,17 @@
+[Unit]
+Description=Service for loading anymal configuration into ROS parameter server.
+Wants=anymal-roscore.service
+After=anymal-roscore.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=true
+User=integration
+EnvironmentFile=/etc/robot/ros.conf
+EnvironmentFile=-/home/integration/.ros/load_config_input.conf
+KillSignal=SIGINT
+ExecStart=/bin/bash -c "source /opt/ros/${ROS_DISTRIBUTION}/setup.bash && stdbuf -oL roslaunch --wait anymal_${ANYMAL_GENERATION} load_config.launch robot:='${ANYMAL_NAME}' extension_config_file:='${EXTENSION_FILE}' motion_control_module:='${MOTION_CONTROL_MODULE}' state_estimator_module:='${STATE_ESTIMATOR_MODULE}' slam_module:='${SLAM_MODULE}' point_cloud_odometry_module:='${POINT_CLOUD_ODOMETRY_MODULE}' diagnostic_mode:='${DIAGNOSTIC_MODE}' data_package:='${DEFAULT_DATA_PACKAGE}' world:='${DEFAULT_WORLD}'"
+#ExecStop=/bin/bash -c "source /opt/ros/${ROS_DISTRIBUTION}/setup.bash && stdbuf -oL roslaunch --wait anymal_${ANYMAL_GENERATION} clear_config.launch"
+
+[Install]
+WantedBy=multi-user.target

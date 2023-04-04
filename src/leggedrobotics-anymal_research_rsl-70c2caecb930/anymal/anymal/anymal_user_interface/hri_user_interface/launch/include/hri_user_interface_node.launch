@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+
+  <arg name="output" default="screen"/>
+  <!-- Console launch prefix -->
+  <arg name="launch_prefix" default=""/>
+  <arg name="hri_config_path" default="$(find hri_user_interface)/config/hri_user_interface.yaml"/>
+
+  <node name="hri_user_interface" pkg="hri_user_interface" type="hri_user_interface_node" output="$(arg output)" launch-prefix="$(arg launch_prefix)">
+    <rosparam file="$(arg hri_config_path)" command="load"/>
+  </node>
+
+</launch>

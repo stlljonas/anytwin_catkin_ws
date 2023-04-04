@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+
+<package format="2">
+
+  <name>rqt_anydrive_monitor</name>
+  <version>0.6.0</version>
+  <description>C++ rqt library adding a ROS interface to the classes in the anydrive_monitor library.</description>
+
+  <license>Proprietary</license>
+  <author email="rdiethelm@anybotics.com">Remo Diethelm</author>
+  <author email="sbachmann@anybotics.com">Samuel Bachmann</author>
+  <maintainer email="sbachmann@anybotics.com">Samuel Bachmann</maintainer>
+  <maintainer email="rdiethelm@anybotics.com">Remo Diethelm</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>cmake_clang_tools</build_depend>
+
+  <depend>anydrive</depend>
+  <depend>anydrive_ros</depend>
+  <depend>anydrive_monitor</depend>
+  <depend>rqt_gui</depend>
+  <depend>rqt_gui_cpp</depend>
+  <depend>std_srvs</depend>
+  <depend>yaml_tools</depend>
+  <depend>libqt5-core</depend>
+  <depend>libqt5-gui</depend>
+  <depend>libqt5-widgets</depend>
+  <depend>qtbase5-dev</depend>
+
+  <export>
+    <rqt_gui plugin="${prefix}/plugin.xml"/>
+  </export>
+
+</package>

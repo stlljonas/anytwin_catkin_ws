@@ -1,0 +1,16 @@
+<library path="lib/librqt_icp">
+  <class name="IcpPlugin" type="IcpPlugin" base_class_type="rqt_gui_cpp::Plugin">
+    <description>
+      GUI for ICP-based Localization and Mapping
+    </description>
+    <qtgui>
+      <group>
+        <label>Any</label>
+ 	<icon type="theme">folder</icon>
+	<statustip>Plugins related to Any</statustip>
+      </group>
+      <label>ICP-based Localization and Mapping</label>
+      <statustip>GUI for ICP-based Localization and Mapping</statustip>
+    </qtgui>
+  </class>
+</library>

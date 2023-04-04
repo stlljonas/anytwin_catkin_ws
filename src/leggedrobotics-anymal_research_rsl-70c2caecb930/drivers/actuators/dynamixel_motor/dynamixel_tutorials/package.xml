@@ -1,0 +1,21 @@
+<package>
+  <name>dynamixel_tutorials</name>
+  <version>0.5.0</version>
+  <description>Example configuration and launch file for dynamixel_motor stack.</description>
+  <maintainer email="sbachmann@anybotics.com">Samuel Bachmann</maintainer>
+  <maintainer email="rdiethelm@anybotics.com">Remo Diethelm</maintainer>
+
+  <license>BSD</license>
+
+  <url type="website">http://ros.org/wiki/dynamixel_driver</url>
+  <url type="bugtracker">https://github.com/arebgun/dynamixel_motor</url>
+
+  <author>Antons Rebguns</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <run_depend>dynamixel_controllers</run_depend>
+
+  <export>
+
+  </export>
+</package>

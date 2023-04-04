@@ -1,0 +1,16 @@
+# Device to send SDO to.
+string device_name
+
+# SDO index (may be decimal or hex).
+string index
+
+# SDO subindex (may be decimal or hex).
+string subindex
+
+# Value type.
+string value_type
+
+---
+
+# Value.
+string value

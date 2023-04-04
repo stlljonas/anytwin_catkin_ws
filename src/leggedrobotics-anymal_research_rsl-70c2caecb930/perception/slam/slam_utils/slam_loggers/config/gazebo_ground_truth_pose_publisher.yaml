@@ -1,0 +1,10 @@
+coordinate_frames:
+  robot_name:                 "anymal"              # The name of the robot that will be tracked.
+  robot_frame:                "base"                # Main link that will be tracked from the robot.
+  world_frame:                "world"               # Fixed world frame. Corresponds to the ground truth.
+  intermediate_frame:         "odom"                # Intermediate frame (if any), that needs to be considered when transforming poses from world to robot frame.
+                                                    # The resulting transform will make the world frame a parent of the intermediate frame.
+
+sampling_time:                0.05                  # Time (in seconds) for sampling the robot model state from the simulator.
+
+wait_time_tf:                 0.05                  # Wait time for querying the pose of the robot in the intermediate frame.

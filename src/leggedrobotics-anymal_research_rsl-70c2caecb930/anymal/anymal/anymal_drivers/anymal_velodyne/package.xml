@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+
+<package format="2">
+
+  <name>anymal_velodyne</name>
+  <version>0.6.0</version>
+  <description>Velodyne LIDAR launch and configuration files for ANYmal.</description>
+
+  <license>Proprietary</license>
+
+  <author email="rdiethelm@anybotics.com">Remo Diethelm</author>
+  <maintainer email="ynava@anybotics.com">Yoshua Nava</maintainer>
+  <maintainer email="mwulf@anybotics.com">Maximilian Wulf</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <exec_depend>any_velodyne_driver</exec_depend>
+  <exec_depend>nodelet</exec_depend>
+  <exec_depend>velodyne_laserscan</exec_depend>
+  <exec_depend>velodyne_pointcloud</exec_depend>
+
+</package>

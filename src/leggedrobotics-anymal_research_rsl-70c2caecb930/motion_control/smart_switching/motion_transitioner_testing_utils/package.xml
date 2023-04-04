@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<package format="2">
+
+  <name>motion_transitioner_testing_utils</name>
+  <version>0.1.0</version>
+  <description>Utils for unit testing the Motion Transitioner Interface</description>
+
+  <license>Proprietary</license>
+  <maintainer email="fgiraldez@anybotics.com">Francisco Giraldez Gamez</maintainer>
+  <maintainer email="ghottiger@anybotics.com">Gabriel Hottiger</maintainer>
+  <author email="fgiraldez@anybotics.com">Francisco Giraldez Gamez</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>motion_transitioner</depend>
+
+</package>

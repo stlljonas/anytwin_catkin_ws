@@ -1,0 +1,8 @@
+services:
+  servers:
+    get_robot_state:
+      service: "/anymal_state_monitor/get_robot_state"
+  clients:
+    get_current_states:
+      service: "/anymal_lowlevel_controller/get_device_states"
+      persistent: false

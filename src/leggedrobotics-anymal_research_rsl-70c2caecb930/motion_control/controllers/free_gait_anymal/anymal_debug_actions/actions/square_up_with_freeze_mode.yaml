@@ -1,0 +1,74 @@
+adapt_coordinates:
+  - transform:
+      source_frame: footprint
+      target_frame: odom
+
+steps:
+
+ - step:
+    - base_auto:
+       height: 0.44
+
+ - step:
+    - custom_command:
+       type: freeze_joints
+       duration: 0.5
+       command: |
+         - RH_HFE
+         - RH_KFE
+    - footstep:
+       name: LH_LEG
+       target:
+        frame: footprint
+        position: [-0.29, 0.22, 0.0]
+
+ - step:
+    - base_auto:
+
+ - step:
+    - custom_command:
+       type: freeze_joints
+       duration: 0.5
+       command: |
+         - RF_HFE
+         - RF_KFE
+    - footstep:
+       name: LF_LEG
+       target:
+        frame: footprint
+        position: [0.29, 0.22, 0.0]
+
+ - step:
+    - base_auto:
+
+ - step:
+    - custom_command:
+       type: freeze_joints
+       duration: 0.5
+       command: |
+         - LH_HFE
+         - LH_KFE
+    - footstep:
+       name: RH_LEG
+       target:
+        frame: footprint
+        position: [-0.29, -0.22, 0.0]
+
+ - step:
+    - base_auto:
+
+ - step:
+    - custom_command:
+       type: freeze_joints
+       duration: 0.5
+       command: |
+         - LF_HFE
+         - LF_KFE
+    - footstep:
+       name: RF_LEG
+       target:
+        frame: footprint
+        position: [0.29, -0.22, 0.0]
+
+ - step:
+    - base_auto:

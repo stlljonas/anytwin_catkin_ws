@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+
+  <!-- Signal Relay test with no params -->
+  <test pkg="signal_relay" type="test_signal_relay_bad_params" test-name="test_signal_relay_no_params"/>
+
+  <!-- Signal Relay test with bad params -->
+  <test pkg="signal_relay" type="test_signal_relay_bad_params" test-name="test_signal_relay_no_input">
+    <rosparam command="load" file="$(find signal_relay)/test/no_input.yaml"/>
+  </test>
+  <test pkg="signal_relay" type="test_signal_relay_bad_params" test-name="test_signal_relay_no_output">
+    <rosparam command="load" file="$(find signal_relay)/test/no_output.yaml"/>
+  </test>
+  <test pkg="signal_relay" type="test_signal_relay_bad_params" test-name="test_signal_relay_invalid_input">
+    <rosparam command="load" file="$(find signal_relay)/test/invalid_input.yaml"/>
+  </test>
+  <test pkg="signal_relay" type="test_signal_relay_bad_params" test-name="test_signal_relay_invalid_output">
+    <rosparam command="load" file="$(find signal_relay)/test/invalid_output.yaml"/>
+  </test>
+
+</launch>

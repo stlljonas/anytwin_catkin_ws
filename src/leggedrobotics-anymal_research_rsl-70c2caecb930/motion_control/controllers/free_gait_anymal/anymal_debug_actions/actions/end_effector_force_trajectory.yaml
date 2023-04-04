@@ -1,0 +1,93 @@
+adapt_coordinates:
+  - transform:
+      source_frame: footprint
+      target_frame: odom
+
+steps:
+
+ - step:
+    - base_auto:
+        height: 0.44
+    
+# Approach end-effector to desired location.
+ - step:
+    - base_auto:
+    - footstep:
+       name: RF_LEG
+       average_velocity: 0.6
+       ignore_contact: true
+       target:
+        frame: footprint
+        position: [0.60, -0.15, 0.0]
+           
+# Establish force along z.
+ - step: 
+    - end_effector_target:
+       name: RF_LEG
+       ignore_contact: true
+       ignore_for_pose_adaptation: true
+       impedance_control:
+        derivative_gain: # damping
+          frame: footprint
+          vector: [20.0, 20.0, 20.0]
+       duration: 0.3
+       target_force:
+        frame: footprint
+        vector: [0.0, 0.0, -15.0]
+           
+# Impedance trajectory
+ - step:
+    - end_effector_trajectory:
+       name: RF_LEG
+       ignore_contact: true
+       ignore_for_pose_adaptation: true
+       impedance_control:
+         proportional_gain: # stiffness
+          frame: footprint
+          vector: [400.0, 400.0, 0.0]
+         derivative_gain: # damping
+          frame: footprint
+          vector: [20.0, 20.0, 5.0]
+         force_gain: #feed-forward
+          frame: footprint
+          vector: [0.0, 0.0, 1.0]
+         feed_forward_friction_norm: 10.0 # feed-forward compensation along position profile.
+       trajectory:
+        frame: footprint
+        knots: 
+         - time: 2.0
+           position: [0.35, -0.25, 0.0]
+           force: [0.0, 0.0, -15.0]
+         - time: 4.0
+           position: [0.20, -0.10, 0.0]
+           force: [0.0, 0.0, -15.0]
+         - time: 6.0
+           position: [0.35, -0.0, 0.0]
+           force: [0.0, 0.0, -15.0]
+         - time: 8.0
+           position: [0.50, -0.15, 0.0]
+           force: [0.0, 0.0, -15.0]
+           
+# Release horizontal force.  
+ - step: 
+    - end_effector_target:
+       name: RF_LEG
+       ignore_contact: true
+       ignore_for_pose_adaptation: true
+       duration: 0.2
+       target_force:
+        frame: footprint
+        vector: [0.0, 0.0, -15.0]
+        
+# Go back to default foothold. 
+ - step:
+    - base_auto:
+    - footstep:
+       name: RF_LEG
+       average_velocity: 0.6
+       target:
+        frame: footprint
+        position: [0.29, -0.22, 0.0]
+
+ - step:
+    - base_auto:

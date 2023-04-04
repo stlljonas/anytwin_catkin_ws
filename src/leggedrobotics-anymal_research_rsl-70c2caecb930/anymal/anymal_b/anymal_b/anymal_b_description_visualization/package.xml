@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+
+<package format="2">
+
+  <name>anymal_b_description_visualization</name>
+  <version>1.0.0</version>
+  <description>ANYmal B Description Package Visualization</description>
+
+  <license>Proprietary</license>
+
+  <author email="lisler@anybotics.com">Linus Isler</author>
+  <author email="rdiethelm@anybotics.com">Remo Diethelm</author>
+  <maintainer email="lisler@anybotics.com">Linus Isler</maintainer>
+  <maintainer email="rdiethelm@anybotics.com">Remo Diethelm</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <exec_depend>actuated_lidar_description</exec_depend>
+  <exec_depend>any_description</exec_depend>
+  <exec_depend>anymal_b</exec_depend>
+  <exec_depend>anymal_description</exec_depend>
+  <exec_depend>joint_state_publisher_gui</exec_depend>
+  <exec_depend>robot_state_publisher</exec_depend>
+  <exec_depend>rviz</exec_depend>
+  <exec_depend>stack_launcher</exec_depend>
+  <exec_depend>velodyne_description</exec_depend>
+
+  <test_depend>roslaunch</test_depend>
+
+</package>

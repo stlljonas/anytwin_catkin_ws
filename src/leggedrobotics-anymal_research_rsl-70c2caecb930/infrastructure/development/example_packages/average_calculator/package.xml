@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+
+<!--
+######################################################################
+## Best Practice package.xml                                        ##
+##                                                                  ##
+## Based on the package.xml created by catkin_create_pkg.           ##
+## See http://wiki.ros.org/catkin/package.xml for documentation.    ##
+## Delete unused blocks and comments in your package.               ##
+######################################################################
+-->
+
+<package format="2">
+
+  <name>average_calculator</name>
+  <version>0.1.0</version>
+  <description>Library for calculating averages.</description>
+
+  <license>Proprietary</license>
+  <author email="pfankhauser@anybotics.com">Peter Fankhauser</author>
+  <maintainer email="rdiethelm@anybotics.com">Remo Diethelm</maintainer>
+  <maintainer email="ghottiger@anybotics.com">Gabriel Hottiger</maintainer>
+
+  <!-- Build tool dependency -->
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <!-- General remarks -->
+  <!-- 1. depend combines build_depend, build_export_depend and exec_depend -->
+  <!-- 2. For system dependencies, use the official ROS dep key from
+          https://github.com/ros/rosdistro/blob/master/rosdep/base.yaml if existing.
+          If this is not the case, just enter the name of the package,
+          which needs to be installed using "apt install". -->
+  <!-- 3. For further information, see http://docs.ros.org/melodic/api/catkin/html/howto/format2/index.html and
+          https://github.com/ros/catkin/issues/701#issuecomment-67747326 -->
+
+  <!-- System dependencies required for building only, appearing in both header and source files -->
+  <!-- Examples: eigen, *-dev packages, header only packages -->
+  <!-- <build_depend>eigen</build_depend> -->
+  <!-- <build_depend>libgstreamer1.0-dev</build_depend> -->
+
+  <!-- System dependencies required for building only, appearing in header files only -->
+  <!-- Note: build_depend does not imply build_export_depend. -->
+  <!-- Examples: message_runtime, eigen, *-dev packages, header only packages -->
+  <!-- <build_export_depend>message_runtime</build_export_depend> -->
+  <!-- <build_export_depend>eigen</build_export_depend> -->
+  <!-- <build_export_depend>libgstreamer1.0-dev</build_export_depend> -->
+
+  <!-- System dependencies required for building and executing -->
+  <!-- Examples: boost, packages containing both headers and binaries -->
+  <!-- <depend>boost</depend> -->
+
+  <!-- System dependencies required for executing only -->
+  <!-- Examples: non-dev counterparts of *-dev packages (containing executables only) -->
+  <!-- <exec_depend>libgstreamer1.0</exec_depend> -->
+
+  <!-- Catkin dependencies required for building only -->
+  <!-- Examples: message_generation, header only packages, cmake only packages -->
+  <!-- <build_depend>message_generation</build_depend> -->
+  <build_depend>cmake_clang_tools</build_depend>
+
+  <!-- Catkin dependencies required for building and executing -->
+  <!-- <depend>message_logger</depend> -->
+  <!-- <depend>roscpp</depend> -->
+  <!-- <depend>std_msgs</depend> -->
+
+  <!-- Dependencies required for executing only (run_depend is deprecated) -->
+  <!-- Examples: message_runtime, python packages -->
+  <!-- <exec_depend>message_runtime</exec_depend> -->
+  <!-- <exec_depend>rospy</exec_depend> -->
+
+  <!-- Dependencies required for building and running tests -->
+  <!-- Examples: testing tools, mocking tools, test analysis tools -->
+  <test_depend>gtest</test_depend>
+  <test_depend>cmake_code_coverage</test_depend>
+  <!-- <test_depend>rostest</test_depend> -->
+  <!-- <test_depend>python-mock</test_depend> -->
+  <!-- <test_depend>my_catkin_testing_suite</test_depend> -->
+
+  <!-- Dependencies required for building documentation -->
+  <!-- Note: We use another approach for doxygen, i.e. creating a separate -->
+  <!--       *_doc package. Therefore we never need this dependency. -->
+  <!-- <doc_depend>doxygen</doc_depend> -->
+
+</package>

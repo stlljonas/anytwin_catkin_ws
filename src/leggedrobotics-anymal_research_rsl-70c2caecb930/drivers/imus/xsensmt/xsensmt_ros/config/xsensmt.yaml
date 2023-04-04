@@ -1,0 +1,26 @@
+ros:
+  queue_depth: 100
+  frame_id: "xsens_link"
+  time_step: 0.002
+  use_ros_time: false
+sensor:
+  serial_device: "/dev/ttyxsens"
+  device_name: "Xsens MTi"
+  serial_baudrate: 921600
+  queue_capacity: 3
+  # time between 2 attempts to reconnect, unit: ms
+  retry_interval: 500 
+  # unit: ms
+  max_inter_packet_time: 500 
+  output_frequency: 400.0
+  output_orientation: false
+  correct_timing: true
+  send_status_word: false
+  send_sync_out_signal: false
+  receive_sync_in_signal: false
+synchronization:
+  skip_factor: 39
+  pulse_width: 2000
+  #pulse width is in microseconds
+
+  

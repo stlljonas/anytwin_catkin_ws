@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>joy_anymal_lowlevel_controller</name>
+  <version>0.6.0</version>
+  <description>The joy_anymal_lowlevel_controller package</description>
+  <maintainer email="msuetterlin@anybotics.com">Marco Sütterlin</maintainer>
+  <maintainer email="pleemann@anybotics.com">Philipp Leemann</maintainer>
+  <license>Proprietary</license>
+  <author email="lisler@anybotics.com">Linus Isler</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>anymal_lowlevel_controller_common</depend>
+  <depend>anymal_msgs</depend>
+  <depend>any_msgs</depend>
+  <depend>joy_manager</depend>
+  <depend>std_srvs</depend>
+  <export>
+    <joy_manager plugin="${prefix}/joy_anymal_lowlevel_controller.xml" />
+  </export>
+</package>

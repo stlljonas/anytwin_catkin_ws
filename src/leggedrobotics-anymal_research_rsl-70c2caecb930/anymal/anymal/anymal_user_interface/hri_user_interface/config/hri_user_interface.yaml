@@ -1,0 +1,95 @@
+# Notfication Levels from any_msgs/Notification.msg
+# LEVEL_FATAL = 4
+# LEVEL_ERROR = 3
+# LEVEL_WARN = 2
+# LEVEL_INFO = 1
+# LEVEL_DEBUG = 0
+
+# Spinrate: Frequency for the publisher worker
+spinrate: 10.0
+
+# Timeout: Seconds that pass before the last received message is no longer transmitted
+timeout: 0.1
+
+notification:
+  level:
+    screen: 1
+    vibration: 3
+  output_devices:
+      joystick:
+        topic: /notification
+        queue_size: 100
+      joystick_screen:
+        topic: /notification
+        queue_size: 10
+      onboard:
+        topic: /notification
+        queue_size: 10
+
+subscribers:
+  hri_joy:
+    topic: /joy/onboard
+    queue_size: 10
+  hri_key_value_feedback:
+    topic: /hri_safety_sense/key_value_feedback
+    queue_size: 10
+  hri_emergency_stop:
+    topic: /hri_safety_sense/emergency_stop
+    queue_size: 10
+  controller_manager_state:
+    topic: /anymal_highlevel_controller/notify_controller_manager_state
+    queue_size: 10
+  anymal_state:
+    topic: /state_estimator/anymal_state_throttle
+    queue_size: 10
+  battery_state:
+    topic: /rpsm_lpc/battery_state
+    queue_size: 10
+  anydrive_readings:
+    topic: /anymal_lowlevel_controller/actuator_readings_extended_throttled
+    queue_size: 10
+
+publishers:
+  anyJoy:
+    topic: /anyjoy/onboard
+    queue_size: 10
+    latch: false
+
+clients:
+  hri_key_string:
+    service: /hri_safety_sense/key_string
+    persistent: false
+  hri_key_value:
+    service: /hri_safety_sense/key_value
+    persistent: false
+  lowlevel_controller_emergency_stop:
+    service: /anymal_lowlevel_controller/emergency_stop
+    persistent: false
+  locomotion_controller_emergency_stop:
+    service: /locomotion_controller/emergency_stop
+    persistent: false
+
+desired_motion_states:
+  - "rest"
+  - "stand"
+  - "torso_control"
+  - "crawl"
+  - "walk"
+  - "scan_environment"
+  - "motion_1"
+  - "motion_2"
+  - "motion_3"
+  - "motion_4"
+  - "motion_5"
+  - "demo_1"
+  - "demo_2"
+  - "demo_3"
+  - "demo_4"
+  - "demo_5"
+
+lowlevel_controller_namespace: /anymal_lowlevel_controller
+highlevel_controller_namespace: /anymal_highlevel_controller
+joy_lowlevel_controller_name: JoyAnymalLowlevelController
+joy_state_estimation_name: JoyStateEstimation
+
+lowlevel_controller_timeout: 0.5

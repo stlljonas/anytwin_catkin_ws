@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>romo_measurements</name>
+  <version>0.5.0</version>
+  <description>The romo_measurements package</description>
+  <maintainer email="avijayan@anybotics.com">Aravind Vijayan</maintainer>
+  <maintainer email="fgiraldez@anybotics.com">Francisco Giráldez Gámez</maintainer>
+  <license>Proprietary</license>
+  <author email="ghottiger@anybotics.com">Gabriel Hottiger</author>
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>loco</depend>
+  <depend>romo</depend>
+  <depend>kindr</depend>
+  <depend>eigen</depend>
+
+</package>

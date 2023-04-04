@@ -1,0 +1,14 @@
+# Device to calibrate. Leave empty for all devices.
+string device_name
+
+# Calibration mode.
+CalibrationMode calibration_mode
+
+# When calibrating the gear and joint encoder homing, two additional values are required.
+# There are two ways of calibrating the position offset:
+# Absolute: The new joint position will be set as the current.
+# Relative: The new joint position will be set as the new zero.
+bool gear_and_joint_encoder_homing_absolute
+float64 gear_and_joint_encoder_homing_new_joint_position
+
+---

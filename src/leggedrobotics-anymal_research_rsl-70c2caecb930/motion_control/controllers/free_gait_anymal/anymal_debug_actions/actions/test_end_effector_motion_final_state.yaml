@@ -1,0 +1,23 @@
+adapt_coordinates:
+  - transform:
+      source_frame: footprint
+      target_frame: odom
+
+steps:
+
+ - step:
+    - base_auto:
+       height: 0.44
+
+ - step:
+    - end_effector_trajectory:
+       name: RF_LEG
+       ignore_contact: false
+       ignore_for_pose_adaptation: false
+       trajectory:
+        frame: footprint
+        knots:
+         - time: 0.3
+           position: [0.25, -0.22, 0.1]
+         - time: 0.5
+           position: [0.25, -0.22, 0.05]

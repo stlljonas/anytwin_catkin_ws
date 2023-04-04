@@ -1,0 +1,56 @@
+# Refer to this link: http://wiki.ros.org/camera_calibration_parsers for the format of this file.
+# Created date: 2020-06-11
+image_width: 1440
+image_height: 1080
+camera_name: '20064263'
+camera_matrix:
+  rows: 3
+  cols: 3
+  data:
+  - 549.479060187523
+  - 0.0
+  - 721.753774710745
+  - 0.0
+  - 551.9478780088605
+  - 569.5000308023135
+  - 0.0
+  - 0.0
+  - 1.0
+distortion_model: equidistant
+distortion_coefficients:
+  rows: 1
+  cols: 4
+  data:
+  - 0.4077774575780574
+  - 0.13769875561326106
+  - -0.30658377755246
+  - 0.30603067821111773
+rectification_matrix:
+  rows: 3
+  cols: 3
+  data:
+  - 1.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 1.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 1.0
+projection_matrix:
+  rows: 3
+  cols: 4
+  data:
+  - 549.479060187523
+  - 0.0
+  - 721.753774710745
+  - 0.0
+  - 0.0
+  - 551.9478780088605
+  - 569.5000308023135
+  - 0.0
+  - 0.0
+  - 0.0
+  - 1.0
+  - 0.0

@@ -1,0 +1,21 @@
+stack_launcher:
+  stacks:
+    test:
+      nodes:
+        anymal_tf_publisher:
+          enabled: true
+          name: anymal_tf_publisher
+        rviz:
+          enabled: true
+          name: rviz
+        rqt_gui:
+          enabled: true
+          name: rqt_gui
+        joy_manager:
+          enabled: true
+          name: joy_manager
+  nodes:
+    rqt_gui:
+      preprocessed_params:
+        roslaunch_args:
+          value: --force-discover --clear-config --freeze-layout --lock-perspective --hide-title --perspective-file $(find zmp_anymal)/config/rqt/ZmpAnymal.perspective

@@ -1,0 +1,15 @@
+[Unit]
+Description=ANYmal roscore service
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+User=integration
+EnvironmentFile=/etc/robot/ros.conf
+KillSignal=SIGINT
+ExecStart=/bin/bash -c "source /opt/ros/${ROS_DISTRIBUTION}/setup.bash && stdbuf -oL roscore -p 11311"
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,12 @@
+collections:
+  - collection:
+     id: basic
+     name: Basic
+     actions:
+      - straighten
+      - square_up
+      - lie_down_unsafe
+      - stand_up
+      - switch_xx_to_oo_leg_config
+      - switch_oo_to_xx_leg_config
+      - scan_environment

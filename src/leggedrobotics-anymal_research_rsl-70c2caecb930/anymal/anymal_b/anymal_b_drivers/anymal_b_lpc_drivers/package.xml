@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+
+<package format="2">
+
+  <name>anymal_b_lpc_drivers</name>
+  <version>1.0.0</version>
+  <description>ANYmal B Locomotion PC Drivers</description>
+
+  <license>Proprietary</license>
+
+  <author email="lisler@anybotics.com">Linus Isler</author>
+  <author email="rdiethelm@anybotics.com">Remo Diethelm</author>
+  <maintainer email="lisler@anybotics.com">Linus Isler</maintainer>
+  <maintainer email="rdiethelm@anybotics.com">Remo Diethelm</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <exec_depend>anymal_b_pc</exec_depend>
+  <exec_depend>anymal_lowlevel_controller</exec_depend>
+  <exec_depend>anymal_state_monitor</exec_depend>
+  <exec_depend>hri_safety_sense</exec_depend>
+  <exec_depend>hri_user_interface</exec_depend>
+  <exec_depend>joy_anymal_lowlevel_controller</exec_depend>
+  <exec_depend>kernel_monitor</exec_depend>
+  <exec_depend>rpsm_lpc</exec_depend>
+  <exec_depend>system_monitor</exec_depend>
+  <exec_depend>xsensmt_cosmo</exec_depend>
+
+  <test_depend>roslaunch</test_depend>
+
+</package>

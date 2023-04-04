@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+  
+  <!-- ROS Node -->
+  <node pkg="rqt_anymal_lowlevel_controller" type="rqt_anymal_lowlevel_controller" name="rqt_anymal_lowlevel_controller" output="screen">
+    <rosparam command="load" file="$(find rqt_anymal_lowlevel_controller)/config/ros.yaml"/>
+  </node>
+  
+</launch>

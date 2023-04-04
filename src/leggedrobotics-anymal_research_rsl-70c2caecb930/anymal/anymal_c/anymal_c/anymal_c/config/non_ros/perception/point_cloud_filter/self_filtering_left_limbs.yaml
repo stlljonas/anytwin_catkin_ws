@@ -1,0 +1,18 @@
+timeout_usec: 20000
+self_see_links:
+    - name: LF_thigh_fixed
+      padding: 0.04
+    - name: LH_thigh_fixed
+      padding: 0.04
+    - name: LF_KFE
+      padding: 0.04
+    - name: LH_KFE
+      padding: 0.04
+    - name: LF_shank_fixed
+      padding: 0.12
+    - name: LH_shank_fixed
+      padding: 0.12
+    - name: LF_FOOT
+      padding: 0.04
+    - name: LH_FOOT
+      padding: 0.04

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package>
+  <name>xsensmt_interface_example</name>
+  <version>0.5.0</version>
+  <description>ROS interface to Xsens motion tracking (MT) devices.</description>
+  <maintainer email="mwulf@anybotics.com">Maximilian Wulf</maintainer>
+  <maintainer email="pleemann@anybotics.com">Philipp Leemann</maintainer>
+  <license>Proprietary</license>
+  <author email="jiangyi@student.ethz.ch">Yifan Jiang</author>
+  <author email="cgehring@anybotics.com">Christian Gehring</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>any_node</build_depend>
+  <build_depend>xsensmt_interface</build_depend>
+  <build_depend>xsensmt_ros</build_depend>
+
+  <run_depend>any_node</run_depend>
+  <run_depend>xsensmt_interface</run_depend>
+  <run_depend>xsensmt_ros</run_depend>
+
+  <export>
+    <nodelet plugin="${prefix}/nodelet_plugins.xml"/>
+  </export>
+</package>

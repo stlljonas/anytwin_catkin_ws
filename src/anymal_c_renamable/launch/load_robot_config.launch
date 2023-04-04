@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+
+  <!-- Launch file loading the ANYmal C configuration. -->
+  <!-- Not intended for explicit invocation, use `load_config.launch` instead. -->
+
+  <!-- Configuration -->
+  <arg name="version"      default="c100"         doc="Version of the robot, e.g. 'c010', 'c020', or 'c100'."/>
+  <arg name="robot"        default="c"            doc="Robot, e.g. 'chip' or 'chap'. Use 'c' for generic robot."/>
+  <arg name="data_package" default=""             doc="Data package containing the world and all environment related data."/>
+  <arg name="world"        default=""             doc="World within the data package."/>
+  <arg name="setup"        default="real"         doc="Configuration setup. Options: real, sim, sim_lite."/>
+  <arg name="extension"    default="none"         doc="Configuration extension file in YAML format."/>
+
+  <!-- Configuration files -->
+  <arg name="version_config_file"     default="$(find anymal_c)/config/version/$(arg version).yaml"                                                 doc="Full path of the version configuration file."/>
+  <arg name="robot_config_file"       default="$(eval find('anymal_' + robot) + '/config/robot/robot.yaml')"                                        doc="Full path of the robot configuration file."/>
+  <arg name="environment_config_file" default="$(eval find(data_package) + '/config/environment/' + world + '.yaml' if data_package != '' else '')" doc="Full path of the environment configuration file."/>
+  <arg name="setup_config_file"       default="$(find anymal_c)/config/setup/$(arg setup).yaml"                                                     doc="Full path of the setup configuration file."/>
+  <arg name="extension_config_file"   default="$(find anymal_c)/config/extension/$(arg extension).yaml"                                             doc="Full path of the extension configuration file."/>
+
+  <!-- Feature toggles -->
+  <arg name="motion_control_module"         default="new"      doc="Motion control module to run. Options: new, legacy."/>
+  <arg name="state_estimator_module"        default="tsif"     doc="State estimator module to run. Options: tsif, simulated (only in simulation)."/>
+  <arg name="slam_module"                   default="pharos"   doc="SLAM module to run. Options: pharos, icp_tools, simulated (only in simulation)."/>
+  <arg name="point_cloud_odometry_module"   default="real"     doc="Point cloud odometry module to run. Options: real, simulated (only in simulation)."/>
+  <arg name="docking"                       default="disabled" doc="Run the docking software. Options: disabled, enabled."/>
+  <arg name="application_module"            default="apc"      doc="Application module installed in ANYmal. Options: apc, agpu"/>
+  <arg name="battery_model"                 default="regular"  doc="Battery model mounted on ANYmal. Options: regular, travel"/>
+  <arg name="inspection_payload"            default="disabled" doc="Run the inspection payload software. Options: disabled, enabled."/>
+  <arg name="auditive_inspection_frequency" default="disabled" doc="Run the inspection software for analyzing audio frequencies. Options: disabled, enabled."/>
+  <arg name="visual_inspection_dial"        default="disabled" doc="Run the inspection software for reading dials. Options: disabled, enabled."/>
+  <arg name="diagnostic_mode"               default="disabled" doc="Run the diagnostic mode. Note that enabling diagnostic mode is only supported with the 'new' motion control module. Options: disabled, enabled."/>
+
+  <!-- Environment -->
+  <arg name="environment_file"        default="$(eval find(data_package) + '/environments/' + world + '.yaml' if data_package != '' else '')"/>
+
+  <!-- Load default configuration -->
+  <rosparam command="load" file="$(find anymal_c)/config/default.yaml"/>
+
+  <!-- Load feature toggling configurations -->
+  <rosparam command="load" file="$(find anymal_c)/config/feature_toggles/motion_control/$(arg motion_control_module).yaml"/>
+  <rosparam command="load" file="$(find anymal_c)/config/feature_toggles/state_estimation/$(arg state_estimator_module).yaml"/>
+  <rosparam command="load" file="$(find anymal_c)/config/feature_toggles/slam/$(arg slam_module).yaml"/>
+  <rosparam command="load" file="$(find anymal_c)/config/feature_toggles/point_cloud_odometry/$(arg point_cloud_odometry_module).yaml"/>
+  <rosparam command="load" file="$(find anymal_c)/config/feature_toggles/docking/$(arg docking).yaml"/>
+  <rosparam command="load" file="$(find anymal_c)/config/feature_toggles/application_module/$(arg application_module).yaml"/>
+  <rosparam command="load" file="$(find anymal_c)/config/feature_toggles/battery_model/$(arg battery_model).yaml"/>
+  <rosparam command="load" file="$(find anymal_c)/config/feature_toggles/inspection/inspection_payload/$(arg inspection_payload).yaml"/>
+  <rosparam command="load" file="$(find anymal_c)/config/feature_toggles/inspection/auditive_inspection_frequency/$(arg auditive_inspection_frequency).yaml"/>
+  <rosparam command="load" file="$(find anymal_c)/config/feature_toggles/inspection/visual_inspection_dial/$(arg visual_inspection_dial).yaml"/>
+  <rosparam command="load" file="$(find anymal_c)/config/feature_toggles/diagnostic_mode/$(arg diagnostic_mode).yaml"/>
+
+  <!-- Overlay version configuration -->
+  <rosparam command="load" file="$(arg version_config_file)"/>
+  <!-- Overlay robot configuration -->
+  <rosparam command="load" file="$(arg robot_config_file)"/>
+  <!-- Overlay environment configuration -->
+  <rosparam command="load" file="$(arg environment_config_file)" if="$(eval environment_config_file != '')"/>
+  <!-- Overlay setup configuration -->
+  <rosparam command="load" file="$(arg setup_config_file)"/>
+  <!-- Overlay extension configuration -->
+  <rosparam command="load" file="$(arg extension_config_file)"/>
+
+  <!-- Load environment -->
+  <rosparam ns="environment" command="load" file="$(arg environment_file)" if="$(eval environment_file != '')"/>
+
+  <!-- Write configuration arguments to ROS parameter server for logging -->
+  <param name="/config/general/version"                               value="$(arg version)"/>
+  <param name="/config/general/robot"                                 value="$(arg robot)"/>
+  <param name="/config/general/data_package"                          value="$(arg data_package)"/>
+  <param name="/config/general/world"                                 value="$(arg world)"/>
+  <param name="/config/general/setup"                                 value="$(arg setup)"/>
+  <param name="/config/general/extension"                             value="$(arg extension)"/>
+  <param name="/config/general/version_config_file"                   value="$(arg version_config_file)"/>
+  <param name="/config/general/robot_config_file"                     value="$(arg robot_config_file)"/>
+  <param name="/config/general/environment_config_file"               value="$(arg environment_config_file)"/>
+  <param name="/config/general/setup_config_file"                     value="$(arg setup_config_file)"/>
+  <param name="/config/general/extension_config_file"                 value="$(arg extension_config_file)"/>
+  <param name="/config/general/environment_file"                      value="$(arg environment_file)"/>
+  <param name="/config/feature_toggles/motion_control_module"         value="$(arg motion_control_module)"/>
+  <param name="/config/feature_toggles/state_estimator_module"        value="$(arg state_estimator_module)"/>
+  <param name="/config/feature_toggles/slam_module"                   value="$(arg slam_module)"/>
+  <param name="/config/feature_toggles/point_cloud_odometry_module"   value="$(arg point_cloud_odometry_module)"/>
+  <param name="/config/feature_toggles/docking"                       value="$(arg docking)"/>
+  <param name="/config/feature_toggles/application_module"            value="$(arg application_module)"/>
+  <param name="/config/feature_toggles/battery_model"                 value="$(arg battery_model)"/>
+  <param name="/config/feature_toggles/inspection_payload"            value="$(arg inspection_payload)"/>
+  <param name="/config/feature_toggles/auditive_inspection_frequency" value="$(arg auditive_inspection_frequency)"/>
+  <param name="/config/feature_toggles/visual_inspection_dial"        value="$(arg visual_inspection_dial)"/>
+  <param name="/config/feature_toggles/diagnostic_mode"               value="$(arg diagnostic_mode)"/>
+
+  <!-- Post process loaded configuration and notify when done -->
+  <node pkg="stack_launcher" type="sequential_roslaunch_node.py" name="sequential_roslaunch" output="screen">
+    <rosparam param="launch_files" subst_value="True">
+      ['stack_launcher stack_launcher.launch stack:=post_process_config',
+       'anymal_c notify_config_loaded.launch']
+    </rosparam>
+  </node>
+
+</launch>

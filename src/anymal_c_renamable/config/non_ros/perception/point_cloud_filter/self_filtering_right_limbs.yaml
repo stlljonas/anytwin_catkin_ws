@@ -1,0 +1,18 @@
+timeout_usec: 20000
+self_see_links:
+    - name: RF_thigh_fixed
+      padding: 0.04
+    - name: RH_thigh_fixed
+      padding: 0.04
+    - name: RF_KFE
+      padding: 0.04
+    - name: RH_KFE
+      padding: 0.04
+    - name: RF_shank_fixed
+      padding: 0.12
+    - name: RH_shank_fixed
+      padding: 0.12
+    - name: RF_FOOT
+      padding: 0.04
+    - name: RH_FOOT
+      padding: 0.04

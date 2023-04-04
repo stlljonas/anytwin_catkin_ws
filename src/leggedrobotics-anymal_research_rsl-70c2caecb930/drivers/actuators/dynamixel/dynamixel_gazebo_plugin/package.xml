@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+
+<package format="2">
+  
+  <name>dynamixel_gazebo_plugin</name>
+  <version>0.3.0</version>
+  <description>Virtualizes a dynamixel motor ros node.</description>
+
+  <license>MIT</license>
+
+  <author email="dominic.jud@mavt.ethz.ch">Dominic Jud</author>
+  <author email="clynamen@gmail.com">Vincenzo Giovanni Comito</author>
+  <maintainer email="sbachmann@anybotics.com">Samuel Bachmann</maintainer>
+  <maintainer email="rdiethelm@anybotics.com">Remo Diethelm</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>boost</depend>
+  <depend>diagnostic_updater</depend>
+  <depend>dynamixel_controllers</depend>
+  <depend>dynamixel_msgs</depend>
+  <depend>dynamixel_ros_msgs</depend>
+  <depend>eigen</depend>
+  <depend>gazebo</depend>
+  <depend>gazebo_plugins</depend>
+  <depend>roscpp</depend>
+  <depend>sensor_msgs</depend>
+  <depend>std_msgs</depend>
+  <depend>urdf</depend>
+
+</package>

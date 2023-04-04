@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+
+  <!-- Enable/disable Rviz -->
+  <arg name="rviz" default="false"/>
+  <!-- Rviz configuration -->
+  <arg name="rviz_config_path" default="$(find free_gait_anymal_interactive_test)/test/pose_optimization.rviz"/>
+
+  <!-- Load robot description -->
+  <include file="$(find anymal_b_description)/launch/load.launch" />
+
+  <!-- Launch global Free Gait parameters -->
+  <include file="$(find free_gait_anymal_common)/launch/load_parameters.launch" />
+
+  <!-- RViz -->
+  <group if="$(arg rviz)">
+    <include file="$(find anymal_rviz_visualization)/launch/rviz.launch">
+      <arg name="rviz_config_path" value="$(arg rviz_config_path)"/>
+    </include>
+  </group>
+
+  <!-- Launch test -->
+  <test pkg="free_gait_anymal_interactive_test" test-name="free_gait_anymal_interactive_test" type="free_gait_anymal_interactive_test" time-limit="1000.0" />
+</launch>

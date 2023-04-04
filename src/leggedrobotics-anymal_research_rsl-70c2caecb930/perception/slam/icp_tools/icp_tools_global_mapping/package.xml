@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+
+<package format="2">
+
+  <name>icp_tools_global_mapping</name>
+  <version>0.5.0</version>
+  <description>ICP-based Localization and Global Mapping.</description>
+
+  <license>Proprietary</license>
+
+  <author email="rdiethelm@anybotics.com">Remo Diethelm</author>
+  <maintainer email="ynava@anybotics.com">Yoshua Nava</maintainer>
+  <maintainer email="rdiethelm@anybotics.com">Remo Diethelm</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>cmake_clang_tools</build_depend>
+
+  <depend>icp_tools_common</depend>
+  <depend>kindr</depend>
+  <depend>kindr_ros</depend>
+  <depend>libpointmatcher</depend>
+  <depend>message_filters</depend>
+  <depend>message_logger</depend>
+  <depend>param_io</depend>
+  <depend>pointmatcher_ros</depend>
+  <depend>roscpp</depend>
+  <depend>slam_point_cloud_mapping</depend>
+
+  <test_depend>cmake_code_coverage</test_depend>
+
+</package>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+
+  <!-- General arguments. -->
+  <arg name="namespace" default="/" doc="Namespace of the node."/>
+  <arg name="name_suffix" default="" doc="Name of the node is appended with the given argument."/>
+  <arg name="default_config_file" value="$(find system_monitor)/config/system_monitor.yaml"/>
+  <arg name="overlay_config_file" default="$(arg default_config_file)" doc="Overlay configuration file."/>
+  <arg name="output" default="log" doc="Output target, either 'log' or 'screen'."/>
+
+  <!-- Enable/disable node arguments. -->
+  <arg name="run_cpu_monitor" default="true" doc="Enable/disable the CPU monitor."/>
+  <arg name="run_disk_monitor" default="true" doc="Enable/disable the disk monitor."/>
+  <arg name="run_memory_monitor" default="true" doc="Enable/disable the memory monitor."/>
+  <arg name="run_network_monitor" default="true" doc="Enable/disable the network monitor."/>
+  <arg name="run_chrony_monitor" default="true" doc="Enable/disable the Chrony monitor."/>
+
+  <group ns="$(arg namespace)">
+    <!-- Load configuration files. -->
+    <rosparam command="load" file="$(arg default_config_file)"/>
+    <rosparam command="load" file="$(arg overlay_config_file)"/>
+
+    <!-- Run nodes. -->
+    <node name="cpu_monitor$(arg name_suffix)" pkg="system_monitor" type="cpu_monitor.py" output="$(arg output)"
+          respawn="true" if="$(arg run_cpu_monitor)"/>
+    <node name="disk_monitor$(arg name_suffix)" pkg="system_monitor" type="disk_monitor.py" output="$(arg output)"
+          respawn="true" if="$(arg run_disk_monitor)"/>
+    <node name="memory_monitor$(arg name_suffix)" pkg="system_monitor" type="memory_monitor.py" output="$(arg output)"
+          respawn="true" if="$(arg run_memory_monitor)"/>
+    <node name="network_monitor$(arg name_suffix)" pkg="system_monitor" type="network_monitor.py" output="$(arg output)"
+          respawn="true" if="$(arg run_network_monitor)"/>
+    <node name="chrony_monitor$(arg name_suffix)" pkg="system_monitor" type="chrony_monitor.py" output="$(arg output)"
+          respawn="true" if="$(arg run_chrony_monitor)"/>
+  </group>
+
+</launch>

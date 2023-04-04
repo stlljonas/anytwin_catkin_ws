@@ -1,0 +1,4 @@
+<launch>
+  <arg name="coverage_file" default=".coverage"/>
+  <test test-name="action" pkg="cmake_python_coverage" type="runner" args="--test=$(find free_gait_python)/test/rostest_action.py --module=free_gait --coverage_file=$(arg coverage_file)"/>
+</launch>

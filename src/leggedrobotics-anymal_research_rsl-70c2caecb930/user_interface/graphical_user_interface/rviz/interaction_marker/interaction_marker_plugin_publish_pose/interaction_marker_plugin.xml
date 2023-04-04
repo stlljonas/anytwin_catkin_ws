@@ -1,0 +1,7 @@
+<library path="lib/libinteraction_marker_plugin_publish_pose">
+  <class type="interaction_marker_plugin_publish_pose::InteractionMarkerPluginPublishPose" base_class_type="interaction_marker::InteractionMarkerPluginBase">
+    <description>
+      Interactive marker plugin for publishing poses.
+    </description>
+  </class>
+</library>

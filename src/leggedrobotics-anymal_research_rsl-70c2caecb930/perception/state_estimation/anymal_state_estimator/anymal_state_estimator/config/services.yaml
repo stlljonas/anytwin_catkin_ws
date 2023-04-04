@@ -1,0 +1,25 @@
+servers:
+  reset:
+    service: reset
+    persistent: false
+  reset_here:
+    service: reset_here
+    persistent: false
+  reset_map_to_odom_transformation:
+    service: reset_map_to_odom_transformation
+    persistent: false
+  toggle_pose_measurements:
+    service: toggle_pose_measurements
+    persistent: false
+  toggle_zero_velocity_updates:
+    service: toggle_zero_velocity_updates
+    persistent: false
+  calibrate_forces:
+    service: calibrate_forces
+    persistent: false
+  command_force_calib:
+    service: command_force_calib
+    persistent: false
+  configure_force_calib:
+    service: configure_force_calib
+    persistent: false

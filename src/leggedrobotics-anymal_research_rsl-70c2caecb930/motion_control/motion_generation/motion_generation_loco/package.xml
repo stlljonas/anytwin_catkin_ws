@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>motion_generation_loco</name>
+  <version>0.4.0</version>
+  <description>The motion_generation_loco package</description>
+  <maintainer email="avijayan@anybotics.com">Aravind Vijayan</maintainer>
+  <maintainer email="fgiraldez@anybotics.com">Francisco Giráldez Gámez</maintainer>
+  <license>Proprietary</license>
+  <author email="fabian.jenelten@mavt.ethz.ch">Fabian Jenelten</author>
+  <author>C. Dario Bellicoso</author>
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>anymal_description</depend>
+  <depend>loco</depend>
+  <depend>robot_utils</depend>
+  <depend>kindr</depend>
+  <depend>tinyxml_tools</depend>
+  <depend>motion_generation</depend>
+  <depend>motion_generation_utils</depend>
+  <depend>zmp_optimizer</depend>
+  <depend>numopt_quadprog</depend>
+  <depend>numopt_common</depend>
+  <depend>std_utils</depend>
+  <depend>terrain_sensing</depend>
+
+  <test_depend>gtest</test_depend>
+
+  <test_depend>cmake_code_coverage</test_depend>
+
+</package>

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<package>
+
+  <name>color_tools</name>
+  <version>0.6.0</version>
+  <description>Simple color class for RGB applications.</description>
+
+  <license>Proprietary</license>
+
+  <author email="rdiethelm@anybotics.com">Remo Diethelm</author>
+  <maintainer email="rdiethelm@anybotics.com">Remo Diethelm</maintainer>
+  <maintainer email="pleemann@anybotics.com">Philipp Leemann</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+</package>

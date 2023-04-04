@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+  
+  <!-- Load ros output level -->
+  <env name="ROSCONSOLE_CONFIG_FILE" value="$(find topic_mux)/config/rosconsole.conf"/>
+
+  <!-- Launch node -->
+  <node name="twist_stamped_mux" pkg="topic_mux" type="twist_stamped_mux" output="screen">
+  
+    <!-- Load parameters-->
+    <rosparam command="load" file="$(find topic_mux)/config/example.yaml"/>
+    
+  </node>
+  
+</launch>

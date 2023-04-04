@@ -1,0 +1,81 @@
+steps:
+
+ - step:
+    - joint_trajectory:
+       name: LF_LEG
+       ignore_contact: true
+       trajectory:
+        joint_names: [HAA, HFE, KFE]
+        knots:
+         - time: 1.0
+           positions: [deg(0), deg(130), deg(-160)]
+         - time: 2.0
+           positions: [deg(0), deg(130), deg(-150)]
+    - joint_trajectory:
+       name: RF_LEG
+       ignore_contact: true
+       trajectory:
+        joint_names: [HAA, HFE, KFE]
+        knots:
+         - time: 1.0
+           positions: [deg(0), deg(130), deg(-160)]
+         - time: 2.0
+           positions: [deg(0), deg(130), deg(-150)]
+    - joint_trajectory:
+       name: LH_LEG
+       ignore_contact: true
+       trajectory:
+        joint_names: [HAA, HFE, KFE]
+        knots:
+         - time: 1.0
+           positions: [deg(0), deg(-130), deg(160)]
+         - time: 2.0
+           positions: [deg(0), deg(-130), deg(150)]
+    - joint_trajectory:
+       name: RH_LEG
+       ignore_contact: true
+       trajectory:
+        joint_names: [HAA, HFE, KFE]
+        knots:
+         - time: 1.0
+           positions: [deg(0), deg(-130), deg(160)]
+         - time: 2.0
+           positions: [deg(0), deg(-130), deg(150)]
+
+ - step:
+    - end_effector_trajectory:
+       name: LF_LEG
+       ignore_contact: true
+       ignore_for_pose_adaptation: true
+       trajectory:
+        frame: base
+        knots:
+         - time: 2.0
+           position: [0.28, 0.27, -0.25]
+    - end_effector_trajectory:
+       name: RF_LEG
+       ignore_contact: true
+       ignore_for_pose_adaptation: true
+       trajectory:
+        frame: base
+        knots:
+         - time: 2.0
+           position: [0.28, -0.27, -0.25]
+    - end_effector_trajectory:
+       name: LH_LEG
+       ignore_contact: true
+       ignore_for_pose_adaptation: true
+       trajectory:
+        frame: base
+        knots:
+         - time: 2.0
+           position: [-0.28, 0.27, -0.25]
+    - end_effector_trajectory:
+       name: RH_LEG
+       ignore_contact: true
+       ignore_for_pose_adaptation: true
+       trajectory:
+        frame: base
+        knots:
+         - time: 2.0
+           position: [-0.28, -0.27, -0.25]

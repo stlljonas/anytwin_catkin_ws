@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+
+  <!-- Configuration -->
+  <arg name="robot"        default="b"            doc="Robot, e.g. 'beth' or 'bear'. Use 'b' for generic robot."/>
+  <arg name="data_package" default=""             doc="Data package containing the world and all environment related data."/>
+  <arg name="world"        default=""             doc="World within the data package."/>
+
+  <!-- Feature toggles -->
+  <arg name="state_estimator_module"      default="tsif" doc="State estimator module to run. Options: tsif, simulated (only in simulation)."/>
+
+  <!-- Load the configuration -->
+  <include file="$(find anymal_b)/launch/load_config.launch">
+    <arg name="robot"                       value="$(arg robot)"/>
+    <arg name="data_package"                value="$(arg data_package)"/>
+    <arg name="world"                       value="$(arg world)"/>
+    <arg name="setup"                       value="sim"/>
+    <arg name="state_estimator_module"      value="$(arg state_estimator_module)"/>
+  </include>
+  <param name="/stack_launcher/nodes/rviz/preprocessed_params/roslaunch_args/value" value="--display-config $(find anymal_ctrl_dynamic_gaits_ros)/rviz/dyn_walk.rviz --splash-screen $(find anymal_b)/config/non_ros/user_interface/rviz/splash.png"/>
+
+  <!-- Start the simulation -->
+  <include file="$(find stack_launcher)/launch/stack_launcher.launch">
+    <arg name="stack"         value="sim"/>
+    <arg name="trigger_param" value="/config_loaded"/>
+  </include>
+
+</launch>

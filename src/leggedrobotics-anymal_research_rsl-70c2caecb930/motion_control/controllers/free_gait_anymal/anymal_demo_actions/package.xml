@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>anymal_demo_actions</name>
+  <version>0.6.0</version>
+  <description>Demo actions for ANYmal using Free Gait.</description>
+  <maintainer email="vyuryev@anybotics.com">Valentin Yuryev</maintainer>
+  <maintainer email="avijayan@anybotics.com">Aravind Vijayan</maintainer>
+  <author email="pfankhauser@anybotics.com">Peter Fankhauser</author>
+  <license>Proprietary</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>free_gait_action_loader</depend>
+
+  <exec_depend>anymal_actions_common</exec_depend>
+  <exec_depend>free_gait_python</exec_depend>
+
+</package>

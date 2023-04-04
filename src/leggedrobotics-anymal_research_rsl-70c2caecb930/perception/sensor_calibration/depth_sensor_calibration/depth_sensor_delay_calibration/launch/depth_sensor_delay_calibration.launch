@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+
+  <!-- Point cloud topic -->
+  <arg name="point_cloud_topic"        default="/depth_camera/depth/color/points"/>
+  <!-- Time invariant (fixed) frame -->
+  <arg name="fixed_frame_id"           default="odom"/>
+  <!-- Length of the TF buffer (in seconds) -->
+  <arg name="tf_buffer_length"         default="100.0"/>
+  <!-- File which contains the ICP configuration -->
+  <arg name="icp_file"                 default="$(find depth_sensor_delay_calibration)/config/icp.yaml"/>
+  <!-- Minimal number of points required for ICP -->
+  <arg name="min_points_for_icp"       default="500"/>
+  <!-- File which contains the point cloud filters configuration -->
+  <arg name="point_cloud_filters_file" default="$(find depth_sensor_delay_calibration)/config/point_cloud_filters_depth_camera.yaml"/>
+
+  <!-- Node -->
+  <node pkg="depth_sensor_delay_calibration" type="depth_sensor_delay_calibration" name="depth_sensor_delay_calibration" respawn="false" output="screen">
+    <param name="fixed_frame_id"           value="$(arg fixed_frame_id)"/>
+    <param name="point_cloud_topic"        value="$(arg point_cloud_topic)"/>
+    <param name="tf_buffer_length"         value="$(arg tf_buffer_length)"/>
+    <param name="icp_file"                 value="$(arg icp_file)"/>
+    <param name="min_points_for_icp"       value="$(arg min_points_for_icp)"/>
+    <param name="point_cloud_filters_file" value="$(arg point_cloud_filters_file)"/>
+  </node>
+
+</launch>

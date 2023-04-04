@@ -1,0 +1,31 @@
+actions:
+  - action:
+      id: demo_base_motion
+      name: Demo Base Motion
+      file: actions/demo_base_motion.yaml
+      type: yaml
+      description: Demo base motion for OO leg config (outwards).
+  - action:
+      id: push_ups_three_legged
+      name: Push Ups Three Legged
+      file: actions/push_ups_three_legged.yaml
+      type: yaml
+      description: Performs a couple of three legged pushups.
+  - action:
+      id: paw_up_high
+      name: Paw Up High
+      file: actions/paw_up_high/paw_up_high.py
+      type: python
+      description: Give paw motion high.
+  - action:
+      id: paw_down_high
+      name: Paw Down High
+      file: actions/paw_down_high/paw_down_high.py
+      type: python
+      description: Lower paw high.
+  - action:
+      id: dance_here
+      name: Dance Here
+      file: actions/dance/dance_here.py
+      type: python
+      description: Dance at current position.

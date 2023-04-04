@@ -1,0 +1,3 @@
+load_anymal_description:
+  custom_parameters:
+    battery_model: travel

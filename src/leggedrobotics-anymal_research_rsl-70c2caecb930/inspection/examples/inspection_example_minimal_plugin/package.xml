@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>inspection_example_minimal_plugin</name>
+  <version>0.0.1</version>
+  <description>Minimal inspection example plugin.</description>
+
+  <license>Proprietary</license>
+  <author email="sbachmann@anybotics.com">Samuel Bachmann</author>
+  <maintainer email="sbachmann@anybotics.com">Samuel Bachmann</maintainer>
+  <maintainer email="rdiethelm@anybotics.com">Remo Diethelm</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>cmake_clang_tools</build_depend>
+
+  <depend>any_inspection_ros</depend>
+  <depend>message_logger</depend>
+  <depend>pluginlib</depend>
+
+  <export>
+    <any_inspection_ros plugin="${prefix}/any_inspection_ros_plugin.xml" />
+  </export>
+
+</package>

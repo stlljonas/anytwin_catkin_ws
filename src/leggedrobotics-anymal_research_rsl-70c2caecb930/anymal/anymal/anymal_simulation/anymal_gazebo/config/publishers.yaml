@@ -1,0 +1,134 @@
+publishers:
+
+  actuator_readings:
+    topic: /anymal_lowlevel_controller/actuator_readings
+    queue_size: 10
+    latch: false
+
+  actuator_readings_estimator:
+    topic: /state_estimator/actuator_readings
+    queue_size: 10
+    latch: false
+
+  actuator_readings_extended_throttled:
+    topic: /anymal_lowlevel_controller/actuator_readings_extended_throttled
+    queue_size: 10
+    latch: false
+    decimation: 20
+
+  joint_states:
+    topic: /state_estimator/joint_states
+    queue_size: 10
+    latch: false
+
+  contact_force_lf_foot:
+    topic: /sensors/contact_force_lf_foot
+    queue_size: 10
+    latch: false
+
+  contact_force_lf_foot_estimator:
+    topic: /state_estimator/contact_force_lf_foot
+    queue_size: 10
+    latch: false
+
+  contact_force_lf_foot_throttled:
+    topic: /sensors/contact_force_lf_foot_throttle
+    queue_size: 10
+    latch: false
+    decimation: 20
+
+  contact_force_rf_foot:
+    topic: /sensors/contact_force_rf_foot
+    queue_size: 10
+    latch: false
+
+  contact_force_rf_foot_estimator:
+    topic: /state_estimator/contact_force_rf_foot
+    queue_size: 10
+    latch: false
+
+  contact_force_rf_foot_throttled:
+    topic: /sensors/contact_force_rf_foot_throttle
+    queue_size: 10
+    latch: false
+    decimation: 20
+
+  contact_force_lh_foot:
+    topic: /sensors/contact_force_lh_foot
+    queue_size: 10
+    latch: false
+
+  contact_force_lh_foot_estimator:
+    topic: /state_estimator/contact_force_lh_foot
+    queue_size: 10
+    latch: false
+
+  contact_force_lh_foot_throttled:
+    topic: /sensors/contact_force_lh_foot_throttle
+    queue_size: 10
+    latch: false
+    decimation: 20
+
+  contact_force_rh_foot:
+    topic: /sensors/contact_force_rh_foot
+    queue_size: 10
+    latch: false
+
+  contact_force_rh_foot_estimator:
+    topic: /state_estimator/contact_force_rh_foot
+    queue_size: 10
+    latch: false
+
+  contact_force_rh_foot_throttled:
+    topic: /sensors/contact_force_rh_foot_throttle
+    queue_size: 10
+    latch: false
+    decimation: 20
+
+  localization:
+    topic: /slam/map_pose
+    queue_size: 1
+    latch: false
+    decimation: 200
+
+  anymal_state:
+    topic: /state_estimator/anymal_state
+    queue_size: 10
+    latch: false
+    min_frequency_rate: 0.1
+    max_frequency_rate: 0.1
+
+  anymal_state_groundtruth:
+    topic: /gazebo/anymal_state
+    queue_size: 10
+    latch: false
+    min_frequency_rate: 0.1
+    max_frequency_rate: 0.1
+
+  anymal_state_throttle:
+    topic: /state_estimator/anymal_state_throttle
+    queue_size: 10
+    latch: false
+    decimation: 20
+
+  pose_in_odom:
+    topic: /state_estimator/pose_in_odom
+    queue_size: 1
+    latch: false
+
+  pose_in_odom_throttled:
+    topic: /state_estimator/pose_in_odom_throttle
+    queue_size: 1
+    latch: false
+    decimation: 20
+
+  twist:
+    topic: /state_estimator/twist
+    queue_size: 1
+    latch: false
+
+  twist_throttled:
+    topic: /state_estimator/twist_throttle
+    queue_size: 1
+    latch: false
+    decimation: 20

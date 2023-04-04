@@ -1,0 +1,71 @@
+frame_pairs:
+ - source_frame: map
+   target_frame: base
+ - source_frame: map
+   target_frame: footprint
+ - source_frame: base
+   target_frame: kinect_link
+ - source_frame: kinect_link
+   target_frame: kinect_rgb_frame
+ - source_frame: kinect_rgb_frame
+   target_frame: kinect_rgb_optical_frame
+ - source_frame: kinect_link
+   target_frame: kinect_depth_frame
+ - source_frame: kinect_depth_frame
+   target_frame: kinect_depth_optical_frame
+ - source_frame: base
+   target_frame: LF_HIP
+ - source_frame: LF_HIP
+   target_frame: LF_THIGH
+ - source_frame: LF_THIGH
+   target_frame: LF_SHANK
+ - source_frame: LF_SHANK
+   target_frame: LF_FOOT
+ - source_frame: base
+   target_frame: LH_HIP
+ - source_frame: LH_HIP
+   target_frame: LH_THIGH
+ - source_frame: LH_THIGH
+   target_frame: LH_SHANK
+ - source_frame: LH_SHANK
+   target_frame: LH_FOOT
+ - source_frame: base
+   target_frame: RF_HIP
+ - source_frame: RF_HIP
+   target_frame: RF_THIGH
+ - source_frame: RF_THIGH
+   target_frame: RF_SHANK
+ - source_frame: RF_SHANK
+   target_frame: RF_FOOT
+ - source_frame: base
+   target_frame: RH_HIP
+ - source_frame: RH_HIP
+   target_frame: RH_THIGH
+ - source_frame: RH_THIGH
+   target_frame: RH_SHANK
+ - source_frame: RH_SHANK
+   target_frame: RH_FOOT
+ - source_frame: base
+   target_frame: front_camera_link
+ - source_frame: base
+   target_frame: back_camera_link
+ - source_frame: base
+   target_frame: actuated_lidar_dynamixel
+ - source_frame: actuated_lidar_dynamixel
+   target_frame: actuated_lidar_dynamixel_servo
+ - source_frame: actuated_lidar_dynamixel_servo
+   target_frame: actuated_lidar_hokuyo
+ - source_frame: base
+   target_frame: dynamixel_link
+ - source_frame: base
+   target_frame: pantilt_head_link
+ - source_frame: pantilt_head_link
+   target_frame: head_pan_link
+ - source_frame: head_pan_link
+   target_frame: head_tilt_link
+ - source_frame: head_tilt_link
+   target_frame: thermal_camera_link
+ - source_frame: head_tilt_link
+   target_frame: camera_link
+ - source_frame: base
+   target_frame: imu_link

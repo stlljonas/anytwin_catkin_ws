@@ -1,0 +1,120 @@
+anymal_lowlevel_controller:
+  anydrive_setup:
+    anydrives:
+      LF_HFE:
+        configuration:
+          fan:
+            lower_temperature: 35.0
+            upper_temperature: 40.0
+      LF_KFE:
+        configuration:
+          fan:
+            lower_temperature: 35.0
+            upper_temperature: 40.0
+          modes:
+            joint_position:
+              gains:
+                d: 0.2
+                i: 0.41
+                p: 70.0
+            joint_position_velocity:
+              gains:
+                d: 0.2
+                i: 0.41
+                p: 70.0
+            joint_position_velocity_torque:
+              gains:
+                d: 0.2
+                i: 0.41
+                p: 70.0
+      LH_HFE:
+        configuration:
+          fan:
+            lower_temperature: 35.0
+            upper_temperature: 40.0
+      LH_KFE:
+        configuration:
+          fan:
+            lower_temperature: 35.0
+            upper_temperature: 40.0
+          modes:
+            joint_position:
+              gains:
+                d: 0.2
+                i: 0.41
+                p: 70.0
+            joint_position_velocity:
+              gains:
+                d: 0.2
+                i: 0.41
+                p: 70.0
+            joint_position_velocity_torque:
+              gains:
+                d: 0.2
+                i: 0.41
+                p: 70.0
+      RF_HFE:
+        configuration:
+          fan:
+            lower_temperature: 35.0
+            upper_temperature: 40.0
+      RF_KFE:
+        configuration:
+          fan:
+            lower_temperature: 35.0
+            upper_temperature: 40.0
+          modes:
+            joint_position:
+              gains:
+                d: 0.2
+                i: 0.41
+                p: 70.0
+            joint_position_velocity:
+              gains:
+                d: 0.2
+                i: 0.41
+                p: 70.0
+            joint_position_velocity_torque:
+              gains:
+                d: 0.2
+                i: 0.41
+                p: 70.0
+      RH_HFE:
+        configuration:
+          fan:
+            lower_temperature: 35.0
+            upper_temperature: 40.0
+      RH_KFE:
+        configuration:
+          fan:
+            lower_temperature: 35.0
+            upper_temperature: 40.0
+          modes:
+            joint_position:
+              gains:
+                d: 0.2
+                i: 0.41
+                p: 70.0
+            joint_position_velocity:
+              gains:
+                d: 0.2
+                i: 0.41
+                p: 70.0
+            joint_position_velocity_torque:
+              gains:
+                d: 0.2
+                i: 0.41
+                p: 70.0
+rpsm_apc:
+  password: bany
+rpsm_lpc:
+  password: bany
+  port: /dev/ttyS5
+rpsm_npc:
+  password: bany
+stack_launcher:
+  nodes:
+    load_anymal_description:
+      preprocessed_params:
+        xacro_file:
+          value: $(rospack find anymal_bany)/urdf/anymal.urdf.xacro

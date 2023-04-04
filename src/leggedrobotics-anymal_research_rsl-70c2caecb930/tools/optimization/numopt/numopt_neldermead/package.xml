@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>numopt_neldermead</name>
+  <version>0.5.0</version>
+  <description>The numopt_neldermead package</description>
+  <maintainer email="avijayan@anybotics.com">Aravind Vijayan</maintainer>
+  <maintainer email="fgiraldez@anybotics.com">Francisco Giráldez Gámez</maintainer>
+  <license>BSD</license>
+  <author email="bellicoso@mavt.ethz.ch">Dario Bellicoso</author>
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>numopt_common</depend>
+  <depend>neldermead_optimizer</depend>
+  <test_depend>numopt_problems</test_depend>
+  <test_depend>gtest</test_depend>
+</package>

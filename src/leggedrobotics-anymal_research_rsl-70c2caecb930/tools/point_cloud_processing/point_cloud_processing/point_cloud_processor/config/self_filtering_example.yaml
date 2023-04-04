@@ -1,0 +1,39 @@
+# Optional timeout for TF to arrive in the buffer (default: 1000, units: microseconds)
+# timeout_usec: 1000
+# Optional tag to filter for (default: "self_filter")
+# element_to_filter: "self_filter"
+# Optional fallback tag to filter if standard element to filter not present (default: "collision")
+# fallback_element_to_filter: "collision"
+# Optionally disable falling back to the fallback tag (default: true)
+# fallback_to_default: true
+# Optionally disable warnings about using the fallback tag (default: true)
+# silence_fallback_warnings: true
+# Optionally disable warnings about configured links that are missing or could not be processed (default: true)
+# warn_missing_links: true
+
+timeout_usec: 20000
+self_see_links:
+    - name: base
+      padding: 0.01
+    - name: LF_HIP
+      padding: 0.02
+    - name: RF_HIP
+      padding: 0.02
+    - name: LF_THIGH
+      padding: 0.02
+      scale: 1.5
+    - name: RF_THIGH
+      padding: 0.02
+      scale: 1.5
+    - name: LF_SHANK
+      padding: 0.06
+    - name: RF_SHANK
+      padding: 0.06
+    - name: LF_ADAPTER
+      padding: 0.01
+    - name: RF_ADAPTER
+      padding: 0.01
+    - name: LF_FOOT
+      padding: 0.01
+    - name: RF_FOOT
+      padding: 0.01

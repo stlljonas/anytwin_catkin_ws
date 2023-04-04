@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+  
+  <!-- Launch node -->
+  <node name="forward_tf" pkg="topic_forward" type="tf_forward" output="screen" launch-prefix="">
+  
+    <!-- Load parameters-->
+    <rosparam command="load" file="$(find topic_forward)/config/tf.yaml"/>
+    
+  </node>
+  
+</launch>

@@ -1,0 +1,17 @@
+# Message with the RMS tracking errors for the WBC test
+
+std_msgs/Header header
+
+string  motion_type
+
+std_msgs/Float64MultiArray rmsJointPositionTrackingError
+std_msgs/Float64MultiArray rmsJointVelocityTrackingError
+std_msgs/Float64MultiArray rmsJointAccelerationTrackingError
+
+geometry_msgs/Vector3[] rmsEEPositionTrackingError
+geometry_msgs/Vector3[] rmsEEVelocityTrackingError
+geometry_msgs/Vector3[] rmsEEAccelerationTrackingError
+
+geometry_msgs/Vector3 rmsBasePositionTrackingError
+geometry_msgs/Vector3 rmsBaseVelocityTrackingError
+geometry_msgs/Vector3 rmsBaseAccelerationTrackingError

@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <!-- Velodyne Mount -->
+  <xacro:macro name="anymal_velodyne_mount" params="name:=velodyne_mount parent:=base mount *origin">
+
+    <!-- base to mount joint -->
+    <joint name="${parent}_to_${name}" type="fixed">
+      <parent link="${parent}"/>
+      <child link="${name}"/>
+      <xacro:insert_block name="origin"/>
+    </joint>
+
+    <!-- Velodyne mount link -->
+    <xacro:if value="${mount in ['front']}">
+      <link name="${name}">
+        <xacro:if value="$(arg mesh)">
+          <visual>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <mesh filename="package://anymal_b/urdf/modules/lidar_mount/anymal_velodyne_mount.dae" scale=".001 .001 .001"/>
+            </geometry>
+          </visual>
+          <material name="anymal_material"/>
+        </xacro:if>
+        <xacro:unless value="$(arg mesh)">
+          <visual>
+            <origin xyz="-0.015 0.0 -0.025" rpy="0.0 0.0 0.0"/>
+            <geometry>
+              <box size="0.09 0.215 0.05"/>
+            </geometry>
+            <material name="anymal_material"/>
+          </visual>
+        </xacro:unless>
+        <collision>
+          <origin xyz="-0.015 0.0 -0.025" rpy="0.0 0.0 0.0"/>
+          <geometry>
+            <cylinder radius="0.10" length="0.15"/>
+          </geometry>
+          <material name="anymal_material"/>
+        </collision>
+        <inertial>
+          <!-- Values from CAD -->
+          <origin xyz="0.078608890381 0.000999966453 0.010465821956" rpy="0.0 0.0 0.0"/>
+          <mass value="0.411254098"/>
+          <inertia ixx="0.001383141132159" ixy="-0.000000000071111" ixz="-0.000011007223061" iyy="0.000685526973337" iyz="-0.000000000216688" izz="0.001999724408014"/>
+        </inertial>
+      </link>
+
+      <!-- Mount self filtering -->
+      <self_filter>
+        <origin xyz="-0.015 0.0 -0.025" rpy="0.0 0.0 0.0"/>
+        <geometry>
+          <cylinder radius="0.13" length="0.17"/>
+        </geometry>
+      </self_filter>
+    </xacro:if>
+
+    <xacro:if value="${mount in ['cage']}">
+      <link name="${name}">
+        <xacro:if value="$(arg mesh)">
+          <visual>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <mesh filename="package://anymal_b/urdf/modules/lidar_mount/anymal_velodyne_mount_cage.dae" scale=".001 .001 .001"/>
+            </geometry>
+          </visual>
+          <material name="anymal_material"/>
+        </xacro:if>
+        <xacro:unless value="$(arg mesh)">
+          <visual>
+            <origin xyz="-0.015 0.0 -0.025" rpy="0.0 0.0 0.0"/>
+            <geometry>
+              <box size="0.09 0.215 0.05"/>
+            </geometry>
+            <material name="anymal_material"/>
+          </visual>
+        </xacro:unless>
+        <collision>
+          <origin xyz="-0.015 0.0 -0.025" rpy="0.0 0.0 0.0"/>
+          <geometry>
+            <cylinder radius="0.10" length="0.15"/>
+          </geometry>
+          <material name="anymal_material"/>
+        </collision>
+        <inertial>
+          <!-- Values from CAD -->
+          <origin xyz="-0.003470719564
+                       -0.000437953244
+                        0.009296175974"
+                  rpy="0.0 0.0 0.0"/>
+          <mass value="0.468309149"/>
+          <inertia ixx= "0.002023718043706"
+                   ixy= "0.000007237377195"
+                   ixz= "0.000088125050002"
+                   iyy= "0.001843825349439"
+                   iyz="-0.000005839762850"
+                   izz= "0.002035845574943"/>
+        </inertial>
+      </link>
+
+      <!-- Mount self filtering -->
+      <self_filter>
+        <origin xyz="-0.015 0.0 -0.025" rpy="0.0 0.0 0.0"/>
+        <geometry>
+          <cylinder radius="0.13" length="0.17"/>
+        </geometry>
+      </self_filter>
+    </xacro:if>
+  </xacro:macro>
+
+</robot>

@@ -1,0 +1,72 @@
+/*!
+\mainpage Overview
+
+\section loco Loco - LOcomotion COntrol library
+
+\section source_code Source Code
+The source code is available at <a href="https://bitbucket.org/leggedrobotics/loco">https://bitbucket.org/leggedrobotics/loco</a>.
+
+\section license License
+This library is proprietary.
+
+\section acknowledgement Acknowledgement
+Involved people:
+ - Christian Gehring
+ - C. Dario Bellicoso
+ - Péter Fankhauser
+
+Contact:
+Christian Gehring  (cgehring ( at ) anybotics.com)
+*/
+//--------------------------------------------------------
+/*! \page getting_started Getting started
+
+This is a very short guide on how to get started with this library.
+
+\section requirements Requirements
+This library is written extensively using C++11.
+
+ - GCC 4.7 is required at the minimum.
+ - <a href="http://wiki.ros.org/catkin">catkin</a> is used to build the library
+
+\section dependencies Dependencies
+<ul>
+  <li>...</li>
+</ul>
+
+
+\section install Installation
+\subsection build_lib_catkin Build the Library with Catkin
+
+
+Use the [catkin command line tools](http://catkin-tools.readthedocs.org):
+
+\code{.sh}
+cd ~/catkin_ws/src
+git clone https://bitbucket.org/leggedrobotics/loco
+catkin build loco
+\endcode
+
+\subsection build_doc Build this Documentation
+<a href="http://www.stack.nl/~dimitri/doxygen/" >Doxygen</a> needs to be installed to create this documentation.
+
+\code{.sh}
+cd ~/catkin_ws
+catkin build loco_doc
+\endcode
+The doxygen documentation can be found here:
+doc/doxygen/doc/html/index.html
+
+\section sec_continue How to Continue
+\ref page_how_to "How-To" use this library.
+
+*/
+
+//-----------------------------------------------------------
+
+/*!
+\page page_how_to How To
+ - \subpage example_page <BR>
+*/
+
+//-----------------------------------------------------------

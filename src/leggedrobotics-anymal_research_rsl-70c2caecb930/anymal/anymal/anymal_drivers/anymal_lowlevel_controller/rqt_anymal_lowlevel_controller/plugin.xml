@@ -1,0 +1,17 @@
+<library path="lib/librqt_anymal_lowlevel_controller">
+  <class name="rqt_anymal_lowlevel_controller/AnymalLowLevelControllerPlugin" type="rqt_anymal_lowlevel_controller::AnymalLowLevelControllerPlugin" base_class_type="rqt_gui_cpp::Plugin">
+    <description>
+      A GUI plugin for observing and commanding the ANYmal lowlevel controller.
+    </description>
+    <qtgui>
+      <group>
+        <label>ANYmal</label>
+        <icon type="theme">folder</icon>
+        <statustip>Plugins related to ANYmal</statustip>
+      </group>
+      <label>ANYmal Low Level Controller</label>
+      <icon type="file">resource/icon.png</icon>
+      <statustip>ANYmal Low Level Controller</statustip>
+    </qtgui>
+  </class>
+</library>

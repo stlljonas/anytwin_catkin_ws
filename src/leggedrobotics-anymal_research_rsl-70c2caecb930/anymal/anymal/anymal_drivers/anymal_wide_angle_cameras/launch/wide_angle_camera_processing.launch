@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+
+  <!-- Nodelet manager -->
+  <arg name="nodelet_manager"                           default=""/>
+  <!-- Camera name -->
+  <arg name="camera_name"                               default="wide_angle_camera"/>
+  <arg name="calibrated"                                default="false"/>
+  <arg name="decompress"                                default="false"/>
+
+  <!-- Decompression of color images -->
+  <node name="$(arg camera_name)_image_decompress" type="republish" pkg="image_transport" respawn="true"
+        args="compressed in:=/$(arg camera_name)/image_color
+              raw out:=/$(arg camera_name)/image_color" if="$(arg decompress)"/>
+
+  <!-- Rectification image -->
+  <node name="$(arg camera_name)_image_rectify" type="nodelet" pkg="nodelet" respawn="true"
+        args="load image_rectify/image_rectify $(arg nodelet_manager)"  if="$(arg calibrated)">
+    <remap from="camera_info"   to="/$(arg camera_name)/camera_info"/>
+    <remap from="image_mono"    to="/$(arg camera_name)/image_color"/>
+    <remap from="image_rect"    to="/$(arg camera_name)/image_color_rect" />
+  </node>
+
+</launch>

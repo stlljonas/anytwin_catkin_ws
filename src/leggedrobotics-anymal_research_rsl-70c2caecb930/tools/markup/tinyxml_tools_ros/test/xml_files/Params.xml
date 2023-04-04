@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<!-- Author: Perry Franklin / Date: Jun 2019 -->
+<!-- Example xml for unit tests! Do not edit -> might break unit tests. -->
+<Root>
+    <Values a="5" b="7" />
+    <RosInclude>
+      <include_xml dir="$(find tinyxml_tools)/test/xml_includes/IncludedParams.xml"/>
+      <include_xml dir="$(find    tinyxml_tools)/test/xml_includes/IncludedParams2.xml"/>
+      <include_xml dir="$(   find     tinyxml_tools      )/test/xml_includes/IncludedParams3.xml"/>
+    </RosInclude>
+</Root>

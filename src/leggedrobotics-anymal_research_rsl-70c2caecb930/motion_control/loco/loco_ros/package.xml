@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>loco_ros</name>
+  <version>0.6.0</version>
+  <description>The loco_ros package</description>
+  <maintainer email="fgiraldez@anybotics.com">Francisco Giráldez Gámez</maintainer>
+  <maintainer email="avijayan@anybotics.com">Aravind Vijayan</maintainer>
+  <license>Proprietary</license>
+  <author email="bellicoso@mavt.ethz.ch">Dario Bellicoso</author>
+  <author email="cgehring@anybotics.com">Christian Gehring</author>
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>roscpp</depend>
+  <depend>any_node</depend>
+  <depend>loco</depend>
+  <depend>tf</depend>
+  <depend>visualization_msgs</depend>
+  <depend>kindr_msgs</depend>
+  <depend>rocoma_msgs</depend>
+  <depend>kindr_ros</depend>
+  <build_export_depend>eigen</build_export_depend>
+</package>

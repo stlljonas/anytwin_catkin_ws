@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>any_joy_doc</name>
+  <version>0.6.0</version>
+  <description>The any_joy documentation package</description>
+  <maintainer email="msuetterlin@anybotics.com">Marco Sütterlin</maintainer>
+  <maintainer email="lisler@anybotics.com">Linus Isler</maintainer>
+  <license>Proprietary</license>
+  <author email="lisler@anybotics.com">Linus Isler</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>doxygen</depend>
+  <depend>joy_interface</depend>
+  <depend>joy_manager</depend>
+  <depend>joy_manager_msgs</depend>
+  <depend>rqt_joypad</depend>
+
+</package>

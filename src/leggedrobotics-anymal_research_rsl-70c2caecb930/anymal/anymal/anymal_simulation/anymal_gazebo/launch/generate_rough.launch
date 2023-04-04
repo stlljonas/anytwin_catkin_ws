@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+  <!-- Set the length of the terrain in meters -->
+  <arg name="sidelength" default="10.0"/>
+
+  <!-- Set the density of the vertices. If fractals are used this results in 4*2^density vertices. -->
+  <!-- Expects integer >= 0. Using a density of 7 with tiles enabled results in a 7.4 MB mesh file. -->
+  <arg name="density" default="7"/>
+
+  <!-- Set the smoothness of the terrain. If random, not fractal behavior is chosen, this equals the standard deviation sigma. -->
+  <arg name="smoothness" default="1.2"/>
+
+  <!-- Set if the ground is built up by tiles or with smooth edges between vertices. Setting it to 'true' will increase the file size significantly. -->
+  <arg name="tiles" default="true"/>
+
+  <!-- Set if the heights are set by fractal generation or randomly. -->
+  <arg name="fractal" default="true"/>
+
+  <!-- Set frame in which the terrain is visualized -->
+  <arg name="parent_frame"  default="odom"/>
+
+  <!-- Launch script to generate a new Gazebo world. -->
+  <node name="terrain_generator" pkg="anymal_gazebo" type="generate_rough_world.sh" output="screen"
+        args="$(arg sidelength) $(arg density) $(arg smoothness) $(arg tiles) $(arg fractal) $(arg parent_frame)" />
+
+</launch>
+ 

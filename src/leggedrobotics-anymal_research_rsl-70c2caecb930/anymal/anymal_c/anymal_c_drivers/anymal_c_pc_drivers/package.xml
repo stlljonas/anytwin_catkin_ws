@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+<package format="2">
+
+  <name>anymal_c_pc_drivers</name>
+  <version>1.0.0</version>
+  <description>ANYmal C Drivers for all PCs</description>
+
+  <license>Proprietary</license>
+
+  <author email="lisler@anybotics.com">Linus Isler</author>
+  <author email="rdiethelm@anybotics.com">Remo Diethelm</author>
+  <author email="msuetterlin@anybotics.com">Marco Suetterlin</author>
+  <maintainer email="lisler@anybotics.com">Linus Isler</maintainer>
+  <maintainer email="rdiethelm@anybotics.com">Remo Diethelm</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <exec_depend>ros_comm</exec_depend>
+
+  <export>
+    <metapackage />
+  </export>
+
+</package>

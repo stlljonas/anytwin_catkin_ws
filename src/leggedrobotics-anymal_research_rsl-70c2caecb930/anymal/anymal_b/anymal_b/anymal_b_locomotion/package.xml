@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+
+<package format="2">
+
+  <name>anymal_b_locomotion</name>
+  <version>1.0.0</version>
+  <description>ANYmal B Locomotion Package</description>
+
+  <license>Proprietary</license>
+
+  <author email="rdiethelm@anybotics.com">Remo Diethelm</author>
+  <maintainer email="rdiethelm@anybotics.com">Remo Diethelm</maintainer>
+  <maintainer email="fgiraldez@anybotics.com">Francisco Giráldez Gámez</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <exec_depend>actuated_lidar_description</exec_depend>
+  <exec_depend>any_description</exec_depend>
+  <exec_depend>any_topic_tools</exec_depend>
+  <exec_depend>anymal_b</exec_depend>
+  <exec_depend>anymal_basic_actions</exec_depend>
+  <exec_depend>anymal_calibration_actions</exec_depend>
+  <exec_depend>anymal_ctrl_dynamic_gaits_ros</exec_depend>
+  <exec_depend>anymal_ctrl_free_gait_ros</exec_depend>
+  <exec_depend>anymal_ctrl_freeze</exec_depend>
+  <exec_depend>anymal_ctrl_joint_configurations_ros</exec_depend>
+  <exec_depend>anymal_ctrl_test_model</exec_depend>
+  <exec_depend>anymal_debug_actions</exec_depend>
+  <exec_depend>anymal_demo_actions</exec_depend>
+  <exec_depend>anymal_description</exec_depend>
+  <exec_depend>anymal_highlevel_controller</exec_depend>
+  <exec_depend>anymal_logging</exec_depend>
+  <exec_depend>anymal_manipulation_actions</exec_depend>
+  <exec_depend>anymal_motion_control_manager</exec_depend>
+  <exec_depend>anymal_robot_test_actions</exec_depend>
+  <exec_depend>anymal_simple_locomotion_actions</exec_depend>
+  <exec_depend>anymal_state_estimator</exec_depend>
+  <exec_depend>anymal_state_estimator_tsif</exec_depend>
+  <exec_depend>anymal_tf_publisher</exec_depend>
+  <exec_depend>anymal_twist_mux</exec_depend>
+  <exec_depend>deprecated_anymal_ctrl_joint_configurations_ros</exec_depend>
+  <exec_depend>free_gait_action_loader</exec_depend>
+  <exec_depend>free_gait_anymal</exec_depend>
+  <exec_depend>joy_anymal_lowlevel_controller</exec_depend>
+  <exec_depend>joy_interface</exec_depend>
+  <exec_depend>joy_interface_anymal</exec_depend>
+  <exec_depend>joy_manager</exec_depend>
+  <exec_depend>joy_mission</exec_depend>
+  <exec_depend>joy_motion_control</exec_depend>
+  <exec_depend>joy_state_estimation</exec_depend>
+  <exec_depend>pose_tf_publisher</exec_depend>
+  <exec_depend>tf2_ros</exec_depend>
+  <exec_depend>velodyne_description</exec_depend>
+
+</package>

@@ -1,0 +1,238 @@
+{
+  "keys": {},
+  "groups": {
+    "pluginmanager": {
+      "keys": {
+        "running-plugins": {
+          "type": "repr",
+          "repr": "{u'LocoVisualizerPlugin': [1], u'GaitSwitcherPlugin': [1], u'ParametersPlugin': [1], u'rqt_rviz_wrapper/RvizWrapper': [1], u'rqt_joypad/JoypadPlugin': [1]}"
+        }
+      },
+      "groups": {
+        "plugin__LocoVisualizerPlugin__1": {
+          "keys": {},
+          "groups": {
+            "dock_widget__LocoVisualizer": {
+              "keys": {
+                "dockable": {
+                  "type": "repr",
+                  "repr": "True"
+                },
+                "parent": {
+                  "type": "repr",
+                  "repr": "None"
+                },
+                "dock_widget_title": {
+                  "type": "repr",
+                  "repr": "u'Loco Visualizer'"
+                }
+              },
+              "groups": {}
+            }
+          }
+        },
+        "plugin__rqt_rviz_wrapper__RvizWrapper__1": {
+          "keys": {},
+          "groups": {
+            "dock_widget__RvizWrapperWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr",
+                  "repr": "True"
+                },
+                "parent": {
+                  "type": "repr",
+                  "repr": "None"
+                },
+                "dock_widget_title": {
+                  "type": "repr",
+                  "repr": "u'RViz Wrapper'"
+                }
+              },
+              "groups": {}
+            }
+          }
+        },
+        "plugin__AnymalStateVisualizerPlugin__1": {
+          "keys": {},
+          "groups": {
+            "dock_widget__AnymalStateVisualizer": {
+              "keys": {
+                "dockable": {
+                  "type": "repr",
+                  "repr": "u'true'"
+                },
+                "parent": {
+                  "type": "repr",
+                  "repr": "None"
+                },
+                "dock_widget_title": {
+                  "type": "repr",
+                  "repr": "u'Anymal State Visualizer'"
+                }
+              },
+              "groups": {}
+            }
+          }
+        },
+        "plugin__ParametersPlugin__1": {
+          "keys": {},
+          "groups": {
+            "dock_widget__ParametersHandler": {
+              "keys": {
+                "dockable": {
+                  "type": "repr",
+                  "repr": "True"
+                },
+                "parent": {
+                  "type": "repr",
+                  "repr": "None"
+                },
+                "dock_widget_title": {
+                  "type": "repr",
+                  "repr": "u'Parameters'"
+                }
+              },
+              "groups": {}
+            }
+          }
+        },
+        "plugin__rqt_joypad__JoypadPlugin__1": {
+          "keys": {},
+          "groups": {
+            "dock_widget__LocoJoypad": {
+              "keys": {
+                "dockable": {
+                  "type": "repr",
+                  "repr": "True"
+                },
+                "parent": {
+                  "type": "repr",
+                  "repr": "None"
+                },
+                "dock_widget_title": {
+                  "type": "repr",
+                  "repr": "u'Joypad'"
+                }
+              },
+              "groups": {}
+            }
+          }
+        },
+        "plugin__GazeboInterfacePlugin__1": {
+          "keys": {},
+          "groups": {
+            "dock_widget__GazeboInterface": {
+              "keys": {
+                "dockable": {
+                  "type": "repr",
+                  "repr": "u'true'"
+                },
+                "parent": {
+                  "type": "repr",
+                  "repr": "None"
+                },
+                "dock_widget_title": {
+                  "type": "repr",
+                  "repr": "u'Gazebo Controller'"
+                }
+              },
+              "groups": {}
+            }
+          }
+        },
+        "plugin__rqt_joypad__JoypadPlugin__2": {
+          "keys": {},
+          "groups": {
+            "dock_widget__LocoJoypad": {
+              "keys": {
+                "dockable": {
+                  "type": "repr",
+                  "repr": "u'true'"
+                },
+                "parent": {
+                  "type": "repr",
+                  "repr": "None"
+                },
+                "dock_widget_title": {
+                  "type": "repr",
+                  "repr": "u'Joypad'"
+                }
+              },
+              "groups": {}
+            }
+          }
+        },
+        "plugin__GaitSwitcherPlugin__1": {
+          "keys": {},
+          "groups": {
+            "dock_widget__GaitSwitcherUI": {
+              "keys": {
+                "dockable": {
+                  "type": "repr",
+                  "repr": "True"
+                },
+                "parent": {
+                  "type": "repr",
+                  "repr": "None"
+                },
+                "dock_widget_title": {
+                  "type": "repr",
+                  "repr": "u'Gazebo Controller'"
+                }
+              },
+              "groups": {}
+            }
+          }
+        },
+        "plugin__rqt_highlevel_controlmanager__HighLevelControlManagerPlugin__1": {
+          "keys": {},
+          "groups": {
+            "dock_widget__HighLevelControlManagerPlugin": {
+              "keys": {
+                "dockable": {
+                  "type": "repr",
+                  "repr": "u'true'"
+                },
+                "parent": {
+                  "type": "repr",
+                  "repr": "None"
+                },
+                "dock_widget_title": {
+                  "type": "repr",
+                  "repr": "u'Controller'"
+                }
+              },
+              "groups": {}
+            }
+          }
+        }
+      }
+    },
+    "mainwindow": {
+      "keys": {
+        "geometry": {
+          "type": "repr(QByteArray.hex)",
+          "repr(QByteArray.hex)": "QtCore.QByteArray('01d9d0cb00020000000007c1000000180000117f0000059f000007c1000000180000117f0000059f00000001000000000a00')",
+          "pretty-print": "                         "
+        },
+        "state": {
+          "type": "repr(QByteArray.hex)",
+          "repr(QByteArray.hex)": "QtCore.QByteArray('000000ff00000000fd0000000200000002000009bf00000572fc0100000002fc00000000000009bf000006a800fffffffc0200000002fb00000066007200710074005f007200760069007a005f0077007200610070007000650072005f005f005200760069007a0057007200610070007000650072005f005f0031005f005f005200760069007a0057007200610070007000650072005700690064006700650074010000000000000392000001a500fffffffc00000398000001da0000013000fffffffc0100000004fb0000004a0047006100690074005300770069007400630068006500720050006c007500670069006e005f005f0031005f005f004700610069007400530077006900740063006800650072005500490100000000000001d1000001d100fffffffb0000004e007200710074005f006a006f0079007000610064005f005f004a006f00790070006100640050006c007500670069006e005f005f0031005f005f004c006f0063006f004a006f007900700061006401000001d700000327000001a000fffffffb0000004c0050006100720061006d006500740065007200730050006c007500670069006e005f005f0031005f005f0050006100720061006d0065007400650072007300480061006e0064006c0065007201000005040000030f0000017f00fffffffb0000004e004c006f0063006f00560069007300750061006c0069007a006500720050006c007500670069006e005f005f0031005f005f004c006f0063006f00560069007300750061006c0069007a006500720100000819000001a6000001a600fffffffb0000004e007200710074005f006a006f0079007000610064005f005f004a006f00790070006100640050006c007500670069006e005f005f0032005f005f004c006f0063006f004a006f00790070006100640300000ccf0000010500000202000001a000000003000009bf000000a9fc0100000001fb0000005200470061007a00650062006f0049006e00740065007200660061006300650050006c007500670069006e005f005f0031005f005f00470061007a00650062006f0049006e00740065007200660061006300650100000000000004150000000000000000000009bf0000000000000004000000040000000800000008fc00000001000000030000000100000036004d0069006e0069006d0069007a006500640044006f0063006b00570069006400670065007400730054006f006f006c0062006100720000000000ffffffff0000000000000000')",
+          "pretty-print": "                                                                                                      JGaitSwitcherPlugin__1__GaitSwitcherUI          Nrqt_joypad__JoypadPlugin__1__LocoJoypad          LParametersPlugin__1__ParametersHandler          NLocoVisualizerPlugin__1__LocoVisualizer          Nrqt_joypad__JoypadPlugin__2__LocoJoypad                   RGazeboInterfacePlugin__1__GazeboInterface                            6MinimizedDockWidgetsToolbar        "
+        }
+      },
+      "groups": {
+        "toolbar_areas": {
+          "keys": {
+            "MinimizedDockWidgetsToolbar": {
+              "type": "repr",
+              "repr": "8"
+            }
+          },
+          "groups": {}
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+
+<package format="2">
+
+  <name>interaction_marker_plugin_example</name>
+  <version>0.6.0</version>
+  <description>Interactive marker example plugin.</description>
+
+  <license>Proprietary</license>
+
+  <author email="rdiethelm@anybotics.com">Remo Diethelm</author>
+  <maintainer email="rdiethelm@anybotics.com">Remo Diethelm</maintainer>
+  <maintainer email="sbachmann@anybotics.com">Samuel Bachmann</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>std_msgs</depend>
+  <depend>interaction_marker</depend>
+
+  <export>
+    <interaction_marker plugin="${prefix}/interaction_marker_plugin.xml"/>
+  </export>
+
+</package>

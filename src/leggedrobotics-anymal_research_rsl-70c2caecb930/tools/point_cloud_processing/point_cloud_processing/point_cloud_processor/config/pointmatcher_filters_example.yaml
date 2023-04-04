@@ -1,0 +1,6 @@
+- RandomSamplingDataPointsFilter:
+    prob: 0.1
+- MaxDistDataPointsFilter:
+      maxDist: 60.0
+- MaxDensityDataPointsFilter:
+    maxDensity: 8000.0

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+
+<launch>
+
+  <!-- Throttle -->
+  <node ns="throttle" name="pose_in_odom" pkg="topic_tools" type="throttle" args="messages /state_estimator/pose_in_odom 10" output="log" >
+    <param name="lazy" value="true" />
+  </node>
+  <node ns="throttle" name="twist" pkg="topic_tools" type="throttle" args="messages /state_estimator/twist 10" output="log" >
+    <param name="lazy" value="true" />
+  </node>
+  <node ns="throttle" name="contact_force_lf_foot" pkg="topic_tools" type="throttle" args="messages /sensors/contact_force_lf_foot 10" output="log" >
+    <param name="lazy" value="true" />
+  </node>
+  <node ns="throttle" name="contact_force_rf_foot" pkg="topic_tools" type="throttle" args="messages /sensors/contact_force_rf_foot 10" output="log" >
+    <param name="lazy" value="true" />
+  </node>
+  <node ns="throttle" name="contact_force_lh_foot" pkg="topic_tools" type="throttle" args="messages /sensors/contact_force_lh_foot 10" output="log" >
+    <param name="lazy" value="true" />
+  </node>
+  <node ns="throttle" name="contact_force_rh_foot" pkg="topic_tools" type="throttle" args="messages /sensors/contact_force_rh_foot 10" output="log" >
+    <param name="lazy" value="true" />
+  </node>
+  <node ns="throttle" name="imu" pkg="topic_tools" type="throttle" args="messages /sensors/imu 10" output="log" >
+    <param name="lazy" value="true" />
+  </node>
+
+</launch>

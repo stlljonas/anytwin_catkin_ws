@@ -1,0 +1,158 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:macro name="base" params="fix_base:=false
+                                   simulate_depth_camera:=false
+                                   simulate_lidar:=false
+                                   simulate_wide_angle_camera:=false
+                                   version:='c020'
+                                   depth_camera_front_roll:=0.0
+                                   depth_camera_front_pitch:=30.0
+                                   depth_camera_rear_roll:=0.0
+                                   depth_camera_rear_pitch:=30.0
+                                   depth_camera_left_roll:=0.0
+                                   depth_camera_left_pitch:=30.0
+                                   depth_camera_right_roll:=0.0
+                                   depth_camera_right_pitch:=30.0
+                                   imu_model:='xsens'
+                                   imu_roll:=0.0
+                                   imu_pitch:=0.0
+                                   imu_yaw:=90.0
+                                   battery_model:='regular'
+                                   docking_socket:=false
+                                   m_B:=8.1
+                                   B_r_BBcom_x:=-0.021735324742
+                                   B_r_BBcom_y:=-0.001486870654
+                                   B_r_BBcom_z:=0.024282211582">
+    <!-- Inertia parameters for base -->
+    <xacro:property name="B_Ixx_B"            value= "0.037354607412841"/> <!-- [kg * m^2] -->
+    <xacro:property name="B_Iyy_B"            value= "0.746506907990751"/> <!-- [kg * m^2] -->
+    <xacro:property name="B_Izz_B"            value= "0.747061691514209"/> <!-- [kg * m^2] -->
+    <xacro:property name="B_Ixy_B"            value="-0.000656094051170"/> <!-- [kg * m^2] -->
+    <xacro:property name="B_Ixz_B"            value= "0.000186579259650"/> <!-- [kg * m^2] -->
+    <xacro:property name="B_Iyz_B"            value="-0.000230891041262"/> <!-- [kg * m^2] -->
+
+
+    <!-- Attach the robot to the world link if requested -->
+    <xacro:if value="${fix_base}">
+      <gazebo>
+        <joint name="world_joint" type="fixed">
+          <parent>base</parent>
+          <child>world</child>
+        </joint>
+      </gazebo>
+    </xacro:if>
+
+    <!-- Base link -->
+    <link name="base">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh
+            filename="package://anymal_c/urdf/base/base_3_1_1_mesh.dae"
+            scale="${anymal_meshes_scale}"/>
+        </geometry>
+      </visual>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh
+            filename="package://anymal_c/urdf/base/handle/handle_3_1_1_mesh.dae"
+            scale="${anymal_meshes_scale}"/>
+        </geometry>
+      </visual>
+
+      <!-- Shell self filtering -->
+      <self_filter>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <box size="1.05 0.5 0.5"/>
+        </geometry>
+      </self_filter>
+    </link>
+
+    <!-- Fixed joint to add dummy inertia link -->
+    <joint name="base_to_base_inertia" type="fixed">
+      <parent link="base"/>
+      <child link="base_inertia"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+    </joint>
+
+    <!-- Dummy inertia link, because KDL cannot have inertia on the base link -->
+    <link name="base_inertia">
+      <inertial>
+        <origin   xyz="${B_r_BBcom_x} ${B_r_BBcom_y} ${B_r_BBcom_z}"
+                  rpy="0 0 0"/>
+        <mass     value="${m_B}"/>
+        <inertia  ixx="${B_Ixx_B}" ixy="${B_Ixy_B}" ixz="${B_Ixz_B}"
+                  iyy="${B_Iyy_B}" iyz="${B_Iyz_B}" izz="${B_Izz_B}"/>
+      </inertial>
+    </link>
+
+    <!-- describes shell-->
+    <xacro:include filename="$(find anymal_c)/urdf/base/shell/shell_3_0_macro.urdf.xacro"/>
+    <xacro:shell/>
+
+    <!-- describes faces-->
+    <xacro:include filename="$(find anymal_c)/urdf/base/face/face_3_0_macro.urdf.xacro"/>
+    <xacro:face face="front" simulate_depth_camera="${simulate_depth_camera}" simulate_wide_angle_camera="${simulate_wide_angle_camera}" depth_camera_pitch="${depth_camera_front_pitch}" depth_camera_roll="${depth_camera_front_roll}"/>
+    <xacro:face face="rear"  simulate_depth_camera="${simulate_depth_camera}" simulate_wide_angle_camera="${simulate_wide_angle_camera}" depth_camera_pitch="${depth_camera_rear_pitch}" depth_camera_roll="${depth_camera_rear_roll}"/>
+
+    <!-- describes battery-->
+    <xacro:if value="${battery_model == 'travel'}">
+      <xacro:include filename="$(find anymal_c)/urdf/base/battery/travel_battery_3_0_5_macro.urdf.xacro"/>
+    </xacro:if>
+    <xacro:if value="${battery_model == 'regular'}">
+      <xacro:include filename="$(find anymal_c)/urdf/base/battery/battery_3_0_4_macro.urdf.xacro"/>
+    </xacro:if>
+    <xacro:battery/>
+
+    <!-- describes docking socket/hatch-->
+    <xacro:if value="${docking_socket}">
+      <xacro:include filename="$(find anymal_c)/urdf/base/docking_hatch/docking_socket_3_1_1_macro.urdf.xacro"/>
+      <xacro:docking_socket/>
+    </xacro:if>
+    <xacro:unless value="${docking_socket}">
+      <xacro:include filename="$(find anymal_c)/urdf/base/docking_hatch/docking_hatch_cover_3_1_1_macro.urdf.xacro"/>
+      <xacro:docking_hatch_cover/>
+    </xacro:unless>
+
+    <xacro:if value="${imu_model == 'xsens'}">
+      <!-- Xsens Mti -->
+      <xacro:include filename="$(find any_description)/urdf/sensors/imu/xsens_mti/xsens_mti.urdf.xacro"/>
+      <xacro:xsens_mti name="imu" parent="base" update_rate="400" ns="sensors" frame_id="imu_link" topic_name="imu">
+          <origin xyz="0.379624 0.00445 0.0563" rpy="${imu_roll/180*pi} ${imu_pitch/180*pi} ${imu_yaw/180*pi}"/>
+      </xacro:xsens_mti>
+    </xacro:if>
+    <xacro:if value="${imu_model == 'epson'}">
+      <!-- Epson IMU -->
+      <xacro:include filename="$(find any_description)/urdf/sensors/imu/epson/epson.urdf.xacro"/>
+      <xacro:epson name="imu" parent="base" update_rate="400" ns="sensors" frame_id="imu_link" topic_name="imu">
+          <origin xyz="0.24875 0.00835 0.04528" rpy="${imu_roll/180*pi} ${imu_pitch/180*pi} ${imu_yaw/180*pi}"/>
+      </xacro:epson>
+    </xacro:if>
+
+    <!-- Realsense left -->
+    <xacro:include filename="$(find anymal_c)/urdf/base/sensors/depth_camera/realsense_d435_3_1_1.urdf.xacro"/>
+    <xacro:anymal_realsense name="depth_camera_left" parent="base" simulation="${simulate_depth_camera}">
+      <origin xyz="0.0 0.0722 0.0324" rpy="${depth_camera_left_roll/180*pi} ${depth_camera_left_pitch/180*pi} ${pi/2}"/>
+    </xacro:anymal_realsense>
+
+    <!-- Realsense right -->
+    <xacro:anymal_realsense name="depth_camera_right" parent="base" simulation="${simulate_depth_camera}">
+      <origin xyz="0.0 -0.0722 0.0324" rpy="${depth_camera_right_roll/180*pi} ${depth_camera_right_pitch/180*pi} ${-pi/2}"/>
+    </xacro:anymal_realsense>
+
+    <!-- LIDAR -->
+    <xacro:property name="lidar_yaw" value="${-pi/2 if version_ == 'c020' else pi}"/>
+    <xacro:property name="lidar_z" value="${0.0813 if version_ == 'c010' else 0.0735}"/>
+    <xacro:property name="lidar_x" value="${-0.35 if version_ == 'c010' else -0.364}"/>
+    <xacro:include filename="$(find anymal_c)/urdf/base/sensors/lidar/velodyne_3_0.urdf.xacro"/>
+    <xacro:anymal_velodyne name="lidar" parent="base" simulation="${simulate_lidar}" yaw="${lidar_yaw}">
+      <origin xyz="${lidar_x} 0.0 ${lidar_z}" rpy="0 0 0"/>
+    </xacro:anymal_velodyne>
+
+  </xacro:macro>
+
+</robot>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+
+  <!-- Launch the average calculator ROS node -->
+  <include file="$(find average_calculator_ros)/launch/average_calculator_ros.launch"/>
+
+  <!-- Launch the testing counterpart ROS node -->
+  <test pkg="average_calculator_ros" type="test_average_calculator_ros_node" test-name="test_average_calculator_ros" time-limit="100.0"/>
+
+</launch>

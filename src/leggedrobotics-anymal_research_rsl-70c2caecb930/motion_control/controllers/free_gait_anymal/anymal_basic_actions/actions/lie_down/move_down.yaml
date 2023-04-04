@@ -1,0 +1,6 @@
+steps:
+
+ - step:
+    - base_auto:
+       height: 0.07
+       average_velocity: 0.07

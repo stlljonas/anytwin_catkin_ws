@@ -1,0 +1,49 @@
+actions:
+  - action:
+      id: test_com_with_square_up
+      name: Test COM with Square Up
+      file: actions/test_com/test_com_with_square_up.yaml
+      type: combined_yaml
+      description: Test center of mass with series of square ups with decreasing stability safety margin.
+  - action:
+      id: tilt_motion
+      name: Tilt Motion
+      file: actions/tilt_motion.yaml
+      type: yaml
+      description: Tilt motion for depth sensor timing calibration.
+  - action:
+      id: legs_out_front
+      name: Legs Out Front/Back
+      file: actions/legs_out_front.yaml
+      type: yaml
+      description: Move the legs into view of the front/back Realsenses for calibration validation
+  - action:
+      id: legs_out_side
+      name: Legs Out Side
+      file: actions/legs_out_side.yaml
+      type: yaml
+      description: Move the legs into view of the side Realsenses for calibration validation. Intentionally non-symmetric
+  - action:
+        id: rotation
+        name: Roll Pitch and Yaw
+        file: actions/rotation.yaml
+        type: yaml
+        description: Rotate the robot along XYZ axis. [Do square up first].
+  - action:
+      id: translation_x
+      name: Translation in X
+      file: actions/translation_x.yaml
+      type: yaml
+      description: Translate the robot along X axis.
+  - action:
+      id: translation_y
+      name: Translation in Y
+      file: actions/translation_y.yaml
+      type: yaml
+      description: Translate the robot along Y axis.
+  - action:
+      id: translation_z
+      name: Translation in Z
+      file: actions/translation_z.yaml
+      type: yaml
+      description: Translate the robot along Z axis.

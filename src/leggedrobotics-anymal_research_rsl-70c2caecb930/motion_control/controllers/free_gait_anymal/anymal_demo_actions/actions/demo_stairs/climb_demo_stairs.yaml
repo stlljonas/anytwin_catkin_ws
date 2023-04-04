@@ -1,0 +1,578 @@
+adapt_coordinates:
+  - transform:
+      source_frame: <source_frame>
+      target_frame: <target_frame>
+      transform_in_source_frame:
+        position: [<position_x>, <position_y>, <position_z>]
+        orientation: [0.0, 0.0, <orientation_yaw>]
+
+steps:
+
+# The stairs are assumed to start at the origin and the robot at [-0.5, 0.0, 0.0].
+
+# Up: Align hind legs.
+ - step:
+    - base_auto:
+ - step:
+    - base_auto:
+    - footstep:
+       name: LH_LEG
+       average_velocity: <average_foot_velocity>
+       target:
+        frame: <source_frame>
+        position: [-0.6, 0.24, 0.0]
+ - step:
+    - base_auto:
+ - step:
+    - base_auto:
+    - footstep:
+       name: RH_LEG
+       average_velocity: <average_foot_velocity>
+       target:
+        frame: <source_frame>
+        position: [-0.6, -0.24, 0.0]
+
+# Up: Align front legs.
+ - step:
+    - base_auto:
+ - step:
+    - base_auto:
+    - footstep:
+       name: LF_LEG
+       average_velocity: <average_foot_velocity>
+       target:
+        frame: <source_frame>
+        position: [-0.1, 0.24, 0.0]
+ - step:
+    - base_auto:
+ - step:
+    - base_auto:
+    - footstep:
+       name: RF_LEG
+       average_velocity: <average_foot_velocity>
+       target:
+        frame: <source_frame>
+        position: [-0.1, -0.24, 0.0]
+
+# Up: Get hind legs closer.
+ - step:
+    - base_auto:
+ - step:
+    - base_auto:
+    - footstep:
+       name: LH_LEG
+       average_velocity: <average_foot_velocity>
+       target:
+        frame: <source_frame>
+        position: [-0.45, 0.24, 0.0]
+ - step:
+    - base_auto:
+ - step:
+    - base_auto:
+    - footstep:
+       name: RH_LEG
+       average_velocity: <average_foot_velocity>
+       target:
+        frame: <source_frame>
+        position: [-0.45, -0.24, 0.0]
+
+# Up: Front legs on step nr. 1.
+ - step:
+    - base_auto:
+       height: <base_height>
+       support_margin: <support_margin_large>
+ - step:
+    - base_auto:
+       support_margin: <support_margin_large>
+    - footstep:
+       name: LF_LEG
+       average_velocity: <average_foot_velocity>
+       profile_type: square
+       target:
+        frame: <source_frame>
+        position: [0.2, 0.24, 0.17]
+ - step:
+    - base_auto:
+       support_margin: <support_margin_large>
+ - step:
+    - base_auto:
+       support_margin: <support_margin_large>
+    - footstep:
+       name: RF_LEG
+       average_velocity: <average_foot_velocity>
+       profile_type: square
+       target:
+        frame: <source_frame>
+        position: [0.2, -0.24, 0.17]
+
+# Up: Get closer with hind legs.
+ - step:
+    - base_auto:
+       support_margin: <support_margin_large>
+ - step:
+    - base_auto:
+       support_margin: <support_margin_large>
+    - footstep:
+       name: LH_LEG
+       average_velocity: <average_foot_velocity>
+       target:
+        frame: <source_frame>
+        position: [-0.2, 0.24, 0.0]
+ - step:
+    - base_auto:
+       support_margin: <support_margin_large>
+ - step:
+    - base_auto:
+       support_margin: <support_margin_large>
+    - footstep:
+       name: RH_LEG
+       average_velocity: <average_foot_velocity>
+       target:
+        frame: <source_frame>
+        position: [-0.2, -0.24, 0.0]
+
+# Up: Front legs on step nr. 2.
+ - step:
+    - base_auto:
+       support_margin: <support_margin_small>
+       average_linear_velocity: <average_base_linear_velocity>
+       average_angular_velocity: <average_base_angular_velocity>
+ - step:
+    - base_auto:
+       support_margin: <support_margin_small>
+    - footstep:
+       name: LF_LEG
+       average_velocity: <average_foot_velocity_slow>
+       profile_type: square
+       target:
+        frame: <source_frame>
+        position: [0.49, 0.24, 0.34]
+ - step:
+    - base_auto:
+       support_margin: <support_margin_small>
+       average_linear_velocity: <average_base_linear_velocity>
+       average_angular_velocity: <average_base_angular_velocity>
+ - step:
+    - base_auto:
+       support_margin: <support_margin_small>
+    - footstep:
+       name: RF_LEG
+       average_velocity: <average_foot_velocity_slow>
+       profile_type: square
+       target:
+        frame: <source_frame>
+        position: [0.49, -0.34, 0.34]
+
+# Up: Hind legs on nr. 1.
+ - step:
+    - base_auto:
+       support_margin: <support_margin_medium>
+ - step:
+    - base_auto:
+       support_margin: <support_margin_medium>
+    - footstep:
+       name: LH_LEG
+       average_velocity: <average_foot_velocity>
+       profile_type: square
+       target:
+        frame: <source_frame>
+        position: [0.1, 0.15, 0.17]
+ - step:
+    - base_auto:
+       support_margin: <support_margin_small>
+ - step:
+    - base_auto:
+       support_margin: <support_margin_large>
+    - footstep:
+       name: RH_LEG
+       average_velocity: <average_foot_velocity>
+       profile_type: square
+       target:
+        frame: <source_frame>
+        position: [0.1, -0.24, 0.17]
+
+# Up: Front legs on top.
+ - step:
+    - base_auto:
+       support_margin: <support_margin_large>
+       average_linear_velocity: <average_base_linear_velocity>
+       average_angular_velocity: <average_base_angular_velocity>
+ - step:
+    - base_auto:
+       support_margin: <support_margin_small>
+    - footstep:
+       name: LF_LEG
+       average_velocity: <average_foot_velocity_slow>
+       profile_type: square
+       target:
+        frame: <source_frame>
+        position: [0.78, 0.24, 0.51]
+ - step:
+    - base_auto:
+       support_margin: <support_margin_small>
+       average_linear_velocity: <average_base_linear_velocity>
+       average_angular_velocity: <average_base_angular_velocity>
+ - step:
+    - base_auto:
+       support_margin: <support_margin_small>
+    - footstep:
+       name: RF_LEG
+       average_velocity: <average_foot_velocity_slow>
+       profile_type: square
+       target:
+        frame: <source_frame>
+        position: [0.78, -0.34, 0.51]
+
+# Up: Hind legs on nr. 2.
+ - step:
+    - base_auto:
+       support_margin: <support_margin_medium>
+ - step:
+    - base_auto:
+       support_margin: <support_margin_medium>
+    - footstep:
+       name: LH_LEG
+       average_velocity: <average_foot_velocity>
+       profile_type: square
+       target:
+        frame: <source_frame>
+        position: [0.39, 0.15, 0.34]
+ - step:
+    - base_auto:
+       support_margin: <support_margin_medium>
+ - step:
+    - base_auto:
+       support_margin: <support_margin_large>
+    - footstep:
+       name: RH_LEG
+       average_velocity: <average_foot_velocity>
+       profile_type: square
+       target:
+        frame: <source_frame>
+        position: [0.39, -0.24, 0.34]
+
+# Up: Front legs move on top.
+ - step:
+    - base_auto:
+       support_margin: <support_margin_large>
+       average_linear_velocity: <average_base_linear_velocity>
+       average_angular_velocity: <average_base_angular_velocity>
+ - step:
+    - base_auto:
+       support_margin: <support_margin_large>
+    - footstep:
+       name: LF_LEG
+       average_velocity: <average_foot_velocity>
+       target:
+        frame: <source_frame>
+        position: [1.06, 0.24, 0.51]
+ - step:
+    - base_auto:
+       support_margin: <support_margin_large>
+       average_linear_velocity: <average_base_linear_velocity>
+       average_angular_velocity: <average_base_angular_velocity>
+ - step:
+    - base_auto:
+       support_margin: <support_margin_large>
+    - footstep:
+       name: RF_LEG
+       average_velocity: <average_foot_velocity>
+       target:
+        frame: <source_frame>
+        position: [1.06, -0.24, 0.51]
+
+# Up: Hind legs on top.
+ - step:
+    - base_auto:
+       support_margin: <support_margin_large>
+ - step:
+    - base_auto:
+       support_margin: <support_margin_large>
+    - footstep:
+       name: LH_LEG
+       average_velocity: <average_foot_velocity>
+       profile_type: square
+       target:
+        frame: <source_frame>
+        position: [0.68, 0.15, 0.51]
+ - step:
+    - base_auto:
+       support_margin: <support_margin_large>
+ - step:
+    - base_auto:
+       support_margin: <support_margin_large>
+    - footstep:
+       name: RH_LEG
+       average_velocity: <average_foot_velocity_slow>
+       profile_type: square
+       target:
+        frame: <source_frame>
+        position: [0.68, -0.24, 0.51]
+
+################################################################################
+
+# Down: Front legs on nr. 2.
+ - step:
+    - base_auto:
+       support_margin: <support_margin_small>
+       average_linear_velocity: <average_base_linear_velocity>
+       average_angular_velocity: <average_base_angular_velocity>
+ - step:
+    - base_auto:
+       support_margin: <support_margin_small>
+    - footstep:
+       name: LF_LEG
+       average_velocity: <average_foot_velocity>
+       profile_type: square
+       target:
+        frame: <source_frame>
+        position: [1.35, 0.24, 0.34]
+ - step:
+    - base_auto:
+       support_margin: <support_margin_small>
+ - step:
+    - base_auto:
+       support_margin: <support_margin_small>
+    - footstep:
+       name: RF_LEG
+       average_velocity: <average_foot_velocity_slow>
+       profile_type: square
+       target:
+        frame: <source_frame>
+        position: [1.35, -0.15, 0.34]
+
+# Down: Hind legs move on top.
+ - step:
+    - base_auto:
+       support_margin: <support_margin_large>
+ - step:
+    - base_auto:
+       support_margin: <support_margin_large>
+    - footstep:
+       name: LH_LEG
+       average_velocity: <average_foot_velocity_slow>
+       target:
+        frame: <source_frame>
+        position: [0.97, 0.24, 0.51]
+ - step:
+    - base_auto:
+       support_margin: <support_margin_large>
+ - step:
+    - base_auto:
+       support_margin: <support_margin_large>
+    - footstep:
+       name: RH_LEG
+       average_velocity: 0.25
+       target:
+        frame: <source_frame>
+        position: [0.97, -0.24, 0.51]
+
+# Down: Front legs on nr. 1.
+ - step:
+    - base_auto:
+       support_margin: <support_margin_small>
+       average_linear_velocity: <average_base_linear_velocity>
+       average_angular_velocity: <average_base_angular_velocity>
+ - step:
+    - base_auto:
+       support_margin: <support_margin_small>
+    - footstep:
+       name: LF_LEG
+       average_velocity: <average_foot_velocity_slow>
+       profile_type: square
+       target:
+        frame: <source_frame>
+        position: [1.64, 0.24, 0.17]
+ - step:
+    - base_auto:
+       support_margin: <support_margin_small>
+ - step:
+    - base_auto:
+       support_margin: <support_margin_small>
+    - footstep:
+       name: RF_LEG
+       average_velocity: <average_foot_velocity_slow>
+       profile_type: square
+       target:
+        frame: <source_frame>
+        position: [1.64, -0.15, 0.17]
+
+# Down: Hind legs on nr. 2.
+ - step:
+    - base_auto:
+       support_margin: <support_margin_large>
+       average_linear_velocity: <average_base_linear_velocity>
+       average_angular_velocity: <average_base_angular_velocity>
+ - step:
+    - base_auto:
+       support_margin: <support_margin_large>
+    - footstep:
+       name: LH_LEG
+       average_velocity: <average_foot_velocity_slow>
+       profile_type: square
+       target:
+        frame: <source_frame>
+        position: [1.26, 0.24, 0.34]
+ - step:
+    - base_auto:
+       support_margin: <support_margin_large>
+       average_linear_velocity: <average_base_linear_velocity>
+       average_angular_velocity: <average_base_angular_velocity>
+ - step:
+    - base_auto:
+       support_margin: <support_margin_large>
+    - footstep:
+       name: RH_LEG
+       average_velocity: <average_foot_velocity_slow>
+       profile_type: square
+       target:
+        frame: <source_frame>
+        position: [1.26, -0.24, 0.34]
+ - step:
+    - base_auto:
+
+# Down: Front legs on ground.
+ - step:
+    - base_auto:
+       support_margin: <support_margin_small>
+       average_linear_velocity: <average_base_linear_velocity>
+       average_angular_velocity: <average_base_angular_velocity>
+ - step:
+    - base_auto:
+       support_margin: <support_margin_small>
+    - footstep:
+       name: LF_LEG
+       average_velocity: <average_foot_velocity>
+       profile_type: square
+       target:
+        frame: <source_frame>
+        position: [1.94, 0.24, 0.0]
+ - step:
+    - base_auto:
+       support_margin: <support_margin_small>
+       average_linear_velocity: <average_base_linear_velocity>
+       average_angular_velocity: <average_base_angular_velocity>
+ - step:
+    - base_auto:
+       support_margin: <support_margin_small>
+    - footstep:
+       name: RF_LEG
+       average_velocity: <average_foot_velocity_slow>
+       profile_type: square
+       target:
+        frame: <source_frame>
+        position: [1.94, -0.15, 0.0]
+
+# Down: Hind legs on nr. 1.
+ - step:
+    - base_auto:
+       support_margin: <support_margin_large>
+       average_linear_velocity: <average_base_linear_velocity>
+       average_angular_velocity: <average_base_angular_velocity>
+ - step:
+    - base_auto:
+       support_margin: <support_margin_large>
+    - footstep:
+       name: LH_LEG
+       average_velocity: <average_foot_velocity_slow>
+       profile_type: square
+       target:
+        frame: <source_frame>
+        position: [1.55, 0.24, 0.17]
+ - step:
+    - base_auto:
+       support_margin: <support_margin_large>
+       average_linear_velocity: <average_base_linear_velocity>
+       average_angular_velocity: <average_base_angular_velocity>
+ - step:
+    - base_auto:
+       support_margin: <support_margin_large>
+    - footstep:
+       name: RH_LEG
+       average_velocity: <average_foot_velocity_slow>
+       profile_type: square
+       target:
+        frame: <source_frame>
+        position: [1.55, -0.24, 0.17]
+ - step:
+    - base_auto:
+
+# Down: Front legs move on ground.
+ - step:
+    - base_auto:
+       support_margin: <support_margin_small>
+ - step:
+    - base_auto:
+       support_margin: <support_margin_small>
+    - footstep:
+       name: LF_LEG
+       average_velocity: <average_foot_velocity>
+       target:
+        frame: <source_frame>
+        position: [2.24, 0.24, 0.0]
+ - step:
+    - base_auto:
+       support_margin: <support_margin_small>
+ - step:
+    - base_auto:
+       support_margin: <support_margin_small>
+    - footstep:
+       name: RF_LEG
+       average_velocity: <average_foot_velocity_slow>
+       target:
+        frame: <source_frame>
+        position: [2.24, -0.24, 0.0]
+
+# Down: Hind legs on ground.
+ - step:
+    - base_auto:
+       support_margin: <support_margin_large>
+ - step:
+    - base_auto:
+       support_margin: <support_margin_large>
+    - footstep:
+       name: LH_LEG
+       average_velocity: <average_foot_velocity>
+       profile_type: square
+       target:
+        frame: <source_frame>
+        position: [1.84, 0.24, 0.0]
+ - step:
+    - base_auto:
+       support_margin: <support_margin_large>
+       average_linear_velocity: <average_base_linear_velocity>
+       average_angular_velocity: <average_base_angular_velocity>
+ - step:
+    - base_auto:
+       support_margin: <support_margin_large>
+    - footstep:
+       name: RH_LEG
+       average_velocity: <average_foot_velocity_slow>
+       profile_type: square
+       target:
+        frame: <source_frame>
+        position: [1.84, -0.24, 0.0]
+ - step:
+    - base_auto:
+
+# Move Front feet to establish a wider stand.
+ - step:
+    - base_auto:
+ - step:
+    - base_auto:
+    - footstep:
+       name: LF_LEG
+       target:
+        frame: <source_frame>
+        position: [2.44, 0.24, 0.0]
+ - step:
+    - base_auto:
+ - step:
+    - base_auto:
+    - footstep:
+       name: RF_LEG
+       target:
+        frame: <source_frame>
+        position: [2.44, -0.24, 0.0]
+ - step:
+    - base_auto:

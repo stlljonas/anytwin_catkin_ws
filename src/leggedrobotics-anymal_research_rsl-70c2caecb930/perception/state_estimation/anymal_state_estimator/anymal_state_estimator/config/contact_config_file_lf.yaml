@@ -1,0 +1,51 @@
+force_calibrator_lf_foot:
+  use_force_calibrator: true
+  filter:
+    alpha:
+      force: 1.0
+      torque: 1.0
+  outlier_detector:
+    max_mahalanobis_distance:
+      force: 20.0
+      torque: 1000000000000000.0 #1e15
+    lower_threshold:
+      force: -1000.0
+    upper_threshold:
+      force: 1000.0
+    variance:
+      force:
+        x: 200.0
+        y: 200.0
+        z: 200.0
+      torque:
+        x: 1.0
+        y: 1.0
+        z: 1.0
+
+contact_detector_lf_foot:
+  use_kfe_detection: true
+  upper_kfe_threshold: 2.5
+  lower_kfe_threshold: -2.5
+  method_force: zonly
+  method_torque: norm
+  threshold_force_norm: 10.0
+  threshold_force:
+    x: 40.0
+    y: 40.0
+    z: 10.0
+  upper_threshold_force:
+    x: 500.0
+    y: 500.0
+    z: 500.0
+  threshold_torque_norm: 10.0
+  threshold_torque:
+    x: 10.0
+    y: 10.0
+    z: 10.0
+  upper_threshold_torque:
+    x: 500.0
+    y: 500.0
+    z: 500.0
+
+contact_force_lf_foot:
+  use_estimated_force: true

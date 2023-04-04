@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package format="2">
+
+  <name>gtest_tools</name>
+  <version>0.6.0</version>
+
+  <description>Providing tools for gtest unit testing.</description>
+  <maintainer email="ghottiger@anybotics.com">Gabriel Hottiger</maintainer>
+  <maintainer email="pleemann@anybotics.com">Philipp Leemann</maintainer>
+  <author email="ghottiger@anybotics.com">Gabriel Hottiger</author>
+
+  <license>Proprietary</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>gtest</depend>
+
+  <export>
+  </export>
+</package>

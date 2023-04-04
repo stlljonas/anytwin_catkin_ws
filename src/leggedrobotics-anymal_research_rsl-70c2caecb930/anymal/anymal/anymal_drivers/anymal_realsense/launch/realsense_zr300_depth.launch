@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+  <arg name="camera"                          default="realsense_zr300" />
+  <arg name="left"                            default="ir" />
+  <arg name="right"                           default="ir2" />
+  <arg name="manager"                         default="$(arg camera)_depth_nodelet_manager" />
+
+  <node ns="$(arg camera)" pkg="stereo_image_proc" type="stereo_image_proc" name="stereo_image_proc" output="screen">
+    <remap from="left/image_raw" to="$(arg left)/image_raw"/>
+    <remap from="right/image_raw" to="$(arg right)/image_raw"/>
+    <remap from="left/camera_info" to="$(arg left)/camera_info"/>
+    <remap from="right/camera_info" to="$(arg right)/camera_info"/>
+
+    <param name="stereo_algorithm" value="1" />
+    <param name="speckle_size"     value="1000" />
+    <param name="speckle_range"    value="1" />
+    <param name="P1"               value="2000" />
+  </node>
+
+</launch>

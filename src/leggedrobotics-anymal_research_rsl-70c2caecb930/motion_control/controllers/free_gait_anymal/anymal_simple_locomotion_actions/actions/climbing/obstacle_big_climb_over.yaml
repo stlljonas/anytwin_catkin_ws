@@ -1,0 +1,243 @@
+adapt_coordinates:
+  - transform:
+      source_frame: <source_frame>
+      target_frame: <target_frame>
+      transform_in_source_frame:
+        position: [<position_x>, <position_y>, <position_z>]
+        orientation: [0.0, 0.0, <orientation_yaw>]
+
+steps:
+
+ # Square up.
+ - step:
+    - base_auto:
+       height: 0.49
+ - step:
+    - base_auto:
+    - footstep:
+       name: LH_LEG
+       target:
+        frame: <source_frame>
+        position: [-0.32, 0.23, 0.0]
+ - step:
+    - base_auto:
+ - step:
+    - base_auto:
+    - footstep:
+       name: RH_LEG
+       target:
+        frame: <source_frame>
+        position: [-0.32, -0.23, 0.0]
+ - step:
+    - base_auto:
+ - step:
+    - base_auto:
+    - footstep:
+       name: LF_LEG
+       target:
+        frame: <source_frame>
+        position: [0.32, 0.23, 0.0]
+ - step:
+    - base_auto:
+ - step:
+    - base_auto:
+    - footstep:
+       name: RF_LEG
+       target:
+        frame: <source_frame>
+        position: [0.32, -0.23, 0.0]
+
+ # Step closer with hind legs
+ - step:
+    - base_auto:
+ - step:
+    - base_auto:
+    - footstep:
+       name: LH_LEG
+       target:
+        frame: <source_frame>
+        position: [-0.12, 0.23, 0.0]
+ - step:
+    - base_auto:
+ - step:
+    - base_auto:
+    - footstep:
+       name: RH_LEG
+       target:
+        frame: <source_frame>
+        position: [-0.12, -0.23, 0.0]
+ - step:
+    - base_auto:
+ - step:
+    - base_auto:
+    - footstep:
+       name: LH_LEG
+       target:
+        frame: <source_frame>
+        position: [0.1, 0.23, 0.0]
+ - step:
+    - base_auto:
+ - step:
+    - base_auto:
+    - footstep:
+       name: RH_LEG
+       target:
+        frame: <source_frame>
+        position: [0.1, -0.23, 0.0]
+
+ # Step up with fore legs
+ - step:
+    - base_auto:
+ - step:
+    - base_auto:
+        height: 0.44
+    - footstep:
+       name: LF_LEG
+       target:
+        frame: <source_frame>
+        position: [0.58, 0.23, <obstacle_height>]
+ - step:
+    - base_auto:
+ - step:
+    - base_auto:
+    - footstep:
+       name: RF_LEG
+       target:
+        frame: <source_frame>
+        position: [0.58, -0.23, <obstacle_height>]
+ - step:
+    - base_auto:
+ - step:
+    - base_auto:
+        height: 0.44
+    - footstep:
+       name: LH_LEG
+       target:
+        frame: <source_frame>
+        position: [0.32, 0.23, 0.0]
+ - step:
+    - base_auto:
+ - step:
+    - base_auto:
+    - footstep:
+       name: RH_LEG
+       target:
+        frame: <source_frame>
+        position: [0.32, -0.23, 0.0]
+
+# Step donw with fore legs
+ - step:
+    - base_auto:
+ - step:
+    - base_auto:
+    - footstep:
+       name: LF_LEG
+       target:
+        frame: <source_frame>
+        position: [0.85, 0.23, 0.0]
+ - step:
+    - base_auto:
+ - step:
+    - base_auto:
+    - footstep:
+       name: RF_LEG
+       target:
+        frame: <source_frame>
+        position: [0.85, -0.23, 0.0]
+
+# Step up with hind legs
+ - step:
+    - base_auto:
+ - step:
+    - base_auto:
+    - footstep:
+       name: LH_LEG
+       target:
+        frame: <source_frame>
+        position: [0.58, 0.23, <obstacle_height>]
+ - step:
+    - base_auto:
+ - step:
+    - base_auto:
+    - footstep:
+       name: RH_LEG
+       target:
+        frame: <source_frame>
+        position: [0.58, -0.23, <obstacle_height>]
+ - step:
+    - base_auto:
+ - step:
+    - base_auto:
+    - footstep:
+       name: LF_LEG
+       target:
+        frame: <source_frame>
+        position: [1.1, 0.23, 0.0]
+ - step:
+    - base_auto:
+ - step:
+    - base_auto:
+    - footstep:
+       name: RF_LEG
+       target:
+        frame: <source_frame>
+        position: [1.1, -0.23, 0.0]
+ - step:
+    - base_auto:
+ - step:
+    - base_auto:
+    - footstep:
+       name: LF_LEG
+       target:
+        frame: <source_frame>
+        position: [1.3, 0.23, 0.0]
+ - step:
+    - base_auto:
+ - step:
+    - base_auto:
+    - footstep:
+       name: RF_LEG
+       target:
+        frame: <source_frame>
+        position: [1.3, -0.23, 0.0]
+
+# Step off with hind legs.
+ - step:
+    - base_auto:
+ - step:
+    - base_auto:
+        height: 0.44
+    - footstep:
+       name: LH_LEG
+       target:
+        frame: <source_frame>
+        position: [0.85, 0.23, 0.0]
+ - step:
+    - base_auto:
+ - step:
+    - base_auto:
+    - footstep:
+       name: RH_LEG
+       target:
+        frame: <source_frame>
+        position: [0.85, -0.23, 0.0]
+ - step:
+    - base_auto:
+ - step:
+    - base_auto:
+    - footstep:
+       name: LF_LEG
+       target:
+        frame: <source_frame>
+        position: [1.52, 0.23, 0.0]
+ - step:
+    - base_auto:
+ - step:
+    - base_auto:
+    - footstep:
+       name: RF_LEG
+       target:
+        frame: <source_frame>
+        position: [1.52, -0.23, 0.0]
+ - step:
+    - base_auto:

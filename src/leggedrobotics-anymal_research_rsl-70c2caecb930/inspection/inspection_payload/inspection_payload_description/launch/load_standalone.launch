@@ -1,0 +1,28 @@
+<launch>
+
+  <!-- Name of the pantilt head -->
+  <arg name="name" default="inspection_payload"/>
+  <!-- Set true for simulation -->
+  <arg name="simulation" default="true"/>
+  <!-- Name of the robot description parameter -->
+  <arg name="description_name" default="anymal_description"/>
+
+  <rosparam ns="visca_driver_ros" file="$(find visca_driver_ros)/config/tamron_mp1010.yaml" command="load"/>
+  <rosparam ns="visca_driver_ros" file="$(find visca_driver_ros)/config/parameters.yaml" command="load"/>
+
+  <!-- Static transform -->
+  <node pkg="tf2_ros" type="static_transform_publisher"
+        name="map_base_broadcaster" args="0 0 0 0 0 0 1 map base" />
+
+  <!-- Run xacro script to generate pan-tilt head description -->
+  <param name="anymal_description" command="$(find xacro)/xacro
+    '$(find inspection_payload_description)/urdf/inspection_payload_standalone.urdf.xacro'
+    simulation:=$(arg simulation) simulate_zoom_camera:=true simulate_thermal_camera:=true"/>
+
+  <!-- Gazebo -->
+  <include file="$(find inspection_payload_description)/launch/gazebo.launch"/>
+
+  <!-- Robot state publisher -->
+  <include file="$(find inspection_payload_description)/launch/robot_state_publisher.launch" pass_all_args="true"/>
+
+</launch>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+
+<package format="2">
+
+  <name>anymal_caribou_locomotion</name>
+  <version>1.0.0</version>
+  <description>ANYmal Caribou Locomotion Package</description>
+
+  <license>Proprietary</license>
+
+  <author email="rdiethelm@anybotics.com">Remo Diethelm</author>
+  <maintainer email="rdiethelm@anybotics.com">Remo Diethelm</maintainer>
+  <maintainer email="fgiraldez@anybotics.com">Francisco Giráldez Gámez</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <exec_depend>anymal_c_locomotion</exec_depend>
+  <exec_depend>anymal_caribou</exec_depend>
+
+  <export>
+    <metapackage />
+  </export>
+
+</package>

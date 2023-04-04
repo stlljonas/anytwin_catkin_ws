@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+
+  <!-- This launch file shows how to launch ROS nodes with default parameters and some user's
+       custom parameters:
+        * Default parameters are loaded from the file specified by 'default_param_file';
+        * User's overlying parameters file path is specified by 'overlying_param_file', which can
+          be set from the launch file that includes this file.
+
+       The user can overwrite even just a subset of the default parameters. Only parameters
+       contained in 'overlying_param_file' will overwrite the corresponding default ones.
+       This means that if the user does not specify some parameters, the default ones will be
+       loaded. -->
+
+  <!-- Default parameters. Note the usage of 'value', to avoid they can be wrongly changed. -->
+  <arg name="default_param_file"     value="$(find average_calculator_ros)/config/default.yaml"/>
+
+  <!-- User's parameters that can overly default ones: use default ones in case user does not specify them. -->
+  <arg name="overlying_param_file"   default="$(arg default_param_file)" doc="Parameter file overlying parts or all parameters."/>
+
+  <!-- Select where std::cout/printf/ROS/MELO output is routed to: console (screen) or log file (log).
+       Note that std::cerr is always routed to the console. -->
+  <arg name="output"                 default="screen"                    doc="Output target: screen or log."/>
+
+  <!-- Instead of changing the rosconsole verbosity level online using the set_logger_level service,
+       you can override it on startup using such a rosconsole.config file. Note that as your are setting
+       an environment variable, the configuration applies to all the nodes run in your terminal. -->
+  <env name="ROSCONSOLE_CONFIG_FILE" value="$(find average_calculator_ros)/config/rosconsole.config"/>
+
+  <!-- Launch average calculator ROS node. -->
+  <node pkg="average_calculator_ros" type="average_calculator_ros_node" name="average_calculator_ros" output="$(arg output)">
+    <rosparam command="load" file="$(arg default_param_file)"/>
+    <!-- Overlay parameters if user specified them. They must be loaded after default parameters! -->
+    <rosparam command="load" file="$(arg overlying_param_file)"/>
+  </node>
+
+</launch>

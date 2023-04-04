@@ -1,0 +1,9 @@
+<!DOCTYPE RCC><RCC version="1.0">
+  <qresource>
+    <file>images/anybotics.png</file>
+    <file>images/anybotics.ico</file>
+    <file>images/anymal.png</file>
+    <file>images/edit.png</file>
+    <file>images/reset.png</file>
+  </qresource>
+</RCC>

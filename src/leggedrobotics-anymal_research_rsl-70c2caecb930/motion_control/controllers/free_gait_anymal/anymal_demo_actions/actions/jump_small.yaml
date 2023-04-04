@@ -1,0 +1,53 @@
+adapt_coordinates:
+  - transform:
+      source_frame: footprint
+      target_frame: odom
+
+steps:
+
+ # Lift off.
+ - step:
+    - base_trajectory:
+       trajectory:
+        frame: footprint
+        knots:
+         - time: 1.0
+           position: [0.0, 0.0, 0.35]
+           orientation: [0.0, 0.0, 0.0]
+         - time: 1.25
+           position: [0.0, 0.0, 0.55]
+           orientation: [0.0, 0.0, 0.0]
+
+ # Position legs.
+ - step:
+    - end_effector_trajectory:
+       name: LF_LEG
+       trajectory:
+        frame: base
+        knots:
+         - time: 0.4
+           position: [0.33, 0.25, -0.45]
+    - end_effector_trajectory:
+       name: RF_LEG
+       trajectory:
+        frame: base
+        knots:
+         - time: 0.4
+           position: [0.33, -0.25, -0.45]
+    - end_effector_trajectory:
+       name: LH_LEG
+       trajectory:
+        frame: base
+        knots:
+         - time: 0.4
+           position: [-0.33, 0.25, -0.45]
+    - end_effector_trajectory:
+       name: RH_LEG
+       trajectory:
+        frame: base
+        knots:
+         - time: 0.4
+           position: [-0.33, -0.25, -0.45]
+ - step:
+    - base_auto:
+       height: 0.43

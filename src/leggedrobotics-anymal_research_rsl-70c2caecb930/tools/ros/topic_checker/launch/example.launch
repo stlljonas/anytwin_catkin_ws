@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+  
+  <!-- Load ros output level -->
+  <env name="ROSCONSOLE_CONFIG_FILE" value="$(find topic_checker)/config/rosconsole.conf"/>
+
+  <!-- Launch node -->
+  <node name="twist_stamped_checker" pkg="topic_checker" type="twist_stamped_checker" output="screen" launch-prefix="">
+  
+    <!-- Load parameters-->
+    <rosparam command="load" file="$(find topic_checker)/config/example.yaml"/>
+    
+  </node>
+  
+</launch>

@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+
+<package format="2">
+
+  <name>dodgeball_gazebo</name>
+  <version>0.6.0</version>
+  <description>Gazebo plugin for simulating a ball which is thrown at the robot.</description>
+
+  <license>Proprietary</license>
+
+  <author email="cgehring@anybotics.com">Christian Gehring</author>
+  <maintainer email="rdiethelm@anybotics.com">Remo Diethelm</maintainer>
+  <maintainer email="pleemann@anybotics.com">Philipp Leemann</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>eigen</depend>
+  <depend>gazebo_msgs</depend>
+  <depend>gazebo_ros</depend>
+  <depend>geometry_msgs</depend>
+  <depend>glut</depend>
+  <depend>kindr</depend>
+  <depend>libxi-dev</depend>
+  <depend>libxmu-dev</depend>
+  <depend>opengl</depend>
+  <depend>visualization_msgs</depend>
+
+</package>

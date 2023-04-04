@@ -1,0 +1,69 @@
+models:
+ - mesh:
+    name: "Playground"
+    frame_id: "map"
+    mesh_resource: "package://sandbox_data/meshes/playground.stl"
+    position:
+      x: 0.447
+      y: 3.1
+      z: 0.548
+    orientation:
+      w: 0.70710678118
+      x: 0.70710678118
+      y: 0.0
+      z: 0.0
+    scale:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+ - mesh:
+    name: "Slippery Area"
+    frame_id: "map"
+    mesh_resource: "package://sandbox_data/meshes/slippery_area.dae"
+    position:
+      x: -12.5
+      y: 6.5
+      z: -0.5
+    orientation:
+      w: 1.0
+      x: 0.0
+      y: 0.0
+      z: 0.0
+    scale:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+ - mesh:
+    name: "Very Slippery Area"
+    frame_id: "map"
+    mesh_resource: "package://sandbox_data/meshes/very_slippery_area.dae"
+    position:
+      x: -12.5
+      y: 9.5
+      z: -0.5
+    orientation:
+      w: 1.0
+      x: 0.0
+      y: 0.0
+      z: 0.0
+    scale:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+ - mesh:
+    name: "Docking tag"
+    frame_id: "map"
+    mesh_resource: "package://sandbox_data/meshes/apriltag36_11_00000.dae"
+    position:
+      x: 4.0
+      y: -4.0
+      z: 0.001
+    orientation:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+      w: 1.0
+    scale:
+      x: 1.0
+      y: 1.0
+      z: 1.0

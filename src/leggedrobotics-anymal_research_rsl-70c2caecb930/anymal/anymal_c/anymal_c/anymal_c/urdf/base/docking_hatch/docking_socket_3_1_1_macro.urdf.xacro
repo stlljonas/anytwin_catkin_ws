@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:macro name="docking_socket">
+
+    <xacro:property name="Ds_r_Dscom_x"  value= "-0.002"/> <!--  [m] -->
+    <xacro:property name="Ds_r_Dscom_y"  value= "-0.001"/> <!--  [m] -->
+    <xacro:property name="Ds_r_Dscom_z"  value= "0.016"/> <!--  [m] -->
+    <xacro:property name="m_Ds"          value= "0.258"/> <!-- [kg] -->
+    <xacro:property name="Ds_Ixx_Ds"     value= "0.000271667"/> <!-- [kg * m^2] -->
+    <xacro:property name="Ds_Iyy_Ds"     value= "0.000318130"/> <!-- [kg * m^2] -->
+    <xacro:property name="Ds_Izz_Ds"     value= "0.000488865"/> <!-- [kg * m^2] -->
+    <xacro:property name="Ds_Ixy_Ds"     value= "0.000009498"/> <!-- [kg * m^2] -->
+    <xacro:property name="Ds_Ixz_Ds"     value= "0.000001337"/> <!-- [kg * m^2] -->
+    <xacro:property name="Ds_Iyz_Ds"     value= "0.000002760"/> <!-- [kg * m^2] -->
+
+
+    <!-- Fixed joint to add docking  -->
+    <joint name="base_to_docking_socket" type="fixed">
+      <parent link="base"/>
+      <child link="docking_socket"/>
+      <origin xyz="0.343 0.0 -0.07" rpy="0 0 0"/>
+    </joint>
+
+    <!-- Hatch cover link -->
+    <link name="docking_socket">
+      <!--  TODO(fgiraldez): add visual    -->
+      <inertial>
+        <origin   xyz="${Ds_r_Dscom_x} ${Ds_r_Dscom_y} ${Ds_r_Dscom_z}"
+                  rpy="0 0 0"/>
+        <mass     value="${m_Ds}"/>
+        <inertia  ixx="${Ds_Ixx_Ds}" ixy="${Ds_Ixy_Ds}" ixz="${Ds_Ixz_Ds}"
+                  iyy="${Ds_Iyy_Ds}" iyz="${Ds_Iyz_Ds}" izz="${Ds_Izz_Ds}"/>
+      </inertial>
+    </link>
+
+  </xacro:macro>
+
+</robot>

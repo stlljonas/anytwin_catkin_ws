@@ -1,0 +1,50 @@
+anymal_highlevel_controller:
+  controller_manager:
+    controllers:
+      test_calib:
+        emergency_controller: emergency_freeze
+        name: test_calib
+        parameter_package: anymal_c
+        parameter_path: config/non_ros/motion_control
+        plugin_name: anymal_ctrl_test_calib_ros::TestCalibControllerRos
+      test_model:
+        emergency_controller: emergency_freeze
+        name: test_model
+        parameter_package: ''
+        parameter_path: ''
+        plugin_name: anymal_ctrl_test_model::TestModel
+      test_whole_body_control:
+        emergency_controller: emergency_freeze
+        name: test_whole_body_control
+        parameter_package: anymal_c
+        parameter_path: config/non_ros/motion_control/anymal_ctrl_test
+        plugin_name: anymal_ctrl_test_whole_body_control_ros::TestWholeBodyControllerRos
+free_gait_action_loader:
+  free_gait_action_packages:
+    priority_95: anymal_calibration_actions
+interaction_marker:
+  plugin_setup:
+    plugins:
+      40_navigation_manager:
+        parameters:
+          actions:
+            navigate_to_goal:
+              topic: /path_planning_and_following/navigate_to_goal
+              use_spin_thread: true
+            plan_path:
+              topic: /path_planning_and_following/plan_path
+              use_spin_thread: true
+          entry_texts:
+            navigation_goal: Navigate to Goal
+            plan_path: Plan from start to goal
+            plan_path_menu: Plan path
+            plan_path_set_goal: Set goal pose
+            plan_path_set_start: Set start pose
+          navigation_goal:
+            tolerance:
+              rotation: 0.16
+              translation: 0.1
+          pose_frame_id: map
+        type: interaction_marker_plugin_navigation_manager::InteractionMarkerPluginNavigationManager
+rqt_navigation:
+  diagnostic_mode: true

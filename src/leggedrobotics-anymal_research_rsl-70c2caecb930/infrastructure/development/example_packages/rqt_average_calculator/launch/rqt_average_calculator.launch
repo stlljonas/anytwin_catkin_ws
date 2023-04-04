@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+  <node pkg="rqt_average_calculator" type="rqt_average_calculator" name="rqt_average_calculator" output="screen" respawn="false"/>
+</launch>

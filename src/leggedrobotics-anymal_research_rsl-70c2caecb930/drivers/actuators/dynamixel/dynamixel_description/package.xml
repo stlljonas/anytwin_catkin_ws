@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<package>
+  <name>dynamixel_description</name>
+  <version>0.3.0</version>
+  <description>Dynamixel model description</description>
+  <maintainer email="sbachmann@anybotics.com">Samuel Bachmann</maintainer>
+  <maintainer email="rdiethelm@anybotics.com">Remo Diethelm</maintainer>
+  <license>Proprietary</license>
+  <author email="dominic.jud@mavt.ethz.ch">Dominic Jud</author>
+  <buildtool_depend>catkin</buildtool_depend>
+  <run_depend>xacro</run_depend>
+</package>

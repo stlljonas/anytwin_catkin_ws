@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>loco_sea</name>
+  <version>0.6.0</version>
+  <description>The loco_sea package</description>
+  <maintainer email="fgiraldez@anybotics.com">Francisco Giráldez Gámez</maintainer>
+  <maintainer email="avijayan@anybotics.com">Aravind Vijayan</maintainer>
+  <license>Proprietary</license>
+  <url type="website">http://wiki.ros.org/anymal_common</url>
+  <author email="bellicoso@mavt.ethz.ch">Dario Bellicoso</author>
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>loco</depend>
+  <depend>series_elastic_actuator</depend>
+  <depend>std_utils</depend>
+</package>

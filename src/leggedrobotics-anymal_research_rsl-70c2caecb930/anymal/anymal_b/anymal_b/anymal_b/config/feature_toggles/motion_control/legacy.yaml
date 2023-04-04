@@ -1,0 +1,62 @@
+anymal_highlevel_controller:
+  controller_manager:
+    controller_pairs:
+      - controller_pair:
+          controller:
+            is_ros: false
+            name: freeze
+            parameter_package: anymal_b
+            parameter_path: config/non_ros/motion_control
+            plugin_name: Freeze
+          emergency_controller:
+            is_ros: false
+            name: freeze
+            parameter_package: anymal_b
+            parameter_path: config/non_ros/motion_control
+            plugin_name: Freeze
+      - controller_pair:
+          controller:
+            is_ros: true
+            name: joint_configurations
+            parameter_package: anymal_b
+            parameter_path: config/non_ros/motion_control/legacy
+            plugin_name: JointConfigurationsControllerRos
+          emergency_controller:
+            is_ros: false
+            name: freeze
+            parameter_package: anymal_b
+            parameter_path: config/non_ros/motion_control
+            plugin_name: Freeze
+    failproof_controller: Freeze
+  servers:
+    clear_emergency_stop:
+      persistent: false
+      service: clear_emergency_stop
+    emergency_stop:
+      persistent: false
+      service: emergency_stop
+    get_active_controller:
+      persistent: false
+      service: get_active_controller
+    get_available_controllers:
+      persistent: false
+      service: get_available_controllers
+    switch_controller:
+      persistent: false
+      service: switch_controller
+  subscribers:
+    actuator_states:
+      queue_size: 10
+      topic: /sensors/actuator_states
+    command_velocity:
+      latch: false
+      queue_size: 10
+      topic: /twist_mux/twist
+rqt_motion_control:
+  run_deprecated_motion_control: true
+stack_launcher:
+  nodes:
+    anymal_highlevel_controller:
+      roslaunch:
+        node_type: anymal_highlevel_controller_node
+        package: anymal_highlevel_controller

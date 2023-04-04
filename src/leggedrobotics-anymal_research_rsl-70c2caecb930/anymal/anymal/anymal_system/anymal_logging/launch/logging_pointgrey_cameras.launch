@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<launch>
+  <node name="rosbag" pkg="rosbag" type="record" args="
+-o pointgrey_bag
+/tf
+/tf_static/
+/state_estimator/pose_in_map
+/state_estimator/twist
+/state_estimator/anymal_state
+/front_camera/image_raw
+/back_camera/image_raw
+
+rosout" output="screen"></node>
+</launch>

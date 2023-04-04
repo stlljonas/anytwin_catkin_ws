@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+
+<package format="2">
+
+  <name>seabot_gazebo_plugin</name>
+  <version>0.6.0</version>
+  <description>The anybot_gazebo_plugin package</description>
+  <license>Proprietary</license>
+
+  <author email="bellicoso@mavt.ethz.ch">Dario Bellicoso</author>
+  <maintainer email="rdiethelm@anybotics.com">Remo Diethelm</maintainer>
+  <maintainer email="pleemann@anybotics.com">Philipp Leemann</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>cmake_clang_tools</build_depend>
+
+  <depend>any_msgs</depend>
+  <depend>anybot_gazebo_plugin</depend>
+  <depend>cosmo</depend>
+  <depend>cosmo_ros</depend>
+  <depend>message_logger</depend>
+  <depend>robot_utils</depend>
+  <depend>romo_std</depend>
+  <depend>roscpp</depend>
+  <depend>series_elastic_actuator</depend>
+  <depend>series_elastic_actuator_msgs</depend>
+  <depend>series_elastic_actuator_ros</depend>
+  <depend>series_elastic_actuator_sim</depend>
+  <depend>signal_logger</depend>
+  <depend>signal_logger_ros</depend>
+  <depend>std_utils</depend>
+  <depend>urdf</depend>
+  <depend>xacro</depend>
+  
+</package>

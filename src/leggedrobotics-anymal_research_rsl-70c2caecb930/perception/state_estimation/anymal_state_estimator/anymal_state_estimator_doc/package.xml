@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>anymal_state_estimator_doc</name>
+  <version>0.6.0</version>
+  <description>The anymal state estimator documentation package</description>
+  <author email="markus.staeuble@mavt.ethz.ch">Markus Staeuble</author>
+  <maintainer email="mwulf@anybotics.com">Maximilian Wulf</maintainer>
+  <maintainer email="vyuryev@anybotics.com">Valentin Yuryev</maintainer>
+  <license>Proprietary</license>
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>any_state_estimator</depend>
+  <depend>anymal_state_estimator</depend>
+  <depend>anymal_state_estimator_lwf</depend>
+  <depend>anymal_state_estimator_tsif</depend>
+  <build_depend>doxygen</build_depend>
+
+</package>

@@ -1,0 +1,4 @@
+<library path="lib/libanymal_ctrl_dynamic_gaits_plugin">
+  <class type="anymal_ctrl_dynamic_gaits::DynamicGaitsController" base_class_type="robot_control::ControllerInterface">
+  </class>
+</library>

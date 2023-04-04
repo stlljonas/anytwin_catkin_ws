@@ -1,0 +1,118 @@
+anymal_lowlevel_controller:
+  anydrive_setup:
+    anydrives:
+      LF_HFE:
+        configuration:
+          fan:
+            lower_temperature: 5.0
+            upper_temperature: 20.0
+      LF_KFE:
+        configuration:
+          fan:
+            lower_temperature: 5.0
+            upper_temperature: 20.0
+      LH_HFE:
+        configuration:
+          fan:
+            lower_temperature: 5.0
+            upper_temperature: 20.0
+      LH_KFE:
+        configuration:
+          fan:
+            lower_temperature: 5.0
+            upper_temperature: 20.0
+      RF_HFE:
+        configuration:
+          fan:
+            lower_temperature: 5.0
+            upper_temperature: 20.0
+      RF_KFE:
+        configuration:
+          fan:
+            lower_temperature: 5.0
+            upper_temperature: 20.0
+      RH_HFE:
+        configuration:
+          fan:
+            lower_temperature: 5.0
+            upper_temperature: 20.0
+      RH_KFE:
+        configuration:
+          fan:
+            lower_temperature: 5.0
+            upper_temperature: 20.0
+load_anymal_description:
+  custom_parameters:
+    m_B: 8.1
+    B_r_BBcom_x: -0.021735324742
+    B_r_BBcom_y: -0.001486870654
+    B_r_BBcom_z: 0.024282211582
+    version: c020
+wide_angle_camera_front:
+  spinnaker_camera_nodelet:
+    reverse_x: false
+    reverse_y: false
+wide_angle_camera_rear:
+  spinnaker_camera_nodelet:
+    reverse_x: false
+    reverse_y: false
+stack_launcher:
+  stacks:
+    locomotion:
+      nodes:
+        wide_angle_camera_front_image_crop_decimate:
+          name: wide_angle_camera_front_image_crop_decimate
+          enabled: true
+        wide_angle_camera_front_image_debayer:
+          enabled: true
+          name: wide_angle_camera_front_image_debayer
+        wide_angle_camera_front_image_rectifier:
+          enabled: true
+          name: wide_angle_camera_front_image_rectifier
+        wide_angle_camera_front_nodelet_manager:
+          enabled: true
+          name: wide_angle_camera_front_nodelet_manager
+        wide_angle_camera_rear_image_crop_decimate:
+          name: wide_angle_camera_rear_image_crop_decimate
+          enabled: true
+        wide_angle_camera_rear_image_debayer:
+          enabled: true
+          name: wide_angle_camera_rear_image_debayer
+        wide_angle_camera_rear_image_rectifier:
+          enabled: true
+          name: wide_angle_camera_rear_image_rectifier
+        wide_angle_camera_rear_nodelet_manager:
+          enabled: true
+          name: wide_angle_camera_rear_nodelet_manager
+    lpc_drivers:
+      nodes:
+        wide_angle_camera_front_driver:
+          enabled: true
+          name: wide_angle_camera_front_driver
+        wide_angle_camera_rear_driver:
+          enabled: true
+          name: wide_angle_camera_rear_driver
+    navigation:
+      nodes:
+        wide_angle_camera_front_image_crop_decimate:
+          enabled: false
+        wide_angle_camera_front_image_debayer:
+          enabled: false
+        wide_angle_camera_front_image_rectifier:
+          enabled: false
+        wide_angle_camera_front_nodelet_manager:
+          enabled: false
+        wide_angle_camera_rear_image_crop_decimate:
+          enabled: false
+        wide_angle_camera_rear_image_debayer:
+          enabled: false
+        wide_angle_camera_rear_image_rectifier:
+          enabled: false
+        wide_angle_camera_rear_nodelet_manager:
+          enabled: false
+    npc_drivers:
+      nodes:
+        wide_angle_camera_front_driver:
+          enabled: false
+        wide_angle_camera_rear_driver:
+          enabled: false

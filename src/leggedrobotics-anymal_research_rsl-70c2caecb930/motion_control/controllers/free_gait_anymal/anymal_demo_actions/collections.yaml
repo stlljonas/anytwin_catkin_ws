@@ -1,0 +1,11 @@
+collections:
+  - collection:
+     id: demo_actions
+     name: Demo Actions
+     is_sequence: false
+     actions:
+      - dance_here
+      - demo_base_motion
+      - push_ups_three_legged
+      - paw_up_high
+      - paw_down_high

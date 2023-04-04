@@ -1,0 +1,7 @@
+<library path="lib/libpoint_cloud_processor_nodelet">
+  <class name="point_cloud_processor/FilteringAndMergingNodelet" type="point_cloud_processor::PointCloudProcessorNodelet" base_class_type="nodelet::Nodelet">
+    <description>
+      Nodelet for perfoming filtering and merging of range sensor streams.
+    </description>
+  </class>
+</library>

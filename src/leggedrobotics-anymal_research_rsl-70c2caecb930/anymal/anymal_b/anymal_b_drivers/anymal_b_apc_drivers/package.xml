@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+<package format="2">
+
+  <name>anymal_b_apc_drivers</name>
+  <version>1.0.0</version>
+  <description>ANYmal B Application PC Drivers</description>
+
+  <license>Proprietary</license>
+
+  <author email="lisler@anybotics.com">Linus Isler</author>
+  <author email="rdiethelm@anybotics.com">Remo Diethelm</author>
+  <maintainer email="lisler@anybotics.com">Linus Isler</maintainer>
+  <maintainer email="rdiethelm@anybotics.com">Remo Diethelm</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <exec_depend>anymal_b_pc</exec_depend>
+  <exec_depend>kernel_monitor</exec_depend>
+  <exec_depend>rpsm_apc</exec_depend>
+  <exec_depend>system_monitor</exec_depend>
+
+</package>

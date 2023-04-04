@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+
+  <!-- ROBOT ARGUMENTS -->
+  <!-- Set the name of the robot -->
+  <arg name="anymal_name"                          default="anymal"/>
+  <!-- Specify which anymal setup is loaded -->
+  <arg name="anymal_setup"                            default="minimal"/>
+  <!-- Set robot description path -->
+  <arg name="description_file"                        default="$(find anymal_description)/urdf/anymal.urdf.xacro
+                                                               anymal_setup:=$(arg anymal_setup)"/>
+
+  <arg name="run_rviz"                                default="true"/>
+  <!-- rviz configuration -->
+  <arg name="rviz_config_path"                        default="$(find anymal_sim)/config/rviz/anymal.rviz"/>
+  <!-- Path to the RViz world -->
+  <arg name="rviz_world_path"                         default="$(find gazebo_worlds)/rviz/empty.yaml"/>
+  <!-- Enable/disable tf minimal -->
+  <arg name="tf_minimal"                              default="false"/>
+
+  <!-- Name of the robot description parameter -->
+  <arg name="description_name"                      default="anymal_description"/>
+
+  <!-- PARAMETERS -->
+  <!-- Set global simulation parameter -->
+  <param name="/simulation" value="true"/>
+  <param name="/use_sim_time" value="true" />
+
+  <!-- Load robot description -->
+  <include file="$(find anymal_description)/launch/load.launch">
+    <arg name="simulation"       value="true"/>
+    <arg name="perfect_sensors"  value="true"/>
+    <arg name="fixed"            value="false"/>
+    <arg name="description_name" value="$(arg description_name)"/>
+    <arg name="description_file" value="$(arg description_file)"/>
+    <arg name="mesh"             value="true"/>
+  </include>
+
+  <!-- RViz -->
+  <group if="$(arg run_rviz)">
+    <!-- Launch node -->
+    <include file="$(find anymal_rviz_visualization)/launch/rviz.launch">
+      <arg name="rviz_config_path" value="$(arg rviz_config_path)"/>
+      <arg name="rviz_world_path"  value="$(arg rviz_world_path)"/>
+      <arg name="tf_minimal"       value="$(arg tf_minimal)"/>
+    </include>
+  </group>
+
+  <!-- Anymal tf publisher -->
+  <include file="$(find anymal_tf_publisher)/launch/anymal_tf_publisher.launch"/>
+
+  <!-- Anymal joint state publisher -->
+  <include file="$(find anymal_tf_publisher)/launch/anymal_joint_state_publisher.launch" />
+
+</launch>

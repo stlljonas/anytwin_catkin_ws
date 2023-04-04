@@ -1,0 +1,16 @@
+yaml_actions:
+  - action:
+     package: anymal_demo_actions
+     file_path: actions/dance/stomp.yaml
+  - action:
+     package: anymal_demo_actions
+     file_path: actions/dance/three_legged_rolling.yaml
+  - action:
+     package: anymal_demo_actions
+     file_path: actions/dance/twerk.yaml
+  - action:
+     package: anymal_demo_actions
+     file_path: actions/dance/two_leg_dance.yaml
+  - action:
+     package: anymal_demo_actions
+     file_path: actions/dance/celebrate.yaml

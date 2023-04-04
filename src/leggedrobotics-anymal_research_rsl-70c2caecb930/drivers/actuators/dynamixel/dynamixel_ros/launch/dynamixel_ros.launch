@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+  
+  <!-- Default angle [0, 2PI] -->
+  <arg name="default_angle" default="3.14159"/>
+  
+  <!-- Dynamixel ROS driver -->
+  <node name="dynamixel_ros" pkg="dynamixel_ros" type="dynamixel_ros_node" output="screen" respawn="true">
+    <rosparam command="load" file="$(find dynamixel_ros)/conf/dynamixel_ros.yaml"/>
+    <param name="default_angle" value="$(default_angle)"/>
+  </node>
+  
+</launch>

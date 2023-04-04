@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<package format="2">
+
+  <name>anymal_piksi_rtk_gps</name>
+  <version>0.6.0</version>
+  <description>Piksi Multi RTK GPS for ANYmal.</description>
+
+  <license>Proprietary</license>
+
+  <author email="marcot@ethz.ch">Marco Tranzatto</author>
+  <maintainer email="msuetterlin@anybotics.com">Marco Sütterlin</maintainer>
+  <maintainer email="pleemann@anybotics.com">Philipp Leemann</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>piksi_multi_rtk_ros</depend>
+
+</package>

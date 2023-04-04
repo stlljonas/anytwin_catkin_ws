@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- Thigh -->
+  <xacro:property name="T_r_TS_x"      value= "0.0000"/> <!-- [m] -->
+  <xacro:property name="T_r_TS_y"      value= "0.1090"/> <!-- [m] -->
+  <xacro:property name="T_r_TS_z"      value="-0.2500"/> <!-- [m] -->
+  <xacro:property name="T_r_TTcom_x"   value="-0.003897968082"/> <!-- [m] -->
+  <xacro:property name="T_r_TTcom_y"   value= "0.054226618537"/> <!-- [m] -->
+  <xacro:property name="T_r_TTcom_z"   value="-0.214583373795"/> <!-- [m] -->
+  <xacro:property name="m_T"           value= "1.634976467"/> <!-- [kg] -->
+  <xacro:property name="T_Ixx_T"       value= "0.012036794436945"/> <!-- [kg * m^2] -->
+  <xacro:property name="T_Iyy_T"       value= "0.012064363793913"/> <!-- [kg * m^2] -->
+  <xacro:property name="T_Izz_T"       value= "0.002494225748810"/> <!-- [kg * m^2] -->
+  <xacro:property name="T_Ixy_T"       value= "0.000067620652060"/> <!-- [kg * m^2] -->
+  <xacro:property name="T_Ixz_T"       value= "0.000287806340448"/> <!-- [kg * m^2] -->
+  <xacro:property name="T_Iyz_T"       value="-0.001406101312181"/> <!-- [kg * m^2] -->
+  <xacro:property name="collision_x_t" value= "0.08"/> <!-- [m] -->
+  <xacro:property name="collision_y_t" value= "0.04"/> <!-- [m] -->
+  <xacro:property name="collision_r_t" value= "0.06"/> <!-- [m] -->
+  <xacro:property name="collision_l_t" value= "0.12"/> <!-- [m] -->
+
+  <!-- Joint HFE -->
+  <xacro:property name="s_hfe_1" value="9.42"/> <!-- [rad] -->
+  <xacro:property name="s_hfe_2" value="9.42"/> <!-- [rad] -->
+  <xacro:property name="v_hfe" value="15.0"/> <!-- [rad/s] -->
+  <!-- This is the max torque in freeze mode -->
+  <xacro:property name="t_hfe" value="80"/> <!-- [Nm] -->
+  <xacro:property name="d_hfe" value="0.0"/> <!-- [Nms/rad] -->
+  <xacro:property name="f_hfe" value="0.0"/> <!-- [Nm] -->
+  <!-- This is the max torque for control -->
+  <xacro:property name="t_hfe_command" value="40"/> <!-- [Nm] -->
+  <xacro:property name="gear_velocity" value="10"/> <!-- [rad/s] -->
+  <xacro:property name="current" value="10"/> <!-- [A] -->
+
+</robot>

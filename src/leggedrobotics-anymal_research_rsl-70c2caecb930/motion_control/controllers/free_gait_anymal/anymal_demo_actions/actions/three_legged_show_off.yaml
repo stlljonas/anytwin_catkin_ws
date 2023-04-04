@@ -1,0 +1,172 @@
+adapt_coordinates:
+  - transform:
+      source_frame: footprint
+      target_frame: odom
+
+steps:
+
+ # Three legs.
+ - step:
+    - base_auto:
+       height: 0.45
+       support_margin: 0.09
+ - step:
+    - base_auto:
+    - end_effector_target:
+       name: RH_LEG
+       ignore_contact: true
+       target_position:
+        frame: footprint
+        position: [-0.39, -0.24, 0.20]
+
+ # Foot motion.
+ - step: &step_foot_motion
+    - end_effector_trajectory:
+       name: RH_LEG
+       ignore_contact: true
+       ignore_for_pose_adaptation: true
+       trajectory:
+        frame: footprint
+        knots:
+         - time: 1.0
+           position: [-0.39, -0.34, 0.2]
+         - time: 2.0
+           position: [-0.39, -0.34, 0.35]
+         - time: 3.0
+           position: [-0.39, -0.14, 0.35]
+         - time: 4.0
+           position: [-0.39, -0.24, 0.2]
+         - time: 5.0
+           position: [-0.39, -0.34, 0.2]
+         - time: 6.0
+           position: [-0.39, -0.34, 0.35]
+         - time: 7.0
+           position: [-0.39, -0.14, 0.35]
+         - time: 8.0
+           position: [-0.39, -0.24, 0.2]
+
+ # Base motion.
+ - step:
+    - base_trajectory:
+       trajectory:
+        frame: footprint
+        knots:
+         - time: 1.0
+           position: [0.06, 0.1, 0.42]
+           orientation: [0.0, deg(-10), deg(-10)]
+         - time: 2.0
+           position: [0.06, 0.1, 0.42]
+           orientation: [0.0, deg(-10), deg(5)]
+         - time: 3.0
+           position: [0.06, 0.1, 0.48]
+           orientation: [0.0, deg(10), deg(10)]
+         - time: 4.0
+           position: [0.06, 0.1, 0.48]
+           orientation: [0.0, deg(10), deg(-10)]
+         - time: 5.0
+           position: [0.06, 0.1, 0.42]
+           orientation: [0.0, deg(-10), deg(-10)]
+         - time: 6.0
+           position: [0.06, 0.1, 0.42]
+           orientation: [0.0, deg(-10), deg(5)]
+         - time: 7.0
+           position: [0.06, 0.1, 0.48]
+           orientation: [0.0, deg(10), deg(10)]
+         - time: 8.0
+           position: [0.06, 0.1, 0.48]
+           orientation: [0.0, deg(10), deg(-10)]
+         - time: 9.0
+           position: [0.06, 0.1, 0.48]
+           orientation: [0.0, 0.0, 0.0]
+    - end_effector_target:
+       name: RH_LEG
+       ignore_contact: true
+       ignore_for_pose_adaptation: true
+       target_position:
+        frame: footprint
+        position: [-0.39, -0.24, 0.20]
+
+ # Push ups.
+ - step: &step_down
+    - base_auto:
+       height: 0.38
+       support_margin: 0.11
+       average_linear_velocity: 0.2
+       ignore_timing_of_leg_motion: true
+    - end_effector_target:
+       name: RH_LEG
+       ignore_contact: true
+       ignore_for_pose_adaptation: true
+       target_position:
+        frame: footprint
+        position: [-0.39, -0.24, 0.20]
+ - step: &step_up
+    - base_auto:
+       height: 0.53
+       support_margin: 0.11
+       average_linear_velocity: 0.2
+       ignore_timing_of_leg_motion: true
+    - end_effector_target:
+       name: RH_LEG
+       ignore_contact: true
+       ignore_for_pose_adaptation: true
+       target_position:
+        frame: footprint
+        position: [-0.39, -0.24, 0.20]
+
+ - step: *step_down
+ - step: *step_up
+ - step: *step_down
+ - step: *step_up
+ - step: *step_down
+ - step: *step_up
+
+ # Combined.
+ - step: &step_down_with_foot
+    - base_auto:
+       height: 0.38
+       support_margin: 0.11
+       average_linear_velocity: 0.2
+       ignore_timing_of_leg_motion: true
+    - end_effector_target:
+       name: RH_LEG
+       ignore_contact: true
+       ignore_for_pose_adaptation: true
+       average_velocity: 0.28
+       target_position:
+        frame: footprint
+        position: [-0.39, -0.1, 0.20]
+ - step: &step_up_with_foot
+    - base_auto:
+       height: 0.53
+       support_margin: 0.11
+       average_linear_velocity: 0.2
+       ignore_timing_of_leg_motion: true
+    - end_effector_target:
+       name: RH_LEG
+       ignore_contact: true
+       ignore_for_pose_adaptation: true
+       average_velocity: 0.28
+       target_position:
+        frame: footprint
+        position: [-0.39, -0.35, 0.20]
+
+ - step: *step_down_with_foot
+ - step: *step_up_with_foot
+ - step: *step_down_with_foot
+ - step: *step_up_with_foot
+ - step: *step_down_with_foot
+ - step: *step_up_with_foot
+
+ - step:
+    - base_auto:
+    - footstep:
+       name: RH_LEG
+       ignore_contact: false
+       profile_type: straight
+       target:
+        frame: footprint
+        position: [-0.32, -0.24, 0.0]
+
+ - step:
+    - base_auto:

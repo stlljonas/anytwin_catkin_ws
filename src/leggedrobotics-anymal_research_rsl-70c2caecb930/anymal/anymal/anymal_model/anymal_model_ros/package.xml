@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+
+<package format="2">
+
+  <name>anymal_model_ros</name>
+  <version>0.6.0</version>
+  <description>ROS conversions for anymal_model classes.</description>
+
+  <license>Proprietary</license>
+  <author email="pfankhauser@anybotics.com">Peter Fankhauser</author>
+  <maintainer email="fgiraldez@anybotics.com">Francisco Giráldez Gámez</maintainer>
+  <maintainer email="rdiethelm@anybotics.com">Remo Diethelm</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>cmake_clang_tools</build_depend>
+
+  <depend>any_measurements_ros</depend>
+  <depend>anymal_description</depend>
+  <depend>anymal_model</depend>
+  <depend>anymal_msgs</depend>
+  <depend>kindr_ros</depend>
+  <depend>param_io</depend>
+  <depend>robot_utils_ros</depend>
+  <depend>romo</depend>
+  <depend>series_elastic_actuator_msgs</depend>
+  <depend>series_elastic_actuator_ros</depend>
+  <depend>std_utils</depend>
+
+</package>

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>rpsm_apc</name>
+  <version>0.3.0</version>
+  <description>The rpsm_lpc package</description>
+  <maintainer email="msuetterlin@anybotics.com">Marco Sütterlin</maintainer>
+  <maintainer email="pleemann@anybotics.com">Philipp Leemann</maintainer>
+  <license>Proprietary</license>
+  <author email="cgehring@anybotics.com">Christian Gehring</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>any_msgs</depend>
+  <depend>any_node</depend>
+  <depend>std_srvs</depend>
+</package>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+
+  <!-- Name of the ghost -->
+  <arg name="name" default="ghost"/>
+  <!-- Name of the robot description parameter -->
+  <arg name="description_name" default="anymal_description"/>
+  <!-- Namespace to run the nodes in -->
+  <arg name="ns" default="/$(arg name)"/>
+  <!-- Publish frequency -->
+  <arg name="publish_frequency" default="30"/>
+  <!-- Name of the anymal state -->
+  <arg name="anymal_state_name" default="anymal_state"/>
+
+  <!-- Publish base TF -->
+  <node ns="$(arg ns)" name="$(arg name)_tf_publisher" pkg="anymal_tf_publisher" type="anymal_tf_publisher_node" output="screen" respawn="true">
+    <param name="subscribers/anymal_state/topic"      value="$(arg ns)/$(arg anymal_state_name)"/>
+    <param name="subscribers/anymal_state/queue_size" value="10"/>
+    <param name="subscribers/anymal_state/latch"      value="false"/>    
+    <param name="publishers/pose/topic"                  value="$(arg ns)/pose"/>
+    <param name="publishers/pose/queue_size"             value="10"/>
+    <param name="publishers/pose/latch"                  value="false"/>
+    <param name="publishers/joint_state/topic"           value="$(arg ns)/joint_states"/>
+    <param name="publishers/joint_state/queue_size"      value="10"/>
+    <param name="publishers/joint_state/latch"           value="false"/>
+    <param name="tf_prefix"                              value="$(arg ns)"/>
+    <param name="base_frame_id"                          value="base"/>
+    <param name="odom_frame_id"                          value="odom"/>
+    <param name="ignore_state"                           value="true"/>
+    <param name="publish_map_transforms"                 value="false"/>
+    <param name="publish_frequency"                      value="$(arg publish_frequency)"/>
+    <param name="robot_description"                      value="$(arg description_name)"/>
+  </node>
+
+</launch>

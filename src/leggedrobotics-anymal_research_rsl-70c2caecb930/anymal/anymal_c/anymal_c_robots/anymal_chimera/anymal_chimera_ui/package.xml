@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+
+<package format="2">
+
+  <name>anymal_chimera_ui</name>
+  <version>1.0.0</version>
+  <description>ANYmal Chimera User Interface Package</description>
+
+  <license>Proprietary</license>
+
+  <author email="rdiethelm@anybotics.com">Remo Diethelm</author>
+  <maintainer email="rdiethelm@anybotics.com">Remo Diethelm</maintainer>
+  <maintainer email="pleemann@anybotics.com">Philipp Leemann</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <exec_depend>anymal_c_ui</exec_depend>
+  <exec_depend>anymal_chimera</exec_depend>
+
+  <export>
+    <metapackage />
+  </export>
+
+</package>

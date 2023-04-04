@@ -1,0 +1,18 @@
+<launch>
+
+  <env name="ROSCONSOLE_CONFIG_FILE" value="$(find depth_sensor_tilt_calibration)/launch/custom_rosconsole.conf"/>
+
+  <arg name="suffix"        default="_front"                                        doc="Select the Depth Camera to calibrate: _front, _rear, _left or _right."/>
+  <arg name="camera_name"   default="depth_camera$(arg suffix)"                     doc="Name of the selected camera."/>
+  <arg name="topic"         default="/depth_camera$(arg suffix)/depth/color/points" doc="Topic of the Depth Camera point cloud."/>
+  <arg name="tilting_frame" default="$(arg camera_name)_camera"              doc="TF frame of the Depth Camera which is tilted."/>
+
+  <node pkg="depth_sensor_tilt_calibration" type="depth_sensor_tilt_calibration" name="depth_sensor_tilt_calibration" output="screen">
+    <param name="topic"               value="$(arg topic)" />
+    <param name="tilting_frame"       value="$(arg tilting_frame)" />
+    <param name="camera_name"         value="$(arg camera_name)" />
+    <param name="number_of_snapshots" value="10" />
+    <param name="distance_threshold"  value="0.01" />
+  </node>
+
+</launch>

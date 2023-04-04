@@ -1,0 +1,11 @@
+# Controllers for the high-level controller
+controller_manager:
+  failproof_controller: "Freeze"
+  controller_pairs:
+    - controller_pair:
+        controller:
+          plugin_name:              "Freeze"
+          name:                     "freeze"
+          is_ros:                   false
+          parameter_package:        ""
+          parameter_path:           ""

@@ -1,0 +1,17 @@
+<library path="lib/librqt_logo">
+  <class name="rqt_logo/LogoPlugin" type="rqt_logo::LogoPlugin" base_class_type="rqt_gui_cpp::Plugin">
+    <description>
+      A GUI plugin to show a logo.
+    </description>
+    <qtgui>
+      <group>
+        <label>Any</label>
+        <icon type="theme">folder</icon>
+        <statustip>Plugins related to any.</statustip>
+      </group>
+      <label>Logo</label>
+      <icon type="theme">image-x-generic</icon>
+      <statustip>A GUI plugin to display a logo.</statustip>
+    </qtgui>
+  </class>
+</library>

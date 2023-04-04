@@ -1,0 +1,50 @@
+# Hints:
+# - doubles must have a decimal point for XmlRpc
+# - timeouts can be set to infinity with 0.0
+
+subscribers:
+  input:
+    topic:                           /twist_stamped_mux/output
+    queue_size:                      1
+    max_timeout:                     10.0
+  checks:
+    - topic:                         /traversability_checker/is_ok
+      queue_size:                    1
+      max_timeout:                   0.0
+    - topic:                         /gas_checker/is_ok
+      queue_size:                    1
+      max_timeout:                   0.0
+
+publishers:
+  output:
+    topic:                           output
+    queue_size:                      1
+    latch:                           true
+
+servers:
+  toggle_checking:                   toggle_checking
+
+# if a check fails, a backup message can be published:
+check_fail_behavior:
+  publish_backup_message:            true  # if true publish a backup message if a check fails
+  use_last_valid_message:            false # if true use last valid input message as backup, otherwise use message specified below
+  use_last_valid_stamp:              false # if true use the stamp of the last valid input message, otherwise use the current time
+  publish_in_callback:               true  # if true publish in input callback, otherwise in separate timer callback
+  publish_timer_frequency:           10.0  # publish timer frequency, only used if publish_in_callback is false
+  backup_message:                          # backup message, only used if use_last_valid_message is false (stamp will be overwritten)
+    header:
+      stamp:
+        sec:                         0
+        nsec:                        0
+      seq:                           0
+      frame_id:                      base
+    twist:
+      linear:
+        x:                           1.0
+        y:                           2.0
+        z:                           3.0
+      angular:
+        x:                           4.0
+        y:                           5.0
+        z:                           6.0
+

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<package>
+  <name>libdynamixel</name>
+  <version>0.3.0</version>
+  <description>Dynamixel Library</description>
+  <maintainer email="rdiethelm@anybotics.com">Remo Diethelm</maintainer>
+  <maintainer email="sbachmann@anybotics.com">Samuel Bachmann</maintainer>
+  <license>BSD</license>
+  <author email="jerome.maye@mavt.ethz.ch">Jerome Maye</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+</package>

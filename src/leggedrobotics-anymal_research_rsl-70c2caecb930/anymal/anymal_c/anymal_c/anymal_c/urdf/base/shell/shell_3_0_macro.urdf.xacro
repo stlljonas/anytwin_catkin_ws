@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:macro name="shell">
+
+    <xacro:property name="B_r_BBscom_x"        value= "0.001601658696"/> <!--  [m] -->
+    <xacro:property name="B_r_BBscom_y"        value= "0.000004994078"/> <!--  [m] -->
+    <xacro:property name="B_r_BBscom_z"        value="-0.053989505466"/> <!--  [m] -->
+    <xacro:property name="m_Bs"                value= "1.268141902"/> <!-- [kg] -->
+    <xacro:property name="B_Ixx_Bs"            value= "0.013532219591191"/> <!-- [kg * m^2] -->
+    <xacro:property name="B_Iyy_Bs"            value= "0.069643037356179"/> <!-- [kg * m^2] -->
+    <xacro:property name="B_Izz_Bs"            value= "0.073543214169525"/> <!-- [kg * m^2] -->
+    <xacro:property name="B_Ixy_Bs"            value="-0.000004331264849"/> <!-- [kg * m^2] -->
+    <xacro:property name="B_Ixz_Bs"            value= "0.000309123980027"/> <!-- [kg * m^2] -->
+    <xacro:property name="B_Iyz_Bs"            value="-0.000000570632185"/> <!-- [kg * m^2] -->
+    <xacro:property name="collision_box_l"     value="0.58"/> <!-- [m] --> <!-- measured -->
+    <xacro:property name="collision_box_w"     value="0.28"/> <!-- [m] --> <!-- measured -->
+    <xacro:property name="collision_box_d"     value="0.18"/> <!-- [m] --> <!-- measured -->
+
+    <!-- Fixed joint base shell -->
+    <joint name="base_shell" type="fixed">
+      <parent link="base"/>
+      <child link="shell"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+    </joint>
+
+    <!-- Shell link -->
+    <link name="shell">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh
+            filename="package://anymal_c/urdf/base/shell/bottom_shell_3_1_1_mesh.dae"
+            scale="1.0 1.0 1.0"/>
+        </geometry>
+      </visual>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh
+            filename="package://anymal_c/urdf/base/shell/top_shell_3_1_1_mesh.dae"
+            scale="1.0 1.0 1.0"/>
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <box size="${collision_box_l} ${0.5 * collision_box_w} ${collision_box_d}"/>
+        </geometry>
+      </collision>
+      <collision>
+        <origin xyz="${0.375 * collision_box_l} ${0.25 * collision_box_w} 0" rpy="0 ${0.5*pi} 0"/>
+        <geometry>
+          <cylinder radius="${0.5 * collision_box_d}" length="${0.25 * collision_box_l}"/>
+        </geometry>
+      </collision>
+      <collision>
+        <origin xyz="${-0.375 * collision_box_l} ${0.25 * collision_box_w} 0" rpy="0 ${0.5*pi} 0"/>
+        <geometry>
+          <cylinder radius="${0.5 * collision_box_d}" length="${0.25 * collision_box_l}"/>
+        </geometry>
+      </collision>
+      <collision>
+        <origin xyz="${0.375 * collision_box_l} ${-0.25 * collision_box_w} 0" rpy="0 ${0.5*pi} 0"/>
+        <geometry>
+          <cylinder radius="${0.5 * collision_box_d}" length="${0.25 * collision_box_l}"/>
+        </geometry>
+      </collision>
+      <collision>
+        <origin xyz="${-0.375 * collision_box_l} ${-0.25 * collision_box_w} 0" rpy="0 ${0.5*pi} 0"/>
+        <geometry>
+          <cylinder radius="${0.5 * collision_box_d}" length="${0.25 * collision_box_l}"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <origin   xyz="${B_r_BBscom_x} ${B_r_BBscom_y} ${B_r_BBscom_z}"
+                  rpy="0 0 0"/>
+        <mass     value="${m_Bs}"/>
+        <inertia  ixx="${B_Ixx_Bs}" ixy="${B_Ixy_Bs}" ixz="${B_Ixz_Bs}"
+                  iyy="${B_Iyy_Bs}" iyz="${B_Iyz_Bs}" izz="${B_Izz_Bs}"/>
+      </inertial>    
+      <!-- Shell self filtering -->
+      <self_filter>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <box size="1.05 0.5 0.25"/>
+        </geometry>
+      </self_filter>
+    </link>
+  </xacro:macro>
+
+</robot>

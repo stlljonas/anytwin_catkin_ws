@@ -1,0 +1,33 @@
+adapt_coordinates:
+  - transform:
+      source_frame: footprint
+      target_frame: odom
+
+steps:
+
+ - step:
+    - base_auto:
+       support_margin: 0.1
+
+ - step:
+   - joint_trajectory:
+      name: RF_LEG
+      ignore_contact: true
+      trajectory:
+       joint_names: [HAA, HFE, KFE]
+       knots:
+         - time: 1.8
+           positions: [deg(0), deg(45), deg(-90)]
+
+ - step:
+    - base_auto:
+    - footstep:
+       name: RF_LEG
+       ignore_contact: false
+       profile_type: straight
+       target:
+        frame: base
+        position: [0.34, -0.26, -0.5]
+
+ - step:
+    - base_auto:

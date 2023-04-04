@@ -1,0 +1,13 @@
+controlmanager:
+  service:
+    switch_controller: "/anymal_highlevel_controller/switch_controller"
+    switch_lowlevel_controller: "/anymal_lowlevel_controller/go_to_state"
+    get_available_controllers: "/anymal_highlevel_controller/get_available_controllers"
+    emergency_stop: "/anymal_highlevel_controller/emergency_stop"
+    clear_emergency_stop: "/anymal_highlevel_controller/clear_emergency_stop"
+    state_estimator_reset: "/state_estimator/reset"
+    state_estimator_reset_here: "/state_estimator/reset_here"
+    calibrate_feet: "/state_estimator/calibrate_forces"
+  topic:
+    active_controller: "/anymal_highlevel_controller/notify_active_controller"
+    controller_manager_state: "/anymal_highlevel_controller/notify_controller_manager_state"

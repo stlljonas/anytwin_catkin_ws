@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>anymal_ctrl_dynamic_gaits_ros</name>
+  <version>0.4.0</version>
+  <description>The anymal_ctrl_dynamic_gaits_ros package</description>
+  <maintainer email="fgiraldez@anybotics.com">Francisco Giráldez Gámez</maintainer>
+  <maintainer email="avijayan@anybotics.com">Aravind Vijayan</maintainer>
+  <license>Proprietary</license>
+  <author email="bellicoso@mavt.ethz.ch">Dario Bellicoso</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>loco_ros_anymal</depend>
+  <depend>anymal_ctrl_dynamic_gaits</depend>
+  <depend>robot_utils</depend>
+  <depend>tf</depend>
+  <depend>anymal_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>visualization_msgs</depend>
+  <depend>any_msgs</depend>
+  <depend>pluginlib</depend>
+  <depend>robot_control</depend>
+  <depend>message_logger</depend>
+  <depend>motion_generation_msgs</depend>
+  <depend>motion_generation_ros</depend>
+  <depend>elevation_map_processing</depend>
+  <depend>terrain_sensing</depend>
+
+  <export>
+    <robot_control plugin="${prefix}/robot_control_plugin.xml" />
+  </export>
+</package>

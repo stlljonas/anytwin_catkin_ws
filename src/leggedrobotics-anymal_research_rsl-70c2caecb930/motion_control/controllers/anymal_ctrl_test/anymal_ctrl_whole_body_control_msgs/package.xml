@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<package format="2">
+  <name>anymal_ctrl_test_whole_body_control_msgs</name>
+  <version>0.1.0</version>
+  <description>The anymal_ctrl_test_whole_body_control_msgs package</description>
+
+  <license>Proprietary</license>
+  <maintainer email="fgiraldez@anybotics.com">Francisco Giraldez Gamez</maintainer>
+  <maintainer email="avijayan@anybotics.com">Aravind Vijayan</maintainer>
+  <author email="fgiraldez@anybotics.com">Francisco Giraldez Gamez</author>
+
+  <!-- Build tool dependency -->
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <!-- Catkin dependencies for building and executing -->
+  <depend>message_generation</depend>
+  <depend>message_runtime</depend>
+  <depend>geometry_msgs</depend>
+
+</package>

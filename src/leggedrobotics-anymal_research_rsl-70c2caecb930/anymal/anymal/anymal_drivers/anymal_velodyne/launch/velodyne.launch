@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+
+  <!-- Name of the velodyne -->
+  <arg name="name"                    default="velodyne"/>
+  <arg name="namespace"               default="velodyne"/>
+  <!-- ID of the robot frame -->
+  <arg name="robot_frame_id"          default="base"/>
+  <!-- Velodyne driver arguments -->
+  <arg name="calibration"             default="$(find anymal_velodyne)/calib/VLP16db_example.yaml"/>
+  <arg name="device_ip"               default=""/>
+  <arg name="frame_id"                default="$(arg name)"/>
+  <arg name="manager"                 default="$(arg name)_nodelet_manager"/>
+  <arg name="max_range"               default="130.0"/>
+  <arg name="min_range"               default="0.4"/>
+  <arg name="pcap"                    default=""/>
+  <arg name="port"                    default="2368"/>
+  <arg name="read_fast"               default="false"/>
+  <arg name="read_once"               default="false"/>
+  <arg name="repeat_delay"            default="0.0"/>
+  <arg name="rpm"                     default="600.0"/>
+  <arg name="laserscan_ring"          default="-1"/>
+  <arg name="laserscan_resolution"    default="0.007"/>
+
+  <!-- Velodyne nodelet manager -->
+  <node ns="$(arg namespace)" name="nodelet_manager" pkg="nodelet" type="nodelet" args="manager" output="screen"/>
+
+  <remap from="/velodyne_points" to="/velodyne/point_cloud"/>
+
+  <!-- Velodyne driver -->
+  <include file="$(find velodyne_pointcloud)/launch/VLP16_points.launch">
+    <arg name="calibration"          value="$(arg calibration)"/>
+    <arg name="device_ip"            value="$(arg device_ip)"/>
+    <arg name="frame_id"             value="$(arg frame_id)"/>
+    <arg name="manager"              value="$(arg manager)"/>
+    <arg name="max_range"            value="$(arg max_range)"/>
+    <arg name="min_range"            value="$(arg min_range)"/>
+    <arg name="pcap"                 value="$(arg pcap)"/>
+    <arg name="port"                 value="$(arg port)"/>
+    <arg name="read_fast"            value="$(arg read_fast)"/>
+    <arg name="read_once"            value="$(arg read_once)"/>
+    <arg name="repeat_delay"         value="$(arg repeat_delay)"/>
+    <arg name="rpm"                  value="$(arg rpm)"/>
+    <arg name="laserscan_ring"       value="$(arg laserscan_ring)"/>
+    <arg name="laserscan_resolution" value="$(arg laserscan_resolution)"/>
+  </include>
+
+</launch>

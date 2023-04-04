@@ -1,0 +1,31 @@
+#request fields
+bool battery
+
+bool rail24V
+bool rail15V
+bool rail12V
+bool rail5V
+
+bool leg0
+bool leg1
+bool leg2
+bool leg3
+
+bool aux0
+bool aux1
+---
+#response fields
+bool battery
+
+bool rail24V
+bool rail15V
+bool rail12V
+bool rail5V
+
+bool leg0
+bool leg1
+bool leg2
+bool leg3
+
+bool aux0
+bool aux1

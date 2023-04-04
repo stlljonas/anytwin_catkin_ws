@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>hri_user_interface</name>
+  <version>0.6.0</version>
+  <description>Package providing the HRI VSC/SRCS user interface</description>
+  <maintainer email="msuetterlin@anybotics.com">Marco Sütterlin</maintainer>
+  <maintainer email="lisler@anybotics.com">Linus Isler</maintainer>
+  <license>Proprietary</license>
+  <author email="mazahner@ethz.ch">Markus Zahner</author>
+  <author email="ralf.kaestner@gmail.com">Ralf Kaestner</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>any_node</depend>
+  <depend>anydrive_msgs</depend>
+  <depend>anymal_lowlevel_controller_common</depend>
+  <depend>anymal_msgs</depend>
+  <depend>hri_safety_sense</depend>
+  <depend>joy_manager_msgs</depend>
+  <depend>motion_transitioner_msgs</depend>
+  <depend>notification</depend>
+  <depend>parameter_handler_msgs</depend>
+  <depend>parameter_handler</depend>
+  <depend>sensor_msgs</depend>
+  <depend>std_msgs</depend>
+  <depend>roscpp</depend>
+  <depend>boost</depend>
+  <depend>rocoma_msgs</depend>
+  <depend>rostest</depend>
+  <depend>param_io</depend>
+  <depend>std_srvs</depend>
+</package>

@@ -1,0 +1,8 @@
+subscribers:
+  value:
+    topic:      value
+    queue_size: 10
+
+servers:
+  get_average_value:
+    service:    get_average_value

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+
+  <!-- Base -> Map in Map -->
+  <include file="$(find tf_to_pose_converter)/launch/tf_to_pose_converter.launch">
+    <arg name="child_frame_id"          value="base"/>
+    <arg name="parent_frame_id"         value="map"/>
+    <arg name="target_frame_id"         value="map"/>
+  </include>
+
+  <!-- Base -> Map in Odom-->
+  <include file="$(find tf_to_pose_converter)/launch/tf_to_pose_converter.launch">
+    <arg name="child_frame_id"          value="base"/>
+    <arg name="parent_frame_id"         value="odom"/>
+    <arg name="target_frame_id"         value="map"/>
+  </include>
+
+  <!-- Odom -> Map in Map -->
+  <include file="$(find tf_to_pose_converter)/launch/tf_to_pose_converter.launch">
+    <arg name="child_frame_id"          value="odom"/>
+    <arg name="parent_frame_id"         value="map"/>
+    <arg name="target_frame_id"         value="map"/>
+  </include>
+
+  <!-- Base -> Odom in map -->
+  <include file="$(find tf_to_pose_converter)/launch/tf_to_pose_converter.launch">
+    <arg name="child_frame_id"          value="base"/>
+    <arg name="parent_frame_id"         value="map"/>
+    <arg name="target_frame_id"         value="odom"/>
+  </include>
+
+  <!-- Base -> Odom in Odom -->
+  <include file="$(find tf_to_pose_converter)/launch/tf_to_pose_converter.launch">
+    <arg name="child_frame_id"          value="base"/>
+    <arg name="parent_frame_id"         value="odom"/>
+    <arg name="target_frame_id"         value="odom"/>
+  </include>
+
+  <!-- Base -> Odom in Map -->
+  <include file="$(find tf_to_pose_converter)/launch/tf_to_pose_converter.launch">
+    <arg name="child_frame_id"          value="odom"/>
+    <arg name="parent_frame_id"         value="map"/>
+    <arg name="target_frame_id"         value="odom"/>
+  </include>
+
+</launch>

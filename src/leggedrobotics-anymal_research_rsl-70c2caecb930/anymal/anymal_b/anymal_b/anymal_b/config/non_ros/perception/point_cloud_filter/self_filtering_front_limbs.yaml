@@ -1,0 +1,18 @@
+timeout_usec: 20000
+self_see_links:
+    - name: LF_THIGH
+      padding: 0.04
+    - name: RF_THIGH
+      padding: 0.04
+    - name: LF_ADAPTER
+      padding: 0.04
+    - name: RF_ADAPTER
+      padding: 0.04
+    - name: LF_SHANK
+      padding: 0.04
+    - name: RF_SHANK
+      padding: 0.04
+    - name: LF_FOOT
+      padding: 0.04
+    - name: RF_FOOT
+      padding: 0.04

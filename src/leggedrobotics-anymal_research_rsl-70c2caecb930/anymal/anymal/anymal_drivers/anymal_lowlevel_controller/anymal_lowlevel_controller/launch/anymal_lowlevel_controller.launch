@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+
+  <!-- Arguments -->
+  <arg name="time_step"     default="0.0025"/>
+  <arg name="setup_file"    default=""/>
+  <arg name="output"        default="screen"/>
+  <arg name="launch_prefix" default="'nice -n -20'"/>
+  
+  <rosparam command="load" ns="anymal_lowlevel_controller" file="$(find anymal_lowlevel_controller)/config/anydrive/ros.yaml"/>
+  <rosparam command="load" ns="anymal_lowlevel_controller" file="$(find anymal_lowlevel_controller)/config/ros.yaml"/>
+  
+  <!-- Launch the lowlevel controller -->
+  <node pkg="anymal_lowlevel_controller" type="anymal_lowlevel_controller_node" name="anymal_lowlevel_controller" output="$(arg output)" launch-prefix="$(arg launch_prefix)">
+    <param name="time_step"                 value="$(arg time_step)"/>
+    <param name="setup_file"                value="$(arg setup_file)"/>
+    <param name="output"                    value="$(arg output)"/>
+    <param name="standalone"                value="false"/>
+    <param name="run_publishers"            value="true"/>
+    <param name="actuator_command_timeout"  value="0.1"/>
+    <param name="ros_prefix"                value="/anymal_lowlevel_controller"/>
+    <param name="logger/config_file"        value="$(env HOME)/.ros/lowlevel_ctrl_logger.yaml"/>
+    <param name="logger/sampling_window"    value="10.0"/>
+    <param name="logger/logfile_type"       value="binary"/>
+    <param name="log_extended_readings"     value="false"/>
+    <param name="log_elec_phase_readings"   value="false"/>
+  </node>
+
+</launch>

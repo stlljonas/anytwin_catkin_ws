@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<launch>
+  <arg name="log_output"/>
+  <node name="rosbag" pkg="rosbag" type="record"
+    args="record /velodyne/binary_snappy /velodyne/imu /velodyne/temperature
+    /usb_cam0/image_raw /usb_cam1/image_raw /cam0/image_raw /cam1/image_raw
+    /cust_imu0 /cust_mpu0 /cust_mpu1 /imu0 /mpu0 /mpu1 /camera/rgb/image_raw
+    /camera/rgb/camera_info /camera/depth_registered/image_raw
+    /camera/depth_registered/camera_info /xsensmt/imu /leica/position /leica/error
+    /rosout -o $(arg log_output)" output="screen">
+  </node>
+</launch>

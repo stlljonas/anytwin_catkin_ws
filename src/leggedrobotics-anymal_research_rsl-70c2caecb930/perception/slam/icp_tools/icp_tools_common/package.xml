@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+
+<package format="2">
+
+  <name>icp_tools_common</name>
+  <version>0.5.0</version>
+  <description>ICP-based Localization and Mapping.</description>
+
+  <license>Proprietary</license>
+
+  <author email="rdiethelm@anybotics.com">Remo Diethelm</author>
+  <maintainer email="ynava@anybotics.com">Yoshua Nava</maintainer>
+  <maintainer email="rdiethelm@anybotics.com">Remo Diethelm</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>cmake_clang_tools</build_depend>
+
+  <depend>any_msgs</depend>
+  <depend>eigen</depend>
+  <depend>geometry_msgs</depend>
+  <depend>slam_common_msgs</depend>
+  <depend>kindr</depend>
+  <depend>kindr_ros</depend>
+  <depend>libpointmatcher</depend>
+  <depend>message_logger</depend>
+  <depend>param_io</depend>
+  <depend>pointmatcher_ros</depend>
+  <depend>roscpp</depend>
+  <depend>sensor_msgs</depend>
+  <depend>slam_common</depend>
+  <depend>slam_common_ros</depend>
+  <depend>std_msgs</depend>
+  <depend>std_srvs</depend>
+  <depend>stopwatch</depend>
+  <depend>tf</depend>
+  <depend>tf_conversions</depend>
+  <depend>tf2</depend>
+
+  <test_depend>cmake_code_coverage</test_depend>
+  <test_depend>rostest</test_depend>
+
+</package>

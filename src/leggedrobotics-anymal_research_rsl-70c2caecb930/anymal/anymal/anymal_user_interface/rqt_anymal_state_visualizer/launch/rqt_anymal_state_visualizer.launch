@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+  <node name="rqt_anymal_state_visualizer" pkg="rqt_anymal_state_visualizer" type="rqt_anymal_state_visualizer"
+        output="screen">
+    <rosparam file="$(find rqt_anymal_state_visualizer)/config/notificationSubscriber.yaml" command="load"/>
+  </node>
+</launch>

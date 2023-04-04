@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- Shank -->
+  <xacro:property name="S_r_SA_x"      value= "0.100"/> <!-- [m] -->
+  <xacro:property name="S_r_SA_y"      value="-0.020"/> <!-- [m] -->
+  <xacro:property name="S_r_SA_z"      value= "0.000"/> <!-- [m] -->
+  <xacro:property name="q_SA_roll"     value= "0.0"/> <!-- [rad] -->
+  <xacro:property name="q_SA_pitch"    value= "0.0"/> <!-- [rad] -->
+  <xacro:property name="q_SA_yaw"      value= "0.0"/> <!-- [rad] -->
+  <xacro:property name="S_r_SScom_x"   value= "0.030816858139"/> <!-- [m] -->
+  <xacro:property name="S_r_SScom_y"   value="-0.004617229294"/> <!-- [m] -->
+  <xacro:property name="S_r_SScom_z"   value= "0.000893125713"/> <!-- [m] -->
+  <xacro:property name="m_S"           value= "0.207204302"/> <!-- [kg] -->
+  <xacro:property name="S_Ixx_S"       value= "0.000210488024800"/> <!-- [kg * m^2] -->
+  <xacro:property name="S_Iyy_S"       value= "0.000676270210023"/> <!-- [kg * m^2] -->
+  <xacro:property name="S_Izz_S"       value= "0.000545032674924"/> <!-- [kg * m^2] -->
+  <xacro:property name="S_Ixy_S"       value="-0.000056750980345"/> <!-- [kg * m^2] -->
+  <xacro:property name="S_Ixz_S"       value= "0.000010127699391"/> <!-- [kg * m^2] -->
+  <xacro:property name="S_Iyz_S"       value="-0.000000822869024"/> <!-- [kg * m^2] -->
+  <xacro:property name="collision_x_s" value= "0.08"/> <!-- [m] -->
+  <xacro:property name="collision_y_s" value= "0.07"/> <!-- [m] -->
+  <xacro:property name="collision_z_s" value= "0.13"/> <!-- [m] -->
+
+  <!-- Joint KFE -->
+  <xacro:property name="s_kfe_1" value="9.42"/> <!-- [rad] -->
+  <xacro:property name="s_kfe_2" value="9.42"/> <!-- [rad] -->
+  <xacro:property name="v_kfe" value="15.0"/> <!-- [rad/s] -->
+  <!-- This is the max torque in freeze mode -->
+  <xacro:property name="t_kfe" value="80"/> <!-- [Nm] -->
+  <xacro:property name="d_kfe" value="0.0"/> <!-- [Nms/rad] -->
+  <xacro:property name="f_kfe" value="0.0"/> <!-- [Nm] -->
+  <!-- This is the max torque for control -->
+  <xacro:property name="t_kfe_command" value="40"/> <!-- [Nm] -->
+  <xacro:property name="gear_velocity" value="10"/> <!-- [rad/s] -->
+  <xacro:property name="current" value="10"/> <!-- [A] -->
+
+</robot>

@@ -1,0 +1,5 @@
+#include "numopt_problems/QPExampleProblem.hpp"
+#include "numopt_problems/HockSchittkowski03Problem.hpp"
+#include "numopt_problems/HockSchittkowski05Problem.hpp"
+#include "numopt_problems/HockSchittkowski47Problem.hpp"
+#include "numopt_problems/PortfolioSelectionProblem.hpp"

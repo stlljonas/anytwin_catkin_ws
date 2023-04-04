@@ -1,0 +1,129 @@
+<?xml version='1.0'?>
+<sdf version='1.4'>
+  <model name="pallet">
+    <static>true</static>
+    <pose>0 0 0.07 0 0 0</pose>
+
+    <link name='stairs1'>
+      <pose>1.0 0 0.0 0 0 0</pose>
+
+      <collision name='collision'>
+        <geometry>
+          <box>
+            <size>0.12 3.0 0.12</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name='visual'>
+        <geometry>
+          <box>
+            <size>0.12 3.0 0.12</size>
+          </box>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name='stairs2'>
+      <pose>1.24 0 0 0 0 0</pose>
+
+      <collision name='collision'>
+        <geometry>
+          <box>
+            <size>0.12 3.0 0.12</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name='visual'>
+        <geometry>
+          <box>
+            <size>0.12 3.0 0.12</size>
+          </box>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name='stairs3'>
+      <pose>1.48 0 0 0 0 0</pose>
+
+      <collision name='collision'>
+        <geometry>
+          <box>
+            <size>0.12 3.0 0.12</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name='visual'>
+        <geometry>
+          <box>
+            <size>0.12 3.0 0.12</size>
+          </box>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name='stairs4'>
+      <pose>1.72 0 0 0 0 0</pose>
+
+      <collision name='collision'>
+        <geometry>
+          <box>
+            <size>0.12 3.0 0.12</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name='visual'>
+        <geometry>
+          <box>
+            <size>0.12 3.0 0.12</size>
+          </box>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name='stairs5'>
+      <pose>1.96 0 0 0 0 0</pose>
+
+      <collision name='collision'>
+        <geometry>
+          <box>
+            <size>0.12 3.0 0.12</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name='visual'>
+        <geometry>
+          <box>
+            <size>0.12 3.0 0.12</size>
+          </box>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name='stairs6'>
+      <pose>2.20 0 0 0 0 0</pose>
+
+      <collision name='collision'>
+        <geometry>
+          <box>
+            <size>0.12 3.0 0.12</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name='visual'>
+        <geometry>
+          <box>
+            <size>0.12 3.0 0.12</size>
+          </box>
+        </geometry>
+      </visual>
+    </link>
+
+
+  </model>
+</sdf>

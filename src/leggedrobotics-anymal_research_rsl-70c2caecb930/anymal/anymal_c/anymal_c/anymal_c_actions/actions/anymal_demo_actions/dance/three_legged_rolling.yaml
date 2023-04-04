@@ -1,0 +1,140 @@
+adapt_coordinates:
+  - transform:
+      source_frame: <source_frame>
+      target_frame: <target_frame>
+      transform_in_source_frame:
+        position: [<position_x>, <position_y>, <position_z>]
+        orientation: [0.0, 0.0, <orientation_yaw>]
+
+steps:
+
+ # One leg in the air
+ - step:
+    - base_auto:
+       height: 0.44
+       support_margin: 0.09
+ - step:
+    - base_auto:
+       height: 0.44
+       support_margin: 0.09
+    - end_effector_target:
+       name: LF_LEG
+       ignore_contact: true
+       ignore_for_pose_adaptation: true
+       target_position:
+        frame: <source_frame>
+        position: [0.44, 0.27, 0.2]
+
+ # Base rolling
+ - step:
+    - base_trajectory:
+       trajectory:
+        frame: <source_frame>
+        knots:
+         - time: 0.5
+           position: [-0.06, -0.1, 0.515]
+           orientation: [0.0, deg(-10), deg(-10)]
+         - time: 1.0
+           position: [-0.06, -0.1, 0.515]
+           orientation: [0.0, deg(-10), deg(10)]
+         - time: 1.5
+           position: [-0.06, -0.1, 0.48]
+           orientation: [0.0, deg(10), deg(10)]
+         - time: 2.0
+           position: [-0.06, -0.1, 0.48]
+           orientation: [0.0, deg(10), deg(-5)]
+         - time: 2.5
+           position: [-0.06, -0.1, 0.515]
+           orientation: [0.0, deg(-10), deg(-10)]
+         - time: 3.0
+           position: [-0.06, -0.1, 0.515]
+           orientation: [0.0, deg(-10), deg(10)]
+         - time: 3.5
+           position: [-0.06, -0.1, 0.48]
+           orientation: [0.0, deg(10), deg(10)]
+         - time: 4.0
+           position: [-0.06, -0.1, 0.515]
+           orientation: [0.0, 0.0, 0.0]
+    - end_effector_target:
+       name: LF_LEG
+       ignore_contact: true
+       ignore_for_pose_adaptation: true
+       target_position:
+        frame: <source_frame>
+        position: [0.44, 0.27, 0.2]
+
+# Oh yeah
+ - step:
+   - joint_trajectory:
+      name: LF_LEG
+      ignore_contact: true
+      trajectory:
+       joint_names: [HAA, HFE, KFE]
+       knots:
+         - time: 0.7
+           positions: [deg(0), deg(80), deg(-260)]
+ - step: &ohYeah
+    - base_trajectory:
+       trajectory:
+        frame: <source_frame>
+        knots:
+         - time: <DeltaT14>
+           position: [-0.08, -0.06, 0.43]
+           orientation: [0.0, 0.1, 0.0]
+    - end_effector_trajectory:
+       name: LF_LEG
+       ignore_contact: true
+       ignore_for_pose_adaptation: true
+       trajectory:
+        frame: <source_frame>
+        knots:
+         - time: <DeltaT14>
+           position: [-0.05, 0.2, 0.85]
+ - step: &ohYeahBack
+    - base_trajectory:
+       trajectory:
+        frame: <source_frame>
+        knots:
+         - time: <DeltaT14>
+           position: [-0.08, -0.06, 0.46]
+           orientation: [0.0, -0.1, 0.0]
+    - end_effector_trajectory:
+       name: LF_LEG
+       ignore_contact: true
+       ignore_for_pose_adaptation: true
+       trajectory:
+        frame: <source_frame>
+        knots:
+         - time: <DeltaT14>
+           position: [-0.05, 0.2, 0.7]
+ - step: *ohYeah
+ - step: *ohYeahBack
+ - step: *ohYeah
+ - step: *ohYeahBack
+
+ - step:
+   - joint_trajectory:
+      name: LF_LEG
+      ignore_contact: true
+      trajectory:
+       joint_names: [HAA, HFE, KFE]
+       knots:
+         - time: 0.7
+           positions: [deg(0), deg(45), deg(-90)]
+
+# Leg back on ground
+ - step:
+    - base_auto:
+       height: 0.44
+       support_margin: 0.08
+    - footstep:
+       name: LF_LEG
+       ignore_contact: false
+       profile_type: straight
+       target:
+        frame: <source_frame>
+        position: [0.32, 0.24, 0.0]
+
+ - step:
+    - base_auto:
+       height: 0.44

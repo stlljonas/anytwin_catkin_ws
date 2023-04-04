@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+
+<package format="2">
+
+  <name>topic_mux</name>
+  <version>0.2.1</version>
+  <description>Topic multiplexer</description>
+
+  <license>Proprietary</license>
+
+  <author email="rdiethelm@anybotics.com">Remo Diethelm</author>
+  <maintainer email="rdiethelm@anybotics.com">Remo Diethelm</maintainer>
+  <maintainer email="pleemann@anybotics.com">Philipp Leemann</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>any_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>roscpp</depend>
+  <depend>std_srvs</depend>
+
+</package>

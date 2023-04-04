@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+
+  <!-- Nodelet manager -->
+  <arg name="nodelet_manager"                           default=""/>
+  <!-- Camera name -->
+  <arg name="camera"                                    default="depth_camera"/>
+  <!-- Enable/disable Depth Camera depth image decompression -->
+  <arg name="decompress_depth"                          default="false"/>
+  <!-- Enable/disable Depth Camera color image decompression -->
+  <arg name="decompress_color"                          default="false"/>
+  <!-- Enable/disable broadcasting static tf to the Depth Camera depth optical frame -->
+  <arg name="broadcast_tf_depth_optical_frame"          default="true"/>
+
+  <!-- Decompression of depth images -->
+  <node name="decompress_depth_$(arg camera)" type="republish" pkg="image_transport" respawn="true"
+        args="compressedDepth in:=/$(arg camera)/depth/image_rect_raw
+              raw out:=$(arg camera)/depth/image_rect_raw"
+        if="$(arg decompress_depth)"/>
+
+  <!-- Decompression of color images -->
+  <node name="decompress_color_$(arg camera)" type="republish" pkg="image_transport" respawn="true"
+        args="compressed in:=/$(arg camera)/color/image_raw
+              raw out:=/$(arg camera)/color/image_raw"
+        if="$(arg decompress_color)"/>
+
+  <!-- Broadcasting of tf transform between camera internal frames -->
+  <node name="tf_broadcaster_depth_optical_frame_$(arg camera)" type="static_transform_publisher" pkg="tf" respawn="true"
+        args="0 0 0 -0.5 0.5 -0.5 0.5 $(arg camera)_camera_parent $(arg camera)_depth_optical_frame 10"
+        if="$(arg broadcast_tf_depth_optical_frame)"/>
+
+  <!-- Projection of depth images as point clouds -->
+  <node name="reconstruct_pointcloud_$(arg camera)" type="nodelet" pkg="nodelet" respawn="true"
+        args="load depth_image_proc/point_cloud_xyz $(arg nodelet_manager)">
+    <remap from="camera_info" to="/$(arg camera)/depth/camera_info"/>
+    <remap from="image_rect" to="/$(arg camera)/depth/image_rect_raw"/>
+    <remap from="points" to="/$(arg camera)/depth/color/points"/>
+  </node>
+
+</launch>

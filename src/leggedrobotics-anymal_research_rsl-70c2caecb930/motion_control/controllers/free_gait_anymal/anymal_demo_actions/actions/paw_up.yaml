@@ -1,0 +1,19 @@
+adapt_coordinates:
+  - transform:
+      source_frame: footprint
+      target_frame: odom
+
+steps:
+
+ - step:
+    - base_auto:
+
+ - step:
+    - base_auto:
+    - footstep:
+       name: RF_LEG
+       ignore_contact: true
+       profile_type: straight
+       target:
+        frame: footprint
+        position: [0.39, -0.22, 0.20]

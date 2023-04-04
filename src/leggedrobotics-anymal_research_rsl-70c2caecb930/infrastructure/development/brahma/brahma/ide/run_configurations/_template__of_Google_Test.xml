@@ -1,0 +1,14 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="true" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" REDIRECT_INPUT="false"
+                 PASS_PARENT_ENVS_2="true" PROJECT_NAME="" TARGET_NAME="" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME=""
+                 RUN_TARGET_NAME="" TEST_MODE="SUITE_TEST">
+    <envs>
+      <env name="LD_LIBRARY_PATH" value="$PROJECT_DIR$/.clion/cmake_build_debug/devel/lib:/opt/ros/melodic/lib" />
+      <env name="ROS_PACKAGE_PATH" value="$PROJECT_DIR$/.clion/cmake_build_debug/devel/share:/opt/ros/melodic/share" />
+    </envs>
+    <method v="2">
+      <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true"/>
+      <option name="BeforeTestRunTask" enabled="true"/>
+    </method>
+  </configuration>
+</component>

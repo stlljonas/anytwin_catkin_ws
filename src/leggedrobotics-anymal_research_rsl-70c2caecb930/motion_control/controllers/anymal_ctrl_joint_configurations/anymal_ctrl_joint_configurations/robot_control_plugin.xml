@@ -1,0 +1,3 @@
+<library path="lib/libanymal_ctrl_joint_configurations_plugin">
+  <class type="anymal_ctrl_joint_configurations::JointConfigurationsController" base_class_type="robot_control::ControllerInterface"/>
+</library>

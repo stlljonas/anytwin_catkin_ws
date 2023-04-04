@@ -1,0 +1,4 @@
+<library path="lib/libanymal_ctrl_test_whole_body_control_ros_plugin">
+  <class type="anymal_ctrl_test_whole_body_control_ros::TestWholeBodyControllerRos" base_class_type="robot_control::ControllerInterface">
+  </class>
+</library>

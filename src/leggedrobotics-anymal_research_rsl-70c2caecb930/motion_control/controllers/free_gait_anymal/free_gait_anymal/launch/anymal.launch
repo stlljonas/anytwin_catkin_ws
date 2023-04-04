@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+
+  <!-- Collection of actions to choose as main collection -->
+  <arg name="action_collection" default="" />
+  <!-- Packages to search actions in -->
+  <arg name="free_gait_action_packages" default="" />
+  <!-- ANYmal configuration -->
+  <arg name="free_gait_configuration" default="anymal"/>
+  <!-- Load Free Gait global parameters -->
+  <include file="$(find free_gait_anymal_common)/launch/load_parameters.launch"/>
+  <!-- Launch Free Gait action loader -->
+  <node pkg="free_gait_action_loader" type="action_loader.py" name="free_gait_action_loader" output="screen">
+    <param name="free_gait_action_packages" value="$(arg free_gait_action_packages)" />
+  </node>
+
+  <!--  Load locomotion_planner parameters -->
+  <rosparam command="load" file="$(find locomotion_planner)/config/configurations.yaml" ns="locomotion_planner"/>
+
+</launch>

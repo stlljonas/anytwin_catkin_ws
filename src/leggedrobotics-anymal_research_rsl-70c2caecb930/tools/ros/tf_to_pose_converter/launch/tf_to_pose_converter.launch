@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+
+  <!-- Publish the pose of 'child' relative to 'parent' expressed in 'target' at a given frequency -->
+
+  <!-- ID of the child frame -->
+  <arg name="child_frame_id"     default="base"/>
+  <!-- ID of the parent frame -->
+  <arg name="parent_frame_id"    default="map"/>
+  <!-- ID of the frame to express the translational part of the pose in -->
+  <arg name="target_frame_id"    default="$(arg parent_frame_id)"/>
+  <!-- Topic to publish the pose to -->
+  <arg name="pose_topic"         default="/tf/$(arg child_frame_id)_to_$(arg parent_frame_id)_in_$(arg target_frame_id)"/>
+  <!-- Topic to publish the Euler angles to -->
+  <arg name="angles_topic"       default="$(arg pose_topic)/orientation/euler_angles_rpy"/>
+  <!-- Frequency of the publishing -->
+  <arg name="frequency"          default="100.0"/>
+  <!-- Node namespace -->
+  <arg name="node_namespace"     default="tf_to_pose_converter"/>
+  <!-- Node name -->
+  <arg name="node_name"          default="$(arg child_frame_id)_to_$(arg parent_frame_id)_in_$(arg target_frame_id)"/>
+
+  <node ns="$(arg node_namespace)" name="$(arg node_name)" pkg="tf_to_pose_converter" type="tf_to_pose_converter.py" output="screen">
+    <param name="child_frame_id"  value="$(arg child_frame_id)"/>
+    <param name="parent_frame_id" value="$(arg parent_frame_id)"/>
+    <param name="target_frame_id" value="$(arg target_frame_id)"/>
+    <param name="pose_topic"      value="$(arg pose_topic)"/>
+    <param name="angles_topic"    value="$(arg angles_topic)"/>
+    <param name="frequency"       value="$(arg frequency)"/>
+  </node>
+
+</launch>

@@ -1,0 +1,7 @@
+#- SurfaceNormalDataPointsFilter:
+#    knn: 10
+#    epsilon: 0
+#    keepNormals: 1
+#    keepDensities: 1
+#- MaxDensityDataPointsFilter:
+#    maxDensity: 8000.0

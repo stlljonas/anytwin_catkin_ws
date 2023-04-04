@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+    <node pkg="rqt_logo" type="rqt_logo" name="rqt_logo_node" output="screen" respawn="false"/>
+</launch>

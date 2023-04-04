@@ -1,0 +1,4 @@
+reset_routes:
+  state_estimator:
+    input: 1
+    outputs: [/point_cloud_odometry/reset_in]

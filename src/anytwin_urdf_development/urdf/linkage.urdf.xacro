@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+
+<robot name="linkage">
+  <link name="base_link">
+        <visual>
+          <origin xyz="0 0 0" rpy="0 1.57079633 0"/>
+          <geometry>
+              <cylinder length="1.2" radius="0.05"/>
+          </geometry>
+        </visual>
+  </link>
+  <!--left joint and connection-->
+  <link name="left_connector">
+        <visual>
+          <origin xyz="0 0 -0.15"/>
+          <geometry>
+            <cylinder length="0.3" radius="0.05"/>
+          </geometry>
+      </visual>
+  </link>
+  <link name="left_joint_body">
+    <visual>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <sphere radius="0.07"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="left_joint_roll" type="fixed">
+    <parent link="base_link"/>
+    <child link="left_joint_body"/>
+    <origin xyz="0.6 0 0"/>
+  </joint>
+  <joint name="left_joint_yaw" type="fixed">
+    <parent link="left_joint_body"/>
+    <child link="left_connector"/>
+    <origin xyz="0 0 0"/>
+  </joint>
+
+  <!--right joint and connection-->
+  <link name="right_connector">
+        <visual>
+          <origin xyz="0 0 -0.15"/>
+          <geometry>
+            <cylinder length="0.3" radius="0.05"/>
+          </geometry>
+      </visual>
+  </link>
+  <link name="right_joint_body">
+    <visual>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <sphere radius="0.07"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="right_joint_roll" type="fixed">
+    <parent link="base_link"/>
+    <child link="right_joint_body"/>
+    <origin xyz="-0.6 0 0"/>
+  </joint>
+  <joint name="right_joint_yaw" type="fixed">
+    <parent link="right_joint_body"/>
+    <child link="right_connector"/>
+    <origin xyz="0 0 0"/>
+  </joint>
+
+</robot>

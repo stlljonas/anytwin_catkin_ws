@@ -1,0 +1,12 @@
+#- SurfaceNormalDataPointsFilter:
+#    knn: 10
+#    epsilon: 0
+#    keepNormals: 1
+#    keepDensities: 1
+#- MaxDensityDataPointsFilter:
+#    maxDensity: 8000.0
+# - OctreeGridDataPointsFilter:
+#     buildParallel: 1
+#     maxPointByNode: 1
+#     maxSizeByNode: 0.1
+#     samplingMethod: 3

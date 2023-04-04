@@ -1,0 +1,7 @@
+<launch>
+
+  <include file="$(find depth_sensor_tilt_calibration)/launch/depth_camera_tilt_calibration.launch">
+    <arg name="suffix" value="_right"/>
+  </include>
+
+</launch>

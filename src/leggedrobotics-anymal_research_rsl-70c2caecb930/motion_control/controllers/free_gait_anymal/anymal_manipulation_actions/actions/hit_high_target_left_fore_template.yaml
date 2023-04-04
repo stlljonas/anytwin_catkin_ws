@@ -1,0 +1,72 @@
+adapt_coordinates:
+  # - transform:
+  #     source_frame: footprint
+  #     target_frame: odom
+  - transform:
+      source_frame: <source_frame>
+      target_frame: odom
+
+steps:
+
+ - step:
+    - base_auto:
+       support_margin: 0.1
+
+ - step:
+   - joint_trajectory:
+      name: LF_LEG
+      ignore_contact: true
+      trajectory:
+       joint_names: [HAA, HFE, KFE]
+       knots:
+         - time: 1.5
+           positions: [deg(0), deg(120), deg(-220)]
+
+ - step:
+    - end_effector_trajectory:
+       name: LF_LEG
+       ignore_contact: true
+       ignore_for_pose_adaptation: true
+       trajectory:
+        frame: <source_frame>
+        knots:
+         - time: 1.6
+           position: [<position_x>, <position_y>, <position_z>]
+
+ - step:
+    - custom_command:
+       type: empty
+       duration: <wait_time_at_position>
+
+ - step:
+   - joint_trajectory:
+      name: LF_LEG
+      ignore_contact: true
+      trajectory:
+       joint_names: [HAA, HFE, KFE]
+       knots:
+         - time: 1.8
+           positions: [deg(0), deg(45), deg(-90)]
+
+ - step:
+    - base_auto:
+    - footstep:
+       name: LF_LEG
+       ignore_contact: false
+       profile_type: straight
+       target:
+        frame: base
+        position: [0.32, 0.24, -0.5]
+
+ # - step:
+ #    - base_auto:
+ #    - footstep:
+ #       name: LF_LEG
+ #       ignore_contact: false
+ #       profile_type: straight
+ #       target:
+ #        frame: footprint
+ #        position: [0.32, 0.24, 0.0]
+
+ - step:
+    - base_auto:

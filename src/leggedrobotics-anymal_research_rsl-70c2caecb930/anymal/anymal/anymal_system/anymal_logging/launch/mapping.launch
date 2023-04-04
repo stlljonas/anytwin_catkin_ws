@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<launch>
+  <node name="rosbag" pkg="rosbag" type="record" args="
+-o mapping 
+/tf
+/tf_static/
+/state_estimator/pose_in_map
+/state_estimator/twist
+/state_estimator/anymal_state
+/actuated_lidar_master/point_cloud_filtered
+/actuated_lidar/scan
+/pose_controller/command_velocity
+" output="screen"></node>
+</launch>

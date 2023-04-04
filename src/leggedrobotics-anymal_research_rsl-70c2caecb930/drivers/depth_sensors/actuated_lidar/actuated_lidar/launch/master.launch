@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+
+  <!-- Name of the actuated lidar master -->
+  <arg name="name" default="actuated_lidar"/>
+  <!-- List of names of actuated lidar devices to be handled by this master -->
+  <arg name="device_names" default="[actuated_lidar]"/>
+  <!-- ID of the fixed frame -->
+  <arg name="fixed_frame_id" default="odom"/>
+  <!-- ID of the robot frame -->
+  <arg name="robot_frame_id" default="base"/>
+  <!-- Rotate the lasers permanently -->
+  <arg name="permanent_rotation" default="true"/>
+
+  <!-- Load parameters -->
+  <rosparam command="load" ns="$(arg name)" file="$(find actuated_lidar)/config/master.yaml"/>
+
+  <!-- Actuated lidar master node -->
+  <node name="$(arg name)" pkg="actuated_lidar" type="actuated_lidar_master_node" output="screen" respawn="true">
+    <param name="frames/fixed_frame_id"        value="$(arg fixed_frame_id)"/>
+    <param name="frames/robot_frame_id"        value="$(arg robot_frame_id)"/>
+    <param name="dynamixel/permanent_rotation" value="$(arg permanent_rotation)"/>
+    <rosparam param="device_names" subst_value="True">$(arg device_names)</rosparam>
+  </node>
+
+  <!-- Laser assembler node -->
+  <node ns="$(arg name)" name="laser_assembler" pkg="laser_assembler" type="laser_scan_assembler" output="screen" respawn="true">
+    <param name="fixed_frame"        value="$(arg fixed_frame_id)"/>
+    <param name="max_scans"          value="120"/>
+    <param name="tf_cache_time_secs" value="3"/>
+    <param name="ignore_laser_skew"  value="false"/>
+    <remap from="scan"               to="scan_filtered"/>
+    <remap from="assemble_scans"     to="laser_assembler/assemble_scans"/>
+    <remap from="assemble_scans2"    to="laser_assembler/assemble_scans2"/>
+    <remap from="build_cloud"        to="laser_assembler/build_cloud"/>
+    <remap from="build_cloud2"       to="laser_assembler/build_cloud2"/>
+  </node>
+
+  <!-- Scan to point cloud -->
+  <include file="$(find scan_to_pointcloud)/launch/scan_to_pointcloud.launch">
+    <arg name="namespace"       value="$(arg name)"/>
+    <arg name="target_frame_id" value="$(arg fixed_frame_id)"/>
+    <arg name="input"           value="/$(arg name)/scan_filtered"/>
+    <arg name="output"          value="/$(arg name)/point_cloud_scan"/>
+  </include>
+
+</launch>

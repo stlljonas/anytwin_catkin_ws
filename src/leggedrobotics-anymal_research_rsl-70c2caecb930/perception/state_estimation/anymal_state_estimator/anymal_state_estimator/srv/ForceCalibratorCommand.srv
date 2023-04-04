@@ -1,0 +1,8 @@
+string name
+bool start
+bool sample
+bool calibrate
+uint32 num_samples
+uint32 num_good_samples
+---
+bool success

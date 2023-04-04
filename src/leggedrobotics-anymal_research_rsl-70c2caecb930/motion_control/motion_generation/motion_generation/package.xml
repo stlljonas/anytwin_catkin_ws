@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>motion_generation</name>
+  <version>0.4.0</version>
+  <description>The motion generation package</description>
+  <maintainer email="avijayan@anybotics.com">Aravind Vijayan</maintainer>
+  <maintainer email="fgiraldez@anybotics.com">Francisco Giráldez Gámez</maintainer>
+  <license>Proprietary</license>
+  <author email="bellicoso@mavt.ethz.ch">Dario Bellicoso</author>
+  <author email="fabianje@student.ethz.ch">Fabian Jenelten</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>anymal_description</depend>
+  <depend>basic_filters</depend>
+  <depend>robot_utils</depend>
+  <depend>message_logger</depend>
+  <depend>signal_logger</depend>
+  <depend>tinyxml_tools</depend>
+  <depend>loco</depend>
+  <depend>kindr</depend>
+
+  <depend>std_utils</depend>
+
+  <test_depend>gtest</test_depend>
+</package>

@@ -1,0 +1,12 @@
+stack_launcher:
+  nodes:
+    slam:
+      preprocessed_params:
+        config_files_folder:
+          value: $(rospack find anymal_c)/config/non_ros/perception/slam/icp_tools
+      roslaunch:
+        node_type: icp_tools_global_mapping_node
+        package: icp_tools_global_mapping
+slam:
+  mapping:
+    filters_file_name: map_filters.yaml

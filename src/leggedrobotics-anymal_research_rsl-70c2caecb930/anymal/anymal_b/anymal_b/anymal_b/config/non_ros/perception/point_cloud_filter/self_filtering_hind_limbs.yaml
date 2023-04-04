@@ -1,0 +1,18 @@
+timeout_usec: 20000
+self_see_links:
+    - name: LH_THIGH
+      padding: 0.04
+    - name: RH_THIGH
+      padding: 0.04
+    - name: LH_ADAPTER
+      padding: 0.04
+    - name: RH_ADAPTER
+      padding: 0.04
+    - name: LH_SHANK
+      padding: 0.04
+    - name: RH_SHANK
+      padding: 0.04
+    - name: LH_FOOT
+      padding: 0.04
+    - name: RH_FOOT
+      padding: 0.04

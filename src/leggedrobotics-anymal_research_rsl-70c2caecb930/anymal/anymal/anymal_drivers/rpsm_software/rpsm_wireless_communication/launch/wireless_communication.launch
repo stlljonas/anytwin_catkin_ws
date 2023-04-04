@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<launch>    
+
+    <!-- Debug with gbd or valgrind -->
+    <arg name="debug" default="" />
+
+    <!-- Time step of communication default 100Hz -->
+    <arg name="time_step" default="0.01" />
+
+    <!-- Set true if standalone -->
+    <arg name="standalone" default="true" />
+    
+    <!-- Run highlevel node    -->
+    <node pkg="rpsm_wireless_communication" type="rpsm_wireless_communication_node" name="rpsm_wireless_communication"
+        output="screen" launch-prefix="$(arg debug)">
+        <param name="time_step" type="double" value="$(arg time_step)"/>
+        <param name="standalone" type="bool" value="$(arg standalone)"/>
+        <param name="time_step" value="$(arg time_step)" />
+    </node>
+    
+</launch>

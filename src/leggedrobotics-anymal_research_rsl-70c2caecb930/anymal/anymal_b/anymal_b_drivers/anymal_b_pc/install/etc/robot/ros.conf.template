@@ -1,0 +1,12 @@
+# Name of the ANYmal robot
+ANYMAL_NAME=${robot_name}
+# Type of the PC (lpc, npc, apc, opc)
+ANYMAL_PC=${pc_type}
+# Generation of the robot
+ANYMAL_GENERATION=b
+# Version of the robot
+ANYMAL_VERSION=300
+# ROS distribution, with files commonly installed under
+ROS_DISTRIBUTION=melodic
+# ROS master uri
+ROS_MASTER_URI=http://anymal-${robot_name}-lpc:11311/

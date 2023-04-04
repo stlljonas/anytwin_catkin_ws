@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>probabilistic_contact_estimation</name>
+  <version>0.2.0</version>
+  <description>The probabilistic_contact_estimation package</description>
+  <author email="jhwangbo@ethz.ch">Jemin Hwangbo</author>
+  <maintainer email="avijayan@anybotics.com">Aravind Vijayan</maintainer>
+  <maintainer email="mwulf@anybotics.com">Maximilian Wulf</maintainer>
+  <license>Proprietary</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>anymal_model</depend>
+  <depend>basic_contact_estimation</depend>
+  <depend>basic_filters</depend>
+  <depend>signal_logger_msgs</depend>
+  <depend>robot_utils</depend>
+  <depend>grid_map_core</depend>
+  <depend>grid_map_ros</depend>
+
+  <test_depend>cmake_code_coverage</test_depend>
+
+</package>

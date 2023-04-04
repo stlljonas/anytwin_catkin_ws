@@ -1,0 +1,5 @@
+subscribers:
+  actuator_commands:
+    topic: /anymal_highlevel_controller/actuator_commands
+    queue_size: 10
+    latch: false

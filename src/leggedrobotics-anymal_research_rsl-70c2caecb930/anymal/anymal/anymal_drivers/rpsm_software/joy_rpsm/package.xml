@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>joy_rpsm</name>
+  <version>0.3.0</version>
+  <description>The joy_rpsm package</description>
+  <maintainer email="msuetterlin@anybotics.com">Marco Sütterlin</maintainer>
+  <maintainer email="pleemann@anybotics.com">Philipp Leemann</maintainer>
+  <license>Proprietary</license>
+  <author email="cgehring@anybotics.com">Christian Gehring</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>anymal_msgs</depend>
+  <depend>any_msgs</depend>
+  <depend>joy_manager</depend>
+  <depend>std_srvs</depend>
+  <export>
+    <joy_manager plugin="${prefix}/joy_rpsm.xml" />
+  </export>
+</package>

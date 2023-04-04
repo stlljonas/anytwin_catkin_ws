@@ -1,0 +1,19 @@
+<library path="lib/librqt_highlevel_controlmanager_plugin">
+    <class name="rqt_highlevel_controlmanager/HighLevelControlManagerPlugin"
+           type="rqt_highlevel_controlmanager::HighLevelControlManagerPlugin"
+           base_class_type="rqt_gui_cpp::Plugin">
+        <description>
+            An interface for the Locomotion Controller service calls.
+        </description>
+        <qtgui>
+            <group>
+                <label>ANYmal</label>
+                <icon type="theme">folder</icon>
+                <statustip>Plugins related to ANYmal</statustip>
+            </group>
+            <label>High-level control manager</label>
+            <icon type="theme">applications-graphics</icon>
+            <statustip>An interface for the high-level controller service calls.</statustip>
+        </qtgui>
+    </class>
+</library>

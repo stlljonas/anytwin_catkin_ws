@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<package format="2">
+
+  <name>anymal_c_sim</name>
+  <version>1.0.0</version>
+  <description>ANYmal C Simulation Package</description>
+
+  <license>Proprietary</license>
+
+  <author email="rdiethelm@anybotics.com">Remo Diethelm</author>
+  <maintainer email="rdiethelm@anybotics.com">Remo Diethelm</maintainer>
+  <maintainer email="lisler@anybotics.com">Linus Isler</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <exec_depend>anymal_c_application</exec_depend>
+  <exec_depend>anymal_c_locomotion</exec_depend>
+  <exec_depend>anymal_c_navigation</exec_depend>
+  <exec_depend>anymal_c_ui</exec_depend>
+  <exec_depend>anymal_gazebo</exec_depend>
+  <exec_depend>gazebo_plugins</exec_depend>
+  <exec_depend>pdb_sim</exec_depend>
+  <exec_depend>velodyne_gazebo_plugins</exec_depend>
+  <exec_depend>sandbox_data</exec_depend>
+
+</package>

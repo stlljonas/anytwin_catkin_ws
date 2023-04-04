@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+<package format="2">
+
+  <name>basic_contact_estimation</name>
+  <version>0.6.0</version>
+  <description>Classes for basic contact estimation.</description>
+
+  <license>Proprietary</license>
+  <author email="cgehring@anybotics.com">Christian Gehring</author>
+  <author email="pfankhauser@anybotics.com">Peter Fankhauser</author>
+  <author email="bellicoso@mavt.ethz.ch">Dario Bellicoso</author>
+  <maintainer email="avijayan@anybotics.com">Aravind Vijayan</maintainer>
+  <maintainer email="mwulf@anybotics.com">Maximilian Wulf</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>cmake_clang_tools</build_depend>
+
+  <depend>kindr</depend>
+  <depend>message_logger</depend>
+
+  <test_depend>cmake_code_coverage</test_depend>
+
+</package>

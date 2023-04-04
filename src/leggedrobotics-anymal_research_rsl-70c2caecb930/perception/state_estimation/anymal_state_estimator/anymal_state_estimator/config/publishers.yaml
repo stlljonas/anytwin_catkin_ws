@@ -1,0 +1,91 @@
+publishers:
+  robot_state: 
+    topic: /state_estimator/anymal_state
+    queue_size: 10
+    latch: false
+  robot_state_throttle: 
+    topic: /state_estimator/anymal_state_throttle
+    queue_size: 1
+    latch: false
+    decimation: 20
+  joint_state: 
+    topic: /state_estimator/joint_states
+    queue_size: 10
+    latch: false
+  joint_state_throttle: 
+    topic: /state_estimator/joint_states_throttle
+    queue_size: 1
+    latch: false
+    decimation: 20
+  imu: 
+    topic: /state_estimator/imu
+    queue_size: 10
+    latch: false
+  imu_throttle: 
+    topic: /state_estimator/imu_throttle
+    queue_size: 1
+    latch: false
+    decimation: 20
+  pose_in_odom: 
+    topic: /state_estimator/pose_in_odom
+    queue_size: 10
+    latch: false
+  pose_in_odom_throttle: 
+    topic: /state_estimator/pose_in_odom_throttle
+    queue_size: 1
+    latch: false
+    decimation: 20
+  twist:
+    topic: /state_estimator/twist
+    queue_size: 10
+    latch: false
+  twist_throttle: 
+    topic: /state_estimator/twist_throttle
+    queue_size: 1
+    latch: false
+    decimation: 20
+  force_calibrator_commands:
+    topic: /state_estimator/force_calibrator_commands
+    queue_size: 10
+    latch: false
+  actuator_readings:
+    topic: /state_estimator/actuator_readings
+    queue_size: 10
+    latch: false
+  contact_force_lf_foot: 
+    topic: /state_estimator/contact_force_lf_foot
+    queue_size: 10
+    latch: false
+  contact_force_rf_foot: 
+    topic: /state_estimator/contact_force_rf_foot
+    queue_size: 10
+    latch: false
+  contact_force_lh_foot: 
+    topic: /state_estimator/contact_force_lh_foot
+    queue_size: 10
+    latch: false
+  contact_force_rh_foot: 
+    topic: /state_estimator/contact_force_rh_foot    
+    queue_size: 10
+    latch: false
+  odometry:
+    topic: /state_estimator/odometry
+    queue_size: 1
+    latch: false
+    decimation: 20
+  zero_velocity_update_notification:
+    topic: /state_estimator/zero_velocity_update_notification
+    queue_size: 1
+    latch: false
+  imu_angular_velocity_bias:
+    topic: /state_estimator/imu_angular_velocity_bias
+    queue_size: 10
+    latch: false
+  imu_linear_acceleration_bias:
+    topic: /state_estimator/imu_linear_acceleration_bias
+    queue_size: 10
+    latch: false
+  reset_notification:
+    topic: /state_estimator/reset_notification
+    queue_size: 1
+    latch: false

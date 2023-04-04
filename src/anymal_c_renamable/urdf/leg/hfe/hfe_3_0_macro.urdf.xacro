@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:macro name="anymal_hfe" params="leg:=LF drive_version enable_collision:=true">
+
+    <xacro:property name="H_r_HHfe_x"   value= "0.060"/><!-- [m] -->
+    <xacro:property name="H_r_HHfe_y"   value= "0.0701"/><!-- [m] -->
+    <xacro:property name="H_r_HHfe_z"   value= "0.0"/><!-- [m] -->
+    <xacro:property name="q_HHfe_yaw"   value="${0.5*pi}"/><!-- [rad] -->
+
+    <!-- Generated properties -->
+    <xacro:property name="left"         value="${int(leg.startswith('L'))*2-1}"/>
+    <xacro:property name="front"        value="${int(leg.startswith('F', 1))*2-1}"/>
+
+
+    <!-- joint hip HFE -->
+    <joint name="${leg}_hip_fixed_${leg}_HFE" type="fixed">
+      <parent link="${leg}_hip_fixed"/>
+      <child link="${leg}_HFE"/>
+      <origin xyz="${front * H_r_HHfe_x} ${left * H_r_HHfe_y} ${H_r_HHfe_z}" 
+              rpy="0 0 ${left*q_HHfe_yaw}"/>
+    </joint>
+
+    <!-- HFE Drive link and joint -->
+    <xacro:include filename="$(find anymal_c)/urdf/leg/drives/drive_${drive_version}_macro.urdf.xacro"/>
+    <xacro:drive name="${leg}_HFE" output="${leg}_THIGH" direction="${left}" enable_collision="${enable_collision}"/>
+
+  </xacro:macro>
+
+</robot>

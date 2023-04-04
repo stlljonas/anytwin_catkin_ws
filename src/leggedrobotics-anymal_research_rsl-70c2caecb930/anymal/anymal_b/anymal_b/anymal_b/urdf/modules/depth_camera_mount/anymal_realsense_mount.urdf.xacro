@@ -1,0 +1,137 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- RealSense ZR300/D435 -->
+  <xacro:macro name="anymal_realsense_mount" params="name:=realsense parent:=base model:=1 realsense:=zr300 mounted_angle_roll_degree mounted_angle_pitch_degree *mount_calibration_tf">
+
+    <!-- Mount calibration joint -->
+    <joint name="${parent}_to_${name}_mount" type="fixed">
+      <parent link="${parent}"/>
+      <child link="${name}_mount"/>
+      <xacro:if value="$(arg simulation)">
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      </xacro:if>
+      <xacro:unless value="$(arg simulation)">
+        <xacro:insert_block name="mount_calibration_tf"/>
+      </xacro:unless>
+    </joint>
+
+    <!-- Mount link -->
+    <link name="${name}_mount">
+      <inertial>
+        <origin xyz="0.054218447194
+                    -0.000000283793
+                     0.020065663731"
+                rpy="0 0 0"/>
+        <mass value="0.243898067"/>
+        <inertia ixx="0.000779856566866"
+                 ixy="0.000000002160682"
+                 ixz="0.000147656791902"
+                 iyy="0.000570366165358"
+                 iyz="0.000000000478926"
+                 izz="0.001154870002255"/>
+      </inertial>
+    </link>
+
+    <!-- Mount tilting joint -->
+    <joint name="${name}_mount_to_${name}_mount_tilted" type="fixed">
+      <parent link="${name}_mount"/>
+      <child link="${name}_mount_tilted"/>
+      <origin xyz="0 0 0" rpy="${mounted_angle_roll_degree / 180.0 * PI} ${mounted_angle_pitch_degree / 180.0 * PI} 0.0"/>
+    </joint>
+
+    <!-- ZR300 (mount) -->
+    <xacro:if value="${realsense in ['zr300']}">
+
+      <!-- Mount tilted link -->
+      <link name="${name}_mount_tilted">
+        <xacro:if value="$(arg mesh)">
+          <visual>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+              <mesh filename="package://anymal_b/urdf/modules/depth_camera_mount/anymal_realsense_mount_zr300_${model}.dae" scale=".001 .001 .001"/>
+            </geometry>
+            <material name="anymal_material" />
+          </visual>
+        </xacro:if>
+        <xacro:unless value="$(arg mesh)">
+          <visual>
+            <origin rpy="0 0 0" xyz="-0.03 0.0 0.0"/>
+            <geometry>
+              <box size="0.110 0.125 0.064"/>
+            </geometry>
+            <material name="anymal_material" />
+          </visual>
+        </xacro:unless>
+        <collision>
+          <origin rpy="0 0 0" xyz="-0.03 0.0 0.0"/>
+          <geometry>
+            <box size="0.110 0.125 0.064"/>
+          </geometry>
+          <material name="anymal_material" />
+        </collision>
+        <inertial>
+          <origin xyz="0.012067706335
+                       0.000034218329
+                      -0.018882513478"
+                  rpy="0 0 0"/>
+          <mass value="0.090013014"/>
+          <inertia ixx="0.000169207551154"
+                   ixy="0.000000009269426"
+                   ixz="0.000003597939425"
+                   iyy="0.000026942822119"
+                   iyz="0.000000000278764"
+                   izz="0.000162233731490"/>
+        </inertial>
+      </link>
+    </xacro:if> <!-- zr300 -->
+
+    <!-- D435 (mount) -->
+    <xacro:if value="${realsense in ['d435']}">
+
+      <!-- Mount tilted link -->
+      <link name="${name}_mount_tilted">
+        <xacro:if value="$(arg mesh)">
+          <visual>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+              <mesh filename="package://anymal_b/urdf/modules/depth_camera_mount/anymal_realsense_mount_d435.dae" scale=".001 .001 .001"/>
+            </geometry>
+            <material name="anymal_material"/>
+          </visual>
+        </xacro:if>
+        <xacro:unless value="$(arg mesh)">
+          <visual>
+            <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+            <geometry>
+              <box size="0.057 0.120 0.034"/>
+            </geometry>
+            <material name="anymal_material" />
+          </visual>
+        </xacro:unless>
+        <collision>
+          <origin xyz="0.0145 -0.005 -0.010" rpy="0.0 0.0 0.0"/>
+          <geometry>
+            <box size="0.057 0.120 0.034"/>
+          </geometry>
+          <material name="anymal_material" />
+        </collision>
+        <inertial>
+          <origin xyz="0.013859179019
+                      -0.000000303238
+                      -0.005235135645"
+                  rpy="0 0 0"/>
+          <mass value="0.015185133"/>
+          <inertia ixx="0.000024367910497"
+                   ixy="0.000000000125897"
+                   ixz="0.000000298159431"
+                   iyy="0.000003910480547"
+                   iyz="0.000000000030411"
+                   izz="0.000025490557443"/>
+        </inertial>
+      </link>
+    </xacro:if> <!-- d435 -->
+  </xacro:macro>
+
+</robot>

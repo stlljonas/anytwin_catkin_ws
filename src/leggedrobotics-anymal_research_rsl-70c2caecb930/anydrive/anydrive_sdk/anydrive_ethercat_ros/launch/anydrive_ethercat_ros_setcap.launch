@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+
+  <!-- Arguments -->
+  <arg name="output"                          default="screen"/>
+  <arg name="launch_prefix"                   default="'nice -n -20'"/>
+  <arg name="setup_name"                      default="example1"/>
+  <arg name="setup_file"                      default="$(find anydrive)/example_setups/$(arg setup_name)/setup.yaml"/>
+  <arg name="time_step"                       default="0.0025"/>
+  <arg name="ros_prefix"                      default="/anydrive"/>
+  <arg name="ros_config_file"                 default="$(find anydrive_ros)/config/ros.yaml"/>
+  <arg name="run_gui"                         default="false"/>
+  <arg name="anydrive_ethercat_ros_node_path" default="$(find anydrive_ethercat_ros)/../../devel/lib/anydrive_ethercat_ros/anydrive_ethercat_ros_node"/>
+  <arg name="password"                        default=""/>
+
+  <!-- Setcap and ROS Node -->
+  <node pkg="anydrive_ethercat_ros" type="anydrive_ethercat_ros_setcap.sh" name="anydrive_ethercat_ros_setcap" output="$(arg output)"
+        args="$(arg output)
+              $(arg launch_prefix)
+              $(arg setup_name)
+              $(arg setup_file)
+              $(arg time_step)
+              $(arg ros_prefix)
+              $(arg ros_config_file)
+              $(arg run_gui)
+              $(arg anydrive_ethercat_ros_node_path)
+              $(arg password)"/>
+
+</launch>

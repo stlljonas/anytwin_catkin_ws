@@ -1,0 +1,12 @@
+<launch>
+
+  <env name="ROSCONSOLE_CONFIG_FILE" value="$(find depth_sensor_tilt_calibration)/launch/custom_rosconsole.conf"/>
+  
+  <node pkg="depth_sensor_tilt_calibration" type="depth_sensor_tilt_calibration" name="depth_sensor_tilt_calibration" output="screen">
+    <param name="topic"               value="/depth_camera/points2" />
+    <param name="tilting_frame"       value="depth_camera_camera" />
+    <param name="number_of_snapshots" value="10" />
+    <param name="distance_threshold"  value="0.01" />
+  </node>
+
+</launch>

@@ -1,0 +1,39 @@
+steps:
+
+ - step:
+    - end_effector_trajectory:
+       name: LF_LEG
+       ignore_contact: false
+       ignore_for_pose_adaptation: true
+       trajectory:
+        frame: base
+        knots:
+         - time: 4.0
+           position: [0.6, 0.251, -0.1]
+    - end_effector_trajectory:
+       name: RF_LEG
+       ignore_contact: false
+       ignore_for_pose_adaptation: true
+       trajectory:
+        frame: base
+        knots:
+         - time: 4.0
+           position: [0.6, -0.251, -0.1]
+    - end_effector_trajectory:
+       name: LH_LEG
+       ignore_contact: false
+       ignore_for_pose_adaptation: true
+       trajectory:
+        frame: base
+        knots:
+         - time: 4.0
+           position: [-0.6, 0.251, -0.1]
+    - end_effector_trajectory:
+       name: RH_LEG
+       ignore_contact: false
+       ignore_for_pose_adaptation: true
+       trajectory:
+        frame: base
+        knots:
+         - time: 4.0
+           position: [-0.6, -0.251, -0.1]

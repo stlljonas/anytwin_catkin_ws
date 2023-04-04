@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>rpsm_msgs</name>
+  <version>0.3.0</version>
+  <description>The rpsm_msgs package</description>
+  <maintainer email="msuetterlin@anybotics.com">Marco Sütterlin</maintainer>
+  <maintainer email="pleemann@anybotics.com">Philipp Leemann</maintainer>
+  <license>Proprietary</license>
+  <author email="vyuryev@anybotics.com">Valentin Yuryev</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>actionlib_msgs</depend>
+  <depend>std_msgs</depend>
+  <depend>message_generation</depend>
+  <depend>message_runtime</depend>
+
+</package>

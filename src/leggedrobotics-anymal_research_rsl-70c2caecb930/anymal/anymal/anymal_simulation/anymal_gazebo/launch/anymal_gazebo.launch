@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+
+  <!-- GAZEBO ARGUMENTS -->
+  <!-- Run Gazebo headless -->
+  <arg name="headless"                              default="false"/>
+  <!-- Specify the default joints config file -->
+  <arg name="default_joint_position_config_file"    default="$(find anymal_gazebo)/config/default.yaml"/>
+  <!-- Specify the actuator config file -->
+  <arg name="actuators_config_file"                 default="$(find anymal_gazebo)/config/actuators.yaml"/>
+  <!-- Model path -->
+  <arg name="model_path"                            default="$(find gazebo_worlds)/.."/>
+  <!-- Name of the world -->
+  <arg name="world"                                 default="empty"/>
+  <!-- Path to the world file -->
+  <arg name="world_file"                            default="$(find gazebo_worlds)/worlds/$(arg world).world"/>
+  <!-- Specifies in Hz the number of physics updates that will be attempted per second. If this number is set to zero, it will run as fast as it can -->
+  <arg name="real_time_update_rate"                 default="800"/>
+  <!-- Specifies the time duration in seconds of each physics update step -->
+  <arg name="max_step_size"                         default="0.00125"/>
+  <!-- Time step for publishing simulation state -->
+  <arg name="publishing_time_step"                  default="0.0025"/>
+  <!-- Enable/disable state estimation messages from Gazebo -->
+  <arg name="simulate_estimator"                    default="true"/>
+  <!-- Enable/disable localization messages from Gazebo, requires estimator to be simulated as well -->
+  <arg name="simulate_localizer"                    default="false"/>
+  <!-- Enable/disable publishing of groundtruth anymal state if estimator is not simulated -->
+  <arg name="publish_groundtruth"                   default="false"/>
+  <!-- Set the initial pose of the robot's main body -->
+  <arg name="x"                                     default="0.0"/>
+  <arg name="y"                                     default="0.0"/>
+  <arg name="z"                                     default="0.8"/>
+  <arg name="roll"                                  default="0.0"/>
+  <arg name="pitch"                                 default="0.0"/>
+  <arg name="yaw"                                   default="0.0"/>
+  <!-- Start paused -->
+  <arg name="paused"                                default="false"/>
+  <!-- Use simulation clock -->
+  <arg name="use_sim_time"                          default="true"/>
+  <!-- Debug mode -->
+  <arg name="debug"                                 default="false"/>
+  <!-- Verbose mode -->
+  <arg name="verbose"                               default="false"/>
+  <!-- Frame offsets -->
+  <arg name="frame_odometry_offset_x"               default="0.0"/>
+  <arg name="frame_odometry_offset_y"               default="0.0"/>
+  <arg name="frame_odometry_offset_z"               default="0.0"/>
+
+  <!-- GUI ARGUMENTS -->
+  <!-- Enable/disable Gazebo GUI -->
+  <arg name="run_gui"                               default="false"/>
+
+  <!-- ROBOT ARGUMENTS -->
+  <!-- Name of the robot description parameter -->
+  <arg name="description_name"                      default="anymal_description"/>
+
+  <!-- SIMULATION ARGUMENTS -->
+  <!-- Enable/disable addition of noise to parameters in the URDF used for simulation -->
+  <arg name="add_noise_to_description"              default="false"/>
+
+  <!-- Name of the robot simulation description parameter -->
+  <arg name="simulation_description_name"           default="anymal_simulation_description"/>
+
+  <!-- Seed used to generate noise. The input range is [1, 2^31]. 0 will produce a random seed. -->
+  <arg name="seed"                                  default="0"/>
+
+  <!-- Joint states -->
+  <!-- Leg configurations: xx (knees bent inwards), oo (knees bent outwards), xo (knees bent backwards), or ox (knees bent forwards) -->
+  <arg name="leg_config"                            default="xx"/>
+
+  <!-- Load parameters -->
+  <rosparam command="load" ns="gazebo" file="$(arg actuators_config_file)" />
+  <rosparam command="load" ns="gazebo" file="$(arg default_joint_position_config_file)" />
+  <rosparam command="load" ns="gazebo" file="$(find anymal_gazebo)/config/parameters.yaml"/>
+  <rosparam command="load" ns="gazebo" file="$(find anymal_gazebo)/config/publishers.yaml" />
+  <rosparam command="load" ns="gazebo" file="$(find anymal_gazebo)/config/subscribers.yaml" />
+  <rosparam command="load" ns="gazebo" file="$(find anymal_gazebo)/config/services.yaml" />
+  <param name="gazebo/real_time_update_rate"    value="$(arg real_time_update_rate)"/>
+  <param name="gazebo/max_step_size"            value="$(arg max_step_size)"/>
+  <param name="gazebo/publishing_time_step"     value="$(arg publishing_time_step)"/>
+  <param name="gazebo/simulate_estimator"       value="$(arg simulate_estimator)"/>
+  <param name="gazebo/publish_groundtruth"      value="$(arg publish_groundtruth)"/>
+  <param name="gazebo/frame/odometry/offset/x"  value="$(arg frame_odometry_offset_x)"/>
+  <param name="gazebo/frame/odometry/offset/y"  value="$(arg frame_odometry_offset_y)"/>
+  <param name="gazebo/frame/odometry/offset/z"  value="$(arg frame_odometry_offset_z)"/>
+  <param name="gazebo/sync_name"                value="anymal_controller_sync" if="$(arg simulate_estimator)"/>
+  <param name="gazebo/sync_name"                value="anymal_sync"            unless="$(arg simulate_estimator)"/>
+  <param name="gazebo/joint_states/leg_config"  value="$(arg leg_config)"/>
+
+  <!-- Load Gazebo world -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <env name="GAZEBO_MODEL_PATH" value="$(arg model_path)"/>
+    <arg name="world_name"        value="$(arg world_file)"/>
+    <arg name="paused"            value="$(arg paused)"/>
+    <arg name="use_sim_time"      value="$(arg use_sim_time)"/>
+    <arg name="gui"               value="$(arg run_gui)"/>
+    <arg name="headless"          value="$(arg headless)"/>
+    <arg name="debug"             value="$(arg debug)"/>
+    <arg name="verbose"           value="$(arg verbose)"/>
+    <arg name="respawn_gazebo"    value="true"/>
+  </include>
+
+  <!--Alter URDF parameters in ANYmal description for simulation -->
+  <node name="add_noise_to_description" pkg="anymal_gazebo" type="add_noise_to_description.py" output="screen">
+    <param name="add_noise_to_description"            value="$(arg add_noise_to_description)"/>
+    <param name="description_name"                    value="$(arg description_name)"/>
+    <param name="simulation_description_name"         value="$(arg simulation_description_name)"/>
+    <param name="seed"                                value="$(arg seed)"/>
+    <rosparam command="load" file="$(find anymal_gazebo)/config/description_noise.yaml"/>
+  </node>
+
+  <!--  Spawn robot in Gazebo -->
+  <node name="spawn_anymal" pkg="gazebo_ros" type="spawn_model"
+        args="-param $(arg simulation_description_name) -urdf -model anymal -x $(arg x)
+              -y $(arg y) -z $(arg z) -R $(arg roll) -P $(arg pitch) -Y $(arg yaw)"
+        output="screen"/>
+
+  <!-- Dodgeball -->
+  <include file="$(find dodgeball_gazebo)/launch/dodgeball.launch">
+    <arg name="target_robot_name" value="anymal"/>
+    <arg name="target_link_name"  value="base"/>
+  </include>
+
+  <!-- Additional nodes if the localizer is simulated -->
+  <group if="$(arg simulate_localizer)">
+    <!-- Simulate Pharos SLAM -->
+    <include file="$(find slam_simulation)/launch/simulated_localizer.launch">
+      <arg name="node_name"           value="slam"/>
+      <arg name="configuration_file"  value="$(find anymal_gazebo)/config/simulated_slam.yaml"/>
+    </include>
+
+    <!-- Simulate Point Cloud-based Odometry -->
+    <include file="$(find slam_simulation)/launch/simulated_localizer.launch">
+      <arg name="node_name"           value="point_cloud_odometry"/>
+      <arg name="configuration_file"  value="$(find anymal_gazebo)/config/simulated_point_cloud_odometry.yaml"/>
+    </include>
+
+    <!-- Simulate the localization manager transforming poses to tfs -->
+    <node ns="localization_manager" name="slam" pkg="pose_tf_publisher" type="pose_with_covariance_tf_publisher" output="screen">
+      <param name="pose_topic"           value="/slam/map_pose"/>
+      <param name="child_frame_id"       value="map"/>
+      <param name="max_rate"             value="100"/>
+      <param name="publish_continuously" value="true"/>
+    </node>
+    <node ns="localization_manager" name="point_cloud_odometry" pkg="pose_tf_publisher" type="pose_with_covariance_tf_publisher" output="screen">
+      <param name="pose_topic"           value="/point_cloud_odometry/map_pose"/>
+      <param name="child_frame_id"       value="point_cloud_odom"/>
+      <param name="max_rate"             value="100"/>
+      <param name="publish_continuously" value="true"/>
+    </node>
+  </group>
+
+</launch>

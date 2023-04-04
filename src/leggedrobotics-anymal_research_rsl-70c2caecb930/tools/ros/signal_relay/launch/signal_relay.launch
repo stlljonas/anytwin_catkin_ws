@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+
+  <!-- Default configuration for Reset routing -->
+  <arg name="config_file"             default="$(find signal_relay)/config/reset_routes_example.yaml" />
+  <!-- Overlay parameter file -->
+  <arg name="overlay_config_file"     default="" />
+  
+  <!-- Signal Relay -->
+  <node pkg="signal_relay" type="signal_relay_node" name="signal_relay" respawn="true" output="screen">
+    <rosparam command="load"    file="$(arg config_file)"/>
+    <rosparam command="load"    file="$(arg overlay_config_file)"/>
+  </node>
+    
+</launch>

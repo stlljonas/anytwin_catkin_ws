@@ -1,0 +1,10 @@
+# Device to get control gains.
+string device_name
+
+# Mode.
+Mode mode
+
+---
+
+# Control gains.
+PidGains pid_gains

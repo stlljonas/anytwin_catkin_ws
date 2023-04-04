@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:macro name="anymal_hip" params="leg:=LF">
+
+    <xacro:property name="q_HaaH_roll"  value= "${210/180*pi}"/> <!-- [rad] -->
+    <xacro:property name="H_r_HHcom_x"  value= "0.074244627050"/> <!-- [m] -->
+    <xacro:property name="H_r_HHcom_y"  value= "0.000798640726"/> <!-- [m] -->
+    <xacro:property name="H_r_HHcom_z"  value="-0.006501301625"/> <!-- [m] -->
+    <xacro:property name="m_H"          value= "0.57"/> <!-- [kg] -->
+    <xacro:property name="H_Ixx_H"      value= "0.00074209445"/> <!-- [kg * m^2] -->
+    <xacro:property name="H_Iyy_H"      value= "0.00188752994"/> <!-- [kg * m^2] -->
+    <xacro:property name="H_Izz_H"      value= "0.00182786063"/> <!-- [kg * m^2] -->
+    <xacro:property name="H_Ixy_H"      value="-0.00002110261"/> <!-- [kg * m^2] -->
+    <xacro:property name="H_Ixz_H"      value= "0.00003311476"/> <!-- [kg * m^2] -->
+    <xacro:property name="H_Iyz_H"      value= "0.00000131851"/> <!-- [kg * m^2] -->
+
+    <!-- Generated properties -->
+    <xacro:property name="left"         value="${int(leg.startswith('L'))*2-1}"/>
+    <xacro:property name="front"        value="${int(leg.startswith('F', 1))*2-1}"/>
+    <xacro:property name="mirrored"     value="${'_mirrored' if left * front == -1 else ''}" />
+
+
+    <!-- joint HAA hip -->
+    <joint name="${leg}_HIP_${leg}_hip_fixed" type="fixed">
+      <parent link="${leg}_HIP"/>
+      <child link="${leg}_hip_fixed"/>
+      <origin xyz="0 0 0" rpy="${left*q_HaaH_roll} 0 ${(front-1)*0.5*pi}"/>
+    </joint>
+
+    <!-- Hip link -->
+    <link name="${leg}_hip_fixed">
+     <visual>
+       <origin xyz="0 0 0" rpy="0 0 ${(front-1)*0.5*pi}"/>
+       <geometry>
+         <mesh
+           filename="package://anymal_c/urdf/leg/hip/hip_3_1_1_mesh${mirrored}.dae"
+           scale="${anymal_meshes_scale}"/>
+       </geometry>
+     </visual>
+      <inertial>
+        <origin xyz="${front*H_r_HHcom_x} ${left*H_r_HHcom_y} ${H_r_HHcom_z}"
+                rpy="0 0 0"/>
+        <mass value="${m_H}"/>
+        <inertia ixx="${H_Ixx_H}" ixy="${front*left*H_Ixy_H}" ixz="${front*H_Ixz_H}"
+                 iyy="${H_Iyy_H}" iyz="${left*H_Iyz_H}"       izz="${H_Izz_H}"/>
+      </inertial>
+    </link>
+
+  </xacro:macro>
+
+</robot>

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>joy_state_estimation</name>
+  <version>0.6.0</version>
+  <description>The joy_state_estimation package</description>
+  <maintainer email="lisler@anybotics.com">Linus Isler</maintainer>
+  <maintainer email="mwulf@anybotics.com">Maximilian Wulf</maintainer>
+  <license>Proprietary</license>
+  <author email="lisler@anybotics.com">Linus Isler</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>cmake_clang_tools</build_depend>
+
+  <depend>any_msgs</depend>
+  <depend>anymal_msgs</depend>
+  <depend>joy_manager</depend>
+  <depend>std_srvs</depend>
+
+  <test_depend>cmake_code_coverage</test_depend>
+
+  <export>
+  	<joy_manager plugin="${prefix}/joy_state_estimation.xml" />
+  </export>
+</package>

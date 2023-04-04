@@ -1,0 +1,21 @@
+[Unit]
+Description=ANYmal %I software stack automatic start
+# add both, load-config and network dependency. This service might run on other PCs than LPC, where the load-config
+# service does not exist. Missing services will be ignored.
+Wants=anymal-load-config.service
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+User=integration
+EnvironmentFile=/etc/robot/ros.conf
+KillMode=process
+KillSignal=SIGINT
+LimitNICE=-20
+LimitRTPRIO=99
+ExecStart=/bin/bash -c "source /opt/ros/${ROS_DISTRIBUTION}/setup.bash && stdbuf -oL roslaunch --wait stack_launcher stack_launcher.launch stack:=%i trigger_param:='/config_loaded'"
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,123 @@
+actions:
+
+  # Climbing.
+  - action:
+      id: gap_small_climb_over_here
+      name: Gap Small Climb Over Here
+      file: actions/climbing/gap_small_climb_over_here.py
+      type: python
+      description: Climb over a small gap from current position.
+  - action:
+      id: obstacle_small_climb_over_here
+      name: Obstacle Small Climb Over Here
+      file: actions/climbing/obstacle_small_climb_over_here.py
+      type: python
+      description: Climb over a small obstacle from current position.
+  - action:
+      id: obstacle_small_climb_over_here_reverse
+      name: Obstacle Small Climb Over Here Reverse
+      file: actions/climbing/obstacle_small_climb_over_here_reverse.py
+      type: python
+      description: Climb backwards over a small obstacle from current position.
+  - action:
+      id: obstacle_big_climb_over_here
+      name: Obstacle Big Climb Over Here
+      file: actions/climbing/obstacle_big_climb_over_here.py
+      type: python
+      description: Climb over a big obstacle from current position.
+  - action:
+      id: obstacle_big_climb_over_here_reverse
+      name: Obstacle Big Climb Over Here Reverse
+      file: actions/climbing/obstacle_big_climb_over_here_reverse.py
+      type: python
+      description: Climb over a big obstacle backwards from current position.
+  - action:
+      id: obstacle_climb_over_here_oo_leg_config
+      name: Obstacle Climb Over Here OO Leg Config
+      file: actions/climbing/obstacle_climb_over_here_oo_leg_config.py
+      type: python
+      description: Climb over an obstacle in OO leg configuration (outwards) from current position.
+  - action:
+      id: obstacle_climb_over_reverse_here_oo_leg_config
+      name: Obstacle Climb Over Reverse Here OO Leg Config
+      file: actions/climbing/obstacle_climb_over_reverse_here_oo_leg_config.py
+      type: python
+      description: Climb over an obstacle backwards in OO leg configuration (outwards) from current position.
+  - action:
+      id: step_climb_up_here
+      name: Step Climb Up Here
+      file: actions/climbing/step_climb_up_here.py
+      type: python
+      description: Climb up a step from current position.
+  - action:
+      id: step_climb_down_here
+      name: Step Climb Down Here
+      file: actions/climbing/step_climb_down_here.py
+      type: python
+      description: Climb down a step from current position.
+  - action:
+      id: step_climb_down_reverse_here
+      name: Step Climb Down Reverse Here
+      file: actions/climbing/step_climb_down_reverse_here.py
+      type: python
+      description: Climb down a step backwards from current position.
+  - action:
+      id: step_climb_up_here_oo_leg_config
+      name: Step Climb Up Here in OO Leg Config
+      file: actions/climbing/step_climb_up_here_oo_leg_config.py
+      type: python
+      description: Climb up a step in OO leg configuration (outwards) from current position.
+  - action:
+      id: overhanging_obstacle_walk_underneath_here
+      name: Overhanging Obstacle Walk Underneath Here
+      file: actions/climbing/overhanging_obstacle_walk_underneath_here.py
+      type: python
+      description: Walk underneath an overhanging obstacle from current position.
+
+  # Walk.
+  - action:
+      id: walk
+      name: Walk
+      file: actions/walk/walk.py
+      type: python
+      description: Simple footstep generator for walking to a pose.
+  - action:
+      id: walk_joy
+      name: Walk Joy
+      file: actions/walk/walk_joy.py
+      type: python
+      description: Simple footstep generator for walking with joystick commands.
+  - action:
+      id: walk_joy_oo_config
+      name: Walk Joy OO-Config
+      file: actions/walk/walk_joy_oo_config.py
+      type: python
+      description: Simple footstep generator for walking with joystick commands in OO leg configuration (outwards).
+
+  # Return to pose.
+  - action:
+      id: return_to_pose_save
+      name: Return to Pose Save
+      file: actions/return_to_pose/return_to_pose_save.py
+      type: python
+      description: Saves the robot's pose for getting back to this position.
+  - action:
+      id: return_to_pose
+      name: Return to Pose
+      file: actions/return_to_pose/return_to_pose.yaml
+      type: yaml
+      description: Returns to the robot's previously saved pose.
+
+  # Search And Rescue
+  - action:
+      id: drop_payload_left
+      name: Drop Payload (left)
+      file: actions/search_and_rescue/drop_payload_left.py
+      type: python
+      description: Drop the payload to the left and straighten base again.
+  - action:
+      id: drop_payload_right
+      name: Drop Payload (right)
+      file: actions/search_and_rescue/drop_payload_right.py
+      type: python
+      description: Drop the payload to the right and straighten base again.

@@ -1,0 +1,7 @@
+# Device to set the error state behavior. Leave empty for all devices.
+string device_name
+
+# Error state behavior.
+ErrorStateBehavior error_state_behavior
+
+---

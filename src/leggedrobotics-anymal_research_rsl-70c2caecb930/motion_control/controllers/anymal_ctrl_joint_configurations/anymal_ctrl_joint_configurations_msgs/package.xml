@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+<package format="2">
+
+  <name>anymal_ctrl_joint_configurations_msgs</name>
+  <version>0.1.0</version>
+  <description>Messages for the package anymal_ctrl_joint_configurations_ros.</description>
+
+  <license>Proprietary</license>
+  <author email="areske@anybotics.com">Alexander Reske</author>
+  <maintainer email="vyuryev@anybotics.com">Valentin Yuryev</maintainer>
+  <maintainer email="avijayan@anybotics.com">Aravind Vijayan</maintainer>
+
+  <!-- Build tool dependency -->
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <!-- Catkin dependencies for building and executing -->
+  <depend>actionlib_msgs</depend>
+  <depend>message_generation</depend>
+  <depend>message_runtime</depend>
+  <depend>std_msgs</depend>
+
+</package>

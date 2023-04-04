@@ -1,0 +1,11 @@
+# Dynamixel front
+KERNEL=="ttyUSB*", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6001", ATTRS{serial}=="FTUAKG32", SYMLINK+="anymal/dynamixel/front"
+
+# Dynamixel rear
+KERNEL=="ttyUSB*", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6001", ATTRS{serial}=="FTUAHTTE", SYMLINK+="anymal/dynamixel/rear"
+
+# USB to Ethernet front
+SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*", ATTR{address}=="00:01:c0:1b:bc:11", ATTR{dev_id}=="0x0", ATTR{type}=="1", KERNEL=="eth*", NAME="eth12"
+
+# USB to Ethernet rear
+SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*", ATTR{address}=="00:01:c0:1b:bc:10", ATTR{dev_id}=="0x0", ATTR{type}=="1", KERNEL=="eth*", NAME="eth11"

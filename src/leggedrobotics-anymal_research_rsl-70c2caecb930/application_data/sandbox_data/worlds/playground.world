@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<sdf version="1.4">
+  <world name="default">
+    <include>
+      <uri>model://sun</uri>
+    </include>
+    <include>
+      <uri>model://sandbox_data/models/playground</uri>
+    </include>
+    <include>
+      <uri>model://sandbox_data/models/docking_station</uri>
+      <pose>-2.0 0.0 0.001 0 0 3.14159</pose>
+    </include>
+    <include>
+      <uri>model://sandbox_data/models/apriltag_0_size_18cm</uri>
+      <pose>7.495 0.0 1.5 0 0 3.14159</pose>
+    </include>
+  </world>
+</sdf>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+  <arg name="collection" default="" />
+
+  <node pkg="anymal_free_gait_action_loader_adapter" type="action_loader_adapter.py" name="anymal_free_gait_action_loader_adapter" output="screen">
+  	<param name="collection" value="$(arg collection)" />
+  </node>
+</launch>

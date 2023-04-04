@@ -1,0 +1,17 @@
+<library path="lib/librqt_gait_switcher">
+    <class name="GaitSwitcherPlugin" type="GaitSwitcherPlugin" base_class_type="rqt_gui_cpp::Plugin">
+        <description>
+            An rqt plugin that provides a gui to switch gaits.
+        </description>
+        <qtgui>
+            <group>
+                <label>Any</label>
+                <icon type="theme">folder</icon>
+                <statustip>Plugins related to any</statustip>
+            </group>
+            <label>Gait switcher</label>
+            <icon type="theme">applications-graphics</icon>
+            <statustip>An rqt plugin that provides a gui to switch gaits.</statustip>
+        </qtgui>
+    </class>
+</library>

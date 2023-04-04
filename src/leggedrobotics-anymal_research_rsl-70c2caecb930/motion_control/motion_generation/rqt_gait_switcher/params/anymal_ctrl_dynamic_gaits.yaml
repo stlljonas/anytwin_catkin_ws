@@ -1,0 +1,5 @@
+gaitswitcher:
+  service:
+    available_gaits: "/dynamic_gaits_ros/get_available_gaits"
+    switch_gait: "/dynamic_gaits_ros/switch_gait"
+    switch_to_default_config: "/dynamic_gaits_ros/switch_to_default_config"

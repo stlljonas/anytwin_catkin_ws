@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package format="2">
+
+  <name>cmake_python_coverage</name>
+  <version>0.1.0</version>
+  <description>CMake helpers for python coverage.</description>
+  <license>Proprietary</license>
+
+  <maintainer email="ghottiger@anybotics.com">Gabriel Hottiger</maintainer>
+  <maintainer email="rdiethelm@anybotics.com">Remo Diethelm</maintainer>
+  <author email="ghottiger@anybotics.com">Gabriel Hottiger</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>python-coverage</depend>
+  <depend>python-pytest</depend>
+  <depend>rospy</depend>
+  <depend>rostest</depend>
+  <depend>ros_pytest</depend>
+
+</package>

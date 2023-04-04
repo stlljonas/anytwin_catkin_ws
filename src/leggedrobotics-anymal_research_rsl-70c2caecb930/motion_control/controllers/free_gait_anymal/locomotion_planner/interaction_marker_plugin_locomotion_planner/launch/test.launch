@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+
+  <!-- Name of the interaction marker (used as node name and ROS interface namespace) -->
+  <arg name="name"                                 default="interaction_marker"/>
+  <!-- Description of the interaction marker -->
+  <arg name="description"                          default="Interaction Marker"/>
+  <!-- Mesh resource -->
+  <arg name="mesh_resource"                        default="package://interaction_marker/meshes/test.dae"/>
+  <!-- Enable/disable the usage of /tf_minimal instead of /tf -->
+  <arg name="tf_minimal"                           default="false"/>
+  <!-- Frame the marker is displayed in -->
+  <arg name="global_frame_id"                      default="global"/>
+  <!-- Frame the marker is representing -->
+  <arg name="marker_frame_id"                      default="marker"/>
+  <!-- Timeout looking for transformation for initial reset -->
+  <arg name="initial_reset_timeout"                default="5.0"/>
+  <!-- Plugin setup file -->
+  <arg name="plugin_setup_file"                    default="$(find interaction_marker_plugin_locomotion_planner)/config/test.yaml"/>
+  
+  <!-- Static tf publisher -->
+  <node ns="$(arg name)" name="tf_publisher_map_to_global" pkg="tf2_ros" type="static_transform_publisher" 
+        args="0.5 -1.0 0.0 -0.5 0.5 0.5 $(arg global_frame_id) map"/>
+
+  <!-- Load interaction marker -->
+  <include file="$(find interaction_marker)/launch/test.launch">
+    <arg name="name"                  value="$(arg name)"/>
+    <arg name="description"           value="$(arg description)"/>
+    <arg name="mesh_resource"         value="$(arg mesh_resource)"/>
+    <arg name="tf_minimal"            value="$(arg tf_minimal)"/>
+    <arg name="global_frame_id"       value="$(arg global_frame_id)"/>
+    <arg name="marker_frame_id"       value="$(arg marker_frame_id)"/>
+    <arg name="initial_reset_timeout" value="$(arg initial_reset_timeout)"/>
+    <arg name="plugin_setup_file"     value="$(arg plugin_setup_file)"/>
+  </include>
+  
+</launch>

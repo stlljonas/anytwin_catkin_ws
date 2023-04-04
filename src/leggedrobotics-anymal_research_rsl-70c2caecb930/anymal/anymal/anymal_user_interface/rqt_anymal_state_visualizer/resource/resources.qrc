@@ -1,0 +1,7 @@
+<!DOCTYPE RCC><RCC version="1.0">
+  <qresource>
+    <file>fonts/battery.ttf</file>
+    <file>fonts/arialbd.ttf</file>
+    <file>images/anymal/anymal_state_battery.png</file>
+  </qresource>
+</RCC>

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<package format="2">
+
+  <name>average_calculator_doc</name>
+  <version>0.1.0</version>
+  <description>Documentation for the average calculator packages.</description>
+
+  <license>Proprietary</license>
+  <author email="rdiethelm@anybotics.com">Remo Diethelm</author>
+  <maintainer email="rdiethelm@anybotics.com">Remo Diethelm</maintainer>
+  <maintainer email="ghottiger@anybotics.com">Gabriel Hottiger</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>doxygen</build_depend>
+
+  <depend>average_calculator</depend>
+  <depend>average_calculator_ros</depend>
+
+</package>

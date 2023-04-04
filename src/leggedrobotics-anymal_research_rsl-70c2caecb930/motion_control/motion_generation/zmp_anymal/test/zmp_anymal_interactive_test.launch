@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+  <!-- Enable/disable Rviz -->
+  <arg name="rviz" default="true"/>
+  <!-- Rviz configuration -->
+  <arg name="rviz_config_path" default="$(find zmp_anymal)/test/zmp_anymal.rviz"/>
+
+  <arg name="crawling_config_path" default="$(find anymal_b)/config/non_ros/motion_control/dynamic_gaits_ros"/>
+
+  <arg name="run_debug" default="false"/>
+
+  <arg name="launch_prefix" default=""/>
+
+  <arg name="launch_prefix_debug" default="gdb -ex run --args"/>
+
+  <rosparam command="load" ns="zmp_optimization_anymal" file="$(find zmp_anymal)/config/ros.yaml"/>
+
+  <!-- Always load the default configuration -->
+  <include file="$(find anymal_c)/launch/load_config.launch">
+    <arg name="extension_config_file" value="$(find zmp_anymal)/test/extension.yaml"/>
+  </include>
+
+  <!-- RViz -->
+  <group unless="$(arg run_debug)">
+    <!-- Launch test stack -->
+    <include file="$(find stack_launcher)/launch/stack_launcher.launch">
+      <arg name="stack"         value="test"/>
+      <arg name="trigger_param" value="/config_loaded"/>
+    </include>
+
+      <!-- Launch test node -->
+    <node pkg="zmp_anymal" name="zmp_interactive_test" type="zmp_anymal_interactive_test_node" launch-prefix="$(arg launch_prefix)">
+      <param name="crawling_config_path"  value="$(arg crawling_config_path)"/>
+    </node>
+  </group>
+
+  <group if="$(arg run_debug)">
+  <!-- Launch test node -->
+    <node pkg="zmp_anymal" name="zmp_interactive_test" type="zmp_anymal_interactive_test_node" launch-prefix="$(arg launch_prefix_debug)"/>
+      <param name="crawling_config_path"  value="$(arg crawling_config_path)"/>
+  </group>
+
+</launch>

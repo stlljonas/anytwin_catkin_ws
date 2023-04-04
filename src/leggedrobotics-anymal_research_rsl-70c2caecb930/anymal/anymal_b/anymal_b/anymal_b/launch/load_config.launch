@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+
+  <!-- Launch file loading the ANYmal B configuration. -->
+
+  <!-- Configuration -->
+  <arg name="robot"        default="b"            doc="Robot, e.g. 'beth' or 'bear'. Use 'b' for generic robot."/>
+  <arg name="data_package" default=""             doc="Data package containing the world and all environment related data."/>
+  <arg name="world"        default=""             doc="World within the data package."/>
+  <arg name="setup"        default="real"         doc="Configuration setup. Options: real, sim, sim_lite."/>
+  <arg name="extension"    default="none"         doc="Configuration extension file in YAML format."/>
+
+  <!-- Configuration files -->
+  <arg name="robot_config_file"       default="$(eval find('anymal_' + robot) + '/config/robot/robot.yaml')"                                        doc="Full path of the robot configuration file."/>
+  <arg name="environment_config_file" default="$(eval find(data_package) + '/config/environment/' + world + '.yaml' if data_package != '' else '')" doc="Full path of the environment configuration file."/>
+  <arg name="setup_config_file"       default="$(find anymal_b)/config/setup/$(arg setup).yaml"                                                     doc="Full path of the setup configuration file."/>
+  <arg name="extension_config_file"   default="$(find anymal_b)/config/extension/$(arg extension).yaml"                                             doc="Full path of the extension configuration file."/>
+
+  <!-- Feature toggles -->
+  <arg name="motion_control_module"       default="new"       doc="Motion control module to run. Options: new, legacy."/>
+  <arg name="state_estimator_module"      default="tsif"      doc="State estimator module to run. Options: tsif, simulated (only in simulation)."/>
+  <arg name="slam_module"                 default="pharos"    doc="SLAM module to run. Options: pharos, icp_tools, simulated (only in simulation)."/>
+  <arg name="point_cloud_odometry_module" default="real"      doc="Point cloud odometry module to run. Options: real, simulated (only in simulation)."/>
+  <arg name="diagnostic_mode"             default="disabled"  doc="Run the diagnostic mode. Note that enabling diagnostic mode is only supported with the 'new' motion control module. Options: disabled, enabled."/>
+
+  <!-- Environment -->
+  <arg name="environment_file"        default="$(eval find(data_package) + '/environments/' + world + '.yaml' if data_package != '' else '')"/>
+
+  <!-- Load default configuration -->
+  <rosparam command="load" file="$(find anymal_b)/config/default.yaml"/>
+
+  <!-- Load feature toggling configurations -->
+  <rosparam command="load" file="$(find anymal_b)/config/feature_toggles/motion_control/$(arg motion_control_module).yaml"/>
+  <rosparam command="load" file="$(find anymal_b)/config/feature_toggles/state_estimation/$(arg state_estimator_module).yaml"/>
+  <rosparam command="load" file="$(find anymal_b)/config/feature_toggles/slam/$(arg slam_module).yaml"/>
+  <rosparam command="load" file="$(find anymal_b)/config/feature_toggles/point_cloud_odometry/$(arg point_cloud_odometry_module).yaml"/>
+  <rosparam command="load" file="$(find anymal_b)/config/feature_toggles/diagnostic_mode/$(arg diagnostic_mode).yaml"/>
+
+  <!-- Overlay robot configuration -->
+  <rosparam command="load" file="$(arg robot_config_file)"/>
+  <!-- Overlay environment configuration -->
+  <rosparam command="load" file="$(arg environment_config_file)" if="$(eval environment_config_file != '')"/>
+  <!-- Overlay setup configuration -->
+  <rosparam command="load" file="$(arg setup_config_file)"/>
+  <!-- Overlay extension configuration -->
+  <rosparam command="load" file="$(arg extension_config_file)"/>
+
+  <!-- Load environment -->
+  <rosparam ns="environment" command="load" file="$(arg environment_file)" if="$(eval environment_file != '')"/>
+
+  <!-- Write configuration arguments to ROS parameter server for logging -->
+  <param name="/config/general/robot"                                 value="$(arg robot)"/>
+  <param name="/config/general/data_package"                          value="$(arg data_package)"/>
+  <param name="/config/general/world"                                 value="$(arg world)"/>
+  <param name="/config/general/setup"                                 value="$(arg setup)"/>
+  <param name="/config/general/extension"                             value="$(arg extension)"/>
+  <param name="/config/general/robot_config_file"                     value="$(arg robot_config_file)"/>
+  <param name="/config/general/environment_config_file"               value="$(arg environment_config_file)"/>
+  <param name="/config/general/setup_config_file"                     value="$(arg setup_config_file)"/>
+  <param name="/config/general/extension_config_file"                 value="$(arg extension_config_file)"/>
+  <param name="/config/general/environment_file"                      value="$(arg environment_file)"/>
+  <param name="/config/feature_toggles/motion_control_module"         value="$(arg motion_control_module)"/>
+  <param name="/config/feature_toggles/state_estimator_module"        value="$(arg state_estimator_module)"/>
+  <param name="/config/feature_toggles/slam_module"                   value="$(arg slam_module)"/>
+  <param name="/config/feature_toggles/point_cloud_odometry_module"   value="$(arg point_cloud_odometry_module)"/>
+  <param name="/config/feature_toggles/diagnostic_mode"               value="$(arg diagnostic_mode)"/>
+
+  <!-- Post process loaded configuration and notify when done -->
+  <node pkg="stack_launcher" type="sequential_roslaunch_node.py" name="sequential_roslaunch" output="screen">
+    <rosparam param="launch_files" subst_value="True">
+      ['stack_launcher stack_launcher.launch stack:=post_process_config',
+       'anymal_b notify_config_loaded.launch']
+    </rosparam>
+  </node>
+
+</launch>

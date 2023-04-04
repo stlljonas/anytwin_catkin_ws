@@ -1,0 +1,47 @@
+# Stream sources -> Point cloud data sources that the node listens to. Optional filtering can be set to occur as soon as a point cloud is received.
+stream_sources:
+  - id:                     0                                                       # Id of stream. Integer used to identify the source stream. Must be different to other source stream IDs.
+    source_name:            "lidar"                                                # Name of stream.
+    source_type:            "lidar"                                                 # Type of stream (e.g. lidar, depth camera).
+    queue_size:             1                                                       # Queue size of point cloud subscriber.
+    latch:                  false                                                   # Whether the output topic will be latched.
+    input_topic:            "/lidar/point_cloud"                                 # Name of input topic.
+    output_topic:           "/lidar/point_cloud_filtered"                        # Name of output topic.
+    filter:                 true                                                    # Whether intput point clouds will be filtered.
+    filters_config:         "pointmatcher_filters_example.yaml"                     # Name of the filter parameters config file.
+
+  - id:                     1
+    source_name:            "depth_camera_front"
+    source_type:            "depth_camera"
+    queue_size:             1
+    latch:                  false
+    input_topic:            "/depth_camera_front/depth/color/points"
+    output_topic:           "/depth_camera_front/depth/color/points_filtered"
+    filter:                 true
+    filters_config:         "pointmatcher_filters_example.yaml"
+    self_filter_config:     "self_filtering_example.yaml"
+    robot_description:      "/anymal_description"
+
+# Merged streams -> An output stream that can contain point clouds coming from different sources, merged in a single frame. 
+#                   All merged streams must have a 'master' source stream, which triggers processing every time a new point cloud arrives. 
+#                   Additionally, motion compensation can be performed while merging point clouds, to account for the motion of the robot while data was captured.
+stream_combinations:
+  - name:                   "lidar_depth"                                           # Name of stream. Integer used to identify the merged stream. Must be different to other merged stream IDs.
+    master:                 0                                                       # Id of master source stream.
+    sources:                [0, 1]                                                  # Id of source streams to be combined.
+    decimation:             5                                                       # Number of consecutive master stream point clouds to skip before processing this stream.
+    target_frame:           "base"                                                  # Frame of the output point cloud.
+    keep_intensity:         true                                                    # Whether the intensity channel of the Lidar should be kept in the merged cloud.
+    max_time_offset:        0.5                                                     # Max time offset between master point cloud and other point clouds to merge.
+    wait_time_tf:           0.1                                                     # Blocking time when waiting for tf.
+    use_fixed_frame_tf:     false                                                   # Whether a fixed frame will be used to find a motion-aware transform between the streams source frames and this stream's target frame.
+    fixed_frame_tf:         "odom"                                                  # Fixed frame that is used as external reference when querying source->target transforms from the tf server.
+    latch:                  false                                                   # Whether the output topic will be latched.  
+    output_topic:           "/lidar_depth_combined"                                 # Name of output cloud topic.
+    filter:                 true                                                    # Whether merged point clouds clouds will be filtered.
+    filters_config:         "pointmatcher_filters_example.yaml"                     # Name of the filter parameters config file.
+
+subscribers_check_period: 1.0                                                       # A time period (in seconds) for checking if streams have any subscribers can be specified with the parameter **subscribers_check_period**.
+                                                                                    # Streams without a "consumer" (a merged stream or external subscribers) won't be processed.
+
+log_level: "INFO"                                                                   # Log level. Options: DEBUG, INFO, WARN, ERROR, FATAL and COUNT

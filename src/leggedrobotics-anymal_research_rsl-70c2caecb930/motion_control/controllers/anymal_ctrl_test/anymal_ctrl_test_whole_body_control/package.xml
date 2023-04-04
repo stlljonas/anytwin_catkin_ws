@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<package format="2">
+  <name>anymal_ctrl_test_whole_body_control</name>
+  <version>0.1.0</version>
+  <description>The anymal_ctrl_test_whole_body_control package</description>
+  <maintainer email="fgiraldez@anybotics.com">Francisco Giraldez Gamez</maintainer>
+  <maintainer email="avijayan@anybotics.com">Aravind Vijayan</maintainer>
+  <license>Proprietary</license>
+  <author email="fgiraldez@anybotics.com">Francisco Giraldez Gamez</author>
+  
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>cmake_clang_tools</build_depend>
+
+  <depend>anymal_motion_control</depend>
+  <depend>loco</depend>
+  <depend>loco_anymal</depend>
+  <depend>message_logger</depend>
+  <depend>parameter_handler</depend>
+  <depend>robot_control</depend>
+  <depend>robot_utils</depend>
+
+  <export>
+    <robot_control plugin="${prefix}/robot_control_plugin.xml" />
+  </export>
+</package>

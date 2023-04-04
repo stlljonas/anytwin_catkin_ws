@@ -1,0 +1,17 @@
+<launch>
+
+  <!-- Name of the pantilt head -->
+  <arg name="name" default="inspection_payload"/>
+  <!-- Set true for simulation -->
+  <arg name="simulation" default="false"/>
+  <!-- Name of the robot description parameter -->
+  <arg name="description_name" default="anymal_description"/>
+
+  <node name="inspection_payload_robot_state_publisher" pkg="robot_state_publisher"
+        type="robot_state_publisher">
+    <param name="publish_frequency" value="30.0"/>
+    <remap from="robot_description" to="$(arg description_name)"/>
+    <remap from="joint_states"      to="/$(arg name)/joint_states"/>
+  </node>
+
+</launch>

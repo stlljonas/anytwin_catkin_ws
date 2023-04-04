@@ -1,0 +1,218 @@
+configurations:
+  default:
+
+    input_processing: &default-input-processing
+
+      default_goal_frame_id: auto
+      twist_command_topic: /twist_mux/twist
+      twist_scaling: 1.0
+
+    locomotion_parameters: &default-locomotion-parameters
+
+      default_speed_factor: 0.5
+
+      nominal_planar_stance:
+        - foot_position:
+            name: LF_LEG
+            position: [0.33, 0.23]
+        - foot_position:
+            name: RF_LEG
+            position: [0.33, -0.23]
+        - foot_position:
+            name: LH_LEG
+            position: [-0.33, 0.23]
+        - foot_position:
+            name: RH_LEG
+            position: [-0.33, -0.23]
+
+      intermediate_poses:
+        max_unpreferred_direction_distance: 1.5
+        turn_and_walk_distance: 0.3
+
+      max_pose_difference_for_gait_cycle:
+        slow:
+          x: 0.1
+          y: 0.07
+          yaw: 0.2
+        fast:
+          x: 0.35
+          y: 0.22
+          yaw: 0.45
+
+      footsteps: &default-footsteps
+        skip_step_threshold: 0.07
+        slow:
+          profile_height: 0.12
+          profile_type: 'triangle'
+          average_velocity: 0.5
+        fast:
+          profile_height: 0.05
+          profile_type: 'triangle'
+          average_velocity: 1.0
+      base_motions: &default-base-motions
+        center_of_mass_tolerance: 0.0
+        leg_length_tolerance: 0.0
+        min_limb_length_scale: 0.325
+        max_limb_length_at_closing_contact_scale:  0.887
+        max_limb_length_at_opening_contact_scale: 0.919
+        slow:
+          base_height: 0.48
+          average_linear_velocity: 0.15
+          average_angular_velocity: 0.3
+          support_margin: 0.06
+        fast:
+          base_height: 0.46
+          average_linear_velocity: 0.25
+          average_angular_velocity: 0.5
+          support_margin: 0.025
+
+      foothold_optimizer:
+        foot_center_height: 0.01 # From ground.
+        foothold_size: 0.09 # For point foot: diameter.
+        search_area_size: 0.35 # For cicular are: diameter.
+
+      swing_trajectory:
+        use_primary_trajectory: false
+        stop_on_failure: false
+        min_clearance: 0.07
+        max_height: 0.3
+
+    perception_parameters: &default-perception-parameters
+
+      elevation_mapping:
+        service_name: /elevation_mapping/get_submap
+        layers:
+          elevation: elevation
+          foothold_score: foothold_binary
+          collision: elevation
+        update_rate: 2.0
+        max_age_of_last_update: 5.0
+        map_area:
+          footprint_radius: 1.1
+          max_distance: 1.5
+        elevation_map_filters:
+          # Reduce noise with a radial blurring filter.
+          - name: mean_in_radius
+            type: gridMapFilters/MeanInRadiusFilter
+            params:
+              input_layer: elevation
+              output_layer: elevation_smooth
+              radius: 0.06
+
+          # Compute surface normals.
+          - name: surface_normals
+            type: gridMapFilters/NormalVectorsFilter
+            params:
+              input_layer: elevation
+              output_layers_prefix: normal_vectors_
+              radius: 0.05
+              normal_vector_positive_axis: z
+
+          # Compute slope from surface normal.
+          - name: slope
+            type: gridMapFilters/MathExpressionFilter
+            params:
+              output_layer: slope
+              expression: acos(normal_vectors_z)
+
+          # Compute roughness as absolute difference from map to smoothened map.
+          - name: roughness
+            type: gridMapFilters/MathExpressionFilter
+            params:
+              output_layer: roughness
+              expression: abs(elevation - elevation_smooth)
+
+          # Compute foothold score as normalized weighted sum of slope and roughness.
+          - name: foothold_score
+            type: gridMapFilters/MathExpressionFilter
+            params:
+              output_layer: foothold_score
+              expression: cwiseMax(0.5 * (1.0 - (slope / 0.6)) + 0.5 * (1.0 - (roughness / 0.1)), 0.0)
+
+          # Delete unused layers.
+          - name: delete_unused_layers
+            type: gridMapFilters/DeletionFilter
+            params:
+              layers: [elevation_smooth, slope, roughness]
+
+          # Duplicate layer.
+          - name: duplicate
+            type: gridMapFilters/DuplicationFilter
+            params:
+              input_layer: foothold_score
+              output_layer: foothold_binary
+
+          # Set lower threshold for binary foothold map.
+          - name: foothold_binary_lower_threshold
+            type: gridMapFilters/ThresholdFilter
+            params:
+              layer: foothold_binary
+              lower_threshold: 0.5
+              set_to: 0.0
+
+          # Set upper threshold on binary foothold map.
+          - name: foothold_binary_upper_threshold
+            type: gridMapFilters/ThresholdFilter
+            params:
+              layer: foothold_binary
+              upper_threshold: 0.5
+              set_to: 1.0
+
+  blind:
+    input_processing:
+      <<: *default-input-processing
+      default_goal_frame_id: odom
+    locomotion_parameters:
+      <<: *default-locomotion-parameters
+      footsteps:
+        <<: *default-footsteps
+        slow:
+          profile_height: 0.20
+          profile_type: 'triangle'
+          average_velocity: 0.5
+        fast:
+          profile_height: 0.20
+          profile_type: 'triangle'
+          average_velocity: 1.0
+
+  creep:
+    input_processing:
+      <<: *default-input-processing
+      default_goal_frame_id: odom
+    locomotion_parameters:
+      <<: *default-locomotion-parameters
+      base_motions:
+        <<: *default-base-motions
+        slow:
+          base_height: 0.22
+          average_linear_velocity: 0.15
+          average_angular_velocity: 0.3
+          support_margin: 0.06
+        fast:
+          base_height: 0.22
+          average_linear_velocity: 0.17
+          average_angular_velocity: 0.35
+          support_margin: 0.03
+
+      footsteps:
+        <<: *default-footsteps
+        slow:
+          profile_height: 0.06
+          profile_type: 'triangle'
+          average_velocity: 0.5
+        fast:
+          profile_height: 0.04
+          profile_type: 'triangle'
+          average_velocity: 0.6
+
+      max_pose_difference_for_gait_cycle:
+        slow:
+          x: 0.1
+          y: 0.07
+          yaw: 0.2
+        fast:
+          x: 0.15
+          y: 0.12
+          yaw: 0.3
+
+

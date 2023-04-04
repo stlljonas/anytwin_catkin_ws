@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+
+<package format="2">
+
+  <name>notification_desktop</name>
+  <version>0.6.0</version>
+  <description>The notification_desktop package</description>
+  
+  <license>Proprietary</license>
+
+  <author email="ghottiger@anybotics.com">Gabriel Hottiger</author>
+  <maintainer email="ghottiger@anybotics.com">Gabriel Hottiger</maintainer>
+  <maintainer email="sbachmann@anybotics.com">Samuel Bachmann</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>notification</depend>
+  <depend>roscpp</depend>
+  <depend>libnotify</depend>
+  <depend>libglib-dev</depend>
+
+</package>

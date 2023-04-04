@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+
+<package format="2">
+
+  <name>anymal_c_lpc_drivers</name>
+  <version>1.0.0</version>
+  <description>ANYmal C Locomotion PC Drivers</description>
+
+  <license>Proprietary</license>
+
+  <author email="rdiethelm@anybotics.com">Remo Diethelm</author>
+  <maintainer email="rdiethelm@anybotics.com">Remo Diethelm</maintainer>
+  <maintainer email="fgiraldez@anybotics.com">Francisco Giráldez Gámez</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <!-- Default system -->
+  <exec_depend>any_topic_tools</exec_depend>
+  <exec_depend>anymal_c_pc_drivers</exec_depend>
+  <exec_depend>anymal_lowlevel_controller</exec_depend>
+  <exec_depend>anymal_state_monitor</exec_depend>
+  <exec_depend>epson_driver</exec_depend>
+  <exec_depend>hbc_driver</exec_depend>
+  <exec_depend>joy_anymal_lowlevel_controller</exec_depend>
+  <exec_depend>joy_pdb</exec_depend>
+  <exec_depend>kernel_monitor</exec_depend>
+  <exec_depend>pdb_driver</exec_depend>
+  <exec_depend>system_monitor</exec_depend>
+  <exec_depend>xsensmt_cosmo</exec_depend>
+
+  <export>
+    <metapackage />
+  </export>
+
+</package>

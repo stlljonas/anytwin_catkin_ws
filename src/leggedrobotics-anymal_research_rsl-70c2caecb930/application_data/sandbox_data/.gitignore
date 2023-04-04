@@ -1,0 +1,8 @@
+*~
+*.tar.gz
+*.log
+
+sandbox_data
+meshes
+point_clouds
+audio

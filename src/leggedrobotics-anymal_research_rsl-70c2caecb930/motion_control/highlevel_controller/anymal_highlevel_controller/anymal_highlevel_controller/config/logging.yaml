@@ -1,0 +1,1798 @@
+log_elements:
+  - name: /log/state/jointVel_RH_HFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/log/HLControllerIterDuration
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/state/jointPos_RH_HFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/command/jointVelocity/LF_HFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/state/jointTor_RH_HAA
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/command/pidGains/RH_KFE/P
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/state/jointAcc_RH_HAA
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/state/jointPos_RH_HAA
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/state/jointVel_RF_HFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/state/current_LH_KFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/command/pidGains/RH_HAA/I
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/state/jointVel_LH_KFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/state/jointAcc_LH_HFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/state/jointVel_LH_HFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/model/meas/jointVelocities/RF_HAA
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/state/jointTor_RF_KFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/command/jointVelocity/LH_HAA
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/state/jointAcc_RF_KFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/state/jointTor_RF_HFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/command/modeEnum/RF_HAA
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/state/jointAcc_RF_HFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/command/jointPosition/LH_HAA
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/state/current_RF_KFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/state/jointPos_RF_HFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/command/jointTorque/LF_HFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/state/jointTor_LH_HAA
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/state/jointAcc_RF_HAA
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/model/meas/jointTorques/RH_HFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/state/jointTor_RF_HAA
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/state/jointVel_RH_KFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/state/jointPos_RF_HAA
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/state/jointPos_RH_KFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/state/jointVel_LF_KFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/command/jointPosition/RH_HAA
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/state/jointAcc_LF_KFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/state/jointPos_LH_HFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/command/pidGains/LF_HFE/P
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/state/jointPos_LF_KFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/command/jointTorque/RH_HAA
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/state/jointTor_LF_HFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/state/jointAcc_LF_HFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/state/jointVel_LF_HFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/state/current_LF_HAA
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/state/jointTor_LF_HAA
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/state/current_RF_HFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/state/current_LF_HFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/model/meas/jointPositions/LF_HAA
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/model/des/jointVelocities/RF_HFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/model/des/jointVelocities/RH_KFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/log/HLActuatorMissCounter
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/state/jointVel_RF_KFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/state/current_RH_KFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/model/meas/jointTorques/RF_HAA
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/command/force_calib/cmdContinue_RF_FOOT
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/model/des/jointTorques/RH_HAA
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/state/jointPos_LH_HAA
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/state/current_RH_HAA
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/model/des/jointTorques/LH_HFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/model/des/jointVelocities/LF_HAA
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/command/modeEnum/RH_KFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/command/pidGains/RH_KFE/D
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/command/pidGains/RH_KFE/I
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/model/des/jointPositions/RH_KFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/command/jointTorque/RH_KFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/state/jointTor_RH_KFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/model/des/jointTorques/RH_KFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/command/jointPosition/RF_KFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/command/jointVelocity/RH_HAA
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/command/modeEnum/RF_HFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/command/jointPosition/LH_KFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/command/jointVelocity/RF_HFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/state/jointAcc_RH_KFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/model/meas/linVelBaseInWorldFrame
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/model/meas/jointVelocities/LF_HFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/command/jointVelocity/RH_KFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/command/modeEnum/LH_HFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/command/jointPosition/LH_HFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/command/pidGains/RF_HAA/I
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/model/meas/jointVelocities/LH_KFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/state/jointVel_LF_HAA
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/command/jointPosition/RF_HFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/state/imu/linAccImuInImuFrame
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/command/pidGains/RF_HAA/P
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/command/jointPosition/RF_HAA
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/command/jointVelocity/RH_HFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/command/pidGains/RF_HFE/I
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/command/pidGains/RH_HFE/P
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/command/jointTorque/RF_HAA
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/state/desRobotPose
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/command/pidGains/RH_HAA/D
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/command/modeEnum/RH_HAA
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/state/jointPos_RF_KFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/command/jointPosition/RH_KFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/state/jointVel_LH_HAA
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/state/jointTor_LF_KFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/state/jointTor_RH_HFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/model/des/jointPositions/LH_HFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/command/jointTorque/LH_HAA
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/command/pidGains/LH_HFE/I
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/state/status
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/state/jointAcc_LH_HAA
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/model/des/jointPositions/RF_KFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/model/meas/posWorldToBaseInWorldFrame
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/model/meas/jointVelocities/LF_HAA
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/command/modeEnum/LH_KFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/model/meas/orientBaseToWorldQuat
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/command/jointVelocity/LH_KFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/model/meas/jointPositions/LF_HFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/command/jointPosition/RH_HFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/model/meas/jointPositions/LF_KFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/model/meas/jointPositions/RF_HAA
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/model/meas/jointPositions/LH_KFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/model/des/jointVelocities/LH_HAA
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/command/jointTorque/RF_HFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/model/meas/jointPositions/RH_HFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/model/des/jointPositions/RH_HFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/command/pidGains/RH_HFE/D
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/model/des/angVelBaseInBaseFrame
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/model/meas/jointPositions/RH_KFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/log/HLAnymalStateMissCounter
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/model/des/jointVelocities/LH_HFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/model/meas/jointTorques/RF_HFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/model/meas/jointVelocities/LF_KFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/state/jointAcc_LH_KFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/model/des/jointVelocities/RF_HAA
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/log/HLImuMissCounter
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/model/des/jointTorques/LF_HAA
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/model/des/jointTorques/RH_HFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/model/meas/jointPositions/LH_HAA
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/model/des/jointPositions/RH_HAA
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/model/des/jointVelocities/LF_KFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/model/des/jointVelocities/RH_HFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/log/HLControllerUpdateDuration
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/model/des/jointPositions/LH_KFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/log/HLActuatorCommandsPublisherMissCounter
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/model/des/jointTorques/RF_KFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/model/des/jointVelocities/LH_KFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/state/jointPos_LF_HAA
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/state/jointVel_RF_HAA
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/model/des/jointTorques/LH_KFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/model/meas/jointVelocities/RF_HFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/model/des/jointPositions/RF_HFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/model/des/jointVelocities/LF_HFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/model/des/linVelBaseInWorldFrame
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/command/jointTorque/RH_HFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/model/meas/jointTorques/LF_KFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/model/meas/jointTorques/RH_HAA
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/model/des/jointVelocities/RH_HAA
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/model/meas/jointTorques/RH_KFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/model/meas/jointVelocities/LH_HFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/command/jointVelocity/RF_KFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/model/meas/angVelBaseInBaseFrame
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/model/des/jointPositions/LH_HAA
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/model/meas/jointTorques/LH_KFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/model/des/jointTorques/LH_HAA
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/model/meas/jointVelocities/RH_KFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/model/meas/jointPositions/LH_HFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/state/current_RH_HFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/model/des/jointTorques/LF_HFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/model/meas/jointVelocities/RH_HFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/model/meas/jointTorques/RF_KFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/command/jointVelocity/LF_KFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/model/meas/jointPositions/RH_HAA
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/model/des/jointTorques/RF_HFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/model/des/jointPositions/LF_HFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/model/meas/jointTorques/LF_HAA
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/model/des/jointPositions/LF_KFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/model/meas/jointVelocities/RF_KFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/command/pidGains/RH_HFE/I
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/state/current_LH_HAA
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/state/jointTor_LH_HFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/state/jointAcc_RH_HFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/model/meas/jointPositions/RF_KFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/command/pidGains/LH_KFE/P
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/command/pidGains/LF_HAA/D
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/command/pidGains/LH_HFE/D
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/command/pidGains/LH_KFE/I
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/command/pidGains/RF_KFE/D
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/model/meas/jointTorques/LH_HFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/command/modeEnum/LH_HAA
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/command/pidGains/RF_KFE/I
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/command/pidGains/RF_KFE/P
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/command/pidGains/LH_HFE/P
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/command/pidGains/LF_HFE/I
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/model/des/jointTorques/LF_KFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/command/jointTorque/LF_KFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/model/meas/jointTorques/LH_HAA
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/command/modeEnum/RF_KFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/command/pidGains/RH_HAA/P
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/command/jointPosition/LF_HFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/state/current_LF_KFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/command/jointVelocity/LH_HFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/command/pidGains/RF_HAA/D
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/command/modeEnum/LF_HAA
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/state/jointPos_LF_HFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/command/jointVelocity/LF_HAA
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/model/des/orientBaseToWorldQuat
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/model/des/jointVelocities/RF_KFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/command/modeEnum/LF_HFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/model/meas/jointPositions/RF_HFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/command/pidGains/RF_HFE/D
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/state/desRobotTwist
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/model/des/jointPositions/LF_HAA
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/command/jointPosition/LF_KFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/command/jointPosition/LF_HAA
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/command/pidGains/LF_HAA/I
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/command/jointTorque/LH_KFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/state/imu/angVelImuInImuFrame
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/state/current_RF_HAA
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/model/meas/jointVelocities/RH_HAA
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/command/pidGains/LF_KFE/P
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/command/pidGains/LH_HAA/D
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/state/jointPos_LH_KFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/command/pidGains/LH_HAA/P
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/command/pidGains/LF_HAA/P
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/command/pidGains/LF_HFE/D
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/command/modeEnum/LF_KFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/command/jointVelocity/RF_HAA
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/state/jointVel_RH_HAA
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/state/current_LH_HFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/command/pidGains/LF_KFE/D
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/model/meas/jointTorques/LF_HFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/command/pidGains/LH_KFE/D
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/state/jointTor_LH_KFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/command/modeEnum/RH_HFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/command/pidGains/LH_HAA/I
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/command/jointTorque/LF_HAA
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/model/des/jointTorques/RF_HAA
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/command/pidGains/RF_HFE/P
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/command/jointTorque/LH_HFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/command/jointTorque/RF_KFE
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/state/jointAcc_LF_HAA
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/command/pidGains/LF_KFE/I
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/model/des/jointPositions/RF_HAA
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/model/meas/jointVelocities/LH_HAA
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/model/des/posWorldToBaseInWorldFrame
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 2
+  - name: /log/planner/desAngVelBaseInWorld
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/planner/desLinAccWorldToComInWorld
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/planner/desLinVelWorldToComInWorld
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/planner/desPosWorldToComInWorld
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/planner/desPosWorldToPiInWorld
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/planner/desPosWorldToZmpInWorld
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/planner/desRotBaseToWorld
+    enabled: true
+    divider: 1
+    buffer:
+      type: 1
+      size: 10000
+    action: 0
+  - name: /log/dynamic_gaits_ros/missionController/contactSchedule/status
+    enabled: true
+    action: 1
+  - name: /log/dynamic_gaits_ros/missionController/locomotionMode
+    enabled: true
+    action: 1
+  - name: /log/dynamic_gaits_ros/missionController/locomotionState
+    enabled: true
+    action: 1
+  - name: /log/dynamic_gaits_ros/missionController/targetLocomotionMode
+    enabled: true
+    action: 1
+  - name: /log/dynamic_gaits_ros/comControl
+    enabled: false
+  - name: /log/dynamic_gaits_ros/comControl/footholdTrackingOffsetIndicator/filtered/LF
+    enabled: false
+  - name: /log/dynamic_gaits_ros/comControl/footholdTrackingOffsetIndicator/filtered/LH
+    enabled: false
+  - name: /log/dynamic_gaits_ros/comControl/footholdTrackingOffsetIndicator/filtered/RF
+    enabled: false
+  - name: /log/dynamic_gaits_ros/comControl/footholdTrackingOffsetIndicator/filtered/RH
+    enabled: false
+  - name: /log/dynamic_gaits_ros/comControl/footholdTrackingOffsetIndicator/unfiltered/LF
+    enabled: false
+  - name: /log/dynamic_gaits_ros/comControl/footholdTrackingOffsetIndicator/unfiltered/LH
+    enabled: false
+  - name: /log/dynamic_gaits_ros/comControl/footholdTrackingOffsetIndicator/unfiltered/RF
+    enabled: false
+  - name: /log/dynamic_gaits_ros/comControl/footholdTrackingOffsetIndicator/unfiltered/RH
+    enabled: false
+  - name: /log/dynamic_gaits_ros/comControl/headingInWorldFrame
+    enabled: false
+  - name: /log/dynamic_gaits_ros/comControl/orientationControlToDesiredBase
+    enabled: false
+  - name: /log/dynamic_gaits_ros/comControl/positionPlaneToDesiredTargetHightInPlaneFrame
+    enabled: false
+  - name: /log/dynamic_gaits_ros/comControl/positionWorldToDesiredCoMInWorldFrame
+    enabled: false
+  - name: /log/dynamic_gaits_ros/comControl/positionZmpInWorldFrame
+    enabled: false
+  - name: /log/dynamic_gaits_ros/comControl/virtualPlaneFrame/frameType
+    enabled: false
+  - name: /log/dynamic_gaits_ros/comControl/virtualPlaneFrame/planeNormalInPlaneFrame
+    enabled: false
+  - name: /log/dynamic_gaits_ros/comControl/virtualPlaneFrame/planeNormalInWorldFrame
+    enabled: false
+  - name: /log/dynamic_gaits_ros/comControl/virtualPlaneFrame/poseVirtualPlaneToWorld
+    enabled: false
+  - name: /log/dynamic_gaits_ros/missionController/contactSchedule/activeGaitDuration
+    enabled: false
+  - name: /log/dynamic_gaits_ros/missionController/contactSchedule/finalStancePhase
+    enabled: false
+  - name: /log/dynamic_gaits_ros/missionController/contactSchedule/lumpedVelocityError/filtered
+    enabled: false
+  - name: /log/dynamic_gaits_ros/missionController/contactSchedule/lumpedVelocityError/unfiltered
+    enabled: false
+  - name: /log/dynamic_gaits_ros/missionController/contactSchedule/switchDuration
+    enabled: false
+  - name: /log/dynamic_gaits_ros/missionController/contactSchedule/timeElapsedSinceGaitSwitchStart
+    enabled: false
+  - name: /log/dynamic_gaits_ros/missionController/modeSwitchStatus
+    enabled: false
+  - name: /log/dynamic_gaits_ros/missionController/speedFilter/bounds/maximalDesiredPositionOffsetInWorldFrame
+    enabled: false
+  - name: /log/dynamic_gaits_ros/missionController/speedFilter/bounds/maximalOrientationControlToBase
+    enabled: false
+  - name: /log/dynamic_gaits_ros/missionController/speedFilter/bounds/maximalPoseOffset
+    enabled: false
+  - name: /log/dynamic_gaits_ros/missionController/speedFilter/bounds/maximumBaseTwistInControlFrame
+    enabled: false
+  - name: /log/dynamic_gaits_ros/missionController/speedFilter/bounds/minimalDesiredPositionOffsetInWorldFrame
+    enabled: false
+  - name: /log/dynamic_gaits_ros/missionController/speedFilter/bounds/minimalOrientationControlToBase
+    enabled: false
+  - name: /log/dynamic_gaits_ros/missionController/speedFilter/bounds/minimalPoseOffset
+    enabled: false
+  - name: /log/dynamic_gaits_ros/missionController/speedFilter/bounds/minimalBaseTwistInControlFrame
+    enabled: false
+  - name: /log/dynamic_gaits_ros/missionController/speedFilter/filtered/baseTwistInControlFrame
+    enabled: false
+  - name: /log/dynamic_gaits_ros/missionController/speedFilter/filtered/desiredOrientationControlToBase
+    enabled: false
+  - name: /log/dynamic_gaits_ros/missionController/speedFilter/filtered/positionOffsetInWorldFrame
+    enabled: false
+  - name: /log/dynamic_gaits_ros/missionController/speedFilter/unfiltered/baseTwistInControlFrame
+    enabled: false
+  - name: /log/dynamic_gaits_ros/missionController/speedFilter/unfiltered/desiredOrientationControlToBase
+    enabled: false
+  - name: /log/dynamic_gaits_ros/missionController/speedFilter/unfiltered/positionOffsetInWorldFrame
+    enabled: false
+  - name: /log/dynamic_gaits_ros/torsoController/desiredTorsoCoMHeightAboveGroundInControlFrameOffset
+    enabled: false
+  - name: /log/dynamic_gaits_ros/torsoController/linearVelocityTargetBaseInBaseFrame
+    enabled: false
+  - name: /log/dynamic_gaits_ros/torsoController/positionControlToTargetBaseInWorldFrame
+    enabled: false

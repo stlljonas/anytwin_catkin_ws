@@ -1,0 +1,11 @@
+plugins:
+- type:                'interaction_marker_plugin_locomotion_planner::InteractionMarkerPluginLocomotionPlanner'
+  parameters:
+    pose_frame_id:     odom
+    entry_text:        'Walk To Pose In Odom Frame'
+    server_name:       '/locomotion_planner/goal_pose_action_server'
+- type:                'interaction_marker_plugin_locomotion_planner::InteractionMarkerPluginLocomotionPlanner'
+  parameters:
+    pose_frame_id:     map
+    entry_text:        'Walk To Pose In Map Frame'
+    server_name:       '/locomotion_planner/goal_pose_action_server'

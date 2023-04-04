@@ -1,0 +1,5 @@
+<library path="lib/libfree_gait_anymal_common">
+  <class type="free_gait::AdapterRosInterfaceAnymal" base_class_type="free_gait::AdapterRosInterfaceBase">
+    <description>Adapter ROS interface for ANYmal.</description>
+  </class>
+</library>

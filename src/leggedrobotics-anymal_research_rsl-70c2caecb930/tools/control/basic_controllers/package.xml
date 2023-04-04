@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<package format="2">
+
+  <name>basic_controllers</name>
+  <version>0.6.0</version>
+  <description>Classes implementing basic controllers.</description>
+
+  <license>Proprietary</license>
+  <author email="cgehring@anybotics.com">Christian Gehring</author>
+  <author email="pfankhauser@anybotics.com">Peter Fankhauser</author>
+  <author email="bellicoso@mavt.ethz.ch">Dario Bellicoso</author>
+  <maintainer email="pleemann@anybotics.com">Philipp Leemann</maintainer>
+  <maintainer email="rdiethelm@anybotics.com">Remo Diethelm</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>cmake_clang_tools</build_depend>
+
+  <depend>kindr</depend>
+  <depend>parameter_handler</depend>
+
+  <build_export_depend>eigen</build_export_depend>
+
+  <test_depend>gtest</test_depend>
+
+</package>

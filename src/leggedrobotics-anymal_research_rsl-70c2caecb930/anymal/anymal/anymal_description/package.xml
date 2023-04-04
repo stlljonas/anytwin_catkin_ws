@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+
+<package format="2">
+
+  <name>anymal_description</name>
+  <version>0.6.0</version>
+  <description>ANYmal robot description</description>
+
+  <license>Proprietary</license>
+
+  <maintainer email="fgiraldez@anybotics.com">Francisco Giráldez Gámez</maintainer>
+  <maintainer email="scaron@anybotics.com">Stéphane Caron</maintainer>
+  <author email="bellicoso@mavt.ethz.ch">Dario Bellicoso</author>
+  <author email="pfankhauser@anybotics.com">Peter Fankhauser</author>
+  <author email="jerome.maye@mavt.ethz.ch">Jerome Maye</author>
+  <author email="cgehring@anybotics.com">Christian Gehring</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>cmake_clang_tools</build_depend>
+
+  <depend>any_description</depend>
+  <depend>romo</depend>
+  <depend>std_utils</depend>
+
+</package>

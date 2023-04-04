@@ -1,0 +1,22 @@
+subscribers:
+  motion_goal_reached:
+    topic: motion_goal_reached
+    queue_size: 10
+
+publishers:
+  set_direction:
+    topic: set_direction
+    queue_size: 1
+    latch: false
+  point_cloud:
+    topic: point_cloud
+    queue_size: 1
+    latch: true
+
+clients:
+  assemble_scans:
+    service: laser_assembler/assemble_scans2
+
+point_cloud_publisher:
+  publish_point_cloud_2: true
+

@@ -1,0 +1,10 @@
+# Device to get the calibration state from.
+string device_name
+
+# Select the calibration type.
+CalibrationType calibration_type
+
+---
+
+# State of the calibration.
+uint16 calibration_state

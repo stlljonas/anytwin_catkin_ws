@@ -1,0 +1,10 @@
+stack_launcher:
+  stacks:
+    navigation:
+      nodes:
+        slam:
+          enabled: false
+    simulation_environment:
+      nodes:
+        slam_sim:
+          enabled: true

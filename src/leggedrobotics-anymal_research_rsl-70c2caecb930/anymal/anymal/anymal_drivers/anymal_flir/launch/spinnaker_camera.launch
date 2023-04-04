@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <!-- Set to true for simulation -->
+  <arg name="simulation"                      default="false"/>
+
+  <!-- Camera ID -->
+  <!-- If (serial == 0) the driver attemps to detect plugged in devices automatically -->
+  <arg name="camera_name"                     default="wide_angle_camera" />
+  <arg name="frame_id"                        default="camera"/>
+  <arg name="camera_serial"                   default="0" />
+
+  <!-- Frame rate control -->
+  <arg name="control_frame_rate"              default="false" />
+  <arg name="frame_rate"                      default="30" />
+
+  <!-- Image resolution control. Divides image resolution by a factor -->
+  <arg name="image_resolution_divider"        default="1" />
+
+  <!-- Exposure control -->
+  <arg name="auto_exposure"                   default="Continuous" />
+  <!-- Timed         - exposure time is a specified value. This is the default mode.
+       TriggerWidth  - exposure time is controlled by the trigger signal.-->
+  <arg name="exposure_mode"                   default="Timed" />
+  <!-- Exposure time in microseconds when Exposure Mode is Timed and auto_exposure is off-->
+  <arg name="exposure_time"                   default="4000" />
+  <arg name="auto_exposure_time_upper_limit"  default="40000" />
+
+  <!-- White balance & gain control -->
+  <arg name="auto_white_balance"              default="Continuous" />
+  <arg name="auto_gain"                       default="Continuous" />
+
+  <!-- Color coding -->
+  <arg name="image_format_color_coding"       default="BayerRG8" />
+
+  <!-- Trigger control -->
+  <arg name="enable_trigger"                  default="Off" />
+  <arg name="trigger_source"                  default="Line2" />
+  <arg name="trigger_selector"                default="FrameStart" />
+  <arg name="trigger_activation_mode"         default="RisingEdge" />
+  <arg name="trigger_overlap_mode"            default="ReadOut" />
+
+  <!-- Mirroring image frames around x/y axis -->
+  <arg name="reverse_x"                       default="false" />
+  <arg name="reverse_y"                       default="false" />
+
+  <!-- Calibration parameters -->
+  <arg name="calibrated"                      default="false" />
+  <arg name="calibration_file_path"           default="file://$(env HOME)/.ros/camera_info/$(arg camera_serial).yaml" />
+
+  <group ns="$(arg camera_name)" unless="$(arg simulation)">
+    <!-- Nodelet manager -->
+    <node pkg="nodelet" type="nodelet" name="$(arg camera_name)_nodelet_manager"
+          args="manager" cwd="node" output="screen"
+          respawn="true"/>
+
+    <!-- Camera nodelet -->
+    <node pkg="nodelet" type="nodelet" name="spinnaker_camera_nodelet"
+          args="load any_spinnaker_camera_driver/SpinnakerCameraNodelet $(arg camera_name)_nodelet_manager"
+          respawn="true" >
+
+      <param name="frame_id"                        value="$(arg frame_id)" />
+      <param name="serial"                          value="$(arg camera_serial)" />
+
+      <param name="acquisition_frame_rate_enable"   value="$(arg control_frame_rate)" />
+      <param name="acquisition_frame_rate"          value="$(arg frame_rate)" />
+
+      <param name="image_format_x_binning"          value="$(arg image_resolution_divider)" />
+      <param name="image_format_y_binning"          value="$(arg image_resolution_divider)" />
+
+      <param name="exposure_auto"                   value="$(arg auto_exposure)" />
+      <param name="exposure_mode"                   value="$(arg exposure_mode)" />
+      <param name="exposure_time"                   value="$(arg exposure_time)" />
+      <param name="auto_exposure_time_upper_limit"  value="$(arg auto_exposure_time_upper_limit)" />
+
+      <param name="auto_white_balance"              value="$(arg auto_white_balance)" />
+      <param name="auto_gain"                       value="$(arg auto_gain)" />
+
+      <param name="image_format_color_coding"       value="$(arg image_format_color_coding)" />
+
+      <param name="enable_trigger"                  value="$(arg enable_trigger)" />
+      <param name="trigger_source"                  value="$(arg trigger_source)" />
+      <param name="trigger_selector"                value="$(arg trigger_selector)" />
+      <param name="trigger_activation_mode"         value="$(arg trigger_activation_mode)" />
+      <param name="trigger_overlap_mode"            value="$(arg trigger_overlap_mode)" />
+
+      <param name="reverse_x"                       value="$(arg reverse_x)" />
+      <param name="reverse_y"                       value="$(arg reverse_y)" />
+
+      <param name="camera_info_url" if="$(arg calibrated)" value="$(arg calibration_file_path)" />
+    </node>
+
+    <!-- Debayering image -->
+    <node name="$(arg camera_name)_image_debayer" type="nodelet" pkg="nodelet"
+          args="load image_proc/debayer $(arg camera_name)_nodelet_manager"
+          respawn="true">
+    </node>
+
+    <!-- Image processing -->
+    <include file="$(find anymal_wide_angle_cameras)/launch/wide_angle_camera_processing.launch">
+      <arg name="nodelet_manager"                     value="$(arg camera_name)_nodelet_manager"/>
+      <arg name="camera_name"                         value="$(arg camera_name)"/>
+      <arg name="calibrated"                          value="$(arg calibrated)"/>
+    </include>
+
+  </group>
+</launch>

@@ -1,0 +1,56 @@
+load_anymal_description:
+  custom_parameters:
+    depth_camera_front_pitch: 30.8034
+    depth_camera_front_roll: -0.366595
+    depth_camera_left_pitch: 29.0044
+    depth_camera_left_roll: -0.00589488
+    depth_camera_rear_pitch: 30.7216
+    depth_camera_rear_roll: 1.18956
+    depth_camera_right_pitch: 29.7039
+    depth_camera_right_roll: 1.17483
+    imu_pitch: -0.339472842
+    imu_roll: 0.36163297
+    imu_yaw: 89.998929122
+stack_launcher:
+  nodes:
+    wide_angle_camera_front_driver:
+      preprocessed_params:
+        camera_info_url:
+          value: 'file://$(rospack find anymal_chimera)/config/non_ros/wide_angle_camera_calibration/front.yaml'
+    wide_angle_camera_rear_driver:
+      preprocessed_params:
+        camera_info_url:
+          value: 'file://$(rospack find anymal_chimera)/config/non_ros/wide_angle_camera_calibration/rear.yaml'
+depth_camera_front:
+  any_realsense2_camera:
+    serial_no: "920312072295"
+depth_camera_left:
+  any_realsense2_camera:
+    serial_no: "920312072325"
+depth_camera_rear:
+  any_realsense2_camera:
+    serial_no: "920312072314"
+depth_camera_right:
+  any_realsense2_camera:
+    serial_no: "920312072336"
+wide_angle_camera_front:
+  spinnaker_camera_nodelet:
+    serial: 20032109
+wide_angle_camera_rear:
+  spinnaker_camera_nodelet:
+    serial: 20064263
+pantilt_head_driver:
+  axis_mapping:
+    pan_inverted: true
+  odrive:
+    cpr: 16384
+    pan:
+      controller:
+        position_gain: 37.5
+        velocity_gain: 0.0005
+        velocity_integrator_gain: 0.00375
+    tilt:
+      controller:
+        position_gain: 12.5
+        velocity_gain: 0.00025
+        velocity_integrator_gain: 0.00375

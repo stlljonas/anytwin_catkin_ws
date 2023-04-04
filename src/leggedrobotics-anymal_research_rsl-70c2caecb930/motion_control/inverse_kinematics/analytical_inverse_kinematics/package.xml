@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package format="2">
+
+  <name>analytical_inverse_kinematics</name>
+  <version>0.1.0</version>
+  <description>Library for computing analytical inverse kinematics.</description>
+
+  <license>Proprietary</license>
+  <author email="carmine.bellicoso@mavt.ethz.ch">C. Dario Bellicoso</author>
+  <author email="fgiraldez@anybotics.com">Francisco Giraldez Gamez</author>
+  <maintainer email="fgiraldez@anybotics.com">Francisco Giraldez Gamez</maintainer>
+  <maintainer email="scaron@anybotics.com">Stephane Caron</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>cmake_clang_tools</build_depend>
+
+  <depend>kindr</depend>
+  <depend>message_logger</depend>
+  <depend>robot_utils</depend>
+
+  <test_depend>gtest</test_depend>
+  <test_depend>cmake_code_coverage</test_depend>
+
+</package>

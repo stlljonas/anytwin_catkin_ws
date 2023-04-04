@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+
+  <!-- Arguments -->
+  <arg name="output"                           default="screen"/>
+  <arg name="launch_prefix"                    default=""/>
+  <arg name="setup_name"                       default="example1"/>
+  <arg name="setup_file"                       default="$(find anydrive)/example_setups/$(arg setup_name)/setup.yaml"/>
+  <arg name="ros_prefix"                       default="/anydrive"/>
+  <arg name="single_subscribers"               default="false"/>
+  <arg name="actuator_readings_extended_topic" default="$(arg ros_prefix)/readings_extended_throttled"/>
+
+  <!-- ROS Node -->
+  <node pkg="rqt_anydrive_monitor" type="rqt_anydrive_monitor" name="rqt_anydrive_monitor" output="$(arg output)" launch-prefix="$(arg launch_prefix)">
+    <param name="setup_file"                       value="$(arg setup_file)"/>
+    <param name="ros_prefix"                       value="$(arg ros_prefix)"/>
+    <param name="single_subscribers"               value="$(arg single_subscribers)"/>
+    <param name="actuator_readings_extended_topic" value="$(arg actuator_readings_extended_topic)"/>
+  </node>
+
+</launch>

@@ -1,0 +1,14 @@
+# Copy these lines to the /etc/network/interfaces file on the computer the lasers are connected to:
+
+auto eth11
+iface eth11 inet static
+address 192.168.1.1
+netmask 255.255.255.0
+network 192.168.1.0
+
+auto eth12
+iface eth12 inet static
+address 192.168.2.1
+netmask 255.255.255.0
+network 192.168.2.0
+

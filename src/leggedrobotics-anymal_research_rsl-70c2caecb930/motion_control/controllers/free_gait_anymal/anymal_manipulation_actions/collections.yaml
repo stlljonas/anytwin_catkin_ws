@@ -1,0 +1,9 @@
+collections:
+  - collection:
+     id: manipulation_actions
+     name: Manipulation Actions
+     actions:
+      - kick_left_fore
+      - kick_right_fore
+      - hit_high_target_right_fore_here
+      - press_lee_elevator_button_right_fore

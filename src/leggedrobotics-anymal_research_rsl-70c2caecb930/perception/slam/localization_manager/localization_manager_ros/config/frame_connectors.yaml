@@ -1,0 +1,43 @@
+# Parameters for the frame connector modules
+frame_connectors:
+
+  # General params for all connectors
+  odom_frame_id:                  odom
+  tracked_frame_id_in_odom:       base
+  tf_lookup_timeout:              2.
+  external_transform_timeout:     5.
+
+  # Feedthrough frame connectors (forward the received pose as tf)
+  feedthrough:
+    enabled:                      true
+    list:
+      - "slam_connector"
+      - "point_cloud_odometry_connector"
+    slam_connector:
+      input_topic:                /slam/map_pose
+      input_msg_type:             0 # 0: PoseWithCovarianceStamped, 1: Odometry
+      remap_ext_frame_id:         false
+      ext_frame_id_in:            map
+      ext_frame_id_out:           map
+      broadcast_zero_init_tf:     false
+    point_cloud_odometry_connector:
+      input_topic:                /point_cloud_odometry/map_pose
+      input_msg_type:             0
+      remap_ext_frame_id:         false
+      ext_frame_id_in:            point_cloud_odom
+      ext_frame_id_out:           point_cloud_odom
+      broadcast_zero_init_tf:     true
+
+  # Difference frame connectors (broadcast a tf from the odom_frame to an ext_frame based on two poses for the same body expressed in the two frames)
+  difference:
+    enabled:                      false
+    list:
+      - "example_connector"
+    example_connector:
+      input_topic:                /example_pose_topic
+      input_msg_type:             0
+      remap_ext_frame_id:         false
+      ext_frame_id_in:            example_ext_id_in
+      ext_frame_id_out:           example_ext_id_out
+      tracked_frame_id_in_ext:    example_tracking_id
+      pose_in_odom_buffer_size:   0.5

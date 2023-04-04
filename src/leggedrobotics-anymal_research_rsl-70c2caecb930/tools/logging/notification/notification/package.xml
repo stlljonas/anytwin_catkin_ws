@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+
+<package format="2">
+
+  <name>notification</name>
+  <version>0.6.0</version>
+  <description>The notification package</description>
+
+  <license>Proprietary</license>
+
+  <author email="cgehring@anybotics.com">Christian Gehring</author>
+  <maintainer email="pleemann@anybotics.com">Philipp Leemann</maintainer>
+  <maintainer email="sbachmann@anybotics.com">Samuel Bachmann</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>notification_msgs</depend>
+  <depend>roscpp</depend>
+
+</package>

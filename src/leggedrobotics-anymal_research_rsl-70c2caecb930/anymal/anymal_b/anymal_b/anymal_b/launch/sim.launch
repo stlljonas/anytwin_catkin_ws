@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+
+  <!-- Convenience launch file loading the configuration and running the simulation software stack. -->
+
+  <!-- Configuration -->
+  <arg name="robot"        default="b"            doc="Robot, e.g. 'beth' or 'bear'. Use 'b' for generic robot."/>
+  <arg name="data_package" default="sandbox_data" doc="Data package containing the world and all environment related data."/>
+  <arg name="world"        default="playground"   doc="World within the data package."/>
+  <arg name="setup"        default="sim"          doc="Configuration setup. Options: sim, sim_lite."/>
+  <arg name="extension"    default="none"         doc="Configuration extension file in YAML format."/>
+
+  <!-- Configuration files -->
+  <arg name="robot_config_file"       default="$(eval find('anymal_' + robot) + '/config/robot/robot.yaml')"                                        doc="Full path of the robot configuration file."/>
+  <arg name="environment_config_file" default="$(eval find(data_package) + '/config/environment/' + world + '.yaml' if data_package != '' else '')" doc="Full path of the environment configuration file."/>
+  <arg name="setup_config_file"       default="$(find anymal_b)/config/setup/$(arg setup).yaml"                                                     doc="Full path of the setup configuration file."/>
+  <arg name="extension_config_file"   default="$(find anymal_b)/config/extension/$(arg extension).yaml"                                             doc="Full path of the extension configuration file."/>
+
+  <!-- Feature toggles -->
+  <arg name="motion_control_module"       default="new"       doc="Motion control module to run. Options: new, legacy."/>
+  <arg name="state_estimator_module"      default="simulated" doc="State estimator module to run. Options: tsif, simulated (only in simulation)."/>
+  <arg name="slam_module"                 default="simulated" doc="SLAM module to run. Options: pharos, icp_tools, simulated (only in simulation)."/>
+  <arg name="point_cloud_odometry_module" default="simulated" doc="Point cloud odometry module to run. Options: real, simulated (only in simulation)."/>
+  <arg name="diagnostic_mode"             default="disabled"  doc="Run the diagnostic mode. Note that enabling diagnostic mode is only supported with the 'new' motion control module. Options: disabled, enabled."/>
+
+  <!-- Load the configuration -->
+  <include file="$(find anymal_b)/launch/load_config.launch" pass_all_args="true"/>
+
+  <!-- Start the simulation -->
+  <include file="$(find stack_launcher)/launch/stack_launcher.launch">
+    <arg name="stack"         value="sim"/>
+    <arg name="trigger_param" value="/config_loaded"/>
+  </include>
+
+</launch>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+
+  <!-- Name of the robot description parameter -->
+  <arg name="description_name" default="anymal_description"/>
+  <!-- TF prefix -->
+  <arg name="tf_prefix" default=""/>
+  <!-- Joint state topic name -->
+  <arg name="joint_states_topic" default="/state_estimator/joint_states_throttle"/>
+  <!-- Namespace to run the nodes in -->
+  <arg name="ns" default="anymal_tf_publisher"/>
+  <!-- Publish frequency -->
+  <arg name="publish_frequency" default="5"/>
+  <!-- Topic of the anymal state -->
+  <arg name="anymal_state_subscriber_name" default="/state_estimator/anymal_state_throttle"/>
+  <!-- Publish map transforms -->
+  <arg name="publish_map_transforms" default="false"/>
+  
+  <!-- Publish robot state (base) as TF to /tf_minimal -->
+  <node ns="$(arg ns)" name="anymal_tf_publisher_minimal" pkg="anymal_tf_publisher" type="anymal_tf_publisher_node" output="screen" respawn="true">
+    <param name="subscribers/anymal_state/topic"      value="$(arg anymal_state_subscriber_name)"/>
+    <param name="subscribers/anymal_state/queue_size" value="1"/>
+    <param name="subscribers/anymal_state/latch"      value="false"/>    
+    <param name="publishers/pose/topic"                  value="pose"/>
+    <param name="publishers/pose/latch"                  value="false"/>
+    <param name="publishers/pose/queue_size"             value="1"/>
+    <param name="publishers/joint_state/topic"           value="$(arg joint_states_topic)"/>
+    <param name="publishers/joint_state/latch"           value="false"/>
+    <param name="publishers/joint_state/queue_size"      value="1"/>
+    <param name="tf_prefix"                              value="$(arg tf_prefix)"/>
+    <param name="base_frame_id"                          value="base"/>
+    <param name="odom_frame_id"                          value="odom"/>
+    <param name="ignore_state"                           value="false"/>
+    <param name="publish_map_transforms"                 value="$(arg publish_map_transforms)"/>
+    <param name="publish_frequency"                      value="$(arg publish_frequency)"/>
+    <param name="robot_description"                      value="$(arg description_name)"/>
+    <remap from="/tf"                                    to="/tf_minimal"/>
+  </node>
+
+</launch>

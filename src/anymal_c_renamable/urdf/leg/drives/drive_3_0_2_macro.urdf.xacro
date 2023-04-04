@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:macro name="drive" params="name
+                            output
+                            direction
+                            enable_collision:=true
+                            max_joint_position=${3*pi}
+                            min_joint_position=${3*pi}">
+
+    <xacro:property name="D_r_DDcom_x"              value="-0.063"/> <!-- [m] -->
+    <xacro:property name="D_r_DDcom_y"              value= "0.00007"/> <!-- [m] -->
+    <xacro:property name="D_r_DDcom_z"              value= "0.00046"/> <!-- [m] -->
+    <xacro:property name="m_D"                      value= "2.04"/> <!-- [kg] -->
+    <xacro:property name="D_Ixx_D"                  value= "0.001053013"/> <!-- [kg * m^2] -->
+    <xacro:property name="D_Iyy_D"                  value= "0.001805509"/> <!-- [kg * m^2] -->
+    <xacro:property name="D_Izz_D"                  value= "0.001765827"/> <!-- [kg * m^2] -->
+    <xacro:property name="D_Ixy_D"                  value= "0.00004527"/> <!-- [kg * m^2] -->
+    <xacro:property name="D_Ixz_D"                  value= "0.00008855"/> <!-- [kg * m^2] -->
+    <xacro:property name="D_Iyz_D"                  value= "0.00009909"/> <!-- [kg * m^2] -->
+    <xacro:property name="collision_radius"         value= "0.05"/> <!-- [m] -->
+    <xacro:property name="collision_length"         value= "0.14"/> <!-- [m] -->
+
+    <xacro:property name="max_joint_velocity"       value="7.5"/> <!-- [rad/s] -->
+    <xacro:property name="max_gear_velocity"        value="7.5"/> <!-- [rad/s] -->
+    <xacro:property name="max_joint_torque_freeze"  value="80.0"/> <!-- [Nm] -->
+    <xacro:property name="max_joint_torque_control" value="80.0"/> <!-- [Nm] -->
+    <xacro:property name="joint_damping"            value="0.0"/> <!-- [Nms/rad] -->
+    <xacro:property name="joint_friction"           value="0.0"/> <!-- [Nm] -->
+    <xacro:property name="max_current"              value="32.0"/> <!-- [A] -->
+
+    <!-- Drive link -->
+    <link name="${name}">
+      <visual>
+       <origin xyz="0 0 0" rpy="0 0 0"/>
+       <geometry>
+       <mesh filename="package://anymal_c/urdf/leg/drives/drive_3_0_2_mesh.dae"
+             scale="${anymal_meshes_scale}"/>
+       </geometry>
+      </visual>
+      <xacro:if value="${enable_collision}">
+        <collision>
+          <origin xyz="${-0.5*collision_length} 0 0" rpy="0 ${0.5*pi} 0"/>
+            <geometry>
+              <cylinder radius="${collision_radius}" length="${collision_length}"/>
+            </geometry>
+        </collision>
+      </xacro:if>
+      <inertial>
+        <origin xyz="${D_r_DDcom_x} ${D_r_DDcom_y} ${D_r_DDcom_z}"
+                rpy="0 0 0"/>
+        <mass value="${m_D}"/>
+        <inertia ixx="${D_Ixx_D}" ixy="${D_Ixy_D}" ixz="${D_Ixz_D}"
+                iyy="${D_Iyy_D}" iyz="${D_Iyz_D}" izz="${D_Izz_D}"/>
+      </inertial>
+    </link>
+
+    <!-- joint Drive output -->
+    <joint name="${name}" type="revolute">
+      <parent link="${name}"/>
+      <child link="${output}"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <axis xyz="${direction} 0 0"/>
+      <limit effort="${max_joint_torque_freeze}"
+             command_effort="${max_joint_torque_control}"
+             gear_velocity="${max_gear_velocity}"
+             current="${max_current}"
+             lower="${-min_joint_position}"
+             upper="${max_joint_position}"
+             velocity="${max_joint_velocity}"/>
+      <dynamics damping="${joint_damping}" friction="${joint_friction}"/>
+    </joint>
+
+    <!-- Drive output link -->
+    <link name="${output}">
+      <inertial>
+        <origin xyz="0 0 0"
+                rpy="0 0 0"/>
+        <mass value="0.001"/>
+        <inertia ixx="0.000001" ixy="0.0" ixz="0.0"
+                 iyy="0.000001" iyz="0.0" izz="0.000001"/>
+      </inertial>
+    </link>
+
+  </xacro:macro>
+
+
+</robot>

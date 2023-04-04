@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<package format="2">
+
+  <name>rqt_anymal_lowlevel_controller</name>
+  <version>0.6.0</version>
+  <description>A GUI plugin for observing and commanding the ANYmal lowlevel controller.</description>
+
+  <license>Proprietary</license>
+  <author email="rdiethelm@anybotics.com">Remo Diethelm</author>
+  <maintainer email="rdiethelm@anybotics.com">Remo Diethelm</maintainer>
+  <maintainer email="pleemann@anybotics.com">Philipp Leemann</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>anymal_lowlevel_controller_common</depend>
+  <depend>anymal_msgs</depend>
+  <depend>param_io</depend>
+  <depend>qtbase5-dev</depend>
+  <depend>rqt_gui</depend>
+  <depend>rqt_gui_cpp</depend>
+
+  <export>
+    <rqt_gui plugin="${prefix}/plugin.xml"/>
+  </export>
+
+</package>

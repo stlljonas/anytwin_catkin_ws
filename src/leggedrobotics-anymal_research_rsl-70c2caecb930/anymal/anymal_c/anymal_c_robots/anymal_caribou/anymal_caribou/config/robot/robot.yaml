@@ -1,0 +1,41 @@
+depth_camera_front:
+  any_realsense2_camera:
+    serial_no: "920312072308"
+depth_camera_left:
+  any_realsense2_camera:
+    serial_no: "918512073967"
+depth_camera_rear:
+  any_realsense2_camera:
+    serial_no: "920312072376"
+depth_camera_right:
+  any_realsense2_camera:
+    serial_no: "918512073968"
+load_anymal_description:
+  custom_parameters:
+    depth_camera_front_pitch: 30.0
+    depth_camera_front_roll: 0.0
+    depth_camera_left_pitch: 30.0
+    depth_camera_left_roll: 0.0
+    depth_camera_rear_pitch: 30.0
+    depth_camera_rear_roll: 0.0
+    depth_camera_right_pitch: 30.0
+    depth_camera_right_roll: 0.0
+    imu_roll: 0.67403334
+    imu_pitch: 0.14128466
+    imu_yaw: 90.0971841
+stack_launcher:
+  nodes:
+    wide_angle_camera_front_driver:
+      preprocessed_params:
+        camera_info_url:
+          value: 'file://$(rospack find anymal_caribou)/config/non_ros/wide_angle_camera_calibration/front.yaml'
+    wide_angle_camera_rear_driver:
+      preprocessed_params:
+        camera_info_url:
+          value: 'file://$(rospack find anymal_caribou)/config/non_ros/wide_angle_camera_calibration/rear.yaml'
+wide_angle_camera_front:
+  spinnaker_camera_nodelet:
+    serial: 20064258
+wide_angle_camera_rear:
+  spinnaker_camera_nodelet:
+    serial: 200321110

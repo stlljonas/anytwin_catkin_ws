@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+
+  <!-- Load robot configuration -->
+  <include file="$(find anymal_c)/launch/load_robot_config.launch" pass_all_args="true">
+    <arg name="robot"                         value="caribou"/>
+    <arg name="version"                       value="c100"/>
+    <arg name="battery_model"                 value="travel"/>
+  </include>
+
+</launch>

@@ -1,0 +1,7 @@
+# Device to reset custom calibrations to factory. Leave empty for all devices.
+string device_name
+
+# Calibration state bitfield.
+uint16 calibration_state
+
+---

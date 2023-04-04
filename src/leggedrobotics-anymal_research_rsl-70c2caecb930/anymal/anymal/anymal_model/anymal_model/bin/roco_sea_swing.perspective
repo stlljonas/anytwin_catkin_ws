@@ -1,0 +1,831 @@
+{
+  "keys": {}, 
+  "groups": {
+    "pluginmanager": {
+      "keys": {
+        "running-plugins": {
+          "type": "repr", 
+          "repr": "{u'MultiplotPlugin': [3, 2, 1, 4]}"
+        }
+      }, 
+      "groups": {
+        "plugin__rqt_console__Console__1": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__ConsoleWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "u'true'"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }
+              }, 
+              "groups": {}
+            }, 
+            "plugin": {
+              "keys": {
+                "show_highlighted_only": {
+                  "type": "repr", 
+                  "repr": "u'false'"
+                }, 
+                "message_limit": {
+                  "type": "repr", 
+                  "repr": "u'20000'"
+                }, 
+                "exclude_filters": {
+                  "type": "repr", 
+                  "repr": "u'severity'"
+                }, 
+                "table_splitter": {
+                  "type": "repr(QByteArray.hex)", 
+                  "repr(QByteArray.hex)": "QtCore.QByteArray('000000ff00000000000000020000004b000000e701000000090100000002')", 
+                  "pretty-print": "       K       "
+                }, 
+                "highlight_filters": {
+                  "type": "repr", 
+                  "repr": "u'message'"
+                }, 
+                "paused": {
+                  "type": "repr", 
+                  "repr": "u'false'"
+                }, 
+                "settings_exist": {
+                  "type": "repr", 
+                  "repr": "u'true'"
+                }, 
+                "filter_splitter": {
+                  "type": "repr(QByteArray.hex)", 
+                  "repr(QByteArray.hex)": "QtCore.QByteArray('000000ff00000000000000020000006f0000006f01000000090100000002')", 
+                  "pretty-print": "       o o     "
+                }
+              }, 
+              "groups": {
+                "exclude_filter_0": {
+                  "keys": {
+                    "enabled": {
+                      "type": "repr", 
+                      "repr": "u'true'"
+                    }, 
+                    "itemlist": {
+                      "type": "repr", 
+                      "repr": "u''"
+                    }
+                  }, 
+                  "groups": {}
+                }, 
+                "highlight_filter_0": {
+                  "keys": {
+                    "regex": {
+                      "type": "repr", 
+                      "repr": "u'false'"
+                    }, 
+                    "text": {
+                      "type": "repr", 
+                      "repr": "u''"
+                    }, 
+                    "enabled": {
+                      "type": "repr", 
+                      "repr": "u'true'"
+                    }
+                  }, 
+                  "groups": {}
+                }
+              }
+            }
+          }
+        }, 
+        "plugin__MultiplotPlugin__4": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__MultiplotWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "True"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }, 
+                "hide_title_bar": {
+                  "type": "repr", 
+                  "repr": "u'false'"
+                }
+              }, 
+              "groups": {}
+            }, 
+            "plugin": {
+              "keys": {}, 
+              "groups": {
+                "history": {
+                  "keys": {
+                    "max_length": {
+                      "type": "repr", 
+                      "repr": "10"
+                    }, 
+                    "config_1": {
+                      "type": "repr", 
+                      "repr": "u'file:///home/starleth-integration/git/anymal_common/anymal_model/plot_configurations/task_space_positions.xml'"
+                    }, 
+                    "config_0": {
+                      "type": "repr", 
+                      "repr": "u'file:///home/dbellicoso/git/anymal_common/anymal_model/plot_configurations/task_space_positions.xml'"
+                    }
+                  }, 
+                  "groups": {}
+                }
+              }
+            }
+          }
+        }, 
+        "plugin__MultiplotPlugin__2": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__MultiplotWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "True"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }, 
+                "hide_title_bar": {
+                  "type": "repr", 
+                  "repr": "u'false'"
+                }
+              }, 
+              "groups": {}
+            }, 
+            "plugin": {
+              "keys": {}, 
+              "groups": {
+                "history": {
+                  "keys": {
+                    "max_length": {
+                      "type": "repr", 
+                      "repr": "10"
+                    }, 
+                    "config_2": {
+                      "type": "repr", 
+                      "repr": "u'file:///home/starleth-integration/git/anymal_common/anymal_model/plot_configurations/joint_velocities.xml'"
+                    }, 
+                    "config_1": {
+                      "type": "repr", 
+                      "repr": "u'file:///home/starleth-integration/git/anymal_common/anymal_model/plot_configurations/joint_positions.xml'"
+                    }, 
+                    "config_0": {
+                      "type": "repr", 
+                      "repr": "u'file:///home/dbellicoso/git/anymal_common/anymal_model/plot_configurations/joint_positions.xml'"
+                    }
+                  }, 
+                  "groups": {}
+                }
+              }
+            }
+          }
+        }, 
+        "plugin__MultiplotPlugin__3": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__MultiplotWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "True"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }, 
+                "hide_title_bar": {
+                  "type": "repr", 
+                  "repr": "u'false'"
+                }
+              }, 
+              "groups": {}
+            }, 
+            "plugin": {
+              "keys": {}, 
+              "groups": {
+                "history": {
+                  "keys": {
+                    "max_length": {
+                      "type": "repr", 
+                      "repr": "10"
+                    }, 
+                    "config_1": {
+                      "type": "repr", 
+                      "repr": "u'file:///home/starleth-integration/git/anymal_common/anymal_model/plot_configurations/task_space_velocities.xml'"
+                    }, 
+                    "config_0": {
+                      "type": "repr", 
+                      "repr": "u'file:///home/dbellicoso/git/anymal_common/anymal_model/plot_configurations/task_space_velocities.xml'"
+                    }
+                  }, 
+                  "groups": {}
+                }
+              }
+            }
+          }
+        }, 
+        "plugin__MultiplotPlugin__1": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__MultiplotWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "True"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }, 
+                "hide_title_bar": {
+                  "type": "repr", 
+                  "repr": "u'false'"
+                }
+              }, 
+              "groups": {}
+            }, 
+            "plugin": {
+              "keys": {}, 
+              "groups": {
+                "history": {
+                  "keys": {
+                    "config_3": {
+                      "type": "repr", 
+                      "repr": "u'file:///home/starleth-integration/git/anymal_common/anymal_model/plot_configurations/task_space_velocities.xml'"
+                    }, 
+                    "config_2": {
+                      "type": "repr", 
+                      "repr": "u'file:///home/starleth-integration/git/anymal_common/anymal_model/plot_configurations/joint_positions.xml'"
+                    }, 
+                    "config_1": {
+                      "type": "repr", 
+                      "repr": "u'file:///home/starleth-integration/git/anymal_common/anymal_model/plot_configurations/joint_velocities.xml'"
+                    }, 
+                    "config_0": {
+                      "type": "repr", 
+                      "repr": "u'file:///home/dbellicoso/git/anymal_common/anymal_model/plot_configurations/joint_velocities.xml'"
+                    }, 
+                    "config_7": {
+                      "type": "repr", 
+                      "repr": "u'file:///home/starleth-integration/git/anymal_common/anymal_model/plot_configurations/control_modes.xml'"
+                    }, 
+                    "config_6": {
+                      "type": "repr", 
+                      "repr": "u'file:///home/starleth-integration/git/anymal_common/anymal_model/plot_configurations/desired_joint_velocities.xml'"
+                    }, 
+                    "config_5": {
+                      "type": "repr", 
+                      "repr": "u'file:///home/starleth-integration/git/anymal_common/anymal_model/plot_configurations/estimated_contact_froces.xml'"
+                    }, 
+                    "config_4": {
+                      "type": "repr", 
+                      "repr": "u'file:///home/starleth-integration/git/anymal_common/anymal_model/plot_configurations/task_space_positions.xml'"
+                    }, 
+                    "max_length": {
+                      "type": "repr", 
+                      "repr": "10"
+                    }
+                  }, 
+                  "groups": {}
+                }
+              }
+            }
+          }
+        }, 
+        "plugin__rqt_plot__Plot__1": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__DataPlotWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "u'true'"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }, 
+                "hide_title_bar": {
+                  "type": "repr", 
+                  "repr": "u'false'"
+                }
+              }, 
+              "groups": {}
+            }, 
+            "plugin": {
+              "keys": {
+                "autoscroll": {
+                  "type": "repr", 
+                  "repr": "u'true'"
+                }, 
+                "plot_type": {
+                  "type": "repr", 
+                  "repr": "u'0'"
+                }, 
+                "topics": {
+                  "type": "repr", 
+                  "repr": "[u'/sensors/imu/angular_velocity/z', u'/sensors/imu/angular_velocity/y', u'/sensors/imu/angular_velocity/x']"
+                }, 
+                "y_limits": {
+                  "type": "repr", 
+                  "repr": "[u'-0.613795808846184', u'0.500972195669362']"
+                }, 
+                "x_limits": {
+                  "type": "repr", 
+                  "repr": "[u'17.4913568496704', u'18.4913568496704']"
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }, 
+        "plugin__rqt_plot__Plot__2": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__DataPlotWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "u'true'"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }, 
+                "hide_title_bar": {
+                  "type": "repr", 
+                  "repr": "u'false'"
+                }
+              }, 
+              "groups": {}
+            }, 
+            "plugin": {
+              "keys": {
+                "autoscroll": {
+                  "type": "repr", 
+                  "repr": "u'true'"
+                }, 
+                "plot_type": {
+                  "type": "repr", 
+                  "repr": "u'0'"
+                }, 
+                "topics": {
+                  "type": "repr", 
+                  "repr": "[u'/sensors/imu/linear_acceleration/z', u'/sensors/imu/linear_acceleration/x', u'/sensors/imu/linear_acceleration/y']"
+                }, 
+                "y_limits": {
+                  "type": "repr", 
+                  "repr": "[u'-10.4922452595078', u'9.87200260162354']"
+                }, 
+                "x_limits": {
+                  "type": "repr", 
+                  "repr": "[u'16.0304808616638', u'17.0304808616638']"
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }, 
+        "plugin__rqt_plot__Plot__3": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__DataPlotWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "u'true'"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }, 
+                "hide_title_bar": {
+                  "type": "repr", 
+                  "repr": "u'false'"
+                }
+              }, 
+              "groups": {}
+            }, 
+            "plugin": {
+              "keys": {
+                "autoscroll": {
+                  "type": "repr", 
+                  "repr": "u'true'"
+                }, 
+                "plot_type": {
+                  "type": "repr", 
+                  "repr": "u'2'"
+                }, 
+                "topics": {
+                  "type": "repr", 
+                  "repr": "[u'/state_estimator/twist/twist/twist/linear/y', u'/state_estimator/twist/twist/twist/linear/x', u'/state_estimator/twist/twist/twist/linear/z']"
+                }, 
+                "y_limits": {
+                  "type": "repr", 
+                  "repr": "[u'-3.62182028134846', u'2.24670077360934']"
+                }, 
+                "x_limits": {
+                  "type": "repr", 
+                  "repr": "[u'266.604810476303', u'267.604810476303']"
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }, 
+        "plugin__rqt_bag__Bag__2": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__BagWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "u'true'"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }, 
+        "plugin__rqt_bag__Bag__1": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__": {
+              "keys": {}, 
+              "groups": {
+                "tf__Plot": {
+                  "keys": {
+                    "dockable": {
+                      "type": "repr", 
+                      "repr": "u'true'"
+                    }, 
+                    "parent": {
+                      "type": "repr", 
+                      "repr": "None"
+                    }
+                  }, 
+                  "groups": {}
+                }, 
+                "sensors": {
+                  "keys": {}, 
+                  "groups": {
+                    "joint_states__Plot": {
+                      "keys": {
+                        "dockable": {
+                          "type": "repr", 
+                          "repr": "u'true'"
+                        }, 
+                        "parent": {
+                          "type": "repr", 
+                          "repr": "None"
+                        }
+                      }, 
+                      "groups": {}
+                    }, 
+                    "imu__Plot": {
+                      "keys": {
+                        "dockable": {
+                          "type": "repr", 
+                          "repr": "u'true'"
+                        }, 
+                        "parent": {
+                          "type": "repr", 
+                          "repr": "None"
+                        }
+                      }, 
+                      "groups": {}
+                    }, 
+                    "actuator_readings__Plot": {
+                      "keys": {
+                        "dockable": {
+                          "type": "repr", 
+                          "repr": "u'true'"
+                        }, 
+                        "parent": {
+                          "type": "repr", 
+                          "repr": "None"
+                        }
+                      }, 
+                      "groups": {}
+                    }
+                  }
+                }, 
+                "locomotion_controller": {
+                  "keys": {}, 
+                  "groups": {
+                    "actuators__Plot": {
+                      "keys": {
+                        "dockable": {
+                          "type": "repr", 
+                          "repr": "u'true'"
+                        }, 
+                        "parent": {
+                          "type": "repr", 
+                          "repr": "None"
+                        }
+                      }, 
+                      "groups": {}
+                    }
+                  }
+                }, 
+                "log": {
+                  "keys": {}, 
+                  "groups": {
+                    "loco": {
+                      "keys": {}, 
+                      "groups": {
+                        "leftForeLeg": {
+                          "keys": {}, 
+                          "groups": {
+                            "isInStandConfiguration__Plot": {
+                              "keys": {
+                                "dockable": {
+                                  "type": "repr", 
+                                  "repr": "u'true'"
+                                }, 
+                                "parent": {
+                                  "type": "repr", 
+                                  "repr": "None"
+                                }
+                              }, 
+                              "groups": {}
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }, 
+                "state_estimator": {
+                  "keys": {}, 
+                  "groups": {
+                    "robot_state__Plot": {
+                      "keys": {
+                        "dockable": {
+                          "type": "repr", 
+                          "repr": "u'true'"
+                        }, 
+                        "parent": {
+                          "type": "repr", 
+                          "repr": "None"
+                        }
+                      }, 
+                      "groups": {}
+                    }, 
+                    "pose__Plot": {
+                      "keys": {
+                        "dockable": {
+                          "type": "repr", 
+                          "repr": "u'true'"
+                        }, 
+                        "parent": {
+                          "type": "repr", 
+                          "repr": "None"
+                        }
+                      }, 
+                      "groups": {}
+                    }
+                  }
+                }
+              }
+            }, 
+            "dock_widget__BagWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "u'true'"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }, 
+        "plugin__rqt_plot__Plot__4": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__DataPlotWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "u'true'"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }
+              }, 
+              "groups": {}
+            }, 
+            "plugin": {
+              "keys": {
+                "autoscroll": {
+                  "type": "repr", 
+                  "repr": "u'true'"
+                }, 
+                "plot_type": {
+                  "type": "repr", 
+                  "repr": "u'2'"
+                }, 
+                "topics": {
+                  "type": "repr", 
+                  "repr": "u''"
+                }, 
+                "y_limits": {
+                  "type": "repr", 
+                  "repr": "[u'-8.348132', u'3.594429']"
+                }, 
+                "x_limits": {
+                  "type": "repr", 
+                  "repr": "[u'0', u'1']"
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }, 
+        "plugin__rqt_inspection__InspectionView__1": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__InspectionViewWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "u'true'"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }, 
+        "plugin__LocoJoypadPlugin__1": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__LocoJoypad": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "u'true'"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }, 
+        "plugin__rqt_robot_monitor__RobotMonitor__1": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__Robot Monitor": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "u'true'"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }, 
+                "hide_title_bar": {
+                  "type": "repr", 
+                  "repr": "u'false'"
+                }
+              }, 
+              "groups": {}
+            }, 
+            "plugin": {
+              "keys": {
+                "splitter": {
+                  "type": "repr(QByteArray.hex)", 
+                  "repr(QByteArray.hex)": "QtCore.QByteArray('000000ff0000000000000003000001cf000000f5000002c301000000090100000002')", 
+                  "pretty-print": "                 "
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }, 
+        "plugin__RqtTeachingPlugin__1": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__MainWindow": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "u'true'"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }, 
+                "hide_title_bar": {
+                  "type": "repr", 
+                  "repr": "u'false'"
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }, 
+        "plugin__rqt_pose_view__PoseView__1": {
+          "keys": {}, 
+          "groups": {
+            "plugin": {
+              "keys": {
+                "view_matrix": {
+                  "type": "repr", 
+                  "repr": "u'[[0.7071067690849304, 0.4999999701976776, -0.4999999701976776, 0.0], [-0.7071067690849304, 0.4999999701976776, -0.4999999701976776, 0.0], [0.0, 0.7071067690849304, 0.7071067690849304, 0.0], [0.0, -3.0, -17.5, 1.0]]'"
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }, 
+        "plugin__LocoControlManagerPlugin__1": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__LocoControlManager": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "u'false'"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }, 
+        "plugin__RobotStateVisualizerPlugin__1": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__RobotStateVisualizer": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "u'true'"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }
+      }
+    }, 
+    "mainwindow": {
+      "keys": {
+        "geometry": {
+          "type": "repr(QByteArray.hex)", 
+          "repr(QByteArray.hex)": "QtCore.QByteArray('01d9d0cb00010000000000510000001e00000b3f00000707000000510000001e00000b3f00000707000000000000')", 
+          "pretty-print": "     Q   ?   Q   ?     "
+        }, 
+        "state": {
+          "type": "repr(QByteArray.hex)", 
+          "repr(QByteArray.hex)": "QtCore.QByteArray('000000ff00000000fd000000010000000300000aef000006b1fc0100000008fb0000006e007200710074005f0069006e007300700065006300740069006f006e005f005f0049006e007300700065006300740069006f006e0056006900650077005f005f0031005f005f0049006e007300700065006300740069006f006e00560069006500770057006900640067006500740100000000000006940000000000000000fc000000000000093d0000000000fffffffc0200000002fb00000042007200710074005f0070006c006f0074005f005f0050006c006f0074005f005f0031005f005f00440061007400610050006c006f007400570069006400670065007401000000190000060d0000000000000000fb00000042007200710074005f0070006c006f0074005f005f0050006c006f0074005f005f0033005f005f00440061007400610050006c006f0074005700690064006700650074010000031b000002240000000000000000fb00000034007200710074005f006200610067005f005f004200610067005f005f0031005f005f004200610067005700690064006700650074010000000000000a5e0000000000000000fb00000086007200710074005f006200610067005f005f004200610067005f005f0031005f005f002f006c006f0067002f006c006f0063006f002f006c0065006600740046006f00720065004c00650067002f006900730049006e005300740061006e00640043006f006e00660069006700750072006100740069006f006e005f005f0050006c006f0074010000088b000001d30000000000000000fc000004e30000052c0000000000fffffffc0200000002fb00000042007200710074005f0070006c006f0074005f005f0050006c006f0074005f005f0032005f005f00440061007400610050006c006f007400570069006400670065007401000000190000060d0000000000000000fb00000042007200710074005f0070006c006f0074005f005f0050006c006f0074005f005f0034005f005f00440061007400610050006c006f007400570069006400670065007401000002d7000002680000000000000000fb00000062007200710074005f0072006f0062006f0074005f006d006f006e00690074006f0072005f005f0052006f0062006f0074004d006f006e00690074006f0072005f005f0031005f005f0052006f0062006f00740020004d006f006e00690074006f00720100000000000007420000000000000000fb00000040005200710074005400650061006300680069006e00670050006c007500670069006e005f005f0031005f005f004d00610069006e00570069006e0064006f00770100000000000004890000000000000000fc0000000000000aef0000080600fffffffa000000020200000004fb00000046004d0075006c007400690070006c006f00740050006c007500670069006e005f005f0034005f005f004d0075006c007400690070006c006f00740057006900640067006500740100000000ffffffff0000058500fffffffb00000046004d0075006c007400690070006c006f00740050006c007500670069006e005f005f0033005f005f004d0075006c007400690070006c006f00740057006900640067006500740100000000ffffffff0000058500fffffffb00000046004d0075006c007400690070006c006f00740050006c007500670069006e005f005f0032005f005f004d0075006c007400690070006c006f00740057006900640067006500740100000000ffffffff0000058500fffffffb00000046004d0075006c007400690070006c006f00740050006c007500670069006e005f005f0031005f005f004d0075006c007400690070006c006f007400570069006400670065007401000000190000060d0000058500ffffff00000aef0000000000000004000000040000000800000008fc00000001000000030000000100000036004d0069006e0069006d0069007a006500640044006f0063006b00570069006400670065007400730054006f006f006c0062006100720000000000ffffffff0000000000000000')", 
+          "pretty-print": "                 nrqt_inspection__InspectionView__1__InspectionViewWidget            =                                                                                          $                                    ^                                                                                               Brqt_plot__Plot__2__DataPlotWidget          Brqt_plot__Plot__4__DataPlotWidget          brqt_robot_monitor__RobotMonitor__1__Robot Monitor          @RqtTeachingPlugin__1__MainWindow                                                                                                                                                                                                                                                                      "
+        }
+      }, 
+      "groups": {
+        "toolbar_areas": {
+          "keys": {
+            "MinimizedDockWidgetsToolbar": {
+              "type": "repr", 
+              "repr": "8"
+            }
+          }, 
+          "groups": {}
+        }
+      }
+    }
+  }
+}

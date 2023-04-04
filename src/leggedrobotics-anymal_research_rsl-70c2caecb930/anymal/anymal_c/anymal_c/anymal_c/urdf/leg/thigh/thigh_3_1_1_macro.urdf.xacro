@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:macro name="anymal_thigh" params="leg:=LF">
+
+    <xacro:property name="q_HfeT_yaw"       value="${-0.5*pi}"/> <!-- [rad] -->
+    <xacro:property name="T_r_TTcom_x"      value="0.0"/> <!-- [m] -->
+    <xacro:property name="T_r_TTcom_y"      value= "0.018"/> <!-- [m] -->
+    <xacro:property name="T_r_TTcom_z"      value="-0.169"/> <!-- [m] -->
+    <xacro:property name="m_T"              value="1.03"/> <!-- [kg] -->
+    <xacro:property name="T_Ixx_T"          value="0.018644469"/> <!-- [kg * m^2] -->
+    <xacro:property name="T_Iyy_T"          value="0.019312599"/> <!-- [kg * m^2] -->
+    <xacro:property name="T_Izz_T"          value="0.002838361"/> <!-- [kg * m^2] -->
+    <xacro:property name="T_Ixy_T"          value="0.000000052"/> <!-- [kg * m^2] -->
+    <xacro:property name="T_Ixz_T"          value="0.000010157"/> <!-- [kg * m^2] -->
+    <xacro:property name="T_Iyz_T"          value="0.002520077"/> <!-- [kg * m^2] -->
+    <xacro:property name="collision_r"      value="0.065"/> <!-- [m] --> <!-- measured -->
+    <xacro:property name="collision_l"      value="0.08"/> <!-- [m] --> <!-- measured -->
+    <xacro:property name="collision_box_l"  value="0.282627"/> <!-- [m] -->
+    <xacro:property name="collision_box_w"  value="0.10"/> <!-- [m] --> <!-- measured -->
+    <xacro:property name="collision_box_d"  value="0.06"/> <!-- [m] --> <!-- measured -->
+
+    <!-- Generated properties -->
+    <xacro:property name="left"         value="${int(leg.startswith('L'))*2-1}"/>
+    <xacro:property name="front"        value="${int(leg.startswith('F', 1))*2-1}"/>
+    <xacro:property name="mirrored"     value="${'_mirrored' if left * front == -1 else ''}" />
+
+
+    <!-- joint HFE thigh -->
+    <joint name="${leg}_THIGH_${leg}_thigh_fixed" type="fixed">
+      <parent link="${leg}_THIGH"/>
+      <child link="${leg}_thigh_fixed"/>
+      <origin xyz="0 0 0" rpy="0 0 ${left*q_HfeT_yaw}"/>
+    </joint>
+
+    <!-- Thigh link -->
+    <link name="${leg}_thigh_fixed">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 ${(left -1) * 0.5 * pi}"/>
+        <geometry>
+          <mesh
+               filename="package://anymal_c/urdf/leg/thigh/thigh_3_1_1_mesh.dae"
+               scale="${anymal_meshes_scale}"/>
+        </geometry>
+      </visual>
+
+      <!-- Thigh collision -->
+      <collision>
+        <origin xyz="0 ${left*collision_l*0.5} 0" rpy="${0.5*pi} 0 0"/>
+        <geometry>
+          <cylinder radius="${collision_r}" length="${collision_l}"/>
+        </geometry>
+      </collision>
+
+      <collision>
+        <origin xyz="0 ${left*collision_box_d*0.5} ${-collision_box_l * 0.5}" rpy="0 0 0"/>
+        <geometry>
+          <box size="${fabs(collision_box_w*0.75)} ${fabs(collision_box_d)} ${fabs(collision_box_l)}"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <origin xyz="${front*T_r_TTcom_x} ${left*T_r_TTcom_y} ${T_r_TTcom_z}"
+                rpy="0 0 0"/>
+        <mass value="${m_T}"/>
+        <inertia ixx="${T_Ixx_T}" ixy="${front*left*T_Ixy_T}" ixz="${front*T_Ixz_T}"
+                 iyy="${T_Iyy_T}" iyz="${left*T_Iyz_T}"       izz="${T_Izz_T}"/>
+      </inertial>
+    </link>
+
+  </xacro:macro>
+
+</robot>

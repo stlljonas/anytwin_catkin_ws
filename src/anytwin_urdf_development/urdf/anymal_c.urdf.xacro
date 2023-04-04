@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<robot name="anymal_c" xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <xacro:arg name="model" default="$(find anymal_c_renamable)/urdf/anymal_c.urdf.xacro"/>
+
+    <xacro:macro name="anymal_c_macro">
+        <xacro:include filename="$(find anymal_c)/urdf/anymal_c.urdf.xacro"/>
+    </xacro:macro>
+    <xacro:anymal_c_macro/>
+</robot>

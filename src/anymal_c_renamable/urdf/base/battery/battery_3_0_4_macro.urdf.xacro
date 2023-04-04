@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:macro name="battery">
+
+    <xacro:property name="B_r_BBbcom_x" value="-0.00067"/> <!--  [m] -->
+    <xacro:property name="B_r_BBbcom_y" value="-0.00023"/> <!--  [m] -->
+    <xacro:property name="B_r_BBbcom_z" value="-0.03362"/> <!--  [m] -->
+    <xacro:property name="m_Bb"         value= "5.53425"/> <!-- [kg] -->
+    <xacro:property name="B_Ixx_Bb"     value= "0.00749474794"/> <!-- [kg * m^2] -->
+    <xacro:property name="B_Iyy_Bb"     value= "0.07223389130"/> <!-- [kg * m^2] -->
+    <xacro:property name="B_Izz_Bb"     value= "0.07482717535"/> <!-- [kg * m^2] -->
+    <xacro:property name="B_Ixy_Bb"     value= "0.00016686282"/> <!-- [kg * m^2] -->
+    <xacro:property name="B_Ixz_Bb"     value= "0.00007827630"/> <!-- [kg * m^2] -->
+    <xacro:property name="B_Iyz_Bb"     value= "0.00000142902"/> <!-- [kg * m^2] -->
+
+
+    <!-- Fixed joint base battery -->
+    <joint name="base_battery" type="fixed">
+      <parent link="base"/>
+      <child link="battery"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+    </joint>
+
+    <!-- Shell link -->
+    <link name="battery">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+       <geometry>
+          <mesh
+            filename="package://anymal_c/urdf/base/battery/battery_3_0_4_mesh.dae"
+            scale="${anymal_meshes_scale}"/>
+        </geometry>
+      </visual>
+      <inertial>
+        <origin   xyz="${B_r_BBbcom_x} ${B_r_BBbcom_y} ${B_r_BBbcom_z}"
+                  rpy="0 0 0"/>
+        <mass     value="${m_Bb}"/>
+        <inertia  ixx="${B_Ixx_Bb}" ixy="${B_Ixy_Bb}" ixz="${B_Ixz_Bb}"
+                  iyy="${B_Iyy_Bb}" iyz="${B_Iyz_Bb}" izz="${B_Izz_Bb}"/>
+      </inertial>    
+    </link>
+
+  </xacro:macro>
+
+</robot>

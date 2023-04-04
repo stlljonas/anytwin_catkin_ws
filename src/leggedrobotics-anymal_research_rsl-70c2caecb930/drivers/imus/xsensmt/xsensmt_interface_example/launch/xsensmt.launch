@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+
+  <!-- Execution parameters -->
+  <arg name="receive_sync_in_signal"          default="false"/>
+  <arg name="standalone"                      default="true"/>
+  <arg name="time_step"                       default="0.0018"/>
+
+  <!-- Default parameter file -->
+  <arg name="default_param_file"              value="$(find xsensmt_interface_example)/config/xsensmt.yaml"/>
+  <!-- Overlay parameter file -->
+  <arg name="overlay_param_file"              default="$(arg default_param_file)"/>
+
+  <!-- Xsens node -->
+  <node name="xsensmt_node" pkg="xsensmt_interface_example" type="xsensmt_node" output="screen" respawn="true">
+    <!-- Load parameter files -->
+    <rosparam command="load" file="$(arg default_param_file)"/>
+    <rosparam command="load" file="$(arg overlay_param_file)"/>
+
+    <!-- Parameters -->
+    <param name="sensor/receive_sync_in_signal" value="$(arg receive_sync_in_signal)"/>
+    <param name="standalone"                    value="$(arg standalone)" />
+    <param name="time_step"                     value="$(arg time_step)" />
+  </node>
+</launch>
+

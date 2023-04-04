@@ -1,0 +1,29 @@
+free_gait_action_loader:
+  free_gait_action_packages:
+    priority_99: sandbox_data
+stack_launcher:
+  nodes:
+    anymal_highlevel_controller:
+      preprocessed_params:
+        staircase_description_folder_path:
+          value: $(rospack find sandbox_data)/staircase_descriptions
+    gazebo:
+      preprocessed_params:
+        roslaunch_args:
+          value: --verbose -e ode $(rospack find sandbox_data)/worlds/stairs_200x200.world
+        roslaunch_env_args_gazebo_model_path:
+          value: $(rospack find sandbox_data)/..
+    gazebo2marker:
+      preprocessed_params:
+        roslaunch_env_arg_gazebo_model_path:
+          value: $(rospack find sandbox_data)/..
+        roslaunch_env_args_mesh_workspace_path:
+          value: $(rospack find sandbox_data)/..
+    gazebo2tf:
+      preprocessed_params:
+        roslaunch_env_arg_gazebo_model_path:
+          value: $(rospack find sandbox_data)/..
+        roslaunch_env_args_mesh_workspace_path:
+          value: $(rospack find sandbox_data)/..
+stair_climbing:
+  staircase_description_folder_path: $(rospack find sandbox_data)/staircase_descriptions

@@ -1,0 +1,3 @@
+---
+string[] available_gaits_names
+int32[] available_gaits_ids

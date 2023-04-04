@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+  <node name="testing_anymal_state_visualizer" pkg="rqt_anymal_state_visualizer"
+        type="testing_anymal_state_visualizer" output="screen">
+    <rosparam file="$(find rqt_anymal_state_visualizer)/config/notificationPublisher.yaml" command="load"/>
+  </node>
+
+  <node name="testing_anymal_state_visualizer_msgs" pkg="rqt_anymal_state_visualizer"
+        type="testing_anymal_state_visualizer_msgs" output="screen">
+    <!--<rosparam file="$(find rqt_anymal_state_visualizer)/config/notificationPublisher.yaml" command="load"/>-->
+  </node>
+
+  <include file="$(find rqt_anymal_state_visualizer)/launch/rqt_anymal_state_visualizer.launch"/>
+</launch>

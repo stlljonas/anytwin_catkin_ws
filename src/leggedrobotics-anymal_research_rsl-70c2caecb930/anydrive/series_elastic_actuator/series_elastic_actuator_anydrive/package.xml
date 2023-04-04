@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<package format="2">
+
+  <name>series_elastic_actuator_anydrive</name>
+  <version>0.4.0</version>
+  <description>Conversion functions between ANYdrive and series elastic actuator classes.</description>
+
+  <author email="cgehring@anybotics.com">Christian Gehring</author>
+  <maintainer email="rdiethelm@anybotics.com">Remo Diethelm</maintainer>
+  <maintainer email="sbachmann@anybotics.com">Samuel Bachmann</maintainer>
+  <license>Proprietary</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>anydrive</depend>
+  <depend>series_elastic_actuator</depend>
+
+</package>

@@ -1,0 +1,239 @@
+<?xml version="1.0"?>
+
+<!-- This file contains the description of an actuated lidar consisting of a Dynamixel and a Hokuyo. -->
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- Arguments -->
+  <xacro:arg name="simulation"          default="false"/>
+  <xacro:arg name="mesh"                default="true"/>
+  <xacro:arg name="casing"              default="true"/>
+  <xacro:arg name="has_mass"            default="true"/>
+  <xacro:arg name="simulate_using_gpu"  default="true"/>
+
+  <!-- Properties -->
+  <xacro:property name="mu_actuated_lidar"          value="0.9"/>
+  <xacro:property name="actuated_lidar_meshes_path" value="package://actuated_lidar_description/mesh"/>
+
+
+  <!-- Actuated lidar description -->
+  <xacro:macro name="actuated_lidar_description" params="name parent dynamixel_lidar_offset *origin *dynamixel_joint_axis *dynamixel_calibration_tf *hokuyo_calibration_tf">
+
+    <joint name="${parent}_to_${name}_dynamixel_axis_aligned" type="fixed">
+      <xacro:insert_block name="origin"/>
+      <parent link="${parent}"/>
+      <child link="${name}_dynamixel_axis_aligned"/>
+    </joint>
+
+    <link name="${name}_dynamixel_axis_aligned">
+      <xacro:if value="$(eval casing and mesh)">
+        <visual>
+          <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+          <geometry>
+            <mesh filename="${actuated_lidar_meshes_path}/case_fix.dae" scale=".001 .001 .001"/>
+          </geometry>
+        </visual>
+      </xacro:if>
+      <xacro:if value="$(arg mesh)">
+        <visual>
+          <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+          <geometry>
+            <mesh filename="package://dynamixel_description/mesh/MX64.stl" scale=".001 .001 .001"/>
+          </geometry>
+          <material name="black">
+            <color rgba="0.1 0.1 0.1 1"/>
+          </material>
+        </visual>
+      </xacro:if>
+      <xacro:if value="$(arg has_mass)">
+        <inertial>
+          <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+          <mass value="1.392418888"/>
+          <inertia ixx="0.002305684069948" ixy="-0.000086948644451" ixz="0.000921858442372" iyy="0.006893867805815" iyz="0.000017735314243" izz="0.006221132462993"/>
+        </inertial>
+      </xacro:if>
+      <xacro:unless value="$(arg has_mass)">
+        <inertial>
+          <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+          <mass value="0.001"/>
+          <inertia ixx="0.00001" ixy="0.0" ixz="0.0" iyy="0.00001" iyz="0.0" izz="0.00001"/>
+        </inertial>
+      </xacro:unless>
+    </link>
+
+    <joint name="${name}_dynamixel_axis_aligned_to_dynamixel" type="fixed">
+      <xacro:if value="$(arg simulation)">
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      </xacro:if>
+      <xacro:unless value="$(arg simulation)">
+        <xacro:insert_block name="dynamixel_calibration_tf"/>
+      </xacro:unless>
+      <parent link="${name}_dynamixel_axis_aligned"/>
+      <child link="${name}_dynamixel"/>
+    </joint>
+
+    <link name="${name}_dynamixel">
+      <inertial>
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <!-- Set the inertial parameters to neglectable values: these effects will be considered on a different rigid body -->
+        <mass value="0.001"/>
+        <inertia ixx="0.00001" ixy="0.0" ixz="0.0" iyy="0.00001" iyz="0.0" izz="0.00001"/>
+        <!--<mass value="0.13"/>-->
+        <!--<inertia ixx="0.000027961" ixy="0.0" ixz="0.0" iyy="0.000052184" iyz="0.0" izz="0.000043723"/>-->
+      </inertial>
+    </link>
+
+    <joint name="${name}_dynamixel" type="continuous">
+      <physics>
+        <provide_feedback>true</provide_feedback>
+      </physics>
+      <parent link="${name}_dynamixel"/>
+      <child link="${name}_dynamixel_servo"/>
+      <limit effort="10" velocity="10"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <xacro:insert_block name="dynamixel_joint_axis"/>
+      <dynamics damping="0.0"/>
+    </joint>
+
+    <link name="${name}_dynamixel_servo"/>
+
+    <joint name="${name}_dynamixel_servo_to_hokuyo_axis_aligned" type="fixed">
+      <origin xyz="0 0 ${dynamixel_lidar_offset}" rpy="-1.57079632679 -1.57079632679 0"/>
+      <parent link="${name}_dynamixel_servo"/>
+      <child link="${name}_hokuyo_axis_aligned"/>
+    </joint>
+
+    <link name="${name}_hokuyo_axis_aligned"/>
+
+    <joint name="${name}_hokuyo_axis_aligned_to_hokuyo" type="fixed">
+      <xacro:if value="$(arg simulation)">
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      </xacro:if>
+      <xacro:unless value="$(arg simulation)">
+        <xacro:insert_block name="hokuyo_calibration_tf"/>
+      </xacro:unless>
+      <parent link="${name}_hokuyo_axis_aligned"/>
+      <child link="${name}_hokuyo"/>
+    </joint>
+
+    <link name="${name}_hokuyo">
+      <xacro:if value="$(eval casing and mesh)">
+        <visual>
+          <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+          <geometry>
+            <mesh filename="${actuated_lidar_meshes_path}/case_moving.dae"
+                  scale=".001 .001 .001"/>
+          </geometry>
+        </visual>
+      </xacro:if>
+      <visual>
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <geometry>
+          <mesh filename="${actuated_lidar_meshes_path}/hokuyo_utm_30lx.dae"/>
+        </geometry>
+        <material name="">
+          <color rgba="0.72941 0.35686 0.023529 1"/>
+        </material>
+      </visual>
+      <collision>
+        <origin rpy="0 0 0" xyz="0.01 0 -0.01"/>
+        <geometry>
+          <cylinder radius="0.06" length="0.12"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+        <!-- Set the inertial parameters to neglectable values: these effects will be considered on a different rigid body -->
+        <mass value="0.001"/>
+        <inertia ixx="0.00001" ixy="0.0" ixz="0.0" iyy="0.00001" iyz="0.0" izz="0.00001"/>
+        <!--<mass value="0.057654"/>-->
+        <!--<inertia iyy="4.2412E-05" ixy="4.9927E-08" iyz="-9.8165E-09" ixx="3.7174E-05" ixz="1.1015E-05" izz="4.167E-05"/>-->
+      </inertial>
+    </link>
+
+  </xacro:macro>
+
+
+  <!-- Actuated lidar -->
+  <xacro:macro name="actuated_lidar" params="name parent dynamixel_lidar_offset *origin *dynamixel_joint_axis *dynamixel_calibration_tf *hokuyo_calibration_tf">
+
+    <!-- Actuated lidar description -->
+    <xacro:actuated_lidar_description name="${name}" parent="${parent}" dynamixel_lidar_offset="${dynamixel_lidar_offset}">
+      <xacro:insert_block name="origin"/>
+      <xacro:insert_block name="dynamixel_joint_axis"/>
+      <xacro:insert_block name="dynamixel_calibration_tf"/>
+      <xacro:insert_block name="hokuyo_calibration_tf"/>
+    </xacro:actuated_lidar_description>
+
+    <!-- Simulated actuated lidar -->
+    <xacro:if value="$(arg simulation)">
+    
+      <!-- Check if the GPU should be used -->
+      <xacro:property name="gpu_string" value=""/>
+      <xacro:if value="$(arg simulate_using_gpu)">
+        <xacro:property name="gpu_string" value="gpu_"/>
+      </xacro:if>
+
+      <!-- Actuated lidar physics simulation -->
+      <gazebo reference="${name}_link">
+        <mu1>${mu_actuated_lidar}</mu1>
+        <mu2>${mu_actuated_lidar}</mu2>
+      </gazebo>
+
+      <!-- Actuated lidar hokuyo simulation and driver -->
+      <gazebo reference="${name}_hokuyo">
+        <sensor type="${gpu_string}ray" name="${name}_hokuyo">
+          <pose>0 0 0 0 0 0</pose>
+          <visualize>false</visualize>
+          <update_rate>40</update_rate>
+          <ray>
+            <scan>
+              <horizontal>
+                <samples>1081</samples>
+                <resolution>1</resolution>
+                <min_angle>-2.356194496154785</min_angle>
+                <max_angle>2.356194496154785</max_angle>
+              </horizontal>
+            </scan>
+            <range>
+              <min>0.10</min>
+              <max>30.0</max>
+              <resolution>0.01</resolution>
+            </range>
+            <noise>
+              <type>gaussian</type>
+              <!-- Noise parameters based on published spec for Hokuyo laser
+                   achieving "+-30mm" accuracy at range < 10m.  A mean of 0.0m and
+                   stddev of 0.01m will put 99.7% of samples within 0.03m of the true
+                   reading. -->
+              <mean>0.0</mean>
+              <stddev>0.01</stddev>
+            </noise>
+          </ray>
+          <plugin name="${name}_hokuyo" filename="libgazebo_ros_${gpu_string}laser.so">
+            <topicName>/${name}/scan</topicName>
+            <frameName>${name}_hokuyo</frameName>
+          </plugin>
+        </sensor>
+      </gazebo>
+
+      <!-- Actuated lidar dynamixel simulation and driver -->
+      <gazebo>
+        <plugin name="${name}_dynamixel_controller" filename="libdynamixel_gazebo_plugin.so">
+          <joint>${name}_dynamixel</joint>
+          <command_topic_name>/${name}/dynamixel/controller/command</command_topic_name>
+          <state_topic_name>/${name}/dynamixel/controller/state</state_topic_name>
+          <set_goal_position_service_name>/${name}/dynamixel/set_goal_position</set_goal_position_service_name>
+          <set_angle_limits_service_name>/${name}/dynamixel/set_angle_limits</set_angle_limits_service_name>
+          <set_moving_speed_service_name>/${name}/dynamixel/set_moving_speed</set_moving_speed_service_name>
+          <joint_state_topic_name>/${name}/dynamixel/joint_state</joint_state_topic_name>
+          <default_pos>0</default_pos>
+          <default_torque_limit>100</default_torque_limit>
+        </plugin>
+      </gazebo>
+
+    </xacro:if>
+
+  </xacro:macro>
+
+</robot>

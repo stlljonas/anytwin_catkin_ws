@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<launch> 
+
+  <!-- Parameter files -->
+  <arg name="gazebo_publisher_param_file"   default="$(find slam_loggers)/config/gazebo_ground_truth_pose_publisher.yaml"/>
+
+  <!-- Gazebo pose publisher -->
+  <node name="gazebo_ground_truth_pose_publisher" type="gazebo_ground_truth_pose_publisher" pkg="slam_loggers" output="screen">
+    <rosparam command="load"                file="$(arg gazebo_publisher_param_file)"/>
+  </node>
+
+</launch>

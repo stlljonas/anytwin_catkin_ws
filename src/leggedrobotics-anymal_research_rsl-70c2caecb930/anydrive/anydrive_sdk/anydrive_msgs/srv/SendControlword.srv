@@ -1,0 +1,19 @@
+# Device to send controlword to. Leave empty for all devices.
+string device_name
+
+# Controlword.
+uint16 controlword
+uint16 WARM_RESET               = 1
+uint16 CLEAR_ERRORS_TO_MOTOR_OP = 2
+uint16 STANDBY_TO_CONFIGURE     = 3
+uint16 CONFIGURE_TO_STANDBY     = 4
+uint16 CALIBRATION_TO_CONFIGURE = 5
+uint16 CONFIGURE_TO_CALIBRATION = 6
+uint16 MOTOR_OP_TO_STANDBY      = 7
+uint16 STANDBY_TO_MOTOR_OP      = 8
+uint16 CONTROL_OP_TO_MOTOR_OP   = 9
+uint16 MOTOR_OP_TO_CONTROL_OP   = 10
+uint16 CONTROL_OP_TO_STANDBY    = 11
+uint16 CLEAR_ERRORS_TO_STANDBY  = 12
+
+---

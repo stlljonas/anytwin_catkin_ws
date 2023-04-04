@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+
+  <!-- Arguments -->
+  <arg name="robot" default="b" doc="Robot, e.g. 'beth' or 'bear'. Use 'b' for generic robot."/>
+
+  <!-- Load the configuration and run the visualization and interaction -->
+  <node pkg="stack_launcher" type="sequential_roslaunch_node.py" name="sequential_roslaunch" output="screen">
+    <rosparam param="launch_files" subst_value="True">
+        ['anymal_b load_config.launch robot:=$(arg robot)',
+         'anymal_b_description_visualization visualization.launch']
+    </rosparam>
+  </node>
+
+</launch>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+
+  <!-- Original camera name -->
+  <arg name="original_sensor_name"                      default="blackfly"/>
+  <!-- New camera name -->
+  <arg name="new_sensor_name"                           default="wide_angle_camera"/>
+  <!-- New frame name -->
+  <arg name="new_frame_name"                            default="$(arg new_sensor_name)"/>
+
+  <!-- Image Stream -->
+  <node pkg="anymal_perception_topic_tools" type="remap_node.py" name="$(arg new_sensor_name)_camera_info_remapping"
+        args="/$(arg original_sensor_name)/camera_info /$(arg new_sensor_name)/camera_info $(arg new_frame_name) sensor_msgs/CameraInfo
+              --import sensor_msgs std_msgs 
+              --queue-size-publisher 1 --queue-size-subscriber 1
+              --wait-for-start"
+        output="log" respawn="true"/>
+
+  <node pkg="anymal_perception_topic_tools" type="remap_node.py" name="$(arg new_sensor_name)_image_remapping"
+        args="/$(arg original_sensor_name)/image_color/compressed /$(arg new_sensor_name)/image_color/compressed $(arg new_frame_name) sensor_msgs/CompressedImage
+              --import sensor_msgs std_msgs
+              --queue-size-publisher 1 --queue-size-subscriber 1
+              --wait-for-start"
+        output="log" respawn="true"/>
+
+</launch>

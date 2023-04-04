@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+
+  <!-- Original camera name -->
+  <arg name="original_sensor_name"                      default="realsense_d435"/>
+  <!-- Original frame prefix -->
+  <arg name="original_frame_prefix"                     default="$(arg original_sensor_name)"/>
+  <!-- New camera name -->
+  <arg name="new_sensor_name"                           default="depth_camera"/>
+  <!-- New frame prefix -->
+  <arg name="new_frame_prefix"                          default="$(arg new_sensor_name)"/>
+  <!-- Whether timestamping information stream should be remapped -->
+  <arg name="remap_timestamping_info"                   default="false"/>
+  <!-- Whether infra1 stream should be remapped -->
+  <arg name="remap_infra1"                              default="true"/>
+  <!-- Whether infra2 stream should be remapped -->
+  <arg name="remap_infra2"                              default="false"/>
+  <!-- Whether depth stream should be remapped -->
+  <arg name="remap_depth"                               default="true"/>
+  <!-- Whether aligned depth stream should be remapped -->
+  <arg name="remap_aligned_depth"                       default="false"/>
+  <!-- Whether color stream should be remapped -->
+  <arg name="remap_color"                               default="false"/>
+  <!-- Whether point cloud stream should be remapped -->
+  <arg name="remap_point_cloud"                         default="false"/>
+
+  <!-- Timestamping information -->
+  <!-- Note: To support this remapping the any_realsense2_camera node must be available as a Debian package or source build. -->
+  <node pkg="anymal_perception_topic_tools" type="remap_node.py" name="$(arg new_sensor_name)_timestamping_info_remapping"
+        args="/$(arg original_sensor_name)/camera_timestamping_info /$(arg new_sensor_name)/camera_timestamping_info $(arg new_frame_prefix) any_realsense2_camera/TimestampingInfoMsg --input-frame $(arg original_frame_prefix) --output-frame-is-prefix
+              --import any_realsense2_camera
+              --queue-size-publisher 1 --queue-size-subscriber 1
+              --wait-for-start"
+        output="log" respawn="true"
+        if="$(arg remap_timestamping_info)"/>
+
+  <!-- Infra1 Stream -->
+  <node pkg="anymal_perception_topic_tools" type="remap_node.py" name="$(arg new_sensor_name)_infra1_camera_info_remapping"
+        args="/$(arg original_sensor_name)/infra1/camera_info /$(arg new_sensor_name)/infra1/camera_info $(arg new_frame_prefix) sensor_msgs/CameraInfo --input-frame $(arg original_frame_prefix) --output-frame-is-prefix
+              --import sensor_msgs std_msgs 
+              --queue-size-publisher 1 --queue-size-subscriber 1
+              --wait-for-start"
+        output="log" respawn="true"
+        if="$(arg remap_infra1)"/>
+
+  <node pkg="anymal_perception_topic_tools" type="remap_node.py" name="$(arg new_sensor_name)_infra1_image_remapping"
+        args="/$(arg original_sensor_name)/infra1/image_rect_raw/compressed /$(arg new_sensor_name)/infra1/image_rect_raw/compressed $(arg new_frame_prefix) sensor_msgs/CompressedImage --input-frame $(arg original_frame_prefix) --output-frame-is-prefix
+              --import sensor_msgs std_msgs
+              --queue-size-publisher 1 --queue-size-subscriber 1
+              --wait-for-start"
+        output="log" respawn="true"
+        if="$(arg remap_infra1)"/>
+
+  <!-- Infra2 Stream -->
+  <node pkg="anymal_perception_topic_tools" type="remap_node.py" name="$(arg new_sensor_name)_infra2_camera_info_remapping"
+        args="/$(arg original_sensor_name)/infra2/camera_info /$(arg new_sensor_name)/infra2/camera_info $(arg new_frame_prefix) sensor_msgs/CameraInfo --input-frame $(arg original_frame_prefix) --output-frame-is-prefix
+              --import sensor_msgs std_msgs
+              --queue-size-publisher 1 --queue-size-subscriber 1
+              --wait-for-start"
+        output="log" respawn="true"
+        if="$(arg remap_infra2)"/>
+
+  <node pkg="anymal_perception_topic_tools" type="remap_node.py" name="$(arg new_sensor_name)_infra2_image_remapping"
+        args="/$(arg original_sensor_name)/infra2/image_rect_raw/compressed /$(arg new_sensor_name)/infra2/image_rect_raw/compressed $(arg new_frame_prefix) sensor_msgs/CompressedImage --input-frame $(arg original_frame_prefix) --output-frame-is-prefix
+              --import sensor_msgs std_msgs
+              --queue-size-publisher 1 --queue-size-subscriber 1
+              --wait-for-start"
+        output="log" respawn="true"
+        if="$(arg remap_infra2)"/>
+
+  <!-- Depth Stream -->
+  <node pkg="anymal_perception_topic_tools" type="remap_node.py" name="$(arg new_sensor_name)_depth_camera_info_remapping"
+        args="/$(arg original_sensor_name)/depth/camera_info /$(arg new_sensor_name)/depth/camera_info $(arg new_frame_prefix) sensor_msgs/CameraInfo --input-frame $(arg original_frame_prefix) --output-frame-is-prefix
+              --import sensor_msgs std_msgs
+              --queue-size-publisher 1 --queue-size-subscriber 1
+              --wait-for-start"
+        output="log" respawn="true"
+        if="$(arg remap_depth)"/>
+
+  <node pkg="anymal_perception_topic_tools" type="remap_node.py" name="$(arg new_sensor_name)_depth_image_remapping"
+        args="/$(arg original_sensor_name)/depth/image_rect_raw /$(arg new_sensor_name)/depth/image_rect_raw $(arg new_frame_prefix) sensor_msgs/Image --input-frame $(arg original_frame_prefix) --output-frame-is-prefix
+              --import sensor_msgs std_msgs
+              --queue-size-publisher 1 --queue-size-subscriber 1
+              --wait-for-start"
+        output="log" respawn="true"
+        if="$(arg remap_depth)"/>
+
+  <!-- Aligned Depth Stream -->
+  <node pkg="anymal_perception_topic_tools" type="remap_node.py" name="$(arg new_sensor_name)_aligned_depth_camera_info_remapping"
+        args="/$(arg original_sensor_name)/aligned_depth_to_color/camera_info /$(arg new_sensor_name)/aligned_depth_to_color/camera_info $(arg new_frame_prefix) sensor_msgs/CameraInfo --input-frame $(arg original_frame_prefix) --output-frame-is-prefix
+              --import sensor_msgs std_msgs
+              --queue-size-publisher 1 --queue-size-subscriber 1
+              --wait-for-start"
+        output="log" respawn="true"
+        if="$(arg remap_aligned_depth)"/>
+
+  <node pkg="anymal_perception_topic_tools" type="remap_node.py" name="$(arg new_sensor_name)_aligned_depth_image_remapping"
+        args="/$(arg original_sensor_name)/aligned_depth_to_color/image_raw /$(arg new_sensor_name)/aligned_depth_to_color/image_raw $(arg new_frame_prefix) sensor_msgs/Image --input-frame $(arg original_frame_prefix) --output-frame-is-prefix
+              --import sensor_msgs std_msgs
+              --queue-size-publisher 1 --queue-size-subscriber 1
+              --wait-for-start"
+        output="log" respawn="true"
+        if="$(arg remap_aligned_depth)"/>
+
+  <!-- Color Stream -->
+  <node pkg="anymal_perception_topic_tools" type="remap_node.py" name="$(arg new_sensor_name)_color_camera_info_remapping"
+        args="/$(arg original_sensor_name)/color/camera_info /$(arg new_sensor_name)/color/camera_info $(arg new_frame_prefix) sensor_msgs/CameraInfo --input-frame $(arg original_frame_prefix) --output-frame-is-prefix
+              --import sensor_msgs std_msgs
+              --queue-size-publisher 1 --queue-size-subscriber 1
+              --wait-for-start"
+        output="log" respawn="true"
+        if="$(arg remap_color)"/>
+
+  <node pkg="anymal_perception_topic_tools" type="remap_node.py" name="$(arg new_sensor_name)_color_image_remapping"
+        args="/$(arg original_sensor_name)/color/image_raw/compressed /$(arg new_sensor_name)/color/image_raw/compressed $(arg new_frame_prefix) sensor_msgs/CompressedImage --input-frame $(arg original_frame_prefix) --output-frame-is-prefix
+              --import sensor_msgs std_msgs
+              --queue-size-publisher 1 --queue-size-subscriber 1
+              --wait-for-start"
+        output="log" respawn="true"
+        if="$(arg remap_color)"/>
+
+  <!-- Point cloud Stream -->
+  <node pkg="anymal_perception_topic_tools" type="remap_node.py" name="$(arg new_sensor_name)_point_cloud_remapping"
+        args="/$(arg original_sensor_name)/depth/color/points /$(arg new_sensor_name)/point_cloud $(arg new_frame_prefix) sensor_msgs/PointCloud2 --input-frame $(arg original_frame_prefix) --output-frame-is-prefix
+              --import sensor_msgs std_msgs
+              --queue-size-publisher 1 --queue-size-subscriber 1
+              --wait-for-start"
+        output="log" respawn="true"
+        if="$(arg remap_point_cloud)"/>
+
+</launch>

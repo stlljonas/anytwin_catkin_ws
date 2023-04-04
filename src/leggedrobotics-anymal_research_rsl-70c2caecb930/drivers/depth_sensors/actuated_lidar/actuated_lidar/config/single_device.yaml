@@ -1,0 +1,29 @@
+subscribers:
+  joint_state:
+    topic: dynamixel/joint_state
+    queue_size: 1
+  set_direction:
+    topic: set_direction
+    queue_size: 1
+
+publishers:
+  motion_goal_reached:
+    topic: motion_goal_reached
+    queue_size: 1
+    latch: true
+
+servers:
+  shutdown_motor:
+    service: shutdown_motor
+
+clients:
+  set_moving_speed:
+    service: dynamixel/set_moving_speed
+  set_goal_position:
+    service: dynamixel/set_goal_position
+  set_angle_limits:
+    service: dynamixel/set_angle_limits
+  set_torque_enable:
+    service: dynamixel/set_torque_enable
+
+

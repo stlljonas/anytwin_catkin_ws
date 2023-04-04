@@ -1,0 +1,35 @@
+global_placeholders:
+ <base_height>: 0.47
+ <base_average_linear_velocity>: 0.03
+ <foot_average_velocity>: 0.1
+ <position_x>: 0.32
+ <position_x_negative>: -0.32
+ <position_y>: 0.24
+ <position_y_negative>: -0.24
+
+yaml_actions:
+  - action:
+     package: anymal_calibration_actions
+     file_path: actions/test_com/templates/square_up_template.yaml
+     placeholders:
+      <support_margin>: 0.04
+  - action:
+     package: anymal_calibration_actions
+     file_path: actions/test_com/templates/square_up_template.yaml
+     placeholders:
+      <support_margin>: 0.03
+  - action:
+     package: anymal_calibration_actions
+     file_path: actions/test_com/templates/square_up_template.yaml
+     placeholders:
+      <support_margin>: 0.02
+  - action:
+     package: anymal_calibration_actions
+     file_path: actions/test_com/templates/square_up_template.yaml
+     placeholders:
+      <support_margin>: 0.01
+  - action:
+     package: anymal_calibration_actions
+     file_path: actions/test_com/templates/square_up_template.yaml
+     placeholders:
+      <support_margin>: 0.005

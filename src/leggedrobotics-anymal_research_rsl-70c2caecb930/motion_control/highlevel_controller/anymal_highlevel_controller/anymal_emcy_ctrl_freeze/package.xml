@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>anymal_emcy_ctrl_freeze</name>
+  <version>0.6.0</version>
+  <description>The roco_freeze package</description>
+  <maintainer email="vyuryev@anybotics.com">Valentin Yuryev</maintainer>
+  <maintainer email="avijayan@anybotics.com">Aravind Vijayan</maintainer>
+  <license>Proprietary</license>
+  <author email="cgehring@anybotics.com">Christian Gehring</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>anymal_model</depend>
+  <depend>loco</depend>
+  <depend>robot_utils</depend>
+  <depend>roco</depend>
+  <depend>rocoma_plugin</depend>
+  <depend>anymal_roco</depend>
+  <depend>eigen</depend>
+  <depend>tinyxml_tools</depend>
+
+  <export>
+  <rocoma_plugin plugin="${prefix}/rocoma_plugin.xml" />
+</export>
+</package>

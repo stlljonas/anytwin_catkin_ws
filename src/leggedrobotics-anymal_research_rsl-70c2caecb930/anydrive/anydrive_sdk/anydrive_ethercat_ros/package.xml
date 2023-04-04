@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+
+<package format="2">
+
+  <name>anydrive_ethercat_ros</name>
+  <version>0.6.0</version>
+  <description>C++ library combining anydrive_ethercat and anydrive_ros. Contains a ROS node.</description>
+
+  <license>Proprietary</license>
+  <author email="rdiethelm@anybotics.com">Remo Diethelm</author>
+  <maintainer email="rdiethelm@anybotics.com">Remo Diethelm</maintainer>
+  <maintainer email="pleemann@anybotics.com">Philipp Leemann</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>cmake_clang_tools</build_depend>
+
+  <depend>anydrive</depend>
+  <depend>anydrive_ethercat</depend>
+  <depend>anydrive_ros</depend>
+  <depend>roscpp</depend>
+  <depend>roslib</depend>
+
+</package>

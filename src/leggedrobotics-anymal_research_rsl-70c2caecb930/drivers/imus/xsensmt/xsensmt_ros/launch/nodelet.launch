@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+  <!-- Execution parameters -->
+  <arg name="nodelet_manager"          		    default="xsensmt_nodelet_manager"/>
+
+  <!-- Default parameter file -->
+  <arg name="default_param_file"              value="$(find xsensmt_ros)/config/xsensmt.yaml"/>
+  <!-- Overlay parameter file -->
+  <arg name="overlay_param_file"              default="$(arg default_param_file)"/>
+
+  <!-- Nodelet manager -->
+  <node pkg="nodelet" type="nodelet" args="manager" name="$(arg nodelet_manager)" output="screen" />
+
+  <!-- Xsens nodelet -->
+  <node pkg="nodelet" type="nodelet" name="xsensmt_nodelet" 
+    args="load xsensmt_ros/XsensMTROSNodelet $(arg nodelet_manager)" output="screen" respawn="true">
+
+    <!-- Load parameter files -->
+    <rosparam command="load" file="$(arg default_param_file)"/>
+    <rosparam command="load" file="$(arg overlay_param_file)"/>
+  </node>
+</launch>

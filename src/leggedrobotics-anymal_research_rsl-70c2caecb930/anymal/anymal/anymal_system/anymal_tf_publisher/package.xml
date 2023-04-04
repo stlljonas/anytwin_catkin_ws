@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>anymal_tf_publisher</name>
+  <version>0.6.0</version>
+  <description>The anymal_tf_publisher package</description>
+  <maintainer email="rdiethelm@anybotics.com">Remo Diethelm</maintainer>
+  <maintainer email="pleemann@anybotics.com">Philipp Leemann</maintainer>
+  <license>Proprietary</license>
+  <author email="pfankhauser@anybotics.com">Peter Fankhauser</author>
+  <author email="bellicoso@mavt.ethz.ch">Dario Bellicoso</author>
+  <author email="cgehring@anybotics.com">Christian Gehring</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>any_node</depend>
+  <depend>anymal_description</depend>
+  <depend>anymal_model_ros</depend>
+  <depend>anymal_msgs</depend>
+  <depend>robot_state_publisher</depend>
+  <depend>cosmo_ros</depend>
+  <depend>any_measurements_ros</depend>
+  <depend>series_elastic_actuator_ros</depend>
+  <depend>tf</depend>
+</package>

@@ -1,0 +1,128 @@
+rostopic pub /locomotion_controller/gait_patterns anymal_msgs/GaitPatterns "header:
+  seq: 0
+  stamp:
+    secs: 0
+    nsecs: 0
+  frame_id: ''
+phase: 0.5
+patterns:
+- duration: 2.0
+  liftoff_phases:
+  - 0.5
+  - 0.5
+  - 0.0
+  - 0.0
+  touchdown_phases:
+  - 1.0
+  - 1.0
+  - 0.5
+  - 0.5
+- duration: 1.0
+  liftoff_phases:
+  - 0.5
+  - 0.5
+  - 0.0
+  - 0.0
+  touchdown_phases:
+  - 1.0
+  - 1.0
+  - 0.5
+  - 0.5
+- duration: 2.0
+  liftoff_phases:
+  - 0.75
+  - 0.75
+  - 0.25
+  - 0.25
+  touchdown_phases:
+  - 1.0
+  - 1.0
+  - 0.5
+  - 0.5
+" 
+
+
+
+
+rostopic pub /locomotion_controller/gait_patterns anymal_msgs/GaitPatterns "header:
+  seq: 0
+  stamp:
+    secs: 0
+    nsecs: 0
+  frame_id: ''
+phase: 0.25
+patterns:
+- duration: 2.0
+  liftoff_phases:
+  - 0.5
+  - 0.5
+  - 0.0
+  - 0.0
+  touchdown_phases:
+  - 1.0
+  - 1.0
+  - 0.5
+  - 0.5
+- duration: 1.0
+  liftoff_phases:
+  - 0.5
+  - 0.5
+  - 0.0
+  - 0.0
+  touchdown_phases:
+  - 1.0
+  - 1.0
+  - 0.5
+  - 0.5
+- duration: 2.0
+  liftoff_phases:
+  - 0.75
+  - 0.75
+  - 0.25
+  - 0.25
+  touchdown_phases:
+  - 1.0
+  - 1.0
+  - 0.5
+  - 0.5
+" 
+
+
+# Static walking
+
+<LF liftOff="0.02" touchDown="0.25" />
+<RF liftOff="0.52" touchDown="0.75" />
+<LH liftOff="0.77" touchDown="1.00" />
+<RH liftOff="0.27" touchDown="0.5" />
+
+rostopic pub /locomotion_controller/gait_patterns anymal_msgs/GaitPatterns "header:
+  seq: 0
+  stamp:
+    secs: 0
+    nsecs: 0
+  frame_id: ''
+phase: 0.25
+patterns:
+- duration: 2.0
+  liftoff_phases:
+  - 0.02
+  - 0.52
+  - 0.77
+  - 0.27
+  touchdown_phases:
+  - 0.25
+  - 0.75
+  - 1.00
+  - 0.5
+- duration: 1.0
+  liftoff_phases:
+  - 0.02
+  - 0.52
+  - 0.77
+  - 0.27
+  touchdown_phases:
+  - 0.25
+  - 0.75
+  - 1.00
+  - 0.5
+" 

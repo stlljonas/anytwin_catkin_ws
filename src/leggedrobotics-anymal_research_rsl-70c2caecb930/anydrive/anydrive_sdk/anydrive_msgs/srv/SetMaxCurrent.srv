@@ -1,0 +1,7 @@
+# Device to set max current. Leave empty for all devices.
+string device_name
+
+# Max current.
+float64 max_current
+
+---

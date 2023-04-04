@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package format="2">
+
+  <name>rocoma_plugin</name>
+  <version>0.4.0</version>
+  <description>Contains implementations of rocoma controllers with common plugin base classes.</description>
+  <url>https://github.com/anybotics/rocoma</url>
+
+  <license>BSD</license>
+  <maintainer email="avijayan@anybotics.com">Aravind Vijayan</maintainer>
+  <maintainer email="fgiraldez@anybotics.com">Francisco Giráldez Gámez</maintainer>
+  <author email="ghottiger@anybotics.com">Gabriel Hottiger</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>cmake_clang_tools</build_depend>
+
+  <depend>roco</depend>
+  <depend>roco_ros</depend>
+  <depend>rocoma</depend>
+  <depend>pluginlib</depend>
+
+</package>

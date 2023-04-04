@@ -1,0 +1,11 @@
+subscribers:
+  input:
+    topic:            /tf
+    queue_size:       100
+
+publishers:
+  output:
+    topic:            /tf_operator
+    queue_size:       100
+    latch:            false
+

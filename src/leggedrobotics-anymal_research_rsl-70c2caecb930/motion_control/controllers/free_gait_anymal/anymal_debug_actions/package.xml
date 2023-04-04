@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>anymal_debug_actions</name>
+  <version>0.6.0</version>
+  <description>Debug actions for ANYmal using Free Gait.</description>
+  <maintainer email="vyuryev@anybotics.com">Valentin Yuryev</maintainer>
+  <maintainer email="avijayan@anybotics.com">Aravind Vijayan</maintainer>
+  <author email="pfankhauser@anybotics.com">Peter Fankhauser</author>
+  <license>Proprietary</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>free_gait_action_loader</depend>
+
+</package>

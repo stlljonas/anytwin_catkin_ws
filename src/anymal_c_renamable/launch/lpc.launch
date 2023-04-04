@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+
+  <!-- Launch file starting the ANYmal C locomotion PC software stack. -->
+  <!-- Load the configuration first before invoking this file.  -->
+
+  <!-- Locomotion PC stack -->
+  <include file="$(find stack_launcher)/launch/stack_launcher.launch">
+    <arg name="stack"         value="lpc"/>
+    <arg name="trigger_param" value="/config_loaded"/>
+  </include>
+
+</launch>

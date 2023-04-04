@@ -1,0 +1,19 @@
+<library path="lib/librqt_rpsm">
+  <class name="rqt_rpsm/RpsmPlugin"
+         type="rqt_rpsm::RpsmPlugin"
+         base_class_type="rqt_gui_cpp::Plugin">
+    <description>
+      A GUI plugin to display and interact with the RPSM.
+    </description>
+    <qtgui>
+      <group>
+        <label>ANYmal</label>
+        <icon type="theme">folder</icon>
+        <statustip>Plugins related to...</statustip>
+      </group>
+      <label>RPSM</label>
+      <icon type="theme">applications-graphics</icon>
+      <statustip>A GUI plugin to ...</statustip>
+    </qtgui>
+  </class>
+</library>

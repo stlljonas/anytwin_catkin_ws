@@ -1,0 +1,7 @@
+# Device to set direction. Leave empty for all devices.
+string device_name
+
+# Direction.
+int16 direction
+
+---

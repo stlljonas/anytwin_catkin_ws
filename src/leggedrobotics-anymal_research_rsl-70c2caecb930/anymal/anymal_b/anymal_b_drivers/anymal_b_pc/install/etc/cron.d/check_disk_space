@@ -1,0 +1,2 @@
+# Check disk space every 10 minutes
+*/10 * * * * integration /home/integration/git/anymal_b_drivers/anymal_b_pc/bin/check_disk_space.sh /home/integration/.ros

@@ -1,0 +1,7 @@
+<library path="lib/libjoy_interface_anymal">
+  <class type="joy_interface::AnymalModule" base_class_type="joy_interface::InterfaceModuleBase">
+  <description>
+  This is a anymal module for the joy interface
+  </description>
+  </class>
+</library>

@@ -1,0 +1,7 @@
+anymal_highlevel_controller:
+  controller_manager:
+    failproof_controller:
+      name: failproof_freeze
+      parameter_package: anymal_c
+      parameter_path: config/non_ros/motion_control
+      plugin_name: anymal_ctrl_freeze::AnymalFailproofCtrlFreeze

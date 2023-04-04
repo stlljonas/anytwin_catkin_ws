@@ -1,0 +1,11 @@
+<launch>
+
+  <!-- Leave at false, because sensor is loaded directly for simulation -->
+  <arg name="simulation" default="true"/>
+
+  <!-- Run xacro script to generate inspection payload description -->
+  <param name="inspection_payload/robot_description" command="$(find xacro)/xacro.py
+    '$(find inspection_payload_description)/urdf/inspection_payload_standalone.urdf.xacro'
+    simulation:=$(arg simulation)"/>
+
+</launch>

@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+
+<package format="2">
+
+  <name>rqt_gait_switcher</name>
+  <version>0.4.0</version>
+  <description>The rqt_gait_switcher plugin.</description>
+
+  <license>Proprietary</license>
+
+  <author email="bellicoso@mavt.ethz.ch">Dario Bellicoso</author>
+  <maintainer email="avijayan@anybotics.com">Aravind Vijayan</maintainer>
+  <maintainer email="fgiraldez@anybotics.com">Francisco Giráldez Gámez</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>param_io</depend>
+  <depend>motion_generation_msgs</depend>
+  <depend>std_srvs</depend>
+  <depend>roscpp</depend>
+  <depend>rqt_gui</depend>
+  <depend>rqt_gui_cpp</depend>
+  <depend>yaml-cpp</depend>
+  <depend>qtbase5-dev</depend>
+
+  <export>
+    <architecture_independent/>
+    <rqt_gui plugin="${prefix}/plugin.xml"/>
+  </export>
+
+</package>

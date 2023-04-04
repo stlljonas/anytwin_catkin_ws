@@ -1,0 +1,44 @@
+actions:
+  - action:
+      id: square_up
+      name: Square up
+      file: actions/square_up.py
+      type: python
+      description: Step to default step configuration.
+  - action:
+      id: lie_down_unsafe
+      name: Lie Down Without Square Up
+      file: actions/lie_down/lie_down_unsafe.py
+      type: python
+      description: Lie down on belly.
+  - action:
+      id: stand_up
+      name: Stand Up
+      file: actions/stand_up/stand_up.py
+      type: python
+      description: Stand up from belly.
+  - action:
+      id: switch_xx_to_oo_leg_config
+      name: Switch XX to OO Leg Config
+      file: actions/switch_xx_to_oo_leg_config/switch_xx_to_oo_leg_config.py
+      type: python
+      description: Switched the leg configuration from XX (inwards) to OO (outwards).
+  - action:
+      id: switch_oo_to_xx_leg_config
+      name: Switch OO to XX Leg Config
+      file: actions/switch_oo_to_xx_leg_config/switch_oo_to_xx_leg_config.py
+      type: python
+      description: Switched the leg configuration from OO (outwards) to XX (inwards).
+  - action:
+      id: scan_environment
+      name: Scan Environment
+      file: actions/scan_environment.yaml
+      type: yaml
+      description: Tilt body in each direction to acquire a scan of the environment.
+  - action:
+      id: straighten
+      name: Straighten
+      file: actions/straighten.yaml
+      type: yaml
+      description: Move base to a straight high position.
+

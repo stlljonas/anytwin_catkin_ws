@@ -1,0 +1,398 @@
+adapt_coordinates:
+  - transform:
+      source_frame: footprint
+      target_frame: odom
+
+# Move in +/-Y direction. Go left and right once. Default: [0.33, 0.22]. Step gap 0.25.
+steps:
+# Move in +Y direction. Go left.
+  - step:
+      - base_auto:
+          height: 0.44
+
+  - step:
+      - base_auto:
+      - footstep:
+          name: LF_LEG
+          target:
+            frame: footprint
+            position: [0.33, 0.47, 0.0]
+
+  - step:
+      - base_auto:
+
+  - step:
+      - base_auto:
+      - footstep:
+          name: LH_LEG
+          target:
+            frame: footprint
+            position: [-0.33, 0.47, 0.0]
+
+  - step:
+      - base_auto:
+
+  - step:
+      - base_auto:
+      - footstep:
+          name: RF_LEG
+          target:
+            frame: footprint
+            position: [0.33, 0.03, 0.0]
+
+  - step:
+      - base_auto:
+
+  - step:
+      - base_auto:
+      - footstep:
+          name: RH_LEG
+          target:
+            frame: footprint
+            position: [-0.33, 0.03, 0.0]
+
+  - step:
+      - base_auto:
+
+# Move in +Y direction. Go left.
+  - step:
+      - base_auto:
+          height: 0.44
+
+  - step:
+      - base_auto:
+      - footstep:
+          name: LF_LEG
+          target:
+            frame: footprint
+            position: [0.33, 0.72, 0.0]
+
+  - step:
+      - base_auto:
+
+  - step:
+      - base_auto:
+      - footstep:
+          name: LH_LEG
+          target:
+            frame: footprint
+            position: [-0.33, 0.72, 0.0]
+
+  - step:
+      - base_auto:
+
+  - step:
+      - base_auto:
+      - footstep:
+          name: RF_LEG
+          target:
+            frame: footprint
+            position: [0.33, 0.28, 0.0]
+
+  - step:
+      - base_auto:
+
+  - step:
+      - base_auto:
+      - footstep:
+          name: RH_LEG
+          target:
+            frame: footprint
+            position: [-0.33, 0.28, 0.0]
+
+  - step:
+      - base_auto:
+
+# Move in -Y direction.
+  - step:
+      - base_auto:
+          height: 0.44
+
+  - step:
+      - base_auto:
+      - footstep:
+          name: RF_LEG
+          target:
+            frame: footprint
+            position: [0.33, 0.03, 0.0]
+
+  - step:
+      - base_auto:
+
+  - step:
+      - base_auto:
+      - footstep:
+          name: RH_LEG
+          target:
+            frame: footprint
+            position: [-0.33, 0.03, 0.0]
+
+  - step:
+      - base_auto:
+
+  - step:
+      - base_auto:
+      - footstep:
+          name: LF_LEG
+          target:
+            frame: footprint
+            position: [0.33, 0.47, 0.0]
+
+  - step:
+      - base_auto:
+
+  - step:
+      - base_auto:
+      - footstep:
+          name: LH_LEG
+          target:
+            frame: footprint
+            position: [-0.33, 0.47, 0.0]
+
+  - step:
+      - base_auto:
+
+# Move in -Y direction.
+  - step:
+      - base_auto:
+          height: 0.44
+
+  - step:
+      - base_auto:
+      - footstep:
+          name: RF_LEG
+          target:
+            frame: footprint
+            position: [0.33, -0.22, 0.0]
+
+  - step:
+      - base_auto:
+
+  - step:
+      - base_auto:
+      - footstep:
+          name: RH_LEG
+          target:
+            frame: footprint
+            position: [-0.33, -0.22, 0.0]
+
+  - step:
+      - base_auto:
+
+  - step:
+      - base_auto:
+      - footstep:
+          name: LF_LEG
+          target:
+            frame: footprint
+            position: [0.33, 0.22, 0.0]
+
+  - step:
+      - base_auto:
+
+  - step:
+      - base_auto:
+      - footstep:
+          name: LH_LEG
+          target:
+            frame: footprint
+            position: [-0.33, 0.22, 0.0]
+
+  - step:
+      - base_auto:
+
+# Move in -Y direction.
+  - step:
+      - base_auto:
+          height: 0.44
+
+  - step:
+      - base_auto:
+      - footstep:
+          name: RF_LEG
+          target:
+            frame: footprint
+            position: [0.33, -0.47, 0.0]
+
+  - step:
+      - base_auto:
+
+  - step:
+      - base_auto:
+      - footstep:
+          name: RH_LEG
+          target:
+            frame: footprint
+            position: [-0.33, -0.47, 0.0]
+
+  - step:
+      - base_auto:
+
+  - step:
+      - base_auto:
+      - footstep:
+          name: LF_LEG
+          target:
+            frame: footprint
+            position: [0.33, -0.03, 0.0]
+
+  - step:
+      - base_auto:
+
+  - step:
+      - base_auto:
+      - footstep:
+          name: LH_LEG
+          target:
+            frame: footprint
+            position: [-0.33, -0.03, 0.0]
+
+  - step:
+      - base_auto:
+
+# Move in -Y direction.
+  - step:
+      - base_auto:
+          height: 0.44
+
+  - step:
+      - base_auto:
+      - footstep:
+          name: RF_LEG
+          target:
+            frame: footprint
+            position: [0.33, -0.72, 0.0]
+
+  - step:
+      - base_auto:
+
+  - step:
+      - base_auto:
+      - footstep:
+          name: RH_LEG
+          target:
+            frame: footprint
+            position: [-0.33, -0.72, 0.0]
+
+  - step:
+      - base_auto:
+
+  - step:
+      - base_auto:
+      - footstep:
+          name: LF_LEG
+          target:
+            frame: footprint
+            position: [0.33, -0.28, 0.0]
+
+  - step:
+      - base_auto:
+
+  - step:
+      - base_auto:
+      - footstep:
+          name: LH_LEG
+          target:
+            frame: footprint
+            position: [-0.33, -0.28, 0.0]
+
+  - step:
+      - base_auto:
+
+# Move in +Y direction.
+  - step:
+      - base_auto:
+          height: 0.44
+
+  - step:
+      - base_auto:
+      - footstep:
+          name: LF_LEG
+          target:
+            frame: footprint
+            position: [0.33, -0.03, 0.0]
+
+  - step:
+      - base_auto:
+
+  - step:
+      - base_auto:
+      - footstep:
+          name: LH_LEG
+          target:
+            frame: footprint
+            position: [-0.33, -0.03, 0.0]
+
+  - step:
+      - base_auto:
+
+  - step:
+      - base_auto:
+      - footstep:
+          name: RF_LEG
+          target:
+            frame: footprint
+            position: [0.33, -0.47, 0.0]
+
+  - step:
+      - base_auto:
+
+  - step:
+      - base_auto:
+      - footstep:
+          name: RH_LEG
+          target:
+            frame: footprint
+            position: [-0.33, -0.47, 0.0]
+
+  - step:
+      - base_auto:
+
+# Move in +Y direction.
+  - step:
+      - base_auto:
+          height: 0.44
+
+  - step:
+      - base_auto:
+      - footstep:
+          name: LF_LEG
+          target:
+            frame: footprint
+            position: [0.33, 0.22, 0.0]
+
+  - step:
+      - base_auto:
+
+  - step:
+      - base_auto:
+      - footstep:
+          name: LH_LEG
+          target:
+            frame: footprint
+            position: [-0.33, 0.22, 0.0]
+
+  - step:
+      - base_auto:
+
+  - step:
+      - base_auto:
+      - footstep:
+          name: RF_LEG
+          target:
+            frame: footprint
+            position: [0.33, -0.22, 0.0]
+
+  - step:
+      - base_auto:
+
+  - step:
+      - base_auto:
+      - footstep:
+          name: RH_LEG
+          target:
+            frame: footprint
+            position: [-0.33, -0.22, 0.0]
+
+  - step:
+      - base_auto:

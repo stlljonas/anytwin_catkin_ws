@@ -1,0 +1,10 @@
+# goal definition
+string from_filepath
+string to_filepath
+---
+# result definition
+bool success
+---
+# feedback definition
+float32 progress
+string error_message

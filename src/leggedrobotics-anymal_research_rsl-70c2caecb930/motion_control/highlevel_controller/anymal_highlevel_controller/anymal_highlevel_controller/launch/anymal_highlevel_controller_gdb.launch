@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+
+<launch>
+<!-- Name of the robot description parameter -->
+  <arg name="description_name" default="anymal_description"/>
+
+  <!-- Set to true for simulation -->
+  <arg name="simulation" default="false"/>
+
+  <!-- The logger class can either be std or ros -->
+  <arg name="logger_type" default="std"/>
+
+  <!-- The output can either be screen, log or an empty string -->
+  <arg name="output" default="screen"/>
+
+  <!-- Controllers -->
+  <arg name="controllers_file"  default="$(find anymal_highlevel_controller)/config/controllers.yaml" />
+
+  <!-- Launch the locomotion controller with gdb launch prefix -->
+  <include file="$(find anymal_highlevel_controller)/launch/anymal_highlevel_controller.launch">
+    <arg name="launch_prefix"     value="gdb -ex run --args"/>
+    <arg name="simulation"        value="$(arg simulation)"/>
+    <arg name="logger_type"       value="$(arg logger_type)"/>
+    <arg name="output"            value="$(arg output)"/>
+    <arg name="controllers_file"  value="$(arg controllers_file)"/>
+    <arg name="description_name"  value="$(arg description_name)"/>
+  </include>
+
+</launch>

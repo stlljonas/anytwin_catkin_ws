@@ -1,0 +1,6 @@
+function updateDataInHandle(dataHandle, pos, vec)
+  set(dataHandle.h,...
+      'xdata',pos(1),'ydata',pos(2),'zdata',pos(3),...
+      'udata',vec(1),'vdata',vec(2),'wdata',vec(3));
+  set(dataHandle.label,'Position',pos+vec);
+end

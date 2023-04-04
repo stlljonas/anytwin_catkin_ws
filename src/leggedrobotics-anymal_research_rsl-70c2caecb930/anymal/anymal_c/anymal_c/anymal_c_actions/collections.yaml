@@ -1,0 +1,14 @@
+collections:
+  - add_to_collection:
+      id: demo_actions
+      actions:
+        - demo_base_motion
+  - add_to_collection:
+      id: demo_actions
+      actions:
+        - dance_here
+  - add_to_collection:
+      id: basic
+      actions:
+        - lie_down_unsafe
+        - stand_up

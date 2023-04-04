@@ -1,0 +1,133 @@
+subscribers:
+
+  command:
+    enable:         true
+    topic:          command
+    queue_size:     1
+    
+  commands:
+    enable:         true
+    topic:          commands
+    queue_size:     1
+
+publishers:
+  create_worker:    false
+  
+  reading:
+    enable:         false
+    topic:          reading
+    queue_size:     1
+    latch:          false
+    
+  reading_extended_throttled:
+    enable:         false
+    topic:          reading_extended_throttled
+    queue_size:     1
+    latch:          false
+    decimation:     100
+    
+  readings:
+    enable:         false
+    topic:          readings
+    queue_size:     1
+    latch:          false
+    
+  readings_extended_throttled:
+    enable:         true
+    topic:          actuator_readings_extended_throttled
+    queue_size:     1
+    latch:          false
+    decimation:     20
+    
+  joint_states:
+    enable:         false
+    topic:          joint_states
+    queue_size:     1
+    latch:          false
+    
+  joint_states_throttled:
+    enable:         false
+    topic:          joint_states_throttled
+    queue_size:     1
+    latch:          false
+    decimation:     100
+    
+  available_joint_position_configurations:
+    topic:          available_joint_position_configurations
+    queue_size:     1
+    latch:          true
+
+servers:
+
+  send_sdo_read:
+    service:        send_sdo_read
+  send_sdo_write:
+    service:        send_sdo_write
+
+  get_drive_info:
+    service:        get_drive_info
+  set_drive_info_serial_number:
+    service:        set_drive_info_serial_number
+  set_drive_info_name:
+    service:        set_drive_info_name
+  set_drive_info_id:
+    service:        set_drive_info_id
+  set_drive_info_bootloader_version:
+    service:        set_drive_info_bootloader_version
+
+  erase_flash_storage:
+    service:        erase_flash_storage
+  reset_flash_storage_sections:
+    service:        reset_flash_storage_sections
+    
+  get_calibration_state:
+    service:        get_calibration_state
+  calibrate:
+    service:        calibrate
+  reset_custom_calibrations_to_factory:
+    service:        reset_custom_calibrations_to_factory
+  write_factory_calibration:
+    service:        write_factory_calibration
+
+  get_max_current:
+    service:        get_max_current
+  set_max_current:
+    service:        set_max_current
+  get_max_motor_velocity:
+    service:        get_max_motor_velocity
+  set_max_motor_velocity:
+    service:        set_max_motor_velocity
+  get_max_communication_timeout:
+    service:        get_max_communication_timeout
+  set_max_communication_timeout:
+    service:        set_max_communication_timeout
+  get_joint_position_limits_sdk:
+    service:        get_joint_position_limits_sdk
+  set_joint_position_limits_sdk:
+    service:        set_joint_position_limits_sdk
+  get_joint_position_limits_soft:
+    service:        get_joint_position_limits_soft
+  set_joint_position_limits_soft:
+    service:        set_joint_position_limits_soft
+  get_joint_position_limits_hard:
+    service:        get_joint_position_limits_hard
+  set_joint_position_limits_hard:
+    service:        set_joint_position_limits_hard
+  get_control_gains:
+    service:        get_control_gains
+  set_control_gains:
+    service:        set_control_gains
+  get_error_state_behavior:
+    service:        get_error_state_behavior
+  set_error_state_behavior:
+    service:        set_error_state_behavior
+  write_configuration:
+    service:        write_configuration
+
+  set_goal_state:
+    service:        set_goal_state
+  send_controlword:
+    service:        send_controlword
+  achieve_joint_position_configuration:
+    service:        achieve_joint_position_configuration
+

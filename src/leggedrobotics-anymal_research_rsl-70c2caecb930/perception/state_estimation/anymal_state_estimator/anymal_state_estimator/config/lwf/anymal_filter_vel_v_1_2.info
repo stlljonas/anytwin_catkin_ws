@@ -1,0 +1,150 @@
+Init
+{
+    State
+    {
+        pos_0 0
+        pos_1 0
+        pos_2 0
+        vel_0 0
+        vel_1 0
+        vel_2 0
+        acb_0 0
+        acb_1 0
+        acb_2 0
+        gyb_0 0
+        gyb_1 0
+        gyb_2 0
+        att_x 0
+        att_y 0
+        att_z 0
+        att_w 1
+        PIpos_0 0
+        PIpos_1 0
+        PIpos_2 0
+        PIatt_x 0
+        PIatt_y 0
+        PIatt_z 0
+        PIatt_w 1
+    }
+    Covariance
+    {
+        pos_0 0.01
+        pos_1 0.01
+        pos_2 0.01
+        vel_0 0.01
+        vel_1 0.01
+        vel_2 0.01
+        acb_0 4e-4
+        acb_1 4e-4
+        acb_2 4e-4
+        gyb_0 3e-4
+        gyb_1 3e-4
+        gyb_2 3e-4
+        PIpos_0 1e6
+        PIpos_1 1e6
+        PIpos_2 1e6
+        att_0 0.01
+        att_1 0.01
+        att_2 0.01
+        PIatt_0 1
+        PIatt_1 1
+        PIatt_2 1
+    }
+}
+Prediction
+{
+    PredictionNoise
+    {
+        pos_0 1e-8
+        pos_1 1e-8
+        pos_2 1e-8
+        vel_0 4e-6
+        vel_1 4e-6
+        vel_2 4e-6
+        acb_0 1e-8
+        acb_1 1e-8
+        acb_2 1e-8
+        gyb_0 3.8e-7
+        gyb_1 3.8e-7
+        gyb_2 3.8e-7
+        att_0 7.6e-7
+        att_1 7.6e-7
+        att_2 7.6e-7
+        PIpos_0 1e-5
+        PIpos_1 1e-5
+        PIpos_2 1e-5
+        PIatt_0 1e-5
+        PIatt_1 1e-5
+        PIatt_2 1e-5
+    }
+    alpha 0.001
+    beta 2
+    kappa 0
+}
+Update0
+{
+    maxNumIteration 10
+    MahalanobisTh0 12.6511204
+    UpdateNoise
+    {
+        pos_0 0.01
+        pos_1 0.01
+        pos_2 0.01
+        att_0 0.01
+        att_1 0.01
+        att_2 0.01
+    }
+    alpha 0.001
+    beta 2
+    kappa 0
+    updateVecNormTermination 1e-06
+    qVM_x 0
+    qVM_y 0
+    qVM_z 1
+    qVM_w 0
+    MrMV_x -0.0959
+    MrMV_y -0.0060
+    MrMV_z 0.0055
+}
+
+; M --> imu frame
+; B --> main body frame
+; V --> vision or external pose measurements frame
+
+Update1
+{
+    maxNumIteration 10
+    MahalanobisTh0 3.689997599999999
+    MahalanobisTh1 3.689997599999999
+    MahalanobisTh2 3.689997599999999
+    MahalanobisTh3 3.689997599999999
+    UpdateNoise
+    {
+        gyr_0 0.0001
+        gyr_1 0.0001
+        gyr_2 0.0001
+        kin_0 0.1
+        kin_1 0.1
+        kin_2 0.1
+        kin_3 0.1
+        kin_4 0.1
+        kin_5 0.1
+        kin_6 0.1
+        kin_7 0.1
+        kin_8 0.1
+        kin_9 0.1
+        kin_10 0.1
+        kin_11 0.1
+    }
+    alpha 0.001
+    beta 2
+    kappa 0
+    updateVecNormTermination 1e-06
+    qMB_x 0
+    qMB_y 0
+    qMB_z -1
+    qMB_w 0
+    BrBM_x -0.0959
+    BrBM_y -0.0060
+    BrBM_z -0.0055
+}

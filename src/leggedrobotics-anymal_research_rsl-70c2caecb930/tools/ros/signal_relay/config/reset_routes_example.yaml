@@ -1,0 +1,7 @@
+reset_routes:
+  state_estimator:
+    input: /state_estimator/reset_out
+    output_topics: [/point_cloud_odometry/reset_in]
+  point_cloud_odometry:
+    input: /point_cloud_odometry/reset_out
+    output_services: [/elevation_mapping/clear_map]

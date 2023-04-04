@@ -1,0 +1,29 @@
+subscribers:
+  imu:
+    topic: /sensors/imu
+    queue_size: 100
+    latch: false
+  actuator_readings:
+    topic: /anymal_lowlevel_controller/actuator_readings
+    queue_size: 10
+    latch: false
+  contact_force_lf_foot: 
+    topic: /sensors/contact_force_lf_foot
+    queue_size: 100
+    latch: false
+  contact_force_rf_foot: 
+    topic: /sensors/contact_force_rf_foot
+    queue_size: 100
+    latch: false
+  contact_force_lh_foot: 
+    topic: /sensors/contact_force_lh_foot
+    queue_size: 100
+    latch: false
+  contact_force_rh_foot: 
+    topic: /sensors/contact_force_rh_foot    
+    queue_size: 100
+    latch: false
+  force_calibrator_commands:
+    topic: /anymal_highlevel_controller/force_calibrator_commands
+    queue_size: 1
+    latch: false  

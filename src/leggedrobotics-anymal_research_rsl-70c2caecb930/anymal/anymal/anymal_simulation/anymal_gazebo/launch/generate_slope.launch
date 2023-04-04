@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+  <!-- Set the slope of the terrain in radians -->
+  <arg name="slope"           default="0.3"/>
+  <!-- Set the length of the slope -->
+  <arg name="slope_length"    default="2"/>
+  <!-- Set the length of the top platform -->
+  <arg name="platform_length" default="1"/>
+  <!-- Set offset for the beginning of the slope -->
+  <arg name="terrain_offset"  default="1"/>
+  <!-- Set frame in which the terrain is visualized -->
+  <arg name="parent_frame"  default="odom"/>
+
+  <!-- Launch script to generate new terrain -->
+  <node name="terrain_generator" pkg="anymal_gazebo" type="generate_tilted_terrain.sh" output="screen"
+        args="$(arg slope) $(arg slope_length) $(arg platform_length) $(arg terrain_offset) $(arg parent_frame)" />
+
+</launch>

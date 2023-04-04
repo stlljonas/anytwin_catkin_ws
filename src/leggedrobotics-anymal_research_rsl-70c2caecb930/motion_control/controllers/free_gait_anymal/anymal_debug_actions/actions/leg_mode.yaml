@@ -1,0 +1,8 @@
+steps:
+        
+ - step:
+    - base_auto:
+ - step:
+    - leg_mode:
+       name: RF_LEG
+       support_leg: false

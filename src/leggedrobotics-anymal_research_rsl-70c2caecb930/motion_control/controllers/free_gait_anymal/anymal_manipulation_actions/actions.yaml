@@ -1,0 +1,19 @@
+actions:
+  - action:
+      id: kick_left_fore
+      name: Kick Left Fore
+      file: actions/kick_left_fore.yaml
+      type: yaml
+      description: Kick with the left fore leg.
+  - action:
+      id: kick_right_fore
+      name: Kick Right Fore
+      file: actions/kick_right_fore.yaml
+      type: yaml
+      description: Kick with the right fore leg.
+  - action:
+      id: hit_high_target_right_fore_here
+      name: Hit Hight Target Right Fore Here
+      file: actions/hit_high_target_right_fore_here.py
+      type: python
+      description: Hit a high target with the right fore leg from the current position.

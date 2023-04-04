@@ -1,0 +1,25 @@
+max_command_age:                   .inf
+auto_stage_last_command:           true
+set_reading_to_nan_on_disconnect:  false
+error_state_behavior:              0
+
+max_current:                       15.0
+max_freeze_current:                5.0
+max_motor_velocity:                575.96
+
+direction:                         1
+
+joint_position_limits:
+  sdk:
+    min:                           -100.0
+    max:                           100.0
+  soft:
+    min:                           -9.42
+    max:                           9.42
+  hard:
+    min:                           -9.42
+    max:                           9.42
+
+goal_states:
+  startup:                         ControlOp
+  shutdown:                        NA

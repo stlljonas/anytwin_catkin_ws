@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package>
+  <name>dynamixel_ros_msgs</name>
+  <version>0.3.0</version>
+  <description>Dynamixel ROS msgs</description>
+  <maintainer email="rdiethelm@anybotics.com">Remo Diethelm</maintainer>
+  <maintainer email="sbachmann@anybotics.com">Samuel Bachmann</maintainer>
+  <license>Proprietary</license>
+  <author email="dominic.jud@mavt.ethz.ch">Dominic Jud</author>
+  
+  <buildtool_depend>catkin</buildtool_depend>
+  
+  <build_depend>std_msgs</build_depend>
+  <build_depend>message_generation</build_depend>
+  <run_depend>std_msgs</run_depend>
+  <run_depend>message_runtime</run_depend>
+  
+</package>

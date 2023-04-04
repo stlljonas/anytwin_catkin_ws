@@ -1,0 +1,7 @@
+# Device to get error state behavior.
+string device_name
+
+---
+
+# Error state behavior.
+ErrorStateBehavior error_state_behavior

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+
+<!-- This file contains the Pantilt controller interface. -->
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:if value="$(arg simulation)">
+    <gazebo>
+		<plugin filename="libdynamixel_gazebo_plugin.so" name="pan_dynamixel_motor">
+			<joint>head_pan_joint</joint>
+			<command_topic_name>/pantilt_head/dynamixel/head_pan_controller/command</command_topic_name>
+			<state_topic_name>/pantilt_head/dynamixel/head_pan_controller/state</state_topic_name>
+			<set_goal_position_service_name>/dynamixel_ros/set_goal_position</set_goal_position_service_name>
+			<set_angle_limits_service_name>/dynamixel_ros/set_angle_limits_position</set_angle_limits_service_name>
+			<joint_state_topic_name>/dyn/state</joint_state_topic_name>
+			<default_pos>0</default_pos>
+			<default_torque_limit>100</default_torque_limit>
+		</plugin>
+    </gazebo>
+  </xacro:if>
+
+</robot>

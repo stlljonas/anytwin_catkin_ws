@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+  <!-- Name of the robot description parameter -->
+  <arg name="description_name" default="anymal_description"/>
+
+  <!-- Set to true for simulation -->
+  <arg name="simulation" default="false"/>
+
+  <!-- The logger class can either be std or ros -->
+  <arg name="logger_type" default="none"/>
+
+  <!-- The output can either be screen, log or an empty string -->
+  <arg name="output" default="screen"/>
+
+  <!-- Console launch prefix -->
+  <arg name="launch_prefix" default="nice -n -20"/>
+
+  <!-- Controllers -->
+  <arg name="controllers_file"  default="$(find anymal_highlevel_controller)/config/controllers.yaml" />
+  
+  <!-- Leg configurations: xx (knees bent inwards), oo (knees bent outwards), xo (knees bent backwards), or ox (knees bent forwards) -->
+  <arg name="leg_config" default="xx"/>
+
+  <!-- Update leg inertial parameters bool: true - update, false - do not update -->
+  <arg name="update_inertial_parameters"  default="false"/>
+
+  <!-- The leg_inertial_parameters_file to use for the update -->
+  <arg name="inertial_parameters_file"          default=""/>
+
+  <!-- Load configuration files -->
+  <rosparam command="load" ns="anymal_highlevel_controller" file="$(find anymal_highlevel_controller)/config/parameters.yaml"/>
+  <rosparam command="load" ns="anymal_highlevel_controller" file="$(arg controllers_file)"/>
+  <rosparam command="load" ns="anymal_highlevel_controller" file="$(find anymal_highlevel_controller)/config/publishers.yaml"/>
+  <rosparam command="load" ns="anymal_highlevel_controller" file="$(find anymal_highlevel_controller)/config/subscribers.yaml"/>
+  <rosparam command="load" ns="anymal_highlevel_controller" file="$(find anymal_highlevel_controller)/config/services.yaml"/>
+
+  <!-- Cosmo sync name -->  
+  <param name="anymal_highlevel_controller/sync_name" value="anymal_controller_sync"/>
+
+  <!-- Load parameters from arguments -->
+  <param name="anymal_highlevel_controller/logger/type"     type="str" value="$(arg logger_type)"/>
+  <param name="anymal_highlevel_controller/description_name" type="str" value="$(arg description_name)"/>
+  <param name="anymal_highlevel_controller/update_decimation" value="1"/>
+  <param name="anymal_highlevel_controller/joint_states/leg_config" type="str" value="$(arg leg_config)"/>
+  <param name="inertial_parameter_estimation/update_inertial_parameters" type="bool" value="$(arg update_inertial_parameters)"/>
+
+
+  <group if="$(arg update_inertial_parameters)">
+      <rosparam command="load" ns="inertial_parameter_estimation" file="$(arg inertial_parameters_file)" />
+  </group>
+
+  <!-- Load simulation specific parameters -->
+  <param name="anymal_highlevel_controller/controller/simulation"                   value="$(arg simulation)"/>
+  <param name="anymal_highlevel_controller/time_step"  value="0.0025" />
+  <param name="anymal_highlevel_controller/logger/config_file" value="$(env HOME)/.ros/highlevel_ctrl_logger.yaml"/>
+
+  <!-- Launch the locomotion controller -->
+  <node name="anymal_highlevel_controller"
+        pkg="anymal_highlevel_controller"
+        type="anymal_highlevel_controller_node"
+        output="$(arg output)"
+        launch-prefix="$(arg launch_prefix)" />
+
+
+</launch>

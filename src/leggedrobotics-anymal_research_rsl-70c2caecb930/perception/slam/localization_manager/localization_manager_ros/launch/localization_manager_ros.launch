@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+
+  <!-- Default config files -->
+  <arg name="default_frame_connector_config_file"                value="$(find localization_manager_ros)/config/frame_connectors.yaml"/>
+  <arg name="default_localization_manager_config_file"           value="$(find localization_manager_ros)/config/localization_manager.yaml"/>
+
+  <!-- Overlay config files -->
+  <arg name="overlay_frame_connector_config_file"                default="$(arg default_frame_connector_config_file)"/>
+  <arg name="overlay_localization_manager_config_file"           default="$(arg default_localization_manager_config_file)"/>
+
+  <!-- Localization manager -->
+  <node pkg="localization_manager_ros" type="localization_manager_ros_node" name="localization_manager" respawn="true" output="screen">
+    <rosparam command="load" file="$(arg default_frame_connector_config_file)" />
+    <rosparam command="load" file="$(arg overlay_frame_connector_config_file)" />
+    <rosparam command="load" file="$(arg default_localization_manager_config_file)" />
+    <rosparam command="load" file="$(arg overlay_localization_manager_config_file)" />
+  </node>
+
+</launch>

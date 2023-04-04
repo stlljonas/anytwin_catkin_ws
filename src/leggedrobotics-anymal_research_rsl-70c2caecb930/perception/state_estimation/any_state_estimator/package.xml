@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+
+<package format="2">
+
+  <name>any_state_estimator</name>
+  <version>0.6.0</version>
+  <description>The any_state_estimator package</description>
+  <license>Proprietary</license>
+
+  <author email="markus.staeuble@mavt.ethz.ch">Markus Staeuble</author>
+  <maintainer email="mwulf@anybotics.com">Maximilian Wulf</maintainer>
+  <maintainer email="vyuryev@anybotics.com">Valentin Yuryev</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>cmake_clang_tools</build_depend>
+
+  <depend>any_state_estimator_msgs</depend>
+  <depend>boost</depend>
+  <depend>cosmo</depend>
+  <depend>cosmo_node</depend>
+  <depend>cosmo_ros</depend>
+  <depend>message_logger</depend>
+  <depend>romo</depend>
+  <depend>roscpp</depend>
+  <depend>signal_logger</depend>
+  <depend>signal_logger_ros</depend>
+
+  <test_depend>cmake_code_coverage</test_depend>
+
+</package>

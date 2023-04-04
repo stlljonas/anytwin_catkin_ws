@@ -1,0 +1,7 @@
+<library path="lib/libjoy_state_estimation">
+  <class type="joy_manager::JoyStateEstimation" base_class_type="joy_manager::ModuleBase">
+  <description>
+  This is a state estimation module for the joy manager
+  </description>
+  </class>
+</library>

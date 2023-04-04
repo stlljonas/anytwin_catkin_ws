@@ -1,0 +1,7 @@
+# Device to get direction.
+string device_name
+
+---
+
+# Direction.
+int16 direction

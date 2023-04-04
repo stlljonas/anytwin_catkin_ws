@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+
+<package format="2">
+
+  <name>anymal_croc_npc</name>
+  <version>1.0.0</version>
+  <description>ANYmal Croc Navigation PC Package</description>
+
+  <license>Proprietary</license>
+
+  <author email="rdiethelm@anybotics.com">Remo Diethelm</author>
+  <maintainer email="rdiethelm@anybotics.com">Remo Diethelm</maintainer>
+  <maintainer email="hkhambhaita@anybotics.com">Harmish Khambhaita</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <exec_depend>anymal_c_npc_drivers</exec_depend>
+  <exec_depend>anymal_croc_navigation</exec_depend>
+
+  <export>
+    <metapackage />
+  </export>
+
+</package>

@@ -1,0 +1,20 @@
+anydrives:
+- name:                     anydrive1
+  configuration:            configurations/clockwise.yaml
+  ethercat_bus:             eth0
+  ethercat_address:         1
+  ethercat_pdo:             A
+- name:                     anydrive2
+  configuration:            configurations/counter_clockwise.yaml
+  ethercat_bus:             eth0
+  ethercat_address:         2
+  ethercat_pdo:             A
+- name:                     anydrive3
+  configuration:            configurations/counter_clockwise.yaml
+  ethercat_bus:             eth1
+  ethercat_address:         1
+  ethercat_pdo:             A
+
+joint_position_configuration_manager:
+  max_joint_velocity:       1.0
+

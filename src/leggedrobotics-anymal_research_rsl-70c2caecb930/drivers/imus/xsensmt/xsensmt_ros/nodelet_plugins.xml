@@ -1,0 +1,7 @@
+<library path="lib/libxsensmt_ros">
+  <class name="xsensmt_ros/XsensMTROSNodelet" type="xsensmt::XsensMTROSNodelet" base_class_type="nodelet::Nodelet">
+    <description>
+      Xsensmt Nodelet
+    </description>
+  </class>
+</library>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+
+<package format="2">
+
+  <name>gazebo_play_tool</name>
+  <version>0.6.0</version>
+  <description>Plugin for pausing and unpausing Gazebo from Rviz.</description>
+
+  <license>BSD</license>
+
+  <author email="fperry@student.ethz.ch">Perry Franklin</author>
+  <maintainer email="lisler@anybotics.com">Linus Isler</maintainer>
+  <maintainer email="pleemann@anybotics.com">Philipp Leemann</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>qtbase5-dev</depend>
+  <depend>rviz</depend>
+
+  <export>
+      <rviz plugin="${prefix}/plugin_description.xml"/>
+  </export>
+
+</package>

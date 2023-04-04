@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- Parameters -->
+  
+  <!-- Pan-tilt head description -->
+  <xacro:macro name="dynamixel_model" params="name">
+    <link name="${name}_link">
+      <visual>
+        <origin rpy="0 0 -1.57079632679" xyz="0.0 0.0 0.025"/>
+        <geometry>
+          <mesh filename="package://dynamixel_description/mesh/MX64.stl" scale=".001 .001 .001"/>
+        </geometry>
+        <material name="black">
+           <color rgba="0.1 0.1 0.1 1"/>
+        </material>
+      </visual>
+      <inertial>
+      	<origin xyz="0 -0.015 0" rpy="0 0 -1.57079632679"/>
+      	<mass value="0.13"/>
+      	<inertia ixx="0.000027961" ixy="0.0" ixz="0.0" iyy="0.000052184" iyz="0.0"
+        izz="0.000043723"/>
+      </inertial>
+    </link>
+    <link name="head_pan_link">
+      <visual>
+        <origin rpy="1.57079632679 0 0" xyz="0.0 0.0 0.055"/>
+        <geometry>
+          <mesh filename="package://dynamixel_description/mesh/MX64.stl" scale=".001 .001 .001"/>
+        </geometry>
+        <material name="black">
+           <color rgba="0.1 0.1 0.1 1"/>
+        </material>
+      </visual>
+      <inertial>
+      	<origin xyz="0 -0.015 0" rpy="0 0 -1.57079632679"/>
+      	<mass value="0.13"/>
+      	<inertia ixx="0.000027961" ixy="0.0" ixz="0.0" iyy="0.000052184" iyz="0.0"
+        izz="0.000043723"/>
+      </inertial>
+    </link>
+
+    
+    <joint name="head_pan_joint" type="revolute">
+      <physics>
+          <provide_feedback>true</provide_feedback>
+      </physics>
+      <parent link="${name}_link" />
+      <child link="head_pan_link" />
+      <limit lower="-3.1416" upper="3.1416" effort="10" velocity="2" />
+      <origin xyz="0 0 0.041" rpy="0 0 0" />
+      <axis xyz="0 0 1" />
+      <dynamics damping="0.0" />
+    </joint>
+    
+  
+  <!-- Pan-tilt head Gazebo -->
+  <xacro:macro name="dynamixel_head" params="name">
+    <xacro:dynamixel_model name="${name}" />
+  </xacro:macro>
+  
+</robot>

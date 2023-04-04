@@ -1,0 +1,22 @@
+<library path="lib/librviz_gazebo_interaction">
+  <class name="rviz_gazebo_interaction/WrenchTool"
+         type="rviz_gazebo_interaction::WrenchTool"
+         base_class_type="rviz::Tool">
+    <description>
+      Tool to apply wrenches to objects by sending them to gazebo.
+    </description>
+    <qtgui>
+      <icon type="theme">folder</icon>
+    </qtgui>
+  </class>
+  <class name="rviz_gazebo_interaction/RobotRespawner"
+         type="rviz_gazebo_interaction::RobotRespawner"
+         base_class_type="rviz::Tool">
+    <description>
+      Tool to spawn the robot at any given position.
+    </description>
+    <!-- <qtgui>
+      <icon type="theme">folder</icon>
+    </qtgui> -->
+  </class>
+</library>

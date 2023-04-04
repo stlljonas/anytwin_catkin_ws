@@ -1,0 +1,10 @@
+# List Directory Service
+
+string absolute_file_path
+
+---
+
+# Arrays of the same size for isDirectory, name and size
+bool[] is_directory
+string[] name
+uint32[] size

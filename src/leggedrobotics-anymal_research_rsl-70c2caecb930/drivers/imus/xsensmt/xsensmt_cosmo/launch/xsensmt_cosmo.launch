@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+  <!-- Execution parameters -->
+  <arg name="time_step"                       default="0.0025"/>
+  <arg name="output"                          default="screen"/>
+  <arg name="launch_prefix"                   default="nice -n -20"/>
+  <arg name="publish_ros"                     default="false"/>
+  
+  <!-- Default parameter file -->
+  <arg name="default_param_file"              value="$(find xsensmt_cosmo)/config/parameters.yaml"/>
+  <!-- Overlay parameter file -->
+  <arg name="overlay_param_file"              default="$(arg default_param_file)"/>
+
+  <!-- Xsens node -->
+  <node name="xsensmt" pkg="xsensmt_cosmo" type="xsensmt_cosmo_node" output="$(arg output)" launch-prefix="$(arg launch_prefix)" >
+    <!-- Load parameter files -->
+    <rosparam command="load" file="$(arg default_param_file)"/>
+    <rosparam command="load" file="$(arg overlay_param_file)"/>
+
+    <!-- Parameters -->
+    <param name="sensor/serial_key"  value="R945-E2EF-RPP0-W86J-P408" />
+    <param name="standalone"         value="true"/>
+    <param name="ros/frame_id"       value="imu_link" />
+    <param name="publish_ros"        value="$(arg publish_ros)" />
+    <param name="time_step"          value="$(arg time_step)" />
+  </node>
+  
+</launch>

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>inspection_payload_msgs</name>
+  <version>0.0.1</version>
+  <description>ROS message definitions for inspection payload.</description>
+
+  <author email="sbachmann@anybotics.com">Samuel Bachmann</author>
+  <maintainer email="sbachmann@anybotics.com">Samuel Bachmann</maintainer>
+  <maintainer email="rdiethelm@anybotics.com">Remo Diethelm</maintainer>
+  <license>Proprietary</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>message_generation</build_depend>
+
+  <exec_depend>message_runtime</exec_depend>
+
+  <depend>std_msgs</depend>
+
+</package>

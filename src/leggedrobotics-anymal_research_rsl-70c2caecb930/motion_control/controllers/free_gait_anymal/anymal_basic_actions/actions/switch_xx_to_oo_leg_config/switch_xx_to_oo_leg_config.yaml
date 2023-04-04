@@ -1,0 +1,94 @@
+adapt_coordinates:
+  - transform:
+      source_frame: footprint
+      target_frame: odom
+
+steps:
+
+  - step:
+      - base_auto:
+          height: 0.47
+          support_margin: 0.09
+  - step:
+      - joint_trajectory:
+          name: RF_LEG
+          ignore_contact: true
+          trajectory:
+            joint_names: [HAA, HFE, KFE]
+            knots:
+              - time: 2.5
+                positions: [deg(0), deg(290), deg(-270)]
+  - step:
+      - footstep:
+          name: RF_LEG
+          target:
+            frame: footprint
+            position: [0.5, -0.23, 0.0]
+          profile_type: straight
+          average_velocity: 0.12
+
+  - step:
+      - base_auto:
+          support_margin: 0.09
+  - step:
+      - joint_trajectory:
+          name: LF_LEG
+          ignore_contact: true
+          trajectory:
+            joint_names: [HAA, HFE, KFE]
+            knots:
+              - time: 2.5
+                positions: [deg(0), deg(290), deg(-270)]
+  - step:
+      - footstep:
+          name: LF_LEG
+          target:
+            frame: footprint
+            position: [0.5, 0.23, 0.0]
+          profile_type: straight
+          average_velocity: 0.12
+
+  - step:
+      - base_auto:
+          support_margin: 0.09
+  - step:
+      - joint_trajectory:
+          name: LH_LEG
+          ignore_contact: true
+          trajectory:
+            joint_names: [HAA, HFE, KFE]
+            knots:
+              - time: 2.5
+                positions: [deg(0), deg(-300), deg(255)]
+  - step:
+      - footstep:
+          name: LH_LEG
+          target:
+            frame: footprint
+            position: [-0.23, 0.23, 0.0]
+          profile_type: straight
+          average_velocity: 0.12
+
+  - step:
+      - base_auto:
+          support_margin: 0.09
+  - step:
+      - joint_trajectory:
+          name: RH_LEG
+          ignore_contact: true
+          trajectory:
+            joint_names: [HAA, HFE, KFE]
+            knots:
+              - time: 2.5
+                positions: [deg(0), deg(-300), deg(255)]
+  - step:
+      - footstep:
+          name: RH_LEG
+          target:
+            frame: footprint
+            position: [-0.23, -0.23, 0.0]
+          profile_type: straight
+          average_velocity: 0.12
+
+  - step:
+      - base_auto:

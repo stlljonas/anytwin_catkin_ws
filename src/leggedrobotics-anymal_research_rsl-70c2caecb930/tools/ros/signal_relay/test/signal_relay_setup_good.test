@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+
+  <!-- Default configuration for Reset routing -->
+  <arg name="reset_routes_config"    default="$(find signal_relay)/config/reset_routes_example.yaml" />
+  
+
+  <!-- Signal Relay test -->
+  <test pkg="signal_relay" type="test_signal_relay_good_params" test-name="test_signal_relay_good_params">
+    <!-- Load the default parameter file -->
+    <rosparam command="load" file="$(arg reset_routes_config)"/>
+  </test>
+
+</launch>

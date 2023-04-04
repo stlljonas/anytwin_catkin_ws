@@ -1,0 +1,3 @@
+reset_routes:
+  point_cloud_odometry:
+    output_topics: [/test1/reset_in]

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<package format="2">
+
+  <name>geometry_utils_ros</name>
+  <version>0.6.0</version>
+  <description>ROS-wrapper for geometry_utils package.</description>
+
+  <license>Proprietary</license>
+  <author email="ghottiger@anybotics.com">Gabriel Hottiger</author>
+  <maintainer email="ghottiger@anybotics.com">Gabriel Hottiger</maintainer>
+  <maintainer email="rdiethelm@anybotics.com">Remo Diethelm</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>any_measurements_ros</depend>
+  <depend>geometry_msgs</depend>
+  <depend>geometry_utils</depend>
+  <depend>kindr_ros</depend>
+  <depend>tf2_ros</depend>
+
+  <build_depend>cmake_clang_tools</build_depend>
+
+  <test_depend>cmake_code_coverage</test_depend>
+  <test_depend>rostest</test_depend>
+
+</package>

@@ -1,0 +1,7 @@
+<library path="lib/libinteraction_marker_plugin_example">
+  <class type="interaction_marker_plugin_example::InteractionMarkerPluginExample" base_class_type="interaction_marker::InteractionMarkerPluginBase">
+    <description>
+      Interactive marker ICP plugin.
+    </description>
+  </class>
+</library>

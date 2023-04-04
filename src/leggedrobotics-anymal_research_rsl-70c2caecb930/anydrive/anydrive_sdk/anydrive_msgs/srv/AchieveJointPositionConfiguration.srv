@@ -1,0 +1,4 @@
+# Desired joint position configuration.
+JointPositionConfiguration joint_position_configuration
+
+---

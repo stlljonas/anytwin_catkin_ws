@@ -1,0 +1,6 @@
+servers:
+  set_robot_pose:
+    service: set_robot_pose
+  toggle_localizer:
+    service: /localization_manager/toggle_localization # Currently not provided.
+

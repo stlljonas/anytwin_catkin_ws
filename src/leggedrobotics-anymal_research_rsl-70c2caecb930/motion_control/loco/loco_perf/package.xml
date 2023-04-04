@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>loco_perf</name>
+  <version>0.1.0</version>
+  <description>Monitors for locomotion performance</description>
+  <author email="scaron@anybotics.com">Stephane Caron</author>
+  <maintainer email="scaron@anybotics.com">Stephane Caron</maintainer>
+  <maintainer email="psankar@anybotics.com">Prajish Sankar</maintainer>
+  <license>Proprietary</license>
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>basic_filters</depend>
+  <depend>kindr</depend>
+  <depend>loco</depend>
+  <depend>loco_anymal</depend>
+  <depend>signal_logger</depend>
+  <depend>tinyxml_tools</depend>
+  <test_depend>cmake_code_coverage</test_depend>
+  <test_depend>gtest</test_depend>
+  <test_depend>loco_anymal</test_depend>
+  <test_depend>motion_generation_loco</test_depend>
+</package>

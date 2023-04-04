@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+
+  <!-- Arguments -->
+  <arg name="output"                          default="screen"/>
+  <arg name="launch_prefix"                   default="nice -n -20"/>
+  <arg name="setup_name"                      default="example1"/>
+  <arg name="setup_file"                      default="$(find anydrive)/example_setups/$(arg setup_name)/setup.yaml"/>
+  <arg name="time_step"                       default="0.0025"/>
+  <arg name="ros_prefix"                      default="/anydrive"/>
+  <arg name="ros_config_file"                 default="$(find anydrive_ros)/config/ros.yaml"/>
+  <arg name="run_gui"                         default="false"/>
+
+  <!-- ROS Node -->
+  <node pkg="anydrive_ethercat_ros" type="anydrive_ethercat_ros_node" name="anydrive_ethercat_ros" output="$(arg output)" launch-prefix="$(arg launch_prefix)">
+    <param name="setup_file" value="$(arg setup_file)"/>
+    <param name="time_step"  value="$(arg time_step)"/>
+    <param name="ros_prefix" value="$(arg ros_prefix)"/>
+    <rosparam command="load" file="$(arg ros_config_file)"/>
+  </node>
+
+  <!-- GUI -->
+  <group if="$(arg run_gui)">
+    <include file="$(find rqt_anydrive_monitor)/launch/rqt_anydrive_monitor.launch">
+      <arg name="setup_file" value="$(arg setup_file)"/>
+      <arg name="ros_prefix" value="$(arg ros_prefix)"/>
+    </include>
+  </group>
+
+</launch>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+  <node pkg="rqt_rpsm" type="rqt_rpsm" name="rqt_rpsm_node"
+        output="screen">
+  </node>
+</launch>

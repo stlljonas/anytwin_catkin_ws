@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+
+  <!-- Enable/disable loading configuration from file. -->
+  <arg name="load_configuration_from_file"                      default="false"/>
+  <!-- Configuration file to load. -->
+  <arg name="configuration_file"                                default="/home/user/Datasets/missionX/configuration.yaml"/>
+
+  <!-- Whether stack launcher should be run. -->
+  <arg name="run_stack_launcher"                                default="true"/>
+  <!-- Parameters if configuration is not loaded from file. -->
+  <arg name="robot"                                             default="b"/>
+  <arg name="data_package"                                      default=""/>
+  <arg name="world"                                             default=""/>
+  <arg name="setup"                                             default="real"/>
+
+  <!-- Perception sensors -->
+  <!-- Enable/disable the front Depth Camera on ANYmal -->
+  <arg name="depth_camera_front"                                default="true"/>
+  <!-- Enable/disable the rear Depth Camera on ANYmal -->
+  <arg name="depth_camera_rear"                                 default="true"/>
+  <!-- Enable/disable Depth Camera depth image decompression -->
+  <arg name="decompress_depth_camera_depth"                     default="false"/>
+  <!-- Enable/disable Depth Camera color image decompression -->
+  <arg name="decompress_depth_camera_color"                     default="false"/>
+  <!-- Enable/disable broadcasting static tf to the Depth Camera depth optical frame -->
+  <arg name="broadcast_tf_depth_camera_depth_optical_frame"     default="true"/>
+  <!-- Enable/disable remapping of topics (Compatibility mode) -->
+  <arg name="run_compatibility_topic_remapping"                 default="false"/>
+
+  <!-- Trajectory analysis -->
+  <!-- Tf to pose converter for rqt_multiplot -->
+  <arg name="run_tf_to_pose_converter"                          default="false"/>
+  <!-- Slam loggers for trajectory analysis -->
+  <arg name="run_slam_loggers"                                  default="true"/>
+  <!-- Session info for logging -->
+  <arg name="session_info"                                      default="placeX_timeY"/>
+
+  <!-- Always load the default configuration -->
+  <include file="$(find anymal_b)/launch/load_config.launch">
+    <arg name="robot"                 value="$(arg robot)"/>
+    <arg name="data_package"          value="$(arg data_package)"/>
+    <arg name="world"                 value="$(arg world)"/>
+    <arg name="setup"                 value="$(arg setup)"/>
+    <arg name="extension_config_file" value="$(find anymal_b_perception_replay)/config/extension.yaml"/>
+  </include>
+
+  <!-- Overlay a given configuration file if desired -->
+  <group if="$(arg load_configuration_from_file)">
+    <rosparam command="load" file="$(arg configuration_file)"/>
+  </group>
+
+  <!-- Launch replay stack -->
+  <group if="$(arg run_stack_launcher)">
+    <include file="$(find stack_launcher)/launch/stack_launcher.launch">
+      <arg name="stack"         value="replay"/>
+      <arg name="trigger_param" value="config_loaded"/>
+    </include>
+  </group>
+
+  <!-- ANYmal Perception Sensors -->
+  <!-- Depth Camera -->
+  <group ns="depth_camera" if="$(eval depth_camera_front or depth_camera_rear)">
+    <node name="nodelet_manager" type="nodelet" pkg="nodelet" args="manager" output="screen" />
+
+    <!-- Front Depth Camera -->
+    <group if="$(arg depth_camera_front)">
+      <include file="$(find anymal_perception_replay)/launch/depth_camera.launch">
+        <arg name="nodelet_manager"                     value="nodelet_manager"/>
+        <arg name="camera"                              value="depth_camera_front"/>
+        <arg name="decompress_depth"                    value="$(arg decompress_depth_camera_depth)"/>
+        <arg name="decompress_color"                    value="$(arg decompress_depth_camera_color)"/>
+        <arg name="broadcast_tf_depth_optical_frame"    value="$(arg broadcast_tf_depth_camera_depth_optical_frame)"/>
+      </include>
+    </group>
+
+    <!-- Rear Depth Camera -->
+    <group if="$(arg depth_camera_rear)">
+      <include file="$(find anymal_perception_replay)/launch/depth_camera.launch">
+        <arg name="nodelet_manager"                     value="nodelet_manager"/>
+        <arg name="camera"                              value="depth_camera_rear"/>
+        <arg name="decompress_depth"                    value="$(arg decompress_depth_camera_depth)"/>
+        <arg name="decompress_color"                    value="$(arg decompress_depth_camera_color)"/>
+        <arg name="broadcast_tf_depth_optical_frame"    value="$(arg broadcast_tf_depth_camera_depth_optical_frame)"/>
+      </include>
+    </group>
+  </group>
+
+  <!-- Sensor Topic remapping -->
+  <group if="$(arg run_compatibility_topic_remapping)">
+    <include file="$(find anymal_c_perception_replay)/launch/remap_sensor_topics.launch" />
+  </group>
+
+  <!-- Trajectory analysis -->
+  <!-- tf to pose converters for plotting -->
+  <group if="$(arg run_tf_to_pose_converter)">
+    <include file="$(find anymal_perception_replay)/launch/tf_to_pose_converters.launch" />
+  </group>
+
+</launch>

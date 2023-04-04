@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<package format="2">
+
+  <name>kernel_monitor</name>
+  <version>0.1.0</version>
+  <description>Monitor the kernel using dmesg.</description>
+
+  <license>Proprietary</license>
+  <author email="rdiethelm@anybotics.com">Remo Diethelm</author>
+  <maintainer email="rdiethelm@anybotics.com">Remo Diethelm</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <exec_depend>rospy</exec_depend>
+
+</package>

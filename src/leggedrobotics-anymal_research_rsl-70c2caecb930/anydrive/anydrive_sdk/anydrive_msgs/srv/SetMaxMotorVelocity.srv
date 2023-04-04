@@ -1,0 +1,7 @@
+# Device to set max motor velocity. Leave empty for all devices.
+string device_name
+
+# Max motor velocity.
+float64 max_motor_velocity
+
+---

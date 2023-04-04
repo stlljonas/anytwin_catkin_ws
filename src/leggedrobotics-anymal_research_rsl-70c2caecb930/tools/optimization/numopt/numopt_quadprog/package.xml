@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>numopt_quadprog</name>
+  <version>0.5.0</version>
+  <description>The numopt_quadprog package</description>
+  <maintainer email="avijayan@anybotics.com">Aravind Vijayan</maintainer>
+  <maintainer email="fgiraldez@anybotics.com">Francisco Giráldez Gámez</maintainer>
+  <license>BSD</license>
+  <author email="bellicoso@mavt.ethz.ch">Dario Bellicoso</author>
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>quadprog_catkin</depend>
+  <depend>numopt_common</depend>
+  <test_depend>numopt_problems</test_depend>
+  <test_depend>gtest</test_depend>
+</package>

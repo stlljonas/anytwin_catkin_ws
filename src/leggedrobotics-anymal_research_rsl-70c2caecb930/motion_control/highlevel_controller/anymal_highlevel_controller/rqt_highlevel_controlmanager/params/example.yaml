@@ -1,0 +1,11 @@
+controlmanager:
+  service:
+    switch_controller: "/locomotion_controller/switch_controller"
+    switch_lowlevel_controller: "/lowlevel_controller/switch_controller"
+    get_available_controllers: "/locomotion_controller/get_available_controllers"
+    emergency_stop: "/locomotion_controller/emergency_stop"
+    state_estimator_reset: "/state_estimator/reset"
+    state_estimator_reset_here: "/state_estimator/reset_here"
+  topic:
+    active_controller: "/locomotion_controller/notify_active_controller"
+    controller_manager_state: "/locomotion_controller/notify_controller_manager_state"

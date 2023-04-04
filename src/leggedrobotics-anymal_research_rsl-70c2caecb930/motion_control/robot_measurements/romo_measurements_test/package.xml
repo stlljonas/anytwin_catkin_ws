@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>romo_measurements_test</name>
+  <version>0.5.0</version>
+  <description>The romo_measurements_test package</description>
+  <maintainer email="avijayan@anybotics.com">Aravind Vijayan</maintainer>
+  <maintainer email="fgiraldez@anybotics.com">Francisco Giráldez Gámez</maintainer>
+  <license>Proprietary</license>
+  <author email="ghottiger@anybotics.com">Gabriel Hottiger</author>
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>romo_rbdl</depend>
+  <depend>loco</depend>
+  <depend>loco_test</depend>
+  <depend>romo</depend>
+  <depend>romo_measurements</depend>
+  <depend>gtest</depend>
+
+  <!--test_depend> cmake_code_coverage </test_depend-->
+
+</package>

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<package format="2">
+
+  <name>rviz_world_loader</name>
+  <version>0.6.0</version>
+  <description>Visualize worlds in RViz as markers from YAML descriptions.</description>
+
+  <license>Proprietary</license>
+
+  <author email="pfankhauser@anybotics.com">Peter Fankhauser</author>
+  <maintainer email="rdiethelm@anybotics.com">Remo Diethelm</maintainer>
+  <maintainer email="pleemann@anybotics.com">Philipp Leemann</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>rospy</depend>
+
+</package>

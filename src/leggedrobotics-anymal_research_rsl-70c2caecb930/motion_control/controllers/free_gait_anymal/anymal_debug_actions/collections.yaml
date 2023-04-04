@@ -1,0 +1,26 @@
+collections:
+  - collection:
+     id: debug
+     name: Debug
+     actions:
+      - base_target_in_map
+      - base_target
+      - base_trajectory_in_map
+      - base_trajectory
+      - base_and_joint_trajectory
+      - custom_command_freeze_joints
+      - end_effector_target
+      - end_effector_force_target
+      - end_effector_trajectory_in_map
+      - end_effector_trajectory
+      - end_effector_force_trajectory
+      - fast_tilt_sensor_test
+      - joint_trajectory
+      - leg_mode
+      - regain_contact
+      - square_up_in_map
+      - square_up
+      - square_up_with_freeze_mode
+      - walk_backward_4_steps
+      - walk_forward_4_steps
+      - test_end_effector_motion_final_state

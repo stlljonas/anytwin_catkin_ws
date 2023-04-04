@@ -1,0 +1,10 @@
+<library path="lib/libgazebo_play_tool">
+  <class name="gazebo_play_tool/GazeboPlayTool"
+         type="gazebo_play_tool::GazeboPlayTool"
+         base_class_type="rviz::Tool">
+    <description>
+      Tool for pausing and unpausing Gazebo from Rviz
+    </description>
+  </class>
+
+</library>

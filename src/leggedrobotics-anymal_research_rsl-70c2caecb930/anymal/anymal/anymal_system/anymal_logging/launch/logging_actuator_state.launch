@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<launch>
+  <arg name="log_output" default="logging_actuator"/>
+  <node name="rosbag" pkg="rosbag" type="record"
+    args="/state_estimator/joint_states /anymal_highlevel_controller/actuator_commands /anymal_lowlevel_controller/actuator_readings_extended_throttle
+    -o $(arg log_output)" output="screen">
+  </node>
+</launch>
+

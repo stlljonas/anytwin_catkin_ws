@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+
+<package format="2">
+
+  <name>soem_interface_examples</name>
+  <version>0.4.0</version>
+  <description>Examples on how to use the soem_interface package.</description>
+
+  <license>Proprietary</license>
+
+  <author email="rdiethelm@anybotics.com">Remo Diethelm</author>
+  <author email="markus.staeuble@mavt.ethz.ch">Markus Staeuble</author>
+  <maintainer email="rdiethelm@anybotics.com">Remo Diethelm</maintainer>
+  <maintainer email="pleemann@anybotics.com">Philipp Leemann</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>any_measurements</depend>
+  <depend>message_logger</depend>
+  <depend>soem</depend>
+  <depend>soem_interface</depend>
+
+</package>

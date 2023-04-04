@@ -1,0 +1,19 @@
+steps:
+        
+ - step:
+    - leg_mode:
+       name: LF_LEG
+       support_leg: true
+       duration: 0.0025
+    - leg_mode:
+       name: RF_LEG
+       support_leg: true
+       duration: 0.0025
+    - leg_mode:
+       name: LH_LEG
+       support_leg: true
+       duration: 0.0025
+    - leg_mode:
+       name: RH_LEG
+       support_leg: true
+       duration: 0.0025

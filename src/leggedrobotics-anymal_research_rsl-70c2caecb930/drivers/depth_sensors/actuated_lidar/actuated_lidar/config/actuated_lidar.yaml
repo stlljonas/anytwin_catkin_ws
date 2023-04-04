@@ -1,0 +1,14 @@
+dynamixel:
+  moving_speed:  3.2 #4.71238898
+  min_angle:     1.570796327
+  max_angle:     4.712388980
+  default_angle: 3.141592654
+  offset_angle:  -0.31
+  sensor:
+    serial_port_device_name: /dev/anymal/dynamixel/front
+
+hokuyo: # UTM-30LX-EW
+  ip_address:        192.168.2.10
+  ip_port:           10940
+  publish_intensity: false
+

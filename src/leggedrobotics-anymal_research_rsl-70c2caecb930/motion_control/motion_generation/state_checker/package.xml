@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>state_checker</name>
+  <version>0.1.0</version>
+  <description>The state_checker package</description>
+  <maintainer email="avijayan@anybotics.com">Aravind Vijayan</maintainer>
+  <maintainer email="fgiraldez@anybotics.com">Francisco Giráldez Gámez</maintainer>
+  <author email="fabian.jenelten@mavt.ethz.ch">Fabian Jenelten</author>
+  <license>Proprietary</license>
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>loco</depend>
+  <depend>robot_utils</depend>
+  <depend>tinyxml_tools</depend>
+  <depend>message_logger</depend>
+  <depend>motion_generation_utils</depend>
+  <build_export_depend>eigen</build_export_depend>
+</package>

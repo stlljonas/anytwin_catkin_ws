@@ -1,0 +1,30 @@
+ros:
+  frame_id: /xsensmt_link
+sensor:
+  serial_device: "/dev/ttyxsens"
+  device_name: "Xsens MTi"
+  queue_capacity: 3
+  serial_baudrate: 921600
+  serial_key: 0000-0000-0000-0000-0000
+  output_frequency: 400
+  output_orientation: false
+  correct_timing: true
+  retry_interval: 500
+  max_inter_packet_time: 500
+  output_frequency: 400.0
+  output_orientation: false
+  correct_timing: true
+  send_status_word: false
+  send_sync_out_signal: false
+  receive_sync_in_signal: false
+connection:
+  retry_timeout: 1.0
+synchronization:
+  skip_factor: 39
+  pulse_width: 2000
+
+publishers:
+  imu:
+    topic: /sensors/imu
+    queue_size: 10
+    latch: false

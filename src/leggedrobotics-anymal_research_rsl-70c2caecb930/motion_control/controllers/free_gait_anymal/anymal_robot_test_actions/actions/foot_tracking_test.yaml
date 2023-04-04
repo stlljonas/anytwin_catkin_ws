@@ -1,0 +1,106 @@
+adapt_coordinates:
+  - transform:
+      source_frame: footprint
+      target_frame: odom
+
+steps:
+
+ - step:
+    - base_auto:
+
+ - step:
+    - base_auto:
+       height: 0.42
+       support_margin: 0.12
+    - footstep:
+       name: RF_LEG
+       ignore_contact: true
+       profile_type: straight
+       target:
+        frame: footprint
+        position: [0.39, -0.22, 0.20]
+
+ - step:
+    - end_effector_trajectory:
+       name: RF_LEG
+       ignore_contact: true
+       trajectory:
+        frame: footprint
+        knots:
+         - time: 3.0
+           position: [0.35, -0.22, 0.42]
+         - time: 6.0
+           position: [0.35, -0.22, 0.07]
+         - time: 9.0
+           position: [0.35, -0.22, 0.42]
+         - time: 12.0
+           position: [0.35, -0.22, 0.07]
+         - time: 15.0
+           position: [0.35, -0.22, 0.2]
+
+ - step:
+    - end_effector_trajectory:
+       name: RF_LEG
+       ignore_contact: true
+       trajectory:
+        frame: footprint
+        knots:
+         - time: 2.0
+           position: [0.35, -0.22, 0.38]
+         - time: 4.0
+           position: [0.35, -0.22, 0.15]
+         - time: 6.0
+           position: [0.35, -0.22, 0.38]
+         - time: 8.0
+           position: [0.35, -0.22, 0.15]
+         - time: 10.0
+           position: [0.35, -0.22, 0.2]
+
+ - step:
+    - end_effector_trajectory:
+       name: RF_LEG
+       ignore_contact: true
+       trajectory:
+        frame: footprint
+        knots:
+         - time: 1.5
+           position: [0.35, -0.22, 0.35]
+         - time: 3.0
+           position: [0.35, -0.22, 0.2]
+         - time: 4.5
+           position: [0.35, -0.22, 0.35]
+         - time: 6.0
+           position: [0.35, -0.22, 0.2]
+         - time: 7.5
+           position: [0.35, -0.22, 0.2]
+
+ - step:
+    - end_effector_trajectory:
+       name: RF_LEG
+       ignore_contact: true
+       trajectory:
+        frame: footprint
+        knots:
+         - time: 1.0
+           position: [0.35, -0.22, 0.4]
+         - time: 2.0
+           position: [0.35, -0.22, 0.15]
+         - time: 3.0
+           position: [0.35, -0.22, 0.4]
+         - time: 4.0
+           position: [0.35, -0.22, 0.15]
+         - time: 5.0
+           position: [0.35, -0.22, 0.2]
+
+ - step:
+    - base_auto:
+    - footstep:
+       name: RF_LEG
+       ignore_contact: false
+       profile_type: straight
+       target:
+        frame: footprint
+        position: [0.32, -0.24, 0.0]
+
+ - step:
+    - base_auto:

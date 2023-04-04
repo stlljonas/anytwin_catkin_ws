@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+
+  <arg name="output" default="screen"/>
+  <!-- Console launch prefix -->
+  <arg name="launch_prefix" default="nice -n -20"/>
+  <arg name="execution_mode" default="node"/>
+  <arg name="hri_config_path" default="$(find hri_user_interface)/config/hri_user_interface.yaml"/>
+  <env name="ROSCONSOLE_CONFIG_FILE"    value="$(find hri_user_interface)/config/custom_rosconsole.conf"/>
+
+  <include file="$(find hri_user_interface)/launch/include/hri_user_interface_$(arg execution_mode).launch">
+    <arg name="output"        value="$(arg output)"/>
+    <arg name="launch_prefix" value="$(arg launch_prefix)"/>
+    <arg name="hri_config_path" value="$(arg hri_config_path)"/>
+  </include>
+
+</launch>

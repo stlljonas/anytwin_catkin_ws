@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+    
+  <!-- Name of the actuated lidar -->
+  <arg name="name" default="actuated_lidar"/>
+  <!-- Name of the actuated lidar master -->
+  <arg name="master_name" default="actuated_lidar"/>
+  <!-- Set to true for simulation -->
+  <arg name="simulation" default="false"/>
+  <!-- Set to true if a bagfile is played containing the dynamixel joint state and the hokuyo scan -->
+  <arg name="bagfile_is_played" default="false"/>
+  <!-- Set to true if the tfs should be published from the joint states -->
+  <arg name="run_tf_publisher" default="true"/>
+  <!-- ID of the dynamixel frame -->
+  <arg name="dynamixel_frame_id" default="$(arg name)_dynamixel"/>
+  <!-- ID of the hokuyo frame -->
+  <arg name="hokuyo_frame_id" default="$(arg name)_hokuyo"/>
+  <!-- Name of the robot description parameter -->
+  <arg name="description_name" default="anymal_description"/>
+  <!-- Rotate the lasers permanently -->
+  <arg name="permanent_rotation" default="true"/>
+  <!-- Actuated lidar configuration file -->
+  <arg name="config_file" default="$(find actuated_lidar)/config/actuated_lidar.yaml" />
+  <!-- Use minimal tf, other than tf -->
+  <arg name="tf_minimal" default="false" />
+
+  <!-- Load parameters -->
+  <rosparam command="load" ns="$(arg name)" file="$(find actuated_lidar)/config/single_device.yaml"/>
+  <rosparam command="load" ns="$(arg name)" file="$(arg config_file)"/>
+
+  <!-- Dynamic tf from Dynamixel to Dynamixel (turning) -->
+  <group if="$(arg run_tf_publisher)">
+
+    <group if="$(arg tf_minimal)">
+      <node ns="$(arg name)" name="$(arg name)_tf_publisher_minimal" pkg="robot_state_publisher" type="robot_state_publisher" output="screen">
+        <param name="publish_frequency" value="10"/>
+        <remap from="robot_description" to="$(arg description_name)"/>
+        <remap from="joint_states"      to="/$(arg name)/dynamixel/joint_state"/>
+        <remap from="/tf"               to="/tf_minimal"/>
+      </node>
+    </group>
+
+    <node ns="$(arg name)" name="$(arg name)_tf_publisher" pkg="robot_state_publisher" type="robot_state_publisher" output="screen">
+      <param name="publish_frequency" value="100"/>
+      <remap from="robot_description" to="$(arg description_name)"/>
+      <remap from="joint_states"      to="/$(arg name)/dynamixel/joint_state"/>
+    </node>
+
+  </group>
+
+  <!-- Actuated lidar node -->
+  <node name="$(arg name)" pkg="actuated_lidar" type="actuated_lidar_node" output="screen" respawn="true">
+    <param name="device_name"                          value="$(arg name)"/>
+    <param name="dynamixel/wheel_mode"                 value="$(arg permanent_rotation)"/>
+    <param name="dynamixel/permanent_rotation"         value="$(arg permanent_rotation)"/>
+    <param name="dynamixel/angle_safety_margin"        value="0.1"/>
+    <param name="bagfile_is_played"                    value="$(arg bagfile_is_played)"/>
+    <param name="subscribers/set_direction/topic"      value="/$(arg master_name)/set_direction"/>
+    <param name="publishers/motion_goal_reached/topic" value="/$(arg master_name)/motion_goal_reached"/>
+  </node>
+
+  <group unless="$(arg simulation)">
+    <group unless="$(arg bagfile_is_played)">
+      <!-- Dynamixel driver -->
+      <node ns="$(arg name)" name="dynamixel" pkg="dynamixel_ros" type="dynamixel_ros_node" output="screen" respawn="true">
+        <param name="sensor/serial_port_baud_rate"   value="19200"/>
+        <param name="sensor/motor_id"                value="1"/>
+        <param name="joint_state_publisher/frame_id" value="$(arg dynamixel_frame_id)"/>
+      </node>
+
+      <!-- Hokuyo driver -->
+      <node ns="$(arg name)" name="hokuyo" pkg="urg_node" type="urg_node" output="screen" respawn="true">
+        <param name="calibrate_time"    value="true"/>
+        <param name="frame_id"          value="$(arg hokuyo_frame_id)"/>
+        <param name="angle_min"         value="-2.356194496154785"/>
+        <param name="angle_max"         value="2.356194496154785"/>
+        <param name="time_offset"       value="-0.00275"/>
+        <remap from="last"              to="scan"/>
+      </node>
+    </group>
+  </group>
+
+  <!-- Laser filter node -->
+  <node ns="$(arg name)" name="laser_filter" pkg="laser_filters" type="scan_to_scan_filter_chain">
+    <rosparam command="load" file="$(find actuated_lidar)/config/laser_filter.yaml"/>
+    <remap from="scan_filtered" to="/$(arg master_name)/scan_filtered"/>
+  </node> 
+
+</launch>

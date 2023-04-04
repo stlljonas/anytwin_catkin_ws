@@ -1,0 +1,6 @@
+load_anymal_description:
+  custom_parameters:
+    B_r_BBcom_x: -0.017
+    B_r_BBcom_y: -0.002
+    B_r_BBcom_z: 0.026
+    m_B: 5.953  # TODO(fgiraldez): update with latest measurements

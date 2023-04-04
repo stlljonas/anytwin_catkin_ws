@@ -1,0 +1,5 @@
+collections:
+  - add_to_collection:
+     id: climbing
+     actions:
+      - stair_climbing

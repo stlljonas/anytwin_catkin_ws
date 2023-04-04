@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<robot name="dodgeball"  xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:arg name="mass"   default="1.0"/>
+  <xacro:arg name="radius" default="0.1"/>
+
+  <link name="dodgeball">
+    <inertial>
+      <origin xyz="0 0 0" />
+      <mass value="$(arg mass)" />
+      <inertia  ixx="0.000001" ixy="0.0"  ixz="0.0"  iyy="0.000001"  iyz="0.0"  izz="0.000001" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <sphere radius="$(arg radius)" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <sphere radius="$(arg radius)" />
+      </geometry>
+      <surface>
+          <bounce restitution_coefficient="1.0" threshold="0.01"/>
+      </surface>
+    </collision>
+  </link>
+  <gazebo reference="dodgeball">
+    <material>Gazebo/Red</material>
+  </gazebo>
+</robot>

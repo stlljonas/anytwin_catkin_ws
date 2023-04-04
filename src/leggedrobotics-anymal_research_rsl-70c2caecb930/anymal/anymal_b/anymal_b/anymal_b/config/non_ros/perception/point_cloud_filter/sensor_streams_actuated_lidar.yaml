@@ -1,0 +1,18 @@
+# Point cloud data sources
+stream_sources:
+  - id:                     0
+    source_name:            "actuated_lidar"
+    source_type:            "lidar"
+    queue_size:             1
+    input_topic:            "/actuated_lidar_master/point_cloud"
+    output_topic:           "/point_cloud_filter/actuated_lidar_master/point_cloud_filtered"
+    filter:                 true
+    filters_config:         "pointmatcher_filters_actuated_lidar.yaml"
+    self_filter_config:     "self_filtering_front_limbs.yaml"
+    robot_description:      "/anymal_description"
+
+subscribers_check_period: 1.0
+
+# Log level.
+# Options: DEBUG, INFO, WARN, ERROR, FATAL and COUNT
+log_level: "INFO"

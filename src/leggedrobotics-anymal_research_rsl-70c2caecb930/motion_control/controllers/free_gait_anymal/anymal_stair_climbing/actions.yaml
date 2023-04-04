@@ -1,0 +1,7 @@
+actions:
+  - action:
+      id: stair_climbing_base
+      name: Stair Climbing Base
+      file: actions/stair_climbing_base.py
+      type: python
+      description: Climbing up stairs.

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<launch>
+  <arg name="log_output" default="logging_locomotion"/>
+  <node name="rosbag" pkg="rosbag" type="record"
+    args="
+    /tf
+    /tf_static/
+    /state_estimator/pose_in_map
+    /state_estimator/twist
+    /state_estimator/anymal_state
+
+    /state_estimator/joint_states
+    /anymal_highlevel_controller/actuator_commands
+    /sensors/actuator_readings_extended_throttle
+    
+    /dynamic_gaits_ros/final_com_box
+    /dynamic_gaits_ros/foothold_plan_foothold_bounds
+    /dynamic_gaits_ros/foothold_plan_collision_bounds
+    /dynamic_gaits_ros/path_regularizer
+    /dynamic_gaits_ros/path_regularizer_on_plane
+    /dynamic_gaits_ros/planned_com_acc_markers
+    /dynamic_gaits_ros/planned_com_pos_line_strip_markers
+    /dynamic_gaits_ros/planned_com_pos_markers
+    /dynamic_gaits_ros/planned_com_pos_on_plane_markers
+    /dynamic_gaits_ros/planned_com_vel_markers
+    /dynamic_gaits_ros/planned_initial_state
+    /dynamic_gaits_ros/planned_final_state
+    /dynamic_gaits_ros/planned_zmp_pos_line_strip_markers
+    /dynamic_gaits_ros/planned_zmp_pos_markers
+    /dynamic_gaits_ros/support_polygons
+    /loco_ros/desired_contact_force_lf
+    /loco_ros/desired_contact_force_lh
+    /loco_ros/desired_contact_force_rf
+    /loco_ros/desired_contact_force_rh
+    /loco_ros/desired_linear_acceleration_lf
+    /loco_ros/desired_linear_acceleration_lh
+    /loco_ros/desired_linear_acceleration_rf
+    /loco_ros/desired_linear_acceleration_rh
+    /loco_ros/desired_linear_velocty_lf
+    /loco_ros/desired_linear_velocty_lh
+    /loco_ros/desired_linear_velocty_rf
+    /loco_ros/desired_linear_velocty_rh
+    /loco_ros/desired_torso_acceleration
+    /loco_ros/desired_torso_angular_velocity
+    /loco_ros/desired_torso_linear_velocity
+    /loco_ros/desired_torso_velocity
+    /loco_ros/dynamics/center_of_mass
+    /loco_ros/dynamics/center_of_mass_array
+    /loco_ros/dynamics/inertia_ellipsoid
+    /loco_ros/friction_cones
+    /loco_ros/friction_pyramids
+    /loco_ros/gait_patterns
+    /loco_ros/measured_contact_force_lf
+    /loco_ros/measured_contact_force_lh
+    /loco_ros/measured_contact_force_rf
+    /loco_ros/measured_contact_force_rh
+    /loco_ros/measured_foot_positions
+    /loco_ros/measured_mainbody_gravity_angular
+    /loco_ros/measured_mainbody_gravity_linear
+    /loco_ros/net_virtual_force
+    /loco_ros/net_virtual_torque
+    /loco_ros/planned_foot_positions
+    /loco_ros/planned_footholds
+    /loco_ros/support_polygon
+    /loco_ros/support_polygon_normals
+    /loco_ros/swing_traj
+    /loco_ros/terrain_model
+    /loco_ros/torso
+    /loco_ros/virtual_force
+    /loco_ros/virtual_torque
+    /loco_ros/wbc_arrows
+    /loco_ros/whole_body_com
+    
+    /xpp/state_curr
+
+    -o $(arg log_output)" 
+    
+    output="screen">
+  </node>
+</launch>
+

@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>locomotion_planner</name>
+  <version>0.4.0</version>
+  <description>Perceptive locomotion planning for legged robots in rough terrain</description>
+
+  <author email="pfankhauser@anybotics.com">Peter Fankhauser</author>
+  <maintainer email="vyuryev@anybotics.com">Valentin Yuryev</maintainer>
+  <maintainer email="fgiraldez@anybotics.com">Francisco Giráldez Gámez</maintainer>
+
+  <license>Proprietary</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>roscpp</depend>
+  <depend>message_logger</depend>
+  <depend>free_gait_msgs</depend>
+  <depend>free_gait_core</depend>
+  <depend>free_gait_ros</depend>
+  <depend>geometry_msgs</depend>
+  <depend>kindr</depend>
+  <depend>eigen</depend>
+  <depend>grid_map_core</depend>
+  <depend>grid_map_ros</depend>
+  <depend>grid_map_msgs</depend>
+  <depend>grid_map_sdf</depend>
+  <depend>loco</depend>
+  <depend>numopt_common</depend>
+  <depend>numopt_osqp</depend>
+  <depend>numopt_sqp</depend>
+  <depend>robot_utils</depend>
+  <depend>visualization_msgs</depend>
+  <depend>actionlib</depend>
+  <depend>locomotion_planner_msgs</depend>
+
+  <test_depend>cmake_code_coverage</test_depend>
+
+</package>

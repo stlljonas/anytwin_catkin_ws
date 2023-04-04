@@ -1,0 +1,10 @@
+# Device to reset flash storage section. Leave empty for all devices.
+string device_name
+
+# Flash storage sections. For multiple sections, add the according values up.
+uint8 flash_storage_sections
+uint8 NA = 0
+uint8 Calibration = 1
+uint8 Configuration = 2
+
+---

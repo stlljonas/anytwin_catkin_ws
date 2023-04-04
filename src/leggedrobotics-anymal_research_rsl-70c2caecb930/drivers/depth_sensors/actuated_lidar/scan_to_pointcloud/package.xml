@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+
+<package format="2">
+
+  <name>scan_to_pointcloud</name>
+  <version>0.5.0</version>
+  <description>ROS node converting laser scans to point clouds.</description>
+
+  <license>Proprietary</license>
+
+  <author email="rdiethelm@anybotics.com">Remo Diethelm</author>
+  <maintainer email="rdiethelm@anybotics.com">Remo Diethelm</maintainer>
+  <maintainer email="ynava@anybotics.com">Yoshua Nava</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>laser_geometry</depend>
+  <depend>param_io</depend>
+  <depend>roscpp</depend>
+  <depend>sensor_msgs</depend>
+  <depend>tf</depend>
+
+</package>
+

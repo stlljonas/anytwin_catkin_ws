@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>collisions_bullet</name>
+  <version>0.5.0</version>
+  <description>The collisions_bullet package</description>
+
+  <maintainer email="vyuryev@anybotics.com">Valentin Yuryev</maintainer>
+  <maintainer email="fgiraldez@anybotics.com">Francisco Giráldez Gámez</maintainer>
+
+  <license>Proprietary</license>
+
+  <author email="fperry@student.ethz.ch">Perry Franklin</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>bullet</depend>
+  <depend>collisions</depend>
+  <depend>collisions_geometry</depend>
+  <depend>kindr</depend>
+
+</package>

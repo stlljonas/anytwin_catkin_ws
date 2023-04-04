@@ -1,0 +1,8 @@
+estimator:
+  publish_joint_state: false
+  subscribe_joint_state: true
+  subscribe_imu: true
+  subscribe_contact_force_lf_foot: true
+  subscribe_contact_force_rf_foot: true
+  subscribe_contact_force_lh_foot: true
+  subscribe_contact_force_rh_foot: true

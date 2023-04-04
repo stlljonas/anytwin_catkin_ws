@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+
+<package format="2">
+
+  <name>anymal_c_npc_drivers</name>
+  <version>1.0.0</version>
+  <description>ANYmal C Navigation PC Drivers</description>
+
+  <license>Proprietary</license>
+
+  <author email="rdiethelm@anybotics.com">Remo Diethelm</author>
+  <maintainer email="rdiethelm@anybotics.com">Remo Diethelm</maintainer>
+  <maintainer email="hkhambhaita@anybotics.com">Harmish Khambhaita</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <!-- Default system -->
+  <exec_depend>any_spinnaker_camera_driver</exec_depend>
+  <exec_depend>anymal_c_pc_drivers</exec_depend>
+  <exec_depend>anymal_realsense</exec_depend>
+  <exec_depend>anymal_velodyne</exec_depend>
+  <exec_depend>depth_sensor_tilt_calibration</exec_depend>
+  <exec_depend>kernel_monitor</exec_depend>
+  <exec_depend>system_monitor</exec_depend>
+
+  <export>
+    <metapackage />
+  </export>
+
+</package>

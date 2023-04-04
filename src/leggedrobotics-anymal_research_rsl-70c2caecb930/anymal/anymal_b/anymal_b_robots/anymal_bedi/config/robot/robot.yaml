@@ -1,0 +1,385 @@
+anymal_lowlevel_controller:
+  anydrive_setup:
+    anydrives:
+      LF_HAA:
+        configuration:
+          max_freeze_current: 5.0
+          modes:
+            joint_position:
+              gains:
+                d: 0.25
+                i: 0.5
+                p: 80.0
+            joint_position_velocity:
+              gains:
+                d: 0.25
+                i: 0.5
+                p: 80.0
+            joint_position_velocity_torque:
+              gains:
+                d: 0.25
+                i: 0.5
+                p: 80.0
+            joint_torque:
+              gains:
+                d: 15.0
+                i: 0.08
+                p: 4.5
+      LF_HFE:
+        configuration:
+          fan:
+            lower_temperature: 35.0
+            upper_temperature: 40.0
+          max_freeze_current: 5.0
+          modes:
+            joint_position:
+              gains:
+                d: 0.25
+                i: 0.5
+                p: 80.0
+            joint_position_velocity:
+              gains:
+                d: 0.25
+                i: 0.5
+                p: 80.0
+            joint_position_velocity_torque:
+              gains:
+                d: 0.25
+                i: 0.5
+                p: 80.0
+            joint_torque:
+              gains:
+                d: 15.0
+                i: 0.08
+                p: 4.5
+      LF_KFE:
+        configuration:
+          fan:
+            lower_temperature: 35.0
+            upper_temperature: 40.0
+          max_freeze_current: 5.0
+          modes:
+            joint_position:
+              gains:
+                d: 0.25
+                i: 0.5
+                p: 80.0
+            joint_position_velocity:
+              gains:
+                d: 0.25
+                i: 0.5
+                p: 80.0
+            joint_position_velocity_torque:
+              gains:
+                d: 0.25
+                i: 0.5
+                p: 80.0
+            joint_torque:
+              gains:
+                d: 15.0
+                i: 0.08
+                p: 4.5
+      LH_HAA:
+        configuration:
+          max_freeze_current: 5.0
+          modes:
+            joint_position:
+              gains:
+                d: 0.25
+                i: 0.5
+                p: 80.0
+            joint_position_velocity:
+              gains:
+                d: 0.25
+                i: 0.5
+                p: 80.0
+            joint_position_velocity_torque:
+              gains:
+                d: 0.25
+                i: 0.5
+                p: 80.0
+            joint_torque:
+              gains:
+                d: 15.0
+                i: 0.08
+                p: 4.5
+      LH_HFE:
+        configuration:
+          fan:
+            lower_temperature: 35.0
+            upper_temperature: 40.0
+          max_freeze_current: 5.0
+          modes:
+            joint_position:
+              gains:
+                d: 0.25
+                i: 0.5
+                p: 80.0
+            joint_position_velocity:
+              gains:
+                d: 0.25
+                i: 0.5
+                p: 80.0
+            joint_position_velocity_torque:
+              gains:
+                d: 0.25
+                i: 0.5
+                p: 80.0
+            joint_torque:
+              gains:
+                d: 15.0
+                i: 0.08
+                p: 4.5
+      LH_KFE:
+        configuration:
+          fan:
+            lower_temperature: 35.0
+            upper_temperature: 40.0
+          max_freeze_current: 5.0
+          modes:
+            joint_position:
+              gains:
+                d: 0.25
+                i: 0.5
+                p: 80.0
+            joint_position_velocity:
+              gains:
+                d: 0.25
+                i: 0.5
+                p: 80.0
+            joint_position_velocity_torque:
+              gains:
+                d: 0.25
+                i: 0.5
+                p: 80.0
+            joint_torque:
+              gains:
+                d: 15.0
+                i: 0.08
+                p: 4.5
+      RF_HAA:
+        configuration:
+          max_freeze_current: 5.0
+          modes:
+            joint_position:
+              gains:
+                d: 0.25
+                i: 0.5
+                p: 80.0
+            joint_position_velocity:
+              gains:
+                d: 0.25
+                i: 0.5
+                p: 80.0
+            joint_position_velocity_torque:
+              gains:
+                d: 0.25
+                i: 0.5
+                p: 80.0
+            joint_torque:
+              gains:
+                d: 15.0
+                i: 0.08
+                p: 4.5
+      RF_HFE:
+        configuration:
+          fan:
+            lower_temperature: 35.0
+            upper_temperature: 40.0
+          max_freeze_current: 5.0
+          modes:
+            joint_position:
+              gains:
+                d: 0.25
+                i: 0.5
+                p: 80.0
+            joint_position_velocity:
+              gains:
+                d: 0.25
+                i: 0.5
+                p: 80.0
+            joint_position_velocity_torque:
+              gains:
+                d: 0.25
+                i: 0.5
+                p: 80.0
+            joint_torque:
+              gains:
+                d: 15.0
+                i: 0.08
+                p: 4.5
+      RF_KFE:
+        configuration:
+          fan:
+            lower_temperature: 35.0
+            upper_temperature: 40.0
+          max_freeze_current: 5.0
+          modes:
+            joint_position:
+              gains:
+                d: 0.25
+                i: 0.5
+                p: 80.0
+            joint_position_velocity:
+              gains:
+                d: 0.25
+                i: 0.5
+                p: 80.0
+            joint_position_velocity_torque:
+              gains:
+                d: 0.25
+                i: 0.5
+                p: 80.0
+            joint_torque:
+              gains:
+                d: 15.0
+                i: 0.08
+                p: 4.5
+      RH_HAA:
+        configuration:
+          max_freeze_current: 5.0
+          modes:
+            joint_position:
+              gains:
+                d: 0.25
+                i: 0.5
+                p: 80.0
+            joint_position_velocity:
+              gains:
+                d: 0.25
+                i: 0.5
+                p: 80.0
+            joint_position_velocity_torque:
+              gains:
+                d: 0.25
+                i: 0.5
+                p: 80.0
+            joint_torque:
+              gains:
+                d: 15.0
+                i: 0.08
+                p: 4.5
+      RH_HFE:
+        configuration:
+          fan:
+            lower_temperature: 35.0
+            upper_temperature: 40.0
+          max_freeze_current: 5.0
+          modes:
+            joint_position:
+              gains:
+                d: 0.25
+                i: 0.5
+                p: 80.0
+            joint_position_velocity:
+              gains:
+                d: 0.25
+                i: 0.5
+                p: 80.0
+            joint_position_velocity_torque:
+              gains:
+                d: 0.25
+                i: 0.5
+                p: 80.0
+            joint_torque:
+              gains:
+                d: 15.0
+                i: 0.08
+                p: 4.5
+      RH_KFE:
+        configuration:
+          fan:
+            lower_temperature: 35.0
+            upper_temperature: 40.0
+          max_freeze_current: 5.0
+          modes:
+            joint_position:
+              gains:
+                d: 0.25
+                i: 0.5
+                p: 80.0
+            joint_position_velocity:
+              gains:
+                d: 0.25
+                i: 0.5
+                p: 80.0
+            joint_position_velocity_torque:
+              gains:
+                d: 0.25
+                i: 0.5
+                p: 80.0
+            joint_torque:
+              gains:
+                d: 15.0
+                i: 0.08
+                p: 4.5
+load_anymal_description:
+  custom_parameters:
+    actuated_lidar: true
+    depth_camera: false
+    lidar: false
+    multisense: true
+point_cloud_filter:
+  filter_and_merger:
+    stream_combinations:
+      []
+    stream_sources:
+      - filter: true
+        filters_config: pointmatcher_filters_actuated_lidar.yaml
+        id: 0
+        input_topic: /actuated_lidar_master/point_cloud
+        output_topic: /point_cloud_filter/actuated_lidar_master/point_cloud_filtered
+        queue_size: 1
+        source_name: actuated_lidar
+        source_type: lidar
+    subscribers_check_period: 10.0
+point_cloud_odometry:
+  subscribers:
+    input_point_cloud:
+      topic: /point_cloud_filter/actuated_lidar_master/point_cloud_filtered
+rpsm_apc:
+  password: bedi
+rpsm_lpc:
+  password: bedi
+  port: /dev/ttyS1
+rpsm_npc:
+  password: bedi
+slam:
+  subscribers:
+    input_point_cloud:
+      topic: /point_cloud_filter/actuated_lidar_master/point_cloud_filtered
+stack_launcher:
+  nodes:
+    load_anymal_description:
+      preprocessed_params:
+        xacro_file:
+          value: $(rospack find anymal_bedi)/urdf/anymal.urdf.xacro
+  stacks:
+    navigation:
+      nodes:
+        actuated_lidar:
+          enabled: true
+        actuated_lidar_master:
+          enabled: true
+        actuated_lidar_master_laser_assembler:
+          enabled: true
+        actuated_lidar_master_laser_filter:
+          enabled: true
+        actuated_lidar_master_scan_to_pointcloud:
+          enabled: true
+        actuated_lidar_tf_publisher:
+          enabled: true
+    npc_drivers:
+      nodes:
+        actuated_lidar_dynamixel_driver:
+          enabled: true
+        actuated_lidar_hokuyo_driver:
+          enabled: true
+        lidar_nodelet_manager:
+          enabled: false
+        lidar_nodelet_cloud:
+          enabled: false
+        lidar_nodelet_driver:
+          enabled: false
+        lidar_nodelet_laserscan:
+          enabled: false

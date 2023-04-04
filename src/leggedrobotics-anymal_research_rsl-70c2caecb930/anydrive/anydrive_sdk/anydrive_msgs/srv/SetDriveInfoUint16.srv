@@ -1,0 +1,7 @@
+# Device to set info.
+string device_name
+
+# Drive info.
+uint16 data
+
+---

@@ -1,0 +1,9 @@
+subscribers:
+  command_velocity:
+    topic: /joy_manager/twist
+    queue_size: 10
+    latch: false
+  command_pose:
+    topic: /joy_manager/pose
+    queue_size: 10
+    latch: false

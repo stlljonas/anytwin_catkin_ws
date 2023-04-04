@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+
+<package format="2">
+
+  <name>kindr_gazebo</name>
+  <version>0.6.0</version>
+  <description>Kindr Gazebo</description>
+
+  <license>Proprietary</license>
+
+  <author email="bellicoso@mavt.ethz.ch">Dario Bellicoso</author>
+  <author email="cgehring@anybotics.com">Christian Gehring</author>
+  <maintainer email="rdiethelm@anybotics.com">Remo Diethelm</maintainer>
+  <maintainer email="pleemann@anybotics.com">Philipp Leemann</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>gazebo</depend>
+  <depend>kindr</depend>
+  <depend>libgazebo9-dev</depend>
+
+</package>

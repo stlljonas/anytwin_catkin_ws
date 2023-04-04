@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+
+  <!-- Start localization on launch -->
+  <arg name="localize_on_launch"              default="false"/>
+  <!-- Start mapping on launch -->
+  <arg name="map_on_launch"                   default="false"/>
+  <!-- Start publishing poses on launch -->
+  <arg name="publish_pose_on_launch"          default="false"/>
+  <!-- Map to load on launch, leave empty to not load a map -->
+  <arg name="load_map_on_launch_file"         default=""/>
+  <!-- Default parameter file -->
+  <arg name="default_param_file"              value="$(find icp_tools_global_mapping)/config/parameters.yaml"/>
+  <!-- Set the folder where the ICP configuration and filter files are stored -->
+  <arg name="config_files_folder"             default="$(find icp_tools_global_mapping)/config"/>
+
+  <!-- ICP tools -->
+  <test pkg="icp_tools_global_mapping" type="test_icp_tools" test-name="test_icp_tools">
+
+    <!-- Load parameter files -->
+    <rosparam command="load" file="$(arg default_param_file)"/>
+    
+    <!-- Parameters -->
+    <param name="localization/enable_on_launch"   value="$(arg localize_on_launch)"/>
+    <param name="mapping/enable_on_launch"        value="$(arg map_on_launch)"/>
+    <param name="mapping/load_map_on_launch_file" value="$(arg load_map_on_launch_file)"/>
+    <param name="publish_pose/enable_on_launch"   value="$(arg publish_pose_on_launch)"/>
+    <param name="config_files_folder"             value="$(arg config_files_folder)"/>
+
+  </test>
+
+</launch>

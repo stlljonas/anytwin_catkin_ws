@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+
+  <!-- Set true for simulation -->
+  <arg name="simulation"                  default="false"/>
+
+  <!-- Set true for standalone -->
+  <arg name="standalone"                  default="false"/>
+  <arg name="append_standalone_suffix"    default="true"/>
+
+  <!-- Path to a collection of param files (currently exclusively for probabilistic contact detection) -->
+  <arg name="parameter_path"              default="$(find anymal_state_estimator)/config"/>
+
+  <!-- The output can either be screen, log or an empty string -->
+  <arg name="output"                      default="screen"/>
+
+  <!-- Terminal launch prefix -->
+  <arg name="launch_prefix"               default="nice -n -20"/>
+
+  <!-- Subscriber, service and publisher config files -->
+  <arg name="subscribers_config_file"     default="$(find anymal_state_estimator)/config/subscribers.yaml"/>
+  <arg name="services_config_file"        default="$(find anymal_state_estimator)/config/services.yaml"/>
+  <arg name="publishers_config_file"      default="$(eval find('anymal_state_estimator') + '/config/publishers{extension}.yaml'.format(extension='_standalone' if (standalone and append_standalone_suffix) else ''))"/>
+
+  <!-- The config files for the feet -->
+  <arg name="contact_config_file_lf" />
+  <arg name="contact_config_file_rf" />
+  <arg name="contact_config_file_lh" />
+  <arg name="contact_config_file_rh" />
+
+  <!-- The config file of the filter  -->
+  <arg name="filter_config_file"          default=""/>
+  <arg name="filter_param_file"           default="$(find anymal_state_estimator)/config/parameters.yaml"/>
+
+  <!-- Load parameters for the ROS node -->
+  <rosparam command="load" ns="state_estimator" file="$(arg filter_param_file)"/>
+
+  <rosparam command="load" ns="state_estimator" file="$(arg contact_config_file_lf)"/>
+  <rosparam command="load" ns="state_estimator" file="$(arg contact_config_file_rf)"/>
+  <rosparam command="load" ns="state_estimator" file="$(arg contact_config_file_lh)"/>
+  <rosparam command="load" ns="state_estimator" file="$(arg contact_config_file_rh)"/>
+
+  <rosparam command="load" ns="state_estimator" file="$(arg subscribers_config_file)"/>  
+  <rosparam command="load" ns="state_estimator" file="$(arg services_config_file)"/>
+  <rosparam command="load" ns="state_estimator" file="$(arg publishers_config_file)"/>
+  
+  <!-- Launch the state estimator -->
+  <node name="state_estimator"
+        pkg="anymal_state_estimator_lwf"
+        type="anymal_state_estimator_lwf_node"
+        output="$(arg output)"
+        launch-prefix="$(arg launch_prefix)">
+    <param name="lwf/filter_config_file"            value="$(arg filter_config_file)"/>
+    <param name="time_step"                         value="0.0025"/>
+    <param name="simulation"                        value="$(arg simulation)"/>
+    <param name="standalone"                        value="$(arg standalone)"/>
+    <param name="parameter_path"                    value="$(arg parameter_path)"/>
+    <param name="sync_slave_name"                   value="anymal_sync"/>
+    <param name="sync_master_name"                  value="anymal_controller_sync"/>
+    <param name="logger_prefix"                     value="$(eval '/state_estimator{extension}'.format(extension='_standalone' if (standalone and append_standalone_suffix) else ''))"/>
+  </node>
+
+</launch>
+

@@ -1,0 +1,32 @@
+estimator:
+  time_step: 0.0025
+  imu_frame_id: base
+  pose_frame_id: base
+  odom_frame_id: odom
+  initialization_duration: 2.0
+  sensor_warning_time: 0.1
+  zero_velocity_updates_enabled: false
+  contact_filter_coefficient_init: 100
+  no_contact_zvu_iteration_threshold: 1
+  contact_zvu_iteration_threshold: 300
+  publish_zero_velocity_updates_message: true
+  logger_prefix: "/state_estimator"
+  use_measured_accelerations: false
+  lwf:
+    jacobian_test_delta: 1.0e-8
+  tsif:
+    n_init_acceleration_measurements: 200
+    n_throwaway_init_acceleration_measurements: 50
+    print_diagnostics: false
+
+notification:
+  notifiers:
+    default:
+      topic: /notification
+      queue_size: 100
+      latch: false
+      output_devices: 
+        - "onboard_screen"
+        - "onboard_audio"
+        - "joystick_screen"
+        - "operator_screen"

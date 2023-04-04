@@ -1,0 +1,6 @@
+timeout_usec: 20000
+self_see_links:
+    - name: base
+      padding: 0.04
+    - name: lidar_mount
+      padding: 0.04

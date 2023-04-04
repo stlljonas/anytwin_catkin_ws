@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+    <!-- Launch elevation map processing -->
+    <node pkg="elevation_map_processing" type="elevation_map_processing" name="elevation_map_processing" output="screen">
+      <rosparam command="load" file="$(find elevation_map_processing)/config/default.yaml"/>
+    </node>
+</launch>

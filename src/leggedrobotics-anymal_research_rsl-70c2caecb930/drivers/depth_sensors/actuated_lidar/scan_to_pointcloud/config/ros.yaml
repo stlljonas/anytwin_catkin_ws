@@ -1,0 +1,11 @@
+subscribers:
+  scan:
+    topic: scan
+    queue_size: 1
+
+publishers:
+  point_cloud:
+    topic: point_cloud
+    queue_size: 1
+    latch: true
+

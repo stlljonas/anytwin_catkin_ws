@@ -1,0 +1,3 @@
+reset_routes:
+  point_cloud_odometry:
+    input: /test1/reset_in

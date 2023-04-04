@@ -1,0 +1,6 @@
+# Actuation Board Command Service
+
+uint8 can_node_id
+bool enable
+
+---

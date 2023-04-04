@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>inspection_example_qt_plugin</name>
+  <version>0.0.1</version>
+  <description>Inspection example Qt plugin.</description>
+
+  <license>Proprietary</license>
+  <author email="sbachmann@anybotics.com">Samuel Bachmann</author>
+  <maintainer email="sbachmann@anybotics.com">Samuel Bachmann</maintainer>
+  <maintainer email="rdiethelm@anybotics.com">Remo Diethelm</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>cmake_clang_tools</build_depend>
+
+  <depend>environment_item_qt</depend>
+  <depend>environment_item_qt_ros</depend>
+  <depend>environment_item_ros</depend>
+  <depend>environment_utils</depend>
+  <depend>message_logger</depend>
+  <depend>pluginlib</depend>
+  <depend>inspection_example</depend>
+  <depend>inspection_example_msgs</depend>
+
+  <depend>libqt5-core</depend>
+  <depend>libqt5-widgets</depend>
+  <build_export_depend>qtbase5-dev</build_export_depend>
+
+  <export>
+    <environment_item_qt_ros plugin="${prefix}/environment_item_qt_ros_plugin.xml" />
+  </export>
+
+</package>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+  <arg name="time_step" default="0.01"/>
+  <arg name="password" default="password"/>
+  <node name="rpsm_npc"
+        pkg="rpsm_npc"
+        type="rpsm_npc_node"
+        output="screen" >
+    <param name="password"  value="$(arg password)" />
+    <param name="time_step" value="$(arg time_step)" />
+  </node>
+</launch>

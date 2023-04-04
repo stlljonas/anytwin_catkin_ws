@@ -1,0 +1,8 @@
+timeout_usec: 20000
+self_see_links:
+    - name: shell
+      padding: 0.04
+    - name: lidar_cage
+      padding: 0.04
+    - name: inspection_payload_pan
+      padding: 0.1

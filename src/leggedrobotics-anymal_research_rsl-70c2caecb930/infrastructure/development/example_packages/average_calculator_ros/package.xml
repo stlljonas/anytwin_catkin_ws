@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+
+<package format="2">
+
+  <name>average_calculator_ros</name>
+  <version>0.1.0</version>
+  <description>Average calculator ROS interface.</description>
+
+  <license>Proprietary</license>
+  <author email="pfankhauser@anybotics.com">Peter Fankhauser</author>
+  <maintainer email="rdiethelm@anybotics.com">Remo Diethelm</maintainer>
+  <maintainer email="ghottiger@anybotics.com">Gabriel Hottiger</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>cmake_clang_tools</build_depend>
+
+  <depend>average_calculator</depend>
+  <depend>average_calculator_msgs</depend>
+  <depend>message_logger</depend>
+  <depend>param_io</depend>
+  <depend>roscpp</depend>
+
+  <test_depend>roslaunch</test_depend>
+  <test_depend>rostest</test_depend>
+  <test_depend>cmake_code_coverage</test_depend>
+
+</package>

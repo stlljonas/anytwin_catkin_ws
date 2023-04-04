@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+
+<package format="2">
+
+  <name>anymal_roco</name>
+  <version>0.6.0</version>
+  <description>The anymal_roco package</description>
+
+  <license>Proprietary</license>
+
+  <maintainer email="pleemann@anybotics.com">Philipp Leemann</maintainer>
+  <maintainer email="ghottiger@anybotics.com">Gabriel Hottiger</maintainer>
+  <url type="website">http://wiki.ros.org/anymal_common</url>
+  <author email="cgehring@anybotics.com">Christian Gehring</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>any_measurements</depend>
+  <depend>boost</depend>
+  <depend>eigen</depend>
+  <depend>kindr</depend>
+  <depend>message_logger</depend>
+  <depend>anymal_description</depend>
+  <depend>anymal_model</depend>
+  <depend>roco</depend>
+  <depend>signal_logger</depend>
+
+</package>

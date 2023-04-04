@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+
+  <!-- Configuration -->
+  <arg name="robot"        default="b"            doc="Robot, e.g. 'beth' or 'bear'. Use 'b' for generic robot."/>
+  <arg name="data_package" default=""             doc="Data package containing the world and all environment related data."/>
+  <arg name="world"        default=""             doc="World within the data package."/>
+
+  <!-- Feature toggles -->
+  <arg name="state_estimator_module"      default="tsif"      doc="State estimator module to run. Options: tsif, simulated (only in simulation)."/>
+  <arg name="slam_module"                 default="simulated" doc="SLAM module to run. Options: pharos, icp_tools, simulated (only in simulation)."/>
+  <arg name="point_cloud_odometry_module" default="simulated" doc="Point cloud odometry module to run. Options: real, simulated (only in simulation)."/>
+
+  <!-- Load the configuration -->
+  <include file="$(find anymal_b)/launch/load_config.launch">
+    <arg name="robot"                       value="$(arg robot)"/>
+    <arg name="data_package"                value="$(arg data_package)"/>
+    <arg name="world"                       value="$(arg world)"/>
+    <arg name="setup"                       value="sim"/>
+    <arg name="state_estimator_module"      value="$(arg state_estimator_module)"/>
+    <arg name="slam_module"                 value="$(arg slam_module)"/>
+    <arg name="point_cloud_odometry_module" value="$(arg point_cloud_odometry_module)"/>
+  </include>
+  <param name="/stack_launcher/nodes/spawn_anymal/roslaunch/args" value="-param anymal_description -urdf -model anymal -x 0.0 -y 0.0 -z 0.8 -R 0.0 -P 0.0 -Y 0.0"/>
+
+  <!-- Start the simulation -->
+  <include file="$(find stack_launcher)/launch/stack_launcher.launch">
+    <arg name="stack"         value="sim"/>
+    <arg name="trigger_param" value="/config_loaded"/>
+  </include>
+
+  <!-- Launch elevation map processing -->
+  <include file="$(find elevation_map_processing)/launch/elevation_map_processing.launch">
+  </include>
+
+</launch>

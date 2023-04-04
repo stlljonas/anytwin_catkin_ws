@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<package format="2">
+
+  <name>bageditor</name>
+  <version>0.6.0</version>
+  <description>Load bag files into an std::vector.</description>
+
+  <license>Proprietary</license>
+
+  <author email="ghottiger@anybotics.com">Gabriel Hottiger</author>
+  <maintainer email="ghottiger@anybotics.com">Gabriel Hottiger</maintainer>
+  <maintainer email="pleemann@anybotics.com">Philipp Leemann</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>rosbag</depend>
+
+</package>

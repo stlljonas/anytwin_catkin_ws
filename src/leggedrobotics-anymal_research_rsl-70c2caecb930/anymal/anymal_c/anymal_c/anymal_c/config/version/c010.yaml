@@ -1,0 +1,432 @@
+anymal_highlevel_controller:
+  controller_manager:
+    controllers:
+      dynamic_gaits:
+        parameter_path: config/non_ros/motion_control/dynamic_gaits_ros/c010
+anymal_lowlevel_controller:
+  anydrive_setup:
+    anydrives:
+      LF_HAA:
+        configuration:
+          max_current: 15.0
+          max_freeze_current: 5.0
+          max_joint_torque: 70.0
+          max_motor_velocity: 575.96   # 5500.0/60.0*2.0*M_PI
+          modes:
+            current:
+              gains:
+                d: 0.0
+                i: 0.25
+                p: 0.8
+            joint_torque:
+              gains:
+                d: 22.0
+                i: 0.1
+                p: 8.0
+      LF_HFE:
+        configuration:
+          fan:
+            lower_temperature: 35.0
+            upper_temperature: 40.0
+          max_current: 15.0
+          max_freeze_current: 5.0
+          max_joint_torque: 70.0
+          max_motor_velocity: 575.96   # 5500.0/60.0*2.0*M_PI
+          modes:
+            current:
+              gains:
+                d: 0.0
+                i: 0.25
+                p: 0.8
+            joint_position:
+              gains:
+                d: 0.4
+                i: 0.2
+                p: 80.0
+            joint_position_velocity:
+              gains:
+                d: 0.4
+                i: 0.2
+                p: 80.0
+            joint_position_velocity_torque:
+              gains:
+                d: 0.4
+                i: 0.2
+                p: 80.0
+            joint_torque:
+              gains:
+                d: 22.0
+                i: 0.2
+                p: 8.0
+      LF_KFE:
+        configuration:
+          fan:
+            lower_temperature: 35.0
+            upper_temperature: 40.0
+          max_current: 15.0
+          max_freeze_current: 5.0
+          max_joint_torque: 70.0
+          max_motor_velocity: 575.96   # 5500.0/60.0*2.0*M_PI
+          modes:
+            current:
+              gains:
+                d: 0.0
+                i: 0.25
+                p: 0.8
+            joint_position:
+              gains:
+                d: 0.4
+                i: 0.2
+                p: 80.0
+            joint_position_velocity:
+              gains:
+                d: 0.4
+                i: 0.2
+                p: 80.0
+            joint_position_velocity_torque:
+              gains:
+                d: 0.4
+                i: 0.2
+                p: 80.0
+            joint_torque:
+              gains:
+                d: 22.0
+                i: 0.2
+                p: 8.0
+      LH_HAA:
+        configuration:
+          max_current: 15.0
+          max_freeze_current: 5.0
+          max_joint_torque: 70.0
+          max_motor_velocity: 575.96   # 5500.0/60.0*2.0*M_PI
+          modes:
+            current:
+              gains:
+                d: 0.0
+                i: 0.25
+                p: 0.8
+            joint_torque:
+              gains:
+                d: 22.0
+                i: 0.1
+                p: 8.0
+      LH_HFE:
+        configuration:
+          fan:
+            lower_temperature: 35.0
+            upper_temperature: 40.0
+          max_current: 15.0
+          max_freeze_current: 5.0
+          max_joint_torque: 70.0
+          max_motor_velocity: 575.96   # 5500.0/60.0*2.0*M_PI
+          modes:
+            current:
+              gains:
+                d: 0.0
+                i: 0.25
+                p: 0.8
+            joint_position:
+              gains:
+                d: 0.4
+                i: 0.2
+                p: 80.0
+            joint_position_velocity:
+              gains:
+                d: 0.4
+                i: 0.2
+                p: 80.0
+            joint_position_velocity_torque:
+              gains:
+                d: 0.4
+                i: 0.2
+                p: 80.0
+            joint_torque:
+              gains:
+                d: 22.0
+                i: 0.2
+                p: 8.0
+      LH_KFE:
+        configuration:
+          fan:
+            lower_temperature: 35.0
+            upper_temperature: 40.0
+          max_current: 15.0
+          max_freeze_current: 5.0
+          max_joint_torque: 70.0
+          max_motor_velocity: 575.96   # 5500.0/60.0*2.0*M_PI
+          modes:
+            current:
+              gains:
+                d: 0.0
+                i: 0.25
+                p: 0.8
+            joint_position:
+              gains:
+                d: 0.4
+                i: 0.2
+                p: 80.0
+            joint_position_velocity:
+              gains:
+                d: 0.4
+                i: 0.2
+                p: 80.0
+            joint_position_velocity_torque:
+              gains:
+                d: 0.4
+                i: 0.2
+                p: 80.0
+            joint_torque:
+              gains:
+                d: 22.0
+                i: 0.2
+                p: 8.0
+      RF_HAA:
+        configuration:
+          max_current: 15.0
+          max_freeze_current: 5.0
+          max_joint_torque: 70.0
+          max_motor_velocity: 575.96   # 5500.0/60.0*2.0*M_PI
+          modes:
+            current:
+              gains:
+                d: 0.0
+                i: 0.25
+                p: 0.8
+            joint_torque:
+              gains:
+                d: 22.0
+                i: 0.1
+                p: 8.0
+      RF_HFE:
+        configuration:
+          fan:
+            lower_temperature: 35.0
+            upper_temperature: 40.0
+          max_current: 15.0
+          max_freeze_current: 5.0
+          max_joint_torque: 70.0
+          max_motor_velocity: 575.96   # 5500.0/60.0*2.0*M_PI
+          modes:
+            current:
+              gains:
+                d: 0.0
+                i: 0.25
+                p: 0.8
+            joint_position:
+              gains:
+                d: 0.4
+                i: 0.2
+                p: 80.0
+            joint_position_velocity:
+              gains:
+                d: 0.4
+                i: 0.2
+                p: 80.0
+            joint_position_velocity_torque:
+              gains:
+                d: 0.4
+                i: 0.2
+                p: 80.0
+            joint_torque:
+              gains:
+                d: 22.0
+                i: 0.2
+                p: 8.0
+      RF_KFE:
+        configuration:
+          fan:
+            lower_temperature: 35.0
+            upper_temperature: 40.0
+          max_current: 15.0
+          max_freeze_current: 5.0
+          max_joint_torque: 70.0
+          max_motor_velocity: 575.96   # 5500.0/60.0*2.0*M_PI
+          modes:
+            current:
+              gains:
+                d: 0.0
+                i: 0.25
+                p: 0.8
+            joint_position:
+              gains:
+                d: 0.4
+                i: 0.2
+                p: 80.0
+            joint_position_velocity:
+              gains:
+                d: 0.4
+                i: 0.2
+                p: 80.0
+            joint_position_velocity_torque:
+              gains:
+                d: 0.4
+                i: 0.2
+                p: 80.0
+            joint_torque:
+              gains:
+                d: 22.0
+                i: 0.2
+                p: 8.0
+      RH_HAA:
+        configuration:
+          max_current: 15.0
+          max_freeze_current: 5.0
+          max_joint_torque: 70.0
+          max_motor_velocity: 575.96   # 5500.0/60.0*2.0*M_PI
+          modes:
+            current:
+              gains:
+                d: 0.0
+                i: 0.25
+                p: 0.8
+            joint_torque:
+              gains:
+                d: 22.0
+                i: 0.1
+                p: 8.0
+      RH_HFE:
+        configuration:
+          fan:
+            lower_temperature: 35.0
+            upper_temperature: 40.0
+          max_current: 15.0
+          max_freeze_current: 5.0
+          max_joint_torque: 70.0
+          max_motor_velocity: 575.96   # 5500.0/60.0*2.0*M_PI
+          modes:
+            current:
+              gains:
+                d: 0.0
+                i: 0.25
+                p: 0.8
+            joint_position:
+              gains:
+                d: 0.4
+                i: 0.2
+                p: 80.0
+            joint_position_velocity:
+              gains:
+                d: 0.4
+                i: 0.2
+                p: 80.0
+            joint_position_velocity_torque:
+              gains:
+                d: 0.4
+                i: 0.2
+                p: 80.0
+            joint_torque:
+              gains:
+                d: 22.0
+                i: 0.2
+                p: 8.0
+      RH_KFE:
+        configuration:
+          fan:
+            lower_temperature: 35.0
+            upper_temperature: 40.0
+          max_current: 15.0
+          max_freeze_current: 5.0
+          max_joint_torque: 70.0
+          max_motor_velocity: 575.96   # 5500.0/60.0*2.0*M_PI
+          modes:
+            current:
+              gains:
+                d: 0.0
+                i: 0.25
+                p: 0.8
+            joint_position:
+              gains:
+                d: 0.4
+                i: 0.2
+                p: 80.0
+            joint_position_velocity:
+              gains:
+                d: 0.4
+                i: 0.2
+                p: 80.0
+            joint_position_velocity_torque:
+              gains:
+                d: 0.4
+                i: 0.2
+                p: 80.0
+            joint_torque:
+              gains:
+                d: 22.0
+                i: 0.2
+                p: 8.0
+load_anymal_description:
+  custom_parameters:
+    imu_model: xsens
+    version: c010
+wide_angle_camera_front:
+  spinnaker_camera_nodelet:
+    reverse_x: false
+    reverse_y: false
+wide_angle_camera_rear:
+  spinnaker_camera_nodelet:
+    reverse_x: false
+    reverse_y: false
+stack_launcher:
+  stacks:
+    locomotion:
+      nodes:
+        wide_angle_camera_front_image_crop_decimate:
+          name: wide_angle_camera_front_image_crop_decimate
+          enabled: true
+        wide_angle_camera_front_image_debayer:
+          enabled: true
+          name: wide_angle_camera_front_image_debayer
+        wide_angle_camera_front_image_rectifier:
+          enabled: true
+          name: wide_angle_camera_front_image_rectifier
+        wide_angle_camera_front_nodelet_manager:
+          enabled: true
+          name: wide_angle_camera_front_nodelet_manager
+        wide_angle_camera_rear_image_crop_decimate:
+          name: wide_angle_camera_rear_image_crop_decimate
+          enabled: true
+        wide_angle_camera_rear_image_debayer:
+          enabled: true
+          name: wide_angle_camera_rear_image_debayer
+        wide_angle_camera_rear_image_rectifier:
+          enabled: true
+          name: wide_angle_camera_rear_image_rectifier
+        wide_angle_camera_rear_nodelet_manager:
+          enabled: true
+          name: wide_angle_camera_rear_nodelet_manager
+    lpc_drivers:
+      nodes:
+        epson_driver:
+          enabled: false
+        wide_angle_camera_front_driver:
+          enabled: true
+          name: wide_angle_camera_front_driver
+        wide_angle_camera_rear_driver:
+          enabled: true
+          name: wide_angle_camera_rear_driver
+        xsensmt:
+          enabled: true
+    navigation:
+      nodes:
+        wide_angle_camera_front_image_crop_decimate:
+          enabled: false
+        wide_angle_camera_front_image_debayer:
+          enabled: false
+        wide_angle_camera_front_image_rectifier:
+          enabled: false
+        wide_angle_camera_front_nodelet_manager:
+          enabled: false
+        wide_angle_camera_rear_image_crop_decimate:
+          enabled: false
+        wide_angle_camera_rear_image_debayer:
+          enabled: false
+        wide_angle_camera_rear_image_rectifier:
+          enabled: false
+        wide_angle_camera_rear_nodelet_manager:
+          enabled: false
+    npc_drivers:
+      nodes:
+        wide_angle_camera_front_driver:
+          enabled: false
+        wide_angle_camera_rear_driver:
+          enabled: false

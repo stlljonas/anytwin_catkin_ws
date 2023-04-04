@@ -1,0 +1,54 @@
+adapt_coordinates:
+  - transform:
+      source_frame: footprint
+      target_frame: odom
+
+steps:
+
+ - step:
+    - base_auto:
+       height: 0.44
+
+ - step:
+    - base_auto:
+    - footstep:
+       name: LF_LEG
+       target:
+        frame: footprint
+        position: [0.15, 0.22, 0.0]
+
+ - step:
+    - base_auto:
+
+ - step:
+    - base_auto:
+    - footstep:
+       name: LH_LEG
+       target:
+        frame: footprint
+        position: [-0.55, 0.22, 0.0]
+
+ - step:
+    - base_auto:
+
+ - step:
+    - base_auto:
+    - footstep:
+       name: RF_LEG
+       target:
+        frame: footprint
+        position: [0.15, -0.22, 0.0]
+
+ - step:
+    - base_auto:
+
+ - step:
+    - base_auto:
+    - footstep:
+       name: RH_LEG
+       target:
+        frame: footprint
+        position: [-0.55, -0.22, 0.0]
+
+ - step:
+    - base_auto:

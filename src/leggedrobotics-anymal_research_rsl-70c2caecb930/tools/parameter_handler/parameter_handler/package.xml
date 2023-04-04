@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+
+<package format="2">
+
+  <name>parameter_handler</name>
+  <version>0.3.0</version>
+  <description>The parameter_handler package</description>
+  <url>https://github.com/anybotics/parameter_handler</url>
+
+  <license>BSD</license>
+  <maintainer email="ghottiger@anybotics.com">Gabriel Hottiger</maintainer>
+  <maintainer email="msuetterlin@anybotics.com">Marco Sütterlin</maintainer>
+  <author email="bellicoso@mavt.ethz.ch">Dario Bellicoso</author>
+  <author email="cgehring@anybotics.com">Christian Gehring</author>
+  <author email="ghottiger@anybotics.com">Gabriel Hottiger</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>message_logger</depend>
+  <depend>tinyxml_tools</depend>
+
+  <build_depend>cmake_clang_tools</build_depend>
+  <build_depend>eigen</build_depend>
+
+  <build_export_depend>eigen</build_export_depend>
+
+  <test_depend>cmake_code_coverage</test_depend>
+
+</package>

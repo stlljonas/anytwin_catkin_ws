@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- Hip -->
+  <xacro:property name="replace_hip"   value= "false"/>
+  <xacro:property name="H_r_HT_x"      value= "0.0635"/> <!-- [m] -->
+  <xacro:property name="H_r_HT_y"      value= "0.041"/> <!-- [m] -->
+  <xacro:property name="H_r_HT_z"      value= "0.0000"/> <!-- [m] -->
+  <xacro:property name="H_r_HHcom_x"   value= "0.064516258147"/> <!-- [m] -->
+  <xacro:property name="H_r_HHcom_y"   value="-0.003787101702"/> <!-- [m] -->
+  <xacro:property name="H_r_HHcom_z"   value="-0.000152184388"/> <!-- [m] -->
+  <xacro:property name="m_H"           value= "1.424620640"/> <!-- [kg] -->
+  <xacro:property name="H_Ixx_H"       value= "0.002430233495638"/> <!-- [kg * m^2] -->
+  <xacro:property name="H_Iyy_H"       value= "0.002302572391034"/> <!-- [kg * m^2] -->
+  <xacro:property name="H_Izz_H"       value= "0.001980675922705"/> <!-- [kg * m^2] -->
+  <xacro:property name="H_Ixy_H"       value="-0.000015302397100"/> <!-- [kg * m^2] -->
+  <xacro:property name="H_Ixz_H"       value="-0.000021819095354"/> <!-- [kg * m^2] -->
+  <xacro:property name="H_Iyz_H"       value= "0.000026473021273"/> <!-- [kg * m^2] -->
+
+
+  <!-- Joint HAA -->
+  <xacro:property name="s_haa_1" value="9.42"/> <!-- [rad] -->
+  <xacro:property name="s_haa_2" value="9.42"/> <!-- [rad] -->
+  <xacro:property name="v_haa" value="15"/> <!-- [rad/s] -->
+  <!-- This is the max torque in freeze mode -->
+  <xacro:property name="t_haa" value="80"/> <!-- [Nm] -->
+  <xacro:property name="d_haa" value="0.0"/> <!-- [Nms/rad] -->
+  <xacro:property name="f_haa" value="0.0"/> <!-- [Nm] -->
+  <!-- This is the max torque for control -->
+  <xacro:property name="t_haa_command" value="40"/> <!-- [Nm] -->
+  <xacro:property name="gear_velocity" value="10"/> <!-- [rad/s] -->
+  <xacro:property name="current" value="10"/> <!-- [A] -->
+
+</robot>

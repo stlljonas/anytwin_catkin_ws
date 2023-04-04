@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>free_gait_anymal_interactive_test</name>
+  <version>0.5.0</version>
+  <description>Interactive tests for the Common Free Gait modules.</description>
+  <maintainer email="fgiraldez@anybotics.com">Francisco Giráldez Gámez</maintainer>
+  <maintainer email="vyuryev@anybotics.com">Valentin Yuryev</maintainer>
+  <license>Proprietary</license>
+  <author email="pfankhauser@anybotics.com">Peter Fankhauser</author>
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>free_gait_anymal_common</depend>
+  <test_depend>anymal_description</test_depend>
+  <test_depend>free_gait_anymal_common</test_depend>
+  <test_depend>free_gait_core</test_depend>
+  <test_depend>free_gait_ros</test_depend>
+  <test_depend>interactive_markers</test_depend>
+  <test_depend>rostest</test_depend>
+</package>

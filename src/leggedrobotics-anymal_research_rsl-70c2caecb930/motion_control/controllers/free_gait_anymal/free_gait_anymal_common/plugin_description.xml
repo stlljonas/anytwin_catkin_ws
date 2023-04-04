@@ -1,0 +1,8 @@
+<library path="lib/libfree_gait_anymal_common">
+  <class type="free_gait::AdapterAnymal" base_class_type="free_gait::AdapterBase">
+    <description>Free Gait robot base adapter for ANYmal.</description>
+  </class>
+  <class type="free_gait::AdapterAnymalPreview" base_class_type="free_gait::AdapterBase">
+    <description>Free Gait robot preview adapter for ANYmal.</description>
+  </class>
+</library>

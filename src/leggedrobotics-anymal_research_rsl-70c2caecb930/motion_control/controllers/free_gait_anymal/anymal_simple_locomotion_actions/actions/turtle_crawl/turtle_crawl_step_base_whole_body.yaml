@@ -1,0 +1,12 @@
+steps:
+
+ - step:
+    - base_trajectory:
+       trajectory:
+        knots:
+         - time: 4.0
+           position: [0, 0, 0.2]
+           orientation: [0, 0, 0]
+         - time: 8.0
+           position: [0, 0, 0]
+           orientation: [0, 0, 0]

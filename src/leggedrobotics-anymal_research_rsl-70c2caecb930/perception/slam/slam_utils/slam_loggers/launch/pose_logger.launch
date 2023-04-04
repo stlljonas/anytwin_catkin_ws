@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<launch> 
+
+  <!-- Node name -->
+  <arg name="node_name"                     default="slam_pose_logger"/>
+  <!-- Input topic -->
+  <arg name="robot_pose_topic"              default="/slam/pose_visualizable"/>
+  <!-- File stream config -->
+  <arg name="file_prefix"                   default="slam"/>
+  <arg name="session_info"                  default="GlobalMapSimWyss"/>
+  <arg name="output_directory"              default="slam_loggers/"/>
+  <!-- Enable gazebo pose publisher -->
+  <arg name="run_gazebo_pose_publisher"     default="true"/>
+  <!-- Parameter files -->
+  <arg name="logger_param_file"             default="$(find slam_loggers)/config/pose_logger.yaml"/>
+  <arg name="gazebo_publisher_param_file"   default="$(find slam_loggers)/config/gazebo_pose_publisher.yaml"/>
+
+  <!-- Pose logger -->
+  <node name="$(arg node_name)" type="pose_logger" pkg="slam_loggers" output="screen">
+    <rosparam command="load"                file="$(arg logger_param_file)"/>
+
+    <param name="output_directory"              value="$(arg output_directory)"/>
+    <param name="session_info"              value="$(arg session_info)"/>
+
+    <remap from="/$(arg node_name)/robot_pose"   to="$(arg robot_pose_topic)" />
+  </node>
+
+  <!-- Gazebo pose publisher (optional) -->
+  <group if="$(arg run_gazebo_pose_publisher)">
+    <include file="$(find slam_loggers)/launch/gazebo_ground_truth_pose_publisher.launch" />
+  </group>
+
+</launch>

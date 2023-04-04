@@ -1,0 +1,10 @@
+<launch>
+
+  <!-- Set to true for simulation -->
+  <arg name="simulation" default="true"/>
+
+  <!-- Load the actuated lidar description -->
+  <param name="actuated_lidar/robot_description" command="$(find xacro)/xacro --inorder
+    simulation:=$(arg simulation)"/>
+
+</launch>

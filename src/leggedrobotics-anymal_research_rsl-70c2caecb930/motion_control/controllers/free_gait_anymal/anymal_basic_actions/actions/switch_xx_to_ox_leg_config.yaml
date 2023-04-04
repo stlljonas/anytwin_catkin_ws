@@ -1,0 +1,54 @@
+adapt_coordinates:
+  - transform:
+      source_frame: footprint
+      target_frame: odom
+
+steps:
+
+ - step:
+   - base_auto:
+      height: 0.43
+      support_margin: 0.07
+ - step:
+   - joint_trajectory:
+      name: LH_LEG
+      ignore_contact: true
+      trajectory:
+       joint_names: [HAA, HFE, KFE]
+       knots:
+         - time: 2.0
+           positions: [deg(-15), deg(-150), deg(250)]
+         - time: 4.0
+           positions: [deg(15), deg(-280), deg(280)]
+ - step:
+   - footstep:
+      name: LH_LEG
+      target:
+       frame: footprint
+       position: [-0.25, 0.23, 0.0]
+      profile_type: straight
+
+ - step:
+   - base_auto:
+      support_margin: 0.07
+ - step:
+   - joint_trajectory:
+      name: RH_LEG
+      ignore_contact: true
+      trajectory:
+       joint_names: [HAA, HFE, KFE]
+       knots:
+         - time: 2.0
+           positions: [deg(15), deg(-150), deg(250)]
+         - time: 4.0
+           positions: [deg(-15), deg(-280), deg(280)]
+ - step:
+   - footstep:
+      name: RH_LEG
+      target:
+       frame: footprint
+       position: [-0.25, -0.23, 0.0]
+      profile_type: straight
+
+ - step:
+   - base_auto:

@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<sdf version='1.4'>
+  <model name="rails">
+    <static>true</static>
+
+    <link name='rail_1'>
+      <pose>4.0 0.0 0.0 0.0 0.0 1.57079632679</pose>
+      <collision name='collision'>
+        <geometry>
+          <box>
+            <size>0.06 6.0 0.17</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name='visual'>
+        <geometry>
+          <box>
+            <size>0.06 6.0 0.17</size>
+          </box>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name='rail_2'>
+      <pose>4.0 0.45 0.0 0.0 0.0 1.57079632679</pose>
+      <collision name='collision'>
+        <geometry>
+          <box>
+            <size>0.06 6.0 0.17</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name='visual'>
+        <geometry>
+          <box>
+            <size>0.06 6.0 0.17</size>
+          </box>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name='rail_3'>
+      <pose>5.0 -1.0 0.0 0.0 0.0 0.6</pose>
+      <collision name='collision'>
+        <geometry>
+          <box>
+            <size>0.06 4.0 0.17</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name='visual'>
+        <geometry>
+          <box>
+            <size>0.06 4.0 0.17</size>
+          </box>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name='rail_4'>
+      <pose>4.45 -1.0 0.0 0.0 0.0 0.6</pose>
+      <collision name='collision'>
+        <geometry>
+          <box>
+            <size>0.06 4.0 0.17</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name='visual'>
+        <geometry>
+          <box>
+            <size>0.06 4.0 0.17</size>
+          </box>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>

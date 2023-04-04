@@ -1,0 +1,25 @@
+actions:
+  - action:
+      id: box_step_ups
+      name: Box Step Ups
+      file: actions/box_step_ups.yaml
+      type: yaml
+      description: Step up and down with front legs on a box.
+  - action:
+      id: foot_sensor_trigger_test
+      name: Foot Sensor Trigger Test
+      file: actions/foot_sensor_trigger_test.yaml
+      type: yaml
+      description: Move foot downwards to test foot sensor triggering.
+  - action:
+      id: foot_tracking_test
+      name: Foot Tracking Test
+      file: actions/foot_tracking_test.yaml
+      type: yaml
+      description: Move right fore foot up and down for tracking tests.
+  - action:
+      id: swing_test_in_air
+      name: Swing Test in Air
+      file: actions/swing_test_in_air/swing_test_in_air.py
+      type: python
+      description: Moves legs up and down in air for testing.

@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<package>
+  <name>anymal_state_monitor</name>
+  <version>0.6.0</version>
+  <description>The anymal_state_monitor package</description>
+
+  <maintainer email="sbachmann@anybotics.com">Samuel Bachmann</maintainer>
+  <maintainer email="rdiethelm@anybotics.com">Remo Diethelm</maintainer>
+
+  <license>Proprietary</license>
+
+  <author email="sbachmann@anybotics.com">Samuel Bachmann</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>notification</build_depend>
+  <build_depend>notification_msgs</build_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_depend>std_srvs</build_depend>
+  <build_depend>param_io</build_depend>
+
+  <run_depend>notification</run_depend>
+  <run_depend>notification_msgs</run_depend>
+  <run_depend>roscpp</run_depend>
+  <run_depend>std_msgs</run_depend>
+  <run_depend>std_srvs</run_depend>
+  <run_depend>param_io</run_depend>
+
+</package>

@@ -1,0 +1,26 @@
+# Hints:
+# - doubles must have a decimal point for XmlRpc
+# - timeouts can be set to infinity with 0.0
+
+subscribers:
+  default_input:
+    topic:                     /joystick/velocity
+    queue_size:                1
+  other_inputs:
+    - topic:                   /simple_pose_controller/velocity
+      queue_size:              1
+      max_timeout:             10.0
+    - topic:                   /anymal_marker/velocity
+      queue_size:              1
+      max_timeout:             10.0
+
+publishers:
+  output:
+    topic:                     output
+    queue_size:                1
+    latch:                     false
+
+servers:
+  set_active_input:            set_active_input
+  reset_active_input:          reset_active_input
+

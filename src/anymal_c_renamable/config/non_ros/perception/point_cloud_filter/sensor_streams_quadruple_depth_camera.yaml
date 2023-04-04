@@ -1,0 +1,89 @@
+# Point cloud data sources
+stream_sources:
+  - id:                     0
+    source_name:            "lidar"
+    source_type:            "lidar"
+    queue_size:             1
+    input_topic:            "/lidar/point_cloud"
+    output_topic:           "/point_cloud_filter/lidar/point_cloud_filtered"
+    filter:                 true
+    filters_config:         "pointmatcher_filters_velodyne_vlp16.yaml"
+    self_filter_config:     "self_filtering_c_body.yaml"
+    robot_description:      "/anymal_description"
+
+  - id:                     1
+    source_name:            "depth_camera_front"
+    source_type:            "depth_camera"
+    queue_size:             1
+    input_topic:            "/depth_camera_front/depth/color/points"
+    output_topic:           "/point_cloud_filter/depth_camera_front/point_cloud_filtered"
+    filter:                 true
+    filters_config:         "pointmatcher_filters_realsense_d435.yaml"
+    self_filter_config:     "self_filtering_front_limbs.yaml"
+    robot_description:      "/anymal_description"
+
+  - id:                     2
+    source_name:            "depth_camera_rear"
+    source_type:            "depth_camera"
+    queue_size:             1
+    input_topic:            "/depth_camera_rear/depth/color/points"
+    output_topic:           "/point_cloud_filter/depth_camera_rear/point_cloud_filtered"
+    filter:                 true
+    filters_config:         "pointmatcher_filters_realsense_d435_light.yaml"
+    self_filter_config:     "self_filtering_hind_limbs.yaml"
+    robot_description:      "/anymal_description"
+
+  - id:                     3
+    source_name:            "depth_camera_left"
+    source_type:            "depth_camera"
+    queue_size:             1
+    input_topic:            "/depth_camera_left/depth/color/points"
+    output_topic:           "/point_cloud_filter/depth_camera_left/point_cloud_filtered"
+    filter:                 true
+    filters_config:         "pointmatcher_filters_realsense_d435_light.yaml"
+    self_filter_config:     "self_filtering_left_limbs.yaml"
+    robot_description:      "/anymal_description"
+
+  - id:                     4
+    source_name:            "depth_camera_right"
+    source_type:            "depth_camera"
+    queue_size:             1
+    input_topic:            "/depth_camera_right/depth/color/points"
+    output_topic:           "/point_cloud_filter/depth_camera_right/point_cloud_filtered"
+    filter:                 true
+    filters_config:         "pointmatcher_filters_realsense_d435_light.yaml"
+    self_filter_config:     "self_filtering_right_limbs.yaml"
+    robot_description:      "/anymal_description"
+
+stream_combinations:
+  - name:                   "lidar_depth_camera"
+    master:                 0
+    sources:                [0, 1]
+    decimation:             5
+    target_frame:           "base"
+    keep_intensity:         true
+    max_time_offset:        0.5
+    wait_time_tf:           0.05
+    use_fixed_frame_tf:     true
+    fixed_frame_tf:         "odom"
+    output_topic:           "/point_cloud_filter/lidar_depth_camera/point_cloud_filtered"
+    filter:                 true
+    filters_config:         "pointmatcher_filters_lidar_depth_camera_middle_box.yaml"
+
+  - name:                   "quadruple_depth_camera"
+    master:                 1
+    sources:                [1, 2, 3, 4]
+    decimation:             0
+    target_frame:           "base"
+    max_time_offset:        0.5
+    wait_time_tf:           0.1
+    use_fixed_frame_tf:     true
+    fixed_frame_tf:         "odom"
+    output_topic:           "/point_cloud_filter/quadruple_depth_camera/point_cloud_filtered"
+    filter:                 false
+
+subscribers_check_period: 1.0
+
+# Log level.
+# Options: DEBUG, INFO, WARN, ERROR, FATAL and COUNT
+log_level: "INFO"

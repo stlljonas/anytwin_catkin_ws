@@ -1,0 +1,28 @@
+/*!
+\mainpage Overview
+
+\section rocoma ANYjoy - Joystick Interface and Manager
+This repository provides tools to interface and manage multiple joypads with robots. <BR>
+Following features were implemented:
+<ul>
+  <li>Priority assignement when using multiple different joystick devices</li>
+  <li>Dependency free plugins to listen at joystick commands.</li>
+  <li>Multi-threaded features that allow high controller frequencies</li>
+</ul>
+
+\section source_code Source Code
+The source code is available at <a href="https://bitbucket.org/leggedrobotics/any_joy">https://bitbucket.org/leggedrobotics/any_joy</a>.
+
+\section license License
+This library is licensed under a proprietary license.
+
+\section acknowledgement Acknowledgement
+Involved people:
+ - C. Dario Bellicoso
+ - Christian Gehring
+ - Linus Isler
+
+Contact:
+Christian Gehring  (cgehring ( at ) anybotics.com)
+*/
+//-----------------------------------------------------------

@@ -1,0 +1,7 @@
+# Device to set joint position limits. Leave empty for all devices.
+string device_name
+
+# Joint position limits.
+JointPositionLimits joint_position_limits
+
+---

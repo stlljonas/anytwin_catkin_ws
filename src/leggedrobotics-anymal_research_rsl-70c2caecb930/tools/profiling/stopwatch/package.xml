@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<package format="2">
+
+  <name>stopwatch</name>
+  <version>0.6.0</version>
+  <description>Stopwatches for profiling your algorithms.</description>
+
+  <license>Proprietary</license>
+
+  <author email="rdiethelm@anybotics.com">Remo Diethelm</author>
+  <maintainer email="rdiethelm@anybotics.com">Remo Diethelm</maintainer>
+  <maintainer email="pleemann@anybotics.com">Philipp Leemann</maintainer>
+
+  <build_depend>cmake_clang_tools</build_depend>
+  <buildtool_depend>catkin</buildtool_depend>
+
+</package>

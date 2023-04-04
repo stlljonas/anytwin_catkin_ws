@@ -1,0 +1,13 @@
+free_gait:
+  action_server: /anymal_ctrl_free_gait/execute_steps
+  pause_execution_service: /anymal_ctrl_free_gait/pause_execution
+  stop_execution_service: /anymal_ctrl_free_gait/stop_execution
+  preview_topic: /free_gait/preview_steps
+  action_state_topic: /free_gait/action_state
+  robot_description: /anymal_description
+  robot_state_topic: /state_estimator/anymal_state
+  preview_tf_prefix: preview
+  adapter_plugin:
+    base: free_gait::AdapterAnymal
+    preview: free_gait::AdapterAnymalPreview
+  adapter_ros_interface_plugin: free_gait::AdapterRosInterfaceAnymal

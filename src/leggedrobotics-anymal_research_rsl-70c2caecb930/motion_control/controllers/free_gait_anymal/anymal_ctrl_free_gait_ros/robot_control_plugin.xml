@@ -1,0 +1,4 @@
+<library path="lib/libanymal_ctrl_free_gait_ros">
+  <class type="anymal_ctrl_free_gait::FreeGaitImpedanceRos" base_class_type="robot_control::ControllerInterface" />
+  <class type="anymal_ctrl_free_gait::FreeGaitVirtualModelRos" base_class_type="robot_control::ControllerInterface" />
+</library>

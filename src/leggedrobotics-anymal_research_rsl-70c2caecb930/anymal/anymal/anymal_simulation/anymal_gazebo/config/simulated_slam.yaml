@@ -1,0 +1,27 @@
+coordinate_frames:
+  world_frame:                                  world
+  tracked_frame:                                map
+  intermediate_frame:                           odom
+  robot_frame:                                  base
+
+tf_transforms:
+  wait_time:                                    0.05
+  sampling_time:                                0.5
+
+publishers:
+  initial_guess:                                                          # Initial guess for the robot pose in map frame.
+    topic:                                      initial_guess
+    queue_size:                                 1
+    latch:                                      false
+  robot_pose_visualizable:                                                # Pose of the robot in map without covariances.
+    topic:                                      pose_visualizable
+    queue_size:                                 1
+    latch:                                      true
+  robot_pose_in_map:                                                      # Pose of the robot in map with covariances.
+    topic:                                      pose
+    queue_size:                                 1
+    latch:                                      false
+  map_pose:                                                               # Pose of the map in odometry.
+    topic:                                      map_pose
+    queue_size:                                 1
+    latch:                                      false

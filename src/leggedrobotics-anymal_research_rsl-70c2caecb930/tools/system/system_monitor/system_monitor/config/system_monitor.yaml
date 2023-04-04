@@ -1,0 +1,32 @@
+chrony_monitor:
+  update_frequency:             1.0     # [Hz], rate to monitor chrony.
+  time_offset_warn:             1.0e-5  # [s]
+  time_offset_error:            1.0e-3  # [s]
+
+cpu_monitor:
+  update_frequency:             1.0     # [Hz], rate to monitor CPU.
+  cpu_usage_warn:               0.80    # [-], as a fraction of 1.0.
+  cpu_usage_error:              0.95    # [-], as a fraction of 1.0.
+  cpu_temperature_warn:         90.0    # [°C]
+  cpu_temperature_error:       100.0    # [°C]
+
+disk_monitor:
+  update_frequency:             1.0     # [Hz], rate to monitor disk.
+  disk_usage_warn:              0.80    # [-], as a fraction of the total disk space.
+  disk_usage_error:             0.99    # [-], as a fraction of the total disk space.
+
+memory_monitor:
+  update_frequency:             1.0     # [Hz], rate to monitor memory.
+  physical_memory_usage_warn:   0.80    # [-], as a fraction of the total physical memory.
+  physical_memory_usage_error:  0.95    # [-], as a fraction of the total physical memory.
+
+network_monitor:
+  update_frequency:             0.5     # [Hz], rate to monitor network.
+  interface_name_whitelist:     []      # Regex whitelist of monitored interfaces. Empty list to monitor all interfaces. Example to monitor all networks starting with 'eth': ['^eth(.*)'].
+  interface_name_blacklist:     []      # Regex blacklist of monitored interfaces. Empty list to ignore blacklist. Example to exlude all networks containing 'docker': ['docker'].
+  network_checks:               []      # List the networks which undergo checks. Example list element:
+                                        # - interface_name:          eth0   # Name of the interface.
+                                        #   check_operation_status:  true   # Enable to show error if network is not 'up'.
+                                        #   max_traffic:             128.0  # [MB/s], maximal transmission speed, used to separately check incoming and outgoing traffic.
+                                        #   traffic_warn:            0.80   # [-], as a fraction of 'max_traffic'.
+                                        #   traffic_error:           0.95   # [-], as a fraction of 'max_traffic'.

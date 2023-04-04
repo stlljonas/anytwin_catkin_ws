@@ -1,0 +1,13 @@
+# Inspection Led Service
+
+# Intensity of the inspection led [0-1]
+float32 intensity
+
+---
+
+# Status feedback
+int8 status
+
+int8 ERROR=-1
+int8 NA=0
+int8 OK=1

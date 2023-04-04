@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>joy_interface_anymal</name>
+  <version>0.6.0</version>
+  <description>The joy_interface_anymal package</description>
+  <maintainer email="msuetterlin@anybotics.com">Marco Sütterlin</maintainer>
+  <maintainer email="lisler@anybotics.com">Linus Isler</maintainer>
+  <license>Proprietary</license>
+  <author email="lisler@anybotics.com">Linus Isler</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>joy_interface</depend>
+  <depend>sensor_msgs</depend>
+
+  <export>
+    <joy_interface plugin="${prefix}/joy_interface_anymal.xml" />
+</export>
+</package>

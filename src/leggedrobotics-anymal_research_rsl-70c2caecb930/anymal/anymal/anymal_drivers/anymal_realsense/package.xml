@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+
+<package format="2">
+
+  <name>anymal_realsense</name>
+  <version>0.6.0</version>
+  <description>Realsense launch and configuration files for ANYmal.</description>
+
+  <license>Proprietary</license>
+
+  <author email="rdiethelm@anybotics.com">Remo Diethelm</author>
+  <maintainer email="ynava@anybotics.com">Yoshua Nava</maintainer>
+  <maintainer email="mwulf@anybotics.com">Maximilian Wulf</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <exec_depend>nodelet</exec_depend>
+  <exec_depend>any_realsense2_camera</exec_depend>
+
+</package>

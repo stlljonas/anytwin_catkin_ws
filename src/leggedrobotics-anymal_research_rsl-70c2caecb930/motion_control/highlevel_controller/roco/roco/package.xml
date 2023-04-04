@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>roco</name>
+  <version>0.3.0</version>
+  <description>The Robot Controller package</description>
+
+  <license>BSD</license>
+  <maintainer email="avijayan@anybotics.com">Aravind Vijayan</maintainer>
+  <maintainer email="fgiraldez@anybotics.com">Francisco Giráldez Gámez</maintainer>
+  <author email="cgehring@anybotics.com">Christian Gehring</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>cmake_clang_tools</build_depend>
+
+  <depend>boost</depend>
+  <depend>message_logger</depend>
+
+  <test_depend>cmake_code_coverage</test_depend>
+
+</package>

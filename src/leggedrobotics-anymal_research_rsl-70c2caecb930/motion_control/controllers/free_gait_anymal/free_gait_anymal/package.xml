@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>free_gait_anymal</name>
+  <version>0.6.0</version>
+  <description>Free Gait meta package for the ANYmal robot.</description>
+  <maintainer email="vyuryev@anybotics.com">Valentin Yuryev</maintainer>
+  <maintainer email="avijayan@anybotics.com">Aravind Vijayan</maintainer>
+  <license>Proprietary</license>
+  <author email="pfankhauser@anybotics.com">Peter Fankhauser</author>
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>free_gait_anymal_common</depend>
+  <depend>free_gait_action_loader</depend>
+  <depend>locomotion_planner</depend>
+</package>

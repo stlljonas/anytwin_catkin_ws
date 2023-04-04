@@ -1,0 +1,7 @@
+<library path="lib/libinteraction_marker_plugin_locomotion_planner">
+  <class type="interaction_marker_plugin_locomotion_planner::InteractionMarkerPluginLocomotionPlanner" base_class_type="interaction_marker::InteractionMarkerPluginBase">
+    <description>
+      Interactive marker plugin for publishing goal poses for locomotion planner.
+    </description>
+  </class>
+</library>

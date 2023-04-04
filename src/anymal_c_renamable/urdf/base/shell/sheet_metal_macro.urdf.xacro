@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:macro name="shell">
+
+    <xacro:property name="B_r_BBscom_x"        value="-0.000000000048"/> <!--  [m] -->
+    <xacro:property name="B_r_BBscom_y"        value="-0.000000000011"/> <!--  [m] -->
+    <xacro:property name="B_r_BBscom_z"        value="-0.080794555630"/> <!--  [m] -->
+    <xacro:property name="m_Bs"                value= "1.245530495"/> <!-- [kg] -->
+    <xacro:property name="B_Ixx_Bs"            value= "0.007465266710576"/> <!-- [kg * m^2] -->
+    <xacro:property name="B_Iyy_Bs"            value= "0.072458943566041"/> <!-- [kg * m^2] -->
+    <xacro:property name="B_Izz_Bs"            value= "0.079203202889378"/> <!-- [kg * m^2] -->
+    <xacro:property name="B_Ixy_Bs"            value="-0.000001013781349"/> <!-- [kg * m^2] -->
+    <xacro:property name="B_Ixz_Bs"            value= "0.000000000000103"/> <!-- [kg * m^2] -->
+    <xacro:property name="B_Iyz_Bs"            value="-0.000000000000033"/> <!-- [kg * m^2] -->
+
+
+    <!-- Fixed joint base shell -->
+    <joint name="base_shell" type="fixed">
+      <parent link="base"/>
+      <child link="shell"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+    </joint>
+
+    <!-- Shell link -->
+    <link name="shell">
+<!--      <visual>-->
+<!--        <origin xyz="0 0 0" rpy="0 0 0"/>-->
+<!--        <geometry>-->
+<!--          <mesh-->
+<!--            filename="package://anymal_c/urdf/shell/3_0_mesh.dae"-->
+<!--            scale="1.0 1.0 1.0"/>-->
+<!--        </geometry>-->
+<!--      </visual>-->
+<!--      <collision>-->
+<!--        <origin xyz="0 0 0" rpy="0 0 0"/>-->
+<!--        <geometry>-->
+<!--          <mesh-->
+<!--            filename="package://anymal_c/urdf/shell/3_0_collision.dae"-->
+<!--            scale="1.0 1.0 1.0"/>-->
+<!--        </geometry>-->
+<!--      </collision>-->
+      <inertial>
+        <origin   xyz="${B_r_BBscom_x} ${B_r_BBscom_y} ${B_r_BBscom_z}"
+                  rpy="0 0 0"/>
+        <mass     value="${m_Bs}"/>
+        <inertia  ixx="${B_Ixx_Bs}" ixy="${B_Ixy_Bs}" ixz="${B_Ixz_Bs}"
+                  iyy="${B_Iyy_Bs}" iyz="${B_Iyz_Bs}" izz="${B_Izz_Bs}"/>
+      </inertial>    
+    </link>
+
+  </xacro:macro>
+
+</robot>

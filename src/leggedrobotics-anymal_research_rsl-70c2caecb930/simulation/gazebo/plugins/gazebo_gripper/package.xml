@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>gazebo_gripper</name>
+  <version>0.6.0</version>
+  <description>The gazebo_gripper package</description>
+  <license>Proprietary</license>
+
+  <author email="fperry@ethz.ch">Perry Franklin</author>
+  <maintainer email="rdiethelm@anybotics.com">Remo Diethelm</maintainer>
+  <maintainer email="pleemann@anybotics.com">Philipp Leemann</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>cmake_clang_tools</build_depend>
+  <depend>message_logger</depend>
+
+  <depend>gazebo</depend>
+  <depend>libgazebo9-dev</depend>
+
+</package>

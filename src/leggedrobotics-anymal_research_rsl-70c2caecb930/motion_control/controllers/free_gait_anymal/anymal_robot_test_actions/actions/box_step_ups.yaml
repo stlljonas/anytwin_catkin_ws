@@ -1,0 +1,90 @@
+adapt_coordinates:
+  - transform:
+      source_frame: footprint
+      target_frame: odom
+
+steps:
+
+ - step:
+    - base_auto:
+       height: 0.44
+ - step:
+    - base_auto:
+    - footstep:
+       name: RH_LEG
+       target:
+        frame: footprint
+        position: [-0.15, -0.24, 0.0]
+ - step:
+    - base_auto:
+ - step:
+    - base_auto:
+    - footstep:
+       name: LH_LEG
+       target:
+        frame: footprint
+        position: [-0.15, 0.24, 0.0]
+ - step: &base
+    - base_auto:
+ - step: &rf_up
+    - base_auto:
+    - footstep:
+       name: RF_LEG
+       profile_type: square
+       profile height: 0.05
+       target:
+        frame: footprint
+        position: [0.56, -0.24, 0.25]
+ - step:
+    - base_auto:
+ - step: &lf_up
+    - base_auto:
+    - footstep:
+       name: LF_LEG
+       profile_type: square
+       profile height: 0.05
+       target:
+        frame: footprint
+        position: [0.56, 0.24, 0.25]
+ - step:
+    - base_auto:
+ - step: &rf_down
+    - base_auto:
+    - footstep:
+       name: RF_LEG
+       profile_type: square
+       profile height: 0.05
+       target:
+        frame: footprint
+        position: [0.35, -0.2, 0.0]
+ - step:
+    - base_auto:
+ - step: &lf_down
+    - base_auto:
+    - footstep:
+       name: LF_LEG
+       profile_type: square
+       profile height: 0.05
+       target:
+        frame: footprint
+        position: [0.35, 0.2, 0.0]
+ - step:
+    - base_auto:
+
+ - step: *rf_up
+ - step: *base
+ - step: *lf_up
+ - step: *base
+ - step: *rf_down
+ - step: *base
+ - step: *lf_down
+ - step: *base
+
+ - step: *rf_up
+ - step: *base
+ - step: *lf_up
+ - step: *base
+ - step: *rf_down
+ - step: *base
+ - step: *lf_down
+ - step: *base

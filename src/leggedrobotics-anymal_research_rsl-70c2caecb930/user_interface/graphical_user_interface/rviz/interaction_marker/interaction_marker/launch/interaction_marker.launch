@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+
+  <!-- Name of the interaction marker (used as node name and ROS interface namespace) -->
+  <arg name="name"                                 default="interaction_marker"/>
+  <!-- Description of the interaction marker -->
+  <arg name="description"                          default="Interaction Marker"/>
+  <!-- Mesh resource -->
+  <arg name="mesh_resource"                        default=""/>
+  <!-- Enable/disable the usage of /tf_minimal instead of /tf -->
+  <arg name="tf_minimal"                           default="false"/>
+  <!-- Frame the marker is displayed in -->
+  <arg name="global_frame_id"                      default="global"/>
+  <!-- Frame the marker is representing -->
+  <arg name="marker_frame_id"                      default="marker"/>
+  <!-- Timeout looking for transformation for initial reset -->
+  <arg name="initial_reset_timeout"                default="5.0"/>
+  <!-- Plugin setup file -->
+  <arg name="plugin_setup_file"                    default="$(find interaction_marker)/config/test.yaml"/>
+
+  <!-- Load interaction marker -->
+  <node pkg="interaction_marker" type="interaction_marker_node" name="$(arg name)" output="screen">
+    <param name="name"                  value="$(arg name)"/>
+    <param name="description"           value="$(arg description)"/>
+    <param name="mesh_resource"         value="$(arg mesh_resource)"/>
+    <param name="global_frame_id"       value="$(arg global_frame_id)"/>
+    <param name="marker_frame_id"       value="$(arg marker_frame_id)"/>
+    <param name="initial_reset_timeout" value="$(arg initial_reset_timeout)"/>
+    <rosparam command="load" ns="plugin_setup" file="$(arg plugin_setup_file)"/>
+    <remap from="/tf" to="/tf_minimal" if="$(arg tf_minimal)"/>
+  </node>
+
+</launch>
