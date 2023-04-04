@@ -116,22 +116,22 @@
 
     <!-- describes shells-->
     <xacro:include filename="$(find anymal_c_twins)/urdf/base/shell/top_shell_3_1_1_macro.urdf.xacro"/>
-    <xacro:top_shell/>
+    <xacro:top_shell suffix="${suffix}"/>
     <xacro:include filename="$(find anymal_c_twins)/urdf/base/shell/bottom_shell_3_1_1_macro.urdf.xacro"/>
-    <xacro:bottom_shell/>
+    <xacro:bottom_shell suffix="${suffix}"/>
 
     <!-- describes remote-->
     <xacro:include filename="$(find anymal_c_twins)/urdf/base/remote/remote_3_1_1_macro.urdf.xacro"/>
-    <xacro:remote/>
+    <xacro:remote suffix="${suffix}"/>
 
     <!-- describes handle-->
     <xacro:include filename="$(find anymal_c_twins)/urdf/base/handle/handle_3_1_1_macro.urdf.xacro"/>
-    <xacro:handle/>
+    <xacro:handle suffix="${suffix}"/>
 
     <!-- describes faces-->
     <xacro:include filename="$(find anymal_c_twins)/urdf/base/face/face_3_1_1_macro.urdf.xacro"/>
-    <xacro:face face="front" simulate_depth_camera="${simulate_depth_camera}" simulate_wide_angle_camera="${simulate_wide_angle_camera}" depth_camera_pitch="${depth_camera_front_pitch}" depth_camera_roll="${depth_camera_front_roll}"/>
-    <xacro:face face="rear"  simulate_depth_camera="${simulate_depth_camera}" simulate_wide_angle_camera="${simulate_wide_angle_camera}" depth_camera_pitch="${depth_camera_rear_pitch}" depth_camera_roll="${depth_camera_rear_roll}"/>
+    <xacro:face suffix="${suffix}" face="front" simulate_depth_camera="${simulate_depth_camera}" simulate_wide_angle_camera="${simulate_wide_angle_camera}" depth_camera_pitch="${depth_camera_front_pitch}" depth_camera_roll="${depth_camera_front_roll}"/>
+    <xacro:face suffix="${suffix}" face="rear"  simulate_depth_camera="${simulate_depth_camera}" simulate_wide_angle_camera="${simulate_wide_angle_camera}" depth_camera_pitch="${depth_camera_rear_pitch}" depth_camera_roll="${depth_camera_rear_roll}"/>
 
     <!-- describes battery-->
     <xacro:if value="${battery_model == 'travel'}">

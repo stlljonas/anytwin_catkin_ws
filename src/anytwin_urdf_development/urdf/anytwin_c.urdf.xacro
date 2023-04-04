@@ -2,10 +2,16 @@
 
 <robot name="anymal_c" xmlns:xacro="http://www.ros.org/wiki/xacro">
 <!--include macro to load anymal_c versions A and B-->
-    <xacro:include filename="$(find anytwin_urdf_development)/urdf/anymal_c.urdf.xacro"/>
+    <!--xacro:include filename="$(find anytwin_urdf_development)/urdf/anymal_c.urdf.xacro"/-->
     <xacro:arg name="suffix_one" default="A"/>
     <xacro:arg name="suffix_two" default="B"/>
 
-    <xacro:anymal_c_macro suffix="$(arg suffix_one)"/>
-    <xacro:anymal_c_macro suffix="$(arg suffix_two)"/>
+    <xacro:macro name="anymal_c_macro" params="suffix">
+        <xacro:include filename="$(find anymal_c_twins)/urdf/anymal_c_${suffix}.urdf.xacro"/>
+    </xacro:macro>
+
+    <!--xacro:anymal_c_macro suffix="$(arg suffix_one)"/>
+    <xacro:anymal_c_macro suffix="$(arg suffix_two)"/-->
+    <xacro:anymal_c_macro suffix='A'/>
+    <xacro:anymal_c_macro suffix='B'/>
 </robot>

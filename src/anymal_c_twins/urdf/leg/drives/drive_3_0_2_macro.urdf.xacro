@@ -35,7 +35,7 @@
       <visual>
        <origin xyz="0 0 0" rpy="0 0 0"/>
        <geometry>
-       <mesh filename="package://anymal_c/urdf/leg/drives/drive_3_0_2_mesh.dae"
+       <mesh filename="package://anymal_c_twins/urdf/leg/drives/drive_3_0_2_mesh.dae"
              scale="${anymal_meshes_scale}"/>
        </geometry>
       </visual>

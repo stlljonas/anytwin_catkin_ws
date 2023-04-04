@@ -4,5 +4,5 @@
     <xacro:macro name="anymal_c_macro" params="suffix:='A'">
         <xacro:include filename="$(find anymal_c_twins)/urdf/anymal_c_${suffix}.urdf.xacro"/>
     </xacro:macro>
-    <xacro:anymal_c_macro suffix='A'/>
+    <xacro:anymal_c_macro suffix='B'/>
 </robot>
