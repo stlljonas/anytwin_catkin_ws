@@ -2,7 +2,7 @@
 
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-  <xacro:macro name="anymal_haa" params="leg:=LF drive_version enable_collision:=true">
+  <xacro:macro name="anymal_haa" params="leg:=LF suffix:='A' drive_version enable_collision:=true">
 
     <xacro:property name="B_r_BHaa_x"   value= "0.2999"/><!-- [m] -->
     <xacro:property name="B_r_BHaa_y"   value= "0.104"/><!-- [m] -->
@@ -19,7 +19,7 @@
 
     <!-- joint base HAA -->
     <joint name="base_${leg}_HAA" type="fixed">
-      <parent link="base"/>
+      <parent link="base_${suffix}"/>
       <child link="${leg}_HAA"/>
       <origin xyz="${front * B_r_BHaa_x} ${left * B_r_BHaa_y} ${B_r_BHaa_z}" 
               rpy="${front*left*q_BHaa_roll} 0 ${(front-1)*0.5*pi}"/>

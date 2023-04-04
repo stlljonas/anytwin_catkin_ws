@@ -2,7 +2,7 @@
 
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-  <xacro:macro name="anymal_hfe" params="leg:=LF drive_version">
+  <xacro:macro name="anymal_hfe" params="leg:=LF suffix:='A' drive_version">
 
     <xacro:property name="H_r_HHfe_x"   value= "0.0599"/><!-- [m] -->
     <xacro:property name="H_r_HHfe_y"   value= "0.08381"/><!-- [m] -->

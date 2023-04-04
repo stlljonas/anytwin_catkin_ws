@@ -2,7 +2,7 @@
 
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-  <xacro:macro name="anymal_kfe" params="leg:=LF drive_version">
+  <xacro:macro name="anymal_kfe" params="leg:=LF suffix:='A' drive_version">
 
     <xacro:property name="T_r_TKfe_x"   value="0.0"/><!-- [m] -->
     <xacro:property name="T_r_TKfe_y"   value="0.1003"/><!-- [m] -->

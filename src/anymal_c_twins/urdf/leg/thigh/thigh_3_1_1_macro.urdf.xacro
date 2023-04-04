@@ -2,7 +2,7 @@
 
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-  <xacro:macro name="anymal_thigh" params="leg:=LF">
+  <xacro:macro name="anymal_thigh" params="leg:=LF suffix:='A'">
 
     <xacro:property name="q_HfeT_yaw"       value="${-0.5*pi}"/> <!-- [rad] -->
     <xacro:property name="T_r_TTcom_x"      value="0.0"/> <!-- [m] -->

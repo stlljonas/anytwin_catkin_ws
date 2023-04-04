@@ -2,7 +2,7 @@
 
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-  <xacro:macro name="anymal_hip" params="leg:=LF">
+  <xacro:macro name="anymal_hip" params="leg:=LF suffix:='A'">
 
     <xacro:property name="q_HaaH_roll"  value= "${-150/180*pi}"/> <!-- [rad] -->
     <xacro:property name="H_r_HHcom_x"  value= "0.048"/> <!-- [m] -->
