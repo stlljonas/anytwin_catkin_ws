@@ -2,7 +2,7 @@
 
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-  <xacro:macro name="face" params="face simulate_depth_camera:=false simulate_wide_angle_camera:=false depth_camera_pitch:=30 depth_camera_roll:=0">
+  <xacro:macro name="face" params="suffix:='A' face simulate_depth_camera:=false simulate_wide_angle_camera:=false depth_camera_pitch:=30 depth_camera_roll:=0">
 
     <xacro:property name="B_r_BBf_x"        value="0.41450"/> <!--  [m] -->
     <xacro:property name="B_r_BBf_z"        value="0.00700"/> <!--  [m] -->
@@ -24,19 +24,19 @@
     <xacro:property name="direction"    value="${1 if face == 'front' else -1}"/>
 
     <!-- Fixed joint base face -->
-    <joint name="base_face_${face}" type="fixed">
-      <parent link="base"/>
-      <child link="face_${face}"/>
+    <joint name="base_face_${face}_${suffix}" type="fixed">
+      <parent link="base_${suffix}"/>
+      <child link="face_${face}_${suffix}"/>
       <origin xyz="${direction * B_r_BBf_x} 0 0" rpy="0 0 ${-0.5*(direction-1) * pi}"/>
     </joint>
 
     <!-- Shell link -->
-    <link name="face_${face}">
+    <link name="face_${face}_${suffix}">
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0"/>
        <geometry>
           <mesh
-            filename="package://anymal_c/urdf/base/face/face_3_1_1_mesh.dae"
+            filename="package://anymal_c_twins/urdf/base/face/face_3_1_1_mesh.dae"
             scale="1.0 1.0 1.0"/>
        </geometry>
       </visual>
@@ -68,14 +68,14 @@
     </link>
 
     <!-- Depth Camera -->
-    <xacro:include filename="$(find anymal_c)/urdf/base/sensors/depth_camera/realsense_d435_3_1_1.urdf.xacro"/>
-    <xacro:anymal_realsense name="depth_camera_${face}" parent="face_${face}" simulation="${simulate_depth_camera}">
+    <xacro:include filename="$(find anymal_c_twins)/urdf/base/sensors/depth_camera/realsense_d435_3_1_1.urdf.xacro"/>
+    <xacro:anymal_realsense name="depth_camera_${face}_${suffix}" parent="face_${face}_${suffix}" simulation="${simulate_depth_camera}">
       <origin xyz="0.04715 0.0 -0.0292" rpy="${depth_camera_roll/180*pi} ${depth_camera_pitch/180*pi} 0"/>
     </xacro:anymal_realsense>
 
     <!-- Wide Angle Camera -->
-    <xacro:include filename="$(find anymal_c)/urdf/base/sensors/wide_angle_camera/blackfly_s_3_1_1.urdf.xacro"/>
-    <xacro:blackfly name="wide_angle_camera_${face}" parent="face_${face}" simulation="${simulate_wide_angle_camera}" fps="30.0">
+    <xacro:include filename="$(find anymal_c_twins)/urdf/base/sensors/wide_angle_camera/blackfly_s_3_1_1.urdf.xacro"/>
+    <xacro:blackfly name="wide_angle_camera_${face}_${suffix}" parent="face_${face}_${suffix}" simulation="${simulate_wide_angle_camera}" fps="30.0">
       <origin xyz="0.09850 0.0 0.01497" rpy="0 0 0"/>
     </xacro:blackfly>
 

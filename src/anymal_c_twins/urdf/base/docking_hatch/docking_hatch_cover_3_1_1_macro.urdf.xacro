@@ -2,7 +2,7 @@
 
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-  <xacro:macro name="docking_hatch_cover">
+  <xacro:macro name="docking_hatch_cover" params="suffix:='A'">
 
     <xacro:property name="Dhc_r_Dhccom_x"  value= "-0.003"/> <!--  [m] -->
     <xacro:property name="Dhc_r_Dhccom_y"  value= "0.0"/> <!--  [m] -->
@@ -17,14 +17,14 @@
 
 
     <!-- Fixed joint to add docking  -->
-    <joint name="base_to_docking_hatch_cover" type="fixed">
-      <parent link="base"/>
-      <child link="docking_hatch_cover"/>
+    <joint name="base_to_docking_hatch_cover_${suffix}" type="fixed">
+      <parent link="base_${suffix}"/>
+      <child link="docking_hatch_cover_${suffix}"/>
       <origin xyz="0.343 0.0 -0.07" rpy="0 0 0"/>
     </joint>
 
     <!-- Hatch cover link -->
-    <link name="docking_hatch_cover">
+    <link name="docking_hatch_cover_${suffix}">
       <!--  TODO(fgiraldez): add visual    -->
       <inertial>
         <origin   xyz="${Dhc_r_Dhccom_x} ${Dhc_r_Dhccom_y} ${Dhc_r_Dhccom_z}"

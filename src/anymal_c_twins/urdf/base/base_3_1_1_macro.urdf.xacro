@@ -39,7 +39,7 @@
     <!-- Attach the robot to the world link if requested -->
     <xacro:if value="${fix_base}">
       <gazebo>
-        <joint name="world_joint" type="fixed">
+        <joint name="world_joint_${suffix}" type="fixed">
           <parent>base_${suffix}</parent>
           <child>world</child>
         </joint>
@@ -140,16 +140,16 @@
     <xacro:if value="${battery_model == 'regular'}">
       <xacro:include filename="$(find anymal_c_twins)/urdf/base/battery/battery_3_0_4_macro.urdf.xacro"/>
     </xacro:if>
-    <xacro:battery/>
+    <xacro:battery suffix="${suffix}"/>
 
     <!-- describes docking socket/hatch-->
     <xacro:if value="${docking_socket}">
       <xacro:include filename="$(find anymal_c_twins)/urdf/base/docking_hatch/docking_socket_3_1_1_macro.urdf.xacro"/>
-      <xacro:docking_socket/>
+      <xacro:docking_socket suffix="${suffix}"/>
     </xacro:if>
     <xacro:unless value="${docking_socket}">
       <xacro:include filename="$(find anymal_c_twins)/urdf/base/docking_hatch/docking_hatch_cover_3_1_1_macro.urdf.xacro"/>
-      <xacro:docking_hatch_cover/>
+      <xacro:docking_hatch_cover suffix="${suffix}"/>
     </xacro:unless>
 
     <!-- Epson IMU -->

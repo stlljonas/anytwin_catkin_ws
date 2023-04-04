@@ -2,7 +2,7 @@
 
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-  <xacro:macro name="handle">
+  <xacro:macro name="handle" params="suffix:='A'">
 
     <xacro:property name="B_r_BBbcom_x" value= "0.37801"/> <!--  [m] -->
     <xacro:property name="B_r_BBbcom_y" value= "0.0"/> <!--  [m] -->
@@ -17,19 +17,19 @@
 
 
     <!-- Fixed joint base handle -->
-    <joint name="base_handle" type="fixed">
-      <parent link="base"/>
-      <child link="handle"/>
+    <joint name="base_handle_${suffix}" type="fixed">
+      <parent link="base_${suffix}"/>
+      <child link="handle_${suffix}"/>
       <origin xyz="0 0 0" rpy="0 0 0"/>
     </joint>
 
     <!-- Handle link -->
-    <link name="handle">
+    <link name="handle_${suffix}">
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
           <mesh
-            filename="package://anymal_c/urdf/base/handle/handle_3_1_1_mesh.dae"
+            filename="package://anymal_c_twins/urdf/base/handle/handle_3_1_1_mesh.dae"
             scale="${anymal_meshes_scale}"/>
         </geometry>
       </visual>

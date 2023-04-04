@@ -2,7 +2,7 @@
 
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-  <xacro:macro name="top_shell">
+  <xacro:macro name="top_shell" params="suffix:='A'">
 
     <xacro:property name="B_r_BBscom_x"        value="-0.00777"/> <!--  [m] -->
     <xacro:property name="B_r_BBscom_y"        value="-0.00013"/> <!--  [m] -->
@@ -17,7 +17,7 @@
 
     <!-- Fixed joint base topshell -->
     <joint name="base_top_shell" type="fixed">
-      <parent link="base"/>
+      <parent link="base_${suffix}"/>
       <child link="top_shell"/>
       <origin xyz="0 0 0" rpy="0 0 0"/>
     </joint>
@@ -28,7 +28,7 @@
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
           <mesh
-            filename="package://anymal_c/urdf/base/shell/top_shell_3_1_1_mesh.dae"
+            filename="package://anymal_c_twins/urdf/base/shell/top_shell_3_1_1_mesh.dae"
             scale="1.0 1.0 1.0"/>
         </geometry>
       </visual>

@@ -2,7 +2,7 @@
 
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-  <xacro:macro name="docking_socket">
+  <xacro:macro name="docking_socket" params="suffix:='A'">
 
     <xacro:property name="Ds_r_Dscom_x"  value= "-0.002"/> <!--  [m] -->
     <xacro:property name="Ds_r_Dscom_y"  value= "-0.001"/> <!--  [m] -->
@@ -17,14 +17,14 @@
 
 
     <!-- Fixed joint to add docking  -->
-    <joint name="base_to_docking_socket" type="fixed">
-      <parent link="base"/>
-      <child link="docking_socket"/>
+    <joint name="base_to_docking_socket_${suffix}" type="fixed">
+      <parent link="base_${suffix}"/>
+      <child link="docking_socket_${suffix}"/>
       <origin xyz="0.343 0.0 -0.07" rpy="0 0 0"/>
     </joint>
 
     <!-- Hatch cover link -->
-    <link name="docking_socket">
+    <link name="docking_socket_${suffix}">
       <!--  TODO(fgiraldez): add visual    -->
       <inertial>
         <origin   xyz="${Ds_r_Dscom_x} ${Ds_r_Dscom_y} ${Ds_r_Dscom_z}"

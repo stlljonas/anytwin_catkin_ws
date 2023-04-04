@@ -115,10 +115,10 @@
     <xacro:include filename="$(find anymal_c_twins)/urdf/leg/leg_3_1_1_macro.urdf.xacro"/>
   </xacro:if>
 
-  <xacro:leg leg="LF"/>
-  <xacro:leg leg="RF"/>
-  <xacro:leg leg="LH"/>
-  <xacro:leg leg="RH"/>
+  <xacro:leg leg="LF" suffix="$(arg suffix)"/>
+  <xacro:leg leg="RF" suffix="$(arg suffix)"/>
+  <xacro:leg leg="LH" suffix="$(arg suffix)"/>
+  <xacro:leg leg="RH" suffix="$(arg suffix)"/>
 
   <!-- Custom payload -->
   <xacro:if value="$(arg enable_custom_payload)">

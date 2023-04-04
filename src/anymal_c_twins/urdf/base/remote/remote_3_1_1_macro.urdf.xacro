@@ -2,7 +2,7 @@
 
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-  <xacro:macro name="remote">
+  <xacro:macro name="remote" params="suffix:='A'">
 
     <xacro:property name="B_r_BBbcom_x" value="-0.171"/> <!--  [m] -->
     <xacro:property name="B_r_BBbcom_y" value= "0.002"/> <!--  [m] -->
@@ -17,19 +17,19 @@
 
 
     <!-- Fixed joint base remote -->
-    <joint name="base_remote" type="fixed">
-      <parent link="base"/>
-      <child link="remote"/>
+    <joint name="base_remote_${suffix}" type="fixed">
+      <parent link="base_${suffix}"/>
+      <child link="remote_${suffix}"/>
       <origin xyz="0 0 0" rpy="0 0 0"/>
     </joint>
 
     <!-- Remote link -->
-    <link name="remote">
+    <link name="remote_${suffix}">
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0"/>
        <geometry>
           <mesh
-            filename="package://anymal_c/urdf/base/remote/remote_3_1_1_mesh.dae"
+            filename="package://anymal_c_twins/urdf/base/remote/remote_3_1_1_mesh.dae"
             scale="${anymal_meshes_scale}"/>
         </geometry>
       </visual>
