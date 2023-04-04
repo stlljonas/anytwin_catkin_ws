@@ -1,0 +1,1807 @@
+diff --git a/src/anymal_c_renamable/CMakeLists.txt b/src/anymal_c_twins/CMakeLists.txt
+similarity index 100%
+rename from src/anymal_c_renamable/CMakeLists.txt
+rename to src/anymal_c_twins/CMakeLists.txt
+diff --git a/src/anymal_c_renamable/README.md b/src/anymal_c_twins/README.md
+similarity index 100%
+rename from src/anymal_c_renamable/README.md
+rename to src/anymal_c_twins/README.md
+diff --git a/src/anymal_c_renamable/config/default.yaml b/src/anymal_c_twins/config/default.yaml
+similarity index 100%
+rename from src/anymal_c_renamable/config/default.yaml
+rename to src/anymal_c_twins/config/default.yaml
+diff --git a/src/anymal_c_renamable/config/extension/none.yaml b/src/anymal_c_twins/config/extension/none.yaml
+similarity index 100%
+rename from src/anymal_c_renamable/config/extension/none.yaml
+rename to src/anymal_c_twins/config/extension/none.yaml
+diff --git a/src/anymal_c_renamable/config/feature_toggles/application_module/agpu.yaml b/src/anymal_c_twins/config/feature_toggles/application_module/agpu.yaml
+similarity index 100%
+rename from src/anymal_c_renamable/config/feature_toggles/application_module/agpu.yaml
+rename to src/anymal_c_twins/config/feature_toggles/application_module/agpu.yaml
+diff --git a/src/anymal_c_renamable/config/feature_toggles/application_module/apc.yaml b/src/anymal_c_twins/config/feature_toggles/application_module/apc.yaml
+similarity index 100%
+rename from src/anymal_c_renamable/config/feature_toggles/application_module/apc.yaml
+rename to src/anymal_c_twins/config/feature_toggles/application_module/apc.yaml
+diff --git a/src/anymal_c_renamable/config/feature_toggles/battery_model/regular.yaml b/src/anymal_c_twins/config/feature_toggles/battery_model/regular.yaml
+similarity index 100%
+rename from src/anymal_c_renamable/config/feature_toggles/battery_model/regular.yaml
+rename to src/anymal_c_twins/config/feature_toggles/battery_model/regular.yaml
+diff --git a/src/anymal_c_renamable/config/feature_toggles/battery_model/travel.yaml b/src/anymal_c_twins/config/feature_toggles/battery_model/travel.yaml
+similarity index 100%
+rename from src/anymal_c_renamable/config/feature_toggles/battery_model/travel.yaml
+rename to src/anymal_c_twins/config/feature_toggles/battery_model/travel.yaml
+diff --git a/src/anymal_c_renamable/config/feature_toggles/diagnostic_mode/disabled.yaml b/src/anymal_c_twins/config/feature_toggles/diagnostic_mode/disabled.yaml
+similarity index 100%
+rename from src/anymal_c_renamable/config/feature_toggles/diagnostic_mode/disabled.yaml
+rename to src/anymal_c_twins/config/feature_toggles/diagnostic_mode/disabled.yaml
+diff --git a/src/anymal_c_renamable/config/feature_toggles/diagnostic_mode/enabled.yaml b/src/anymal_c_twins/config/feature_toggles/diagnostic_mode/enabled.yaml
+similarity index 100%
+rename from src/anymal_c_renamable/config/feature_toggles/diagnostic_mode/enabled.yaml
+rename to src/anymal_c_twins/config/feature_toggles/diagnostic_mode/enabled.yaml
+diff --git a/src/anymal_c_renamable/config/feature_toggles/docking/disabled.yaml b/src/anymal_c_twins/config/feature_toggles/docking/disabled.yaml
+similarity index 100%
+rename from src/anymal_c_renamable/config/feature_toggles/docking/disabled.yaml
+rename to src/anymal_c_twins/config/feature_toggles/docking/disabled.yaml
+diff --git a/src/anymal_c_renamable/config/feature_toggles/docking/enabled.yaml b/src/anymal_c_twins/config/feature_toggles/docking/enabled.yaml
+similarity index 100%
+rename from src/anymal_c_renamable/config/feature_toggles/docking/enabled.yaml
+rename to src/anymal_c_twins/config/feature_toggles/docking/enabled.yaml
+diff --git a/src/anymal_c_renamable/config/feature_toggles/inspection/auditive_inspection_frequency/disabled.yaml b/src/anymal_c_twins/config/feature_toggles/inspection/auditive_inspection_frequency/disabled.yaml
+similarity index 100%
+rename from src/anymal_c_renamable/config/feature_toggles/inspection/auditive_inspection_frequency/disabled.yaml
+rename to src/anymal_c_twins/config/feature_toggles/inspection/auditive_inspection_frequency/disabled.yaml
+diff --git a/src/anymal_c_renamable/config/feature_toggles/inspection/auditive_inspection_frequency/enabled.yaml b/src/anymal_c_twins/config/feature_toggles/inspection/auditive_inspection_frequency/enabled.yaml
+similarity index 100%
+rename from src/anymal_c_renamable/config/feature_toggles/inspection/auditive_inspection_frequency/enabled.yaml
+rename to src/anymal_c_twins/config/feature_toggles/inspection/auditive_inspection_frequency/enabled.yaml
+diff --git a/src/anymal_c_renamable/config/feature_toggles/inspection/inspection_payload/disabled.yaml b/src/anymal_c_twins/config/feature_toggles/inspection/inspection_payload/disabled.yaml
+similarity index 100%
+rename from src/anymal_c_renamable/config/feature_toggles/inspection/inspection_payload/disabled.yaml
+rename to src/anymal_c_twins/config/feature_toggles/inspection/inspection_payload/disabled.yaml
+diff --git a/src/anymal_c_renamable/config/feature_toggles/inspection/inspection_payload/enabled.yaml b/src/anymal_c_twins/config/feature_toggles/inspection/inspection_payload/enabled.yaml
+similarity index 100%
+rename from src/anymal_c_renamable/config/feature_toggles/inspection/inspection_payload/enabled.yaml
+rename to src/anymal_c_twins/config/feature_toggles/inspection/inspection_payload/enabled.yaml
+diff --git a/src/anymal_c_renamable/config/feature_toggles/inspection/visual_inspection_dial/disabled.yaml b/src/anymal_c_twins/config/feature_toggles/inspection/visual_inspection_dial/disabled.yaml
+similarity index 100%
+rename from src/anymal_c_renamable/config/feature_toggles/inspection/visual_inspection_dial/disabled.yaml
+rename to src/anymal_c_twins/config/feature_toggles/inspection/visual_inspection_dial/disabled.yaml
+diff --git a/src/anymal_c_renamable/config/feature_toggles/inspection/visual_inspection_dial/enabled.yaml b/src/anymal_c_twins/config/feature_toggles/inspection/visual_inspection_dial/enabled.yaml
+similarity index 100%
+rename from src/anymal_c_renamable/config/feature_toggles/inspection/visual_inspection_dial/enabled.yaml
+rename to src/anymal_c_twins/config/feature_toggles/inspection/visual_inspection_dial/enabled.yaml
+diff --git a/src/anymal_c_renamable/config/feature_toggles/motion_control/legacy.yaml b/src/anymal_c_twins/config/feature_toggles/motion_control/legacy.yaml
+similarity index 100%
+rename from src/anymal_c_renamable/config/feature_toggles/motion_control/legacy.yaml
+rename to src/anymal_c_twins/config/feature_toggles/motion_control/legacy.yaml
+diff --git a/src/anymal_c_renamable/config/feature_toggles/motion_control/new.yaml b/src/anymal_c_twins/config/feature_toggles/motion_control/new.yaml
+similarity index 100%
+rename from src/anymal_c_renamable/config/feature_toggles/motion_control/new.yaml
+rename to src/anymal_c_twins/config/feature_toggles/motion_control/new.yaml
+diff --git a/src/anymal_c_renamable/config/feature_toggles/point_cloud_odometry/real.yaml b/src/anymal_c_twins/config/feature_toggles/point_cloud_odometry/real.yaml
+similarity index 100%
+rename from src/anymal_c_renamable/config/feature_toggles/point_cloud_odometry/real.yaml
+rename to src/anymal_c_twins/config/feature_toggles/point_cloud_odometry/real.yaml
+diff --git a/src/anymal_c_renamable/config/feature_toggles/point_cloud_odometry/simulated.yaml b/src/anymal_c_twins/config/feature_toggles/point_cloud_odometry/simulated.yaml
+similarity index 100%
+rename from src/anymal_c_renamable/config/feature_toggles/point_cloud_odometry/simulated.yaml
+rename to src/anymal_c_twins/config/feature_toggles/point_cloud_odometry/simulated.yaml
+diff --git a/src/anymal_c_renamable/config/feature_toggles/slam/icp_tools.yaml b/src/anymal_c_twins/config/feature_toggles/slam/icp_tools.yaml
+similarity index 100%
+rename from src/anymal_c_renamable/config/feature_toggles/slam/icp_tools.yaml
+rename to src/anymal_c_twins/config/feature_toggles/slam/icp_tools.yaml
+diff --git a/src/anymal_c_renamable/config/feature_toggles/slam/pharos.yaml b/src/anymal_c_twins/config/feature_toggles/slam/pharos.yaml
+similarity index 100%
+rename from src/anymal_c_renamable/config/feature_toggles/slam/pharos.yaml
+rename to src/anymal_c_twins/config/feature_toggles/slam/pharos.yaml
+diff --git a/src/anymal_c_renamable/config/feature_toggles/slam/simulated.yaml b/src/anymal_c_twins/config/feature_toggles/slam/simulated.yaml
+similarity index 100%
+rename from src/anymal_c_renamable/config/feature_toggles/slam/simulated.yaml
+rename to src/anymal_c_twins/config/feature_toggles/slam/simulated.yaml
+diff --git a/src/anymal_c_renamable/config/feature_toggles/state_estimation/simulated.yaml b/src/anymal_c_twins/config/feature_toggles/state_estimation/simulated.yaml
+similarity index 100%
+rename from src/anymal_c_renamable/config/feature_toggles/state_estimation/simulated.yaml
+rename to src/anymal_c_twins/config/feature_toggles/state_estimation/simulated.yaml
+diff --git a/src/anymal_c_renamable/config/feature_toggles/state_estimation/tsif.yaml b/src/anymal_c_twins/config/feature_toggles/state_estimation/tsif.yaml
+similarity index 100%
+rename from src/anymal_c_renamable/config/feature_toggles/state_estimation/tsif.yaml
+rename to src/anymal_c_twins/config/feature_toggles/state_estimation/tsif.yaml
+diff --git a/src/anymal_c_renamable/config/non_ros/anydrive_c010/setup/configurations/LF_HAA.yaml b/src/anymal_c_twins/config/non_ros/anydrive_c010/setup/configurations/LF_HAA.yaml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/anydrive_c010/setup/configurations/LF_HAA.yaml
+rename to src/anymal_c_twins/config/non_ros/anydrive_c010/setup/configurations/LF_HAA.yaml
+diff --git a/src/anymal_c_renamable/config/non_ros/anydrive_c010/setup/configurations/LF_HFE.yaml b/src/anymal_c_twins/config/non_ros/anydrive_c010/setup/configurations/LF_HFE.yaml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/anydrive_c010/setup/configurations/LF_HFE.yaml
+rename to src/anymal_c_twins/config/non_ros/anydrive_c010/setup/configurations/LF_HFE.yaml
+diff --git a/src/anymal_c_renamable/config/non_ros/anydrive_c010/setup/configurations/LF_KFE.yaml b/src/anymal_c_twins/config/non_ros/anydrive_c010/setup/configurations/LF_KFE.yaml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/anydrive_c010/setup/configurations/LF_KFE.yaml
+rename to src/anymal_c_twins/config/non_ros/anydrive_c010/setup/configurations/LF_KFE.yaml
+diff --git a/src/anymal_c_renamable/config/non_ros/anydrive_c010/setup/configurations/LH_HAA.yaml b/src/anymal_c_twins/config/non_ros/anydrive_c010/setup/configurations/LH_HAA.yaml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/anydrive_c010/setup/configurations/LH_HAA.yaml
+rename to src/anymal_c_twins/config/non_ros/anydrive_c010/setup/configurations/LH_HAA.yaml
+diff --git a/src/anymal_c_renamable/config/non_ros/anydrive_c010/setup/configurations/LH_HFE.yaml b/src/anymal_c_twins/config/non_ros/anydrive_c010/setup/configurations/LH_HFE.yaml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/anydrive_c010/setup/configurations/LH_HFE.yaml
+rename to src/anymal_c_twins/config/non_ros/anydrive_c010/setup/configurations/LH_HFE.yaml
+diff --git a/src/anymal_c_renamable/config/non_ros/anydrive_c010/setup/configurations/LH_KFE.yaml b/src/anymal_c_twins/config/non_ros/anydrive_c010/setup/configurations/LH_KFE.yaml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/anydrive_c010/setup/configurations/LH_KFE.yaml
+rename to src/anymal_c_twins/config/non_ros/anydrive_c010/setup/configurations/LH_KFE.yaml
+diff --git a/src/anymal_c_renamable/config/non_ros/anydrive_c010/setup/configurations/RF_HAA.yaml b/src/anymal_c_twins/config/non_ros/anydrive_c010/setup/configurations/RF_HAA.yaml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/anydrive_c010/setup/configurations/RF_HAA.yaml
+rename to src/anymal_c_twins/config/non_ros/anydrive_c010/setup/configurations/RF_HAA.yaml
+diff --git a/src/anymal_c_renamable/config/non_ros/anydrive_c010/setup/configurations/RF_HFE.yaml b/src/anymal_c_twins/config/non_ros/anydrive_c010/setup/configurations/RF_HFE.yaml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/anydrive_c010/setup/configurations/RF_HFE.yaml
+rename to src/anymal_c_twins/config/non_ros/anydrive_c010/setup/configurations/RF_HFE.yaml
+diff --git a/src/anymal_c_renamable/config/non_ros/anydrive_c010/setup/configurations/RF_KFE.yaml b/src/anymal_c_twins/config/non_ros/anydrive_c010/setup/configurations/RF_KFE.yaml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/anydrive_c010/setup/configurations/RF_KFE.yaml
+rename to src/anymal_c_twins/config/non_ros/anydrive_c010/setup/configurations/RF_KFE.yaml
+diff --git a/src/anymal_c_renamable/config/non_ros/anydrive_c010/setup/configurations/RH_HAA.yaml b/src/anymal_c_twins/config/non_ros/anydrive_c010/setup/configurations/RH_HAA.yaml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/anydrive_c010/setup/configurations/RH_HAA.yaml
+rename to src/anymal_c_twins/config/non_ros/anydrive_c010/setup/configurations/RH_HAA.yaml
+diff --git a/src/anymal_c_renamable/config/non_ros/anydrive_c010/setup/configurations/RH_HFE.yaml b/src/anymal_c_twins/config/non_ros/anydrive_c010/setup/configurations/RH_HFE.yaml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/anydrive_c010/setup/configurations/RH_HFE.yaml
+rename to src/anymal_c_twins/config/non_ros/anydrive_c010/setup/configurations/RH_HFE.yaml
+diff --git a/src/anymal_c_renamable/config/non_ros/anydrive_c010/setup/configurations/RH_KFE.yaml b/src/anymal_c_twins/config/non_ros/anydrive_c010/setup/configurations/RH_KFE.yaml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/anydrive_c010/setup/configurations/RH_KFE.yaml
+rename to src/anymal_c_twins/config/non_ros/anydrive_c010/setup/configurations/RH_KFE.yaml
+diff --git a/src/anymal_c_renamable/config/non_ros/anydrive_c010/setup/setup.yaml b/src/anymal_c_twins/config/non_ros/anydrive_c010/setup/setup.yaml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/anydrive_c010/setup/setup.yaml
+rename to src/anymal_c_twins/config/non_ros/anydrive_c010/setup/setup.yaml
+diff --git a/src/anymal_c_renamable/config/non_ros/anydrive_c100/setup/configurations/LF_HAA.yaml b/src/anymal_c_twins/config/non_ros/anydrive_c100/setup/configurations/LF_HAA.yaml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/anydrive_c100/setup/configurations/LF_HAA.yaml
+rename to src/anymal_c_twins/config/non_ros/anydrive_c100/setup/configurations/LF_HAA.yaml
+diff --git a/src/anymal_c_renamable/config/non_ros/anydrive_c100/setup/configurations/LF_HFE.yaml b/src/anymal_c_twins/config/non_ros/anydrive_c100/setup/configurations/LF_HFE.yaml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/anydrive_c100/setup/configurations/LF_HFE.yaml
+rename to src/anymal_c_twins/config/non_ros/anydrive_c100/setup/configurations/LF_HFE.yaml
+diff --git a/src/anymal_c_renamable/config/non_ros/anydrive_c100/setup/configurations/LF_KFE.yaml b/src/anymal_c_twins/config/non_ros/anydrive_c100/setup/configurations/LF_KFE.yaml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/anydrive_c100/setup/configurations/LF_KFE.yaml
+rename to src/anymal_c_twins/config/non_ros/anydrive_c100/setup/configurations/LF_KFE.yaml
+diff --git a/src/anymal_c_renamable/config/non_ros/anydrive_c100/setup/configurations/LH_HAA.yaml b/src/anymal_c_twins/config/non_ros/anydrive_c100/setup/configurations/LH_HAA.yaml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/anydrive_c100/setup/configurations/LH_HAA.yaml
+rename to src/anymal_c_twins/config/non_ros/anydrive_c100/setup/configurations/LH_HAA.yaml
+diff --git a/src/anymal_c_renamable/config/non_ros/anydrive_c100/setup/configurations/LH_HFE.yaml b/src/anymal_c_twins/config/non_ros/anydrive_c100/setup/configurations/LH_HFE.yaml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/anydrive_c100/setup/configurations/LH_HFE.yaml
+rename to src/anymal_c_twins/config/non_ros/anydrive_c100/setup/configurations/LH_HFE.yaml
+diff --git a/src/anymal_c_renamable/config/non_ros/anydrive_c100/setup/configurations/LH_KFE.yaml b/src/anymal_c_twins/config/non_ros/anydrive_c100/setup/configurations/LH_KFE.yaml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/anydrive_c100/setup/configurations/LH_KFE.yaml
+rename to src/anymal_c_twins/config/non_ros/anydrive_c100/setup/configurations/LH_KFE.yaml
+diff --git a/src/anymal_c_renamable/config/non_ros/anydrive_c100/setup/configurations/RF_HAA.yaml b/src/anymal_c_twins/config/non_ros/anydrive_c100/setup/configurations/RF_HAA.yaml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/anydrive_c100/setup/configurations/RF_HAA.yaml
+rename to src/anymal_c_twins/config/non_ros/anydrive_c100/setup/configurations/RF_HAA.yaml
+diff --git a/src/anymal_c_renamable/config/non_ros/anydrive_c100/setup/configurations/RF_HFE.yaml b/src/anymal_c_twins/config/non_ros/anydrive_c100/setup/configurations/RF_HFE.yaml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/anydrive_c100/setup/configurations/RF_HFE.yaml
+rename to src/anymal_c_twins/config/non_ros/anydrive_c100/setup/configurations/RF_HFE.yaml
+diff --git a/src/anymal_c_renamable/config/non_ros/anydrive_c100/setup/configurations/RF_KFE.yaml b/src/anymal_c_twins/config/non_ros/anydrive_c100/setup/configurations/RF_KFE.yaml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/anydrive_c100/setup/configurations/RF_KFE.yaml
+rename to src/anymal_c_twins/config/non_ros/anydrive_c100/setup/configurations/RF_KFE.yaml
+diff --git a/src/anymal_c_renamable/config/non_ros/anydrive_c100/setup/configurations/RH_HAA.yaml b/src/anymal_c_twins/config/non_ros/anydrive_c100/setup/configurations/RH_HAA.yaml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/anydrive_c100/setup/configurations/RH_HAA.yaml
+rename to src/anymal_c_twins/config/non_ros/anydrive_c100/setup/configurations/RH_HAA.yaml
+diff --git a/src/anymal_c_renamable/config/non_ros/anydrive_c100/setup/configurations/RH_HFE.yaml b/src/anymal_c_twins/config/non_ros/anydrive_c100/setup/configurations/RH_HFE.yaml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/anydrive_c100/setup/configurations/RH_HFE.yaml
+rename to src/anymal_c_twins/config/non_ros/anydrive_c100/setup/configurations/RH_HFE.yaml
+diff --git a/src/anymal_c_renamable/config/non_ros/anydrive_c100/setup/configurations/RH_KFE.yaml b/src/anymal_c_twins/config/non_ros/anydrive_c100/setup/configurations/RH_KFE.yaml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/anydrive_c100/setup/configurations/RH_KFE.yaml
+rename to src/anymal_c_twins/config/non_ros/anydrive_c100/setup/configurations/RH_KFE.yaml
+diff --git a/src/anymal_c_renamable/config/non_ros/anydrive_c100/setup/setup.yaml b/src/anymal_c_twins/config/non_ros/anydrive_c100/setup/setup.yaml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/anydrive_c100/setup/setup.yaml
+rename to src/anymal_c_twins/config/non_ros/anydrive_c100/setup/setup.yaml
+diff --git a/src/anymal_c_renamable/config/non_ros/motion_control/HybridFreeze.xml b/src/anymal_c_twins/config/non_ros/motion_control/HybridFreeze.xml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/motion_control/HybridFreeze.xml
+rename to src/anymal_c_twins/config/non_ros/motion_control/HybridFreeze.xml
+diff --git a/src/anymal_c_renamable/config/non_ros/motion_control/JointConfigurations.xml b/src/anymal_c_twins/config/non_ros/motion_control/JointConfigurations.xml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/motion_control/JointConfigurations.xml
+rename to src/anymal_c_twins/config/non_ros/motion_control/JointConfigurations.xml
+diff --git a/src/anymal_c_renamable/config/non_ros/motion_control/JointConfigurationsSim.xml b/src/anymal_c_twins/config/non_ros/motion_control/JointConfigurationsSim.xml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/motion_control/JointConfigurationsSim.xml
+rename to src/anymal_c_twins/config/non_ros/motion_control/JointConfigurationsSim.xml
+diff --git a/src/anymal_c_renamable/config/non_ros/motion_control/TestSwingPosition.xml b/src/anymal_c_twins/config/non_ros/motion_control/TestSwingPosition.xml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/motion_control/TestSwingPosition.xml
+rename to src/anymal_c_twins/config/non_ros/motion_control/TestSwingPosition.xml
+diff --git a/src/anymal_c_renamable/config/non_ros/motion_control/anymal_ctrl_test/TestWholeBodyController.xml b/src/anymal_c_twins/config/non_ros/motion_control/anymal_ctrl_test/TestWholeBodyController.xml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/motion_control/anymal_ctrl_test/TestWholeBodyController.xml
+rename to src/anymal_c_twins/config/non_ros/motion_control/anymal_ctrl_test/TestWholeBodyController.xml
+diff --git a/src/anymal_c_renamable/config/non_ros/motion_control/dynamic_gaits_ros/ComSupportControl.xml b/src/anymal_c_twins/config/non_ros/motion_control/dynamic_gaits_ros/ComSupportControl.xml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/motion_control/dynamic_gaits_ros/ComSupportControl.xml
+rename to src/anymal_c_twins/config/non_ros/motion_control/dynamic_gaits_ros/ComSupportControl.xml
+diff --git a/src/anymal_c_renamable/config/non_ros/motion_control/dynamic_gaits_ros/ContactForceDistribution.xml b/src/anymal_c_twins/config/non_ros/motion_control/dynamic_gaits_ros/ContactForceDistribution.xml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/motion_control/dynamic_gaits_ros/ContactForceDistribution.xml
+rename to src/anymal_c_twins/config/non_ros/motion_control/dynamic_gaits_ros/ContactForceDistribution.xml
+diff --git a/src/anymal_c_renamable/config/non_ros/motion_control/dynamic_gaits_ros/ContactInvariantDamper.xml b/src/anymal_c_twins/config/non_ros/motion_control/dynamic_gaits_ros/ContactInvariantDamper.xml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/motion_control/dynamic_gaits_ros/ContactInvariantDamper.xml
+rename to src/anymal_c_twins/config/non_ros/motion_control/dynamic_gaits_ros/ContactInvariantDamper.xml
+diff --git a/src/anymal_c_renamable/config/non_ros/motion_control/dynamic_gaits_ros/EventDetector.xml b/src/anymal_c_twins/config/non_ros/motion_control/dynamic_gaits_ros/EventDetector.xml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/motion_control/dynamic_gaits_ros/EventDetector.xml
+rename to src/anymal_c_twins/config/non_ros/motion_control/dynamic_gaits_ros/EventDetector.xml
+diff --git a/src/anymal_c_renamable/config/non_ros/motion_control/dynamic_gaits_ros/FootPlacementStrategy.xml b/src/anymal_c_twins/config/non_ros/motion_control/dynamic_gaits_ros/FootPlacementStrategy.xml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/motion_control/dynamic_gaits_ros/FootPlacementStrategy.xml
+rename to src/anymal_c_twins/config/non_ros/motion_control/dynamic_gaits_ros/FootPlacementStrategy.xml
+diff --git a/src/anymal_c_renamable/config/non_ros/motion_control/dynamic_gaits_ros/ForceCalibration.xml b/src/anymal_c_twins/config/non_ros/motion_control/dynamic_gaits_ros/ForceCalibration.xml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/motion_control/dynamic_gaits_ros/ForceCalibration.xml
+rename to src/anymal_c_twins/config/non_ros/motion_control/dynamic_gaits_ros/ForceCalibration.xml
+diff --git a/src/anymal_c_renamable/config/non_ros/motion_control/dynamic_gaits_ros/ImpedanceController.xml b/src/anymal_c_twins/config/non_ros/motion_control/dynamic_gaits_ros/ImpedanceController.xml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/motion_control/dynamic_gaits_ros/ImpedanceController.xml
+rename to src/anymal_c_twins/config/non_ros/motion_control/dynamic_gaits_ros/ImpedanceController.xml
+diff --git a/src/anymal_c_renamable/config/non_ros/motion_control/dynamic_gaits_ros/LimbCoordination.xml b/src/anymal_c_twins/config/non_ros/motion_control/dynamic_gaits_ros/LimbCoordination.xml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/motion_control/dynamic_gaits_ros/LimbCoordination.xml
+rename to src/anymal_c_twins/config/non_ros/motion_control/dynamic_gaits_ros/LimbCoordination.xml
+diff --git a/src/anymal_c_renamable/config/non_ros/motion_control/dynamic_gaits_ros/Mission.xml b/src/anymal_c_twins/config/non_ros/motion_control/dynamic_gaits_ros/Mission.xml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/motion_control/dynamic_gaits_ros/Mission.xml
+rename to src/anymal_c_twins/config/non_ros/motion_control/dynamic_gaits_ros/Mission.xml
+diff --git a/src/anymal_c_renamable/config/non_ros/motion_control/dynamic_gaits_ros/MotionController.xml b/src/anymal_c_twins/config/non_ros/motion_control/dynamic_gaits_ros/MotionController.xml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/motion_control/dynamic_gaits_ros/MotionController.xml
+rename to src/anymal_c_twins/config/non_ros/motion_control/dynamic_gaits_ros/MotionController.xml
+diff --git a/src/anymal_c_renamable/config/non_ros/motion_control/dynamic_gaits_ros/Params.xml b/src/anymal_c_twins/config/non_ros/motion_control/dynamic_gaits_ros/Params.xml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/motion_control/dynamic_gaits_ros/Params.xml
+rename to src/anymal_c_twins/config/non_ros/motion_control/dynamic_gaits_ros/Params.xml
+diff --git a/src/anymal_c_renamable/config/non_ros/motion_control/dynamic_gaits_ros/PerformanceMonitor.xml b/src/anymal_c_twins/config/non_ros/motion_control/dynamic_gaits_ros/PerformanceMonitor.xml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/motion_control/dynamic_gaits_ros/PerformanceMonitor.xml
+rename to src/anymal_c_twins/config/non_ros/motion_control/dynamic_gaits_ros/PerformanceMonitor.xml
+diff --git a/src/anymal_c_renamable/config/non_ros/motion_control/dynamic_gaits_ros/TerrainModel.xml b/src/anymal_c_twins/config/non_ros/motion_control/dynamic_gaits_ros/TerrainModel.xml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/motion_control/dynamic_gaits_ros/TerrainModel.xml
+rename to src/anymal_c_twins/config/non_ros/motion_control/dynamic_gaits_ros/TerrainModel.xml
+diff --git a/src/anymal_c_renamable/config/non_ros/motion_control/dynamic_gaits_ros/TerrainPerception.xml b/src/anymal_c_twins/config/non_ros/motion_control/dynamic_gaits_ros/TerrainPerception.xml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/motion_control/dynamic_gaits_ros/TerrainPerception.xml
+rename to src/anymal_c_twins/config/non_ros/motion_control/dynamic_gaits_ros/TerrainPerception.xml
+diff --git a/src/anymal_c_renamable/config/non_ros/motion_control/dynamic_gaits_ros/TorsoControl.xml b/src/anymal_c_twins/config/non_ros/motion_control/dynamic_gaits_ros/TorsoControl.xml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/motion_control/dynamic_gaits_ros/TorsoControl.xml
+rename to src/anymal_c_twins/config/non_ros/motion_control/dynamic_gaits_ros/TorsoControl.xml
+diff --git a/src/anymal_c_renamable/config/non_ros/motion_control/dynamic_gaits_ros/ZmpOptimizer.xml b/src/anymal_c_twins/config/non_ros/motion_control/dynamic_gaits_ros/ZmpOptimizer.xml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/motion_control/dynamic_gaits_ros/ZmpOptimizer.xml
+rename to src/anymal_c_twins/config/non_ros/motion_control/dynamic_gaits_ros/ZmpOptimizer.xml
+diff --git a/src/anymal_c_renamable/config/non_ros/motion_control/dynamic_gaits_ros/c010/ControllerSettings.xml b/src/anymal_c_twins/config/non_ros/motion_control/dynamic_gaits_ros/c010/ControllerSettings.xml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/motion_control/dynamic_gaits_ros/c010/ControllerSettings.xml
+rename to src/anymal_c_twins/config/non_ros/motion_control/dynamic_gaits_ros/c010/ControllerSettings.xml
+diff --git a/src/anymal_c_renamable/config/non_ros/motion_control/dynamic_gaits_ros/c010/DefaultParams.xml b/src/anymal_c_twins/config/non_ros/motion_control/dynamic_gaits_ros/c010/DefaultParams.xml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/motion_control/dynamic_gaits_ros/c010/DefaultParams.xml
+rename to src/anymal_c_twins/config/non_ros/motion_control/dynamic_gaits_ros/c010/DefaultParams.xml
+diff --git a/src/anymal_c_renamable/config/non_ros/motion_control/dynamic_gaits_ros/c010/DefaultParamsSim.xml b/src/anymal_c_twins/config/non_ros/motion_control/dynamic_gaits_ros/c010/DefaultParamsSim.xml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/motion_control/dynamic_gaits_ros/c010/DefaultParamsSim.xml
+rename to src/anymal_c_twins/config/non_ros/motion_control/dynamic_gaits_ros/c010/DefaultParamsSim.xml
+diff --git a/src/anymal_c_renamable/config/non_ros/motion_control/dynamic_gaits_ros/c010/real/GaitSelection.xml b/src/anymal_c_twins/config/non_ros/motion_control/dynamic_gaits_ros/c010/real/GaitSelection.xml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/motion_control/dynamic_gaits_ros/c010/real/GaitSelection.xml
+rename to src/anymal_c_twins/config/non_ros/motion_control/dynamic_gaits_ros/c010/real/GaitSelection.xml
+diff --git a/src/anymal_c_renamable/config/non_ros/motion_control/dynamic_gaits_ros/c010/real/Params.xml b/src/anymal_c_twins/config/non_ros/motion_control/dynamic_gaits_ros/c010/real/Params.xml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/motion_control/dynamic_gaits_ros/c010/real/Params.xml
+rename to src/anymal_c_twins/config/non_ros/motion_control/dynamic_gaits_ros/c010/real/Params.xml
+diff --git a/src/anymal_c_renamable/config/non_ros/motion_control/dynamic_gaits_ros/c010/real/VirtualModelController.xml b/src/anymal_c_twins/config/non_ros/motion_control/dynamic_gaits_ros/c010/real/VirtualModelController.xml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/motion_control/dynamic_gaits_ros/c010/real/VirtualModelController.xml
+rename to src/anymal_c_twins/config/non_ros/motion_control/dynamic_gaits_ros/c010/real/VirtualModelController.xml
+diff --git a/src/anymal_c_renamable/config/non_ros/motion_control/dynamic_gaits_ros/c010/real/WholeBodyControl.xml b/src/anymal_c_twins/config/non_ros/motion_control/dynamic_gaits_ros/c010/real/WholeBodyControl.xml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/motion_control/dynamic_gaits_ros/c010/real/WholeBodyControl.xml
+rename to src/anymal_c_twins/config/non_ros/motion_control/dynamic_gaits_ros/c010/real/WholeBodyControl.xml
+diff --git a/src/anymal_c_renamable/config/non_ros/motion_control/dynamic_gaits_ros/c020_c100/ControllerSettings.xml b/src/anymal_c_twins/config/non_ros/motion_control/dynamic_gaits_ros/c020_c100/ControllerSettings.xml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/motion_control/dynamic_gaits_ros/c020_c100/ControllerSettings.xml
+rename to src/anymal_c_twins/config/non_ros/motion_control/dynamic_gaits_ros/c020_c100/ControllerSettings.xml
+diff --git a/src/anymal_c_renamable/config/non_ros/motion_control/dynamic_gaits_ros/c020_c100/DefaultParams.xml b/src/anymal_c_twins/config/non_ros/motion_control/dynamic_gaits_ros/c020_c100/DefaultParams.xml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/motion_control/dynamic_gaits_ros/c020_c100/DefaultParams.xml
+rename to src/anymal_c_twins/config/non_ros/motion_control/dynamic_gaits_ros/c020_c100/DefaultParams.xml
+diff --git a/src/anymal_c_renamable/config/non_ros/motion_control/dynamic_gaits_ros/c020_c100/DefaultParamsSim.xml b/src/anymal_c_twins/config/non_ros/motion_control/dynamic_gaits_ros/c020_c100/DefaultParamsSim.xml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/motion_control/dynamic_gaits_ros/c020_c100/DefaultParamsSim.xml
+rename to src/anymal_c_twins/config/non_ros/motion_control/dynamic_gaits_ros/c020_c100/DefaultParamsSim.xml
+diff --git a/src/anymal_c_renamable/config/non_ros/motion_control/dynamic_gaits_ros/c020_c100/real/GaitSelection.xml b/src/anymal_c_twins/config/non_ros/motion_control/dynamic_gaits_ros/c020_c100/real/GaitSelection.xml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/motion_control/dynamic_gaits_ros/c020_c100/real/GaitSelection.xml
+rename to src/anymal_c_twins/config/non_ros/motion_control/dynamic_gaits_ros/c020_c100/real/GaitSelection.xml
+diff --git a/src/anymal_c_renamable/config/non_ros/motion_control/dynamic_gaits_ros/c020_c100/real/Params.xml b/src/anymal_c_twins/config/non_ros/motion_control/dynamic_gaits_ros/c020_c100/real/Params.xml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/motion_control/dynamic_gaits_ros/c020_c100/real/Params.xml
+rename to src/anymal_c_twins/config/non_ros/motion_control/dynamic_gaits_ros/c020_c100/real/Params.xml
+diff --git a/src/anymal_c_renamable/config/non_ros/motion_control/dynamic_gaits_ros/c020_c100/real/VirtualModelController.xml b/src/anymal_c_twins/config/non_ros/motion_control/dynamic_gaits_ros/c020_c100/real/VirtualModelController.xml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/motion_control/dynamic_gaits_ros/c020_c100/real/VirtualModelController.xml
+rename to src/anymal_c_twins/config/non_ros/motion_control/dynamic_gaits_ros/c020_c100/real/VirtualModelController.xml
+diff --git a/src/anymal_c_renamable/config/non_ros/motion_control/dynamic_gaits_ros/c020_c100/real/WholeBodyControl.xml b/src/anymal_c_twins/config/non_ros/motion_control/dynamic_gaits_ros/c020_c100/real/WholeBodyControl.xml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/motion_control/dynamic_gaits_ros/c020_c100/real/WholeBodyControl.xml
+rename to src/anymal_c_twins/config/non_ros/motion_control/dynamic_gaits_ros/c020_c100/real/WholeBodyControl.xml
+diff --git a/src/anymal_c_renamable/config/non_ros/motion_control/dynamic_gaits_ros/sim/GaitSelection.xml b/src/anymal_c_twins/config/non_ros/motion_control/dynamic_gaits_ros/sim/GaitSelection.xml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/motion_control/dynamic_gaits_ros/sim/GaitSelection.xml
+rename to src/anymal_c_twins/config/non_ros/motion_control/dynamic_gaits_ros/sim/GaitSelection.xml
+diff --git a/src/anymal_c_renamable/config/non_ros/motion_control/dynamic_gaits_ros/sim/Params.xml b/src/anymal_c_twins/config/non_ros/motion_control/dynamic_gaits_ros/sim/Params.xml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/motion_control/dynamic_gaits_ros/sim/Params.xml
+rename to src/anymal_c_twins/config/non_ros/motion_control/dynamic_gaits_ros/sim/Params.xml
+diff --git a/src/anymal_c_renamable/config/non_ros/motion_control/dynamic_gaits_ros/sim/VirtualModelController.xml b/src/anymal_c_twins/config/non_ros/motion_control/dynamic_gaits_ros/sim/VirtualModelController.xml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/motion_control/dynamic_gaits_ros/sim/VirtualModelController.xml
+rename to src/anymal_c_twins/config/non_ros/motion_control/dynamic_gaits_ros/sim/VirtualModelController.xml
+diff --git a/src/anymal_c_renamable/config/non_ros/motion_control/dynamic_gaits_ros/sim/WholeBodyControl.xml b/src/anymal_c_twins/config/non_ros/motion_control/dynamic_gaits_ros/sim/WholeBodyControl.xml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/motion_control/dynamic_gaits_ros/sim/WholeBodyControl.xml
+rename to src/anymal_c_twins/config/non_ros/motion_control/dynamic_gaits_ros/sim/WholeBodyControl.xml
+diff --git a/src/anymal_c_renamable/config/non_ros/motion_control/free_gait/stair_climbing_parameters.yaml b/src/anymal_c_twins/config/non_ros/motion_control/free_gait/stair_climbing_parameters.yaml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/motion_control/free_gait/stair_climbing_parameters.yaml
+rename to src/anymal_c_twins/config/non_ros/motion_control/free_gait/stair_climbing_parameters.yaml
+diff --git a/src/anymal_c_renamable/config/non_ros/motion_control/free_gait_default/FreeGait.xml b/src/anymal_c_twins/config/non_ros/motion_control/free_gait_default/FreeGait.xml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/motion_control/free_gait_default/FreeGait.xml
+rename to src/anymal_c_twins/config/non_ros/motion_control/free_gait_default/FreeGait.xml
+diff --git a/src/anymal_c_renamable/config/non_ros/motion_control/free_gait_default/FreeGaitSim.xml b/src/anymal_c_twins/config/non_ros/motion_control/free_gait_default/FreeGaitSim.xml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/motion_control/free_gait_default/FreeGaitSim.xml
+rename to src/anymal_c_twins/config/non_ros/motion_control/free_gait_default/FreeGaitSim.xml
+diff --git a/src/anymal_c_renamable/config/non_ros/motion_control/free_gait_soft/FreeGait.xml b/src/anymal_c_twins/config/non_ros/motion_control/free_gait_soft/FreeGait.xml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/motion_control/free_gait_soft/FreeGait.xml
+rename to src/anymal_c_twins/config/non_ros/motion_control/free_gait_soft/FreeGait.xml
+diff --git a/src/anymal_c_renamable/config/non_ros/motion_control/free_gait_soft/FreeGaitSim.xml b/src/anymal_c_twins/config/non_ros/motion_control/free_gait_soft/FreeGaitSim.xml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/motion_control/free_gait_soft/FreeGaitSim.xml
+rename to src/anymal_c_twins/config/non_ros/motion_control/free_gait_soft/FreeGaitSim.xml
+diff --git a/src/anymal_c_renamable/config/non_ros/motion_control/legacy/JointConfigurations.xml b/src/anymal_c_twins/config/non_ros/motion_control/legacy/JointConfigurations.xml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/motion_control/legacy/JointConfigurations.xml
+rename to src/anymal_c_twins/config/non_ros/motion_control/legacy/JointConfigurations.xml
+diff --git a/src/anymal_c_renamable/config/non_ros/motion_control/legacy/JointConfigurationsSim.xml b/src/anymal_c_twins/config/non_ros/motion_control/legacy/JointConfigurationsSim.xml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/motion_control/legacy/JointConfigurationsSim.xml
+rename to src/anymal_c_twins/config/non_ros/motion_control/legacy/JointConfigurationsSim.xml
+diff --git a/src/anymal_c_renamable/config/non_ros/perception/point_cloud_filter/pointmatcher_filters_lidar_depth_camera_large_box.yaml b/src/anymal_c_twins/config/non_ros/perception/point_cloud_filter/pointmatcher_filters_lidar_depth_camera_large_box.yaml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/perception/point_cloud_filter/pointmatcher_filters_lidar_depth_camera_large_box.yaml
+rename to src/anymal_c_twins/config/non_ros/perception/point_cloud_filter/pointmatcher_filters_lidar_depth_camera_large_box.yaml
+diff --git a/src/anymal_c_renamable/config/non_ros/perception/point_cloud_filter/pointmatcher_filters_lidar_depth_camera_middle_box.yaml b/src/anymal_c_twins/config/non_ros/perception/point_cloud_filter/pointmatcher_filters_lidar_depth_camera_middle_box.yaml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/perception/point_cloud_filter/pointmatcher_filters_lidar_depth_camera_middle_box.yaml
+rename to src/anymal_c_twins/config/non_ros/perception/point_cloud_filter/pointmatcher_filters_lidar_depth_camera_middle_box.yaml
+diff --git a/src/anymal_c_renamable/config/non_ros/perception/point_cloud_filter/pointmatcher_filters_lidar_depth_camera_small_box.yaml b/src/anymal_c_twins/config/non_ros/perception/point_cloud_filter/pointmatcher_filters_lidar_depth_camera_small_box.yaml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/perception/point_cloud_filter/pointmatcher_filters_lidar_depth_camera_small_box.yaml
+rename to src/anymal_c_twins/config/non_ros/perception/point_cloud_filter/pointmatcher_filters_lidar_depth_camera_small_box.yaml
+diff --git a/src/anymal_c_renamable/config/non_ros/perception/point_cloud_filter/pointmatcher_filters_realsense_d435.yaml b/src/anymal_c_twins/config/non_ros/perception/point_cloud_filter/pointmatcher_filters_realsense_d435.yaml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/perception/point_cloud_filter/pointmatcher_filters_realsense_d435.yaml
+rename to src/anymal_c_twins/config/non_ros/perception/point_cloud_filter/pointmatcher_filters_realsense_d435.yaml
+diff --git a/src/anymal_c_renamable/config/non_ros/perception/point_cloud_filter/pointmatcher_filters_realsense_d435_light.yaml b/src/anymal_c_twins/config/non_ros/perception/point_cloud_filter/pointmatcher_filters_realsense_d435_light.yaml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/perception/point_cloud_filter/pointmatcher_filters_realsense_d435_light.yaml
+rename to src/anymal_c_twins/config/non_ros/perception/point_cloud_filter/pointmatcher_filters_realsense_d435_light.yaml
+diff --git a/src/anymal_c_renamable/config/non_ros/perception/point_cloud_filter/pointmatcher_filters_velodyne_vlp16.yaml b/src/anymal_c_twins/config/non_ros/perception/point_cloud_filter/pointmatcher_filters_velodyne_vlp16.yaml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/perception/point_cloud_filter/pointmatcher_filters_velodyne_vlp16.yaml
+rename to src/anymal_c_twins/config/non_ros/perception/point_cloud_filter/pointmatcher_filters_velodyne_vlp16.yaml
+diff --git a/src/anymal_c_renamable/config/non_ros/perception/point_cloud_filter/self_filtering_c_body.yaml b/src/anymal_c_twins/config/non_ros/perception/point_cloud_filter/self_filtering_c_body.yaml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/perception/point_cloud_filter/self_filtering_c_body.yaml
+rename to src/anymal_c_twins/config/non_ros/perception/point_cloud_filter/self_filtering_c_body.yaml
+diff --git a/src/anymal_c_renamable/config/non_ros/perception/point_cloud_filter/self_filtering_front_limbs.yaml b/src/anymal_c_twins/config/non_ros/perception/point_cloud_filter/self_filtering_front_limbs.yaml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/perception/point_cloud_filter/self_filtering_front_limbs.yaml
+rename to src/anymal_c_twins/config/non_ros/perception/point_cloud_filter/self_filtering_front_limbs.yaml
+diff --git a/src/anymal_c_renamable/config/non_ros/perception/point_cloud_filter/self_filtering_hind_limbs.yaml b/src/anymal_c_twins/config/non_ros/perception/point_cloud_filter/self_filtering_hind_limbs.yaml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/perception/point_cloud_filter/self_filtering_hind_limbs.yaml
+rename to src/anymal_c_twins/config/non_ros/perception/point_cloud_filter/self_filtering_hind_limbs.yaml
+diff --git a/src/anymal_c_renamable/config/non_ros/perception/point_cloud_filter/self_filtering_left_limbs.yaml b/src/anymal_c_twins/config/non_ros/perception/point_cloud_filter/self_filtering_left_limbs.yaml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/perception/point_cloud_filter/self_filtering_left_limbs.yaml
+rename to src/anymal_c_twins/config/non_ros/perception/point_cloud_filter/self_filtering_left_limbs.yaml
+diff --git a/src/anymal_c_renamable/config/non_ros/perception/point_cloud_filter/self_filtering_right_limbs.yaml b/src/anymal_c_twins/config/non_ros/perception/point_cloud_filter/self_filtering_right_limbs.yaml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/perception/point_cloud_filter/self_filtering_right_limbs.yaml
+rename to src/anymal_c_twins/config/non_ros/perception/point_cloud_filter/self_filtering_right_limbs.yaml
+diff --git a/src/anymal_c_renamable/config/non_ros/perception/point_cloud_filter/sensor_streams_quadruple_depth_camera.yaml b/src/anymal_c_twins/config/non_ros/perception/point_cloud_filter/sensor_streams_quadruple_depth_camera.yaml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/perception/point_cloud_filter/sensor_streams_quadruple_depth_camera.yaml
+rename to src/anymal_c_twins/config/non_ros/perception/point_cloud_filter/sensor_streams_quadruple_depth_camera.yaml
+diff --git a/src/anymal_c_renamable/config/non_ros/perception/point_cloud_odometry/icp.yaml b/src/anymal_c_twins/config/non_ros/perception/point_cloud_odometry/icp.yaml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/perception/point_cloud_odometry/icp.yaml
+rename to src/anymal_c_twins/config/non_ros/perception/point_cloud_odometry/icp.yaml
+diff --git a/src/anymal_c_renamable/config/non_ros/perception/point_cloud_odometry/map_filters.yaml b/src/anymal_c_twins/config/non_ros/perception/point_cloud_odometry/map_filters.yaml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/perception/point_cloud_odometry/map_filters.yaml
+rename to src/anymal_c_twins/config/non_ros/perception/point_cloud_odometry/map_filters.yaml
+diff --git a/src/anymal_c_renamable/config/non_ros/perception/slam/icp_tools/icp.yaml b/src/anymal_c_twins/config/non_ros/perception/slam/icp_tools/icp.yaml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/perception/slam/icp_tools/icp.yaml
+rename to src/anymal_c_twins/config/non_ros/perception/slam/icp_tools/icp.yaml
+diff --git a/src/anymal_c_renamable/config/non_ros/perception/slam/icp_tools/map_filters.yaml b/src/anymal_c_twins/config/non_ros/perception/slam/icp_tools/map_filters.yaml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/perception/slam/icp_tools/map_filters.yaml
+rename to src/anymal_c_twins/config/non_ros/perception/slam/icp_tools/map_filters.yaml
+diff --git a/src/anymal_c_renamable/config/non_ros/perception/slam/pharos/global_map_filters.yaml b/src/anymal_c_twins/config/non_ros/perception/slam/pharos/global_map_filters.yaml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/perception/slam/pharos/global_map_filters.yaml
+rename to src/anymal_c_twins/config/non_ros/perception/slam/pharos/global_map_filters.yaml
+diff --git a/src/anymal_c_renamable/config/non_ros/perception/slam/pharos/icp.yaml b/src/anymal_c_twins/config/non_ros/perception/slam/pharos/icp.yaml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/perception/slam/pharos/icp.yaml
+rename to src/anymal_c_twins/config/non_ros/perception/slam/pharos/icp.yaml
+diff --git a/src/anymal_c_renamable/config/non_ros/perception/slam/pharos/icp_loops.yaml b/src/anymal_c_twins/config/non_ros/perception/slam/pharos/icp_loops.yaml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/perception/slam/pharos/icp_loops.yaml
+rename to src/anymal_c_twins/config/non_ros/perception/slam/pharos/icp_loops.yaml
+diff --git a/src/anymal_c_renamable/config/non_ros/perception/slam/pharos/submap_filters.yaml b/src/anymal_c_twins/config/non_ros/perception/slam/pharos/submap_filters.yaml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/perception/slam/pharos/submap_filters.yaml
+rename to src/anymal_c_twins/config/non_ros/perception/slam/pharos/submap_filters.yaml
+diff --git a/src/anymal_c_renamable/config/non_ros/perception/state_estimation/lwf_filter_config.info b/src/anymal_c_twins/config/non_ros/perception/state_estimation/lwf_filter_config.info
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/perception/state_estimation/lwf_filter_config.info
+rename to src/anymal_c_twins/config/non_ros/perception/state_estimation/lwf_filter_config.info
+diff --git a/src/anymal_c_renamable/config/non_ros/perception/state_estimation/probabilistic_contact_estimation.xml b/src/anymal_c_twins/config/non_ros/perception/state_estimation/probabilistic_contact_estimation.xml
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/perception/state_estimation/probabilistic_contact_estimation.xml
+rename to src/anymal_c_twins/config/non_ros/perception/state_estimation/probabilistic_contact_estimation.xml
+diff --git a/src/anymal_c_renamable/config/non_ros/user_interface/rqt/rqt.perspective b/src/anymal_c_twins/config/non_ros/user_interface/rqt/rqt.perspective
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/user_interface/rqt/rqt.perspective
+rename to src/anymal_c_twins/config/non_ros/user_interface/rqt/rqt.perspective
+diff --git a/src/anymal_c_renamable/config/non_ros/user_interface/rviz/config.rviz b/src/anymal_c_twins/config/non_ros/user_interface/rviz/config.rviz
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/user_interface/rviz/config.rviz
+rename to src/anymal_c_twins/config/non_ros/user_interface/rviz/config.rviz
+diff --git a/src/anymal_c_renamable/config/non_ros/user_interface/rviz/splash.png b/src/anymal_c_twins/config/non_ros/user_interface/rviz/splash.png
+similarity index 100%
+rename from src/anymal_c_renamable/config/non_ros/user_interface/rviz/splash.png
+rename to src/anymal_c_twins/config/non_ros/user_interface/rviz/splash.png
+diff --git a/src/anymal_c_renamable/config/robot/robot.yaml b/src/anymal_c_twins/config/robot/robot.yaml
+similarity index 100%
+rename from src/anymal_c_renamable/config/robot/robot.yaml
+rename to src/anymal_c_twins/config/robot/robot.yaml
+diff --git a/src/anymal_c_renamable/config/setup/real.yaml b/src/anymal_c_twins/config/setup/real.yaml
+similarity index 100%
+rename from src/anymal_c_renamable/config/setup/real.yaml
+rename to src/anymal_c_twins/config/setup/real.yaml
+diff --git a/src/anymal_c_renamable/config/setup/sim.yaml b/src/anymal_c_twins/config/setup/sim.yaml
+similarity index 100%
+rename from src/anymal_c_renamable/config/setup/sim.yaml
+rename to src/anymal_c_twins/config/setup/sim.yaml
+diff --git a/src/anymal_c_renamable/config/setup/sim_lite.yaml b/src/anymal_c_twins/config/setup/sim_lite.yaml
+similarity index 100%
+rename from src/anymal_c_renamable/config/setup/sim_lite.yaml
+rename to src/anymal_c_twins/config/setup/sim_lite.yaml
+diff --git a/src/anymal_c_renamable/config/version/c010.yaml b/src/anymal_c_twins/config/version/c010.yaml
+similarity index 100%
+rename from src/anymal_c_renamable/config/version/c010.yaml
+rename to src/anymal_c_twins/config/version/c010.yaml
+diff --git a/src/anymal_c_renamable/config/version/c020.yaml b/src/anymal_c_twins/config/version/c020.yaml
+similarity index 100%
+rename from src/anymal_c_renamable/config/version/c020.yaml
+rename to src/anymal_c_twins/config/version/c020.yaml
+diff --git a/src/anymal_c_renamable/config/version/c100.yaml b/src/anymal_c_twins/config/version/c100.yaml
+similarity index 100%
+rename from src/anymal_c_renamable/config/version/c100.yaml
+rename to src/anymal_c_twins/config/version/c100.yaml
+diff --git a/src/anymal_c_renamable/launch/apc.launch b/src/anymal_c_twins/launch/apc.launch
+similarity index 100%
+rename from src/anymal_c_renamable/launch/apc.launch
+rename to src/anymal_c_twins/launch/apc.launch
+diff --git a/src/anymal_c_renamable/launch/clear_config.launch b/src/anymal_c_twins/launch/clear_config.launch
+similarity index 100%
+rename from src/anymal_c_renamable/launch/clear_config.launch
+rename to src/anymal_c_twins/launch/clear_config.launch
+diff --git a/src/anymal_c_renamable/launch/load_config.launch b/src/anymal_c_twins/launch/load_config.launch
+similarity index 100%
+rename from src/anymal_c_renamable/launch/load_config.launch
+rename to src/anymal_c_twins/launch/load_config.launch
+diff --git a/src/anymal_c_renamable/launch/load_robot_config.launch b/src/anymal_c_twins/launch/load_robot_config.launch
+similarity index 100%
+rename from src/anymal_c_renamable/launch/load_robot_config.launch
+rename to src/anymal_c_twins/launch/load_robot_config.launch
+diff --git a/src/anymal_c_renamable/launch/lpc.launch b/src/anymal_c_twins/launch/lpc.launch
+similarity index 100%
+rename from src/anymal_c_renamable/launch/lpc.launch
+rename to src/anymal_c_twins/launch/lpc.launch
+diff --git a/src/anymal_c_renamable/launch/notify_config_loaded.launch b/src/anymal_c_twins/launch/notify_config_loaded.launch
+similarity index 100%
+rename from src/anymal_c_renamable/launch/notify_config_loaded.launch
+rename to src/anymal_c_twins/launch/notify_config_loaded.launch
+diff --git a/src/anymal_c_renamable/launch/npc.launch b/src/anymal_c_twins/launch/npc.launch
+similarity index 100%
+rename from src/anymal_c_renamable/launch/npc.launch
+rename to src/anymal_c_twins/launch/npc.launch
+diff --git a/src/anymal_c_renamable/launch/opc.launch b/src/anymal_c_twins/launch/opc.launch
+similarity index 100%
+rename from src/anymal_c_renamable/launch/opc.launch
+rename to src/anymal_c_twins/launch/opc.launch
+diff --git a/src/anymal_c_renamable/launch/sim.launch b/src/anymal_c_twins/launch/sim.launch
+similarity index 100%
+rename from src/anymal_c_renamable/launch/sim.launch
+rename to src/anymal_c_twins/launch/sim.launch
+diff --git a/src/anymal_c_renamable/package.xml b/src/anymal_c_twins/package.xml
+similarity index 95%
+rename from src/anymal_c_renamable/package.xml
+rename to src/anymal_c_twins/package.xml
+index 252328e..c860765 100644
+--- a/src/anymal_c_renamable/package.xml
++++ b/src/anymal_c_twins/package.xml
+@@ -2,7 +2,7 @@
+ 
+ <package format="2">
+ 
+-  <name>anymal_c_renamable</name>
++  <name>anymal_c_twins</name>
+   <version>1.0.0</version>
+   <description>ANYmal C Package</description>
+ 
+diff --git a/src/anymal_c_twins/urdf/anymal_c_A.urdf.xacro b/src/anymal_c_twins/urdf/anymal_c_A.urdf.xacro
+new file mode 100644
+index 0000000..403db14
+--- /dev/null
++++ b/src/anymal_c_twins/urdf/anymal_c_A.urdf.xacro
+@@ -0,0 +1,144 @@
++<?xml version="1.0"?>
++
++<!-- This file contains the description of the ANYmal robot. -->
++
++<robot name="anymal_c_A" xmlns:xacro="http://www.ros.org/wiki/xacro">
++
++  <!-- Arguments -->
++  <xacro:arg name="suffix"                        default="A"/>
++  <xacro:arg name="simulation"                    default="true"/>
++  <xacro:arg name="perfect_sensors"               default="true"/>
++  <xacro:arg name="fix_base"                      default="false"/>
++  <xacro:arg name="simulate_depth_camera"         default="false"/>
++  <xacro:arg name="simulate_lidar"                default="false"/>
++  <xacro:arg name="simulate_wide_angle_camera"    default="false"/>
++  <xacro:arg name="enable_inspection_payload"     default="false"/>
++  <xacro:arg name="inspection_payload_version"    default="P-PTU-VTAL-A"/>
++  <xacro:arg name="simulate_zoom_camera"          default="false"/>
++  <xacro:arg name="simulate_thermal_camera"       default="false"/>
++  <xacro:arg name="enable_custom_payload"         default="false"/>
++  <xacro:arg name="custom_payload_description"    default=""/>
++  <xacro:arg name="depth_camera_front_pitch"      default="30.0"/>
++  <xacro:arg name="depth_camera_front_roll"       default="0.0"/>
++  <xacro:arg name="depth_camera_rear_pitch"       default="30.0"/>
++  <xacro:arg name="depth_camera_rear_roll"        default="0.0"/>
++  <xacro:arg name="depth_camera_left_pitch"       default="30.0"/>
++  <xacro:arg name="depth_camera_left_roll"        default="0.0"/>
++  <xacro:arg name="depth_camera_right_pitch"      default="30.0"/>
++  <xacro:arg name="depth_camera_right_roll"       default="0.0"/>
++  <xacro:arg name="imu_model"                     default="epson"/>
++  <xacro:arg name="imu_roll"                      default="0.0"/>
++  <xacro:arg name="imu_pitch"                     default="0.0"/>
++  <xacro:arg name="imu_yaw"                       default="90.0"/>
++  <xacro:arg name="battery_model"                 default="regular"/>
++  <xacro:arg name="docking_socket"                default="false"/>
++  <xacro:arg name="m_B"                           default="6.222"/>
++  <xacro:arg name="B_r_BBcom_x"                   default="-0.018"/>
++  <xacro:arg name="B_r_BBcom_y"                   default="-0.002"/>
++  <xacro:arg name="B_r_BBcom_z"                   default="0.024"/>
++  <xacro:arg name="version"                       default="c100"/>
++
++  <!-- Includes -->
++  <!-- describes mesh scale factor and contact model parameters-->
++  <xacro:include filename="$(find anymal_c_twins)/urdf/include/utils.urdf.xacro"/>
++  <!-- describes gazebo plugin if simulation argument is true-->
++  <xacro:include filename="$(find anymal_c_twins)/urdf/include/plugin.gazebo.xacro"/>
++
++  <xacro:property name="inspection_payload_version_" value="$(arg inspection_payload_version)"/>
++  <xacro:property name="version_" value="$(arg version)"/>
++
++  <!-- Base -->
++  <!-- describes base link (including base intertia dummy link) and integrated sensors-->
++  <xacro:if value="${version_ == 'c100'}">
++    <xacro:include filename="$(find anymal_c_twins)/urdf/base/base_3_1_1_macro.urdf.xacro"/>
++    <xacro:base suffix="$(arg suffix)"
++                fix_base="$(arg fix_base)"
++                simulate_depth_camera="$(arg simulate_depth_camera)"
++                simulate_lidar="$(arg simulate_lidar)"
++                simulate_wide_angle_camera="$(arg simulate_wide_angle_camera)"
++                depth_camera_front_roll="$(arg depth_camera_front_roll)"
++                depth_camera_front_pitch="$(arg depth_camera_front_pitch)"
++                depth_camera_rear_roll="$(arg depth_camera_rear_roll)"
++                depth_camera_rear_pitch="$(arg depth_camera_rear_pitch)"
++                depth_camera_left_roll="$(arg depth_camera_left_roll)"
++                depth_camera_left_pitch="$(arg depth_camera_left_pitch)"
++                depth_camera_right_roll="$(arg depth_camera_right_roll)"
++                depth_camera_right_pitch="$(arg depth_camera_right_pitch)"
++                imu_roll="$(arg imu_roll)"
++                imu_pitch="$(arg imu_pitch)"
++                imu_yaw="$(arg imu_yaw)"
++                battery_model="$(arg battery_model)"
++                docking_socket="$(arg docking_socket)"
++                m_B="$(arg m_B)"
++                B_r_BBcom_x="$(arg B_r_BBcom_x)"
++                B_r_BBcom_y="$(arg B_r_BBcom_y)"
++                B_r_BBcom_z="$(arg B_r_BBcom_z)"/>
++  </xacro:if>
++
++  <!--xacro:if value="${version_ != 'c100'}">
++    <xacro:include filename="$(find anymal_c)/urdf/base/base_3_0_macro.urdf.xacro"/>
++    <xacro:base fix_base="$(arg fix_base)"
++                simulate_depth_camera="$(arg simulate_depth_camera)"
++                simulate_lidar="$(arg simulate_lidar)"
++                simulate_wide_angle_camera="$(arg simulate_wide_angle_camera)"
++                version="${version_}"
++                depth_camera_front_roll="$(arg depth_camera_front_roll)"
++                depth_camera_front_pitch="$(arg depth_camera_front_pitch)"
++                depth_camera_rear_roll="$(arg depth_camera_rear_roll)"
++                depth_camera_rear_pitch="$(arg depth_camera_rear_pitch)"
++                depth_camera_left_roll="$(arg depth_camera_left_roll)"
++                depth_camera_left_pitch="$(arg depth_camera_left_pitch)"
++                depth_camera_right_roll="$(arg depth_camera_right_roll)"
++                depth_camera_right_pitch="$(arg depth_camera_right_pitch)"
++                imu_model="$(arg imu_model)"
++                imu_roll="$(arg imu_roll)"
++                imu_pitch="$(arg imu_pitch)"
++                imu_yaw="$(arg imu_yaw)"
++                battery_model="$(arg battery_model)"
++                docking_socket="$(arg docking_socket)"
++                m_B="$(arg m_B)"
++                B_r_BBcom_x="$(arg B_r_BBcom_x)"
++                B_r_BBcom_y="$(arg B_r_BBcom_y)"
++                B_r_BBcom_z="$(arg B_r_BBcom_z)"/>
++  </xacro:if-->
++
++  <!-- Legs -->
++  <!--xacro:if value="${version_ == 'c010'}">
++    <xacro:include filename="$(find anymal_c)/urdf/leg/leg_3_0_macro.urdf.xacro"/>
++  </xacro:if>
++
++  <xacro:if value="${version_ == 'c020'}">
++    <xacro:include filename="$(find anymal_c)/urdf/leg/leg_3_0_1_macro.urdf.xacro"/>
++  </xacro:if-->
++
++  <xacro:if value="${version_ == 'c100'}">
++    <xacro:include filename="$(find anymal_c_twins)/urdf/leg/leg_3_1_1_macro.urdf.xacro"/>
++  </xacro:if>
++
++  <xacro:leg leg="LF" suffix="$(arg suffix)"/>
++  <xacro:leg leg="RF" suffix="$(arg suffix)"/>
++  <xacro:leg leg="LH" suffix="$(arg suffix)"/>
++  <xacro:leg leg="RH" suffix="$(arg suffix)"/>
++
++  <!-- Custom payload -->
++  <xacro:if value="$(arg enable_custom_payload)">
++    <xacro:include filename="$(arg custom_payload_description)"/>
++    <xacro:custom_payload parent="base_$(arg suffix)" />
++  </xacro:if>
++
++  <!-- Inspection payload -->
++  <!-- describes inspection payload (pantilt head version 3)--> 
++  <xacro:if value="$(arg enable_inspection_payload)">
++    <xacro:include filename="$(find inspection_payload_description)/urdf/inspection_payload_odrive.urdf.xacro"/>
++    <xacro:inspection_payload name="inspection_payload" parent="base_$(arg suffix)" version="${inspection_payload_version_}">
++      <origin xyz="0.116 0.0 0.090" rpy="0 0 0"/>
++    </xacro:inspection_payload>
++  </xacro:if>
++  <xacro:unless value="$(arg enable_inspection_payload)">
++    <!-- describes hatch-->
++    <xacro:include filename="$(find anymal_c_twins)/urdf/base/hatch/hatch_3_1_1_macro.urdf.xacro"/>
++    <xacro:hatch/>
++  </xacro:unless>
++
++
++</robot>
+diff --git a/src/anymal_c_renamable/urdf/anymal_c_renamable.urdf.xacro b/src/anymal_c_twins/urdf/anymal_c_B.urdf.xacro
+similarity index 93%
+rename from src/anymal_c_renamable/urdf/anymal_c_renamable.urdf.xacro
+rename to src/anymal_c_twins/urdf/anymal_c_B.urdf.xacro
+index 674285e..4df6864 100644
+--- a/src/anymal_c_renamable/urdf/anymal_c_renamable.urdf.xacro
++++ b/src/anymal_c_twins/urdf/anymal_c_B.urdf.xacro
+@@ -2,9 +2,10 @@
+ 
+ <!-- This file contains the description of the ANYmal robot. -->
+ 
+-<robot name="anymal" xmlns:xacro="http://www.ros.org/wiki/xacro">
++<robot name="anymal_c_B" xmlns:xacro="http://www.ros.org/wiki/xacro">
+ 
+   <!-- Arguments -->
++  <xacro:arg name="suffix"                        default="B"/>
+   <xacro:arg name="simulation"                    default="true"/>
+   <xacro:arg name="perfect_sensors"               default="true"/>
+   <xacro:arg name="fix_base"                      default="false"/>
+@@ -39,9 +40,9 @@
+ 
+   <!-- Includes -->
+   <!-- describes mesh scale factor and contact model parameters-->
+-  <xacro:include filename="$(find anymal_c)/urdf/include/utils.urdf.xacro"/>
++  <xacro:include filename="$(find anymal_c_twins)/urdf/include/utils.urdf.xacro"/>
+   <!-- describes gazebo plugin if simulation argument is true-->
+-  <xacro:include filename="$(find anymal_c)/urdf/include/plugin.gazebo.xacro"/>
++  <xacro:include filename="$(find anymal_c_twins)/urdf/include/plugin.gazebo.xacro"/>
+ 
+   <xacro:property name="inspection_payload_version_" value="$(arg inspection_payload_version)"/>
+   <xacro:property name="version_" value="$(arg version)"/>
+@@ -50,7 +51,8 @@
+   <!-- describes base link (including base intertia dummy link) and integrated sensors-->
+   <xacro:if value="${version_ == 'c100'}">
+     <xacro:include filename="$(find anymal_c)/urdf/base/base_3_1_1_macro.urdf.xacro"/>
+-    <xacro:base fix_base="$(arg fix_base)"
++    <xacro:base suffix="$(arg suffix)"
++                fix_base="$(arg fix_base)"
+                 simulate_depth_camera="$(arg simulate_depth_camera)"
+                 simulate_lidar="$(arg simulate_lidar)"
+                 simulate_wide_angle_camera="$(arg simulate_wide_angle_camera)"
+@@ -73,7 +75,7 @@
+                 B_r_BBcom_z="$(arg B_r_BBcom_z)"/>
+   </xacro:if>
+ 
+-  <xacro:if value="${version_ != 'c100'}">
++  <!--xacro:if value="${version_ != 'c100'}">
+     <xacro:include filename="$(find anymal_c)/urdf/base/base_3_0_macro.urdf.xacro"/>
+     <xacro:base fix_base="$(arg fix_base)"
+                 simulate_depth_camera="$(arg simulate_depth_camera)"
+@@ -98,16 +100,16 @@
+                 B_r_BBcom_x="$(arg B_r_BBcom_x)"
+                 B_r_BBcom_y="$(arg B_r_BBcom_y)"
+                 B_r_BBcom_z="$(arg B_r_BBcom_z)"/>
+-  </xacro:if>
++  </xacro:if-->
+ 
+   <!-- Legs -->
+-  <xacro:if value="${version_ == 'c010'}">
++  <!--xacro:if value="${version_ == 'c010'}">
+     <xacro:include filename="$(find anymal_c)/urdf/leg/leg_3_0_macro.urdf.xacro"/>
+   </xacro:if>
+ 
+   <xacro:if value="${version_ == 'c020'}">
+     <xacro:include filename="$(find anymal_c)/urdf/leg/leg_3_0_1_macro.urdf.xacro"/>
+-  </xacro:if>
++  </xacro:if-->
+ 
+   <xacro:if value="${version_ == 'c100'}">
+     <xacro:include filename="$(find anymal_c)/urdf/leg/leg_3_1_1_macro.urdf.xacro"/>
+diff --git a/src/anymal_c_renamable/urdf/base/Trunk_baked.jpg b/src/anymal_c_twins/urdf/base/Trunk_baked.jpg
+similarity index 100%
+rename from src/anymal_c_renamable/urdf/base/Trunk_baked.jpg
+rename to src/anymal_c_twins/urdf/base/Trunk_baked.jpg
+diff --git a/src/anymal_c_renamable/urdf/base/base_3_0_macro.urdf.xacro b/src/anymal_c_twins/urdf/base/base_3_0_macro.urdf.xacro
+similarity index 100%
+rename from src/anymal_c_renamable/urdf/base/base_3_0_macro.urdf.xacro
+rename to src/anymal_c_twins/urdf/base/base_3_0_macro.urdf.xacro
+diff --git a/src/anymal_c_renamable/urdf/base/base_3_1_1_macro.urdf.xacro b/src/anymal_c_twins/urdf/base/base_3_1_1_macro.urdf.xacro
+similarity index 74%
+rename from src/anymal_c_renamable/urdf/base/base_3_1_1_macro.urdf.xacro
+rename to src/anymal_c_twins/urdf/base/base_3_1_1_macro.urdf.xacro
+index bd50650..b9ef2c6 100644
+--- a/src/anymal_c_renamable/urdf/base/base_3_1_1_macro.urdf.xacro
++++ b/src/anymal_c_twins/urdf/base/base_3_1_1_macro.urdf.xacro
+@@ -2,7 +2,8 @@
+ 
+ <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+ 
+-  <xacro:macro name="base" params="fix_base:=false
++  <xacro:macro name="base" params="suffix:='A'
++                                   fix_base:=false
+                                    simulate_depth_camera:=false
+                                    simulate_lidar:=false
+                                    simulate_wide_angle_camera:=false
+@@ -38,20 +39,20 @@
+     <!-- Attach the robot to the world link if requested -->
+     <xacro:if value="${fix_base}">
+       <gazebo>
+-        <joint name="world_joint" type="fixed">
+-          <parent>base</parent>
++        <joint name="world_joint_${suffix}" type="fixed">
++          <parent>base_${suffix}</parent>
+           <child>world</child>
+         </joint>
+       </gazebo>
+     </xacro:if>
+ 
+     <!-- Base link -->
+-    <link name="base">
++    <link name="base_${suffix}">
+       <visual>
+         <origin xyz="0 0 0" rpy="0 0 0"/>
+         <geometry>
+           <mesh
+-            filename="package://anymal_c/urdf/base/base_3_1_1_mesh.dae"
++            filename="package://anymal_c_twins/urdf/base/base_3_1_1_mesh.dae"
+             scale="${anymal_meshes_scale}"/>
+         </geometry>
+       </visual>
+@@ -96,14 +97,14 @@
+     </link>
+ 
+     <!-- Fixed joint to add dummy inertia link -->
+-    <joint name="base_to_base_inertia" type="fixed">
+-      <parent link="base"/>
+-      <child link="base_inertia"/>
++    <joint name="base_to_base_inertia_${suffix}" type="fixed">
++      <parent link="base_${suffix}"/>
++      <child link="base_inertia_${suffix}"/>
+       <origin xyz="0 0 0" rpy="0 0 0"/>
+     </joint>
+ 
+     <!-- Dummy inertia link, because KDL cannot have inertia on the base link -->
+-    <link name="base_inertia">
++    <link name="base_inertia_${suffix}">
+       <inertial>
+         <origin   xyz="${B_r_BBcom_x} ${B_r_BBcom_y} ${B_r_BBcom_z}"
+                   rpy="0 0 0"/>
+@@ -114,63 +115,63 @@
+     </link>
+ 
+     <!-- describes shells-->
+-    <xacro:include filename="$(find anymal_c)/urdf/base/shell/top_shell_3_1_1_macro.urdf.xacro"/>
++    <xacro:include filename="$(find anymal_c_twins)/urdf/base/shell/top_shell_3_1_1_macro.urdf.xacro"/>
+     <xacro:top_shell/>
+-    <xacro:include filename="$(find anymal_c)/urdf/base/shell/bottom_shell_3_1_1_macro.urdf.xacro"/>
++    <xacro:include filename="$(find anymal_c_twins)/urdf/base/shell/bottom_shell_3_1_1_macro.urdf.xacro"/>
+     <xacro:bottom_shell/>
+ 
+     <!-- describes remote-->
+-    <xacro:include filename="$(find anymal_c)/urdf/base/remote/remote_3_1_1_macro.urdf.xacro"/>
++    <xacro:include filename="$(find anymal_c_twins)/urdf/base/remote/remote_3_1_1_macro.urdf.xacro"/>
+     <xacro:remote/>
+ 
+     <!-- describes handle-->
+-    <xacro:include filename="$(find anymal_c)/urdf/base/handle/handle_3_1_1_macro.urdf.xacro"/>
++    <xacro:include filename="$(find anymal_c_twins)/urdf/base/handle/handle_3_1_1_macro.urdf.xacro"/>
+     <xacro:handle/>
+ 
+     <!-- describes faces-->
+-    <xacro:include filename="$(find anymal_c)/urdf/base/face/face_3_1_1_macro.urdf.xacro"/>
++    <xacro:include filename="$(find anymal_c_twins)/urdf/base/face/face_3_1_1_macro.urdf.xacro"/>
+     <xacro:face face="front" simulate_depth_camera="${simulate_depth_camera}" simulate_wide_angle_camera="${simulate_wide_angle_camera}" depth_camera_pitch="${depth_camera_front_pitch}" depth_camera_roll="${depth_camera_front_roll}"/>
+     <xacro:face face="rear"  simulate_depth_camera="${simulate_depth_camera}" simulate_wide_angle_camera="${simulate_wide_angle_camera}" depth_camera_pitch="${depth_camera_rear_pitch}" depth_camera_roll="${depth_camera_rear_roll}"/>
+ 
+     <!-- describes battery-->
+     <xacro:if value="${battery_model == 'travel'}">
+-      <xacro:include filename="$(find anymal_c)/urdf/base/battery/travel_battery_3_0_5_macro.urdf.xacro"/>
++      <xacro:include filename="$(find anymal_c_twins)/urdf/base/battery/travel_battery_3_0_5_macro.urdf.xacro"/>
+     </xacro:if>
+     <xacro:if value="${battery_model == 'regular'}">
+-      <xacro:include filename="$(find anymal_c)/urdf/base/battery/battery_3_0_4_macro.urdf.xacro"/>
++      <xacro:include filename="$(find anymal_c_twins)/urdf/base/battery/battery_3_0_4_macro.urdf.xacro"/>
+     </xacro:if>
+-    <xacro:battery/>
++    <xacro:battery suffix="${suffix}"/>
+ 
+     <!-- describes docking socket/hatch-->
+     <xacro:if value="${docking_socket}">
+-      <xacro:include filename="$(find anymal_c)/urdf/base/docking_hatch/docking_socket_3_1_1_macro.urdf.xacro"/>
+-      <xacro:docking_socket/>
++      <xacro:include filename="$(find anymal_c_twins)/urdf/base/docking_hatch/docking_socket_3_1_1_macro.urdf.xacro"/>
++      <xacro:docking_socket suffix="${suffix}"/>
+     </xacro:if>
+     <xacro:unless value="${docking_socket}">
+-      <xacro:include filename="$(find anymal_c)/urdf/base/docking_hatch/docking_hatch_cover_3_1_1_macro.urdf.xacro"/>
+-      <xacro:docking_hatch_cover/>
++      <xacro:include filename="$(find anymal_c_twins)/urdf/base/docking_hatch/docking_hatch_cover_3_1_1_macro.urdf.xacro"/>
++      <xacro:docking_hatch_cover suffix="${suffix}"/>
+     </xacro:unless>
+ 
+     <!-- Epson IMU -->
+     <xacro:include filename="$(find any_description)/urdf/sensors/imu/epson/epson.urdf.xacro"/>
+-    <xacro:epson name="imu" parent="base" update_rate="400" ns="sensors" frame_id="imu_link" topic_name="imu">
++    <xacro:epson name="imu" parent="base_${suffix}" update_rate="400" ns="sensors" frame_id="imu_link" topic_name="imu">
+         <origin xyz="0.2488 0.00835 0.04628" rpy="${imu_roll/180*pi} ${imu_pitch/180*pi} ${imu_yaw/180*pi}"/>
+     </xacro:epson>
+ 
+     <!-- Realsense left -->
+-    <xacro:include filename="$(find anymal_c)/urdf/base/sensors/depth_camera/realsense_d435_3_1_1.urdf.xacro"/>
+-    <xacro:anymal_realsense name="depth_camera_left" parent="base" simulation="${simulate_depth_camera}">
++    <xacro:include filename="$(find anymal_c_twins)/urdf/base/sensors/depth_camera/realsense_d435_3_1_1.urdf.xacro"/>
++    <xacro:anymal_realsense name="depth_camera_left" parent="base_${suffix}" simulation="${simulate_depth_camera}">
+       <origin xyz="0.0 0.07646 0.02905" rpy="${depth_camera_left_roll/180*pi} ${depth_camera_left_pitch/180*pi} ${pi/2}"/>
+     </xacro:anymal_realsense>
+ 
+     <!-- Realsense right -->
+-    <xacro:anymal_realsense name="depth_camera_right" parent="base" simulation="${simulate_depth_camera}">
++    <xacro:anymal_realsense name="depth_camera_right" parent="base_${suffix}" simulation="${simulate_depth_camera}">
+       <origin xyz="0.0 -0.07646 0.02905" rpy="${depth_camera_right_roll/180*pi} ${depth_camera_right_pitch/180*pi} ${-pi/2}"/>
+     </xacro:anymal_realsense>
+ 
+     <!-- Velodyne -->
+-    <xacro:include filename="$(find anymal_c)/urdf/base/sensors/lidar/velodyne_3_1_1.urdf.xacro"/>
+-    <xacro:anymal_velodyne name="lidar" parent="base" simulation="${simulate_lidar}" yaw="${-pi/2}">
++    <xacro:include filename="$(find anymal_c_twins)/urdf/base/sensors/lidar/velodyne_3_1_1.urdf.xacro"/>
++    <xacro:anymal_velodyne name="lidar" parent="base_${suffix}" simulation="${simulate_lidar}" yaw="${-pi/2}">
+       <origin xyz="-0.364 0.0 0.0735" rpy="0 0 0"/>
+     </xacro:anymal_velodyne>
+ 
+diff --git a/src/anymal_c_renamable/urdf/base/base_3_1_1_mesh.dae b/src/anymal_c_twins/urdf/base/base_3_1_1_mesh.dae
+similarity index 100%
+rename from src/anymal_c_renamable/urdf/base/base_3_1_1_mesh.dae
+rename to src/anymal_c_twins/urdf/base/base_3_1_1_mesh.dae
+diff --git a/src/anymal_c_renamable/urdf/base/battery/Battery_baked.jpg b/src/anymal_c_twins/urdf/base/battery/Battery_baked.jpg
+similarity index 100%
+rename from src/anymal_c_renamable/urdf/base/battery/Battery_baked.jpg
+rename to src/anymal_c_twins/urdf/base/battery/Battery_baked.jpg
+diff --git a/src/anymal_c_renamable/urdf/base/battery/battery_3_0_4_macro.urdf.xacro b/src/anymal_c_twins/urdf/base/battery/battery_3_0_4_macro.urdf.xacro
+similarity index 83%
+rename from src/anymal_c_renamable/urdf/base/battery/battery_3_0_4_macro.urdf.xacro
+rename to src/anymal_c_twins/urdf/base/battery/battery_3_0_4_macro.urdf.xacro
+index dff6366..1a0824d 100644
+--- a/src/anymal_c_renamable/urdf/base/battery/battery_3_0_4_macro.urdf.xacro
++++ b/src/anymal_c_twins/urdf/base/battery/battery_3_0_4_macro.urdf.xacro
+@@ -2,7 +2,7 @@
+ 
+ <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+ 
+-  <xacro:macro name="battery">
++  <xacro:macro name="battery" params="suffix:='A'">
+ 
+     <xacro:property name="B_r_BBbcom_x" value="-0.00067"/> <!--  [m] -->
+     <xacro:property name="B_r_BBbcom_y" value="-0.00023"/> <!--  [m] -->
+@@ -17,19 +17,19 @@
+ 
+ 
+     <!-- Fixed joint base battery -->
+-    <joint name="base_battery" type="fixed">
+-      <parent link="base"/>
+-      <child link="battery"/>
++    <joint name="base_battery_${suffix}" type="fixed">
++      <parent link="base_${suffix}"/>
++      <child link="battery_${suffix}"/>
+       <origin xyz="0 0 0" rpy="0 0 0"/>
+     </joint>
+ 
+     <!-- Shell link -->
+-    <link name="battery">
++    <link name="battery_${suffix}">
+       <visual>
+         <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+           <mesh
+-            filename="package://anymal_c/urdf/base/battery/battery_3_0_4_mesh.dae"
++            filename="package://anymal_c_twins/urdf/base/battery/battery_3_0_4_mesh.dae"
+             scale="${anymal_meshes_scale}"/>
+         </geometry>
+       </visual>
+diff --git a/src/anymal_c_renamable/urdf/base/battery/battery_3_0_4_mesh.dae b/src/anymal_c_twins/urdf/base/battery/battery_3_0_4_mesh.dae
+similarity index 100%
+rename from src/anymal_c_renamable/urdf/base/battery/battery_3_0_4_mesh.dae
+rename to src/anymal_c_twins/urdf/base/battery/battery_3_0_4_mesh.dae
+diff --git a/src/anymal_c_renamable/urdf/base/battery/travel_battery_3_0_5_macro.urdf.xacro b/src/anymal_c_twins/urdf/base/battery/travel_battery_3_0_5_macro.urdf.xacro
+similarity index 100%
+rename from src/anymal_c_renamable/urdf/base/battery/travel_battery_3_0_5_macro.urdf.xacro
+rename to src/anymal_c_twins/urdf/base/battery/travel_battery_3_0_5_macro.urdf.xacro
+diff --git a/src/anymal_c_renamable/urdf/base/docking_hatch/docking_hatch_cover_3_1_1_macro.urdf.xacro b/src/anymal_c_twins/urdf/base/docking_hatch/docking_hatch_cover_3_1_1_macro.urdf.xacro
+similarity index 84%
+rename from src/anymal_c_renamable/urdf/base/docking_hatch/docking_hatch_cover_3_1_1_macro.urdf.xacro
+rename to src/anymal_c_twins/urdf/base/docking_hatch/docking_hatch_cover_3_1_1_macro.urdf.xacro
+index 9e36cca..5440e70 100644
+--- a/src/anymal_c_renamable/urdf/base/docking_hatch/docking_hatch_cover_3_1_1_macro.urdf.xacro
++++ b/src/anymal_c_twins/urdf/base/docking_hatch/docking_hatch_cover_3_1_1_macro.urdf.xacro
+@@ -2,7 +2,7 @@
+ 
+ <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+ 
+-  <xacro:macro name="docking_hatch_cover">
++  <xacro:macro name="docking_hatch_cover" params="suffix:='A'">
+ 
+     <xacro:property name="Dhc_r_Dhccom_x"  value= "-0.003"/> <!--  [m] -->
+     <xacro:property name="Dhc_r_Dhccom_y"  value= "0.0"/> <!--  [m] -->
+@@ -17,14 +17,14 @@
+ 
+ 
+     <!-- Fixed joint to add docking  -->
+-    <joint name="base_to_docking_hatch_cover" type="fixed">
+-      <parent link="base"/>
+-      <child link="docking_hatch_cover"/>
++    <joint name="base_to_docking_hatch_cover_${suffix}" type="fixed">
++      <parent link="base_${suffix}"/>
++      <child link="docking_hatch_cover_${suffix}"/>
+       <origin xyz="0.343 0.0 -0.07" rpy="0 0 0"/>
+     </joint>
+ 
+     <!-- Hatch cover link -->
+-    <link name="docking_hatch_cover">
++    <link name="docking_hatch_cover_${suffix}">
+       <!--  TODO(fgiraldez): add visual    -->
+       <inertial>
+         <origin   xyz="${Dhc_r_Dhccom_x} ${Dhc_r_Dhccom_y} ${Dhc_r_Dhccom_z}"
+diff --git a/src/anymal_c_renamable/urdf/base/docking_hatch/docking_socket_3_1_1_macro.urdf.xacro b/src/anymal_c_twins/urdf/base/docking_hatch/docking_socket_3_1_1_macro.urdf.xacro
+similarity index 84%
+rename from src/anymal_c_renamable/urdf/base/docking_hatch/docking_socket_3_1_1_macro.urdf.xacro
+rename to src/anymal_c_twins/urdf/base/docking_hatch/docking_socket_3_1_1_macro.urdf.xacro
+index 7a74d59..cf3268a 100644
+--- a/src/anymal_c_renamable/urdf/base/docking_hatch/docking_socket_3_1_1_macro.urdf.xacro
++++ b/src/anymal_c_twins/urdf/base/docking_hatch/docking_socket_3_1_1_macro.urdf.xacro
+@@ -2,7 +2,7 @@
+ 
+ <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+ 
+-  <xacro:macro name="docking_socket">
++  <xacro:macro name="docking_socket" params="suffix:='A'">
+ 
+     <xacro:property name="Ds_r_Dscom_x"  value= "-0.002"/> <!--  [m] -->
+     <xacro:property name="Ds_r_Dscom_y"  value= "-0.001"/> <!--  [m] -->
+@@ -17,14 +17,14 @@
+ 
+ 
+     <!-- Fixed joint to add docking  -->
+-    <joint name="base_to_docking_socket" type="fixed">
+-      <parent link="base"/>
+-      <child link="docking_socket"/>
++    <joint name="base_to_docking_socket_${suffix}" type="fixed">
++      <parent link="base_${suffix}"/>
++      <child link="docking_socket_${suffix}"/>
+       <origin xyz="0.343 0.0 -0.07" rpy="0 0 0"/>
+     </joint>
+ 
+     <!-- Hatch cover link -->
+-    <link name="docking_socket">
++    <link name="docking_socket_${suffix}">
+       <!--  TODO(fgiraldez): add visual    -->
+       <inertial>
+         <origin   xyz="${Ds_r_Dscom_x} ${Ds_r_Dscom_y} ${Ds_r_Dscom_z}"
+diff --git a/src/anymal_c_renamable/urdf/base/face/Face_baked.jpg b/src/anymal_c_twins/urdf/base/face/Face_baked.jpg
+similarity index 100%
+rename from src/anymal_c_renamable/urdf/base/face/Face_baked.jpg
+rename to src/anymal_c_twins/urdf/base/face/Face_baked.jpg
+diff --git a/src/anymal_c_renamable/urdf/base/face/face_3_0_macro.urdf.xacro b/src/anymal_c_twins/urdf/base/face/face_3_0_macro.urdf.xacro
+similarity index 100%
+rename from src/anymal_c_renamable/urdf/base/face/face_3_0_macro.urdf.xacro
+rename to src/anymal_c_twins/urdf/base/face/face_3_0_macro.urdf.xacro
+diff --git a/src/anymal_c_renamable/urdf/base/face/face_3_0_simple_mesh.dae b/src/anymal_c_twins/urdf/base/face/face_3_0_simple_mesh.dae
+similarity index 100%
+rename from src/anymal_c_renamable/urdf/base/face/face_3_0_simple_mesh.dae
+rename to src/anymal_c_twins/urdf/base/face/face_3_0_simple_mesh.dae
+diff --git a/src/anymal_c_renamable/urdf/base/face/face_3_1_1_macro.urdf.xacro b/src/anymal_c_twins/urdf/base/face/face_3_1_1_macro.urdf.xacro
+similarity index 76%
+rename from src/anymal_c_renamable/urdf/base/face/face_3_1_1_macro.urdf.xacro
+rename to src/anymal_c_twins/urdf/base/face/face_3_1_1_macro.urdf.xacro
+index 501c4a3..d1efa83 100644
+--- a/src/anymal_c_renamable/urdf/base/face/face_3_1_1_macro.urdf.xacro
++++ b/src/anymal_c_twins/urdf/base/face/face_3_1_1_macro.urdf.xacro
+@@ -2,7 +2,7 @@
+ 
+ <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+ 
+-  <xacro:macro name="face" params="face simulate_depth_camera:=false simulate_wide_angle_camera:=false depth_camera_pitch:=30 depth_camera_roll:=0">
++  <xacro:macro name="face" params="suffix:='A' face simulate_depth_camera:=false simulate_wide_angle_camera:=false depth_camera_pitch:=30 depth_camera_roll:=0">
+ 
+     <xacro:property name="B_r_BBf_x"        value="0.41450"/> <!--  [m] -->
+     <xacro:property name="B_r_BBf_z"        value="0.00700"/> <!--  [m] -->
+@@ -24,19 +24,19 @@
+     <xacro:property name="direction"    value="${1 if face == 'front' else -1}"/>
+ 
+     <!-- Fixed joint base face -->
+-    <joint name="base_face_${face}" type="fixed">
+-      <parent link="base"/>
+-      <child link="face_${face}"/>
++    <joint name="base_face_${face}_${suffix}" type="fixed">
++      <parent link="base_${suffix}"/>
++      <child link="face_${face}_${suffix}"/>
+       <origin xyz="${direction * B_r_BBf_x} 0 0" rpy="0 0 ${-0.5*(direction-1) * pi}"/>
+     </joint>
+ 
+     <!-- Shell link -->
+-    <link name="face_${face}">
++    <link name="face_${face}_${suffix}">
+       <visual>
+         <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+           <mesh
+-            filename="package://anymal_c/urdf/base/face/face_3_1_1_mesh.dae"
++            filename="package://anymal_c_twins/urdf/base/face/face_3_1_1_mesh.dae"
+             scale="1.0 1.0 1.0"/>
+        </geometry>
+       </visual>
+@@ -68,14 +68,14 @@
+     </link>
+ 
+     <!-- Depth Camera -->
+-    <xacro:include filename="$(find anymal_c)/urdf/base/sensors/depth_camera/realsense_d435_3_1_1.urdf.xacro"/>
+-    <xacro:anymal_realsense name="depth_camera_${face}" parent="face_${face}" simulation="${simulate_depth_camera}">
++    <xacro:include filename="$(find anymal_c_twins)/urdf/base/sensors/depth_camera/realsense_d435_3_1_1.urdf.xacro"/>
++    <xacro:anymal_realsense name="depth_camera_${face}_${suffix}" parent="face_${face}_${suffix}" simulation="${simulate_depth_camera}">
+       <origin xyz="0.04715 0.0 -0.0292" rpy="${depth_camera_roll/180*pi} ${depth_camera_pitch/180*pi} 0"/>
+     </xacro:anymal_realsense>
+ 
+     <!-- Wide Angle Camera -->
+-    <xacro:include filename="$(find anymal_c)/urdf/base/sensors/wide_angle_camera/blackfly_s_3_1_1.urdf.xacro"/>
+-    <xacro:blackfly name="wide_angle_camera_${face}" parent="face_${face}" simulation="${simulate_wide_angle_camera}" fps="30.0">
++    <xacro:include filename="$(find anymal_c_twins)/urdf/base/sensors/wide_angle_camera/blackfly_s_3_1_1.urdf.xacro"/>
++    <xacro:blackfly name="wide_angle_camera_${face}_${suffix}" parent="face_${face}_${suffix}" simulation="${simulate_wide_angle_camera}" fps="30.0">
+       <origin xyz="0.09850 0.0 0.01497" rpy="0 0 0"/>
+     </xacro:blackfly>
+ 
+diff --git a/src/anymal_c_renamable/urdf/base/face/face_3_1_1_mesh.dae b/src/anymal_c_twins/urdf/base/face/face_3_1_1_mesh.dae
+similarity index 100%
+rename from src/anymal_c_renamable/urdf/base/face/face_3_1_1_mesh.dae
+rename to src/anymal_c_twins/urdf/base/face/face_3_1_1_mesh.dae
+diff --git a/src/anymal_c_renamable/urdf/base/handle/Handle_baked.jpg b/src/anymal_c_twins/urdf/base/handle/Handle_baked.jpg
+similarity index 100%
+rename from src/anymal_c_renamable/urdf/base/handle/Handle_baked.jpg
+rename to src/anymal_c_twins/urdf/base/handle/Handle_baked.jpg
+diff --git a/src/anymal_c_renamable/urdf/base/handle/handle_3_1_1_macro.urdf.xacro b/src/anymal_c_twins/urdf/base/handle/handle_3_1_1_macro.urdf.xacro
+similarity index 83%
+rename from src/anymal_c_renamable/urdf/base/handle/handle_3_1_1_macro.urdf.xacro
+rename to src/anymal_c_twins/urdf/base/handle/handle_3_1_1_macro.urdf.xacro
+index 1dfc96e..b78b044 100644
+--- a/src/anymal_c_renamable/urdf/base/handle/handle_3_1_1_macro.urdf.xacro
++++ b/src/anymal_c_twins/urdf/base/handle/handle_3_1_1_macro.urdf.xacro
+@@ -2,7 +2,7 @@
+ 
+ <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+ 
+-  <xacro:macro name="handle">
++  <xacro:macro name="handle" params="suffix:='A'">
+ 
+     <xacro:property name="B_r_BBbcom_x" value= "0.37801"/> <!--  [m] -->
+     <xacro:property name="B_r_BBbcom_y" value= "0.0"/> <!--  [m] -->
+@@ -17,19 +17,19 @@
+ 
+ 
+     <!-- Fixed joint base handle -->
+-    <joint name="base_handle" type="fixed">
+-      <parent link="base"/>
+-      <child link="handle"/>
++    <joint name="base_handle_${suffix}" type="fixed">
++      <parent link="base_${suffix}"/>
++      <child link="handle_${suffix}"/>
+       <origin xyz="0 0 0" rpy="0 0 0"/>
+     </joint>
+ 
+     <!-- Handle link -->
+-    <link name="handle">
++    <link name="handle_${suffix}">
+       <visual>
+         <origin xyz="0 0 0" rpy="0 0 0"/>
+         <geometry>
+           <mesh
+-            filename="package://anymal_c/urdf/base/handle/handle_3_1_1_mesh.dae"
++            filename="package://anymal_c_twins/urdf/base/handle/handle_3_1_1_mesh.dae"
+             scale="${anymal_meshes_scale}"/>
+         </geometry>
+       </visual>
+diff --git a/src/anymal_c_renamable/urdf/base/handle/handle_3_1_1_mesh.dae b/src/anymal_c_twins/urdf/base/handle/handle_3_1_1_mesh.dae
+similarity index 100%
+rename from src/anymal_c_renamable/urdf/base/handle/handle_3_1_1_mesh.dae
+rename to src/anymal_c_twins/urdf/base/handle/handle_3_1_1_mesh.dae
+diff --git a/src/anymal_c_renamable/urdf/base/hatch/Hatch_baked.jpg b/src/anymal_c_twins/urdf/base/hatch/Hatch_baked.jpg
+similarity index 100%
+rename from src/anymal_c_renamable/urdf/base/hatch/Hatch_baked.jpg
+rename to src/anymal_c_twins/urdf/base/hatch/Hatch_baked.jpg
+diff --git a/src/anymal_c_renamable/urdf/base/hatch/hatch_3_1_1_macro.urdf.xacro b/src/anymal_c_twins/urdf/base/hatch/hatch_3_1_1_macro.urdf.xacro
+similarity index 85%
+rename from src/anymal_c_renamable/urdf/base/hatch/hatch_3_1_1_macro.urdf.xacro
+rename to src/anymal_c_twins/urdf/base/hatch/hatch_3_1_1_macro.urdf.xacro
+index 67533ec..9d9aebc 100644
+--- a/src/anymal_c_renamable/urdf/base/hatch/hatch_3_1_1_macro.urdf.xacro
++++ b/src/anymal_c_twins/urdf/base/hatch/hatch_3_1_1_macro.urdf.xacro
+@@ -2,7 +2,7 @@
+ 
+ <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+ 
+-  <xacro:macro name="hatch">
++  <xacro:macro name="hatch" params="suffix:='A'">
+ 
+     <xacro:property name="B_r_BBh_x"      value= "0.0"/> <!--  [m] -->
+     <xacro:property name="B_r_BBh_y"      value= "0.0"/> <!--  [m] -->
+@@ -20,18 +20,18 @@
+ 
+ 
+     <!-- Fixed joint base hatch -->
+-    <joint name="base_hatch" type="fixed">
+-      <parent link="base"/>
+-      <child link="hatch"/>
++    <joint name="base_hatch_${suffix}" type="fixed">
++      <parent link="base_${suffix}"/>
++      <child link="hatch_${suffix}"/>
+       <origin xyz="${B_r_BBh_x} ${B_r_BBh_y} ${B_r_BBh_z}" rpy="0 0 0"/>
+     </joint>
+ 
+     <!-- Hatch link -->
+-    <link name="hatch">
++    <link name="hatch_${suffix}">
+       <visual>
+         <origin xyz="0.116 0 0.073" rpy="0 0 0"/>
+         <geometry>
+-          <mesh filename="package://anymal_c/urdf/base/hatch/hatch_3_1_1_mesh.dae"
++          <mesh filename="package://anymal_c_twins/urdf/base/hatch/hatch_3_1_1_mesh.dae"
+                 scale="1.0 1.0 1.0"/>
+         </geometry>
+       </visual>
+diff --git a/src/anymal_c_renamable/urdf/base/hatch/hatch_3_1_1_mesh.dae b/src/anymal_c_twins/urdf/base/hatch/hatch_3_1_1_mesh.dae
+similarity index 100%
+rename from src/anymal_c_renamable/urdf/base/hatch/hatch_3_1_1_mesh.dae
+rename to src/anymal_c_twins/urdf/base/hatch/hatch_3_1_1_mesh.dae
+diff --git a/src/anymal_c_renamable/urdf/base/remote/HBC_baked.jpg b/src/anymal_c_twins/urdf/base/remote/HBC_baked.jpg
+similarity index 100%
+rename from src/anymal_c_renamable/urdf/base/remote/HBC_baked.jpg
+rename to src/anymal_c_twins/urdf/base/remote/HBC_baked.jpg
+diff --git a/src/anymal_c_renamable/urdf/base/remote/remote_3_1_1_macro.urdf.xacro b/src/anymal_c_twins/urdf/base/remote/remote_3_1_1_macro.urdf.xacro
+similarity index 83%
+rename from src/anymal_c_renamable/urdf/base/remote/remote_3_1_1_macro.urdf.xacro
+rename to src/anymal_c_twins/urdf/base/remote/remote_3_1_1_macro.urdf.xacro
+index bf092b7..54145f7 100644
+--- a/src/anymal_c_renamable/urdf/base/remote/remote_3_1_1_macro.urdf.xacro
++++ b/src/anymal_c_twins/urdf/base/remote/remote_3_1_1_macro.urdf.xacro
+@@ -2,7 +2,7 @@
+ 
+ <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+ 
+-  <xacro:macro name="remote">
++  <xacro:macro name="remote" params="suffix:='A'">
+ 
+     <xacro:property name="B_r_BBbcom_x" value="-0.171"/> <!--  [m] -->
+     <xacro:property name="B_r_BBbcom_y" value= "0.002"/> <!--  [m] -->
+@@ -17,19 +17,19 @@
+ 
+ 
+     <!-- Fixed joint base remote -->
+-    <joint name="base_remote" type="fixed">
+-      <parent link="base"/>
+-      <child link="remote"/>
++    <joint name="base_remote_${suffix}" type="fixed">
++      <parent link="base_${suffix}"/>
++      <child link="remote_${suffix}"/>
+       <origin xyz="0 0 0" rpy="0 0 0"/>
+     </joint>
+ 
+     <!-- Remote link -->
+-    <link name="remote">
++    <link name="remote_${suffix}">
+       <visual>
+         <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+           <mesh
+-            filename="package://anymal_c/urdf/base/remote/remote_3_1_1_mesh.dae"
++            filename="package://anymal_c_twins/urdf/base/remote/remote_3_1_1_mesh.dae"
+             scale="${anymal_meshes_scale}"/>
+         </geometry>
+       </visual>
+diff --git a/src/anymal_c_renamable/urdf/base/remote/remote_3_1_1_mesh.dae b/src/anymal_c_twins/urdf/base/remote/remote_3_1_1_mesh.dae
+similarity index 100%
+rename from src/anymal_c_renamable/urdf/base/remote/remote_3_1_1_mesh.dae
+rename to src/anymal_c_twins/urdf/base/remote/remote_3_1_1_mesh.dae
+diff --git a/src/anymal_c_renamable/urdf/base/sensors/depth_camera/Realsense_baked.jpg b/src/anymal_c_twins/urdf/base/sensors/depth_camera/Realsense_baked.jpg
+similarity index 100%
+rename from src/anymal_c_renamable/urdf/base/sensors/depth_camera/Realsense_baked.jpg
+rename to src/anymal_c_twins/urdf/base/sensors/depth_camera/Realsense_baked.jpg
+diff --git a/src/anymal_c_renamable/urdf/base/sensors/depth_camera/realsense_d435_3_1_1.urdf.xacro b/src/anymal_c_twins/urdf/base/sensors/depth_camera/realsense_d435_3_1_1.urdf.xacro
+similarity index 100%
+rename from src/anymal_c_renamable/urdf/base/sensors/depth_camera/realsense_d435_3_1_1.urdf.xacro
+rename to src/anymal_c_twins/urdf/base/sensors/depth_camera/realsense_d435_3_1_1.urdf.xacro
+diff --git a/src/anymal_c_renamable/urdf/base/sensors/depth_camera/realsense_d435_3_1_1_mesh.dae b/src/anymal_c_twins/urdf/base/sensors/depth_camera/realsense_d435_3_1_1_mesh.dae
+similarity index 100%
+rename from src/anymal_c_renamable/urdf/base/sensors/depth_camera/realsense_d435_3_1_1_mesh.dae
+rename to src/anymal_c_twins/urdf/base/sensors/depth_camera/realsense_d435_3_1_1_mesh.dae
+diff --git a/src/anymal_c_renamable/urdf/base/sensors/lidar/Cage_baked.jpg b/src/anymal_c_twins/urdf/base/sensors/lidar/Cage_baked.jpg
+similarity index 100%
+rename from src/anymal_c_renamable/urdf/base/sensors/lidar/Cage_baked.jpg
+rename to src/anymal_c_twins/urdf/base/sensors/lidar/Cage_baked.jpg
+diff --git a/src/anymal_c_renamable/urdf/base/sensors/lidar/Velodyne_baked.jpg b/src/anymal_c_twins/urdf/base/sensors/lidar/Velodyne_baked.jpg
+similarity index 100%
+rename from src/anymal_c_renamable/urdf/base/sensors/lidar/Velodyne_baked.jpg
+rename to src/anymal_c_twins/urdf/base/sensors/lidar/Velodyne_baked.jpg
+diff --git a/src/anymal_c_renamable/urdf/base/sensors/lidar/cage_3_1_1_mesh.dae b/src/anymal_c_twins/urdf/base/sensors/lidar/cage_3_1_1_mesh.dae
+similarity index 100%
+rename from src/anymal_c_renamable/urdf/base/sensors/lidar/cage_3_1_1_mesh.dae
+rename to src/anymal_c_twins/urdf/base/sensors/lidar/cage_3_1_1_mesh.dae
+diff --git a/src/anymal_c_renamable/urdf/base/sensors/lidar/velodyne_3_0.urdf.xacro b/src/anymal_c_twins/urdf/base/sensors/lidar/velodyne_3_0.urdf.xacro
+similarity index 100%
+rename from src/anymal_c_renamable/urdf/base/sensors/lidar/velodyne_3_0.urdf.xacro
+rename to src/anymal_c_twins/urdf/base/sensors/lidar/velodyne_3_0.urdf.xacro
+diff --git a/src/anymal_c_renamable/urdf/base/sensors/lidar/velodyne_3_1_1.urdf.xacro b/src/anymal_c_twins/urdf/base/sensors/lidar/velodyne_3_1_1.urdf.xacro
+similarity index 100%
+rename from src/anymal_c_renamable/urdf/base/sensors/lidar/velodyne_3_1_1.urdf.xacro
+rename to src/anymal_c_twins/urdf/base/sensors/lidar/velodyne_3_1_1.urdf.xacro
+diff --git a/src/anymal_c_renamable/urdf/base/sensors/lidar/velodyne_3_1_1_mesh.dae b/src/anymal_c_twins/urdf/base/sensors/lidar/velodyne_3_1_1_mesh.dae
+similarity index 100%
+rename from src/anymal_c_renamable/urdf/base/sensors/lidar/velodyne_3_1_1_mesh.dae
+rename to src/anymal_c_twins/urdf/base/sensors/lidar/velodyne_3_1_1_mesh.dae
+diff --git a/src/anymal_c_renamable/urdf/base/sensors/lidar/vlp-16-lite.urdf.xacro b/src/anymal_c_twins/urdf/base/sensors/lidar/vlp-16-lite.urdf.xacro
+similarity index 100%
+rename from src/anymal_c_renamable/urdf/base/sensors/lidar/vlp-16-lite.urdf.xacro
+rename to src/anymal_c_twins/urdf/base/sensors/lidar/vlp-16-lite.urdf.xacro
+diff --git a/src/anymal_c_renamable/urdf/base/sensors/wide_angle_camera/Blackfly_baked.jpg b/src/anymal_c_twins/urdf/base/sensors/wide_angle_camera/Blackfly_baked.jpg
+similarity index 100%
+rename from src/anymal_c_renamable/urdf/base/sensors/wide_angle_camera/Blackfly_baked.jpg
+rename to src/anymal_c_twins/urdf/base/sensors/wide_angle_camera/Blackfly_baked.jpg
+diff --git a/src/anymal_c_renamable/urdf/base/sensors/wide_angle_camera/blackfly_3_1_1_mesh.dae b/src/anymal_c_twins/urdf/base/sensors/wide_angle_camera/blackfly_3_1_1_mesh.dae
+similarity index 100%
+rename from src/anymal_c_renamable/urdf/base/sensors/wide_angle_camera/blackfly_3_1_1_mesh.dae
+rename to src/anymal_c_twins/urdf/base/sensors/wide_angle_camera/blackfly_3_1_1_mesh.dae
+diff --git a/src/anymal_c_renamable/urdf/base/sensors/wide_angle_camera/blackfly_s_3_1_1.urdf.xacro b/src/anymal_c_twins/urdf/base/sensors/wide_angle_camera/blackfly_s_3_1_1.urdf.xacro
+similarity index 100%
+rename from src/anymal_c_renamable/urdf/base/sensors/wide_angle_camera/blackfly_s_3_1_1.urdf.xacro
+rename to src/anymal_c_twins/urdf/base/sensors/wide_angle_camera/blackfly_s_3_1_1.urdf.xacro
+diff --git a/src/anymal_c_renamable/urdf/base/shell/Bottom_Shell_baked.jpg b/src/anymal_c_twins/urdf/base/shell/Bottom_Shell_baked.jpg
+similarity index 100%
+rename from src/anymal_c_renamable/urdf/base/shell/Bottom_Shell_baked.jpg
+rename to src/anymal_c_twins/urdf/base/shell/Bottom_Shell_baked.jpg
+diff --git a/src/anymal_c_renamable/urdf/base/shell/Top_Shell_baked.jpg b/src/anymal_c_twins/urdf/base/shell/Top_Shell_baked.jpg
+similarity index 100%
+rename from src/anymal_c_renamable/urdf/base/shell/Top_Shell_baked.jpg
+rename to src/anymal_c_twins/urdf/base/shell/Top_Shell_baked.jpg
+diff --git a/src/anymal_c_renamable/urdf/base/shell/bottom_shell_3_1_1_macro.urdf.xacro b/src/anymal_c_twins/urdf/base/shell/bottom_shell_3_1_1_macro.urdf.xacro
+similarity index 90%
+rename from src/anymal_c_renamable/urdf/base/shell/bottom_shell_3_1_1_macro.urdf.xacro
+rename to src/anymal_c_twins/urdf/base/shell/bottom_shell_3_1_1_macro.urdf.xacro
+index db9712d..5124d7f 100644
+--- a/src/anymal_c_renamable/urdf/base/shell/bottom_shell_3_1_1_macro.urdf.xacro
++++ b/src/anymal_c_twins/urdf/base/shell/bottom_shell_3_1_1_macro.urdf.xacro
+@@ -2,7 +2,7 @@
+ 
+ <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+ 
+-  <xacro:macro name="bottom_shell">
++  <xacro:macro name="bottom_shell" params="suffix:='A'">
+ 
+     <xacro:property name="B_r_BBscom_x"        value="-0.00333"/> <!--  [m] -->
+     <xacro:property name="B_r_BBscom_y"        value= "0.00001"/> <!--  [m] -->
+@@ -17,7 +17,7 @@
+ 
+     <!-- Fixed joint base topshell -->
+     <joint name="base_bottom_shell" type="fixed">
+-      <parent link="base"/>
++      <parent link="base_${suffix}"/>
+       <child link="bottom_shell"/>
+       <origin xyz="0 0 0" rpy="0 0 0"/>
+     </joint>
+@@ -28,7 +28,7 @@
+         <origin xyz="0 0 0" rpy="0 0 0"/>
+         <geometry>
+           <mesh
+-            filename="package://anymal_c/urdf/base/shell/bottom_shell_3_1_1_mesh.dae"
++            filename="package://anymal_c_twins/urdf/base/shell/bottom_shell_3_1_1_mesh.dae"
+             scale="1.0 1.0 1.0"/>
+         </geometry>
+       </visual>
+diff --git a/src/anymal_c_renamable/urdf/base/shell/bottom_shell_3_1_1_mesh.dae b/src/anymal_c_twins/urdf/base/shell/bottom_shell_3_1_1_mesh.dae
+similarity index 100%
+rename from src/anymal_c_renamable/urdf/base/shell/bottom_shell_3_1_1_mesh.dae
+rename to src/anymal_c_twins/urdf/base/shell/bottom_shell_3_1_1_mesh.dae
+diff --git a/src/anymal_c_renamable/urdf/base/shell/sheet_metal_macro.urdf.xacro b/src/anymal_c_twins/urdf/base/shell/sheet_metal_macro.urdf.xacro
+similarity index 100%
+rename from src/anymal_c_renamable/urdf/base/shell/sheet_metal_macro.urdf.xacro
+rename to src/anymal_c_twins/urdf/base/shell/sheet_metal_macro.urdf.xacro
+diff --git a/src/anymal_c_renamable/urdf/base/shell/shell_3_0_collision.dae b/src/anymal_c_twins/urdf/base/shell/shell_3_0_collision.dae
+similarity index 100%
+rename from src/anymal_c_renamable/urdf/base/shell/shell_3_0_collision.dae
+rename to src/anymal_c_twins/urdf/base/shell/shell_3_0_collision.dae
+diff --git a/src/anymal_c_renamable/urdf/base/shell/shell_3_0_macro.urdf.xacro b/src/anymal_c_twins/urdf/base/shell/shell_3_0_macro.urdf.xacro
+similarity index 100%
+rename from src/anymal_c_renamable/urdf/base/shell/shell_3_0_macro.urdf.xacro
+rename to src/anymal_c_twins/urdf/base/shell/shell_3_0_macro.urdf.xacro
+diff --git a/src/anymal_c_renamable/urdf/base/shell/top_shell_3_1_1_macro.urdf.xacro b/src/anymal_c_twins/urdf/base/shell/top_shell_3_1_1_macro.urdf.xacro
+similarity index 90%
+rename from src/anymal_c_renamable/urdf/base/shell/top_shell_3_1_1_macro.urdf.xacro
+rename to src/anymal_c_twins/urdf/base/shell/top_shell_3_1_1_macro.urdf.xacro
+index 00f7105..bfe8c42 100644
+--- a/src/anymal_c_renamable/urdf/base/shell/top_shell_3_1_1_macro.urdf.xacro
++++ b/src/anymal_c_twins/urdf/base/shell/top_shell_3_1_1_macro.urdf.xacro
+@@ -2,7 +2,7 @@
+ 
+ <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+ 
+-  <xacro:macro name="top_shell">
++  <xacro:macro name="top_shell" params="suffix:='A'">
+ 
+     <xacro:property name="B_r_BBscom_x"        value="-0.00777"/> <!--  [m] -->
+     <xacro:property name="B_r_BBscom_y"        value="-0.00013"/> <!--  [m] -->
+@@ -17,7 +17,7 @@
+ 
+     <!-- Fixed joint base topshell -->
+     <joint name="base_top_shell" type="fixed">
+-      <parent link="base"/>
++      <parent link="base_${suffix}"/>
+       <child link="top_shell"/>
+       <origin xyz="0 0 0" rpy="0 0 0"/>
+     </joint>
+@@ -28,7 +28,7 @@
+         <origin xyz="0 0 0" rpy="0 0 0"/>
+         <geometry>
+           <mesh
+-            filename="package://anymal_c/urdf/base/shell/top_shell_3_1_1_mesh.dae"
++            filename="package://anymal_c_twins/urdf/base/shell/top_shell_3_1_1_mesh.dae"
+             scale="1.0 1.0 1.0"/>
+         </geometry>
+       </visual>
+diff --git a/src/anymal_c_renamable/urdf/base/shell/top_shell_3_1_1_mesh.dae b/src/anymal_c_twins/urdf/base/shell/top_shell_3_1_1_mesh.dae
+similarity index 100%
+rename from src/anymal_c_renamable/urdf/base/shell/top_shell_3_1_1_mesh.dae
+rename to src/anymal_c_twins/urdf/base/shell/top_shell_3_1_1_mesh.dae
+diff --git a/src/anymal_c_renamable/urdf/include/plugin.gazebo.xacro b/src/anymal_c_twins/urdf/include/plugin.gazebo.xacro
+similarity index 100%
+rename from src/anymal_c_renamable/urdf/include/plugin.gazebo.xacro
+rename to src/anymal_c_twins/urdf/include/plugin.gazebo.xacro
+diff --git a/src/anymal_c_renamable/urdf/include/utils.urdf.xacro b/src/anymal_c_twins/urdf/include/utils.urdf.xacro
+similarity index 100%
+rename from src/anymal_c_renamable/urdf/include/utils.urdf.xacro
+rename to src/anymal_c_twins/urdf/include/utils.urdf.xacro
+diff --git a/src/anymal_c_renamable/urdf/leg/drives/AD_baked.jpg b/src/anymal_c_twins/urdf/leg/drives/AD_baked.jpg
+similarity index 100%
+rename from src/anymal_c_renamable/urdf/leg/drives/AD_baked.jpg
+rename to src/anymal_c_twins/urdf/leg/drives/AD_baked.jpg
+diff --git a/src/anymal_c_renamable/urdf/leg/drives/drive_2_5_macro.urdf.xacro b/src/anymal_c_twins/urdf/leg/drives/drive_2_5_macro.urdf.xacro
+similarity index 100%
+rename from src/anymal_c_renamable/urdf/leg/drives/drive_2_5_macro.urdf.xacro
+rename to src/anymal_c_twins/urdf/leg/drives/drive_2_5_macro.urdf.xacro
+diff --git a/src/anymal_c_renamable/urdf/leg/drives/drive_2_6_macro.urdf.xacro b/src/anymal_c_twins/urdf/leg/drives/drive_2_6_macro.urdf.xacro
+similarity index 100%
+rename from src/anymal_c_renamable/urdf/leg/drives/drive_2_6_macro.urdf.xacro
+rename to src/anymal_c_twins/urdf/leg/drives/drive_2_6_macro.urdf.xacro
+diff --git a/src/anymal_c_renamable/urdf/leg/drives/drive_3_0_1_macro.urdf.xacro b/src/anymal_c_twins/urdf/leg/drives/drive_3_0_1_macro.urdf.xacro
+similarity index 100%
+rename from src/anymal_c_renamable/urdf/leg/drives/drive_3_0_1_macro.urdf.xacro
+rename to src/anymal_c_twins/urdf/leg/drives/drive_3_0_1_macro.urdf.xacro
+diff --git a/src/anymal_c_renamable/urdf/leg/drives/drive_3_0_2_macro.urdf.xacro b/src/anymal_c_twins/urdf/leg/drives/drive_3_0_2_macro.urdf.xacro
+similarity index 100%
+rename from src/anymal_c_renamable/urdf/leg/drives/drive_3_0_2_macro.urdf.xacro
+rename to src/anymal_c_twins/urdf/leg/drives/drive_3_0_2_macro.urdf.xacro
+diff --git a/src/anymal_c_renamable/urdf/leg/drives/drive_3_0_2_mesh.dae b/src/anymal_c_twins/urdf/leg/drives/drive_3_0_2_mesh.dae
+similarity index 100%
+rename from src/anymal_c_renamable/urdf/leg/drives/drive_3_0_2_mesh.dae
+rename to src/anymal_c_twins/urdf/leg/drives/drive_3_0_2_mesh.dae
+diff --git a/src/anymal_c_renamable/urdf/leg/foot/Foot_baked.jpg b/src/anymal_c_twins/urdf/leg/foot/Foot_baked.jpg
+similarity index 100%
+rename from src/anymal_c_renamable/urdf/leg/foot/Foot_baked.jpg
+rename to src/anymal_c_twins/urdf/leg/foot/Foot_baked.jpg
+diff --git a/src/anymal_c_renamable/urdf/leg/foot/foot_3_0_1_macro.urdf.xacro b/src/anymal_c_twins/urdf/leg/foot/foot_3_0_1_macro.urdf.xacro
+similarity index 100%
+rename from src/anymal_c_renamable/urdf/leg/foot/foot_3_0_1_macro.urdf.xacro
+rename to src/anymal_c_twins/urdf/leg/foot/foot_3_0_1_macro.urdf.xacro
+diff --git a/src/anymal_c_renamable/urdf/leg/foot/foot_3_0_macro.urdf.xacro b/src/anymal_c_twins/urdf/leg/foot/foot_3_0_macro.urdf.xacro
+similarity index 100%
+rename from src/anymal_c_renamable/urdf/leg/foot/foot_3_0_macro.urdf.xacro
+rename to src/anymal_c_twins/urdf/leg/foot/foot_3_0_macro.urdf.xacro
+diff --git a/src/anymal_c_renamable/urdf/leg/foot/foot_3_1_1_macro.urdf.xacro b/src/anymal_c_twins/urdf/leg/foot/foot_3_1_1_macro.urdf.xacro
+similarity index 100%
+rename from src/anymal_c_renamable/urdf/leg/foot/foot_3_1_1_macro.urdf.xacro
+rename to src/anymal_c_twins/urdf/leg/foot/foot_3_1_1_macro.urdf.xacro
+diff --git a/src/anymal_c_renamable/urdf/leg/foot/foot_3_1_1_mesh.dae b/src/anymal_c_twins/urdf/leg/foot/foot_3_1_1_mesh.dae
+similarity index 100%
+rename from src/anymal_c_renamable/urdf/leg/foot/foot_3_1_1_mesh.dae
+rename to src/anymal_c_twins/urdf/leg/foot/foot_3_1_1_mesh.dae
+diff --git a/src/anymal_c_renamable/urdf/leg/haa/haa_3_0_1_macro.urdf.xacro b/src/anymal_c_twins/urdf/leg/haa/haa_3_0_1_macro.urdf.xacro
+similarity index 100%
+rename from src/anymal_c_renamable/urdf/leg/haa/haa_3_0_1_macro.urdf.xacro
+rename to src/anymal_c_twins/urdf/leg/haa/haa_3_0_1_macro.urdf.xacro
+diff --git a/src/anymal_c_renamable/urdf/leg/haa/haa_3_0_macro.urdf.xacro b/src/anymal_c_twins/urdf/leg/haa/haa_3_0_macro.urdf.xacro
+similarity index 100%
+rename from src/anymal_c_renamable/urdf/leg/haa/haa_3_0_macro.urdf.xacro
+rename to src/anymal_c_twins/urdf/leg/haa/haa_3_0_macro.urdf.xacro
+diff --git a/src/anymal_c_renamable/urdf/leg/haa/haa_3_1_1_macro.urdf.xacro b/src/anymal_c_twins/urdf/leg/haa/haa_3_1_1_macro.urdf.xacro
+similarity index 91%
+rename from src/anymal_c_renamable/urdf/leg/haa/haa_3_1_1_macro.urdf.xacro
+rename to src/anymal_c_twins/urdf/leg/haa/haa_3_1_1_macro.urdf.xacro
+index aef1645..36b74e9 100644
+--- a/src/anymal_c_renamable/urdf/leg/haa/haa_3_1_1_macro.urdf.xacro
++++ b/src/anymal_c_twins/urdf/leg/haa/haa_3_1_1_macro.urdf.xacro
+@@ -2,7 +2,7 @@
+ 
+ <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+ 
+-  <xacro:macro name="anymal_haa" params="leg:=LF drive_version enable_collision:=true">
++  <xacro:macro name="anymal_haa" params="leg:=LF suffix:='A' drive_version enable_collision:=true">
+ 
+     <xacro:property name="B_r_BHaa_x"   value= "0.2999"/><!-- [m] -->
+     <xacro:property name="B_r_BHaa_y"   value= "0.104"/><!-- [m] -->
+@@ -19,7 +19,7 @@
+ 
+     <!-- joint base HAA -->
+     <joint name="base_${leg}_HAA" type="fixed">
+-      <parent link="base"/>
++      <parent link="base_${suffix}"/>
+       <child link="${leg}_HAA"/>
+       <origin xyz="${front * B_r_BHaa_x} ${left * B_r_BHaa_y} ${B_r_BHaa_z}" 
+               rpy="${front*left*q_BHaa_roll} 0 ${(front-1)*0.5*pi}"/>
+diff --git a/src/anymal_c_renamable/urdf/leg/hfe/hfe_3_0_1_macro.urdf.xacro b/src/anymal_c_twins/urdf/leg/hfe/hfe_3_0_1_macro.urdf.xacro
+similarity index 100%
+rename from src/anymal_c_renamable/urdf/leg/hfe/hfe_3_0_1_macro.urdf.xacro
+rename to src/anymal_c_twins/urdf/leg/hfe/hfe_3_0_1_macro.urdf.xacro
+diff --git a/src/anymal_c_renamable/urdf/leg/hfe/hfe_3_0_macro.urdf.xacro b/src/anymal_c_twins/urdf/leg/hfe/hfe_3_0_macro.urdf.xacro
+similarity index 100%
+rename from src/anymal_c_renamable/urdf/leg/hfe/hfe_3_0_macro.urdf.xacro
+rename to src/anymal_c_twins/urdf/leg/hfe/hfe_3_0_macro.urdf.xacro
+diff --git a/src/anymal_c_renamable/urdf/leg/hfe/hfe_3_1_1_macro.urdf.xacro b/src/anymal_c_twins/urdf/leg/hfe/hfe_3_1_1_macro.urdf.xacro
+similarity index 93%
+rename from src/anymal_c_renamable/urdf/leg/hfe/hfe_3_1_1_macro.urdf.xacro
+rename to src/anymal_c_twins/urdf/leg/hfe/hfe_3_1_1_macro.urdf.xacro
+index e42c6e0..73c617f 100644
+--- a/src/anymal_c_renamable/urdf/leg/hfe/hfe_3_1_1_macro.urdf.xacro
++++ b/src/anymal_c_twins/urdf/leg/hfe/hfe_3_1_1_macro.urdf.xacro
+@@ -2,7 +2,7 @@
+ 
+ <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+ 
+-  <xacro:macro name="anymal_hfe" params="leg:=LF drive_version">
++  <xacro:macro name="anymal_hfe" params="leg:=LF suffix:='A' drive_version">
+ 
+     <xacro:property name="H_r_HHfe_x"   value= "0.0599"/><!-- [m] -->
+     <xacro:property name="H_r_HHfe_y"   value= "0.08381"/><!-- [m] -->
+diff --git a/src/anymal_c_renamable/urdf/leg/hip/Hip_baked.jpg b/src/anymal_c_twins/urdf/leg/hip/Hip_baked.jpg
+similarity index 100%
+rename from src/anymal_c_renamable/urdf/leg/hip/Hip_baked.jpg
+rename to src/anymal_c_twins/urdf/leg/hip/Hip_baked.jpg
+diff --git a/src/anymal_c_renamable/urdf/leg/hip/hip_3_0_1_macro.urdf.xacro b/src/anymal_c_twins/urdf/leg/hip/hip_3_0_1_macro.urdf.xacro
+similarity index 100%
+rename from src/anymal_c_renamable/urdf/leg/hip/hip_3_0_1_macro.urdf.xacro
+rename to src/anymal_c_twins/urdf/leg/hip/hip_3_0_1_macro.urdf.xacro
+diff --git a/src/anymal_c_renamable/urdf/leg/hip/hip_3_0_macro.urdf.xacro b/src/anymal_c_twins/urdf/leg/hip/hip_3_0_macro.urdf.xacro
+similarity index 100%
+rename from src/anymal_c_renamable/urdf/leg/hip/hip_3_0_macro.urdf.xacro
+rename to src/anymal_c_twins/urdf/leg/hip/hip_3_0_macro.urdf.xacro
+diff --git a/src/anymal_c_renamable/urdf/leg/hip/hip_3_1_1_macro.urdf.xacro b/src/anymal_c_twins/urdf/leg/hip/hip_3_1_1_macro.urdf.xacro
+similarity index 97%
+rename from src/anymal_c_renamable/urdf/leg/hip/hip_3_1_1_macro.urdf.xacro
+rename to src/anymal_c_twins/urdf/leg/hip/hip_3_1_1_macro.urdf.xacro
+index 1cdaf16..7fd4168 100644
+--- a/src/anymal_c_renamable/urdf/leg/hip/hip_3_1_1_macro.urdf.xacro
++++ b/src/anymal_c_twins/urdf/leg/hip/hip_3_1_1_macro.urdf.xacro
+@@ -2,7 +2,7 @@
+ 
+ <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+ 
+-  <xacro:macro name="anymal_hip" params="leg:=LF">
++  <xacro:macro name="anymal_hip" params="leg:=LF suffix:='A'">
+ 
+     <xacro:property name="q_HaaH_roll"  value= "${-150/180*pi}"/> <!-- [rad] -->
+     <xacro:property name="H_r_HHcom_x"  value= "0.048"/> <!-- [m] -->
+diff --git a/src/anymal_c_renamable/urdf/leg/hip/hip_3_1_1_mesh.dae b/src/anymal_c_twins/urdf/leg/hip/hip_3_1_1_mesh.dae
+similarity index 100%
+rename from src/anymal_c_renamable/urdf/leg/hip/hip_3_1_1_mesh.dae
+rename to src/anymal_c_twins/urdf/leg/hip/hip_3_1_1_mesh.dae
+diff --git a/src/anymal_c_renamable/urdf/leg/hip/hip_3_1_1_mesh_mirrored.dae b/src/anymal_c_twins/urdf/leg/hip/hip_3_1_1_mesh_mirrored.dae
+similarity index 100%
+rename from src/anymal_c_renamable/urdf/leg/hip/hip_3_1_1_mesh_mirrored.dae
+rename to src/anymal_c_twins/urdf/leg/hip/hip_3_1_1_mesh_mirrored.dae
+diff --git a/src/anymal_c_renamable/urdf/leg/kfe/kfe_3_0_1_macro.urdf.xacro b/src/anymal_c_twins/urdf/leg/kfe/kfe_3_0_1_macro.urdf.xacro
+similarity index 100%
+rename from src/anymal_c_renamable/urdf/leg/kfe/kfe_3_0_1_macro.urdf.xacro
+rename to src/anymal_c_twins/urdf/leg/kfe/kfe_3_0_1_macro.urdf.xacro
+diff --git a/src/anymal_c_renamable/urdf/leg/kfe/kfe_3_0_macro.urdf.xacro b/src/anymal_c_twins/urdf/leg/kfe/kfe_3_0_macro.urdf.xacro
+similarity index 100%
+rename from src/anymal_c_renamable/urdf/leg/kfe/kfe_3_0_macro.urdf.xacro
+rename to src/anymal_c_twins/urdf/leg/kfe/kfe_3_0_macro.urdf.xacro
+diff --git a/src/anymal_c_renamable/urdf/leg/kfe/kfe_3_1_1_macro.urdf.xacro b/src/anymal_c_twins/urdf/leg/kfe/kfe_3_1_1_macro.urdf.xacro
+similarity index 93%
+rename from src/anymal_c_renamable/urdf/leg/kfe/kfe_3_1_1_macro.urdf.xacro
+rename to src/anymal_c_twins/urdf/leg/kfe/kfe_3_1_1_macro.urdf.xacro
+index 89f310c..bd79f7e 100644
+--- a/src/anymal_c_renamable/urdf/leg/kfe/kfe_3_1_1_macro.urdf.xacro
++++ b/src/anymal_c_twins/urdf/leg/kfe/kfe_3_1_1_macro.urdf.xacro
+@@ -2,7 +2,7 @@
+ 
+ <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+ 
+-  <xacro:macro name="anymal_kfe" params="leg:=LF drive_version">
++  <xacro:macro name="anymal_kfe" params="leg:=LF suffix:='A' drive_version">
+ 
+     <xacro:property name="T_r_TKfe_x"   value="0.0"/><!-- [m] -->
+     <xacro:property name="T_r_TKfe_y"   value="0.1003"/><!-- [m] -->
+diff --git a/src/anymal_c_renamable/urdf/leg/leg_3_0_1_macro.urdf.xacro b/src/anymal_c_twins/urdf/leg/leg_3_0_1_macro.urdf.xacro
+similarity index 100%
+rename from src/anymal_c_renamable/urdf/leg/leg_3_0_1_macro.urdf.xacro
+rename to src/anymal_c_twins/urdf/leg/leg_3_0_1_macro.urdf.xacro
+diff --git a/src/anymal_c_renamable/urdf/leg/leg_3_0_macro.urdf.xacro b/src/anymal_c_twins/urdf/leg/leg_3_0_macro.urdf.xacro
+similarity index 100%
+rename from src/anymal_c_renamable/urdf/leg/leg_3_0_macro.urdf.xacro
+rename to src/anymal_c_twins/urdf/leg/leg_3_0_macro.urdf.xacro
+diff --git a/src/anymal_c_renamable/urdf/leg/leg_3_1_1_macro.urdf.xacro b/src/anymal_c_twins/urdf/leg/leg_3_1_1_macro.urdf.xacro
+similarity index 75%
+rename from src/anymal_c_renamable/urdf/leg/leg_3_1_1_macro.urdf.xacro
+rename to src/anymal_c_twins/urdf/leg/leg_3_1_1_macro.urdf.xacro
+index d3a629a..cc31a34 100644
+--- a/src/anymal_c_renamable/urdf/leg/leg_3_1_1_macro.urdf.xacro
++++ b/src/anymal_c_twins/urdf/leg/leg_3_1_1_macro.urdf.xacro
+@@ -3,7 +3,7 @@
+ <robot name="anymal" xmlns:xacro="http://www.ros.org/wiki/xacro">
+ 
+   <!-- Leg components -->
+-  <xacro:macro name="leg" params="leg:=LF package:=anymal_c">
++  <xacro:macro name="leg" params="leg:=LF suffix:='A' package:=anymal_c_twins">
+     <xacro:haa    leg="${leg}" version="3_1_1" drive_version="3_0_2" package="${package}"/>
+     <xacro:hip    leg="${leg}" version="3_1_1" package="${package}"/>
+     <xacro:hfe    leg="${leg}" version="3_1_1" drive_version="3_0_2" package="${package}"/>
+@@ -13,31 +13,31 @@
+     <xacro:foot   leg="${leg}" version="3_1_1" package="${package}"/>
+   </xacro:macro>
+ 
+-  <xacro:macro name="haa" params="leg:=LF version drive_version package">
++  <xacro:macro name="haa" params="leg:=LF suffix:='A' version drive_version package">
+     <xacro:include filename="$(find ${package})/urdf/leg/haa/haa_${version}_macro.urdf.xacro"/>
+     <xacro:anymal_haa leg="${leg}" drive_version="${drive_version}" enable_collision="false"/>
+   </xacro:macro>
+-  <xacro:macro name="hip" params="leg:=LF version package">
++  <xacro:macro name="hip" params="leg:=LF suffix:='A' version package">
+     <xacro:include filename="$(find ${package})/urdf/leg/hip/hip_${version}_macro.urdf.xacro"/>
+     <xacro:anymal_hip leg="${leg}"/>
+   </xacro:macro>
+-  <xacro:macro name="hfe" params="leg:=LF version drive_version package">
++  <xacro:macro name="hfe" params="leg:=LF suffix:='A' version drive_version package">
+     <xacro:include filename="$(find ${package})/urdf/leg/hfe/hfe_${version}_macro.urdf.xacro"/>
+     <xacro:anymal_hfe leg="${leg}" drive_version="${drive_version}"/>
+   </xacro:macro>
+-  <xacro:macro name="thigh" params="leg:=LF version package">
++  <xacro:macro name="thigh" params="leg:=LF suffix:='A' version package">
+     <xacro:include filename="$(find ${package})/urdf/leg/thigh/thigh_${version}_macro.urdf.xacro"/>
+     <xacro:anymal_thigh leg="${leg}"/>
+   </xacro:macro>
+-  <xacro:macro name="kfe" params="leg:=LF version drive_version package">
++  <xacro:macro name="kfe" params="leg:=LF suffix:='A' version drive_version package">
+     <xacro:include filename="$(find ${package})/urdf/leg/kfe/kfe_${version}_macro.urdf.xacro"/>
+     <xacro:anymal_kfe leg="${leg}" drive_version="${drive_version}"/>
+   </xacro:macro>
+-  <xacro:macro name="shank" params="leg:=LF version package">
++  <xacro:macro name="shank" params="leg:=LF suffix:='A' version package">
+     <xacro:include filename="$(find ${package})/urdf/leg/shank/shank_${version}_macro.urdf.xacro"/>
+     <xacro:anymal_shank leg="${leg}"/>
+   </xacro:macro>
+-  <xacro:macro name="foot" params="leg:=LF version package">
++  <xacro:macro name="foot" params="leg:=LF suffix:='A' version package">
+     <xacro:include filename="$(find ${package})/urdf/leg/foot/foot_${version}_macro.urdf.xacro"/>
+     <xacro:anymal_foot leg="${leg}"/>
+   </xacro:macro>
+diff --git a/src/anymal_c_renamable/urdf/leg/shank/Shank_baked.jpg b/src/anymal_c_twins/urdf/leg/shank/Shank_baked.jpg
+similarity index 100%
+rename from src/anymal_c_renamable/urdf/leg/shank/Shank_baked.jpg
+rename to src/anymal_c_twins/urdf/leg/shank/Shank_baked.jpg
+diff --git a/src/anymal_c_renamable/urdf/leg/shank/shank_3_0_1_macro.urdf.xacro b/src/anymal_c_twins/urdf/leg/shank/shank_3_0_1_macro.urdf.xacro
+similarity index 100%
+rename from src/anymal_c_renamable/urdf/leg/shank/shank_3_0_1_macro.urdf.xacro
+rename to src/anymal_c_twins/urdf/leg/shank/shank_3_0_1_macro.urdf.xacro
+diff --git a/src/anymal_c_renamable/urdf/leg/shank/shank_3_0_macro.urdf.xacro b/src/anymal_c_twins/urdf/leg/shank/shank_3_0_macro.urdf.xacro
+similarity index 100%
+rename from src/anymal_c_renamable/urdf/leg/shank/shank_3_0_macro.urdf.xacro
+rename to src/anymal_c_twins/urdf/leg/shank/shank_3_0_macro.urdf.xacro
+diff --git a/src/anymal_c_renamable/urdf/leg/shank/shank_3_1_1_macro.urdf.xacro b/src/anymal_c_twins/urdf/leg/shank/shank_3_1_1_macro.urdf.xacro
+similarity index 98%
+rename from src/anymal_c_renamable/urdf/leg/shank/shank_3_1_1_macro.urdf.xacro
+rename to src/anymal_c_twins/urdf/leg/shank/shank_3_1_1_macro.urdf.xacro
+index 28bb1fb..3fff3ce 100644
+--- a/src/anymal_c_renamable/urdf/leg/shank/shank_3_1_1_macro.urdf.xacro
++++ b/src/anymal_c_twins/urdf/leg/shank/shank_3_1_1_macro.urdf.xacro
+@@ -2,7 +2,7 @@
+ 
+ <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+ 
+-  <xacro:macro name="anymal_shank" params="leg:=LF">
++  <xacro:macro name="anymal_shank" params="leg:=LF suffix:='A'">
+ 
+     <xacro:property name="q_KfeS_yaw"             value="${-0.5*pi}"/> <!-- [rad] -->
+     <xacro:property name="S_r_SScom_x"            value="0.03463"/> <!-- [m] -->
+diff --git a/src/anymal_c_renamable/urdf/leg/shank/shank_3_1_1_mesh.dae b/src/anymal_c_twins/urdf/leg/shank/shank_3_1_1_mesh.dae
+similarity index 100%
+rename from src/anymal_c_renamable/urdf/leg/shank/shank_3_1_1_mesh.dae
+rename to src/anymal_c_twins/urdf/leg/shank/shank_3_1_1_mesh.dae
+diff --git a/src/anymal_c_renamable/urdf/leg/shank/shank_3_1_1_mesh_mirrored.dae b/src/anymal_c_twins/urdf/leg/shank/shank_3_1_1_mesh_mirrored.dae
+similarity index 100%
+rename from src/anymal_c_renamable/urdf/leg/shank/shank_3_1_1_mesh_mirrored.dae
+rename to src/anymal_c_twins/urdf/leg/shank/shank_3_1_1_mesh_mirrored.dae
+diff --git a/src/anymal_c_renamable/urdf/leg/thigh/Thigh_baked.jpg b/src/anymal_c_twins/urdf/leg/thigh/Thigh_baked.jpg
+similarity index 100%
+rename from src/anymal_c_renamable/urdf/leg/thigh/Thigh_baked.jpg
+rename to src/anymal_c_twins/urdf/leg/thigh/Thigh_baked.jpg
+diff --git a/src/anymal_c_renamable/urdf/leg/thigh/thigh_3_0_1_macro.urdf.xacro b/src/anymal_c_twins/urdf/leg/thigh/thigh_3_0_1_macro.urdf.xacro
+similarity index 100%
+rename from src/anymal_c_renamable/urdf/leg/thigh/thigh_3_0_1_macro.urdf.xacro
+rename to src/anymal_c_twins/urdf/leg/thigh/thigh_3_0_1_macro.urdf.xacro
+diff --git a/src/anymal_c_renamable/urdf/leg/thigh/thigh_3_0_macro.urdf.xacro b/src/anymal_c_twins/urdf/leg/thigh/thigh_3_0_macro.urdf.xacro
+similarity index 100%
+rename from src/anymal_c_renamable/urdf/leg/thigh/thigh_3_0_macro.urdf.xacro
+rename to src/anymal_c_twins/urdf/leg/thigh/thigh_3_0_macro.urdf.xacro
+diff --git a/src/anymal_c_renamable/urdf/leg/thigh/thigh_3_1_1_macro.urdf.xacro b/src/anymal_c_twins/urdf/leg/thigh/thigh_3_1_1_macro.urdf.xacro
+similarity index 98%
+rename from src/anymal_c_renamable/urdf/leg/thigh/thigh_3_1_1_macro.urdf.xacro
+rename to src/anymal_c_twins/urdf/leg/thigh/thigh_3_1_1_macro.urdf.xacro
+index 9bb8f41..9b7b87d 100644
+--- a/src/anymal_c_renamable/urdf/leg/thigh/thigh_3_1_1_macro.urdf.xacro
++++ b/src/anymal_c_twins/urdf/leg/thigh/thigh_3_1_1_macro.urdf.xacro
+@@ -2,7 +2,7 @@
+ 
+ <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+ 
+-  <xacro:macro name="anymal_thigh" params="leg:=LF">
++  <xacro:macro name="anymal_thigh" params="leg:=LF suffix:='A'">
+ 
+     <xacro:property name="q_HfeT_yaw"       value="${-0.5*pi}"/> <!-- [rad] -->
+     <xacro:property name="T_r_TTcom_x"      value="0.0"/> <!-- [m] -->
+diff --git a/src/anymal_c_renamable/urdf/leg/thigh/thigh_3_1_1_mesh.dae b/src/anymal_c_twins/urdf/leg/thigh/thigh_3_1_1_mesh.dae
+similarity index 100%
+rename from src/anymal_c_renamable/urdf/leg/thigh/thigh_3_1_1_mesh.dae
+rename to src/anymal_c_twins/urdf/leg/thigh/thigh_3_1_1_mesh.dae
+diff --git a/src/anymal_c_renamable/urdf/marker.dae b/src/anymal_c_twins/urdf/marker.dae
+similarity index 100%
+rename from src/anymal_c_renamable/urdf/marker.dae
+rename to src/anymal_c_twins/urdf/marker.dae
+diff --git a/src/anytwin_urdf_development/launch/load_anymal_c_into_rviz.launch b/src/anytwin_urdf_development/launch/load_anymal_c_into_rviz.launch
+index 35a3ddb..6699134 100644
+--- a/src/anytwin_urdf_development/launch/load_anymal_c_into_rviz.launch
++++ b/src/anytwin_urdf_development/launch/load_anymal_c_into_rviz.launch
+@@ -1,5 +1,5 @@
+ <launch>
+-	<arg name="model" default="$(find anymal_c_renamable)/urdf/anymal_c_renamable.urdf.xacro"/>
++	<arg name="model" default="$(find anytwin_urdf_development)/urdf/anymal_c.urdf.xacro"/>
+ 	<arg name="gui" default="false"/>
+ 
+ 	<param name="robot_description" command="$(find xacro)/xacro $(arg model)"/>
+diff --git a/src/anytwin_urdf_development/urdf/anymal_c.urdf.xacro b/src/anytwin_urdf_development/urdf/anymal_c.urdf.xacro
+index 670f40c..4f96c0a 100644
+--- a/src/anytwin_urdf_development/urdf/anymal_c.urdf.xacro
++++ b/src/anytwin_urdf_development/urdf/anymal_c.urdf.xacro
+@@ -1,10 +1,8 @@
+ <?xml version="1.0"?>
+ 
+ <robot name="anymal_c" xmlns:xacro="http://www.ros.org/wiki/xacro">
+-    <xacro:arg name="model" default="$(find anymal_c_renamable)/urdf/anymal_c.urdf.xacro"/>
+-
+-    <xacro:macro name="anymal_c_macro">
+-        <xacro:include filename="$(find anymal_c)/urdf/anymal_c.urdf.xacro"/>
++    <xacro:macro name="anymal_c_macro" params="suffix:='A'">
++        <xacro:include filename="$(find anymal_c_twins)/urdf/anymal_c_${suffix}.urdf.xacro"/>
+     </xacro:macro>
+-    <xacro:anymal_c_macro/>
++    <xacro:anymal_c_macro suffix='A'/>
+ </robot>
+\ No newline at end of file
+diff --git a/src/anytwin_urdf_development/urdf/anytwin_c.urdf.xacro b/src/anytwin_urdf_development/urdf/anytwin_c.urdf.xacro
+index 49cbe3e..026f3a2 100644
+--- a/src/anytwin_urdf_development/urdf/anytwin_c.urdf.xacro
++++ b/src/anytwin_urdf_development/urdf/anytwin_c.urdf.xacro
+@@ -1,18 +1,11 @@
+ <?xml version="1.0"?>
+ 
+ <robot name="anymal_c" xmlns:xacro="http://www.ros.org/wiki/xacro">
+-    <xacro:arg name="model" default="$(find anymal_c_renamable)/urdf/anymal_c_renamable.urdf.xacro"/>
++<!--include macro to load anymal_c versions A and B-->
++    <xacro:include filename="$(find anytwin_urdf_development)/urdf/anymal_c.urdf.xacro"/>
+     <xacro:arg name="suffix_one" default="A"/>
+-    <cacro:arg name="suffix_two" default="B"/>
+-    
+-    <xacro:include filename="$(find anymal_c)/urdf/anymal_c.urdf.xacro"/>
++    <xacro:arg name="suffix_two" default="B"/>
+ 
+-    <xacro:macro name="anymal_c_macro" params="suffix_one_parameter suffix_two_parameter">
+-        <!-- one cannot pass arguments (here: suffix_one or suffix_two into included files. I need to make the entire content of anymal_c a macro. Maybe I can then include it and use it here. )-->
+-    </xacro:macro>
+-    <!--joint name="caster_${suffix}_joint">
+-        <axis xyz="0 0 1" />
+-    </joint-->
+-    <xacro:anymal_c_macro/>
+-    <xacro:anymal_c_macro/>
++    <xacro:anymal_c_macro suffix="$(arg suffix_one)"/>
++    <xacro:anymal_c_macro suffix="$(arg suffix_two)"/>
+ </robot>
+\ No newline at end of file

@@ -18,17 +18,17 @@
     <xacro:property name="min_joint_position"       value="${0.605 + left * 0.115}"/> <!-- [rad] -->
 
     <!-- joint base HAA -->
-    <joint name="base_${leg}_HAA" type="fixed">
+    <joint name="base_${leg}_HAA_${suffix}" type="fixed">
       <parent link="base_${suffix}"/>
-      <child link="${leg}_HAA"/>
+      <child link="${leg}_HAA_${suffix}"/>
       <origin xyz="${front * B_r_BHaa_x} ${left * B_r_BHaa_y} ${B_r_BHaa_z}" 
               rpy="${front*left*q_BHaa_roll} 0 ${(front-1)*0.5*pi}"/>
     </joint>
 
     <!-- HAA Drive link and joint -->
-    <xacro:include filename="$(find anymal_c)/urdf/leg/drives/drive_${drive_version}_macro.urdf.xacro"/>
-    <xacro:drive name="${leg}_HAA"
-        output="${leg}_HIP"
+    <xacro:include filename="$(find anymal_c_twins)/urdf/leg/drives/drive_${drive_version}_macro.urdf.xacro"/>
+    <xacro:drive name="${leg}_HAA_${suffix}"
+        output="${leg}_HIP_${suffix}"
         direction="${front}"
         enable_collision="${enable_collision}"
         max_joint_position="${max_joint_position}"

@@ -23,19 +23,19 @@
 
 
     <!-- joint HAA hip -->
-    <joint name="${leg}_HIP_${leg}_hip_fixed" type="fixed">
-      <parent link="${leg}_HIP"/>
-      <child link="${leg}_hip_fixed"/>
+    <joint name="${leg}_HIP_${leg}_hip_fixed_${suffix}" type="fixed">
+      <parent link="${leg}_HIP_${suffix}"/>
+      <child link="${leg}_hip_fixed_${suffix}"/>
       <origin xyz="0 0 0" rpy="${left*q_HaaH_roll} 0 ${(front-1)*0.5*pi}"/>
     </joint>
 
     <!-- Hip link -->
-    <link name="${leg}_hip_fixed">
+    <link name="${leg}_hip_fixed_${suffix}">
      <visual>
        <origin xyz="0 0 0" rpy="0 0 ${(front-1)*0.5*pi}"/>
        <geometry>
          <mesh
-           filename="package://anymal_c/urdf/leg/hip/hip_3_1_1_mesh${mirrored}.dae"
+           filename="package://anymal_c_twins/urdf/leg/hip/hip_3_1_1_mesh${mirrored}.dae"
            scale="${anymal_meshes_scale}"/>
        </geometry>
      </visual>

@@ -28,19 +28,19 @@
 
 
     <!-- joint HFE thigh -->
-    <joint name="${leg}_THIGH_${leg}_thigh_fixed" type="fixed">
-      <parent link="${leg}_THIGH"/>
-      <child link="${leg}_thigh_fixed"/>
+    <joint name="${leg}_THIGH_${leg}_thigh_fixed_${suffix}" type="fixed">
+      <parent link="${leg}_THIGH_${suffix}"/>
+      <child link="${leg}_thigh_fixed_${suffix}"/>
       <origin xyz="0 0 0" rpy="0 0 ${left*q_HfeT_yaw}"/>
     </joint>
 
     <!-- Thigh link -->
-    <link name="${leg}_thigh_fixed">
+    <link name="${leg}_thigh_fixed_${suffix}">
       <visual>
         <origin xyz="0 0 0" rpy="0 0 ${(left -1) * 0.5 * pi}"/>
         <geometry>
           <mesh
-               filename="package://anymal_c/urdf/leg/thigh/thigh_3_1_1_mesh.dae"
+               filename="package://anymal_c_twins/urdf/leg/thigh/thigh_3_1_1_mesh.dae"
                scale="${anymal_meshes_scale}"/>
         </geometry>
       </visual>

@@ -2,7 +2,7 @@
 
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-  <xacro:macro name="anymal_foot" params="leg:=LF">
+  <xacro:macro name="anymal_foot" params="leg:=LF suffix:='A'">
 
     <xacro:property name="S_r_SF_x"               value="0.087950"/> <!-- [m] -->
     <xacro:property name="S_r_SF_y"               value="0.013050"/> <!-- [m] -->
@@ -39,20 +39,20 @@
     </xacro:if>
 
     <!-- joint shank foot -->
-    <joint name="${leg}_shank_fixed_${leg}_FOOT" type="fixed">
-      <parent link="${leg}_shank_fixed"/>
-      <child link="${leg}_FOOT"/>
+    <joint name="${leg}_shank_fixed_${leg}_FOOT_${suffix}" type="fixed">
+      <parent link="${leg}_shank_fixed_${suffix}"/>
+      <child link="${leg}_FOOT_${suffix}"/>
       <origin xyz="${front*S_r_SF_x} ${left*S_r_SF_y} ${S_r_SF_z}"
               rpy="0 0 0"/>
     </joint>
 
     <!-- Foot link -->
-    <link name="${leg}_FOOT">
+    <link name="${leg}_FOOT_${suffix}">
      <visual>
        <origin xyz="0 0 0" rpy="0 0 ${(front-1)*0.5*pi - (front*left*pi*0.25)}"/>
        <geometry>
          <mesh
-             filename="package://anymal_c/urdf/leg/foot/foot_3_1_1_mesh.dae"
+             filename="package://anymal_c_twins/urdf/leg/foot/foot_3_1_1_mesh.dae"
              scale="${anymal_meshes_scale}"/>
        </geometry>
       </visual>
@@ -80,7 +80,7 @@
     </link>
 
     <!-- Gazebo customization -->
-    <gazebo reference="${leg}_FOOT">
+    <gazebo reference="${leg}_FOOT_${suffix}">
       <kp>${kp}</kp>
       <kd>${kd}</kd>
       <mu1>${mu}</mu1>

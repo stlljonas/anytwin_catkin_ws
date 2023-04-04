@@ -7,6 +7,7 @@ Panels:
         - /Global Options1
         - /Status1
         - /TF1
+        - /RobotModel1
       Splitter Ratio: 0.5
     Tree Height: 1474
   - Class: rviz/Selection
@@ -57,119 +58,119 @@ Visualization Manager:
       Frame Timeout: 15
       Frames:
         All Enabled: true
-        LF_FOOT:
+        LF_FOOT_A:
           Value: true
-        LF_HAA:
+        LF_HAA_A:
           Value: true
-        LF_HFE:
+        LF_HFE_A:
           Value: true
-        LF_HIP:
+        LF_HIP_A:
           Value: true
-        LF_KFE:
+        LF_KFE_A:
           Value: true
-        LF_SHANK:
+        LF_SHANK_A:
           Value: true
-        LF_THIGH:
+        LF_THIGH_A:
           Value: true
-        LF_hip_fixed:
+        LF_hip_fixed_A:
           Value: true
-        LF_shank_fixed:
+        LF_shank_fixed_A:
           Value: true
-        LF_thigh_fixed:
+        LF_thigh_fixed_A:
           Value: true
-        LH_FOOT:
+        LH_FOOT_A:
           Value: true
-        LH_HAA:
+        LH_HAA_A:
           Value: true
-        LH_HFE:
+        LH_HFE_A:
           Value: true
-        LH_HIP:
+        LH_HIP_A:
           Value: true
-        LH_KFE:
+        LH_KFE_A:
           Value: true
-        LH_SHANK:
+        LH_SHANK_A:
           Value: true
-        LH_THIGH:
+        LH_THIGH_A:
           Value: true
-        LH_hip_fixed:
+        LH_hip_fixed_A:
           Value: true
-        LH_shank_fixed:
+        LH_shank_fixed_A:
           Value: true
-        LH_thigh_fixed:
+        LH_thigh_fixed_A:
           Value: true
-        RF_FOOT:
+        RF_FOOT_A:
           Value: true
-        RF_HAA:
+        RF_HAA_A:
           Value: true
-        RF_HFE:
+        RF_HFE_A:
           Value: true
-        RF_HIP:
+        RF_HIP_A:
           Value: true
-        RF_KFE:
+        RF_KFE_A:
           Value: true
-        RF_SHANK:
+        RF_SHANK_A:
           Value: true
-        RF_THIGH:
+        RF_THIGH_A:
           Value: true
-        RF_hip_fixed:
+        RF_hip_fixed_A:
           Value: true
-        RF_shank_fixed:
+        RF_shank_fixed_A:
           Value: true
-        RF_thigh_fixed:
+        RF_thigh_fixed_A:
           Value: true
-        RH_FOOT:
+        RH_FOOT_A:
           Value: true
-        RH_HAA:
+        RH_HAA_A:
           Value: true
-        RH_HFE:
+        RH_HFE_A:
           Value: true
-        RH_HIP:
+        RH_HIP_A:
           Value: true
-        RH_KFE:
+        RH_KFE_A:
           Value: true
-        RH_SHANK:
+        RH_SHANK_A:
           Value: true
-        RH_THIGH:
+        RH_THIGH_A:
           Value: true
-        RH_hip_fixed:
+        RH_hip_fixed_A:
           Value: true
-        RH_shank_fixed:
+        RH_shank_fixed_A:
           Value: true
-        RH_thigh_fixed:
+        RH_thigh_fixed_A:
           Value: true
-        base:
+        base_A:
           Value: true
-        base_inertia:
+        base_inertia_A:
           Value: true
-        battery:
+        battery_A:
           Value: true
         bottom_shell:
           Value: true
-        depth_camera_front_camera:
+        depth_camera_front_A_camera:
           Value: true
-        depth_camera_front_camera_parent:
+        depth_camera_front_A_camera_parent:
           Value: true
         depth_camera_left_camera:
           Value: true
         depth_camera_left_camera_parent:
           Value: true
-        depth_camera_rear_camera:
+        depth_camera_rear_A_camera:
           Value: true
-        depth_camera_rear_camera_parent:
+        depth_camera_rear_A_camera_parent:
           Value: true
         depth_camera_right_camera:
           Value: true
         depth_camera_right_camera_parent:
           Value: true
-        docking_hatch_cover:
+        docking_hatch_cover_A:
           Value: true
-        face_front:
+        face_front_A:
           Value: true
-        face_rear:
+        face_rear_A:
           Value: true
-        handle:
+        handle_A:
           Value: true
-        hatch:
+        hatch_A:
           Value: true
         imu_link:
           Value: true
@@ -177,17 +178,17 @@ Visualization Manager:
           Value: true
         lidar_cage:
           Value: true
-        remote:
+        remote_A:
           Value: true
         top_shell:
           Value: true
-        wide_angle_camera_front_camera:
+        wide_angle_camera_front_A_camera:
           Value: true
-        wide_angle_camera_front_camera_parent:
+        wide_angle_camera_front_A_camera_parent:
           Value: true
-        wide_angle_camera_rear_camera:
+        wide_angle_camera_rear_A_camera:
           Value: true
-        wide_angle_camera_rear_camera_parent:
+        wide_angle_camera_rear_A_camera_parent:
           Value: true
       Marker Alpha: 1
       Marker Scale: 0.10000000149011612
@@ -196,54 +197,54 @@ Visualization Manager:
       Show Axes: false
       Show Names: true
       Tree:
-        base:
-          LF_HAA:
-            LF_HIP:
-              LF_hip_fixed:
-                LF_HFE:
-                  LF_THIGH:
-                    LF_thigh_fixed:
-                      LF_KFE:
-                        LF_SHANK:
-                          LF_shank_fixed:
-                            LF_FOOT:
+        base_A:
+          LF_HAA_A:
+            LF_HIP_A:
+              LF_hip_fixed_A:
+                LF_HFE_A:
+                  LF_THIGH_A:
+                    LF_thigh_fixed_A:
+                      LF_KFE_A:
+                        LF_SHANK_A:
+                          LF_shank_fixed_A:
+                            LF_FOOT_A:
                               {}
-          LH_HAA:
-            LH_HIP:
-              LH_hip_fixed:
-                LH_HFE:
-                  LH_THIGH:
-                    LH_thigh_fixed:
-                      LH_KFE:
-                        LH_SHANK:
-                          LH_shank_fixed:
-                            LH_FOOT:
+          LH_HAA_A:
+            LH_HIP_A:
+              LH_hip_fixed_A:
+                LH_HFE_A:
+                  LH_THIGH_A:
+                    LH_thigh_fixed_A:
+                      LH_KFE_A:
+                        LH_SHANK_A:
+                          LH_shank_fixed_A:
+                            LH_FOOT_A:
                               {}
-          RF_HAA:
-            RF_HIP:
-              RF_hip_fixed:
-                RF_HFE:
-                  RF_THIGH:
-                    RF_thigh_fixed:
-                      RF_KFE:
-                        RF_SHANK:
-                          RF_shank_fixed:
-                            RF_FOOT:
+          RF_HAA_A:
+            RF_HIP_A:
+              RF_hip_fixed_A:
+                RF_HFE_A:
+                  RF_THIGH_A:
+                    RF_thigh_fixed_A:
+                      RF_KFE_A:
+                        RF_SHANK_A:
+                          RF_shank_fixed_A:
+                            RF_FOOT_A:
                               {}
-          RH_HAA:
-            RH_HIP:
-              RH_hip_fixed:
-                RH_HFE:
-                  RH_THIGH:
-                    RH_thigh_fixed:
-                      RH_KFE:
-                        RH_SHANK:
-                          RH_shank_fixed:
-                            RH_FOOT:
+          RH_HAA_A:
+            RH_HIP_A:
+              RH_hip_fixed_A:
+                RH_HFE_A:
+                  RH_THIGH_A:
+                    RH_thigh_fixed_A:
+                      RH_KFE_A:
+                        RH_SHANK_A:
+                          RH_shank_fixed_A:
+                            RH_FOOT_A:
                               {}
-          base_inertia:
+          base_inertia_A:
             {}
-          battery:
+          battery_A:
             {}
           bottom_shell:
             {}
@@ -253,32 +254,32 @@ Visualization Manager:
           depth_camera_right_camera:
             depth_camera_right_camera_parent:
               {}
-          docking_hatch_cover:
+          docking_hatch_cover_A:
             {}
-          face_front:
-            depth_camera_front_camera:
-              depth_camera_front_camera_parent:
+          face_front_A:
+            depth_camera_front_A_camera:
+              depth_camera_front_A_camera_parent:
                 {}
-            wide_angle_camera_front_camera:
-              wide_angle_camera_front_camera_parent:
+            wide_angle_camera_front_A_camera:
+              wide_angle_camera_front_A_camera_parent:
                 {}
-          face_rear:
-            depth_camera_rear_camera:
-              depth_camera_rear_camera_parent:
+          face_rear_A:
+            depth_camera_rear_A_camera:
+              depth_camera_rear_A_camera_parent:
                 {}
-            wide_angle_camera_rear_camera:
-              wide_angle_camera_rear_camera_parent:
+            wide_angle_camera_rear_A_camera:
+              wide_angle_camera_rear_A_camera_parent:
                 {}
-          handle:
+          handle_A:
             {}
-          hatch:
+          hatch_A:
             {}
           imu_link:
             {}
           lidar_cage:
             lidar:
               {}
-          remote:
+          remote_A:
             {}
           top_shell:
             {}
@@ -293,205 +294,205 @@ Visualization Manager:
         Expand Joint Details: false
         Expand Link Details: false
         Expand Tree: false
-        LF_FOOT:
+        LF_FOOT_A:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        LF_HAA:
+        LF_HAA_A:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        LF_HFE:
+        LF_HFE_A:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        LF_HIP:
+        LF_HIP_A:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        LF_KFE:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        LF_SHANK:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        LF_THIGH:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        LF_hip_fixed:
+        LF_KFE_A:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        LF_shank_fixed:
+        LF_SHANK_A:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        LF_THIGH_A:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        LF_hip_fixed_A:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        LF_thigh_fixed:
+        LF_shank_fixed_A:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        LH_FOOT:
+        LF_thigh_fixed_A:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        LH_HAA:
+        LH_FOOT_A:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        LH_HFE:
+        LH_HAA_A:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        LH_HIP:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        LH_KFE:
+        LH_HFE_A:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        LH_SHANK:
+        LH_HIP_A:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        LH_THIGH:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        LH_hip_fixed:
+        LH_KFE_A:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        LH_shank_fixed:
+        LH_SHANK_A:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        LH_THIGH_A:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        LH_hip_fixed_A:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        LH_thigh_fixed:
+        LH_shank_fixed_A:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        LH_thigh_fixed_A:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
         Link Tree Style: Links in Alphabetic Order
-        RF_FOOT:
+        RF_FOOT_A:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        RF_HAA:
+        RF_HAA_A:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        RF_HFE:
+        RF_HFE_A:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        RF_HIP:
+        RF_HIP_A:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        RF_KFE:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        RF_SHANK:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        RF_THIGH:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        RF_hip_fixed:
+        RF_KFE_A:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        RF_shank_fixed:
+        RF_SHANK_A:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        RF_THIGH_A:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        RF_hip_fixed_A:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        RF_thigh_fixed:
+        RF_shank_fixed_A:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        RH_FOOT:
+        RF_thigh_fixed_A:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        RH_HAA:
+        RH_FOOT_A:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        RH_HFE:
+        RH_HAA_A:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        RH_HIP:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        RH_KFE:
+        RH_HFE_A:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        RH_SHANK:
+        RH_HIP_A:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        RH_THIGH:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        RH_hip_fixed:
+        RH_KFE_A:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        RH_shank_fixed:
+        RH_SHANK_A:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        RH_THIGH_A:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        RH_hip_fixed_A:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        RH_thigh_fixed:
+        RH_shank_fixed_A:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        base:
+        RH_thigh_fixed_A:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        base_inertia:
+        base_A:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        battery:
+          Value: true
+        base_inertia_A:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        battery_A:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -501,12 +502,12 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
-        depth_camera_front_camera:
+        depth_camera_front_A_camera:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        depth_camera_front_camera_parent:
+        depth_camera_front_A_camera_parent:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -519,12 +520,12 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        depth_camera_rear_camera:
+        depth_camera_rear_A_camera:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        depth_camera_rear_camera_parent:
+        depth_camera_rear_A_camera_parent:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -537,26 +538,26 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        docking_hatch_cover:
+        docking_hatch_cover_A:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        face_front:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        face_rear:
+        face_front_A:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        handle:
+        face_rear_A:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        hatch:
+        handle_A:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        hatch_A:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -576,7 +577,7 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
-        remote:
+        remote_A:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -586,21 +587,21 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
-        wide_angle_camera_front_camera:
+        wide_angle_camera_front_A_camera:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        wide_angle_camera_front_camera_parent:
+        wide_angle_camera_front_A_camera_parent:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        wide_angle_camera_rear_camera:
+        wide_angle_camera_rear_A_camera:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        wide_angle_camera_rear_camera_parent:
+        wide_angle_camera_rear_A_camera_parent:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -614,7 +615,7 @@ Visualization Manager:
   Global Options:
     Background Color: 48; 48; 48
     Default Light: true
-    Fixed Frame: base
+    Fixed Frame: base_A
     Frame Rate: 30
   Name: root
   Tools:
@@ -654,9 +655,9 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.27539825439453125
+      Pitch: 0.28039830923080444
       Target Frame: <Fixed Frame>
-      Yaw: 4.073577404022217
+      Yaw: 2.063577175140381
     Saved: ~
 Window Geometry:
   Displays:

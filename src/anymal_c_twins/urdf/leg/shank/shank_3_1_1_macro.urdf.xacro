@@ -28,19 +28,19 @@
 
 
     <!-- joint KFE shank -->
-    <joint name="${leg}_shank_${leg}_shank_fixed" type="fixed">
-      <parent link="${leg}_SHANK"/>
-      <child link="${leg}_shank_fixed"/>
+    <joint name="${leg}_shank_${leg}_shank_fixed_${suffix}" type="fixed">
+      <parent link="${leg}_SHANK_${suffix}"/>
+      <child link="${leg}_shank_fixed_${suffix}"/>
       <origin xyz="0 0 0" rpy="0 0 ${left*q_KfeS_yaw}"/>
     </joint>
 
     <!-- Shank link -->
-    <link name="${leg}_shank_fixed">
+    <link name="${leg}_shank_fixed_${suffix}">
      <visual>
        <origin xyz="0 0 0" rpy="0 0 ${(front-1)*0.5*pi}"/>
        <geometry>
          <mesh
-           filename="package://anymal_c/urdf/leg/shank/shank_3_1_1_mesh${mirrored}.dae"
+           filename="package://anymal_c_twins/urdf/leg/shank/shank_3_1_1_mesh${mirrored}.dae"
            scale="${anymal_meshes_scale}"/>
        </geometry>
       </visual>

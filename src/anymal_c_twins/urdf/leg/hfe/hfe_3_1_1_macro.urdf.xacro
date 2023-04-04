@@ -15,16 +15,16 @@
 
 
     <!-- joint hip HFE -->
-    <joint name="${leg}_hip_fixed_${leg}_HFE" type="fixed">
-      <parent link="${leg}_hip_fixed"/>
-      <child link="${leg}_HFE"/>
+    <joint name="${leg}_hip_fixed_${leg}_HFE_${suffix}" type="fixed">
+      <parent link="${leg}_hip_fixed_${suffix}"/>
+      <child link="${leg}_HFE_${suffix}"/>
       <origin xyz="${front * H_r_HHfe_x} ${left * H_r_HHfe_y} ${H_r_HHfe_z}" 
               rpy="0 0 ${left*q_HHfe_yaw}"/>
     </joint>
 
     <!-- HFE Drive link and joint -->
-    <xacro:include filename="$(find anymal_c)/urdf/leg/drives/drive_${drive_version}_macro.urdf.xacro"/>
-    <xacro:drive name="${leg}_HFE" output="${leg}_THIGH" direction="${left}"/>
+    <xacro:include filename="$(find anymal_c_twins)/urdf/leg/drives/drive_${drive_version}_macro.urdf.xacro"/>
+    <xacro:drive name="${leg}_HFE_${suffix}" output="${leg}_THIGH_${suffix}" direction="${left}"/>
 
   </xacro:macro>
 
