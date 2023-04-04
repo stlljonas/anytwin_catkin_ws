@@ -154,24 +154,24 @@
 
     <!-- Epson IMU -->
     <xacro:include filename="$(find any_description)/urdf/sensors/imu/epson/epson.urdf.xacro"/>
-    <xacro:epson name="imu" parent="base_${suffix}" update_rate="400" ns="sensors" frame_id="imu_link" topic_name="imu">
+    <xacro:epson name="imu_${suffix}" parent="base_${suffix}" update_rate="400" ns="sensors" frame_id="imu_link" topic_name="imu">
         <origin xyz="0.2488 0.00835 0.04628" rpy="${imu_roll/180*pi} ${imu_pitch/180*pi} ${imu_yaw/180*pi}"/>
     </xacro:epson>
 
     <!-- Realsense left -->
     <xacro:include filename="$(find anymal_c_twins)/urdf/base/sensors/depth_camera/realsense_d435_3_1_1.urdf.xacro"/>
-    <xacro:anymal_realsense name="depth_camera_left" parent="base_${suffix}" simulation="${simulate_depth_camera}">
+    <xacro:anymal_realsense name="depth_camera_left_${suffix}" parent="base_${suffix}" simulation="${simulate_depth_camera}">
       <origin xyz="0.0 0.07646 0.02905" rpy="${depth_camera_left_roll/180*pi} ${depth_camera_left_pitch/180*pi} ${pi/2}"/>
     </xacro:anymal_realsense>
 
     <!-- Realsense right -->
-    <xacro:anymal_realsense name="depth_camera_right" parent="base_${suffix}" simulation="${simulate_depth_camera}">
+    <xacro:anymal_realsense name="depth_camera_right_${suffix}" parent="base_${suffix}" simulation="${simulate_depth_camera}">
       <origin xyz="0.0 -0.07646 0.02905" rpy="${depth_camera_right_roll/180*pi} ${depth_camera_right_pitch/180*pi} ${-pi/2}"/>
     </xacro:anymal_realsense>
 
     <!-- Velodyne -->
     <xacro:include filename="$(find anymal_c_twins)/urdf/base/sensors/lidar/velodyne_3_1_1.urdf.xacro"/>
-    <xacro:anymal_velodyne name="lidar" parent="base_${suffix}" simulation="${simulate_lidar}" yaw="${-pi/2}">
+    <xacro:anymal_velodyne name="lidar_${suffix}" parent="base_${suffix}" simulation="${simulate_lidar}" yaw="${-pi/2}">
       <origin xyz="-0.364 0.0 0.0735" rpy="0 0 0"/>
     </xacro:anymal_velodyne>
 

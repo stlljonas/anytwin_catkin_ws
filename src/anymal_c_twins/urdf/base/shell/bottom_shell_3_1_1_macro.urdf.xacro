@@ -16,14 +16,14 @@
     <xacro:property name="B_Iyz_Bs"            value= "0.00000023042"/> <!-- [kg * m^2] -->
 
     <!-- Fixed joint base topshell -->
-    <joint name="base_bottom_shell" type="fixed">
+    <joint name="base_bottom_shell_${suffix}" type="fixed">
       <parent link="base_${suffix}"/>
-      <child link="bottom_shell"/>
+      <child link="bottom_shell_${suffix}"/>
       <origin xyz="0 0 0" rpy="0 0 0"/>
     </joint>
 
     <!-- Bottom shell link -->
-    <link name="bottom_shell">
+    <link name="bottom_shell_${suffix}">
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
