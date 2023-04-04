@@ -6,12 +6,15 @@
     <xacro:arg name="suffix_one" default="A"/>
     <xacro:arg name="suffix_two" default="B"/>
 
-    <xacro:macro name="anymal_c_macro" params="suffix">
+    <!--xacro:macro name="anymal_c_macro" params="suffix">
         <xacro:include filename="$(find anymal_c_twins)/urdf/anymal_c_${suffix}.urdf.xacro"/>
-    </xacro:macro>
-    <xacro:include filename="$(find anymal_c_twins)/urdf/linkage.urdf.xacro"/>
+    </xacro:macro-->
+    <xacro:include filename="$(find anytwin_urdf_development)/urdf/linkage.urdf.xacro"/>
     <!--xacro:anymal_c_macro suffix="$(arg suffix_one)"/>
     <xacro:anymal_c_macro suffix="$(arg suffix_two)"/-->
-    <xacro:anymal_c_macro suffix='A'/>
-    <xacro:anymal_c_macro suffix='B'/>
+    <xacro:include filename="$(find anymal_c_twins)/urdf/anymal_c_Renamable_child.urdf.xacro"/>
+    <!--xacro:anymal_c_macro-->
+    <xacro:anymal_c_macro suffix='A' parent_link='base_link'/>
+    <!--xacro:anymal_c_macro suffix='B' parent_link='base_link'/-->
+    <!--/xacro:anymal_c_macro-->
 </robot>
