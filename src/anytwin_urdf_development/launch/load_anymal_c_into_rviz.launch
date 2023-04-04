@@ -1,5 +1,5 @@
 <launch>
-	<arg name="model" default="$(find anymal_c_renamable)/urdf/anymal_c_renamable.urdf.xacro"/>
+	<arg name="model" default="$(find anytwin_urdf_development)/urdf/anymal_c.urdf.xacro"/>
 	<arg name="gui" default="false"/>
 
 	<param name="robot_description" command="$(find xacro)/xacro $(arg model)"/>
