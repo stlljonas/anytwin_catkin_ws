@@ -137,7 +137,7 @@
   <xacro:unless value="$(arg enable_inspection_payload)">
     <!-- describes hatch-->
     <xacro:include filename="$(find anymal_c_twins)/urdf/base/hatch/hatch_3_1_1_macro.urdf.xacro"/>
-    <xacro:hatch/>
+    <xacro:hatch suffix="${suffix}"/>
   </xacro:unless>
 
 

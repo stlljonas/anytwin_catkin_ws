@@ -5,7 +5,7 @@
 <robot name="anymal_c_B" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
   <!-- Arguments -->
-  <xacro:arg name="suffix"                        default="B"/>
+  <xacro:arg name="suffix_B"                        default="B"/>
   <xacro:arg name="simulation"                    default="true"/>
   <xacro:arg name="perfect_sensors"               default="true"/>
   <xacro:arg name="fix_base"                      default="false"/>

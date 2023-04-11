@@ -3,10 +3,10 @@
 <!-- This file contains the description of the ANYmal robot. -->
 
 <robot name="anymal_c_B" xmlns:xacro="http://www.ros.org/wiki/xacro">
-  <xacro:macro name="anymal_c_macro" params="suffix parent_link">
+  <xacro:macro name="anymal_c_macro" params="suffix parent_link xyz rpy">
 
     <!-- Arguments -->
-    <xacro:arg name="suffix"                        default="${suffix}"/>
+    <!--xacro:arg name="suffix"                        default="${suffix}"/-->
     <xacro:arg name="simulation"                    default="true"/>
     <xacro:arg name="perfect_sensors"               default="true"/>
     <xacro:arg name="fix_base"                      default="false"/>
@@ -52,7 +52,7 @@
     <!-- describes base link (including base intertia dummy link) and integrated sensors-->
     <xacro:if value="${version_ == 'c100'}">
       <xacro:include filename="$(find anymal_c_twins)/urdf/base/base_3_1_1_macro.urdf.xacro"/>
-      <xacro:base suffix="$(arg suffix)"
+      <xacro:base suffix="${suffix}"
                   fix_base="$(arg fix_base)"
                   simulate_depth_camera="$(arg simulate_depth_camera)"
                   simulate_lidar="$(arg simulate_lidar)"
@@ -77,7 +77,7 @@
       <joint name="base_${suffix}_to_linkage" type="fixed">
         <parent link="${parent_link}" />
         <child link="base_${suffix}" />
-        <origin xyz="0.6 0 -0.35" rpy="0 0 1.57079633"/>
+        <origin xyz="${xyz}" rpy="${rpy}"/>
 		  </joint>
     </xacro:if>
 
@@ -121,22 +121,22 @@
       <xacro:include filename="$(find anymal_c_twins)/urdf/leg/leg_3_1_1_macro.urdf.xacro"/>
     </xacro:if>
 
-    <xacro:leg leg="LF" suffix="$(arg suffix)"/>
-    <xacro:leg leg="RF" suffix="$(arg suffix)"/>
-    <xacro:leg leg="LH" suffix="$(arg suffix)"/>
-    <xacro:leg leg="RH" suffix="$(arg suffix)"/>
+    <xacro:leg leg="LF" suffix="${suffix}"/>
+    <xacro:leg leg="RF" suffix="${suffix}"/>
+    <xacro:leg leg="LH" suffix="${suffix}"/>
+    <xacro:leg leg="RH" suffix="${suffix}"/>
 
     <!-- Custom payload -->
     <xacro:if value="$(arg enable_custom_payload)">
       <xacro:include filename="$(arg custom_payload_description)"/>
-      <xacro:custom_payload parent="base_$(arg suffix)" />
+      <xacro:custom_payload parent="base_${suffix}" />
     </xacro:if>
 
     <!-- Inspection payload -->
     <!-- describes inspection payload (pantilt head version 3)--> 
     <xacro:if value="$(arg enable_inspection_payload)">
       <xacro:include filename="$(find inspection_payload_description)/urdf/inspection_payload_odrive.urdf.xacro"/>
-      <xacro:inspection_payload name="inspection_payload" parent="base_$(arg suffix)" version="${inspection_payload_version_}">
+      <xacro:inspection_payload name="inspection_payload" parent="base_${suffix}" version="${inspection_payload_version_}">
         <origin xyz="0.116 0.0 0.090" rpy="0 0 0"/>
       </xacro:inspection_payload>
     </xacro:if>
