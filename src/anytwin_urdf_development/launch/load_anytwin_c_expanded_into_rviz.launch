@@ -1,0 +1,17 @@
+<launch>
+	<!-- <arg name="model" default="/home/jonas/code/anymal_2_electric_boogaloo/legged_gym/resources/robots/anytwin_c/urdf/anytwin_c.urdf"/> -->
+	<arg name="model" default="/home/jonas/code/anymal_2_electric_boogaloo/legged_gym/resources/robots/anymal_c/urdf/anymal_c_rviz.urdf"/>
+	<arg name="gui" default="false"/>
+
+	<!--arg name="robot_one_suffix" default="A"/>
+	<arg name="robot_two_suffix" default="B"/-->
+
+	<!--param name="robot_description" command="$(find xacro)/xacro DASHDASHinorder $(arg model)"/-->
+	<!--param name="robot_description" command="$(find xacro)/xacro DASHDASHinorder $(arg model) suffix_one:=$(arg robot_one_suffix) suffix_two:=$(arg robot_two_suffix)"/-->
+	<param name="robot_description" textfile="$(arg model)"/>
+	<node if="$(arg gui)" name="joint_state_publisher" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui"/>
+	<node unless="$(arg gui)" name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"/>
+	<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
+	<!--node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true"/-->
+	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find anytwin_urdf_development)/anytwin_c_config_file.rviz"/>
+</launch>
